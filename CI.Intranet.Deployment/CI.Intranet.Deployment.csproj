@@ -213,8 +213,8 @@
     <Content Include="Resources\js\lib\es6-promise.min.js" />
     <Content Include="Resources\js\lib\modernizr.min.js" />
     <Content Include="Resources\js\lib\pnp.min.js" />
-    <Content Include="Resources\js\src\ensure-scripts.js" />
-    <Content Include="Resources\js\src\main.js" />
+    <Content Include="Resources\js\src\singular\ensure-scripts.js" />
+    <Content Include="Resources\js\src\main\main.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />

@@ -1,5 +1,5 @@
 ﻿(function () {
-    var baseUrl = '/_catalogs/masterpage/morton/js/lib/',
+    var baseUrl = '/_catalogs/masterpage/Compassion/js/lib/',
         angular = 'angular.min.js',
         angularMap = 'angular.min.js.map';
 
