@@ -1,0 +1,14 @@
+﻿<pnp:Files xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:File Src=".\Pages\home.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+    <pnp:Properties>
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Welcome Page}" />
+      <pnp:Property Key="Title" Value="Clinical Programs Library and Pilot Overview Tool​" />
+      <pnp:Property Key="Comments" Value="PnP Provisioning." />
+      <pnp:Property Key="PublishingPageContent" Value="" />
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_Landing.aspx, Landing Page Layout" />
+    </pnp:Properties>
+    <pnp:WebParts>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Clinical-Landing/MyTasks-ScriptEditor.xml"/>
+    </pnp:WebParts>
+  </pnp:File>
+</pnp:Files>

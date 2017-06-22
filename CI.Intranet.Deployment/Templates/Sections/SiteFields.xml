@@ -1,0 +1,9 @@
+﻿<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <Field Type="Choice" DisplayName="Template Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="Centene Program Tracking" ID="{eeea5a3b-e30f-46f8-b239-ad1b3d3d0eee}" SourceID="{147ba3a9-323e-44d5-8814-cfbb53cd0631}" StaticName="CEN_TemplateType" Name="CEN_TemplateType">
+    <Default>Templates</Default>
+    <CHOICES>
+      <CHOICE>Standard Recommendations</CHOICE>
+      <CHOICE>Templates</CHOICE>
+    </CHOICES>
+  </Field>
+</pnp:SiteFields>
