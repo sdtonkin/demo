@@ -182,6 +182,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\images\compassion.ico" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml" />
     <Content Include="Templates\4-Pages.xml" />
@@ -204,7 +205,9 @@
     <Content Include="Resources\js\lib\fetch.min.js" />
     <None Include="Resources\js\lib\angular.min.js.map" />
     <None Include="Resources\js\lib\pnp.min.js.map" />
-    <None Include="Resources\MasterPages\com-main.master" />
+    <None Include="Resources\MasterPages\com-main.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
@@ -218,7 +221,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />
-    <Folder Include="Resources\images\" />
     <Folder Include="Resources\PageLayouts\" />
     <Folder Include="Resources\WebParts\" />
   </ItemGroup>

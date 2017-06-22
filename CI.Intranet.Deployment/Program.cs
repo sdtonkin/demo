@@ -19,25 +19,25 @@ namespace CI.Intranet.Deployment
             string defaultSiteUrl = ConfigurationManager.AppSettings["SharePointSiteUrl"];
             string defaultUserName = ConfigurationManager.AppSettings["UserName"];
             string defaultPassword = ConfigurationManager.AppSettings["Password"];
-            string defaultDomain = ConfigurationManager.AppSettings["Domain"] ?? "development";
+            //string defaultDomain = ConfigurationManager.AppSettings["Domain"];
 
             Console.WriteLine("Default Site Url: " + defaultSiteUrl);
-            Console.WriteLine("Default Domain: " + defaultDomain);
+            //Console.WriteLine("Default Domain: " + defaultDomain);
             Console.WriteLine("Default Username: " + defaultUserName);
             Console.WriteLine("Default Password: (in config file)");
 
             // Collect information 
-            string siteUrl = GetInput("Enter the URL of the SharePoint site (enter to use default): ", false, defaultForeground);
-            string domain = GetInput("Enter your domain (enter to use default):", false, defaultForeground);
-            string userName = GetInput("Enter your user name (enter to use default):", false, defaultForeground);
-            string pwdS = GetInput("Enter your password (enter to use default):", true, defaultForeground);
+            string siteUrl = GetInput("Enter the URL of the SharePoint site (enter to use default)", false, defaultForeground);
+            //string domain = GetInput("Enter your domain (enter to use default)", false, defaultForeground);
+            string userName = GetInput("Enter your user name (enter to use default)", false, defaultForeground);
+            string pwdS = GetInput("Enter your password (enter to use default)", true, defaultForeground);
 
             if (string.IsNullOrEmpty(siteUrl))
                 siteUrl = defaultSiteUrl;
-
+            /*
             if (string.IsNullOrEmpty(domain))
                 domain = defaultDomain;
-
+            */
             if (string.IsNullOrEmpty(userName))
                 userName = defaultUserName;
 
@@ -50,12 +50,7 @@ namespace CI.Intranet.Deployment
 
 
             ClientContext ctx;
-
-            if (string.IsNullOrEmpty(domain))
-                ctx = new OfficeDevPnP.Core.AuthenticationManager().GetSharePointOnlineAuthenticatedContextTenant(siteUrl, userName, pwdS);
-            else
-                ctx = new OfficeDevPnP.Core.AuthenticationManager().GetNetworkCredentialAuthenticatedContext(siteUrl, userName, pwdS, domain);
-
+            ctx = new OfficeDevPnP.Core.AuthenticationManager().GetSharePointOnlineAuthenticatedContextTenant(siteUrl, userName, pwdS);
 
             // Test connection by outputing the site title
             Web web = ctx.Web;
@@ -65,7 +60,7 @@ namespace CI.Intranet.Deployment
             Console.WriteLine("Site Title: {0}", web.Title);
             Console.WriteLine("Site URL: {0}", web.Url);
 
-            DisplayJobRunOptions(siteUrl, domain, userName, pwd, "");
+            DisplayJobRunOptions(siteUrl, "", userName, pwd, "");
 
             // Pause and modify the UI to indicate that the operation is complete
             Console.ForegroundColor = ConsoleColor.White;
