@@ -1,0 +1,16 @@
+﻿<pnp:TermGroups xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:TermGroup Name="Root" Description="" SiteCollectionTermGroup="true">
+    <pnp:TermSets>
+      <pnp:TermSet Name="Sample Value" ID="f57f5d93-03b1-4333-a406-4eaff124f771" Description="">
+        <pnp:Terms>
+          <pnp:Term Name="Sample Value" ID="6b513230-abff-4039-a41a-991d85925061" SourceTermId="6b513230-abff-4039-a41a-991d85925061">
+            <pnp:Terms>
+              <pnp:Term Name="Sample Value" ID="083ffdee-4c65-45b2-be74-431831cd2509" CustomSortOrder="1" SourceTermId="083ffdee-4c65-45b2-be74-431831cd2509" />
+              <pnp:Term Name="Sample Value" ID="a0958fc3-d74f-4503-bbba-33911000e900" CustomSortOrder="2" SourceTermId="a0958fc3-d74f-4503-bbba-33911000e900" />
+            </pnp:Terms>
+          </pnp:Term>
+        </pnp:Terms>
+      </pnp:TermSet>
+    </pnp:TermSets>
+  </pnp:TermGroup>
+</pnp:TermGroups>
