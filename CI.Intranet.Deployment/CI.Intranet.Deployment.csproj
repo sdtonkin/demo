@@ -182,18 +182,45 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Templates\1-TermSet.xml" />
+    <Content Include="Templates\2-InformationArchitecture.xml" />
+    <Content Include="Templates\4-Pages.xml" />
+    <Content Include="Templates\5-SecurityGroups.xml" />
+    <Content Include="Templates\6-Search.xml" />
+    <Content Include="Templates\Sections\ContentTypes.xml" />
+    <Content Include="Templates\3-Files.xml" />
+    <Content Include="Templates\Sections\Files.xml" />
+    <Content Include="Templates\Sections\FilesSearch.xml" />
+    <Content Include="Templates\Sections\Lists.xml" />
+    <Content Include="Templates\Sections\Pages.xml" />
+    <Content Include="Templates\Sections\Security.xml" />
+    <Content Include="Templates\Sections\SiteFields.xml" />
+    <Content Include="Templates\Sections\TermSets.xml" />
     <None Include="App.config" />
     <None Include="package.json" />
     <None Include="packages.config" />
     <None Include="Resources\css\sass\main.scss" />
+    <Content Include="Resources\js\lib\angular.min.js" />
+    <Content Include="Resources\js\lib\fetch.min.js" />
+    <None Include="Resources\js\lib\angular.min.js.map" />
+    <None Include="Resources\js\lib\pnp.min.js.map" />
+    <None Include="Resources\MasterPages\com-main.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
+    <Content Include="Resources\js\lib\bootstrap.min.css" />
+    <Content Include="Resources\js\lib\bootstrap.min.js" />
+    <Content Include="Resources\js\lib\es6-promise.min.js" />
+    <Content Include="Resources\js\lib\modernizr.min.js" />
+    <Content Include="Resources\js\lib\pnp.min.js" />
+    <Content Include="Resources\js\src\ensure-scripts.js" />
     <Content Include="Resources\js\src\main.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\js\lib\" />
-    <Folder Include="Templates\" />
+    <Folder Include="Resources\DisplayTemplates\" />
+    <Folder Include="Resources\images\" />
+    <Folder Include="Resources\PageLayouts\" />
+    <Folder Include="Resources\WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
