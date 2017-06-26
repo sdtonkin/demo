@@ -3,7 +3,11 @@ Wireframes
 http://xsi0nx.axshare.com/#p=homepage 
 
 Visual Comps
-https://projects.invisionapp.com/share/3SC57UN7X#/screens
+https://invis.io/3SC57UN7X
+
+Mobile Screens
+https://invis.io/MRC9N002C
+
 
 #Getting Started
 1. Install prerequisites
