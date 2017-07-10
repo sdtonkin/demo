@@ -27,10 +27,10 @@ PW: Zeplin
 1. Expect Daily Check-ins – Be prepared.
 2. Update tasks prior to meeting
 3. Stick to the check-in topics
-4. What did you accomplish since last check-in?
-5. What are plan on accomplishing between now and next check-in?
-6. Do you have any roadblocks?
-7. Do you need assistance with any of your tasks?
+        What did you accomplish since last check-in?
+        What are plan on accomplishing between now and next check-in?
+        Do you have any roadblocks?
+        Do you need assistance with any of your tasks?
 8. Add meaningful comments in source control – be specific about the files you touched.
 9. If you need to skip a check-in meeting, please provide update via email.
 
@@ -42,7 +42,7 @@ PW: Zeplin
         How much time goes to testing?: 1 hour
         How much time goes to bug fixing?: 2 hour
         How much time for a buffer?: 1 hour
-    If you use up all of your coding time (4 hours in the example above) and your not done yet, raise a red flag.  Contact the tech lead or the arch for assistance.  
+        If you use up all of your coding time (4 hours in the example above) and your not done yet, raise a red flag.  Contact the tech lead or the arch for assistance.  
 2. Commit your changes on the completion of each task.  Adding reference to task in the comments is preferred.
 3. Changes made to the solution should only be executed through the deployment mechanism.  Do not make manual changes to the Test or Production environment.
 4. Get confirmation before starting a task.  Some tasks may have dependencies.
