@@ -30,7 +30,7 @@ namespace CI.Intranet.Deployment.Jobs
         public void Start(string outputFolder)
         {
             using (var ctx = base.GetClientContext())
-            {
+            {                
                 // GET the template from existing site and serialize it
                 ProvisioningTemplate template = ProvisioningHelper.GenerateProvisioningTemplate(defaultForeground, ctx, outputFolder, "SiteExport_" + DateTimeStamp + ".xml");
             }
