@@ -277,4 +277,11 @@ namespace CI.Intranet.Deployment
             Console.ForegroundColor = defaultForeground;
         }
     }
+    public class Args
+    {
+        public Args(string[] args)
+        {
+
+        }
+    }
 }
