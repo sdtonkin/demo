@@ -1,6 +1,86 @@
-﻿body {
+﻿/*!
+ *  MAIN CSS
+ * @author = Bartel Welch 
+ * @email =  bwelch@rightpoint.com
+ * Licensed under MIT 
+ * Based on Bootstrap v4
+*/
+
+@import "base/fonts.less";
+@import "base/variables.less"; 
+@import "base/mixins.less";
+
+
+/*
+---------------
+
+Table of Contents:
+
+1)  GENERAL STYLES
+
+2)  HEADER STYLES
+3)  SLIDE NAV
+4)  PANEL STYLES
+5)  IMAGE ROW STYLES
+6)  MODAL STYLES
+7)  EMAIL NOTICE STYLES
+8)  Twitter Styles
+9)  Media Sections
+10)  FOOTER STYLES
+
+
+9)  MAIN CONTENT STYLES
+10)  PAGE LAYOUT SPECIFIC OVERRIDES
+11) GENERAL FORM STYLES
+
+12) RESPONSIVE STYLES
+13) SHAREPOINT SPECIFIC OVERRIDES
+14) Low Bandwith OVERRIDES
+
+--------------
+*/
+
+/* ----------------------------------------------------
+  1) General Styles
+------------------------------------------------------- */
+
+
+
+body {
     font-size: 9px;
     p{
         color: black;
     }
 }
+
+/* ----------------------------------------------------
+  12) Responsive Style Imports
+------------------------------------------------------- */
+@media  @xs-only {
+  @import "responsive/phone";
+}
+@media  @sm-max {
+  @import "responsive/tabletdown";
+}
+@media  @sm-only {
+  @import "responsive/tablet";
+}
+@media  @sm-min {
+  @import "responsive/tabletandup";
+}
+@media  @md-min {
+  @import "responsive/desktop";
+}
+
+/* ----------------------------------------------------
+  13) Sharepoint Override Imports
+------------------------------------------------------- */
+
+@import "sharepoint-overrides";
+
+/* ----------------------------------------------------
+  13) Low Bandwidth Override Imports
+------------------------------------------------------- */
+
+@import "low-bandwidth";
+

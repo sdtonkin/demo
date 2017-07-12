@@ -1,0 +1,47 @@
+//variables.scss
+
+/* ----------------------------------------------------
+   Responsive Screen Sizes
+------------------------------------------------------- */
+$xl-min: ~"screen and (min-width:1500px)";
+$lg-max: ~"screen and (max-width:1499px)";
+$lg-min: ~"screen and (min-width:1200px)";
+$md-only: ~"screen and (min-width:992px) and (max-width:1199px) ";
+$md-min: ~"screen and (min-width:992px)";
+$md-max: ~"screen and (max-width:1199px)";
+$sm-max: ~"screen and (max-width:991px)";
+$sm-min: ~"screen and (min-width:768px)";
+$sm-only: ~"screen and (min-width:768px) and (max-width:991px) ";
+$xs-only: ~"screen and (max-width:767px)";
+$sm-phone: ~"screen and (max-width: 360px)";
+$sm-tablet: ~"screen and (min-width:361px) and (max-width:600px) ";
+$tablet-max-width: ~"screen and (max-width:1024px)";
+$short-desk: ~"screen and (max-height: 600px)";
+
+/* ----------------------------------------------------
+   Colors
+------------------------------------------------------- */
+$brand-black			:		#000000;
+$brand-off-white		: 		#f4f4ef; 
+$brand-white			: 		#ffffff;
+
+$brand-dark-blue 		: 		#003364; //Text Color
+$brand-light-blue 		: 		#88bee7; //Side rail, icons in nav
+$brand-lighter-blue 	: 		#bbdaf2; //nav alternate color
+$brand-dark-blue-alt 	: 		#0054a6;
+
+$brand-gray			 	: 		#cacaca; 
+$brand-light-gray		: 		#d8d8d8; 
+$brand-dark-gray		: 		#9b9b9b; 
+$brand-darker-gray		: 		#4a4a4a; 
+
+$brand-brown-gray		: 		#908b63; 
+$brand-brown-dull		: 		#b8b491; 
+
+$brand-green			: 		#7ed321; 
+$brand-yellow			: 		#ffdd00; 
+
+
+
+
+
