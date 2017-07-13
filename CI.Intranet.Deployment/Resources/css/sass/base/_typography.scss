@@ -1,0 +1,56 @@
+/* 
+ * -----------------------------------------
+ *  Typography
+ *  @@ File: base/_typography.scss
+ * ----------------------------------------- 
+ */
+
+body{
+    color: $brand-dark-blue;
+    @extend .font-lato-reg;
+    font-style: normal;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5 {
+    // color: $brand-dark-blue;
+}
+
+h1, .h1{
+    font-size: 25px;
+    line-height: 33px;
+    @extend .font-lato-bold;
+}
+h2, .h2{
+    font-size: 40px;
+    line-height: 26px;
+    @extend .font-lato-reg;
+    color: $brand-white;
+}
+h3, .h3 {
+    font-size: 15px;
+    line-height: 19px;
+    @extend .font-lato-reg;
+
+}
+h4, .h4 {
+    font-size: 15px;
+    line-height: 19px;
+    @extend .font-lato-reg;
+
+}
+h5, .h5 {
+    font-size: 15px;
+    line-height: 19px;
+    @extend .font-lato-reg;
+}
+
+p{
+   line-height: 17px;
+   color: $brand-dark-blue;
+}
+.body-ex-bold{
+    font-size: 12px;
+    line-height: 17px;
+    @extend .font-lato-bold;
+}

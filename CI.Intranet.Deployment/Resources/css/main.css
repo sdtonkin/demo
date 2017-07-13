@@ -1,4 +1,164 @@
+/*!
+ *  MAIN CSS
+ * @author = Bartel Welch 
+ * @email =  bwelch@rightpoint.com
+ * Licensed under MIT 
+ * Based on Bootstrap v4
+*/
+/* 
+ * -----------------------------------------
+ *  Fonts
+ *  @@ File: base/_fonts.scss
+ * ----------------------------------------- 
+ */
+/* ----------------------------------------------------
+   Import Font Awesome
+------------------------------------------------------- */
+/* 
+* ----------------------------------------------------
+* Import Lato Google Font - Can be used directly on COM Later
+* @@ Usage .font-lato-reg();
+* ------------------------------------------------------- 
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+.font-lato-light {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+.font-lato-reg, body, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; }
+
+.font-lato-bold, h1, .h1, .body-ex-bold {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700; }
+
+.font-lato-extra {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900; }
+
+/* ----------------------------------------------------
+   Responsive Screen Sizes
+------------------------------------------------------- */
+/* ----------------------------------------------------
+   Colors
+------------------------------------------------------- */
+/* 
+ * -----------------------------------------
+ *  Typography
+ *  @@ File: base/_typography.scss
+ * ----------------------------------------- 
+ */
 body {
-  font-size: 9px; }
+  color: #003364;
+  font-style: normal;
+  font-size: 13px; }
+
+h1, .h1 {
+  font-size: 25px;
+  line-height: 33px; }
+
+h2, .h2 {
+  font-size: 40px;
+  line-height: 26px;
+  color: white; }
+
+h3, .h3 {
+  font-size: 15px;
+  line-height: 19px; }
+
+h4, .h4 {
+  font-size: 15px;
+  line-height: 19px; }
+
+h5, .h5 {
+  font-size: 15px;
+  line-height: 19px; }
+
+p {
+  line-height: 17px;
+  color: #003364; }
+
+.body-ex-bold {
+  font-size: 12px;
+  line-height: 17px; }
+
+/*
+---------------
+
+Table of Contents:
+
+1)  GENERAL STYLES
+
+2)  HEADER STYLES
+3)  Main Content Containers
+4)  PANEL STYLES
+5)  IMAGE ROW STYLES
+6)  MODAL STYLES
+7)  EMAIL NOTICE STYLES
+8)  Twitter Styles
+9)  Media Sections
+10)  FOOTER STYLES
+
+
+9)  MAIN CONTENT STYLES
+10)  PAGE LAYOUT SPECIFIC OVERRIDES
+11) GENERAL FORM STYLES
+
+12) RESPONSIVE STYLES
+13) SHAREPOINT SPECIFIC OVERRIDES
+14) Low Bandwith OVERRIDES
+
+--------------
+*/
+/* ----------------------------------------------------
+  1) General Styles
+------------------------------------------------------- */
+body {
+  font-size: 14px;
+  color: #003364; }
   body p {
-    color: black; }
+    color: #003364; }
+
+/* ----------------------------------------------------
+  2) Header Styles
+------------------------------------------------------- */
+.sub-nav-container {
+  background-color: #003364;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .sub-nav-container .card {
+    background-color: transparent;
+    border: none; }
+  .sub-nav-container .card-header {
+    background-color: transparent;
+    color: white;
+    border: none; }
+  .sub-nav-container .card-intro {
+    color: white; }
+  .sub-nav-container .card-block {
+    color: white;
+    border: none; }
+  .sub-nav-container .card-close a {
+    color: white; }
+
+/* ----------------------------------------------------
+  2) Main Content Container Styles
+------------------------------------------------------- */
+.main-left-content {
+  padding-top: 30px; }
+
+.main-right-rail {
+  background-color: #88bee7; }
+
+/* ----------------------------------------------------
+  12) Responsive Style Imports
+------------------------------------------------------- */
+/* ----------------------------------------------------
+  13) Sharepoint Override Imports
+------------------------------------------------------- */
+/* ----------------------------------------------------
+  13) Low Bandwidth Override Imports
+------------------------------------------------------- */

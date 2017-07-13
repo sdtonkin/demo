@@ -6,9 +6,10 @@
  * Based on Bootstrap v4
 */
 
-@import "base/fonts.less";
-@import "base/variables.less"; 
-@import "base/mixins.less";
+@import "base/fonts";
+@import "base/variables"; 
+@import "base/mixins";
+@import "base/typography";
 
 
 /*
@@ -19,7 +20,7 @@ Table of Contents:
 1)  GENERAL STYLES
 
 2)  HEADER STYLES
-3)  SLIDE NAV
+3)  Main Content Containers
 4)  PANEL STYLES
 5)  IMAGE ROW STYLES
 6)  MODAL STYLES
@@ -44,31 +45,77 @@ Table of Contents:
   1) General Styles
 ------------------------------------------------------- */
 
-
-
 body {
-    font-size: 9px;
+	@extend .font-lato-reg;
+	font-size: 14px;
+	color: $brand-dark-blue;
     p{
-        color: black;
+        color: $brand-dark-blue;
     }
+}
+
+/* ----------------------------------------------------
+  2) Header Styles
+------------------------------------------------------- */
+
+.sub-nav-container{
+	background-color: $brand-dark-blue;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	.card{
+		background-color: transparent;
+		border: none;
+	}
+	.card-header{
+		background-color: transparent;
+		color: $brand-white;
+		border: none;
+	}
+	.card-intro{
+		color: $brand-white;
+	}
+	.card-block{
+		color: $brand-white;
+		border: none;
+	}
+	.card-close{
+		a{
+			color: $brand-white;
+		}
+	}
+}
+
+/* ----------------------------------------------------
+  2) Main Content Container Styles
+------------------------------------------------------- */
+.main-left-content{
+	padding-top: 30px;
+}
+
+.main-right-rail{
+	background-color: $brand-light-blue;
 }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports
 ------------------------------------------------------- */
-@media  @xs-only {
+@media  screen and (max-width: $xs-only) {
   @import "responsive/phone";
 }
-@media  @sm-max {
+
+@media  screen and (max-width: $sm-max) {
   @import "responsive/tabletdown";
 }
-@media  @sm-only {
+
+@media  screen and (min-width:$sm-only) and (max-width:$sm-only2) {
   @import "responsive/tablet";
 }
-@media  @sm-min {
+@media  screen and (min-width:$sm-min) {
   @import "responsive/tabletandup";
 }
-@media  @md-min {
+@media  screen and (min-width:$md-min) {
   @import "responsive/desktop";
 }
 
