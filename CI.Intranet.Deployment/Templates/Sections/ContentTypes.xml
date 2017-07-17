@@ -1,7 +1,8 @@
 ﻿<pnp:ContentTypes xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:ContentType ID="0x010100EEE0909EA5814C99B0D1A2DE42679EEE" Name="Template Document" Description="" Group="Compassion" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Name="Rss Feed Item" Description="RSS Feed List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>      
-      <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+      <pnp:FieldRef ID="C67C4E45-508E-4A86-B66C-AFC8025CA5CC" Name="COM_RssFeedTitle" />
+      <pnp:FieldRef ID="66A3DA7E-C614-43F1-BF28-0F4E4C234B5E" Name="COM_RssFeedUrl" />
     </pnp:FieldRefs>
   </pnp:ContentType>
 </pnp:ContentTypes>
