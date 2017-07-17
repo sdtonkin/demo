@@ -15,6 +15,7 @@
   <!-- JS -->
   <pnp:File Src="js\ensure-scripts.min.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
   <pnp:File Src="js\main.min.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
+  <pnp:File Src="js\bartel.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
   
   <!-- LIB JS -->
   <pnp:File Src="js\lib\angular.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
