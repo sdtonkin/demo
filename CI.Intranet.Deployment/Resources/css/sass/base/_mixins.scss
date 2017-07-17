@@ -1,1 +1,12 @@
-//mixins.scss
+/* 
+ * -----------------------------------------
+ *  MIXINS
+ *  @@ File: base/_mixins.scss
+ * ----------------------------------------- 
+ */
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}

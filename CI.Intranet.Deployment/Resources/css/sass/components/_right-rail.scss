@@ -1,0 +1,124 @@
+/* 
+ * -----------------------------------------
+ *  Right Rail
+ *  @@ File: components/_right-rail.scss
+ * ----------------------------------------- 
+ */
+ .main-right-rail{
+ 	h2.section{
+		color: $brand-white;
+	}
+ }
+
+.trending{
+		background-color: transparent;
+		border: none;
+		padding: 20px 0 0 0;
+		max-width: 320px;
+		border-radius: 0;
+
+	.card-block{
+		border:1px solid $brand-white;
+		border-left: none;
+		border-radius: 0;
+		border-right: none;
+		border-top: none;
+		padding: 0 0 15px 0;
+	}
+	.card-title{
+		margin-bottom: 30px;
+		background-color: $brand-white;
+		display: inline-block;
+		border: 1px solid $brand-brown-dull;
+		padding: 4px 10px;
+		color: $brand-brown-gray;
+	}
+	.card-likes{
+		color: $brand-white;
+		font-size: 14px;
+		i{
+			margin-right: 5px;
+		}	
+	}
+	.card-text{
+		line-height: 22px;
+		font-size: 18px;
+		@extend .font-lato-reg;
+		margin-bottom: 14px;
+		color: $brand-dark-blue;
+	}
+	.card-date{
+		font-size: 14px;
+		color: $brand-white;
+		@extend .font-lato-bold;
+		margin-bottom: 5px;
+	}
+	.img-fluid{
+		height: 100%;
+		width: auto;
+	}
+}
+.world-news{
+	background-color: $brand-dark-blue;
+	max-width: 320px;
+	margin-bottom: 35px;
+	.card-text{
+		color: $brand-white;
+		margin-bottom: 25px;
+	}
+	.btn-block{
+		max-width: 160px;
+	}
+}
+.upcoming-events{
+	background-color: $brand-white;
+	border-radius: 0;
+	max-width: 320px;
+	margin-top: 20px;
+	padding: 20px;
+	margin-bottom: 30px;
+	.card-block{
+		border:1px solid $brand-white;
+		border-left: none;
+		border-radius: 0;
+		border-right: none;
+		border-top: none;
+		padding: 0;
+	}
+	.card-tags{
+		margin-bottom: 0;
+		background-color: $brand-white;
+		display: inline-block;
+		border: 1px solid $brand-brown-dull;
+		padding: 4px 10px;
+		color: $brand-brown-gray;
+		text-align: left;
+		margin-right: 20px;
+		font-size: 14px;
+	}
+	.card-likes{
+		color: $brand-white;
+		font-size: 14px;
+		i{
+			margin-right: 5px;
+		}	
+	}
+	.card-text{
+		line-height: normal;
+		font-size: 22px;
+		@extend .font-lato-med;
+		margin-bottom: 14px;
+		color: $brand-dark-blue;
+		border-bottom: 2px solid $brand-brown-dull;
+		padding-bottom: 14px;
+	}
+	.card-date, .card-time, .card-location{
+		font-size: 14px;
+		color: $brand-dark-blue;
+		@extend .font-lato-reg;
+		margin-bottom: 0;
+	}
+	.card-time, .card-location{
+		margin-bottom: 15px;
+	}
+}

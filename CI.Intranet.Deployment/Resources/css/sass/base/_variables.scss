@@ -1,8 +1,14 @@
-//variables.scss
+/* 
+ * -----------------------------------------
+ *  Variables
+ *  @@ File: base/_variables.scss
+ * ----------------------------------------- 
+ */
 
 /* ----------------------------------------------------
    Responsive Screen Sizes
 ------------------------------------------------------- */
+$phone-only: "575px";
 $xs-only: 	"767px";
 $sm-max:	"992px";
 $sm-only: 	"768px";
@@ -34,6 +40,11 @@ $brand-green			: 		#7ed321;
 $brand-yellow			: 		#ffdd00; 
 
 
+/* ----------------------------------------------------
+   Background Colors
+------------------------------------------------------- */
 
-
+.background-off-white{
+	background-color: $brand-off-white;
+}
 

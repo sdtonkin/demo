@@ -18,19 +18,26 @@ h1, h2, h3, h4, h5 {
 
 h1, .h1{
     font-size: 25px;
-    line-height: 33px;
+    // line-height: 33px;
     @extend .font-lato-bold;
 }
 h2, .h2{
     font-size: 40px;
-    line-height: 26px;
-    @extend .font-lato-reg;
+    // line-height: 26px;
+    @extend .font-lato-light;
     color: $brand-white;
+    &.section{
+        color: $brand-brown-gray;
+        @extend .font-lato-reg;
+    }
 }
 h3, .h3 {
-    font-size: 15px;
-    line-height: 19px;
+    font-size: 26px;
+    // line-height: 19px;
+    color: $brand-dark-blue-alt;
     @extend .font-lato-reg;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 h4, .h4 {
