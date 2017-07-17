@@ -38,13 +38,17 @@ h3, .h3 {
     @extend .font-lato-reg;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: block;
 
 }
 h4, .h4 {
-    font-size: 15px;
-    line-height: 19px;
+    font-size: 22px;
+    // line-height: 19px;
+    color: $brand-dark-blue-alt;
     @extend .font-lato-reg;
-
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 h5, .h5 {
     font-size: 15px;
