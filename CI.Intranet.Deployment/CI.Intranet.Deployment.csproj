@@ -185,6 +185,7 @@
     <Content Include="Resources\images\compassion.ico" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
+    <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\Tool-Bar.html" />
@@ -193,7 +194,7 @@
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
-    <Content Include="Resources\js\src\singular\my-rss-feeds.js" />
+    <Content Include="Resources\js\src\components\my-rss-feeds.js" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml" />
     <Content Include="Templates\4-Pages.xml" />
