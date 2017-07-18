@@ -130,6 +130,10 @@ gulp.task("min:js", function () {
                     }
                 ]
             },
+            externals: {
+                "sp-pnp-js": "sp-pnp-js",
+                "moment": "moment"
+            },
             output: {
                 filename: 'main.min.js'
             },
