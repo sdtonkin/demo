@@ -1,9 +1,25 @@
 ﻿<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <Field Type="Choice" DisplayName="Template Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="Centene Program Tracking" ID="{eeea5a3b-e30f-46f8-b239-ad1b3d3d0eee}" SourceID="{147ba3a9-323e-44d5-8814-cfbb53cd0631}" StaticName="CEN_TemplateType" Name="CEN_TemplateType">
-    <Default>Templates</Default>
-    <CHOICES>
-      <CHOICE>Standard Recommendations</CHOICE>
-      <CHOICE>Templates</CHOICE>
-    </CHOICES>
-  </Field>
+  <!-- ********    -->
+  <!-- TEXT FIELDS -->
+  <!-- ********    -->
+  <!-- RSS Feed Title -->
+  <Field ID="{C67C4E45-508E-4A86-B66C-AFC8025CA5CC}" Type="Text" Name="COM_RssFeedTitle" StaticName="COM_RssFeedTitle" DisplayName="RSS Feed Title" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed Display Title" />
+
+  <!-- ********      -->
+  <!-- NUMBER FIELDS -->
+  <!-- ********      -->
+  <!-- User RSS Feed Id -->
+  <Field ID="{3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139}" Type="Integer" Name="COM_RssFeedId" StaticName="COM_RssFeedId" DisplayName="RSS Feed Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
+
+  <!-- ****************** -->
+  <!-- USEER/GROUP FIELDS -->
+  <!-- ****************** -->
+  <!-- RSS Feed User -->
+  <Field ID="{AAEB95C5-72DA-44B1-9A4F-AA520152F473}" Type="User" Name="COM_RssFeedUser" StaticName="COM_RssFeedUser" DisplayName="RSS Feed User" List="UserInfo" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="True" Hidden="False" Group="1 - Compassion Intranet" />
+  
+  <!-- ********   -->
+  <!-- URL FIELDS -->
+  <!-- ********   -->
+  <!-- RSS Feed URL -->
+  <Field ID="{66A3DA7E-C614-43F1-BF28-0F4E4C234B5E}" Type="URL" Name="COM_RssFeedUrl" StaticName="COM_RssFeedUrl" DisplayName="RSS Feed URL" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed URL" />
 </pnp:SiteFields>
