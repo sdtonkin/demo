@@ -118,7 +118,7 @@ gulp.task("min:singular", function () {
 gulp.task("min:js", function () {
     return gulp.src([paths.js], { base: "." })
         .pipe(webpack({
-            //devtool: 'source-map',
+            devtool: 'source-map',
             module: {
                 loaders: [
                     {
@@ -133,11 +133,11 @@ gulp.task("min:js", function () {
             output: {
                 filename: 'main.min.js'
             },
-            debug: true,
             plugins: [
                 new AggressiveMergingPlugin(),
                 new OccurrenceOrderPlugin(),
                 new DedupePlugin(),
+                
                 new UglifyJsPlugin({
                     mangle: true,
                     compress: {
@@ -153,24 +153,21 @@ gulp.task("min:js", function () {
                         dead_code: true,
                         evaluate: true,
                         if_return: true,
-                        join_vars: true
+                        join_vars: true,
+                        keep_fnames: true
                     },
                     output: {
                         comments: false,
                     },
-                    exclude: [/\.min\.js$/gi] // skip pre-minified libs
-                }),
+                    //exclude: [/\.min\.js$/gi] // skip pre-minified libs
+                }),               
                 new IgnorePlugin(/^\.\/locale$/, [/moment$/])                
             ],
             babelrc: false,
-            exclude: 'node_modules|bower_components'
+            exclude: /(node_modules|bower_components)/
 
         })).on('error', (err) => {
             console.log("webpack error");
-            console.log(err);
-        })
-        .pipe(uglify()).on('error', (err) => {
-            console.log("ugly");
             console.log(err);
         })
         .pipe(gulp.dest(paths.distJs));
