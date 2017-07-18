@@ -1,9 +1,174 @@
 ﻿<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <Field Type="Choice" DisplayName="Template Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="Centene Program Tracking" ID="{eeea5a3b-e30f-46f8-b239-ad1b3d3d0eee}" SourceID="{147ba3a9-323e-44d5-8814-cfbb53cd0631}" StaticName="CEN_TemplateType" Name="CEN_TemplateType">
-    <Default>Templates</Default>
-    <CHOICES>
-      <CHOICE>Standard Recommendations</CHOICE>
-      <CHOICE>Templates</CHOICE>
-    </CHOICES>
+	<!--- MMD FIELDS -->	
+    <!--- Location -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="MOR_RegionTaxHTField" StaticName="MOR_RegionTaxHTField" Name="MOR_RegionTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="MOR_Region" StaticName="MOR_Region" DisplayName="Region" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - Morton Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Morton Knowledge Base:Region}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
   </Field>
+
+      <!--- Group -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="MOR_RegionTaxHTField" StaticName="MOR_RegionTaxHTField" Name="MOR_RegionTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="MOR_Region" StaticName="MOR_Region" DisplayName="Region" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - Morton Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Morton Knowledge Base:Region}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- News Type -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="MOR_RegionTaxHTField" StaticName="MOR_RegionTaxHTField" Name="MOR_RegionTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="MOR_Region" StaticName="MOR_Region" DisplayName="Region" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - Morton Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Morton Knowledge Base:Region}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- Event Type -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="MOR_RegionTaxHTField" StaticName="MOR_RegionTaxHTField" Name="MOR_RegionTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="MOR_Region" StaticName="MOR_Region" DisplayName="Region" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - Morton Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Morton Knowledge Base:Region}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- Document Type -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="MOR_RegionTaxHTField" StaticName="MOR_RegionTaxHTField" Name="MOR_RegionTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="MOR_Region" StaticName="MOR_Region" DisplayName="Region" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - Morton Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Morton Knowledge Base:Region}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+   <!-- TEXT FIELDS -->
+
+
+   <!-- NUMBER FIELDS -->
+
+
+   <!-- DATE FIELDS -->
+   <!-- Publish Date -->
+  <Field ID="{9DA1FF4F-9C62-4821-AFA0-F5D1BA9DBA3E}" Type="DateTime" Format="DateOnly" Name="MOR_ProjectCompletionDate" StaticName="MOR_ProjectCompletionDate" DisplayName="Project Completion Date" List="UserInfo" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - Morton Columns" />
+   <!-- Experation Date -->
+  <Field ID="{9DA1FF4F-9C62-4821-AFA0-F5D1BA9DBA3E}" Type="DateTime" Format="DateOnly" Name="MOR_ProjectCompletionDate" StaticName="MOR_ProjectCompletionDate" DisplayName="Project Completion Date" List="UserInfo" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - Morton Columns" />
+
+   <!-- CHOICE FIELDS -->
+
+
+   <!-- USER/GROUP FIELDS -->
+
+
+   <!-- YES/NO FIELDS -->
+
+
+   <!-- OTHER FIELDS -->
+   <!-- Event Start Date -->
+
+   <!-- Icon -->
+
 </pnp:SiteFields>
