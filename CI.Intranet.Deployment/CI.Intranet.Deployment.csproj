@@ -190,7 +190,10 @@
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
-    <Content Include="Resources\js\bartel.js" />
+    <Content Include="Resources\js\src\singular\bartel.js" />
+    <Content Include="Resources\js\src\main\config.js" />
+    <Content Include="Resources\js\src\services\rss-feed-service.js" />
+    <Content Include="Resources\js\src\singular\my-rss-feeds.js" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml" />
     <Content Include="Templates\4-Pages.xml" />
@@ -229,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />
+    <Folder Include="Resources\js\dist\" />
     <Folder Include="Resources\PageLayouts\" />
     <Folder Include="Resources\WebParts\" />
   </ItemGroup>
