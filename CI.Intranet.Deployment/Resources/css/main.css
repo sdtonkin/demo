@@ -25,11 +25,11 @@
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link, .news-events .employee-card .emp-name, .news-events .employee-card .emp-des, .news-events .employee-card .submit-line {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec, .news-events .employee-card .emp-rec {
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
@@ -600,6 +600,65 @@ body {
   margin-top: 50px; }
   .stay-connected .photo-container p {
     margin-top: 15px; }
+
+/* 
+ * -----------------------------------------
+ *  News & Events
+ *  @@ File: components/_news-events.scss
+ * ----------------------------------------- 
+ */
+.news-events .nav-tabs {
+  border-bottom: 2px solid #b8b491; }
+.news-events .nav-link {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 40px;
+  color: #908b63; }
+  .news-events .nav-link:hover {
+    border-bottom: 4px solid transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: #b8b491; }
+  .news-events .nav-link.active {
+    border-bottom: 4px solid #908b63;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: #908b63; }
+.news-events .upcoming-events {
+  max-width: none; }
+.news-events .news-card-wrapper {
+  margin-bottom: 30px;
+  margin-top: 40px; }
+.news-events .employee-card .emp-photo {
+  border-radius: 50%; }
+.news-events .employee-card .emp-name {
+  color: #003364;
+  font-size: 25px; }
+.news-events .employee-card .emp-rec {
+  color: #0054a6;
+  font-size: 14px;
+  text-transform: uppercase; }
+.news-events .employee-card .emp-des {
+  color: #003364;
+  font-size: 14px;
+  line-height: 17px; }
+.news-events .employee-card .submit-line {
+  color: #003364;
+  font-size: 14px;
+  font-style: italic; }
+.news-events .employee-spotlight-cta .btn-block {
+  margin-top: 30px;
+  max-width: 242px; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports
