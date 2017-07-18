@@ -12,6 +12,8 @@ https://zeplin.io/
 UN: rp_creative
 PW: Zeplin
 
+Tech Design
+https://rpo365.sharepoint.com/sites/ExtranetCompassionInter/O365Intranet/Documents/Technical%20Design/Compassion%20-%20Tech%20Design.docx?d=w5fa44bb5a2db42fca0565ce6ea0d8984
 
 #Getting Started
 1. Install prerequisites
