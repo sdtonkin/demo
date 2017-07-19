@@ -70,7 +70,7 @@
 		</pnp:Terms>
 	  </pnp:TermSet>
 
-	  <pnp:TermSet Name="Work Resources Document Type" ID="5f5f761b-f8eb-4c29-a535-f49f764e3f0a" Description="">
+	  <pnp:TermSet Name="Document Type" ID="5f5f761b-f8eb-4c29-a535-f49f764e3f0a" Description="">
 		<pnp:Terms>
 			<pnp:Term Name="Policy" ID="b900f371-1fa2-4577-bb8b-908de022196e" SourceTermId="b900f371-1fa2-4577-bb8b-908de022196e" />
 			<pnp:Term Name="Standard" ID="a56496a8-9760-4c5a-b970-8e510deb0f54" SourceTermId="a56496a8-9760-4c5a-b970-8e510deb0f54" />
