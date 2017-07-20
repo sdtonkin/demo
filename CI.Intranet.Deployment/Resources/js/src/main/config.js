@@ -22,6 +22,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/dev',
+            rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
                 rssFeedsListTitle: 'RSS Feeds List',
                 userRssFeedsListTitle: 'User RSS Feeds List'
@@ -46,6 +47,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com',
+            rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
                 rssFeedsListTitle: 'RSS Feeds List',
                 userRssFeedsListTitle: 'User RSS Feeds List'
@@ -72,6 +74,7 @@ else {
         },
         useCaching: false,
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion1',
+        rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',
             userRssFeedsListTitle: 'User RSS Feeds List'

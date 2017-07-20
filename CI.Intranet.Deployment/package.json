@@ -37,8 +37,11 @@
   "dependencies": {
     "es6-promise": "^4.1.0",
     "hellojs": "^1.14.1",
+    "json-loader": "^0.5.4",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.11",
+    "node-noop": "^1.0.0",
+    "rss-parser": "^2.10.1",
     "sp-pnp-js": "^2.0.1",
     "whatwg-fetch": "^2.0.3"
   }

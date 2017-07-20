@@ -1,5 +1,6 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
+//import parser from 'rss-parser';
 
 angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     function getRssItems(user) {
@@ -29,7 +30,10 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
             .getById(id)
             .get()
             .then(function(item){ 
-                defer.resolve(item.COM_RssFeedUrl.Url); 
+                var f = {};
+                f.title = item.Title;
+                f.url = item.COM_RssFeedUrl.Url;
+                defer.resolve(f); 
             });
 
         return defer.promise;
@@ -46,41 +50,60 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
         });
         return defer.promise;
     }
-    function getRssFeed(url) {
+    function getRssFeed(feed) {
         var defer = $q.defer();
-        var formats = ['ddd, DD MMM YYYY HH:mm:ss ZZ', 'ddd, DD MMM YY HH:mm:ss ZZ'];
 			
-			
-        $http.jsonp('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url)).then(function (response) {
+        $http.jsonp(COM_CONFIG.rssProxyUrl + encodeURIComponent(feed.url)).then(function (response) {
             if (!response.data) {
                 console.error('Unable to fetch RSS feed from provided URL. Please check the URL.');
             }
-            var feeds = response.data.items;
+            var feeds = _.sortBy(response.data.items, function(item){ return item.pubDate; }).reverse();
 
             for (var i = 0; i < feeds.length; ++i) {
-                var f = feeds[i];								
-                f.publishedDate = moment(f.pubDate).format();
-                f.publishedTimeSpan = getPublishedDuration(f.publishedDate);
+                var f = feeds[i];
+                f.feedTitle = feed.title;
+                f.pDate = moment().utc(f.pubDate);
+                f.publishedDate = moment(f.pubDate);
+                f.currentTime = moment.utc().format();
+                f.publishedSpanString = getPublishedDurationString(f.pubDate);
             }
 
             defer.resolve(feeds);
         });
         return defer.promise;
     }
-    function getPublishedDuration(then) {
-        var now = moment().utc();
-        var ms = moment(now).diff(moment(then));
-        //var ms = now.diff(then);
+    function getPublishedDurationString(then) {
+        var ms = moment.utc().diff(moment.utc(then));
         var d = moment.duration(ms);
-        var s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
+        var t = {};
+        t.hour = d.asHours();
+        t.hourFormat = Math.floor(d.asHours());
+        t.minute = moment.utc(ms).format('m');
+			
+        if (t.hour > 0) {
+            var h = Math.floor(t.hour);
+            return h + 'h';
+        }
+        else if (t.minute == '0')
+            return '';
+        else
+            return t.minute + 'm';
 
-        return s;
+        return t;
     }
-    this.getMyRssFeeds = function (user) {
+
+    this.getMyRssFeeds = function (user, articleLimit) {
         var defer = $q.defer();
         getRssItems(user).then(function (feeds) {
             getRssFeeds(feeds).then(function (feedContent) {
-                defer.resolve(feedContent);
+                var feedList = [];
+                for (var i = 0; feedContent.length > i; i++) {
+                    var f = {};
+                    f.title = feedContent[i][0].feedTitle;
+                    f.articles = feedContent[i].slice(0, articleLimit);
+                    feedList.push(f);
+                }
+                defer.resolve(feedList);
             });
         });
 

@@ -15,6 +15,7 @@ var gulp = require("gulp"),
   UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin"),
   IgnorePlugin = require("webpack/lib/IgnorePlugin"),
   CompressionPlugin = require("compression-webpack-plugin");
+var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 
 
 var paths = {
@@ -126,19 +127,29 @@ gulp.task("min:js", function () {
                         loader: 'babel-loader',
                         query: {
                             presets: ['es2015']
-                        }
+                        },
+                        exclude: /^node_modules$/
                     },
                     { test: /\.html$/, loader: "html" },
+                    { test: /\.json$/, loader: "json-loader" }
                 ]
             },
+            //target: 'node',
             output: {
                 filename: 'main.min.js'
+            },
+            node: {
+                fs: "empty"
             },
             externals: {
                 "moment": "moment"
             },
-            /*
+            
+            
             plugins: [
+                /*
+                new NormalModuleReplacementPlugin(/\/iconv-loader$/, 'node-noop'),
+                
                 new AggressiveMergingPlugin(),
                 new OccurrenceOrderPlugin(),
                 new DedupePlugin(),                
@@ -165,9 +176,10 @@ gulp.task("min:js", function () {
                     },
                     //exclude: [/\.min\.js$/gi] // skip pre-minified libs
                 }),               
-                new IgnorePlugin(/^\.\/locale$/, [/moment$/])                
+                new IgnorePlugin(/^\.\/locale$/, [/moment$/])
+                */
             ],
-            */
+            
             babelrc: false,
             exclude: /(node_modules|bower_components)/
 
