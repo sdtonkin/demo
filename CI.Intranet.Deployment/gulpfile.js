@@ -21,7 +21,7 @@ var paths = {
     webroot: "./Resources/"
 };
 paths.baseJs = paths.webroot + "js";
-paths.js = paths.webroot + "js/src/**/*.js";
+paths.js = paths.webroot + "js/src/main/main.js";
 paths.distJs = paths.webroot + "js/dist";
 //paths.js = paths.webroot + "js/src/main/*.js";
 paths.singularJs = paths.webroot + "js/src/singular/*.js";
@@ -118,7 +118,7 @@ gulp.task("min:singular", function () {
 gulp.task("min:js", function () {
     return gulp.src([paths.js], { base: "." })
         .pipe(webpack({
-            devtool: 'source-map',
+            //devtool: 'source-map',
             module: {
                 loaders: [
                     {
@@ -127,21 +127,21 @@ gulp.task("min:js", function () {
                         query: {
                             presets: ['es2015']
                         }
-                    }
+                    },
+                    { test: /\.html$/, loader: "html" },
                 ]
-            },
-            externals: {
-                "sp-pnp-js": "sp-pnp-js",
-                "moment": "moment"
             },
             output: {
                 filename: 'main.min.js'
             },
+            externals: {
+                "moment": "moment"
+            },
+            /*
             plugins: [
                 new AggressiveMergingPlugin(),
                 new OccurrenceOrderPlugin(),
-                new DedupePlugin(),
-                
+                new DedupePlugin(),                
                 new UglifyJsPlugin({
                     mangle: true,
                     compress: {
@@ -167,6 +167,7 @@ gulp.task("min:js", function () {
                 }),               
                 new IgnorePlugin(/^\.\/locale$/, [/moment$/])                
             ],
+            */
             babelrc: false,
             exclude: /(node_modules|bower_components)/
 

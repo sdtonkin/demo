@@ -2,8 +2,6 @@
   <!-- ********    -->
   <!-- TEXT FIELDS -->
   <!-- ********    -->
-  <!-- RSS Feed Title -->
-  <Field ID="{C67C4E45-508E-4A86-B66C-AFC8025CA5CC}" Type="Text" Name="COM_RssFeedTitle" StaticName="COM_RssFeedTitle" DisplayName="RSS Feed Title" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed Display Title" />
 
   <!-- ********      -->
   <!-- NUMBER FIELDS -->

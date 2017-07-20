@@ -2,11 +2,14 @@
     controllerName = 'myRssFeedsCtrl';
 
 myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', function ($scope, rssFeedService, COM_CONFIG) {
-    rssFeedService.getMyRssFeeds().then(function (reponse) {
-        $scope.myFeeds = response;
-    });
+    this.$onInit = function () {
+        var userId = _spPageContextInfo.userId;
+        rssFeedService.getMyRssFeeds(userId).then(function (response) {
+            $scope.myFeeds = response;
+        });
+    }
 }]).component('myRssFeeds', {
-    template: require('./My-RSS-Feeds.html'),
-    controller:controllerName,
+    template: require('../../includes/My-RSS-Feeds.html'),
+    controller: controllerName,
     controllerAs: 'ctrl'
 });

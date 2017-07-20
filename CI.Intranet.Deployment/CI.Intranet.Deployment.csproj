@@ -238,6 +238,9 @@
     <Folder Include="Resources\WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cmd.exe /c gulp -b "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment" --color --gulpfile "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment\Gulpfile.js" 1-compile</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

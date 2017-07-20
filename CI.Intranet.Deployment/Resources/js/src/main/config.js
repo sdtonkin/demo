@@ -1,10 +1,11 @@
-﻿// set up static configuration entries
-var app = angular.module('compassionIntranet');
+﻿
+// set up static configuration entries
+var myApp = angular.module('compassionIntranet');
 
 //Discover Dev
 if (document.location.host === "compassion.sharepoint.com") {
     if (document.location.pathname.toLowerCase().indexOf('/sites/dev') !== -1) {
-        app.constant('COM_CONFIG', {
+        myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
                 appId: '28057a7d-919d-49ba-a042-58c962b6ba40'
@@ -23,12 +24,12 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com/sites/dev',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feed Item'
+                userRssFeedsListTitle: 'User RSS Feeds List'
             }
         });
     }
     else {
-        app.constant('COM_CONFIG', {
+        myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
                 appId: '28057a7d-919d-49ba-a042-58c962b6ba40'
@@ -47,14 +48,14 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feed Item'
+                userRssFeedsListTitle: 'User RSS Feeds List'
             }
         });
     }
 }
     //Dev Tenant
 else {
-    app.constant('COM_CONFIG', {
+    myApp.constant('COM_CONFIG', {
         isProduction: false,
         msGraph: {
             appId: '1d622432-aff2-4037-862d-53c714949c02'
@@ -73,7 +74,7 @@ else {
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion1',
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',
-            userRssFeedsListTitle: 'User RSS Feed Item'
+            userRssFeedsListTitle: 'User RSS Feeds List'
         }
     });
 }
