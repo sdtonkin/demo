@@ -1,7 +1,33 @@
 ﻿<pnp:ContentTypes xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:ContentType ID="0x010100EEE0909EA5814C99B0D1A2DE42679EEE" Name="Template Document" Description="" Group="Compassion" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
-    <pnp:FieldRefs>      
-      <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB24" Name="COM Base Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl=""></pnp:ContentType>
+  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB2401" Name="COM Location Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="" Name="COM_LocationTagTaxHTField" Hidden="true" />
+      <pnp:FieldRef ID="" Name="COM_Location" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB2402" Name="COM Group Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="" Name="COM_GroupTagTaxHTField" Hidden="true" />
+      <pnp:FieldRef ID="" Name="COM_Group" Required="true" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pnp:ContentTypes>
