@@ -25,11 +25,11 @@
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link, .news-events .employee-card .emp-name, .news-events .employee-card .emp-des, .news-events .employee-card .submit-line {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec, .news-events .employee-card .emp-rec {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec {
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
@@ -144,6 +144,9 @@ p {
     border-left: none;
     font-size: 20px;
     color: #908b63; }
+  .btn.mx-w {
+    max-width: 320px;
+    margin-bottom: 15px; }
 
 .btn.btn-block {
   color: #0054a6;
@@ -160,6 +163,8 @@ p {
   .btn.btn-block.blue-alt {
     background-color: #0054a6;
     color: white; }
+  .btn.btn-block.brown {
+    color: #908b63; }
 
 /*
 ---------------
@@ -609,6 +614,8 @@ body {
  */
 .news-events .nav-tabs {
   border-bottom: 2px solid #b8b491; }
+.news-events .tab-content {
+  margin-top: 30px; }
 .news-events .nav-link {
   text-align: left;
   padding-left: 0;
@@ -635,30 +642,80 @@ body {
     border-radius: 0;
     color: #908b63; }
 .news-events .upcoming-events {
-  max-width: none; }
+  max-width: none;
+  margin-bottom: 0; }
 .news-events .news-card-wrapper {
   margin-bottom: 30px;
-  margin-top: 40px; }
-.news-events .employee-card .emp-photo {
-  border-radius: 50%; }
-.news-events .employee-card .emp-name {
-  color: #003364;
-  font-size: 25px; }
-.news-events .employee-card .emp-rec {
-  color: #0054a6;
-  font-size: 14px;
-  text-transform: uppercase; }
-.news-events .employee-card .emp-des {
-  color: #003364;
-  font-size: 14px;
-  line-height: 17px; }
-.news-events .employee-card .submit-line {
-  color: #003364;
-  font-size: 14px;
-  font-style: italic; }
-.news-events .employee-spotlight-cta .btn-block {
-  margin-top: 30px;
-  max-width: 242px; }
+  margin-top: 0; }
+.news-events .search {
+  width: auto;
+  margin-top: 0;
+  display: flex;
+  flex: auto; }
+  .news-events .search .form-control {
+    border-radius: 0;
+    color: #0054a6;
+    height: 60px;
+    border: none; }
+    .news-events .search .form-control::-webkit-input-placeholder {
+      color: #908b63;
+      font-size: 18px; }
+    .news-events .search .form-control:-moz-placeholder {
+      color: #908b63;
+      font-size: 18px; }
+    .news-events .search .form-control::-moz-placeholder {
+      color: #908b63;
+      font-size: 18px; }
+    .news-events .search .form-control:-ms-input-placeholder {
+      color: #908b63;
+      font-size: 18px; }
+    .news-events .search .form-control:focus, .news-events .search .form-control:hover {
+      border: none; }
+  .news-events .search .input-group-btn {
+    border-radius: 0; }
+    .news-events .search .input-group-btn button {
+      border: none; }
+.news-events .search-filter {
+  border: 1px solid #908b63;
+  display: flex; }
+  .news-events .search-filter .dropdown {
+    display: table-cell; }
+  .news-events .search-filter .dropdown-menu {
+    top: 58px;
+    background-color: #908b63;
+    border-radius: 0;
+    left: -2px; }
+    .news-events .search-filter .dropdown-menu a {
+      color: white;
+      font-size: 14px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      padding-top: 10px; }
+      .news-events .search-filter .dropdown-menu a:hover {
+        color: #908b63; }
+.news-events .sort-filter .dropdown-menu {
+  top: 45px;
+  background-color: #003364;
+  border-radius: 0;
+  width: 100%; }
+  .news-events .sort-filter .dropdown-menu a {
+    color: white;
+    font-size: 14px;
+    padding: 15px 0 15px 15px; }
+    .news-events .sort-filter .dropdown-menu a:hover {
+      color: #003364; }
+.news-events .sort-filter .dropdown-toggle {
+  padding-left: 0; }
+  .news-events .sort-filter .dropdown-toggle:focus {
+    box-shadow: none; }
+.news-events .btn-block.brown {
+  float: left;
+  width: auto;
+  border-right: 1px solid #908b63;
+  margin-top: 5px;
+  outline: none; }
+  .news-events .btn-block.brown:focus {
+    box-shadow: none; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports

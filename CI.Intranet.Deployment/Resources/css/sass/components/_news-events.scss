@@ -10,7 +10,7 @@
 		border-bottom: 2px solid $brand-brown-dull;
 	}
 	.tab-content{
-		// margin-bottom: 30px;
+		margin-top: 30px;
 	}
 	.nav-link{
 		text-align: left;
@@ -47,46 +47,99 @@
 	}
 	.upcoming-events{
 		max-width: none;
+		margin-bottom: 0;
+
 	}
 	.news-card-wrapper{
 		margin-bottom: 30px;
-		margin-top: 40px;
+		margin-top: 0;
 		
 	}
 	
-	.employee-card{
-		
-		.emp-photo{
-			border-radius: 50%;
+	.search{
+		width: auto;
+ 		margin-top: 0;
+ 		display: flex;
+ 		flex: auto;
+ 		.form-control{
+ 			border-radius: 0;
+ 			color: $brand-dark-blue-alt;
+ 			height: 60px;
+ 			border: none;
+ 			@include placeholder{
+ 				color: $brand-brown-gray;
+ 				font-size: 18px;
+ 			}
+ 			&:focus, &:hover{
+ 				border: none;
+ 			}
+ 		}
+ 		.input-group-btn{
+ 			border-radius: 0;
+ 			button{
+ 				border: none;
+ 			}
+ 		}
+ 	}
+	
+	.search-filter{
+		border: 1px solid $brand-brown-gray;
+		display: flex;
+		.dropdown{
+			display:table-cell;
 		}
-		.emp-name{
-			color: $brand-dark-blue;
-			font-size: 25px;
-			@extend .font-lato-reg;
-		}
-		.emp-rec{
-			color: $brand-dark-blue-alt;
-			font-size: 14px;
-			text-transform: uppercase;
-			@extend .font-lato-med;
-		}
-		.emp-des{
-			color: $brand-dark-blue;
-			font-size: 14px;
-			@extend .font-lato-reg;
-			line-height: 17px;
-		}
-		.submit-line{
-			color: $brand-dark-blue;
-			font-size: 14px;
-			@extend .font-lato-reg;
-			font-style: italic;
+		.dropdown-menu{
+			top: 58px;
+			background-color: $brand-brown-gray;
+			border-radius: 0;
+			left: -2px;
+			a{
+				color: $brand-white;
+				font-size: 14px;
+				padding-bottom: 10px;
+    			padding-left: 5px;
+    			padding-top: 10px;
+    			&:hover{
+    				color: $brand-brown-gray;
+    			}
+			}
 		}
 	}
-	.employee-spotlight-cta{
-		.btn-block{
-			margin-top: 30px;
-			max-width: 242px;
+	.sort-filter{
+		.dropdown-menu{
+			top: 45px;
+			background-color: $brand-dark-blue;
+			border-radius: 0;
+			// left: 15px;
+			width: 100%;
+			a{
+				color: $brand-white;
+				font-size: 14px;
+				// padding-bottom: 10px;
+    			// padding-left: 5px;
+    			// padding-top: 10px;
+    			padding: 15px 0 15px 15px;
+    			&:hover{
+    				color: $brand-dark-blue;
+    			}
+			}
+		}
+		.dropdown-toggle{
+			padding-left: 0;
+			&:focus{
+				box-shadow: none;
+			}
 		}
 	}
+	.btn-block.brown{
+		float: left;
+		width: auto;
+		border-right: 1px solid $brand-brown-gray;
+		margin-top: 5px;
+		outline: none;
+		&:focus{
+			box-shadow: none;
+		}
+	}
+
  }

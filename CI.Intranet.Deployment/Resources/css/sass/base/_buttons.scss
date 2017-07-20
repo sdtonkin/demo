@@ -38,6 +38,10 @@
  		font-size: 20px;
  		color: $brand-brown-gray;
  	}
+ 	&.mx-w{
+ 		max-width: 320px;
+ 		margin-bottom: 15px;
+ 	}
  }
  .btn.btn-block{
  	color: $brand-dark-blue-alt;
@@ -56,5 +60,8 @@
  	&.blue-alt{
  		background-color: $brand-dark-blue-alt;
  		color: $brand-white;
+ 	}
+ 	&.brown{
+ 		color: $brand-brown-gray;
  	}
  }
