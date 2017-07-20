@@ -1,33 +1,17 @@
 ﻿<pnp:ContentTypes xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB24" Name="COM Base Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl=""></pnp:ContentType>
-  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB2401" Name="COM Location Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
-    <pnp:FieldRefs>
-      <pnp:FieldRef ID="" Name="COM_LocationTagTaxHTField" Hidden="true" />
-      <pnp:FieldRef ID="" Name="COM_Location" Required="true" />
+  <!-- ********      -->
+  <!-- LIST TYPES    -->
+  <!-- ********      -->
+  <pnp:ContentType ID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Name="RSS Feed Item" Description="RSS Feed List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>      
+      <pnp:FieldRef ID="C67C4E45-508E-4A86-B66C-AFC8025CA5CC" Name="COM_RssFeedTitle" />
+      <pnp:FieldRef ID="66A3DA7E-C614-43F1-BF28-0F4E4C234B5E" Name="COM_RssFeedUrl" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900BF38D05532D59D4081F5EE3BF488BB2402" Name="COM Group Page" Description="" Group="1- COM Custom" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x0100D6377753E564418EB0ADD8F331A1B420" Name="User RSS Feed Item" Description="User RSS Feed List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="" Name="COM_GroupTagTaxHTField" Hidden="true" />
-      <pnp:FieldRef ID="" Name="COM_Group" Required="true" />
+      <pnp:FieldRef ID="3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139" Name="COM_RssFeedId" />
+      <pnp:FieldRef ID="AAEB95C5-72DA-44B1-9A4F-AA520152F473" Name="COM_RssFeedUser" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </pnp:ContentTypes>
