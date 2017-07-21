@@ -24,7 +24,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         pnp.sp.search({
             Querytext: '' + contentType + 'AND' + category + ' ' + rootNews + '',
-            SelectProperties: ['RefinableString104', 'RefinableString103', 'RefinableDate00', 'RefinableDate01', 'RefinableDate03', 'RefinableString14', 'RefinableString15', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['RefinableString1', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
@@ -57,7 +57,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let path = " Path:" + "" + rootNews + "";
         pnp.sp.search({
             Querytext: 'Title= "' + pageTitle + '" ' + path + '',
-            SelectProperties: ['RefinableString104', 'RefinableString103', 'RefinableDate00', 'RefinableDate01', 'RefinableDate03', 'RefinableString14', 'RefinableString15', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['RefinableString10', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{

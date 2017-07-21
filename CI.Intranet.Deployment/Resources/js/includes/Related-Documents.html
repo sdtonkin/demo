@@ -1,12 +1,10 @@
-<div ng-show="News" class="trending-stories">
-    <span class="line-title">Related News</span>
-    <div ng-repeat="x in news" class="story">
+<div ng-show="Documents" class="trending-stories">
+    <span class="line-title">Related Documents</span>
+    <div ng-repeat="x in Documents" class="story">
         <div class="reminder-date">
-            <span class="news-type">{{x.category}}</span>
             <a ng-href="{{x.url}}">
                 <h4 class="news-title">{{x.title}}</h4>
             </a>
-            <span class="regular-body numbers">{{x.publishDate}}</span>
         </div>
     </div>
 </div>
