@@ -2,8 +2,7 @@
   <!-- ********    -->
   <!-- TEXT FIELDS -->
   <!-- ********    -->
-  <!-- Toolbar Icon Title -->
-  <Field ID="{C9058825-AAC5-4313-8FE6-E10D23B97733}" Type="Text" Name="COM_ToolbarIconTitle" StaticName="COM_ToolbarIconTitle" DisplayName="Toolbar Icon Title" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Icon Title" />
+  
   
   <!-- ********      -->
   <!-- NUMBER FIELDS -->

@@ -17,7 +17,6 @@
     <pnp:FieldRefs>
       <pnp:FieldRef ID="025BF677-9D82-43AD-8869-68FBF582B7B1" Name="COM_ToolbarUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
-      <pnp:FieldRef ID="C9058825-AAC5-4313-8FE6-E10D23B97733" Name="COM_ToolbarIconTitle" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x01002E2B7E15D07C40C9AC8AA1C568B679D4" Name="Toolbar User Item" Description="Toolbar User Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
