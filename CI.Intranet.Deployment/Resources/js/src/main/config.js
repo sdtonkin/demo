@@ -24,8 +24,10 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com/sites/dev',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
-                rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feeds List'
+                rssFeedsListTitle: 'RSS Feeds',
+                userRssFeedsListTitle: 'User RSS Feeds',
+                userTools: 'User Tools',
+                toolbarTools: 'Toolbar Tools'
             }
         });
     }
@@ -49,8 +51,10 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
-                rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feeds List'
+                rssFeedsListTitle: 'RSS Feeds',
+                userRssFeedsListTitle: 'User RSS Feeds',
+                userTools: 'User Tools',
+                toolbarTools: 'Toolbar Tools'
             }
         });
     }
@@ -73,11 +77,13 @@ else {
             newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
         },
         useCaching: false,
-        rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion1',
+        rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',
-            userRssFeedsListTitle: 'User RSS Feeds List'
+            userRssFeedsListTitle: 'User RSS Feeds',
+            userTools: 'User Tools',
+            toolbarTools: 'Toolbar Tools'
         }
     });
 }

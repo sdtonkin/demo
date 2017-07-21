@@ -1,11 +1,11 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 
-angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
-    function getRssItems(user) {
+angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
+    function getUserToolItems(user) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userRssFeedsListTitle).items
+        web.lists.getByTitle(COM_CONFIG.lists.userTools).items
             .filter("COM_RssFeedUserId eq '" + user + "'")
             .get()
             .then(function(data){

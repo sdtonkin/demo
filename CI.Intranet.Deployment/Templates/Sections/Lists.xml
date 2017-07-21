@@ -1,12 +1,41 @@
 ﻿<pnp:Lists xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:ListInstance Title="RSS Feeds List" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+  <pnp:ListInstance Title="RSS Feeds" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">CNN</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://rss.cnn.com/rss/cnn_topstories.rss</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">BBC</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.bbci.co.uk/news/rss.xml</pnp:DataValue>
+      </pnp:DataRow>      
+    </pnp:DataRows>
   </pnp:ListInstance>
-  <pnp:ListInstance Title="User RSS Feeds List" Description="User RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserRssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+  <pnp:ListInstance Title="User RSS Feeds" Description="User RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserRssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100D6377753E564418EB0ADD8F331A1B420" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>    
+  </pnp:ListInstance>
+  <pnp:ListInstance Title="Toolbar Tools" Description="Toolbar Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/ToolbarTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x0100176552393A3C4355AE16E44D91877268" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">HR Benefits</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconTitle">HR Benefits</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.google.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>           
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Gateway to Service</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconTitle">Gateway to Service</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.bing.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
   </pnp:ListInstance>
 </pnp:Lists>

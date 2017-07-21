@@ -191,6 +191,8 @@
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\tool-bar.js" />
+    <Content Include="Resources\js\src\services\tool-bar-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
@@ -200,14 +202,18 @@
     <Content Include="Templates\4-Pages.xml" />
     <Content Include="Templates\5-SecurityGroups.xml" />
     <Content Include="Templates\6-Search.xml" />
-    <Content Include="Templates\Sections\ContentTypes.xml" />
+    <Content Include="Templates\Sections\ContentTypes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\3-Files.xml" />
     <Content Include="Templates\Sections\Files.xml" />
     <Content Include="Templates\Sections\FilesSearch.xml" />
     <Content Include="Templates\Sections\Lists.xml" />
     <Content Include="Templates\Sections\Pages.xml" />
     <Content Include="Templates\Sections\Security.xml" />
-    <Content Include="Templates\Sections\SiteFields.xml" />
+    <Content Include="Templates\Sections\SiteFields.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
     <None Include="App.config" />
     <None Include="package.json" />
