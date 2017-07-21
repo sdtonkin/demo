@@ -197,8 +197,13 @@
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
+    <Content Include="Resources\Pages\index.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Templates\1-TermSet.xml" />
-    <Content Include="Templates\2-InformationArchitecture.xml" />
+    <Content Include="Templates\2-InformationArchitecture.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\4-Pages.xml" />
     <Content Include="Templates\5-SecurityGroups.xml" />
     <Content Include="Templates\6-Search.xml" />
@@ -215,7 +220,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="package.json" />
     <None Include="packages.config" />
     <None Include="Resources\css\sass\main.scss" />
