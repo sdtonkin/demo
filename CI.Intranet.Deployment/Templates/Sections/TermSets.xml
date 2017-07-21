@@ -1,16 +1,147 @@
 ﻿<pnp:TermGroups xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:TermGroup Name="Root" Description="" SiteCollectionTermGroup="true">
+  <pnp:TermGroup Name="Compassion" Description="" SiteCollectionTermGroup="true">
     <pnp:TermSets>
-      <pnp:TermSet Name="Sample Value" ID="f57f5d93-03b1-4333-a406-4eaff124f771" Description="">
+      <pnp:TermSet Name="Location" ID="88ed9770-2805-4c59-be2e-d8775b5aedb5" Description="">
         <pnp:Terms>
-          <pnp:Term Name="Sample Value" ID="6b513230-abff-4039-a41a-991d85925061" SourceTermId="6b513230-abff-4039-a41a-991d85925061">
+
+          <pnp:Term Name="US" ID="6c10f9e1-85f7-4b52-852e-ecce28be4f5f" SourceTermId="6c10f9e1-85f7-4b52-852e-ecce28be4f5f">
+		  </pnp:Term>
+
+		  <pnp:Term Name="Latin America and the Caribbean" ID="a35e0dec-6bc1-444a-956e-0b0315bb68ba" SourceTermId="a35e0dec-6bc1-444a-956e-0b0315bb68ba">
             <pnp:Terms>
-              <pnp:Term Name="Sample Value" ID="083ffdee-4c65-45b2-be74-431831cd2509" CustomSortOrder="1" SourceTermId="083ffdee-4c65-45b2-be74-431831cd2509" />
-              <pnp:Term Name="Sample Value" ID="a0958fc3-d74f-4503-bbba-33911000e900" CustomSortOrder="2" SourceTermId="a0958fc3-d74f-4503-bbba-33911000e900" />
+              <pnp:Term Name="Dominican Republic" ID="6bb9c4ee-9a85-46d0-b746-b9a3168ad45c" CustomSortOrder="1" SourceTermId="6bb9c4ee-9a85-46d0-b746-b9a3168ad45c" />
+              <pnp:Term Name="El Salvador" ID="4d13aedf-7040-4d6b-abb5-eb8372f703ef" CustomSortOrder="2" SourceTermId="4d13aedf-7040-4d6b-abb5-eb8372f703ef" />
+			  <pnp:Term Name="Guatemala" ID="b8ac7364-9422-40fc-8dab-87acc593369a" CustomSortOrder="3" SourceTermId="b8ac7364-9422-40fc-8dab-87acc593369a" />
+			  <pnp:Term Name="Haiti" ID="92c36466-04b7-40b0-bf74-dc42df20fc85" CustomSortOrder="4" SourceTermId="92c36466-04b7-40b0-bf74-dc42df20fc85" />
+			  <pnp:Term Name="Honduras" ID="360788a0-2e52-443c-af1c-bb83a0e6521d" CustomSortOrder="5" SourceTermId="360788a0-2e52-443c-af1c-bb83a0e6521d" />
+			  <pnp:Term Name="Mexico" ID="6d8907e2-e78f-4176-9857-fd9bb99f4e49" CustomSortOrder="6" SourceTermId="6d8907e2-e78f-4176-9857-fd9bb99f4e49" />
+			  <pnp:Term Name="Nicaragua" ID="10e32d23-9e90-44ec-88b9-5fb58dd786b6" CustomSortOrder="7" SourceTermId="10e32d23-9e90-44ec-88b9-5fb58dd786b6" />
+			  <pnp:Term Name="Bolivia" ID="3e68a25d-920d-4667-893e-5f900fa3861c" CustomSortOrder="8" SourceTermId="3e68a25d-920d-4667-893e-5f900fa3861c" />
+			  <pnp:Term Name="Brazil" ID="0b3a4421-d4db-4b81-b93b-081d54eeecd1" CustomSortOrder="9" SourceTermId="0b3a4421-d4db-4b81-b93b-081d54eeecd1" />
+  			  <pnp:Term Name="Columbia" ID="e5379d86-df13-40c0-a9cb-2df40a6f41f9" CustomSortOrder="10" SourceTermId="e5379d86-df13-40c0-a9cb-2df40a6f41f9" />
+			  <pnp:Term Name="Ecuador" ID="c590742d-3b51-4482-a014-5abdbb92bc21" CustomSortOrder="11" SourceTermId="c590742d-3b51-4482-a014-5abdbb92bc21" />
+			  <pnp:Term Name="Peru" ID="9ef65b68-af6e-4806-aaee-664daa51c071" CustomSortOrder="12" SourceTermId="9ef65b68-af6e-4806-aaee-664daa51c071" />
+            </pnp:Terms>
+          </pnp:Term>
+
+		  <pnp:Term Name="Asia" ID="75796352-87f6-45a0-9afa-1ba135b83756" SourceTermId="75796352-87f6-45a0-9afa-1ba135b83756">
+            <pnp:Terms>
+              <pnp:Term Name="Bangladesh" ID="6a021245-1ba5-408c-9fcf-96f683fff256" CustomSortOrder="1" SourceTermId="6a021245-1ba5-408c-9fcf-96f683fff256" />
+              <pnp:Term Name="Indonesia" ID="db77d130-a5ef-418b-bc92-f1c1f7365d22" CustomSortOrder="2" SourceTermId="db77d130-a5ef-418b-bc92-f1c1f7365d22" />
+			  <pnp:Term Name="Philippines" ID="3eee3b20-b891-444b-8214-dc9cf5f4650d" CustomSortOrder="3" SourceTermId="3eee3b20-b891-444b-8214-dc9cf5f4650d" />
+			  <pnp:Term Name="Sri Lanka" ID="a3f39a1a-bb08-482c-a144-d5518ba9b3c9" CustomSortOrder="4" SourceTermId="a3f39a1a-bb08-482c-a144-d5518ba9b3c9" />
+			  <pnp:Term Name="Thailand" ID="fa0f8835-efef-4eb7-a5d4-9412012479a4" CustomSortOrder="5" SourceTermId="fa0f8835-efef-4eb7-a5d4-9412012479a4" />
+            </pnp:Terms>
+          </pnp:Term>
+
+		  <pnp:Term Name="Africa" ID="1fe50124-9b02-44c8-90b0-adefb5e8a0bb" SourceTermId="1fe50124-9b02-44c8-90b0-adefb5e8a0bb">
+            <pnp:Terms>
+              <pnp:Term Name="Burkina Faso" ID="ad33d966-004c-4dd4-aca5-1fb202f5f35e" CustomSortOrder="1" SourceTermId="ad33d966-004c-4dd4-aca5-1fb202f5f35e" />
+              <pnp:Term Name="Ethiopia" ID="a391be93-dfc0-46e6-bd7e-ae949565a7de" CustomSortOrder="2" SourceTermId="a391be93-dfc0-46e6-bd7e-ae949565a7de" />
+			  <pnp:Term Name="Ghana" ID="a39aefe2-f6f7-40b8-a2bf-b755393c440a" CustomSortOrder="3" SourceTermId="a39aefe2-f6f7-40b8-a2bf-b755393c440a" />
+			  <pnp:Term Name="Kenya" ID="282ecd79-2c45-42c2-b133-40b8c60f31bf" CustomSortOrder="4" SourceTermId="282ecd79-2c45-42c2-b133-40b8c60f31bf" />
+			  <pnp:Term Name="Rwanda" ID="a51db8cd-5ae6-4791-8237-f3ed6243d196" CustomSortOrder="5" SourceTermId="a51db8cd-5ae6-4791-8237-f3ed6243d196" />
+  			  <pnp:Term Name="Tanzania" ID="b836fb2c-7fb9-45df-b74d-b8a1b3556a05" CustomSortOrder="6" SourceTermId="b836fb2c-7fb9-45df-b74d-b8a1b3556a05" />
+			  <pnp:Term Name="Togo" ID="5ccfc4d4-faa0-48bf-b8f1-2561a48fc325" CustomSortOrder="7" SourceTermId="5ccfc4d4-faa0-48bf-b8f1-2561a48fc325" />
+  			  <pnp:Term Name="Uganda" ID="303429b2-3e64-49ac-8f72-97e40f783af0" CustomSortOrder="8" SourceTermId="303429b2-3e64-49ac-8f72-97e40f783af0" />
             </pnp:Terms>
           </pnp:Term>
         </pnp:Terms>
       </pnp:TermSet>
+
+	  <pnp:TermSet Name="News Type" ID="b1e0d71d-4c58-4860-bacd-5189e63002be" Description="">
+		<pnp:Terms>
+			<pnp:Term Name="All News" ID="9c66ed9e-99dd-40b0-b4c1-ced377d82823" SourceTermId="9c66ed9e-99dd-40b0-b4c1-ced377d82823" />
+			<pnp:Term Name="Global" ID="b10c31d2-18f2-4e63-bc30-224a8cfcd66f" SourceTermId="b10c31d2-18f2-4e63-bc30-224a8cfcd66f" />
+			<pnp:Term Name="Global Ministry Center" ID="3fa59ec0-7d63-4526-bf86-78b4557d34a2" SourceTermId="3fa59ec0-7d63-4526-bf86-78b4557d34a2" />
+			<pnp:Term Name="Country Office" ID="0341fa6a-ab9c-42d4-b4df-4d2960bad552" SourceTermId="0341fa6a-ab9c-42d4-b4df-4d2960bad552" />
+			<pnp:Term Name="Crisis Bulletins" ID="cae33133-c16b-4615-a79e-d26ca0d6f860" SourceTermId="cae33133-c16b-4615-a79e-d26ca0d6f860" />
+  			<pnp:Term Name="Global Partner" ID="e5da3c54-e954-45cf-8168-b6a15a0f1c47" SourceTermId="e5da3c54-e954-45cf-8168-b6a15a0f1c47" />
+		</pnp:Terms>
+	  </pnp:TermSet>
+
+	  <pnp:TermSet Name="Event Type" ID="90087864-74f2-425a-ad5d-2d288990a066" Description="">
+		<pnp:Terms>
+			<pnp:Term Name="Global" ID="41ed8d9e-df36-477b-be2c-77388c50c916" SourceTermId="41ed8d9e-df36-477b-be2c-77388c50c916" />
+			<pnp:Term Name="Global Ministry Center" ID="e98ae41d-ce7b-4330-a9b3-991bbf1ddfff" SourceTermId="e98ae41d-ce7b-4330-a9b3-991bbf1ddfff" />
+			<pnp:Term Name="Chapel" ID="f599e66f-0b1d-4e40-86f7-298a0215086d" SourceTermId="f599e66f-0b1d-4e40-86f7-298a0215086d" />
+			<pnp:Term Name="Volunteering" ID="8e85f41c-3106-4f6e-a940-2cda3ea959dc" SourceTermId="8e85f41c-3106-4f6e-a940-2cda3ea959dc" />
+  			<pnp:Term Name="Paid Holidays" ID="b28a3853-abb9-4667-bea7-6233e76c44fe" SourceTermId="b28a3853-abb9-4667-bea7-6233e76c44fe" />
+		</pnp:Terms>
+	  </pnp:TermSet>
+
+	  <pnp:TermSet Name="Document Type" ID="5f5f761b-f8eb-4c29-a535-f49f764e3f0a" Description="">
+		<pnp:Terms>
+			<pnp:Term Name="Policy" ID="b900f371-1fa2-4577-bb8b-908de022196e" SourceTermId="b900f371-1fa2-4577-bb8b-908de022196e" />
+			<pnp:Term Name="Standard" ID="a56496a8-9760-4c5a-b970-8e510deb0f54" SourceTermId="a56496a8-9760-4c5a-b970-8e510deb0f54" />
+			<pnp:Term Name="Manual" ID="088391bf-0378-43b2-a63b-00515139f6d5" SourceTermId="088391bf-0378-43b2-a63b-00515139f6d5" />
+			<pnp:Term Name="Guidelines" ID="3fe3b691-a630-4b0e-a199-b6220babb9c5" SourceTermId="3fe3b691-a630-4b0e-a199-b6220babb9c5" />
+  			<pnp:Term Name="Report" ID="0d223d3d-bbbe-4694-8e77-78b390a56944" SourceTermId="0d223d3d-bbbe-4694-8e77-78b390a56944" />
+			<pnp:Term Name="Form" ID="c994701d-471c-440b-bac1-29e1e86c2fd7" SourceTermId="c994701d-471c-440b-bac1-29e1e86c2fd7" />
+			<pnp:Term Name="Template" ID="39abb4d7-bb9a-4b45-a2fd-22c7dcb1bf60" SourceTermId="39abb4d7-bb9a-4b45-a2fd-22c7dcb1bf60" />
+			<pnp:Term Name="Toolkit" ID="40c89184-b37a-4056-95aa-2f38d7dabeb2" SourceTermId="40c89184-b37a-4056-95aa-2f38d7dabeb2" />
+			<pnp:Term Name="Research Paper" ID="43a0ca9e-40ec-49c7-b0dc-4c32fcff6573" SourceTermId="43a0ca9e-40ec-49c7-b0dc-4c32fcff6573" />
+  			<pnp:Term Name="Whitepaper" ID="36e2a3c3-af16-4c2b-97bf-d0f956a0b917" SourceTermId="36e2a3c3-af16-4c2b-97bf-d0f956a0b917" />
+			<pnp:Term Name="Study" ID="dbb2f202-1926-448a-8113-0c5d1abc01ec" SourceTermId="dbb2f202-1926-448a-8113-0c5d1abc01ec" />
+			<pnp:Term Name="Global Content" ID="131b7a80-7124-4ae3-a019-1dfbb9d2a142" SourceTermId="131b7a80-7124-4ae3-a019-1dfbb9d2a142" />
+			<pnp:Term Name="Glossary" ID="82378f32-128a-4abc-b88d-6a2153b155c0" SourceTermId="82378f32-128a-4abc-b88d-6a2153b155c0" />
+			<pnp:Term Name="New Hire Resource" ID="8c96d2d7-9ea0-4226-bdea-e8c65b7398c7" SourceTermId="8c96d2d7-9ea0-4226-bdea-e8c65b7398c7" />
+		</pnp:Terms>
+	  </pnp:TermSet>
+
+	  <pnp:TermSet Name="Audience" ID="e7ce4a36-a9ca-486a-97c1-b9a1e3d21138" Description="">
+		<pnp:Terms>
+			<pnp:Term Name="Global" ID="0b719dab-a074-41d0-a991-fa4b4ed923f1" SourceTermId="0b719dab-a074-41d0-a991-fa4b4ed923f1" />
+			<pnp:Term Name="Country Office" ID="fd6b390d-4d8f-466f-a066-e0aa268321dd" SourceTermId="fd6b390d-4d8f-466f-a066-e0aa268321dd" />
+			<pnp:Term Name="US" ID="034ad9b9-4de4-4862-9394-1da790984360" SourceTermId="034ad9b9-4de4-4862-9394-1da790984360" />
+		</pnp:Terms>
+	  </pnp:TermSet>
+
+	  <pnp:TermSet Name="Employee Life Topic" ID="ab34a76b-0cf8-441f-af98-677c3dd2961a" Description="">
+		<pnp:Terms>
+			<pnp:Term Name="Benefits" ID="6889aee1-93a3-4768-9f86-c35b3d990d1d" SourceTermId="6889aee1-93a3-4768-9f86-c35b3d990d1d" />
+			<pnp:Term Name="Employee Wellness" ID="c71d6f96-330d-421c-a05a-e5771533475c" SourceTermId="c71d6f96-330d-421c-a05a-e5771533475c" />
+			<pnp:Term Name="Work-Life Experience" ID="07b2646b-f159-48c2-a0c1-ef51a2134b65" SourceTermId="07b2646b-f159-48c2-a0c1-ef51a2134b65" />
+			<pnp:Term Name="Performance and Recognition" ID="ccc102cf-e483-48c1-bb22-db2ba431c1fb" SourceTermId="ccc102cf-e483-48c1-bb22-db2ba431c1fb" />
+  			<pnp:Term Name="Professional Development" ID="a6cf1da2-59b1-436f-b3df-da82ce4f8f15" SourceTermId="988d7d94-8c25-44c4-8c36-07f4544a1145" />
+		</pnp:Terms>
+	  </pnp:TermSet>
+
+	  <pnp:TermSet Name="Group" ID="" Description="e93cbada-0e8b-4641-8d54-1a7f87bf15de">
+		<pnp:Terms>
+		  <pnp:Term Name="Global Leadership Office" ID="c40420b9-bb7b-4aa0-8400-07e42e189b42" SourceTermId="c40420b9-bb7b-4aa0-8400-07e42e189b42">
+            <pnp:Terms>
+              <pnp:Term Name="Global Corporate Communications" ID="9ddaac42-a078-4c03-abe3-0aacf995faba" CustomSortOrder="1" SourceTermId="9ddaac42-a078-4c03-abe3-0aacf995faba" />
+              <pnp:Term Name="Organizational Design and Development" ID="ff199085-d245-45c6-abe5-c49b6edd6c2f" CustomSortOrder="2" SourceTermId="ff199085-d245-45c6-abe5-c49b6edd6c2f" />
+            </pnp:Terms>
+          </pnp:Term>
+		  <pnp:Term Name="General Counsel Office" ID="720d6771-be37-4596-9db5-a12adcafb44a" SourceTermId="">
+            <pnp:Terms>
+              <pnp:Term Name="Legal Services" ID="4f8b5a0f-ec6d-45c4-a01a-99d8db21ae83" CustomSortOrder="1" SourceTermId="4f8b5a0f-ec6d-45c4-a01a-99d8db21ae83" />
+              <pnp:Term Name="Office of Risk Management" ID="ff5ed9b9-0ae6-4d69-8d81-bcf86b875698" CustomSortOrder="2" SourceTermId="ff5ed9b9-0ae6-4d69-8d81-bcf86b875698" />
+			  <pnp:Term Name="Global Board Engagement" ID="1f523550-52e1-439b-b57d-7c6b987748ef" CustomSortOrder="3" SourceTermId="1f523550-52e1-439b-b57d-7c6b987748ef" />
+            </pnp:Terms>
+          </pnp:Term>
+		  <pnp:Term Name="General Program" ID="029b7054-cdbe-4e3a-9e72-4e04d2a20563" SourceTermId="029b7054-cdbe-4e3a-9e72-4e04d2a20563">
+		  </pnp:Term>
+		  <pnp:Term Name="Global Marketing and Engagement" ID="61deacf1-5460-4dc3-9231-e23aee02d90d" SourceTermId="61deacf1-5460-4dc3-9231-e23aee02d90d">
+            <pnp:Terms>
+              <pnp:Term Name="Global Partner Alliance" ID="efa65b96-492f-424e-a47a-a14a5a73af11" CustomSortOrder="1" SourceTermId="efa65b96-492f-424e-a47a-a14a5a73af11" />
+            </pnp:Terms>
+          </pnp:Term>
+		  <pnp:Term Name="Global Support Services" ID="04d6e32c-fd64-4661-a0d0-44bf4a02c2a3" SourceTermId="04d6e32c-fd64-4661-a0d0-44bf4a02c2a3">
+            <pnp:Terms>
+              <pnp:Term Name="HR" ID="2bf05ac8-bafb-48d5-9c2e-37c65bd0aa5f" CustomSortOrder="1" SourceTermId="2bf05ac8-bafb-48d5-9c2e-37c65bd0aa5f" />
+              <pnp:Term Name="IT" ID="9dd13375-2b28-45d9-b444-73a0b068a862" CustomSortOrder="2" SourceTermId="9dd13375-2b28-45d9-b444-73a0b068a862" />
+			  <pnp:Term Name="Finance" ID="44046bfb-59e1-4f78-9aef-f7318c7d76f0" CustomSortOrder="3" SourceTermId="44046bfb-59e1-4f78-9aef-f7318c7d76f0" />
+              <pnp:Term Name="Building Operations and Services" ID="7355c664-88c3-4899-b2cb-e56b18c8412c" CustomSortOrder="4" SourceTermId="7355c664-88c3-4899-b2cb-e56b18c8412c" />
+			  <pnp:Term Name="Source to Settle" ID="c9006ab8-b9bc-4097-bc43-8399e7ca85b6" CustomSortOrder="5" SourceTermId="c9006ab8-b9bc-4097-bc43-8399e7ca85b6" />
+			  <pnp:Term Name="Safety and Security" ID="793c2792-fe89-4e53-be6d-a3f421e25215" CustomSortOrder="6" SourceTermId="793c2792-fe89-4e53-be6d-a3f421e25215" />
+            </pnp:Terms>
+          </pnp:Term>
+		</pnp:Terms>
+	  </pnp:TermSet>
+
     </pnp:TermSets>
   </pnp:TermGroup>
 </pnp:TermGroups>
