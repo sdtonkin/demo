@@ -221,24 +221,22 @@
    <!-- Contact -->
 	<Field ID="{a14da347-da53-4ca0-9e47-baf6527b1c5d}" Type="User" Name="COM_Contact" StaticName="COM_Contact" DisplayName="Key Contact" List="UserInfo" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
 
-   <!-- BOOLEAN FIELDS -->
-   <!-- Featured -->
-	<Field ID="{c99af594-0247-40df-9b98-bb683399bcad}" Type="Boolean" Name="COM_IsFeatured" StaticName="COM_IsFeatured" DisplayName="Featured" Required="FALSE" Hidden="False" Group="1 - COM Columns" Description="" 
-		<Default>FALSE</Default>
-	</Field>
-   <!-- External Link -->
-	<Field ID="{7f3b3734-1b56-46fe-b9b9-15f6a9d74506}" Type="Boolean" Name="COM_ExternalLink" StaticName="COM_ExternalLink" DisplayName="External Link" Required="FALSE" Hidden="False" Group="1 - COM Columns" Description="" 
-		<Default>FALSE</Default>
-	</Field>
-
-   <!-- OTHER FIELDS -->
-   <!-- Icon -->
-   	<Field ID="{18162508-481e-48f3-a419-ceca19443440}" Type="URL" Name="COM_Icon" StaticName="COM_Icon" DisplayName="Icon" Format="Image" Required="FALSE" Hidden="False" Group="1 - COM Columns" Description="" />
-   <!-- Event Start Date -->
-	<Field ID="{704813dd-8bce-4fe0-b1c1-1d6eae449ecb}" Type="Calculated" Name="COM_EventDate" StaticName="COM_EventDate" DisplayName="Event Start Date" ResultType="DateTime" Format="DateOnly" Required="FALSE" Hidden="True" Group="1 - COM Columns" Description="" JSLink="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js|~site/Scripts/Fields.JSLink.js">
-		<FieldRefs>
-			<FieldRef Name="StartDate" />
-		</FieldRefs>
-		<Formula>=[StartDate]+[1]</Formula>
-	</Field>
+  <!-- ****************** -->
+  <!-- USEER/GROUP FIELDS -->
+  <!-- ****************** -->
+  <!-- RSS Feed User -->
+  <Field ID="{AAEB95C5-72DA-44B1-9A4F-AA520152F473}" Type="User" Name="COM_RssFeedUser" StaticName="COM_RssFeedUser" DisplayName="RSS Feed User" List="UserInfo" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="True" Hidden="False" Group="1 - Compassion Intranet" />
+  <!-- Toolbar User -->
+  <Field ID="{D835A9E1-E84D-47A6-94A3-8EF7B448F68F}" Type="User" Name="COM_ToolbarUser" StaticName="COM_ToolbarUser" DisplayName="Toolbar User" List="UserInfo" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="True" Hidden="False" Group="1 - Compassion Intranet" />
+  
+  <!-- ********   -->
+  <!-- URL FIELDS -->
+  <!-- ********   -->
+  <!-- RSS Feed URL -->
+  <Field ID="{66A3DA7E-C614-43F1-BF28-0F4E4C234B5E}" Type="URL" Name="COM_RssFeedUrl" StaticName="COM_RssFeedUrl" DisplayName="RSS Feed URL" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed URL" />
+  <!-- Toolbar Icon URL -->
+  <Field ID="{32EA0664-97B5-4E5E-8F05-4FCEB25228B8}" Type="URL" Name="COM_ToolbarIconUrl" StaticName="COM_ToolbarIconUrl" DisplayName="Toolbar Icon Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Icon Url" />
+  <!-- Toolbar URL -->
+  <Field ID="{025BF677-9D82-43AD-8869-68FBF582B7B1}" Type="URL" Name="COM_ToolbarUrl" StaticName="COM_ToolbarUrl" DisplayName="Toolbar Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Url" />
+  
 </pnp:SiteFields>
