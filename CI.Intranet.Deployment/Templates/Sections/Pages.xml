@@ -7,8 +7,10 @@
       <pnp:Property Key="PublishingPageContent" Value="" />
       <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_Landing.aspx, Landing Page Layout" />
     </pnp:Properties>
+    <!--
     <pnp:WebParts>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Clinical-Landing/MyTasks-ScriptEditor.xml"/>
     </pnp:WebParts>
+    -->
   </pnp:File>
 </pnp:Files>
