@@ -219,7 +219,7 @@
 
    <!-- USER/GROUP FIELDS -->
    <!-- Contact -->
-	<Field ID="{a14da347-da53-4ca0-9e47-baf6527b1c5d}" Type="User" Name="COM_Contact" StaticName="COM_Contact" DisplayName="Key Contact" List="UserInfo" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
+	<Field ID="{a14da347-da53-4ca0-9e47-baf6527b1c5d}" Type="User" Name="COM_Contact" StaticName="COM_Contact" DisplayName="Key Contact" List="UserInfo" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
 
   <!-- ****************** -->
   <!-- USEER/GROUP FIELDS -->
