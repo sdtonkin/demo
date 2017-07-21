@@ -1,8 +1,8 @@
 ﻿<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
 	<!--- MMD FIELDS -->	
     <!--- Location -->
-  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="COM_LocationTaxHTField" StaticName="COM_LocationTaxHTField" Name="COM_LocationTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
-  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="COM_Location" StaticName="COM_Location" DisplayName="Location" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+  <Field ID="{463E12AB-F2B3-4D86-9EF9-EBCFE6215673}" Type="Note" DisplayName="COM_LocationTaxHTField" StaticName="COM_LocationTaxHTField" Name="COM_LocationTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{A0107484-A768-4873-9942-E33F818A8701}" Type="TaxonomyFieldType" Name="COM_Location" StaticName="COM_Location" DisplayName="Location" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
       <ArrayOfProperty>
         <Property>
@@ -15,7 +15,7 @@
         </Property>
         <Property>
           <Name>TextField</Name>
-          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">463E12AB-F2B3-4D86-9EF9-EBCFE6215673</Value>
         </Property>
         <Property>
           <Name>IsPathRendered</Name>
@@ -30,8 +30,8 @@
   </Field>
 
       <!--- Group -->
-  <Field ID="{07850427-4520-47cc-aac8-a5fad92a097f}" Type="Note" DisplayName="COM_GroupTaxHTField" StaticName="COM_GroupTaxHTField" Name="COM_GroupTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
-  <Field ID="{d36e9da4-40d2-4e24-9d35-b3f15c30e45b}" Type="TaxonomyFieldType" Name="COM_Group" StaticName="COM_Group" DisplayName="Group" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+  <Field ID="{69318630-8B96-43F4-961F-B0B5CDFE4917}" Type="Note" DisplayName="COM_GroupTaxHTField" StaticName="COM_GroupTaxHTField" Name="COM_GroupTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{F1F1F3F0-639F-4240-9E77-9164AA7EBDF4}" Type="TaxonomyFieldType" Name="COM_Group" StaticName="COM_Group" DisplayName="Group" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
       <ArrayOfProperty>
         <Property>
@@ -44,7 +44,7 @@
         </Property>
         <Property>
           <Name>TextField</Name>
-          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">07850427-4520-47cc-aac8-a5fad92a097f</Value>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">69318630-8B96-43F4-961F-B0B5CDFE4917</Value>
         </Property>
         <Property>
           <Name>IsPathRendered</Name>
@@ -59,8 +59,8 @@
   </Field>
 
     <!--- News Type -->
-  <Field ID="{e28444da-0f02-4b2d-9b69-fbce9115b53e}" Type="Note" DisplayName="COM_NewsTypeTaxHTField" StaticName="COM_NewsTypeTaxHTField" Name="COM_NewsTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
-  <Field ID="{9c56b0ca-3fea-4fd7-bab3-115dafe61958}" Type="TaxonomyFieldType" Name="COM_NewsType" StaticName="COM_NewsType" DisplayName="News Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+  <Field ID="{0830AD71-1EBF-40E3-BE60-3DD3A7BD9B54}" Type="Note" DisplayName="COM_NewsTypeTaxHTField" StaticName="COM_NewsTypeTaxHTField" Name="COM_NewsTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{60677F2D-9B5C-4278-9352-87CFEE8A28CA}" Type="TaxonomyFieldType" Name="COM_NewsType" StaticName="COM_NewsType" DisplayName="News Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
       <ArrayOfProperty>
         <Property>
@@ -73,7 +73,7 @@
         </Property>
         <Property>
           <Name>TextField</Name>
-          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">e28444da-0f02-4b2d-9b69-fbce9115b53e</Value>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">0830AD71-1EBF-40E3-BE60-3DD3A7BD9B54</Value>
         </Property>
         <Property>
           <Name>IsPathRendered</Name>
@@ -88,8 +88,8 @@
   </Field>
 
     <!--- Event Type -->
-  <Field ID="{6f05d876-cc23-498a-b0fa-ee1eda469dbd}" Type="Note" DisplayName="COM_EventTypeTaxHTField" StaticName="COM_EventTypeTaxHTField" Name="COM_EventTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
-  <Field ID="{245e8d01-d6e7-41cc-aec9-0473985467ff}" Type="TaxonomyFieldType" Name="COM_EventType" StaticName="COM_EventType" DisplayName="Event Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+  <Field ID="{938CA8D1-8B4B-466F-98DA-F4D2B4BF4447}" Type="Note" DisplayName="COM_EventTypeTaxHTField" StaticName="COM_EventTypeTaxHTField" Name="COM_EventTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{BD3061C5-522B-4CBF-8685-1917472429DB}" Type="TaxonomyFieldType" Name="COM_EventType" StaticName="COM_EventType" DisplayName="Event Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
       <ArrayOfProperty>
         <Property>
@@ -102,7 +102,7 @@
         </Property>
         <Property>
           <Name>TextField</Name>
-          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">6f05d876-cc23-498a-b0fa-ee1eda469dbd</Value>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">938CA8D1-8B4B-466F-98DA-F4D2B4BF4447</Value>
         </Property>
         <Property>
           <Name>IsPathRendered</Name>
@@ -117,8 +117,8 @@
   </Field>
 
     <!--- Document Type -->
-  <Field ID="{f3475538-62cb-4502-bf4d-2816bf1a29bc}" Type="Note" DisplayName="COM_DocumentTypeTaxHTField" StaticName="COM_DocumentTypeTaxHTField" Name="COM_DocumentTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
-  <Field ID="{9ccfd12c-f152-45ee-a9ed-b57c89d3ae57}" Type="TaxonomyFieldType" Name="COM_DocumentType" StaticName="COM_DocumentType" DisplayName="Document Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+  <Field ID="{AE2AAB3C-8DD2-4487-A455-EE73C9E56005}" Type="Note" DisplayName="COM_DocumentTypeTaxHTField" StaticName="COM_DocumentTypeTaxHTField" Name="COM_DocumentTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{A9C76321-EC4B-4253-8C79-BA6F12F4A6C5}" Type="TaxonomyFieldType" Name="COM_DocumentType" StaticName="COM_DocumentType" DisplayName="Document Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
       <ArrayOfProperty>
         <Property>
@@ -131,7 +131,7 @@
         </Property>
         <Property>
           <Name>TextField</Name>
-          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">f3475538-62cb-4502-bf4d-2816bf1a29bc</Value>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">AE2AAB3C-8DD2-4487-A455-EE73C9E56005</Value>
         </Property>
         <Property>
           <Name>IsPathRendered</Name>

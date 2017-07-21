@@ -11,7 +11,9 @@ require("../main/config.js");
 
 // Services
 require('../services/rss-feed-service.js');
+require('../services/tool-bar-service.js');
 
 // Components
 require('../components/my-rss-feeds.js');
+require('../components/my-tool-bar.js');
 
