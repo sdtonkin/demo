@@ -1,16 +1,225 @@
 ﻿<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <!-- ********    -->
-  <!-- TEXT FIELDS -->
-  <!-- ********    -->
-  
-  
-  <!-- ********      -->
-  <!-- NUMBER FIELDS -->
-  <!-- ********      -->
-  <!-- User RSS Feed Id -->
-  <Field ID="{3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139}" Type="Integer" Name="COM_RssFeedId" StaticName="COM_RssFeedId" DisplayName="RSS Feed Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
-  <!--Toolbar User Id -->
-  <Field ID="{BB46C99E-9E55-41D9-9143-B3B98FAEEFF8}" Type="Integer" Name="COM_UserToolbarId" StaticName="COM_UserToolbarId" DisplayName="Toolbar User Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
+	<!--- MMD FIELDS -->	
+    <!--- Location -->
+  <Field ID="{b9c11a05-ddb4-42ec-ace5-9703fe875ffa}" Type="Note" DisplayName="COM_LocationTaxHTField" StaticName="COM_LocationTaxHTField" Name="COM_LocationTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{22797d97-ce09-4a61-ac9f-ec7567fbde66}" Type="TaxonomyFieldType" Name="COM_Location" StaticName="COM_Location" DisplayName="Location" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Compassion:Location}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">b9c11a05-ddb4-42ec-ace5-9703fe875ffa</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+      <!--- Group -->
+  <Field ID="{07850427-4520-47cc-aac8-a5fad92a097f}" Type="Note" DisplayName="COM_GroupTaxHTField" StaticName="COM_GroupTaxHTField" Name="COM_GroupTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{d36e9da4-40d2-4e24-9d35-b3f15c30e45b}" Type="TaxonomyFieldType" Name="COM_Group" StaticName="COM_Group" DisplayName="Group" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Compassion:Group}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">07850427-4520-47cc-aac8-a5fad92a097f</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- News Type -->
+  <Field ID="{e28444da-0f02-4b2d-9b69-fbce9115b53e}" Type="Note" DisplayName="COM_NewsTypeTaxHTField" StaticName="COM_NewsTypeTaxHTField" Name="COM_NewsTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{9c56b0ca-3fea-4fd7-bab3-115dafe61958}" Type="TaxonomyFieldType" Name="COM_NewsType" StaticName="COM_NewsType" DisplayName="News Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Compassion:News Type}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">e28444da-0f02-4b2d-9b69-fbce9115b53e</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- Event Type -->
+  <Field ID="{6f05d876-cc23-498a-b0fa-ee1eda469dbd}" Type="Note" DisplayName="COM_EventTypeTaxHTField" StaticName="COM_EventTypeTaxHTField" Name="COM_EventTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{245e8d01-d6e7-41cc-aec9-0473985467ff}" Type="TaxonomyFieldType" Name="COM_EventType" StaticName="COM_EventType" DisplayName="Event Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Compassion:Event Type}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">6f05d876-cc23-498a-b0fa-ee1eda469dbd</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+    <!--- Document Type -->
+  <Field ID="{f3475538-62cb-4502-bf4d-2816bf1a29bc}" Type="Note" DisplayName="COM_DocumentTypeTaxHTField" StaticName="COM_DocumentTypeTaxHTField" Name="COM_DocumentTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+  <Field ID="{9ccfd12c-f152-45ee-a9ed-b57c89d3ae57}" Type="TaxonomyFieldType" Name="COM_DocumentType" StaticName="COM_DocumentType" DisplayName="Document Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>SspId</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+        </Property>
+        <Property>
+          <Name>TermSetId</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Compassion:Document Type}</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">f3475538-62cb-4502-bf4d-2816bf1a29bc</Value>
+        </Property>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>IsKeyword</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+   <!-- TEXT FIELDS -->
+   <!-- Contact Title -->
+	<Field ID="{49bf0476-237b-4505-b01a-4acb6ddda3e1}" Type="Text" Name="COM_ContactTitle" StaticName="COM_ContactTitle" DisplayName="Contact Job Title" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Annoucement Text -->
+	<Field ID="{f3c81eaa-d29a-4a0c-91b6-765150ee1655}" Type="Text" Name="COM_AnnoucementText" StaticName="COM_AnnoucementText" DisplayName="Annoucement Text" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Yammer ID -->
+	<Field ID="{e8bb0dba-efca-4a9a-abd7-919bf94629cd}" Type="Text" Name="COM_YammerID" StaticName="COM_YammerID" DisplayName="Yammer ID" Required="FALSE" Hidden="TRUE" Group="1 - COM Columns" Description="" />
+
+   <!-- MULTI LINE FIELDS -->
+   <!-- News Abstract -->
+	<Field ID="{8f3b564d-c0ad-44ac-b3a4-567d8cc55617}" Type="Note" Name="COM_NewsAbstract" StaticName="COM_NewsAbstract" DisplayName="News Abstract" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Travel Info -->
+	<Field ID="{c1b69e89-f3f8-4fbb-b3a1-3bbf37cd5d0b}" Type="Note" Name="COM_TravelInfo" StaticName="COM_TravelInfo" DisplayName="Travel Info" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- You Should Know -->
+	<Field ID="{fdcee94f-efdb-4624-ae9e-859b9ab3cade}" Type="Note" Name="COM_YouShouldKnow" StaticName="COM_YouShouldKnow" DisplayName="You Should Know" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Contact Info -->
+	<Field ID="{112916fa-18af-433c-9bbf-efe99f6ed6e9}" Type="Note" Name="COM_ContactInfo" StaticName="COM_ContactInfo" DisplayName="Contact Info" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Key Metrics -->
+	<Field ID="{532583da-c37e-4bb7-98cc-4922420636ff}" Type="Note" Name="COM_KeyMetrics" StaticName="COM_KeyMetrics" DisplayName="Key Metrics" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Key Initiatives -->
+	<Field ID="{e9bfe27f-f320-480f-bf9d-c3c2e9e6d003}" Type="Note" Name="COM_KeyInitiative" StaticName="COM_KeyInitiative" DisplayName="Key Initiatives" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Story Submit Message -->
+	<Field ID="{5a82cfb4-6f1d-47f8-829f-a9c2d4187505}" Type="Note" Name="COM_SubmitMessage" StaticName="COM_SubmitMessage" DisplayName="Story Submit Message" NumLines="6" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Photo Caption -->
+	<Field ID="{fc3f1b87-ac13-437c-86f4-58c4a144ae4a}" Type="Note" Name="COM_PhotoCaption" StaticName="COM_PhotoCaption" DisplayName="Photo Caption" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+   <!-- Gratitude Description -->
+	<Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Note" Name="COM_ GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+
+   <!-- NUMBER FIELDS -->
+   <!-- Sort Order -->
+   <Field ID="{fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa}" Type="Number" Name="COM_SortOrder" StaticName="COM_SortOrder" DisplayName="Sort Order" Required="FALSE" Min="0" Hidden="False" Group="1 - COM Columns" Description="" />
+
+   <!-- DATE FIELDS -->
+   <!-- Publish Date -->
+	<Field ID="{0b784073-3117-4340-8475-a63c087a464e}" Type="DateTime" Format="DateOnly" Name="COM_PublishDate" StaticName="COM_PublishDate" DisplayName="Publish Date" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
+   <!-- Experation Date -->
+	<Field ID="{d36fe537-08b7-4550-b51d-3192f8225b99}" Type="DateTime" Format="DateOnly" Name="COM_ExpirationDate" StaticName="COM_ExpirationDate" DisplayName="Expiration Date" ShowField="ImnName" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
+
+   <!-- CHOICE FIELDS -->
+   <!-- Bookmark Type -->
+	<Field ID="{c4167dc6-dc01-427a-b10f-fb77481cbbfb}" Type="Choice" Name="COM_BookmarkType" StaticName="COM_BookmarkType" DisplayName="Bookmark Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="1 - COM Columns" Description="">
+		<Default>Bookmark</Default>
+		<CHOICES>
+			<CHOICE>Bookmark</CHOICE>
+			<CHOICE>Project Site</CHOICE>
+		</CHOICES>
+	</Field>
+   <!-- Resource Type -->
+   	<Field ID="{3a1342d7-8d5a-4a29-8eec-f14d1ce5f0cd}" Type="Choice" Name="COM_ResourceType" StaticName="COM_ResourceType" DisplayName="Resource Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="1 - COM Columns" Description="">
+		<Default>Resource</Default>
+		<CHOICES>
+			<CHOICE>Resource</CHOICE>
+			<CHOICE>How Do I</CHOICE>
+		</CHOICES>
+	</Field>
+   <!-- Link Category -->
+   	<Field ID="{d405b807-855f-491a-ba06-ab4b5fadf1b3}" Type="Choice" Name="COM_LinkCategory" StaticName="COM_LinkCategory" DisplayName="Link Category" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="1 - COM Columns" Description="">
+		<Default></Default>
+		<CHOICES>
+			<CHOICE>Choice 1</CHOICE>
+			<CHOICE>Choice 2</CHOICE>
+		</CHOICES>
+	</Field>
+   <!-- Gratitude Type -->
+   	<Field ID="{0856e24f-d76b-4b19-92fb-7985f9b5f0c0}" Type="Choice" Name="COM_GratitudeType" StaticName="COM_GratitudeType" DisplayName="Gratitude Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="1 - COM Columns" Description="">
+		<Default></Default>
+		<CHOICES>
+			<CHOICE>Choice 1</CHOICE>
+			<CHOICE>Choice 2</CHOICE>
+		</CHOICES>
+	</Field>
+
+   <!-- USER/GROUP FIELDS -->
+   <!-- Contact -->
+	<Field ID="{a14da347-da53-4ca0-9e47-baf6527b1c5d}" Type="User" Name="COM_Contact" StaticName="COM_Contact" DisplayName="Key Contact" List="UserInfo" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionMode="0" UserSelectionScope="0" Required="False" Hidden="False" Group="1 - COM Columns" />
 
   <!-- ****************** -->
   <!-- USEER/GROUP FIELDS -->
