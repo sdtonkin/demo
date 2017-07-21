@@ -15,13 +15,14 @@ var gulp = require("gulp"),
   UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin"),
   IgnorePlugin = require("webpack/lib/IgnorePlugin"),
   CompressionPlugin = require("compression-webpack-plugin");
+var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 
 
 var paths = {
     webroot: "./Resources/"
 };
 paths.baseJs = paths.webroot + "js";
-paths.js = paths.webroot + "js/src/**/*.js";
+paths.js = paths.webroot + "js/src/main/main.js";
 paths.distJs = paths.webroot + "js/dist";
 //paths.js = paths.webroot + "js/src/main/*.js";
 paths.singularJs = paths.webroot + "js/src/singular/*.js";
@@ -118,7 +119,7 @@ gulp.task("min:singular", function () {
 gulp.task("min:js", function () {
     return gulp.src([paths.js], { base: "." })
         .pipe(webpack({
-            devtool: 'source-map',
+            //devtool: 'source-map',
             module: {
                 loaders: [
                     {
@@ -126,18 +127,32 @@ gulp.task("min:js", function () {
                         loader: 'babel-loader',
                         query: {
                             presets: ['es2015']
-                        }
-                    }
+                        },
+                        exclude: /^node_modules$/
+                    },
+                    { test: /\.html$/, loader: "html" },
+                    { test: /\.json$/, loader: "json-loader" }
                 ]
             },
+            //target: 'node',
             output: {
                 filename: 'main.min.js'
             },
+            node: {
+                fs: "empty"
+            },
+            externals: {
+                "moment": "moment"
+            },
+            
+            
             plugins: [
+                /*
+                new NormalModuleReplacementPlugin(/\/iconv-loader$/, 'node-noop'),
+                
                 new AggressiveMergingPlugin(),
                 new OccurrenceOrderPlugin(),
-                new DedupePlugin(),
-                
+                new DedupePlugin(),                
                 new UglifyJsPlugin({
                     mangle: true,
                     compress: {
@@ -161,8 +176,10 @@ gulp.task("min:js", function () {
                     },
                     //exclude: [/\.min\.js$/gi] // skip pre-minified libs
                 }),               
-                new IgnorePlugin(/^\.\/locale$/, [/moment$/])                
+                new IgnorePlugin(/^\.\/locale$/, [/moment$/])
+                */
             ],
+            
             babelrc: false,
             exclude: /(node_modules|bower_components)/
 

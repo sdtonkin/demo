@@ -1,10 +1,11 @@
-﻿// set up static configuration entries
-var app = angular.module('compassionIntranet');
+﻿
+// set up static configuration entries
+var myApp = angular.module('compassionIntranet');
 
 //Discover Dev
 if (document.location.host === "compassion.sharepoint.com") {
     if (document.location.pathname.toLowerCase().indexOf('/sites/dev') !== -1) {
-        app.constant('COM_CONFIG', {
+        myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
                 appId: '28057a7d-919d-49ba-a042-58c962b6ba40'
@@ -21,14 +22,17 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/dev',
+            rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
-                rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feed Item'
+                rssFeedsListTitle: 'RSS Feeds',
+                userRssFeedsListTitle: 'User RSS Feeds',
+                userTools: 'User Tools',
+                toolbarTools: 'Toolbar Tools'
             }
         });
     }
     else {
-        app.constant('COM_CONFIG', {
+        myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
                 appId: '28057a7d-919d-49ba-a042-58c962b6ba40'
@@ -45,16 +49,19 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com',
+            rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
-                rssFeedsListTitle: 'RSS Feeds List',
-                userRssFeedsListTitle: 'User RSS Feed Item'
+                rssFeedsListTitle: 'RSS Feeds',
+                userRssFeedsListTitle: 'User RSS Feeds',
+                userTools: 'User Tools',
+                toolbarTools: 'Toolbar Tools'
             }
         });
     }
 }
     //Dev Tenant
 else {
-    app.constant('COM_CONFIG', {
+    myApp.constant('COM_CONFIG', {
         isProduction: false,
         msGraph: {
             appId: '1d622432-aff2-4037-862d-53c714949c02'
@@ -70,10 +77,13 @@ else {
             newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
         },
         useCaching: false,
-        rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion1',
+        rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
+        rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',
-            userRssFeedsListTitle: 'User RSS Feed Item'
+            userRssFeedsListTitle: 'User RSS Feeds',
+            userTools: 'User Tools',
+            toolbarTools: 'Toolbar Tools'
         }
     });
 }

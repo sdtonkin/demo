@@ -185,28 +185,35 @@
     <Content Include="Resources\images\compassion.ico" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
+    <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\tool-bar.js" />
+    <Content Include="Resources\js\src\services\tool-bar-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
-    <Content Include="Resources\js\src\singular\my-rss-feeds.js" />
+    <Content Include="Resources\js\src\components\my-rss-feeds.js" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml" />
     <Content Include="Templates\4-Pages.xml" />
     <Content Include="Templates\5-SecurityGroups.xml" />
     <Content Include="Templates\6-Search.xml" />
-    <Content Include="Templates\Sections\ContentTypes.xml" />
+    <Content Include="Templates\Sections\ContentTypes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\3-Files.xml" />
     <Content Include="Templates\Sections\Files.xml" />
     <Content Include="Templates\Sections\FilesSearch.xml" />
     <Content Include="Templates\Sections\Lists.xml" />
     <Content Include="Templates\Sections\Pages.xml" />
     <Content Include="Templates\Sections\Security.xml" />
-    <Content Include="Templates\Sections\SiteFields.xml" />
+    <Content Include="Templates\Sections\SiteFields.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
     <None Include="App.config" />
     <None Include="package.json" />
@@ -237,6 +244,9 @@
     <Folder Include="Resources\WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cmd.exe /c gulp -b "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment" --color --gulpfile "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment\Gulpfile.js" 1-compile</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
