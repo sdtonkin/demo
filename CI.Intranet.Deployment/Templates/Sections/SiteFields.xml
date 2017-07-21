@@ -116,7 +116,7 @@
     </Customization>
   </Field>
 
-    <!--- Document Type -->
+    <!-- Document Type -->
   <Field ID="{f3475538-62cb-4502-bf4d-2816bf1a29bc}" Type="Note" DisplayName="COM_DocumentTypeTaxHTField" StaticName="COM_DocumentTypeTaxHTField" Name="COM_DocumentTypeTaxHTField" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
   <Field ID="{9ccfd12c-f152-45ee-a9ed-b57c89d3ae57}" Type="TaxonomyFieldType" Name="COM_DocumentType" StaticName="COM_DocumentType" DisplayName="Document Type" ShowField="Term1033" EnforceUniqueValues="FALSE" Required="FALSE" Group="1 - COM Columns" Description="">
     <Customization>
