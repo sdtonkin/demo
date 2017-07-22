@@ -7,8 +7,13 @@
             <li><a href="#ci-sites">project sites</a></li>
         </ul>
         <div id="ci-apps">
-            <ul>
-                <li><a>HR Beneifts</a></li>
+            <ul ng-repeat="tool in myTools">
+                <li>
+                    <a href="{{ tool.COM_ToolbarUrl }}">
+                        <img src="{{ tool.COM_ToolbarIconUrl }}" />
+                        <div>{{ tool.title }}</div>                        
+                    </a>                    
+                </li>
             </ul>
         </div>
         <div id="ci-documents">

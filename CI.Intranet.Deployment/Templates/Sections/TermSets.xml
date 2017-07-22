@@ -1,14 +1,131 @@
 ﻿<pnp:TermGroups xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:TermGroup Name="Root" Description="" SiteCollectionTermGroup="true">
+  <pnp:TermGroup Name="Compassion" Description="" SiteCollectionTermGroup="true">
     <pnp:TermSets>
-      <pnp:TermSet Name="Sample Value" ID="f57f5d93-03b1-4333-a406-4eaff124f771" Description="">
+      <pnp:TermSet Name="Location" ID="88ed9770-2805-4c59-be2e-d8775b5aedb5" Description="">
         <pnp:Terms>
-          <pnp:Term Name="Sample Value" ID="6b513230-abff-4039-a41a-991d85925061" SourceTermId="6b513230-abff-4039-a41a-991d85925061">
+          <pnp:Term Name="US" />
+          <pnp:Term Name="Latin America and the Caribbean">
             <pnp:Terms>
-              <pnp:Term Name="Sample Value" ID="083ffdee-4c65-45b2-be74-431831cd2509" CustomSortOrder="1" SourceTermId="083ffdee-4c65-45b2-be74-431831cd2509" />
-              <pnp:Term Name="Sample Value" ID="a0958fc3-d74f-4503-bbba-33911000e900" CustomSortOrder="2" SourceTermId="a0958fc3-d74f-4503-bbba-33911000e900" />
+              <pnp:Term Name="Dominican Republic" />
+              <pnp:Term Name="El Salvador" />
+              <pnp:Term Name="Guatemala" />
+              <pnp:Term Name="Haiti" />
+              <pnp:Term Name="Honduras"  />
+              <pnp:Term Name="Mexico"  />
+              <pnp:Term Name="Nicaragua" />
+              <pnp:Term Name="Bolivia" />
+              <pnp:Term Name="Brazil" />
+              <pnp:Term Name="Columbia" />
+              <pnp:Term Name="Ecuador" />
+              <pnp:Term Name="Peru" />
             </pnp:Terms>
           </pnp:Term>
+          <pnp:Term Name="Asia">
+            <pnp:Terms>
+              <pnp:Term Name="Bangladesh" />
+              <pnp:Term Name="Indonesia" />
+              <pnp:Term Name="Philippines" />
+              <pnp:Term Name="Sri Lanka" />
+              <pnp:Term Name="Thailand" />
+            </pnp:Terms>
+          </pnp:Term>
+          <pnp:Term Name="Africa">
+            <pnp:Terms>
+              <pnp:Term Name="Burkina Faso" />
+              <pnp:Term Name="Ethiopia" />
+              <pnp:Term Name="Ghana" />
+              <pnp:Term Name="Kenya" />
+              <pnp:Term Name="Rwanda" />
+              <pnp:Term Name="Tanzania" />
+              <pnp:Term Name="Togo" />
+              <pnp:Term Name="Uganda" />
+            </pnp:Terms>
+          </pnp:Term> 
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="News Type" ID="b1e0d71d-4c58-4860-bacd-5189e63002be" Description="">
+        <pnp:Terms>
+	        <pnp:Term Name="All News" />
+	        <pnp:Term Name="Global" />
+	        <pnp:Term Name="Global Ministry Center" />
+	        <pnp:Term Name="Country Office" />
+	        <pnp:Term Name="Crisis Bulletins" />
+  	      <pnp:Term Name="Global Partner" />
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Event Type" ID="90087864-74f2-425a-ad5d-2d288990a066" Description="">
+        <pnp:Terms>
+	        <pnp:Term Name="Global" />
+	        <pnp:Term Name="Chapel" />
+	        <pnp:Term Name="Volunteering" />
+          <pnp:Term Name="Paid Holidays" />
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Document Type" ID="5f5f761b-f8eb-4c29-a535-f49f764e3f0a" Description="">
+        <pnp:Terms>
+	        <pnp:Term Name="Policy" />
+	        <pnp:Term Name="Standard" />
+	        <pnp:Term Name="Manual" />
+	        <pnp:Term Name="Guidelines" />
+  	      <pnp:Term Name="Report" />
+	        <pnp:Term Name="Form" />
+	        <pnp:Term Name="Template" />
+	        <pnp:Term Name="Toolkit" />
+	        <pnp:Term Name="Research Paper" />
+          <pnp:Term Name="Whitepaper" />
+	        <pnp:Term Name="Study" />
+	        <pnp:Term Name="Global Content" />
+	        <pnp:Term Name="Glossary" />
+	        <pnp:Term Name="New Hire Resource" />
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Audience" ID="e7ce4a36-a9ca-486a-97c1-b9a1e3d21138" Description="">
+        <pnp:Terms>
+	        <pnp:Term Name="Global" />
+	        <pnp:Term Name="Country Office" />
+	        <pnp:Term Name="US" />
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Employee Life Topic" ID="ab34a76b-0cf8-441f-af98-677c3dd2961a" Description="">
+        <pnp:Terms>
+	        <pnp:Term Name="Benefits" />
+	        <pnp:Term Name="Employee Wellness" />
+	        <pnp:Term Name="Work-Life Experience" />
+	        <pnp:Term Name="Performance and Recognition" />
+  	      <pnp:Term Name="Professional Development" />
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Group" ID="e93cbada-0e8b-4641-8d54-1a7f87bf15de" Description="">
+        <pnp:Terms>
+          <pnp:Term Name="Global Leadership Office">
+            <pnp:Terms>
+              <pnp:Term Name="Global Corporate Communications" />
+              <pnp:Term Name="Organizational Design and Development" />
+            </pnp:Terms>
+          </pnp:Term>
+		      <pnp:Term Name="General Counsel Office">
+            <pnp:Terms>
+              <pnp:Term Name="Legal Services" />
+              <pnp:Term Name="Office of Risk Management" />
+			        <pnp:Term Name="Global Board Engagement" />
+            </pnp:Terms>
+          </pnp:Term>
+		      <pnp:Term Name="General Program" />
+		      <pnp:Term Name="Global Marketing and Engagement">
+            <pnp:Terms>
+              <pnp:Term Name="Global Partner Alliance" />
+            </pnp:Terms>
+          </pnp:Term>
+		      <pnp:Term Name="Global Support Services">
+           <pnp:Terms>
+            <pnp:Term Name="HR" CustomSortOrder="1" />
+            <pnp:Term Name="IT" CustomSortOrder="2" />
+			      <pnp:Term Name="Finance" CustomSortOrder="3" />
+            <pnp:Term Name="Building Operations and Services" CustomSortOrder="4" />
+			      <pnp:Term Name="Source to Settle" CustomSortOrder="5" />
+			      <pnp:Term Name="Safety and Security" CustomSortOrder="6" />
+          </pnp:Terms>
+        </pnp:Term>
         </pnp:Terms>
       </pnp:TermSet>
     </pnp:TermSets>

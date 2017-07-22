@@ -1,7 +1,28 @@
 ﻿<pnp:ContentTypes xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:ContentType ID="0x010100EEE0909EA5814C99B0D1A2DE42679EEE" Name="Template Document" Description="" Group="Compassion" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <!-- ********      -->
+  <!-- LIST TYPES    -->
+  <!-- ********      -->
+  <pnp:ContentType ID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Name="RSS Feed Item" Description="RSS Feed List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>      
-      <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+      <pnp:FieldRef ID="66A3DA7E-C614-43F1-BF28-0F4E4C234B5E" Name="COM_RssFeedUrl" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100D6377753E564418EB0ADD8F331A1B420" Name="User RSS Feed Item" Description="User RSS Feed List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139" Name="COM_RssFeedId" />
+      <pnp:FieldRef ID="AAEB95C5-72DA-44B1-9A4F-AA520152F473" Name="COM_RssFeedUser" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100176552393A3C4355AE16E44D91877268" Name="Toolbar Item" Description="Toolbar Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="025BF677-9D82-43AD-8869-68FBF582B7B1" Name="COM_ToolbarUrl" />
+      <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x01002E2B7E15D07C40C9AC8AA1C568B679D4" Name="Toolbar User Item" Description="Toolbar User Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="D835A9E1-E84D-47A6-94A3-8EF7B448F68F" Name="COM_ToolbarUser" />
+      <pnp:FieldRef ID="BB46C99E-9E55-41D9-9143-B3B98FAEEFF8" Name="COM_UserToolbarId" />
     </pnp:FieldRefs>
   </pnp:ContentType>
 </pnp:ContentTypes>
