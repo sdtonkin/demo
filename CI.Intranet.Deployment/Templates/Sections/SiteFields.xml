@@ -171,7 +171,7 @@
    <!-- Photo Caption -->
 	<Field ID="{fc3f1b87-ac13-437c-86f4-58c4a144ae4a}" Type="Note" Name="COM_PhotoCaption" StaticName="COM_PhotoCaption" DisplayName="Photo Caption" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
    <!-- Gratitude Description -->
-	<Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Note" Name="COM_ GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
+	<Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Note" Name="COM_GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - COM Columns" Description="" />
 
    <!-- NUMBER FIELDS -->
    <!-- Sort Order -->
