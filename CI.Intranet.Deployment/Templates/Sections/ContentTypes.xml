@@ -25,4 +25,26 @@
       <pnp:FieldRef ID="BB46C99E-9E55-41D9-9143-B3B98FAEEFF8" Name="COM_UserToolbarId" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+
+
+
+
+
+
+
+  <!-- ********      -->
+  <!-- DOC TYPES    -->
+  <!-- ********      -->
+
+
+
+
+
+
+
+  <!-- ********      -->
+  <!-- PAGE TYPES    -->
+  <!-- ********      -->
+  
+  
 </pnp:ContentTypes>
