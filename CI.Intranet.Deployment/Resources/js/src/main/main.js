@@ -16,4 +16,5 @@ require('../services/tool-bar-service.js');
 // Components
 require('../components/my-rss-feeds.js');
 require('../components/my-tool-bar.js');
+require('../components/my-tool-manager.js');
 

@@ -176,6 +176,10 @@
    <!-- NUMBER FIELDS -->
    <!-- Sort Order -->
    <Field ID="{fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa}" Type="Number" Name="COM_SortOrder" StaticName="COM_SortOrder" DisplayName="Sort Order" Required="FALSE" Min="0" Hidden="False" Group="1 - Compassion Columns" Description="" />
+  <!-- User RSS Feed Id -->
+  <Field ID="{3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139}" Type="Integer" Name="COM_RssFeedId" StaticName="COM_RssFeedId" DisplayName="RSS Feed Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
+  <!--Toolbar User Id -->
+  <Field ID="{BB46C99E-9E55-41D9-9143-B3B98FAEEFF8}" Type="Integer" Name="COM_UserToolbarId" StaticName="COM_UserToolbarId" DisplayName="User Tool Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
 
    <!-- DATE FIELDS -->
    <!-- Publish Date -->

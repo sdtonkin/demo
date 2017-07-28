@@ -1,6 +1,6 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-
+'use strict';
 angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     function getUserToolItems(userId) {
         var defer = $q.defer();
@@ -26,13 +26,13 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
-            .getById(id)
+            .getById(toolId)
             .get()
             .then(function(item){ 
                 var f = {};
                 f.title = item.Title;
                 f.url = item.COM_ToolbarUrl.Url;
-                f.iconUrl = item.COM_ToolbarIconUrl;
+                f.iconUrl = item.COM_ToolbarIconUrl.Url;
                 defer.resolve(f); 
             });
 
@@ -51,7 +51,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                     var t = {};
                     t.title = item.Title;
                     t.url = item.COM_ToolbarUrl.Url;
-                    t.iconUrl = item.COM_ToolbarIconUrl;
+                    t.iconUrl = item.COM_ToolbarIconUrl.Url;
 
                     tools.push(t);
                 }                

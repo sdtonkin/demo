@@ -1,4 +1,5 @@
-﻿var myApp = angular.module('compassionIntranet'),
+﻿'use strict';
+var myApp = angular.module('compassionIntranet'),
     controllerName = 'myRssFeedsCtrl';
 
 myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', function ($scope, rssFeedService, COM_CONFIG) {

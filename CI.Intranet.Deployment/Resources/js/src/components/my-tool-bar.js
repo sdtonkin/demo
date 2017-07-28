@@ -1,4 +1,5 @@
-﻿var myApp = angular.module('compassionIntranet'),
+﻿'use strict';
+var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarCtrl';
 
 myApp.controller(controllerName, ['$scope', 'toolBarService', 'COM_CONFIG', function ($scope, toolBarService, COM_CONFIG) {

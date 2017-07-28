@@ -188,10 +188,14 @@
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
+    <Content Include="Resources\js\includes\Tool-Manager.html" />
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\modal.js" />
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
+    <Content Include="Resources\js\src\components\my-tool-manager.js" />
+    <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\tool-bar-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
@@ -228,6 +232,7 @@
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
+    <None Include="Resources\css\sass\modal.scss" />
     <None Include="Resources\js\lib\angular.min.js.map" />
     <None Include="Resources\js\lib\pnp.min.js.map" />
     <None Include="Resources\MasterPages\com-main.master">
