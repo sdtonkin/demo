@@ -55,7 +55,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
 
                     tools.push(t);
                 }                
-                defer.resolve(f); 
+                defer.resolve(tools); 
             });
 
         return defer.promise;

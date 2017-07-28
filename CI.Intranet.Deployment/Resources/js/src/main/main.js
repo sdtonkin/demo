@@ -10,8 +10,12 @@ var app = angular.module('compassionIntranet', []).config(function ($sceDelegate
 require("../main/config.js");
 
 // Services
+require('../services/modal-service.js');
 require('../services/rss-feed-service.js');
 require('../services/tool-bar-service.js');
+
+// System Components
+require('../components/modal.js');
 
 // Components
 require('../components/my-rss-feeds.js');

@@ -77,7 +77,7 @@ else {
             newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
         },
         useCaching: false,
-        rootWeb: 'https://teganwilson.sharepoint.com/sites/com',
+        rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',

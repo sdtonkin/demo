@@ -9,8 +9,8 @@
         <div id="ci-apps">
             <ul ng-repeat="tool in myTools">
                 <li>
-                    <a href="{{ tool.COM_ToolbarUrl }}">
-                        <img src="{{ tool.COM_ToolbarIconUrl }}" />
+                    <a ng-href="{{ tool.iconUrl }}">
+                        <img ng-src="{{ tool.iconUrl }}" />
                         <div>{{ tool.title }}</div>                        
                     </a>                    
                 </li>
@@ -33,5 +33,21 @@
             </ul>
         </div>        
     </div>
-    <div><a>Manage</a></div>
+    <div><a ng-click="ctrl.openModal('ci-toolbar-manage')">Manage</a></div>
+    <modal id="ci-toolbar-manage">
+        <div class="modal">
+            <div class="modal-body">
+                <h1>Manage My tools</h1>
+                <h3>Available Tools</h3>
+                
+                <ul ng-repeat="tool in allTools">
+                    <li><input type="checkbox" ng-model="tool.id"  />{{tool.title}}</li>
+                </ul>
+
+                <button ng-click="ctrl.saveMyTools();">Save</button>
+                <button ng-click="ctrl.closeModal('ci-toolbar-manage');">Close</button>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
 </section>
