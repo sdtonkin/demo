@@ -1,6 +1,6 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-
+'use strict';
 angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     function getRssItems(user) {
         var defer = $q.defer();

@@ -1,1 +1,1 @@
-body{font-size:9px}body p{color:#000}
+modal .modal,modal .modal-background{position:fixed;top:0;right:0;bottom:0;left:0}body{font-size:9px}body p{color:#000}modal{display:none}modal .modal{z-index:1000;overflow:auto}modal .modal .modal-body{padding:20px;background:#fff;margin:40px}modal .modal-background{background-color:#000;opacity:.75;z-index:900}body.modal-open{overflow:hidden}

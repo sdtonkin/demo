@@ -191,14 +191,24 @@
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\common.js" />
+    <Content Include="Resources\js\src\components\modal.js" />
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
+    <Content Include="Resources\js\src\components\my-tool-manager.js" />
+    <Content Include="Resources\js\src\services\modal-service.js" />
+    <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\tool-bar-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
+    <Content Include="Resources\Pages\index.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Templates\1-TermSet.xml" />
-    <Content Include="Templates\2-InformationArchitecture.xml" />
+    <Content Include="Templates\2-InformationArchitecture.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Templates\4-Pages.xml" />
     <Content Include="Templates\5-SecurityGroups.xml" />
     <Content Include="Templates\6-Search.xml" />
@@ -215,12 +225,15 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="package.json" />
     <None Include="packages.config" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
+    <None Include="Resources\css\sass\modal.scss" />
     <None Include="Resources\js\lib\angular.min.js.map" />
     <None Include="Resources\js\lib\pnp.min.js.map" />
     <None Include="Resources\MasterPages\com-main.master">

@@ -9,8 +9,8 @@
         <div id="ci-apps">
             <ul ng-repeat="tool in myTools">
                 <li>
-                    <a href="{{ tool.COM_ToolbarUrl }}">
-                        <img src="{{ tool.COM_ToolbarIconUrl }}" />
+                    <a ng-href="{{ tool.iconUrl }}">
+                        <img ng-src="{{ tool.iconUrl }}" />
                         <div>{{ tool.title }}</div>                        
                     </a>                    
                 </li>
@@ -33,5 +33,44 @@
             </ul>
         </div>        
     </div>
-    <div><a>Manage</a></div>
+    <div><a ng-click="ctrl.openModal('ci-toolbar-manage')">Manage</a></div>
+    <modal id="ci-toolbar-manage">
+        <div class="modal">
+            <div class="modal-body">
+                <h1>Manage My Tools</h1>
+                <h3>Available Tools</h3>                
+                <ul>
+                    <li ng-repeat="tool in allTools track by tool.id">
+                        <input type="checkbox" ng-click="toggleSelection(tool.id)" value="{{tool.id}}" ng-checked="existsToolMyTools(tool.id)" />{{tool.title}}                        
+                    </li>
+                </ul>
+
+                <button ng-click="ctrl.saveMyTools();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+                <button ng-click="ctrl.closeModal('ci-toolbar-manage'); ctrl.openModal('ci-toolbar-manage-sort');">Edit Sort Order</button>
+                <button ng-click="ctrl.closeModal('ci-toolbar-manage');">Close</button>
+                <span>{{systemMessage}}</span>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
+    <modal id="ci-toolbar-manage-sort">
+        <div class="modal">
+            <div class="modal-body">
+                <h1>Manage My Tools Sort Order</h1>
+                <ul>
+                    <li ng-repeat="tool in myTools track by tool.id">
+                        {{tool.title}}
+                        <select ng-model="tool.sortOrder" ng-change="ctrl.updateSortOrder(tool, {{tool.sortOrder}});">
+                            <option ng-repeat="sort in myToolsSortList" ng-value="{{sort}}">{{sort}}</option>
+                        </select>
+                    </li>
+                </ul>
+
+                <button ng-click="ctrl.saveMyToolsSortOrder();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+                <button ng-click="ctrl.closeModal('ci-toolbar-manage-sort'); ctrl.openModal('ci-toolbar-manage');">Close</button>
+                <span>{{systemMessage}}</span>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
 </section>

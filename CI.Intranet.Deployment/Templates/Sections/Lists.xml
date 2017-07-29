@@ -27,13 +27,20 @@
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">HR Benefits</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.google.com</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>           
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Gateway to Service</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.bing.com</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+  </pnp:ListInstance>
+  <pnp:ListInstance Title="User Tools" Description="User Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01002E2B7E15D07C40C9AC8AA1C568B679D4" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
   </pnp:ListInstance>
 </pnp:Lists>
