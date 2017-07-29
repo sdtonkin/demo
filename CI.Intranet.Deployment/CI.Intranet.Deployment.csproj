@@ -188,7 +188,6 @@
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
-    <Content Include="Resources\js\includes\Tool-Manager.html" />
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />

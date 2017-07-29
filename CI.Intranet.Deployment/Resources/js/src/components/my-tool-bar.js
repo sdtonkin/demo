@@ -10,16 +10,24 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
     ctrl.openModal = openModal;
     ctrl.closeModal = closeModal;
     ctrl.saveMyTools = saveMyTools;
-    ctrl.enableSaveButton = function () { return !isToolbarDirty; };
-    this.$onInit = function () {        
+    ctrl.enableSaveButton = function () {
+        if (isToolbarDirty)
+            $scope.systemMessage = '';
+        return !isToolbarDirty;
+    };
+    ctrl.saveMyToolsSortOrder = saveMyToolsSortOrder;
+    ctrl.updateSortOrder = updateSortOrder;
+    this.$onInit = function () {
         toolBarService.getMyTools(userId).then(function (response) {
             $scope.myToolsFromDb = response;
-            $scope.myTools = response;
+            $scope.myTools = angular.copy(response);
+            getSortOrderLimits();
         });
         toolBarService.getAllTools().then(function (response) {
             $scope.allTools = response;
         });
     };
+    $scope.myToolsSortList = [];
     $scope.existsToolMyTools = function (toolId) {
         if (!toolId) return false;
         var item = _.find($scope.myTools, function (i) {
@@ -48,6 +56,49 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
         }
     };
     $scope.saveMyTools = saveMyTools;
+    function updateSortOrder(tool, oldOrder) {
+        isToolbarDirty = true;
+        var tools = $scope.myTools;
+        var newOrder = tool.sortOrder;
+        if (oldOrder < newOrder) {
+            for (var i = oldOrder - 1; i < newOrder; i++) {
+                var t = tools[i];
+                if (i == oldOrder - 1) {
+                    tools[i].sortOrder = tool.sortOrder;
+                }
+                else if (i == newOrder - 1) {
+                    tools[i].sortOrder = t.sortOrder - 1
+                }
+                else {
+                    tools[i].sortOrder = t.sortOrder - 1;
+                }
+            }
+        }
+        else if (newOrder < oldOrder) {
+            for (var i = newOrder - 1; i < oldOrder; i++) {
+                var t = tools[i];
+                if (i == newOrder - 1) {
+                    tools[i].sortOrder = t.sortOrder + 1;
+                }
+                else if (i == oldOrder - 1) {
+                    tools[i].sortOrder = tool.sortOrder;
+                }
+                else {
+                    tools[i].sortOrder = t.sortOrder + 1;
+                }
+            }
+        }
+        $scope.myTools = _.sortBy(tools, 'sortOrder');
+    }
+    function saveMyToolsSortOrder() {
+        for (var i = 0; i < $scope.myTools.length; i++) {
+            var tool = $scope.myTools[i];
+            toolBarService.updateUserTool(tool);
+        }
+        $scope.myToolsFromDb = $scope.myTools;
+        isToolbarDirty = false;
+        $scope.systemMessage = 'Success';
+    }
     function saveMyTools() {
         var tools = $scope.myTools;
         var dbTools = $scope.myToolsFromDb;
@@ -62,8 +113,17 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
             var tool = toolsToDelete[i];
             toolBarService.removeMyTool(tool.id);
         }
-        $scope.myToolsFromDb = $scope.myTools;
+        $scope.myToolsFromDb = angular.copy($scope.myTools);
         isToolbarDirty = false;
+        $scope.systemMessage = 'Success';
+    }
+    function getSortOrderLimits() {
+        var myToolsCount = $scope.myTools.length;
+        var response = [];
+        for (var i = 1; i <= myToolsCount; i++) {
+            response.push(i);
+        }
+        $scope.myToolsSortList = response;
     }
     function openModal(id) {
         modalService.Open(id);

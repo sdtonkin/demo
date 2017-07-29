@@ -17,6 +17,12 @@ myApp.factory('common', ['COM_CONFIG', function (COM_CONFIG) {
             });
             return item != null;
         },
+        getUrlParamByName: function (name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
         /*
         isLocalStorageSupported: function () {
             Modernizr.addTest('localstorage', function () {

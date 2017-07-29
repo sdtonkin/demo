@@ -1,11 +1,17 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 'use strict';
-angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', 'storage', function ($http, $q, COM_CONFIG, storage) {
+angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8';
-    var toolsKey = '01E261B8-5FB3-41B0-99E6-B1206A9EB65E';
-
+    var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
+    
+    ctrl.$onInit = function () {
+        // clear local storage if url param is detected
+        checkForClearStatement();
+        // ensure Promise for pnp is loaded prior to using pnp module
+        ES6Promise.polyfill();
+    };
+    
     // set default expiration at 24 hours
     ctrl.expirationDuration = 24;
     ctrl.getMyTools = function (userId) {
@@ -30,6 +36,14 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
         });
         return defer.promise;
     };
+    ctrl.updateUserTool = function (userTool) {
+        var defer = $q.defer();
+        updateUserTool(userTool).then(function (data) {
+            storage.remove(userToolsKey);
+            defer.resolve(data);
+        });
+        return defer.promise;
+    };
     ctrl.removeMyTool = function (id) {
         var defer = $q.defer();
         deleteUserTool(id).then(function (tools) {
@@ -39,7 +53,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
         return defer.promise;
     };
     function getUserToolItems(userId) {
-        var defer = $q.defer();
+        var defer = $q.defer();        
         var local = storage.get(userToolsKey);
         if (local == null) {
             local = {};
@@ -56,10 +70,11 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                     var promises = new Array();
                     for(var i = 0; data.length > i; i++)
                     {
-                        var p = getUserTool(data[i].Id, data[i].COM_UserToolbarId);
+                        var p = getUserTool(data[i]);
                         promises.push(p)
                     }
                     $q.all(promises).then(function(response){
+                        response = _.sortBy(response, 'sortOrder');
                         storage.set(userToolsKey, response, 0);
                         defer.resolve(response);
                     });                
@@ -68,12 +83,13 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
 
         return defer.promise;
     }
-    function getUserTool(userToolId, toolId) {
+    function getUserTool(userTool) {
         var defer = $q.defer();
-        getTool(toolId).then(function(tool){
-            tool.toolId = toolId;
-            tool.id = userToolId;
-            defer.resolve(tool);
+        getTool(userTool.COM_UserToolbarId).then(function(t){
+            t.toolId = t.id;
+            t.id = userTool.Id;
+            t.sortOrder = userTool.COM_ListSortOrder;
+            defer.resolve(t);
         });
         return defer.promise;
     }
@@ -90,6 +106,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                 f.title = item.Title;
                 f.url = item.COM_ToolbarUrl.Url;
                 f.iconUrl = item.COM_ToolbarIconUrl.Url;
+                f.sortOrder = item.COM_ListSortOrder;
                 defer.resolve(f); 
             });
 
@@ -110,6 +127,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                     t.title = item.Title;
                     t.url = item.COM_ToolbarUrl.Url;
                     t.iconUrl = item.COM_ToolbarIconUrl.Url;
+                    t.sortOrder = item.COM_ListSortOrder;
 
                     tools.push(t);
                 }                
@@ -132,6 +150,16 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
 
         return defer.promise;
     }
+    function updateUserTool(userTool) {
+        var defer = $q.defer();
+        let web = new Web(COM_CONFIG.rootWeb);
+        pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userTools).items.getById(userTool.id).update({
+            COM_ListSortOrder: userTool.sortOrder
+        }).then(r => {
+            defer.resolve(r);
+        });
+        return defer.promise;
+    }
     function deleteUserTool(userToolId) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
@@ -143,5 +171,9 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
             });
 
         return defer.promise;
-    }    
+    }
+    function checkForClearStatement() {
+        if (common.getUrlParamByName('clearMyTools') == 'true')
+            storage.remove(userToolsKey);
+    }
 }]);
