@@ -2,6 +2,8 @@
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 'use strict';
 angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
+    var ctrl = this;
+
     function getUserToolItems(userId) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
@@ -12,7 +14,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                 var promises = new Array();
                 for(var i = 0; data.length > i; i++)
                 {
-                    var p = getTool(data[i].Id);
+                    var p = getUserTool(data[i].Id, data[i].COM_UserToolbarId);
                     promises.push(p)
                 }
                 $q.all(promises).then(function(response){
@@ -22,6 +24,16 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
 
         return defer.promise;
     }
+    function getUserTool(userToolId, toolId) {
+        var defer = $q.defer();
+        getTool(toolId).then(function(tool){
+            tool.toolId = toolId;
+            tool.id = userToolId;
+            defer.resolve(tool);
+        });
+        return defer.promise;
+    }
+
     function getTool(toolId) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
@@ -30,6 +42,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
             .get()
             .then(function(item){ 
                 var f = {};
+                f.id = item.Id;
                 f.title = item.Title;
                 f.url = item.COM_ToolbarUrl.Url;
                 f.iconUrl = item.COM_ToolbarIconUrl.Url;
@@ -49,6 +62,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                 {
                     var item = items[i];
                     var t = {};
+                    t.id = item.Id;
                     t.title = item.Title;
                     t.url = item.COM_ToolbarUrl.Url;
                     t.iconUrl = item.COM_ToolbarIconUrl.Url;
@@ -96,6 +110,20 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
     this.getAllTools = function () {
         var defer = $q.defer();
         getTools().then(function (tools) {
+            defer.resolve(tools);
+        });
+        return defer.promise;
+    };
+    this.addMyTool = function (userId, toolId) {
+        var defer = $q.defer();
+        addUserTool(userId, toolId).then(function (tools) {
+            defer.resolve(tools);
+        });
+        return defer.promise;
+    };
+    this.removeMyTool = function (id) {
+        var defer = $q.defer();
+        deleteUserTool(id).then(function (tools) {
             defer.resolve(tools);
         });
         return defer.promise;

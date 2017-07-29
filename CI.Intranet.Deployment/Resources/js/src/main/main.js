@@ -15,6 +15,7 @@ require('../services/rss-feed-service.js');
 require('../services/tool-bar-service.js');
 
 // System Components
+require('../components/common.js');
 require('../components/modal.js');
 
 // Components

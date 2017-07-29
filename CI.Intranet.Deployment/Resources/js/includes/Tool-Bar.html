@@ -40,11 +40,13 @@
                 <h1>Manage My tools</h1>
                 <h3>Available Tools</h3>
                 
-                <ul ng-repeat="tool in allTools">
-                    <li><input type="checkbox" ng-model="tool.id"  />{{tool.title}}</li>
+                <ul ng-repeat="tool in allTools track by tool.id">
+                    <li>
+                        <input type="checkbox" ng-click="toggleSelection(tool.id)" value="{{tool.id}}" ng-checked="existsToolMyTools(tool.id)" />{{tool.title}}
+                    </li>
                 </ul>
 
-                <button ng-click="ctrl.saveMyTools();">Save</button>
+                <button ng-click="ctrl.saveMyTools();" ng-disabled="ctrl.enableSaveButton();">Save</button>
                 <button ng-click="ctrl.closeModal('ci-toolbar-manage');">Close</button>
             </div>
         </div>

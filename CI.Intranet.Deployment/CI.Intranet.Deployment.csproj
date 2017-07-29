@@ -192,6 +192,7 @@
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\common.js" />
     <Content Include="Resources\js\src\components\modal.js" />
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
     <Content Include="Resources\js\src\components\my-tool-manager.js" />
