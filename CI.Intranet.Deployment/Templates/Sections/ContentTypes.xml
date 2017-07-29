@@ -17,12 +17,14 @@
     <pnp:FieldRefs>
       <pnp:FieldRef ID="025BF677-9D82-43AD-8869-68FBF582B7B1" Name="COM_ToolbarUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+      <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x01002E2B7E15D07C40C9AC8AA1C568B679D4" Name="Toolbar User Item" Description="Toolbar User Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="D835A9E1-E84D-47A6-94A3-8EF7B448F68F" Name="COM_ToolbarUser" />
       <pnp:FieldRef ID="BB46C99E-9E55-41D9-9143-B3B98FAEEFF8" Name="COM_UserToolbarId" />
+      <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
     </pnp:FieldRefs>
   </pnp:ContentType>
 </pnp:ContentTypes>

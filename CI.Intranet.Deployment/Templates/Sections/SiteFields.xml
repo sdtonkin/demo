@@ -173,13 +173,15 @@
    <!-- Gratitude Description -->
 	<Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Note" Name="COM_ GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - Compassion Columns" Description="" />
 
-   <!-- NUMBER FIELDS -->
-   <!-- Sort Order -->
-   <Field ID="{fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa}" Type="Number" Name="COM_SortOrder" StaticName="COM_SortOrder" DisplayName="Sort Order" Required="FALSE" Min="0" Hidden="False" Group="1 - Compassion Columns" Description="" />
+  <!-- NUMBER FIELDS -->
+  <!-- Sort Order -->
+  <Field ID="{fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa}" Type="Number" Name="COM_SortOrder" StaticName="COM_SortOrder" DisplayName="Sort Order" Required="FALSE" Min="0" Hidden="False" Group="1 - Compassion Columns" Description="" />
   <!-- User RSS Feed Id -->
   <Field ID="{3DBCFA4B-CCD3-49A3-9362-CEFBE2E56139}" Type="Integer" Name="COM_RssFeedId" StaticName="COM_RssFeedId" DisplayName="RSS Feed Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
   <!--Toolbar User Id -->
   <Field ID="{BB46C99E-9E55-41D9-9143-B3B98FAEEFF8}" Type="Integer" Name="COM_UserToolbarId" StaticName="COM_UserToolbarId" DisplayName="User Tool Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
+  <!--List Sort Order -->
+  <Field ID="{2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5}" Type="Integer" Name="COM_ListSortOrder" StaticName="COM_ListSortOrder" DisplayName="Sort Order" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
 
    <!-- DATE FIELDS -->
    <!-- Publish Date -->
