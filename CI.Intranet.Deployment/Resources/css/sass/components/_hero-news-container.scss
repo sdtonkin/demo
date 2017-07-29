@@ -1,0 +1,45 @@
+/* 
+ * -----------------------------------------
+ *  Hero News Container
+ *  @@ File: components/_hero-news-container.scss
+ * ----------------------------------------- 
+ */
+.hero-news-container{
+	.card-group{
+		margin-bottom: 20px;
+	}
+	.card{
+		background-color: $brand-off-white;
+		border: none;
+	}
+	.card-title{
+		margin-bottom: 30px;
+		background-color: $brand-white;
+		display: inline-block;
+		border: 1px solid $brand-brown-dull;
+		padding: 4px 10px;
+		color: $brand-brown-gray;
+	}
+	.card-likes{
+		color: $brand-brown-gray;
+		i{
+			margin-right: 5px;
+		}	
+	}
+	.card-text{
+		line-height: 27px;
+		font-size: 24px;
+		@extend .font-lato-med;
+		margin-bottom: 50px;
+	}
+	.card-date{
+		font-size: 14px;
+		color: $brand-brown-gray;
+		@extend .font-lato-reg;
+		margin-bottom: 5px;
+	}
+	.img-fluid{
+		height: 100%;
+		width: auto;
+	}
+}

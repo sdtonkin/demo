@@ -1,0 +1,67 @@
+/* 
+ * -----------------------------------------
+ *  Buttons
+ *  @@ File: base/_buttons.scss
+ * ----------------------------------------- 
+ */
+ .btn{
+ 	color: $brand-dark-blue-alt;
+ 	text-transform: uppercase;
+ 	@extend .font-lato-bold;
+ 	font-size: 16px;
+ 	letter-spacing: 2px;
+ 	padding-left: 0;
+ 	&.btn-cta{
+ 		margin-top: 30px;
+ 		margin-bottom: 30px;
+ 		&:after{
+ 			font-family: FontAwesome;
+ 			content: '\f054';
+ 			display: inline-block;
+ 			@extend .font-lato-light;
+ 			font-size: 15px;
+ 			margin-left: 10px;
+ 			color: $brand-dark-blue-alt;
+ 		}
+ 		&.white{
+ 			color: $brand-white;
+ 			&:after{
+ 				color: $brand-white;
+ 			}
+ 		}
+ 	}
+ 	&.btn-input{
+ 		background-color: $brand-white;
+ 		border: 1px solid $brand-brown-gray;
+ 		border-radius: 0;
+ 		border-left: none;
+ 		font-size: 20px;
+ 		color: $brand-brown-gray;
+ 	}
+ 	&.mx-w{
+ 		max-width: 320px;
+ 		margin-bottom: 15px;
+ 	}
+ }
+ .btn.btn-block{
+ 	color: $brand-dark-blue-alt;
+ 	background-color: $brand-white;
+ 	border-radius: 0;
+ 	border: none;
+ 	text-transform: uppercase;
+ 	@extend .font-lato-bold;
+ 	font-size: 16px;
+ 	letter-spacing: 2px;
+ 	padding: 15px;
+ 	&.blue{
+ 		background-color: $brand-dark-blue;
+ 		color: $brand-white;
+ 	}
+ 	&.blue-alt{
+ 		background-color: $brand-dark-blue-alt;
+ 		color: $brand-white;
+ 	}
+ 	&.brown{
+ 		color: $brand-brown-gray;
+ 	}
+ }

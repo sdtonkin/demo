@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" >
+    
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+
+   
+</head>
+
+    <body>
+        <!--#include virtual="includes/header.html" -->
+
+        <!--wrap the page content do not style this-->
+        <div id="page-content" class="main-content-compassion container-fluid">
+
+            <section class="section sub-nav-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="navAccordion" role="tablist" aria-multiselectable="true">
+                              <div class="card">
+                                <div class="card-header" role="tab" id="navHeadingOne">
+                                    <div class="row">
+                                        <div class="col-md-6 card-intro">
+                                            <h2>Good Morning, Sarah</h2>
+                                        </div>
+                                        <div class="col-md-3 weather-widget">
+                                            WEATHER WIDGET
+                                        </div>
+                                        <div class="col-md-3 card-close">
+                                           <a class="pull-right hidden-md-down" data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
+                                      Close <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="navCollapseOne" class="collapse show" role="tabpanel" aria-labelledby="navHeadingOne">
+                                  <div class="card-block">
+                                    INSERT VARIOUS WIDGETS
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-close-mobile col-3 offset-9 text-center">
+                           <a class=" hidden-lg-up " data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
+                      Close <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        <div class="main-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 main-left-content">
+                            <section class="news-events">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="news-events-tabs">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                              <li class="nav-item">
+                                                <a class="nav-link active alt" data-toggle="tab" href="#news" role="tab">News</a>
+                                              </li>
+                                              <li class="nav-item">
+                                                <a class="nav-link alt" data-toggle="tab" href="#events" role="tab">Events</a>
+                                              </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                              <div class="tab-pane active" id="news" role="tabpanel">
+                                                  <div class="search-filter">
+                                                    <div class="dropdown">
+                                                      <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Dropdown button
+                                                      </button>
+                                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                      </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                      <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Dropdown button
+                                                      </button>
+                                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                      </div>
+                                                    </div>
+
+
+                                                    <div class="input-group search">
+                                                      <input type="text" class="form-control" placeholder="Search for...">
+                                                      <span class="input-group-btn">
+                                                        <button class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
+                                                      </span>
+                                                    </div>
+
+                                                </div><!--search-filter-->
+                                                <div class="row">
+                                                  <div class="col-md-4 offset-md-8">
+                                                      <div class="dropdown pull-right sort-filter">
+                                                        <button class="btn btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Sort by: Newest First
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                          <a class="dropdown-item" href="#">Action</a>
+                                                          <a class="dropdown-item" href="#">Another action</a>
+                                                          <a class="dropdown-item" href="#">Something else here</a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="row news-card-container">
+                                                      <div class="col-md-6 news-card-wrapper">
+                                                         <div class="card upcoming-events">
+                                                            <div class="card-block">
+                                                                <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                                                <p class="card-date">May 10, 2017</p>
+                                                                <p class="card-time">2:00pm - 5:00pm</p>
+                                                                <p class="card-location">Colarado Springs, CO USA</p>
+                                                                <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6 news-card-wrapper">
+                                                         <div class="card upcoming-events">
+                                                            <div class="card-block">
+                                                                <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                                                <p class="card-date">May 10, 2017</p>
+                                                                <p class="card-time">2:00pm - 5:00pm</p>
+                                                                <p class="card-location">Colarado Springs, CO USA</p>
+                                                                <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row news-card-container">
+                                                      <div class="col-md-6 news-card-wrapper">
+                                                         <div class="card upcoming-events">
+                                                            <div class="card-block">
+                                                                <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                                                <p class="card-date">May 10, 2017</p>
+                                                                <p class="card-time">2:00pm - 5:00pm</p>
+                                                                <p class="card-location">Colarado Springs, CO USA</p>
+                                                                <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6 news-card-wrapper">
+                                                         <div class="card upcoming-events">
+                                                            <div class="card-block">
+                                                                <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                                                <p class="card-date">May 10, 2017</p>
+                                                                <p class="card-time">2:00pm - 5:00pm</p>
+                                                                <p class="card-location">Colarado Springs, CO USA</p>
+                                                                <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+
+                                                  
+
+                                              </div>
+                                              <div class="tab-pane" id="events" role="tabpanel">
+                                                <div class="row employee-card-container">
+                                                      <div class="col-md-6 employee-card-wrapper">
+                                                          <div class="media employee-card">
+                                                              <img class="d-flex align-self-start mr-3 emp-photo" src="http://placehold.it/100x100" alt="Generic placeholder image">
+                                                              <div class="media-body">
+                                                                <h3 class="mt-0 emp-name">Christine Glover</h3>
+                                                                <h5 class="emp-rec">Gratitude</h5>
+                                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                                                <span class="submit-line">Submitted by: Robert Kardagan</span>
+                                                              </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-6 employee-card-wrapper">
+                                                          <div class="media employee-card">
+                                                              <img class="d-flex align-self-start mr-3 emp-photo" src="http://placehold.it/100x100" alt="Generic placeholder image">
+                                                              <div class="media-body">
+                                                                <h3 class="mt-0 emp-name">Christine Glover</h3>
+                                                                <h5 class="emp-rec">Gratitude</h5>
+                                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                                                <span class="submit-line">Submitted by: Robert Kardagan</span>
+                                                              </div>
+                                                            </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row employee-card-container">
+                                                      <div class="col-md-6 employee-card-wrapper">
+                                                          <div class="media employee-card">
+                                                              <img class="d-flex align-self-start mr-3 emp-photo" src="http://placehold.it/100x100" alt="Generic placeholder image">
+                                                              <div class="media-body">
+                                                                <h3 class="mt-0 emp-name">Christine Glover</h3>
+                                                                <h5 class="emp-rec">Gratitude</h5>
+                                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                                                <span class="submit-line">Submitted by: Robert Kardagan</span>
+                                                              </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-6 employee-card-wrapper">
+                                                          <div class="media employee-card">
+                                                              <img class="d-flex align-self-start mr-3 emp-photo" src="http://placehold.it/100x100" alt="Generic placeholder image">
+                                                              <div class="media-body">
+                                                                <h3 class="mt-0 emp-name">Christine Glover</h3>
+                                                                <h5 class="emp-rec">Gratitude</h5>
+                                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                                                <span class="submit-line">Submitted by: Robert Kardagan</span>
+                                                              </div>
+                                                            </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                             
+                                            </div> <!--//.employee tabs -->
+                                           
+                                        </div><!--//.employee-spotlight-tabs outer container -->
+                                    </div>
+                                </div>
+                            </section>
+                            
+                        </div><!--main-left-content-->
+                        <div class="col-lg-4 main-right-rail">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="section">Upcoming Events</h2>
+                                </div>
+                            </div>
+                            <div class="card upcoming-events">
+                              <div class="card-block">
+                                  <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                  <p class="card-date">May 10, 2017</p>
+                                  <p class="card-time">2:00pm - 5:00pm</p>
+                                  <p class="card-location">Colarado Springs, CO USA</p>
+                                  <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                </div>
+                            </div>
+                            <div class="card upcoming-events">
+                              <div class="card-block">
+                                  <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                  <p class="card-date">May 10, 2017</p>
+                                  <p class="card-time">2:00pm - 5:00pm</p>
+                                  <p class="card-location">Colarado Springs, CO USA</p>
+                                  <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                </div>
+                            </div>
+                            <div class="card upcoming-events m-0">
+                              <div class="card-block">
+                                  <a href="#"><p class="card-text">Clear Tap Water Doesn’t Always Mean Clean Drinking Water</p></a>
+                                  <p class="card-date">May 10, 2017</p>
+                                  <p class="card-time">2:00pm - 5:00pm</p>
+                                  <p class="card-location">Colarado Springs, CO USA</p>
+                                  <h4 class="card-tags">Global</h4><h4 class="card-tags">Global Events</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn btn-cta white" href="#">View All News</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="section pb-3">Event Archive</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn btn-block blue mx-w" href="#">VIEW PAST EVENTS</a>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-block blue mx-w" href="#">VIEW CHAPEL ARCHIVE</a>
+                                </div>
+                            </div>
+                            
+
+
+                        </div> <!--main-right-rail-->
+                    </div>
+                </div> <!--/.container-->
+
+        </div><!--main-container-->
+
+        <div class="container-fluid footer-container">
+            <div class="container">
+                <footer class="footer-inner-container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <nav>
+                                <ul>
+                                    <li>Help</li>
+                                    <li>Feedback</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-lg-4 footer-brand">
+                            <img src="../images/compassion-white-logo.png" class="img-fluid pull-right">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="social-container">
+                                <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                <a href="#"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+                                <a href="#"><i id="social-in" class="fa fa-instagram fa-3x social"></i></a>
+                             </div>
+                        </div>
+                        <div class="col-lg-4 footer-copyright">
+                            <p>© 2017 Compassion International</p>
+                        </div>
+                    </div>
+                        
+                </footer>
+
+            </div>
+        </div>
+
+        </div><!--/.main-content-compassion-->
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="../js/bartel.js"></script>
+    </body>
+</html>
