@@ -1,6 +1,264 @@
-﻿body {
-    font-size: 9px;
+﻿/*!
+ *  MAIN CSS
+ * @author = Bartel Welch 
+ * @email =  bwelch@rightpoint.com
+ * Licensed under MIT 
+ * Based on Bootstrap v4
+*/
+
+@import "base/fonts";
+@import "base/variables"; 
+@import "base/mixins";
+@import "base/typography";
+@import "base/buttons";
+
+
+
+/*
+---------------
+
+Table of Contents:
+
+1)  GENERAL STYLES
+
+2)  HEADER STYLES
+3)  Main Content Containers
+4)  PANEL STYLES
+5)  IMAGE ROW STYLES
+6)  MODAL STYLES
+7)  EMAIL NOTICE STYLES
+8)  Twitter Styles
+9)  Media Sections
+10)  FOOTER STYLES
+
+
+9)  MAIN CONTENT STYLES
+10)  PAGE LAYOUT SPECIFIC OVERRIDES
+11) GENERAL FORM STYLES
+
+12) RESPONSIVE STYLES
+13) SHAREPOINT SPECIFIC OVERRIDES
+14) Low Bandwith OVERRIDES
+
+--------------
+*/
+
+/* ----------------------------------------------------
+  1) General Styles
+------------------------------------------------------- */
+.container{
+  max-width: 1700px;
+  width: auto;
+}
+.container-fluid{
+	// margin-left: -15px;
+	// margin-right: -15px;
+	
+}
+body {
+	@extend .font-lato-reg;
+	font-size: 14px;
+	color: $brand-dark-blue;
     p{
-        color: black;
+        color: $brand-dark-blue;
     }
 }
+
+/* ----------------------------------------------------
+  2) Header Styles
+------------------------------------------------------- */
+
+.sub-nav-container{
+	background-color: $brand-dark-blue;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	//padding: 30px 75px 30px 100px;
+	.card{
+		background-color: transparent;
+		border: none;
+	}
+
+	.card-header{
+		background-color: transparent;
+		color: $brand-white;
+		border: none;
+		padding-left: 0;
+	}
+	.card-intro{
+		color: $brand-white;
+	}
+	.card-block{
+		color: $brand-white;
+		border: none;
+		padding-left: 0;
+	}
+	.card-close, .card-close-mobile{
+		a{
+			color: $brand-white;
+		}
+	}
+}
+
+/* ----------------------------------------------------
+  2) Main Content Container Styles
+------------------------------------------------------- */
+.main-container{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.main-left-content{
+	padding-top: 40px;
+	padding-right: 45px;
+	// padding-left: 115px;
+}
+
+.main-right-rail{
+	background-color: $brand-light-blue;
+	padding: 40px 54px;
+
+}
+.container-fluid-right {
+    width:calc(100vw - 30px) !important;
+    overflow-x:visible;
+    padding-left:0px;
+    padding-right:0px;
+
+    > .row > :first-child {
+        padding-left:15px;
+        padding-right:15px;
+    }
+    > .row > :last-child {
+        padding-right:0px;
+        padding-left:0px;
+        float:right;
+        margin-right: 0px;
+
+    }
+  }
+
+/* ----------------------------------------------------
+  10) Footer Styles
+------------------------------------------------------- */
+.footer-container{
+	background-color: $brand-dark-blue;
+	margin-top: 0;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	hr{
+		border-color: $brand-white;
+	}
+	nav{
+		height: 100%;
+		position: relative;
+		ul{
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 0;
+			list-style: none;
+			padding-left: 0;
+			@extend .font-lato-reg;
+			font-size: 17px;
+			> li{
+				color: $brand-white;
+				display: inline-block;
+				margin-right: 10px;
+				border-right: 1px solid $brand-white;
+				padding-right: 10px;
+				&:last-child{
+					border-right: none;
+				}
+			}
+		}
+	}
+	 .social {
+	 	color: $brand-light-blue;
+	     -webkit-transform: scale(0.8);
+	     /* Browser Variations: */
+	     -moz-transform: scale(0.8);
+	     -o-transform: scale(0.8);
+	     -webkit-transition-duration: 0.5s;
+	     -moz-transition-duration: 0.5s;
+	     -o-transition-duration: 0.5s;
+	     &:hover {
+		     -webkit-transform: scale(1.1);
+		     -moz-transform: scale(1.1);
+		     -o-transform: scale(1.1);
+	 	}
+	 }
+
+	/*
+	    Social Hover Variations
+	*/
+	 
+	 #social-fb:hover {
+	     color: $brand-white;
+	 }
+	 #social-tw:hover {
+	     color: $brand-white;
+	 }
+	 #social-in:hover {
+	     color: $brand-white;
+	 }
+	 .footer-copyright p{
+	 	color: $brand-light-blue;
+	 	text-align: right;
+	 	font-size: 13px;
+	 }
+	 
+}
+
+/* ----------------------------------------------------
+  11) Component Imports
+------------------------------------------------------- */
+	@import "components/hero-news-container";
+	@import "components/find-people";
+	@import "components/right-rail";
+	@import "components/employee-spotlight";
+	@import "components/stay-connected";
+	@import "components/news-events";
+
+
+/* ----------------------------------------------------
+  12) Responsive Style Imports
+------------------------------------------------------- */
+// $xs-only: 	"767px";
+// $sm-max:	"992px";
+// $sm-only: 	"768px";
+// $sm-only2:  "991px";
+// $sm-min: 	"768px";
+// $md-min: 	"992px";
+
+@media  screen and (max-width: $phone-only) {
+  @import "responsive/phone";
+}
+
+@media  screen and (max-width: $sm-max) {
+  @import "responsive/tabletdown";
+}
+
+@media  screen and (min-width:$sm-only) and (max-width:$sm-only2) {
+  @import "responsive/tablet";
+}
+@media  screen and (min-width:$sm-min) {
+  @import "responsive/tabletandup";
+}
+@media  screen and (min-width:$md-min) {
+  @import "responsive/desktop";
+}
+
+/* ----------------------------------------------------
+  13) Sharepoint Override Imports
+------------------------------------------------------- */
+
+@import "sharepoint-overrides";
+
+/* ----------------------------------------------------
+  13) Low Bandwidth Override Imports
+------------------------------------------------------- */
+
+@import "low-bandwidth";
+

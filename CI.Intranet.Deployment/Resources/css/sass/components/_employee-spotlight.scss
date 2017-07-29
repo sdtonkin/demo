@@ -1,0 +1,91 @@
+/* 
+ * -----------------------------------------
+ *  Employee Spotlight
+ *  @@ File: components/_employee-spotlight.scss
+ * ----------------------------------------- 
+ */
+
+ .employee-spotlight{
+	.nav-tabs{
+		border-bottom: 2px solid $brand-light-blue;
+	}
+	.tab-content{
+		// margin-bottom: 30px;
+	}
+	.nav-link{
+		text-align: left;
+		padding-left: 0;
+		padding-right: 30px;
+		padding-bottom: 5px;
+		color: $brand-dark-blue-alt;
+		font-size: 20px;
+		border-bottom: 4px solid transparent;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		&:hover{
+			border-bottom: 4px solid transparent;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-dark-blue-alt;
+		}
+		&.active{
+			border-bottom: 4px solid $brand-dark-blue;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-dark-blue-alt;
+		}
+	}
+	.employee-card-wrapper{
+		margin-bottom: 30px;
+		margin-top: 40px;
+		&+ .employee-card-wrapper{
+			border-left: 1px solid $brand-brown-dull;
+		}
+	}
+	.employee-card-container{
+		border-bottom: 1px solid $brand-brown-dull;
+		&:last-child{
+			border-bottom: 2px solid $brand-light-blue;
+		}
+	}
+	.employee-card{
+		
+		.emp-photo{
+			border-radius: 50%;
+		}
+		.emp-name{
+			color: $brand-dark-blue;
+			font-size: 25px;
+			@extend .font-lato-reg;
+		}
+		.emp-rec{
+			color: $brand-dark-blue-alt;
+			font-size: 14px;
+			text-transform: uppercase;
+			@extend .font-lato-med;
+		}
+		.emp-des{
+			color: $brand-dark-blue;
+			font-size: 14px;
+			@extend .font-lato-reg;
+			line-height: 17px;
+		}
+		.submit-line{
+			color: $brand-dark-blue;
+			font-size: 14px;
+			@extend .font-lato-reg;
+			font-style: italic;
+		}
+	}
+	.employee-spotlight-cta{
+		.btn-block{
+			margin-top: 30px;
+			max-width: 242px;
+		}
+	}
+ }

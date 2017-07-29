@@ -1,0 +1,146 @@
+/* 
+ * -----------------------------------------
+ *  News & Events
+ *  @@ File: components/_news-events.scss
+ * ----------------------------------------- 
+ */
+
+ .news-events{
+	.nav-tabs{
+		border-bottom: 2px solid $brand-brown-dull;
+	}
+	.tab-content{
+		margin-top: 30px;
+	}
+	.nav-link{
+		text-align: left;
+		padding-left: 0;
+		padding-right: 30px;
+		padding-bottom: 5px;
+		border-bottom: 4px solid transparent;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		font-size: 40px;
+		@extend .font-lato-reg;
+		color:  $brand-brown-gray;
+
+		&:hover{
+			border-bottom: 4px solid transparent;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-brown-dull;
+		}
+		&.active{
+			border-bottom: 4px solid $brand-brown-gray;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-brown-gray;
+		}
+		&.alt{
+			
+		}
+	}
+	.upcoming-events{
+		max-width: none;
+		margin-bottom: 0;
+
+	}
+	.news-card-wrapper{
+		margin-bottom: 30px;
+		margin-top: 0;
+		
+	}
+	
+	.search{
+		width: auto;
+ 		margin-top: 0;
+ 		display: flex;
+ 		flex: auto;
+ 		.form-control{
+ 			border-radius: 0;
+ 			color: $brand-dark-blue-alt;
+ 			height: 60px;
+ 			border: none;
+ 			@include placeholder{
+ 				color: $brand-brown-gray;
+ 				font-size: 18px;
+ 			}
+ 			&:focus, &:hover{
+ 				border: none;
+ 			}
+ 		}
+ 		.input-group-btn{
+ 			border-radius: 0;
+ 			button{
+ 				border: none;
+ 			}
+ 		}
+ 	}
+	
+	.search-filter{
+		border: 1px solid $brand-brown-gray;
+		display: flex;
+		.dropdown{
+			display:table-cell;
+		}
+		.dropdown-menu{
+			top: 58px;
+			background-color: $brand-brown-gray;
+			border-radius: 0;
+			left: -2px;
+			width: 100%;
+			a{
+				color: $brand-white;
+				font-size: 14px;
+				padding-bottom: 15px;
+    			padding-left: 15px;
+    			padding-top: 15px;
+    			&:hover{
+    				color: $brand-brown-gray;
+    			}
+			}
+		}
+	}
+	.sort-filter{
+		.dropdown-menu{
+			top: 45px;
+			background-color: $brand-dark-blue;
+			border-radius: 0;
+			// left: 15px;
+			width: 100%;
+			a{
+				color: $brand-white;
+				font-size: 14px;
+				// padding-bottom: 10px;
+    			// padding-left: 5px;
+    			// padding-top: 10px;
+    			padding: 15px 0 15px 15px;
+    			&:hover{
+    				color: $brand-dark-blue;
+    			}
+			}
+		}
+		.dropdown-toggle{
+			padding-left: 0;
+			&:focus{
+				box-shadow: none;
+			}
+		}
+	}
+	.btn-block.brown{
+		float: left;
+		width: auto;
+		border-right: 1px solid $brand-brown-gray;
+		margin-top: 5px;
+		outline: none;
+		&:focus{
+			box-shadow: none;
+		}
+	}
+
+ }
