@@ -18,6 +18,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
     ctrl.saveMyToolsSortOrder = saveMyToolsSortOrder;
     ctrl.updateSortOrder = updateSortOrder;
     this.$onInit = function () {
+        $("#ci-toolbar").tabs();
         toolBarService.getMyTools(userId).then(function (response) {
             $scope.myToolsFromDb = response;
             $scope.myTools = angular.copy(response);
@@ -25,7 +26,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
         });
         toolBarService.getAllTools().then(function (response) {
             $scope.allTools = response;
-        });
+        });        
     };
     $scope.myToolsSortList = [];
     $scope.existsToolMyTools = function (toolId) {
@@ -103,7 +104,8 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
         var tools = $scope.myTools;
         var dbTools = $scope.myToolsFromDb;
         var toolsToAdd = _.where(tools, { id: -1 });
-        var toolsToDelete = _.difference(dbTools, tools);
+        var fullTools = _.filter(tools, function (t) { return t.id != -1; });
+        var toolsToDelete = _.difference(fullTools, tools);
 
         for (var i = 0; i < toolsToAdd.length; i++) {
             var tool = toolsToAdd[i];
@@ -113,9 +115,13 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarSe
             var tool = toolsToDelete[i];
             toolBarService.removeMyTool(tool.id);
         }
-        $scope.myToolsFromDb = angular.copy($scope.myTools);
-        isToolbarDirty = false;
-        $scope.systemMessage = 'Success';
+        toolBarService.getMyTools(userId).then(function (response) {
+            $scope.myToolsFromDb = response;
+            $scope.myTools = angular.copy(response);
+            getSortOrderLimits();
+            isToolbarDirty = false;
+            $scope.systemMessage = 'Success';
+        });
     }
     function getSortOrderLimits() {
         var myToolsCount = $scope.myTools.length;

@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\images\compassion.ico" />
+    <Content Include="Resources\images\toolbar-icon-1.jpg" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
@@ -194,7 +195,6 @@
     <Content Include="Resources\js\src\components\common.js" />
     <Content Include="Resources\js\src\components\modal.js" />
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
-    <Content Include="Resources\js\src\components\my-tool-manager.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\tool-bar-service.js" />
@@ -230,10 +230,28 @@
     </None>
     <None Include="package.json" />
     <None Include="packages.config" />
+    <None Include="Resources\css\sass\base\_buttons.scss" />
+    <None Include="Resources\css\sass\base\_fonts.scss" />
+    <None Include="Resources\css\sass\base\_mixins.scss" />
+    <None Include="Resources\css\sass\base\_typography.scss" />
+    <None Include="Resources\css\sass\base\_variables.scss" />
+    <None Include="Resources\css\sass\components\_employee-spotlight.scss" />
+    <None Include="Resources\css\sass\components\_find-people.scss" />
+    <None Include="Resources\css\sass\components\_hero-news-container.scss" />
+    <None Include="Resources\css\sass\components\_news-events.scss" />
+    <None Include="Resources\css\sass\components\_right-rail.scss" />
+    <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
     <None Include="Resources\css\sass\modal.scss" />
+    <None Include="Resources\css\sass\responsive\_desktop.scss" />
+    <None Include="Resources\css\sass\responsive\_phone.scss" />
+    <None Include="Resources\css\sass\responsive\_tablet.scss" />
+    <None Include="Resources\css\sass\responsive\_tabletandup.scss" />
+    <None Include="Resources\css\sass\responsive\_tabletdown.scss" />
+    <None Include="Resources\css\sass\_low-bandwidth.scss" />
+    <None Include="Resources\css\sass\_sharepoint-overrides.scss" />
     <None Include="Resources\js\lib\angular.min.js.map" />
     <None Include="Resources\js\lib\pnp.min.js.map" />
     <None Include="Resources\MasterPages\com-main.master">

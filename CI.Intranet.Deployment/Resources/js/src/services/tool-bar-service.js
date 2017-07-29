@@ -5,13 +5,11 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
     var ctrl = this;
     var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
     
-    ctrl.$onInit = function () {
-        // clear local storage if url param is detected
-        checkForClearStatement();
-        // ensure Promise for pnp is loaded prior to using pnp module
-        ES6Promise.polyfill();
-    };
-    
+    // clear local storage if url param is detected
+    checkForClearStatement();
+    // ensure Promise for pnp is loaded prior to using pnp module
+    ES6Promise.polyfill();  
+
     // set default expiration at 24 hours
     ctrl.expirationDuration = 24;
     ctrl.getMyTools = function (userId) {
@@ -74,7 +72,7 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
                         promises.push(p)
                     }
                     $q.all(promises).then(function(response){
-                        response = _.sortBy(response, 'sortOrder');
+                        response = formatAppTools(response);
                         storage.set(userToolsKey, response, 0);
                         defer.resolve(response);
                     });                
@@ -93,7 +91,6 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
         });
         return defer.promise;
     }
-
     function getTool(toolId) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
@@ -175,5 +172,17 @@ angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', '
     function checkForClearStatement() {
         if (common.getUrlParamByName('clearMyTools') == 'true')
             storage.remove(userToolsKey);
+    }
+    function formatAppTools(apps) {
+        var nullSortOrder = (_.findIndex(apps, function(a){ return a.sortOrder == null; }) != -1);
+        for(var i = 0; i < apps.length; i++) {
+            var app = apps[i];
+            if (app.sortOrder == null) {
+                nullSortOrder = true;
+                apps[i].sortOrder = i + 1;
+            } else if (nullSortOrder)
+                apps[i].sortOrder = i + 1;
+        }
+        return _.sortBy(apps, 'sortOrder');
     }
 }]);
