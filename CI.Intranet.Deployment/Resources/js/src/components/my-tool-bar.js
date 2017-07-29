@@ -4,7 +4,7 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'toolBarService', 'COM_CONFIG', function ($scope, common, modalService, toolBarService, COM_CONFIG) {
     var ctrl = this;
-    var userId = _spPageContextInfo.userId;
+    var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;
 
     ctrl.openModal = openModal;

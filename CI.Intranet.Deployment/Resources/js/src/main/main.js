@@ -10,6 +10,7 @@ var app = angular.module('compassionIntranet', []).config(function ($sceDelegate
 require("../main/config.js");
 
 // Services
+require('../services/storage-service.js');
 require('../services/modal-service.js');
 require('../services/rss-feed-service.js');
 require('../services/tool-bar-service.js');

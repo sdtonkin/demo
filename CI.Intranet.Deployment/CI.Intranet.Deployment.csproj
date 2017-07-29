@@ -197,6 +197,7 @@
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
     <Content Include="Resources\js\src\components\my-tool-manager.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
+    <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\tool-bar-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
