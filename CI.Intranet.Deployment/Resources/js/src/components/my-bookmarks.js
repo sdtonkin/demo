@@ -5,131 +5,106 @@ var myApp = angular.module('compassionIntranet'),
 myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkService', 'COM_CONFIG', function ($scope, common, modalService, bookmarkService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;    
-    var isToolbarDirty = false;
+    var isDirty = false;
 
     ctrl.openModal = openModal;
     ctrl.closeModal = closeModal;
-    ctrl.saveMyTools = saveMyTools;
+    ctrl.saveMyBookmarks = saveMyBookmarks;
+    ctrl.removeMyBookmark = removeMyBookmark;
     ctrl.enableSaveButton = function () {
-        if (isToolbarDirty)
+        if (isDirty)
             $scope.systemMessage = '';
-        return !isToolbarDirty;
+        return !isDirty;
     };
-    ctrl.saveMyToolsSortOrder = saveMyToolsSortOrder;
     ctrl.updateSortOrder = updateSortOrder;
     this.$onInit = function () {
-        $("#ci-toolbar").tabs();
-        toolBarService.getMyTools(userId).then(function (response) {
-            $scope.myToolsFromDb = response;
-            $scope.myTools = angular.copy(response);
+        bookmarkService.getMyBookmarks(userId).then(function (response) {
+            $scope.myBookmarks = angular.copy(response);
+            $scope.myBookmarksFromDb = response;
             getSortOrderLimits();
-        });
-        toolBarService.getAllTools().then(function (response) {
-            $scope.allTools = response;
         });        
     };
-    $scope.myToolsSortList = [];
-    $scope.existsToolMyTools = function (toolId) {
-        if (!toolId) return false;
-        var item = _.find($scope.myTools, function (i) {
-            return i.toolId == toolId;
-        });
-        return item != null;
-    };
-    $scope.toggleSelection = function (id) {
-        isToolbarDirty = true;
-        var item = _.find($scope.myTools, function (i) {
-            return i.toolId == id;
-        });
-        if (item == null) {
-            var tool = _.find($scope.allTools, function (i) {
-                return i.id == id;
-            });
-            tool.toolId = tool.id;
-            tool.id = -1;
-            $scope.myTools.push(tool);
-        }
-        else {
-            var currentTools = $scope.myTools;
-            $scope.myTools = _.without(currentTools, _.findWhere(currentTools, {
-                toolId: id
-            }));
-        }
-    };
-    $scope.saveMyTools = saveMyTools;
-    function updateSortOrder(tool, oldOrder) {
-        isToolbarDirty = true;
-        var tools = $scope.myTools;
-        var newOrder = tool.sortOrder;
+    function updateSortOrder(bookmark, oldOrder) {
+        isDirty = true;
+        var bookmarks = $scope.myBookmarks;
+        var newOrder = bookmark.sortOrder;
         if (oldOrder < newOrder) {
             for (var i = oldOrder - 1; i < newOrder; i++) {
-                var t = tools[i];
+                var t = bookmarks[i];
                 if (i == oldOrder - 1) {
-                    tools[i].sortOrder = tool.sortOrder;
+                    bookmarks[i].sortOrder = bookmark.sortOrder;
                 }
                 else if (i == newOrder - 1) {
-                    tools[i].sortOrder = t.sortOrder - 1
+                    bookmarks[i].sortOrder = t.sortOrder - 1
                 }
                 else {
-                    tools[i].sortOrder = t.sortOrder - 1;
+                    bookmarks[i].sortOrder = t.sortOrder - 1;
                 }
             }
         }
         else if (newOrder < oldOrder) {
             for (var i = newOrder - 1; i < oldOrder; i++) {
-                var t = tools[i];
+                var t = bookmarks[i];
                 if (i == newOrder - 1) {
-                    tools[i].sortOrder = t.sortOrder + 1;
+                    bookmarks[i].sortOrder = t.sortOrder + 1;
                 }
                 else if (i == oldOrder - 1) {
-                    tools[i].sortOrder = tool.sortOrder;
+                    bookmarks[i].sortOrder = bookmark.sortOrder;
                 }
                 else {
-                    tools[i].sortOrder = t.sortOrder + 1;
+                    bookmarks[i].sortOrder = t.sortOrder + 1;
                 }
             }
         }
-        $scope.myTools = _.sortBy(tools, 'sortOrder');
+        $scope.myBookmarks = _.sortBy(bookmarks, 'sortOrder');
     }
-    function saveMyToolsSortOrder() {
-        for (var i = 0; i < $scope.myTools.length; i++) {
-            var tool = $scope.myTools[i];
-            toolBarService.updateUserTool(tool);
+    function saveMyBookmarksSortOrder() {
+        for (var i = 0; i < $scope.myBookmarks.length; i++) {
+            var bk = $scope.myBookmarks[i];
+            bookmarkService.updateUserBookmark(bk);
         }
-        $scope.myToolsFromDb = $scope.myTools;
-        isToolbarDirty = false;
+        $scope.myBookmarksFromDb = angular.copy($scope.myBookmarks);
+        isDirty = false;
         $scope.systemMessage = 'Success';
     }
-    function saveMyTools() {
-        var tools = $scope.myTools;
-        var dbTools = $scope.myToolsFromDb;
-        var toolsToAdd = _.where(tools, { id: -1 });
-        var fullTools = _.filter(tools, function (t) { return t.id != -1; });
-        var toolsToDelete = _.difference(fullTools, tools);
-
-        for (var i = 0; i < toolsToAdd.length; i++) {
-            var tool = toolsToAdd[i];
-            toolBarService.addMyTool(userId, tool.toolId);
-        }
-        for (var i = 0; i < toolsToDelete.length; i++) {
-            var tool = toolsToDelete[i];
-            toolBarService.removeMyTool(tool.id);
-        }
-        toolBarService.getMyTools(userId).then(function (response) {
-            $scope.myToolsFromDb = response;
-            $scope.myTools = angular.copy(response);
+    function removeMyBookmark(bookmark) {
+        bookmarkService.removeMyBookmark(bookmark.id).then(function (response) {
+            console.log(response);
+            $scope.myBookmarks = angular.copy(response);
+            $scope.myBookmarksFromDb = response;
             getSortOrderLimits();
-            isToolbarDirty = false;
+        });
+    }
+    function saveMyBookmarks() {
+        var bookmarks = $scope.myBookmarks;
+        var dbBookmarks = $scope.myBookmarksFromDb;
+        var bookmarksToAdd = _.where(bookmarks, { id: -1 });
+        var fullBookmarks = _.filter(bookmarks, function (t) { return t.id != -1; });
+        var bookmarksToDelete = _.difference(fullBookmarks, bookmarks);
+
+        for (var i = 0; i < bookmarksToAdd.length; i++) {
+            var bk = bookmarksToAdd[i];
+            bookmarkService.addMyBookmark(bk);
+        }
+        for (var i = 0; i < bookmarksToDelete.length; i++) {
+            var bk = bookmarksToDelete[i];
+            bookmarkService.removeMyBookmark(bk.id);
+        }
+        bookmarkService.getMyBookmarks(userId).then(function (response) {
+            $scope.myBookmarks = response;
+            $scope.myBookmarksFromDb = angular.copy(response);
+            getSortOrderLimits();
+            isDirty = false;
             $scope.systemMessage = 'Success';
         });
     }
     function getSortOrderLimits() {
-        var myToolsCount = $scope.myTools.length;
+        var count = $scope.myBookmarks.length;
         var response = [];
-        for (var i = 1; i <= myToolsCount; i++) {
+        for (var i = 1; i <= count; i++) {
             response.push(i);
         }
-        $scope.myToolsSortList = response;
+        $scope.myBookmarksSortList = response;
     }
     function openModal(id) {
         modalService.Open(id);
@@ -137,8 +112,8 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkS
     function closeModal(id) {
         modalService.Close(id);
     }
-}]).component('myToolBar', {
-    template: require('../../includes/Tool-Bar.html'),
+}]).component('myBookmarks', {
+    template: require('../../includes/My-Bookmarks.html'),
     controller: controllerName,
     controllerAs: 'ctrl'
 });

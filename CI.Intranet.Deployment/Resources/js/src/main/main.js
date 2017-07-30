@@ -14,6 +14,7 @@ require('../services/storage-service.js');
 require('../services/modal-service.js');
 require('../services/rss-feed-service.js');
 require('../services/tool-bar-service.js');
+require('../services/bookmark-service.js');
 
 // System Components
 require('../components/common.js');

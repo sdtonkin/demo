@@ -3,7 +3,7 @@ import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 'use strict';
 angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userbookmarkKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
+    var userBookmarkKey = 'E5A445DB-8D84-4DC5-AFE4-779DCC86AED6' + _spPageContextInfo.userId;    
     
     // clear local storage if url param is detected
     checkForClearStatement();
@@ -12,21 +12,24 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
 
     // set default expiration at 24 hours
     ctrl.expirationDuration = 24;
-    ctrl.getMyTools = function (userId) {
+    ctrl.getMyBookmarks = function (userId) {
         var defer = $q.defer();
-        getUserToolItems(userId).then(function (tools) {
-            defer.resolve(tools);
+        getUserBookmarkItems(userId).then(function (bookmarks) {
+            var bks = [];
+            for(var i = 0; i < bookmarks.length; i++) {
+                var b = bookmarks[i];
+                var bk = {};
+                bk.id = b.Id;
+                bk.title = b.Title;
+                bk.url = b.COM_ToolbarUrl.Url;
+                bk.userId = b.COM_ToolbarUserId;
+                bks.push(bk);
+            }
+            defer.resolve(bks);
         });
         return defer.promise;
     };
-    ctrl.getAllTools = function () {
-        var defer = $q.defer();
-        getTools().then(function (tools) {
-            defer.resolve(tools);
-        });
-        return defer.promise;
-    };
-    ctrl.addMyTool = function (userId, toolId) {
+    ctrl.addMyBookmark = function (userId, toolId) {
         var defer = $q.defer();
         addUserTool(userId, toolId).then(function (tools) {
             storage.remove(userToolsKey);
@@ -34,7 +37,7 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         });
         return defer.promise;
     };
-    ctrl.updateUserTool = function (userTool) {
+    ctrl.updateUserBookmark = function (userTool) {
         var defer = $q.defer();
         updateUserTool(userTool).then(function (data) {
             storage.remove(userToolsKey);
@@ -42,7 +45,7 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         });
         return defer.promise;
     };
-    ctrl.removeMyTool = function (id) {
+    ctrl.removeMyBookmark = function (id) {
         var defer = $q.defer();
         deleteUserTool(id).then(function (tools) {
             storage.remove(userToolsKey);
@@ -50,9 +53,9 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         });
         return defer.promise;
     };
-    function getUserToolItems(userId) {
+    function getUserBookmarkItems(userId) {
         var defer = $q.defer();        
-        var local = storage.get(userToolsKey);
+        var local = storage.get(userBookmarkKey);
         if (local == null) {
             local = {};
             local.isExpired = true;
@@ -61,85 +64,23 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
             defer.resolve(local);
         else {
             let web = new Web(COM_CONFIG.rootWeb);
-            web.lists.getByTitle(COM_CONFIG.lists.userTools).items
+            web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
                 .filter("COM_ToolbarUser eq '" + userId + "'")
                 .get()
                 .then(function(data){
-                    var promises = new Array();
-                    for(var i = 0; data.length > i; i++)
-                    {
-                        var p = getUserTool(data[i]);
-                        promises.push(p)
-                    }
-                    $q.all(promises).then(function(response){
-                        response = formatAppTools(response);
-                        storage.set(userToolsKey, response, 0);
-                        defer.resolve(response);
-                    });                
+                    defer.resolve(data);
                 });
         }
-
         return defer.promise;
     }
-    function getUserTool(userTool) {
-        var defer = $q.defer();
-        getTool(userTool.COM_UserToolbarId).then(function(t){
-            t.toolId = t.id;
-            t.id = userTool.Id;
-            t.sortOrder = userTool.COM_ListSortOrder;
-            defer.resolve(t);
-        });
-        return defer.promise;
-    }
-    function getTool(toolId) {
+    function addUserBookmark(userBookmark) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
-            .getById(toolId)
-            .get()
-            .then(function(item){ 
-                var f = {};
-                f.id = item.Id;
-                f.title = item.Title;
-                f.url = item.COM_ToolbarUrl.Url;
-                f.iconUrl = item.COM_ToolbarIconUrl.Url;
-                f.sortOrder = item.COM_ListSortOrder;
-                defer.resolve(f); 
-            });
-
-        return defer.promise;
-    }
-    function getTools() {
-        var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
-            .get()
-            .then(function(items){ 
-                var tools = [];
-                for(var i = 0; items.length > i; i++)
-                {
-                    var item = items[i];
-                    var t = {};
-                    t.id = item.Id;
-                    t.title = item.Title;
-                    t.url = item.COM_ToolbarUrl.Url;
-                    t.iconUrl = item.COM_ToolbarIconUrl.Url;
-                    t.sortOrder = item.COM_ListSortOrder;
-
-                    tools.push(t);
-                }                
-                defer.resolve(tools); 
-            });
-
-        return defer.promise;
-    }
-    function addUserTool(userId, toolId) {
-        var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userTools).items
+        web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
             .add({
-                COM_ToolbarUserId: userId,
-                COM_UserToolbarId: toolId
+                COM_ToolbarUserId: userBookmark.userId,
+                COM_ToolbarUrl: userBookmark.url,
+                Title: userBookmark.title
             })
             .then(function(item){ 
                 defer.resolve(item.Id);
@@ -147,31 +88,32 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
 
         return defer.promise;
     }
-    function updateUserTool(userTool) {
+    function updateUserTool(userBookmark) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
-        pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userTools).items.getById(userTool.id).update({
-            COM_ListSortOrder: userTool.sortOrder
+        pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items.getById(userBookmark.id).update({
+            COM_ToolbarUserId: userBookmark.userId,
+            COM_ToolbarUrl: userBookmark.url,
+            Title: userBookmark.title
         }).then(r => {
             defer.resolve(r);
         });
         return defer.promise;
     }
-    function deleteUserTool(userToolId) {
+    function deleteUserTool(userBookmarkId) {
         var defer = $q.defer();
         let web = new Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userTools).items
-            .getById(userToolId)
+        web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
+            .getById(userBookmarkId)
             .delete()
             .then(function(item){ 
                 defer.resolve(true);
             });
-
         return defer.promise;
     }
     function checkForClearStatement() {
-        if (common.getUrlParamByName('clearMyTools') == 'true')
-            storage.remove(userToolsKey);
+        if (common.getUrlParamByName('clearMyBookmarks') == 'true')
+            storage.remove(userBookmarkKey);
     }
     function formatAppTools(apps) {
         var nullSortOrder = (_.findIndex(apps, function(a){ return a.sortOrder == null; }) != -1);

@@ -27,7 +27,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
                 userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools'
+                toolbarTools: 'Toolbar Tools',
+                userBookmarks: 'User Bookmarks'
             }
         });
     }
@@ -54,7 +55,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
                 userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools'
+                toolbarTools: 'Toolbar Tools',
+                userBookmarks: 'User Bookmarks'
             }
         });
     }
@@ -83,7 +85,8 @@ else {
             rssFeedsListTitle: 'RSS Feeds List',
             userRssFeedsListTitle: 'User RSS Feeds',
             userTools: 'User Tools',
-            toolbarTools: 'Toolbar Tools'
+            toolbarTools: 'Toolbar Tools',
+            userBookmarks: 'User Bookmarks'
         }
     });
 }

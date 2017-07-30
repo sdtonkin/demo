@@ -1,0 +1,27 @@
+﻿<ul ng-repeat="bk in myBookmarks track by bk.id">
+    <li>
+        <a ng-href="{{ bk.url }}">
+            <div>{{ bk.title }}</div>                        
+        </a>                    
+    </li>
+</ul>
+<modal id="ci-bookmarks-manage">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>Manage My Bookmarks</h1>            
+            <ul>
+                <li ng-repeat="bk in myBookmarks track by bk.id">
+                    <input type="text" ng-model="bk.title" />
+                    <input type="text" ng-model="bk.url" />
+                    <a ng-click="ctrl.removeMyBookmark(bk);">Delete</a>
+                </li>
+            </ul>
+
+            <button ng-click="ctrl.saveMyTools();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+            <button ng-click="ctrl.closeModal('ci-bookmarks-manage');">Close</button>
+            <span>{{systemMessage}}</span>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+    
