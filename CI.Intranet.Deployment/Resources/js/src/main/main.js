@@ -17,8 +17,9 @@ require('../services/tool-bar-service.js');
 require('../services/bookmark-service.js');
 
 // System Components
-require('../components/common.js');
-require('../components/modal.js');
+require('../main/common.js');
+require('../main/modal.js');
+require('../main/ui-helper.js');
 
 // Components
 require('../components/my-rss-feeds.js');

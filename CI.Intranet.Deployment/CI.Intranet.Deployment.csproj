@@ -193,10 +193,11 @@
     <Content Include="Resources\js\includes\Tool-Bar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
-    <Content Include="Resources\js\src\components\common.js" />
-    <Content Include="Resources\js\src\components\modal.js" />
+    <Content Include="Resources\js\src\main\common.js" />
+    <Content Include="Resources\js\src\main\modal.js" />
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-tool-bar.js" />
+    <Content Include="Resources\js\src\main\ui-helper.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
