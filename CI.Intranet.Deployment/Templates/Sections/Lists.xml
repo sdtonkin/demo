@@ -43,4 +43,21 @@
       <pnp:ContentTypeBinding ContentTypeID="0x01002E2B7E15D07C40C9AC8AA1C568B679D4" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
   </pnp:ListInstance>
+  <pnp:ListInstance Title="User Bookmarks" Description="User Bookmarks List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserBookmarks" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x0100D9716F4B2E514B688A5333A597E236EE" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">jslint</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarUrl">http://www.jslint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">JavaScript Style Guide and Coding Conventions</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.w3schools.com/js/js_conventions.asp</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
+  </pnp:ListInstance>
 </pnp:Lists>

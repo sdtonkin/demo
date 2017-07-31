@@ -182,6 +182,8 @@
   <Field ID="{BB46C99E-9E55-41D9-9143-B3B98FAEEFF8}" Type="Integer" Name="COM_UserToolbarId" StaticName="COM_UserToolbarId" DisplayName="User Tool Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
   <!--List Sort Order -->
   <Field ID="{2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5}" Type="Integer" Name="COM_ListSortOrder" StaticName="COM_ListSortOrder" DisplayName="Sort Order" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
+  <!--User Bookmark Id -->
+  <Field ID="{B9D616B8-9057-4327-9FDD-AAE11808B7DF}" Type="Integer" Name="COM_UserBookmarkId" StaticName="COM_UserBookmarkId" DisplayName="User Bookmark Id" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="" />
 
    <!-- DATE FIELDS -->
    <!-- Publish Date -->

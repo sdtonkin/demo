@@ -1,0 +1,38 @@
+﻿<section id="ci-toolbar-container">
+    <div id="ci-toolbar" class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <ul id="ci-toolbar-selector">
+                <li ng-class="{active:ctrl.isSelected('ci-apps')}">
+                    <a ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
+                </li>
+                <li ng-class="{active:ctrl.isSelected('ci-documents')}">
+                    <a ng-click="ctrl.select('ci-documents')" href="javascript: void(0);">documents</a>
+                </li>
+                <li ng-class="{active:ctrl.isSelected('ci-bookmarks')}">
+                    <a ng-click="ctrl.select('ci-bookmarks')" href="javascript: void(0);">bookmarks</a>
+                </li>
+                <li ng-class="{active:ctrl.isSelected('ci-sites')}">
+                    <a ng-click="ctrl.select('ci-sites')" href="javascript: void(0);">project sites</a>
+                </li>
+            </ul>
+            <div class="toolbar-content" id="ci-apps" ng-show="ctrl.selectedTabId == 'ci-apps'">
+                <my-apps></my-apps>
+            </div>
+            <div class="toolbar-content" id="ci-documents" ng-show="ctrl.selectedTabId == 'ci-documents'">
+                <h3>Recent Documents</h3>
+                <my-documents></my-documents>
+            </div>
+            <div class="toolbar-content" id="ci-bookmarks" ng-show="ctrl.selectedTabId == 'ci-bookmarks'">
+                <my-bookmarks></my-bookmarks>
+            </div>
+            <div class="toolbar-content" id="ci-sites" ng-show="ctrl.selectedTabId == 'ci-sites'">
+                <ul>
+                    <li><a>site 1</a></li>
+                </ul>
+            </div>            
+        </div>
+        <div class="col-xs-8 col-xs-offset-2">
+            <toolbar-manager></toolbar-manager>
+        </div>
+    </div>
+</section>
