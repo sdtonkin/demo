@@ -1,7 +1,7 @@
 ﻿import pnp from "sp-pnp-js";
 import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 'use strict';
-angular.module('compassionIntranet').service('toolBarService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
     

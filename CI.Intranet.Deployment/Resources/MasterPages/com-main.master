@@ -90,7 +90,7 @@
 
 <div id="s4-workspace" ng-app="compassionIntranet">
 <div id="s4-bodyContainer">
-<div id="page-content" class="main-content-compassion container-fluid">
+<div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <!-- Start Top Navigation -->
     <section class="section sub-nav-container">
                 <div class="container">
@@ -115,7 +115,7 @@
                                 </div>
                                 <div id="navCollapseOne" class="collapse show" role="tabpanel" aria-labelledby="navHeadingOne">
                                   <div class="card-block">
-                                    <my-tool-bar></my-tool-bar>
+                                    <my-toolbar></my-toolbar>
                                   </div>
                                 </div>
                               </div>
