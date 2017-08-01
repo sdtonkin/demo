@@ -1,6 +1,4 @@
-﻿import pnp from "sp-pnp-js";
-import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-'use strict';
+﻿'use strict';
 angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
@@ -60,7 +58,7 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
         if(!local.isExpired)
             defer.resolve(local);
         else {
-            let web = new Web(COM_CONFIG.rootWeb);
+            let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.userTools).items
                 .filter("COM_ToolbarUser eq '" + userId + "'")
                 .get()
@@ -93,7 +91,7 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
     }
     function getTool(toolId) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
             .getById(toolId)
             .get()
@@ -111,7 +109,7 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
     }
     function getTools() {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
             .get()
             .then(function(items){ 
@@ -135,7 +133,7 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
     }
     function addUserTool(userId, toolId) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.userTools).items
             .add({
                 COM_ToolbarUserId: userId,
@@ -149,8 +147,8 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
     }
     function updateUserTool(userTool) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
-        pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userTools).items.getById(userTool.id).update({
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        $pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userTools).items.getById(userTool.id).update({
             COM_ListSortOrder: userTool.sortOrder
         }).then(r => {
             defer.resolve(r);
@@ -159,7 +157,7 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
     }
     function deleteUserTool(userToolId) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.userTools).items
             .getById(userToolId)
             .delete()

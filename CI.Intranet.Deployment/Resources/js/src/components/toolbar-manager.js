@@ -2,10 +2,10 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarManagerCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsService', 'COM_CONFIG', function ($scope, common, modalService, appsService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsService', 'bookmarkService', 'COM_CONFIG', function ($scope, common, modalService, appsService, bookmarkService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;
-    var isToolbarDirty = false;
+    ctrl.isToolbarDirty = false;
 
     $scope.$parent.$watch('ctrl.myTools', function (newVal, oldVal, scope) {
         if (newVal == null) return;
@@ -18,17 +18,26 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
         ctrl.myBookmarks = newVal;
         ctrl.myBookmarksFromDb = scope.ctrl.myBookmarksFromDb;
     });
+    ctrl.newBookmark = {};
+    ctrl.newBookmark.url = '';
+    ctrl.newBookmark.title = '';
     ctrl.openModal = openModal;
     ctrl.closeModal = closeModal;
     ctrl.saveMyTools = saveMyTools;
     ctrl.openManageModal = openManageModal;
-    ctrl.enableSaveButton = function () {
-        if (isToolbarDirty)
-            $scope.systemMessage = '';
-        return !isToolbarDirty;
-    };
     ctrl.saveMyToolsSortOrder = saveMyToolsSortOrder;
     ctrl.updateSortOrder = updateSortOrder;
+    ctrl.saveMyBookmark = saveMyBookmark;
+    ctrl.enableAddNew = false;
+    ctrl.addMyBookmark = function () {
+        ctrl.enableAddNew = true;        
+    };
+    ctrl.enableSaveButton = function () {
+        if (ctrl.isToolbarDirty)
+            $scope.systemMessage = '';
+        return !ctrl.isToolbarDirty;
+    };
+    
     this.$onInit = function () {
         ctrl.myTools = $scope.$parent.ctrl.myTools;
         appsService.getAllTools().then(function (response) {
@@ -44,7 +53,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
         return item != null;
     };
     $scope.toggleSelection = function (id) {
-        isToolbarDirty = true;
+        ctrl.isToolbarDirty = true;
         var item = _.find(ctrl.myTools, function (i) {
             return i.toolId == id;
         });
@@ -63,10 +72,10 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
             }));
         }
     };
-    $scope.saveMyTools = saveMyTools;
+    
     
     function updateSortOrder(tool, oldOrder) {
-        isToolbarDirty = true;
+        ctrl.isToolbarDirty = true;
         var tools = ctrl.myTools;
         var newOrder = tool.sortOrder;
         if (oldOrder < newOrder) {
@@ -97,16 +106,30 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
                 }
             }
         }
-        $scope.myTools = _.sortBy(tools, 'sortOrder');
+        ctrl.myTools = _.sortBy(tools, 'sortOrder');
     }
     function saveMyToolsSortOrder() {
         for (var i = 0; i < ctrl.myTools.length; i++) {
-            var tool = $scope.myTools[i];
-            toolBarService.updateUserTool(tool);
+            var tool = ctrl.myTools[i];
+            appsService.updateUserTool(tool);
         }
         ctrl.myToolsFromDb = ctrl.myTools;
-        isToolbarDirty = false;
+        ctrl.isToolbarDirty = false;
         ctrl.systemMessage = 'Success';
+    }
+    function saveMyBookmark() {
+        var title = ctrl.newBookmark.title;
+        var url = ctrl.newBookmark.url;
+        bookmarkService.addMyBookmark(userId, title, url).then(function (data) {
+            ctrl.enableAddNew = false;
+            ctrl.isToolbarDirty = false;
+            ctrl.systemMessage = 'Success adding bookmark';
+            var newBookmark = {};
+            newBookmark.title = title;
+            newBookmark.url = url;
+            $scope.$parent.ctrl.myBookmarks.push(newBookmark);
+        });
+        
     }
     function saveMyTools() {
         var tools = ctrl.myTools;
@@ -127,7 +150,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
             ctrl.myToolsFromDb = response;
             ctrl.myTools = angular.copy(response);
             getSortOrderLimits();
-            isToolbarDirty = false;
+            ctrl.isToolbarDirty = false;
             ctrl.systemMessage = 'Success';
         });
     }

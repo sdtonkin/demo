@@ -30,7 +30,7 @@
   <pnp:ContentType ID="0x0100D9716F4B2E514B688A5333A597E236EE" Name="User Bookmark Item" Description="User Bookmark Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="D835A9E1-E84D-47A6-94A3-8EF7B448F68F" Name="COM_ToolbarUser" />
-      <pnp:FieldRef ID="025BF677-9D82-43AD-8869-68FBF582B7B1" Name="COM_ToolbarUrl" />
+      <pnp:FieldRef ID="651262AD-E8A1-4339-B5D4-1D94118EF2D4" Name="COM_BookmarkUrl" />
       <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
     </pnp:FieldRefs>
   </pnp:ContentType>
