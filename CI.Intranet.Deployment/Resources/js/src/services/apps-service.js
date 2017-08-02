@@ -1,7 +1,7 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userToolsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
+    var userAppsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
     
     // clear local storage if url param is detected
     checkForClearStatement();
@@ -10,47 +10,47 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
 
     // set default expiration at 24 hours
     ctrl.expirationDuration = 24;
-    ctrl.getMyTools = function (userId) {
+    ctrl.getMyApps = function (userId) {
         var defer = $q.defer();
-        getUserToolItems(userId).then(function (tools) {
-            defer.resolve(tools);
+        getUserAppItems(userId).then(function (apps) {
+            defer.resolve(apps);
         });
         return defer.promise;
     };
-    ctrl.getAllTools = function () {
+    ctrl.getAllApps = function () {
         var defer = $q.defer();
-        getTools().then(function (tools) {
-            defer.resolve(tools);
+        getApps().then(function (apps) {
+            defer.resolve(apps);
         });
         return defer.promise;
     };
-    ctrl.addMyTool = function (userId, toolId) {
+    ctrl.addMyApp = function (userId, appId) {
         var defer = $q.defer();
-        addUserTool(userId, toolId).then(function (tools) {
-            storage.remove(userToolsKey);
-            defer.resolve(tools);
+        addUserApp(userId, appId).then(function (apps) {
+            storage.remove(userAppsKey);
+            defer.resolve(apps);
         });
         return defer.promise;
     };
-    ctrl.updateUserTool = function (userTool) {
+    ctrl.updateUserApp = function (userApp) {
         var defer = $q.defer();
-        updateUserTool(userTool).then(function (data) {
-            storage.remove(userToolsKey);
+        updateUserApp(userApp).then(function (data) {
+            storage.remove(userAppsKey);
             defer.resolve(data);
         });
         return defer.promise;
     };
-    ctrl.removeMyTool = function (id) {
+    ctrl.removeMyApp = function (id) {
         var defer = $q.defer();
-        deleteUserTool(id).then(function (tools) {
-            storage.remove(userToolsKey);
-            defer.resolve(tools);
+        deleteUserApp(id).then(function (apps) {
+            storage.remove(userAppsKey);
+            defer.resolve(apps);
         });
         return defer.promise;
     };
-    function getUserToolItems(userId) {
+    function getUserAppItems(userId) {
         var defer = $q.defer();        
-        var local = storage.get(userToolsKey);
+        var local = storage.get(userAppsKey);
         if (local == null) {
             local = {};
             local.isExpired = true;
@@ -59,19 +59,19 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
             defer.resolve(local);
         else {
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
-            web.lists.getByTitle(COM_CONFIG.lists.userTools).items
+            web.lists.getByTitle(COM_CONFIG.lists.userApps).items
                 .filter("COM_ToolbarUser eq '" + userId + "'")
                 .get()
                 .then(function(data){
                     var promises = new Array();
                     for(var i = 0; data.length > i; i++)
                     {
-                        var p = getUserTool(data[i]);
+                        var p = getUserApp(data[i]);
                         promises.push(p)
                     }
                     $q.all(promises).then(function(response){
-                        response = formatAppTools(response);
-                        storage.set(userToolsKey, response, 0);
+                        response = formatAppApps(response);
+                        storage.set(userAppsKey, response, 0);
                         defer.resolve(response);
                     });                
                 });
@@ -79,21 +79,21 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
 
         return defer.promise;
     }
-    function getUserTool(userTool) {
+    function getUserApp(userApp) {
         var defer = $q.defer();
-        getTool(userTool.COM_UserToolbarId).then(function(t){
-            t.toolId = t.id;
-            t.id = userTool.Id;
-            t.sortOrder = userTool.COM_ListSortOrder;
+        getApp(userApp.COM_UserToolbarId).then(function(t){
+            t.appId = t.id;
+            t.id = userApp.Id;
+            t.sortOrder = userApp.COM_ListSortOrder;
             defer.resolve(t);
         });
         return defer.promise;
     }
-    function getTool(toolId) {
+    function getApp(appId) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
-            .getById(toolId)
+        web.lists.getByTitle(COM_CONFIG.lists.toolbarApps).items
+            .getById(appId)
             .get()
             .then(function(item){ 
                 var f = {};
@@ -107,13 +107,13 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
 
         return defer.promise;
     }
-    function getTools() {
+    function getApps() {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.toolbarTools).items
+        web.lists.getByTitle(COM_CONFIG.lists.toolbarApps).items
             .get()
             .then(function(items){ 
-                var tools = [];
+                var apps = [];
                 for(var i = 0; items.length > i; i++)
                 {
                     var item = items[i];
@@ -124,20 +124,20 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
                     t.iconUrl = item.COM_ToolbarIconUrl.Url;
                     t.sortOrder = item.COM_ListSortOrder;
 
-                    tools.push(t);
+                    apps.push(t);
                 }                
-                defer.resolve(tools); 
+                defer.resolve(apps); 
             });
 
         return defer.promise;
     }
-    function addUserTool(userId, toolId) {
+    function addUserApp(userId, appId) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userTools).items
+        web.lists.getByTitle(COM_CONFIG.lists.userApps).items
             .add({
                 COM_ToolbarUserId: userId,
-                COM_UserToolbarId: toolId
+                COM_UserToolbarId: appId
             })
             .then(function(item){ 
                 defer.resolve(item.Id);
@@ -145,21 +145,21 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
 
         return defer.promise;
     }
-    function updateUserTool(userTool) {
+    function updateUserApp(userApp) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        $pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userTools).items.getById(userTool.id).update({
-            COM_ListSortOrder: userTool.sortOrder
+        $pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userApps).items.getById(userApp.id).update({
+            COM_ListSortOrder: userApp.sortOrder
         }).then(r => {
             defer.resolve(r);
         });
         return defer.promise;
     }
-    function deleteUserTool(userToolId) {
+    function deleteUserApp(userAppId) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userTools).items
-            .getById(userToolId)
+        web.lists.getByTitle(COM_CONFIG.lists.userApps).items
+            .getById(userAppId)
             .delete()
             .then(function(item){ 
                 defer.resolve(true);
@@ -168,10 +168,10 @@ angular.module('compassionIntranet').service('appsService', ['$http', '$q', 'COM
         return defer.promise;
     }
     function checkForClearStatement() {
-        if (common.getUrlParamByName('clearMyTools') == 'true')
-            storage.remove(userToolsKey);
+        if (common.getUrlParamByName('clearMyApps') == 'true')
+            storage.remove(userAppsKey);
     }
-    function formatAppTools(apps) {
+    function formatAppApps(apps) {
         var nullSortOrder = (_.findIndex(apps, function(a){ return a.sortOrder == null; }) != -1);
         for(var i = 0; i < apps.length; i++) {
             var app = apps[i];

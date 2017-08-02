@@ -2,7 +2,7 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsService', 'bookmarkService', 'COM_CONFIG', function ($scope, common, modalService, appsService, bookmarkService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appService', 'bookmarkService', 'COM_CONFIG', function ($scope, common, modalService, appService, bookmarkService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;
@@ -14,9 +14,9 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appsServi
 
     ctrl.selectedTabId = 'ci-apps';
     this.$onInit = function () {
-        appsService.getMyTools(userId).then(function (response) {
-            ctrl.myToolsFromDb = response;
-            ctrl.myTools = angular.copy(response);
+        appService.getMyApps(userId).then(function (response) {
+            ctrl.myAppsFromDb = response;
+            ctrl.myApps = angular.copy(response);
         });
         bookmarkService.getMyBookmarks(userId).then(function (response) {
             ctrl.myBookmarks = angular.copy(response);

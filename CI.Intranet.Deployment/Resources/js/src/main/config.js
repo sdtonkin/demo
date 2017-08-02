@@ -26,8 +26,8 @@ if (document.location.host === "compassion.sharepoint.com") {
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
-                userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools',
+                userApps: 'User Tools',
+                toolbarApps: 'Toolbar Tools',
                 userBookmarks: 'User Bookmarks'
             }
         });
@@ -54,8 +54,8 @@ if (document.location.host === "compassion.sharepoint.com") {
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
-                userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools',
+                userApps: 'User Tools',
+                toolbarApps: 'Toolbar Tools',
                 userBookmarks: 'User Bookmarks'
             }
         });
@@ -84,8 +84,8 @@ else {
         lists: {
             rssFeedsListTitle: 'RSS Feeds List',
             userRssFeedsListTitle: 'User RSS Feeds',
-            userTools: 'User Tools',
-            toolbarTools: 'Toolbar Tools',
+            userApps: 'User Tools',
+            toolbarApps: 'Toolbar Tools',
             userBookmarks: 'User Bookmarks'
         }
     });

@@ -2,15 +2,15 @@
 <modal id="ci-apps-manage">
     <div class="modal">
         <div class="modal-body">
-            <h1>Manage My Tools</h1>
-            <h3>Available Tools</h3>
+            <h1>Manage My Tools / Apps</h1>
+            <h3>Available Tools / Apps</h3>
             <ul>
-                <li ng-repeat="tool in ctrl.allTools track by tool.id">
-                    <input type="checkbox" ng-click="toggleSelection(tool.id)" value="{{tool.id}}" ng-checked="existsToolMyTools(tool.id)" />{{tool.title}}
+                <li ng-repeat="app in ctrl.allApps track by app.id">
+                    <input type="checkbox" ng-click="toggleSelection(app.id)" value="{{app.id}}" ng-checked="existsAppInMyApps(app.id)" />{{app.title}}
                 </li>
             </ul>
 
-            <button ng-click="ctrl.saveMyTools();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+            <button ng-click="ctrl.saveMyApps();" ng-disabled="ctrl.enableSaveButton();">Save</button>
             <button ng-click="ctrl.closeModal('ci-apps-manage'); ctrl.openModal('ci-apps-manage-sort');">Edit Sort Order</button>
             <button ng-click="ctrl.closeModal('ci-apps-manage');">Close</button>
             <span>{{systemMessage}}</span>
@@ -21,17 +21,17 @@
 <modal id="ci-apps-manage-sort">
     <div class="modal">
         <div class="modal-body">
-            <h1>Manage My Tools Sort Order</h1>
+            <h1>Manage My Tools / Apps Sort Order</h1>
             <ul>
-                <li ng-repeat="tool in ctrl.myTools track by tool.id">
-                    {{tool.title}}
-                    <select ng-model="tool.sortOrder" ng-change="ctrl.updateSortOrder(tool, {{tool.sortOrder}});">
-                        <option ng-repeat="sort in myToolsSortList" ng-value="{{sort}}">{{sort}}</option>
+                <li ng-repeat="app in ctrl.myApps track by app.id">
+                    {{app.title}}
+                    <select ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
+                        <option ng-repeat="sort in myAppsSortList" ng-value="{{sort}}">{{sort}}</option>
                     </select>
                 </li>
             </ul>
 
-            <button ng-click="ctrl.saveMyToolsSortOrder();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+            <button ng-click="ctrl.saveMyAppsSortOrder();" ng-disabled="ctrl.enableSaveButton();">Save</button>
             <button ng-click="ctrl.closeModal('ci-apps-manage-sort'); ctrl.openModal('ci-apps-manage');">Close</button>
             <span>{{systemMessage}}</span>
         </div>

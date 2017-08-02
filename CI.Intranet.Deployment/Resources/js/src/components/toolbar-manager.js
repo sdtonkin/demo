@@ -2,17 +2,17 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarManagerCtrl';
 
-myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'appsService', 'bookmarkService', 'COM_CONFIG', function ($scope, $q, common, modalService, appsService, bookmarkService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'appService', 'bookmarkService', 'COM_CONFIG', function ($scope, $q, common, modalService, appService, bookmarkService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;
     ctrl.isToolbarDirty = false;
     ctrl.manageBookmarkId = 'ci-bookmarks-manage',
         ctrl.confirmDeleteBookmarkId = 'ci-bookmarks-confirm-delete';
 
-    $scope.$parent.$watch('ctrl.myTools', function (newVal, oldVal, scope) {
+    $scope.$parent.$watch('ctrl.myApps', function (newVal, oldVal, scope) {
         if (newVal == null) return;
-        ctrl.myTools = newVal;
-        ctrl.myToolsFromDb = scope.ctrl.myToolsFromDb;
+        ctrl.myApps = newVal;
+        ctrl.myAppsFromDb = scope.ctrl.myAppsFromDb;
         getSortOrderLimits();
     });
     $scope.$parent.$watch('ctrl.myBookmarks', function (newVal, oldVal, scope) {
@@ -26,7 +26,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     ctrl.closeModal = closeModal;
     ctrl.saveMyTools = saveMyTools;
     ctrl.openManageModal = openManageModal;
-    ctrl.saveMyToolsSortOrder = saveMyToolsSortOrder;
+    ctrl.saveMyAppsSortOrder = saveMyAppsSortOrder;
     ctrl.updateSortOrder = updateSortOrder;
     ctrl.saveMyNewBookmark = saveMyNewBookmark;
     ctrl.saveMyBookmarks = saveMyBookmarks;
@@ -44,35 +44,35 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     };
     
     this.$onInit = function () {
-        ctrl.myTools = $scope.$parent.ctrl.myTools;
-        appsService.getAllTools().then(function (response) {
-            ctrl.allTools = response;
+        ctrl.myApps = $scope.$parent.ctrl.myApps;
+        appService.getAllApps().then(function (response) {
+            ctrl.allApps = response;
         });
     };
-    $scope.myToolsSortList = [];
-    $scope.existsToolMyTools = function (toolId) {
-        if (!toolId) return false;
-        var item = _.find(ctrl.myTools, function (i) {
-            return i.toolId == toolId;
+    $scope.myAppsSortList = [];
+    $scope.existsAppInMyApps = function (appId) {
+        if (!appId) return false;
+        var item = _.find(ctrl.myApps, function (i) {
+            return i.appId == appId;
         });
         return item != null;
     };
     $scope.toggleSelection = function (id) {
         ctrl.isToolbarDirty = true;
-        var item = _.find(ctrl.myTools, function (i) {
+        var item = _.find(ctrl.myApps, function (i) {
             return i.toolId == id;
         });
         if (item == null) {
-            var tool = _.find(ctrl.allTools, function (i) {
+            var tool = _.find(ctrl.allApps, function (i) {
                 return i.id == id;
             });
             tool.toolId = tool.id;
             tool.id = -1;
-            ctrl.myTools.push(tool);
+            ctrl.myApps.push(tool);
         }
         else {
-            var currentTools = ctrl.myTools;
-            ctrl.myTools = _.without(currentTools, _.findWhere(currentTools, {
+            var currentTools = ctrl.myApps;
+            ctrl.myApps = _.without(currentTools, _.findWhere(currentTools, {
                 toolId: id
             }));
         }
@@ -92,7 +92,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     }
     function updateSortOrder(tool, oldOrder) {
         ctrl.isToolbarDirty = true;
-        var tools = ctrl.myTools;
+        var tools = ctrl.myApps;
         var newOrder = tool.sortOrder;
         if (oldOrder < newOrder) {
             for (var i = oldOrder - 1; i < newOrder; i++) {
@@ -122,7 +122,16 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 }
             }
         }
-        ctrl.myTools = _.sortBy(tools, 'sortOrder');
+        ctrl.myApps = _.sortBy(tools, 'sortOrder');
+    }
+    function saveMyAppsSortOrder() {
+        for (var i = 0; i < ctrl.myApps.length; i++) {
+            var bk = ctrl.myApps[i];
+            appService.updateUserApp(bk);
+        }
+        ctrl.myAppsFromDb = angular.copy(ctrl.myBookmarks);
+        isToolbarDirty = false;
+        $scope.systemMessage = 'Success';
     }
     function removeMyBookmark() {
         if (!$scope.bookmarkIdToDelete) {
@@ -142,15 +151,6 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             openModal(ctrl.manageBookmarkId);
             $scope.systemMessage = 'Successfully deleted the bookmark';
         });
-    }
-    function saveMyToolsSortOrder() {
-        for (var i = 0; i < ctrl.myTools.length; i++) {
-            var tool = ctrl.myTools[i];
-            appsService.updateUserTool(tool);
-        }
-        ctrl.myToolsFromDb = ctrl.myTools;
-        ctrl.isToolbarDirty = false;
-        ctrl.systemMessage = 'Success';
     }
     function saveMyNewBookmark() {
         var title = ctrl.newBookmark.title;
@@ -186,36 +186,36 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         });
     }
     function saveMyTools() {
-        var tools = ctrl.myTools;
-        var dbTools = ctrl.myToolsFromDb;
+        var tools = ctrl.myApps;
+        var dbTools = ctrl.myAppsFromDb;
         var toolsToAdd = _.where(tools, { id: -1 });
         var fullTools = _.filter(tools, function (t) { return t.id != -1; });
         var toolsToDelete = _.difference(fullTools, tools);
 
         for (var i = 0; i < toolsToAdd.length; i++) {
             var tool = toolsToAdd[i];
-            appsService.addMyTool(userId, tool.toolId);
+            appService.addMyTool(userId, tool.toolId);
         }
         for (var i = 0; i < toolsToDelete.length; i++) {
             var tool = toolsToDelete[i];
-            appsService.removeMyTool(tool.id);
+            appService.removeMyTool(tool.id);
         }
-        appsService.getMyTools(userId).then(function (response) {
-            ctrl.myToolsFromDb = response;
-            ctrl.myTools = angular.copy(response);
+        appService.getMyTools(userId).then(function (response) {
+            ctrl.myAppsFromDb = response;
+            ctrl.myApps = angular.copy(response);
             getSortOrderLimits();
             ctrl.isToolbarDirty = false;
             ctrl.systemMessage = 'Success';
         });
     }
     function getSortOrderLimits() {
-        if (ctrl.myTools == null) return;
-        var myToolsCount = ctrl.myTools.length;
+        if (ctrl.myApps == null) return;
+        var myAppsCount = ctrl.myApps.length;
         var response = [];
-        for (var i = 1; i <= myToolsCount; i++) {
+        for (var i = 1; i <= myAppsCount; i++) {
             response.push(i);
         }
-        $scope.myToolsSortList = response;
+        $scope.myAppsSortList = response;
     }
     function openManageModal() {
         var selectedTablId = $scope.$parent.ctrl.selectedTabId;
