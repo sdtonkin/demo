@@ -1,0 +1,97 @@
+/* 
+ * -----------------------------------------
+ *  FInd People Container
+ *  @@ File: components/_find-people.scss
+ * ----------------------------------------- 
+ */
+
+ .find-people{
+ 	padding-top: 50px;
+ 	padding-bottom: 50px;
+ 	.search{
+ 		margin-top: 15px;
+ 		.form-control{
+ 			border-radius: 0;
+ 			color: $brand-dark-blue-alt;
+ 			height: 60px;
+ 			border-color: $brand-brown-gray;
+ 			@include placeholder{
+ 				color: $brand-dark-blue-alt;
+ 				font-size: 18px;
+ 			}
+ 			&:focus, &:hover{
+ 				border-right: none;
+ 			}
+ 		}
+ 		.input-group-btn{
+ 			border-radius: 0;
+
+ 		}
+ 	}
+ 	
+ }
+ .find-people-carousel{
+ 	// https://www.codeply.com/go/ee6jHonXVM/bootstrap-4-carousel-card-slider
+ 	padding-bottom: 30px;
+ 	.carousel-indicators{
+ 		bottom: -30px;
+ 		li{
+ 			height: 10px;
+ 			max-width: 10px;
+ 			border-radius: 50%;
+ 			border: 1px solid $brand-brown-gray;
+ 			&:before{
+ 				content:"\f10c";
+ 				position: relative;
+ 			}
+ 			&.active{
+ 				background-color: $brand-brown-gray;
+ 			}
+ 		}
+ 	}
+ 	.employee-card-wrapper{
+
+	}
+	.employee-card{
+				background-color: $brand-white;
+		padding: 20px;
+		text-align: center;
+		hr{
+			border-color: $brand-brown-gray;
+			border-width: 1px;
+		}
+		.emp-photo{
+			border-radius: 50%;
+		}
+		.emp-name{
+			color: $brand-dark-blue;
+			font-size: 25px;
+			@extend .font-lato-reg;
+			margin-bottom: 2px;
+		}
+		.emp-loc{
+			color: $brand-dark-blue;
+			font-size: 13px;
+			text-transform: uppercase;
+			@extend .font-lato-extra;
+			display: block;
+			margin-bottom: 5px;
+		}
+		.emp-title{
+			color: $brand-dark-blue;
+			font-size: 16px;
+			@extend .font-lato-reg;
+			display: block;
+			margin-bottom: 10px;
+		}
+		.emp-logo{
+			
+		}
+		.emp-address, .emp-phone{
+			color: $brand-dark-blue;
+			font-size: 14px;
+			@extend .font-lato-reg;
+			display: block;
+		}
+	}
+ }

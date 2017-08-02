@@ -1,0 +1,112 @@
+/* 
+ * -----------------------------------------
+ *  Tablet Down
+ *  @@ File: responsive/_tablet-down.scss
+ * ----------------------------------------- 
+ */
+
+.container{
+	// margin-right: 30px;
+	// margin-left: 30px;
+}
+
+
+/* ----------------------------------------------------
+  2) Main Content Container Styles
+------------------------------------------------------- */
+.main-left-content{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
+/* 
+ * -----------------------------------------
+ *  Hero News Container
+ * ----------------------------------------- 
+ */
+
+ .hero-news-container{
+	.card{
+		margin-bottom: 20px;
+	}
+	.card-group{
+		margin-bottom: 0;
+	}
+}
+
+.sub-nav-container{
+	margin-bottom: 30px;
+	.card{
+		
+	}
+	.card-header{
+		
+	}
+	.card-intro{
+		margin-bottom: 15px;
+	}
+	.card-block{
+		
+	}
+
+	.card-close-mobile{
+		position: absolute;
+		bottom: -70px;
+		background-color: $brand-dark-blue;
+		padding: 0;
+		a{
+			display: block;
+			padding: 13px;
+			text-decoration: none;
+			color: $brand-white;
+		}
+	}
+}
+
+/* 
+ * -----------------------------------------
+ *  Right Rail
+ *  @@ File: components/_right-rail.scss
+ * ----------------------------------------- 
+ */
+.main-right-rail{
+
+}
+ .trending, .world-news, .upcoming-events{
+ 	max-width: none;
+ }
+
+ /* 
+ * -----------------------------------------
+ *  Employee Spotlight
+ *  @@ File: components/_employee-spotlight.scss
+ * ----------------------------------------- 
+ */
+
+ .employee-spotlight{
+ 	.tab-content{
+ 		margin-top: 30px;
+ 	}
+ 	.employee-spotlight-cta{
+ 		a, .btn-block{
+ 			float: none;
+ 			width: 100%;
+ 			max-width: none;
+ 		}
+ 	}
+ 	.employee-card-wrapper{
+		border-bottom: 1px solid $brand-brown-dull;
+		padding-bottom: 30px;
+		margin-top: 0;
+		&+ .employee-card-wrapper{
+			border-left: none;
+		}
+	}
+	.employee-card-container{
+		border-bottom: none;
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+ }
