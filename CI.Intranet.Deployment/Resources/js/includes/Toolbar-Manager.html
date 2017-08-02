@@ -44,10 +44,10 @@
             <h1>Manage My Bookmarks</h1>
             <ul>
                 <li ng-repeat="bk in ctrl.myBookmarks track by bk.id">
-                    <input type="text" ng-model="bk.title" />
-                    <input type="text" ng-model="bk.url" />
-                    <i class="fa fa-minus-circle" aria-hidden="true" ng-click="alert('hi')"></i>
-                    <a ng-click="ctrl.removeMyBookmark(bk);">Delete</a>
+                    <input type="hidden" ng-model="bk.id" />
+                    <input type="text" ng-model="bk.title" ng-change="ctrl.isToolbarDirty = true" />
+                    <input type="text" ng-model="bk.url" ng-change="ctrl.isToolbarDirty = true" />
+                    <a ng-click="ctrl.confirmDeletion(bk);">Delete</a>
                 </li>
             </ul>
             <div ng-show="ctrl.enableAddNew">
@@ -55,11 +55,26 @@
                 <input type="text" id="bookmark-title" ng-model="ctrl.newBookmark.title" ng-change="ctrl.isToolbarDirty = true" />
                 <label for="bookmark-url">Bookmark Url</label>
                 <input type="text" id="bookmark-url" ng-model="ctrl.newBookmark.url" ng-change="ctrl.isToolbarDirty = true" />
-                <button ng-click="ctrl.saveMyBookmark();" ng-disabled="ctrl.enableSaveButton()">Save</button>
+                <button ng-click="ctrl.saveMyNewBookmark();" ng-disabled="ctrl.enableSaveBookmarkButton()">Save</button>
             </div>
             
             <button ng-click="ctrl.addMyBookmark();">Add New</button>
+            <!--
+            <button ng-click="ctrl.saveMyBookmarks()" ng-disabled="ctrl.enableSaveButton()">Save</button>
+                -->
             <button ng-click="ctrl.closeModal('ci-bookmarks-manage');">Close</button>
+            <span>{{systemMessage}}</span>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="ci-bookmarks-confirm-delete">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>Bookmark Deletion Confirmation</h1>
+            <p>Please confirm deletion of bookmark.</p>
+            <button ng-click="ctrl.removeMyBookmark()">OK</button>
+            <button ng-click="ctrl.closeModal('ci-bookmarks-confirm-delete');ctrl.openModal('ci-bookmarks-manage');">Close</button>
             <span>{{systemMessage}}</span>
         </div>
     </div>

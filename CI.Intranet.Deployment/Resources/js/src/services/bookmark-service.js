@@ -40,7 +40,7 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
     ctrl.updateUserBookmark = function (userTool) {
         var defer = $q.defer();
         updateUserTool(userTool).then(function (data) {
-            storage.remove(userToolsKey);
+            storage.remove(userBookmarkKey);
             defer.resolve(data);
         });
         return defer.promise;
@@ -48,7 +48,7 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
     ctrl.removeMyBookmark = function (id) {
         var defer = $q.defer();
         deleteUserTool(id).then(function (tools) {
-            storage.remove(userToolsKey);
+            storage.remove(userBookmarkKey);
             defer.resolve(tools);
         });
         return defer.promise;
@@ -82,19 +82,24 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
                 COM_BookmarkUrl: url,
                 Title: title
             })
-            .then(function(item){ 
-                defer.resolve(item.Id);
+            .then(function (item) {
+                var bk = {};
+                bk.id = item.data.Id;
+                bk.title = item.data.Title;
+                bk.url = item.data.COM_BookmarkUrl;
+                bk.userId = item.data.COM_ToolbarUserId;
+                defer.resolve(bk);
             });
 
         return defer.promise;
     }
-    function updateUserTool(userId, title, url) {
+    function updateUserTool(userBookmark) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         $pnp.sp.web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items.getById(userBookmark.id).update({
-            COM_ToolbarUserId: userId,
-            COM_BookmarkUrl: url,
-            Title: title
+            COM_ToolbarUserId: userBookmark.userId,
+            COM_BookmarkUrl: userBookmark.url,
+            Title: userBookmark.title
         }).then(r => {
             defer.resolve(r);
         });
