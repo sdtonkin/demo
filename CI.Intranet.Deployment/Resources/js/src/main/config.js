@@ -82,7 +82,7 @@ else {
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
-            rssFeedsListTitle: 'RSS Feeds List',
+            rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',
             userApps: 'User Tools',
             toolbarApps: 'Toolbar Tools',
