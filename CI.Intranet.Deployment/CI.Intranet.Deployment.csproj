@@ -188,6 +188,8 @@
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
+    <Content Include="Resources\js\includes\Related-Documents.html" />
+    <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\RSS-Feeds.html" />
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
@@ -200,6 +202,8 @@
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\src\components\my-apps.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
+    <Content Include="Resources\js\src\components\related-documents.js" />
+    <Content Include="Resources\js\src\components\related-news.js" />
     <Content Include="Resources\js\src\components\rss-feeds.js" />
     <Content Include="Resources\js\src\components\rss-feed-manager.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
@@ -210,6 +214,7 @@
     <Content Include="Resources\js\src\main\ui-helper.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
+    <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
     <Content Include="Resources\js\src\services\apps-service.js" />
