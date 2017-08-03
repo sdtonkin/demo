@@ -44,7 +44,135 @@
 
                                 <div id="navCollapseOne" class="collapse show" role="tabpanel" aria-labelledby="navHeadingOne">
                                   <div class="card-block">
-                                    INSERT VARIOUS WIDGETS
+<!--INSERT VARIOUS WIDGETS-->
+<!--TEGAN CODE-->
+<section id="ci-toolbar-container" class="nav-toolbar">
+    <div id="ci-toolbar" class="">
+        <div class="">
+        
+            <ul id="ci-toolbar-selector" class="nav nav-tabs">
+            <div class="manage-toolbar">
+            <toolbar-manager class="ng-isolate-scope"><div><a ng-click="ctrl.openManageModal()"><i class="fa fa-cog" aria-hidden="true"></i>
+Manage</a></div>
+</toolbar-manager>
+        </div>
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-apps')}">
+                    <a class="nav-link" ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
+                </li>
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-documents')}">
+                    <a class="nav-link" ng-click="ctrl.select('ci-documents')" href="javascript: void(0);">documents</a>
+                </li>
+                <li  class="nav-item" ng-class="{active:ctrl.isSelected('ci-bookmarks')}">
+                    <a class="nav-link" ng-click="ctrl.select('ci-bookmarks')" href="javascript: void(0);">bookmarks</a>
+                </li>
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-sites')}">
+                    <a class="nav-link" ng-click="ctrl.select('ci-sites')" href="javascript: void(0);">project sites</a>
+                </li>
+            </ul>
+            <div class="toolbar-content" id="ci-apps" ng-show="ctrl.selectedTabId == 'ci-apps'">
+                <my-apps class="ng-isolate-scope"><!-- ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">Uber</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/sites/Compassion/_catalogs/masterpage/Compassion/images/toolbar-icon-1.jpg" href="https://teganwilson.sharepoint.com/sites/Compassion/_catalogs/masterpage/Compassion/images/toolbar-icon-1.jpg">
+            <img ng-src="https://teganwilson.sharepoint.com/sites/Compassion/_catalogs/masterpage/Compassion/images/toolbar-icon-1.jpg" src="https://teganwilson.sharepoint.com/sites/Compassion/_catalogs/masterpage/Compassion/images/toolbar-icon-1.jpg">
+            <div class="ng-binding">Rightpoint</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+               <!--Bartel: convert these image tags to a background image -->
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">Gateway to Service</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">HR Benefits</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">Open Air</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">Receipts</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --><ul ng-repeat="app in ctrl.myApps" class="ng-scope">
+    <li>
+        <a ng-href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" href="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <img ng-src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico" src="https://teganwilson.sharepoint.com/_catalogs/masterpage/Compassion/images/compassion.ico">
+            <div class="ng-binding">Leave</div>
+        </a>
+    </li>
+</ul><!-- end ngRepeat: app in ctrl.myApps --></my-apps>
+            </div>
+            <div class="toolbar-content ng-hide" id="ci-documents" ng-show="ctrl.selectedTabId == 'ci-documents'">
+                <h3>Recent Documents</h3>
+                <my-documents class="ng-isolate-scope"><ul>
+    <!-- ngRepeat: doc in ctrl.myDocuments -->
+</ul></my-documents>
+            </div>
+            <div class="toolbar-content ng-hide" id="ci-bookmarks" ng-show="ctrl.selectedTabId == 'ci-bookmarks'">
+                <my-bookmarks class="ng-isolate-scope"><!-- ngRepeat: bk in ctrl.myBookmarks track by bk.id --><ul ng-repeat="bk in ctrl.myBookmarks track by bk.id" class="ng-scope">
+    <li>
+        <a ng-href="http://www.jslint.com/" href="http://www.jslint.com/">
+            <div class="ng-binding">jslintasd</div>                       
+        </a>                   
+    </li>
+</ul><!-- end ngRepeat: bk in ctrl.myBookmarks track by bk.id --><ul ng-repeat="bk in ctrl.myBookmarks track by bk.id" class="ng-scope">
+    <li>
+        <a ng-href="6" href="6">
+            <div class="ng-binding">6</div>                       
+        </a>                   
+    </li>
+</ul><!-- end ngRepeat: bk in ctrl.myBookmarks track by bk.id --><ul ng-repeat="bk in ctrl.myBookmarks track by bk.id" class="ng-scope">
+    <li>
+        <a ng-href="8" href="8">
+            <div class="ng-binding">8</div>                       
+        </a>                   
+    </li>
+</ul><!-- end ngRepeat: bk in ctrl.myBookmarks track by bk.id --><ul ng-repeat="bk in ctrl.myBookmarks track by bk.id" class="ng-scope">
+    <li>
+        <a ng-href="9" href="9">
+            <div class="ng-binding">9</div>                       
+        </a>                   
+    </li>
+</ul><!-- end ngRepeat: bk in ctrl.myBookmarks track by bk.id --><ul ng-repeat="bk in ctrl.myBookmarks track by bk.id" class="ng-scope">
+    <li>
+        <a ng-href="https://www.google.com" href="https://www.google.com">
+            <div class="ng-binding">1</div>                       
+        </a>                   
+    </li>
+</ul><!-- end ngRepeat: bk in ctrl.myBookmarks track by bk.id -->
+    </my-bookmarks>
+            </div>
+            <div class="toolbar-content ng-hide" id="ci-sites" ng-show="ctrl.selectedTabId == 'ci-sites'">
+                <ul>
+                    <li><a>site 1</a></li>
+                </ul>
+            </div>           
+        </div>
+        
+    </div>
+</section>
+<!--TEGAN CODE END-->
+
                                   </div>
                                 </div>
                               </div>

@@ -1,0 +1,82 @@
+/* 
+ * -----------------------------------------
+ *  Nav Toolbar
+ *  @@ File: components/_nav-toolbar.scss
+ * ----------------------------------------- 
+ */
+
+ .nav-toolbar{
+ 	.nav-tabs{
+		border-bottom: 1px solid $brand-white;
+		position: relative;
+		margin-bottom: 30px;
+	}
+	.nav-item{
+		margin-bottom: -1px;
+	}
+	.nav-link{
+		text-align: left;
+		padding-left: 0;
+		padding-right: 30px;
+		padding-bottom: 5px;
+		border-bottom: 4px solid transparent;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		font-size: 16px;
+		@extend .font-lato-reg;
+		color:  $brand-light-blue;
+
+		&:hover{
+			border-bottom: 4px solid transparent;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-white;
+		}
+		&.active{
+			border-bottom: 4px solid $brand-white;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			border-radius: 0;
+			color: $brand-white;
+			background: transparent;
+		}
+		&.alt{
+			
+		}
+	}
+	.toolbar-content{
+		ul{
+			list-style: none;
+			display: inline-block;
+			text-align: center;
+			// margin-top: 30px;
+			padding-left: 0;
+			margin-right: 30px;
+			a{
+				color: $brand-white;
+				@extend .font-lato-med;
+				text-transform: uppercase;
+				font-size: 10px;
+				letter-spacing: 0.4px;
+				div{
+					padding-top: 5px;
+					display: block;
+					position: relative;
+				}
+			}
+		}
+		h3{
+			color: $brand-brown-dull;
+		}
+
+	}
+	.manage-toolbar{
+		position: absolute;
+		right: 0;
+		top: 45px;
+	}
+ }
