@@ -1,10 +1,8 @@
-﻿import pnp from "sp-pnp-js";
-import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-'use strict';
+﻿'use strict';
 angular.module('compassionIntranet').service('documentService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     function getMyDocuments(user) {
         var defer = $q.defer();
-        pnp.sp.search({
+        $pnp.sp.search({
             Querytext: 'Author: "' + user + '" OR ModifiedBy: "' + user + '"',
             RowLimit: 10,
             EnableInterleaving: true,

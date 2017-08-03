@@ -7,26 +7,27 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkS
     var userId = _spPageContextInfo.userId;    
     var isDirty = false;
 
-    ctrl.openModal = openModal;
-    ctrl.closeModal = closeModal;
-    ctrl.saveMyBookmarks = saveMyBookmarks;
-    ctrl.removeMyBookmark = removeMyBookmark;
     ctrl.enableSaveButton = function () {
         if (isDirty)
             $scope.systemMessage = '';
         return !isDirty;
     };
-    ctrl.updateSortOrder = updateSortOrder;
     this.$onInit = function () {
         bookmarkService.getMyBookmarks(userId).then(function (response) {
-            $scope.myBookmarks = angular.copy(response);
-            $scope.myBookmarksFromDb = response;
+            ctrl.myBookmarks = angular.copy(response);
+            ctrl.myBookmarksFromDb = response;
             getSortOrderLimits();
         });        
     };
+    $scope.$parent.$watch('ctrl.myBookmarks', function (newVal, oldVal, scope) {
+        if (newVal == null) return;
+        ctrl.myBookmarks = newVal;
+        ctrl.myBookmarksFromDb = scope.ctrl.myBookmarksFromDb;
+    });
+    /*
     function updateSortOrder(bookmark, oldOrder) {
         isDirty = true;
-        var bookmarks = $scope.myBookmarks;
+        var bookmarks = ctrl.myBookmarks;
         var newOrder = bookmark.sortOrder;
         if (oldOrder < newOrder) {
             for (var i = oldOrder - 1; i < newOrder; i++) {
@@ -56,28 +57,21 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkS
                 }
             }
         }
-        $scope.myBookmarks = _.sortBy(bookmarks, 'sortOrder');
+        ctrl.myBookmarks = _.sortBy(bookmarks, 'sortOrder');
     }
     function saveMyBookmarksSortOrder() {
-        for (var i = 0; i < $scope.myBookmarks.length; i++) {
-            var bk = $scope.myBookmarks[i];
+        for (var i = 0; i < ctrl.myBookmarks.length; i++) {
+            var bk = $scctrlope.myBookmarks[i];
             bookmarkService.updateUserBookmark(bk);
         }
-        $scope.myBookmarksFromDb = angular.copy($scope.myBookmarks);
+        ctrl.myBookmarksFromDb = angular.copy(ctrl.myBookmarks);
         isDirty = false;
         $scope.systemMessage = 'Success';
     }
-    function removeMyBookmark(bookmark) {
-        bookmarkService.removeMyBookmark(bookmark.id).then(function (response) {
-            console.log(response);
-            $scope.myBookmarks = angular.copy(response);
-            $scope.myBookmarksFromDb = response;
-            getSortOrderLimits();
-        });
-    }
+    
     function saveMyBookmarks() {
-        var bookmarks = $scope.myBookmarks;
-        var dbBookmarks = $scope.myBookmarksFromDb;
+        var bookmarks = ctrl.myBookmarks;
+        var dbBookmarks = ctrl.myBookmarksFromDb;
         var bookmarksToAdd = _.where(bookmarks, { id: -1 });
         var fullBookmarks = _.filter(bookmarks, function (t) { return t.id != -1; });
         var bookmarksToDelete = _.difference(fullBookmarks, bookmarks);
@@ -91,27 +85,30 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkS
             bookmarkService.removeMyBookmark(bk.id);
         }
         bookmarkService.getMyBookmarks(userId).then(function (response) {
-            $scope.myBookmarks = response;
-            $scope.myBookmarksFromDb = angular.copy(response);
+            ctrl.myBookmarks = response;
+            ctrl.myBookmarksFromDb = angular.copy(response);
             getSortOrderLimits();
             isDirty = false;
             $scope.systemMessage = 'Success';
         });
     }
+    */
     function getSortOrderLimits() {
-        var count = $scope.myBookmarks.length;
+        var count = ctrl.myBookmarks.length;
         var response = [];
         for (var i = 1; i <= count; i++) {
             response.push(i);
         }
         $scope.myBookmarksSortList = response;
     }
+    /*
     function openModal(id) {
         modalService.Open(id);
     }
     function closeModal(id) {
         modalService.Close(id);
     }
+    */
 }]).component('myBookmarks', {
     template: require('../../includes/My-Bookmarks.html'),
     controller: controllerName,

@@ -1,10 +1,8 @@
-﻿import pnp from "sp-pnp-js";
-import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-'use strict';
+﻿'use strict';
 angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     function getRssItems(user) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.userRssFeedsListTitle).items
             .filter("COM_RssFeedUserId eq '" + user + "'")
             .get()
@@ -12,7 +10,7 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
                 var promises = new Array();
                 for(var i = 0; data.length > i; i++)
                 {
-                    var p = getRssUrl(data[i].Id);
+                    var p = getRssUrl(data[i]);
                     promises.push(p)
                 }
                 $q.all(promises).then(function(response){
@@ -22,17 +20,39 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
 
         return defer.promise;
     }
-    function getRssUrl(id) {
+    function getRssUrl(feed) {
         var defer = $q.defer();
-        let web = new Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.rssFeedsListTitle).items
-            .getById(id)
+            .getById(feed.COM_RssFeedId)
             .get()
             .then(function(item){ 
                 var f = {};
                 f.title = item.Title;
                 f.url = item.COM_RssFeedUrl.Url;
+                f.feedId = item.Id;
+                f.id = feed.Id;
                 defer.resolve(f); 
+            });
+
+        return defer.promise;
+    }
+    function getAllRssFeeds() {
+        var defer = $q.defer();
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        web.lists.getByTitle(COM_CONFIG.lists.rssFeedsListTitle).items
+            .get()
+            .then(function (items) {
+                var feeds = [];
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var f = {};
+                    f.id = item.Id;
+                    f.title = item.Title;
+                    f.url = item.COM_RssFeedUrl.Url;
+                    feeds.push(f);
+                }
+                defer.resolve(feeds);
             });
 
         return defer.promise;
@@ -60,7 +80,9 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
 
             for (var i = 0; i < feeds.length; ++i) {
                 var f = feeds[i];
+                f.feedId = feed.feedId;
                 f.feedTitle = feed.title;
+                f.id = feed.id;
                 f.pDate = moment().utc(f.pubDate);
                 f.publishedDate = moment(f.pubDate);
                 f.currentTime = moment.utc().format();
@@ -90,7 +112,32 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
 
         return t;
     }
+    function deleteMyFeed(id) {
+        var defer = $q.defer();
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        web.lists.getByTitle(COM_CONFIG.lists.userRssFeedsListTitle).items
+            .getById(id)
+            .delete()
+            .then(function (item) {
+                defer.resolve(true);
+            });
 
+        return defer.promise;
+    }
+    function addMyFeed(userId, feedId) {
+        var defer = $q.defer();
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        web.lists.getByTitle(COM_CONFIG.lists.userRssFeedsListTitle).items
+            .add({
+                COM_RssFeedUserId: userId,
+                COM_RssFeedId: feedId
+            })
+            .then(function (item) {
+                defer.resolve(item);
+            });
+
+        return defer.promise;
+    }
     this.getMyRssFeeds = function (user, articleLimit) {
         var defer = $q.defer();
         getRssItems(user).then(function (feeds) {
@@ -99,7 +146,9 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
                 for (var i = 0; feedContent.length > i; i++) {
                     var f = {};
                     f.title = feedContent[i][0].feedTitle;
-                    f.articles = feedContent[i].slice(0, articleLimit);
+                    f.feedId = feedContent[i][0].feedId;
+                    f.id = feedContent[i][0].id;
+                    f.articles = feedContent[i].slice(0, articleLimit);                    
                     feedList.push(f);
                 }
                 defer.resolve(feedList);
@@ -108,4 +157,29 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
 
         return defer.promise;
     };
+    this.getAllRssFeeds = function () {
+        var defer = $q.defer();
+        getAllRssFeeds().then(function (feeds) {
+            defer.resolve(feeds);
+        });
+
+        return defer.promise;
+    };
+    this.addMyFeed = function (userId, feedId) {
+        var defer = $q.defer();
+        addMyFeed(userId, feedId).then(function (response) {
+            defer.resolve(response.data.Id);
+        });
+
+        return defer.promise;
+    };
+    this.removeMyFeed = function (id) {
+        var defer = $q.defer();
+        deleteMyFeed(id).then(function (feeds) {
+            defer.resolve(feeds);
+        });
+
+        return defer.promise;
+    }; 
+
 }]);

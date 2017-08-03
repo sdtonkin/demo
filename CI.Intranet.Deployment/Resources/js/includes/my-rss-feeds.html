@@ -1,10 +1,3 @@
 ﻿<div>My RSS Feeds</div>
-<div ng-repeat="item in myFeeds">
-    <h3>{{ item.title }}</h3>
-    <ul ng-repeat="article in item.articles">
-        <li>
-            <a href="{{ article.guid }}">{{ article.title }}</a>
-            <div>{{ article.publishedSpanString }}</div>         
-        </li>
-    </ul>
-</div>
+<rss-feeds></rss-feeds>
+<rss-feed-manager></rss-feed-manager>

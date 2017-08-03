@@ -28,5 +28,7 @@ require('../components/my-toolbar.js');
 require('../components/my-bookmarks.js');
 require('../components/my-apps.js');
 require('../components/my-documents.js');
+require('../components/rss-feeds.js');
 require('../components/toolbar-manager.js');
+require('../components/rss-feed-manager.js');
 
