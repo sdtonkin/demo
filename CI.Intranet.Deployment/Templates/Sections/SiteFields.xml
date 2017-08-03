@@ -154,6 +154,8 @@
 	<Field ID="{e8bb0dba-efca-4a9a-abd7-919bf94629cd}" Type="Text" Name="COM_YammerID" StaticName="COM_YammerID" DisplayName="Yammer ID" Required="FALSE" Hidden="TRUE" Group="1 - Compassion Columns" Description="" />
   <!-- Bookmark URL -->
   <Field ID="{651262AD-E8A1-4339-B5D4-1D94118EF2D4}" Type="Text" Name="COM_BookmarkUrl" StaticName="COM_BookmarkUrl" DisplayName="Bookmark Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Bookmark Url" />
+  <!-- Group Description -->
+  <Field ID="{7EEC25F0-0BEC-48AF-8FAF-545E625EFC61}" Type="Text" Name="COM_GroupDescription" StaticName="COM_GroupDescription" DisplayName="Group Description" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Group Description" />
 
    <!-- MULTI LINE FIELDS -->
    <!-- News Abstract -->
@@ -248,6 +250,8 @@
   <Field ID="{32EA0664-97B5-4E5E-8F05-4FCEB25228B8}" Type="URL" Name="COM_ToolbarIconUrl" StaticName="COM_ToolbarIconUrl" DisplayName="Toolbar Icon Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Icon Url" />
   <!-- Toolbar URL -->
   <Field ID="{025BF677-9D82-43AD-8869-68FBF582B7B1}" Type="URL" Name="COM_ToolbarUrl" StaticName="COM_ToolbarUrl" DisplayName="Toolbar Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Url" />
+  <!-- Group Site URL -->
+  <Field ID="{08E5A2BE-E1C5-42AF-A229-1F4426D01396}" Type="URL" Name="COM_GroupSiteUrl" StaticName="COM_GroupSiteUrl" DisplayName="Group Site Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Group Site Url" />
 
   <!-- ********   -->
   <!-- CALC FIELDS -->

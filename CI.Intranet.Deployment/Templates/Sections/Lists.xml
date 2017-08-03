@@ -60,4 +60,36 @@
       </pnp:DataRow>
     </pnp:DataRows>
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Group Info" Description="Group Info List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GroupInfo" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x0100973A29096FFA4B57A15024A2EAB328ED" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">General Counsel Office (GCO)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Global Leadership Office (GLO)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Global Marketing &amp; Engagement (GME)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Global Program (GP)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Global Support Services (GSS)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
+  </pnp:ListInstance>
 </pnp:Lists>

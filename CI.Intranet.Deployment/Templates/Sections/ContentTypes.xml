@@ -48,29 +48,29 @@
   </pnp:ContentType>
   <pnp:ContentType ID="0x0100DCE3A2BC1BD240F197EE919521C55C42" Name="Home Page News Item" Description="News Item for Home Page Display" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="" Name="COM_SortOrder" />
+      <pnp:FieldRef ID="fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa" Name="COM_SortOrder" />
       <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
-      <pnp:FieldRef ID="9c56b0ca-3fea-4fd7-bab3-115dafe61958" Name="COM_NewsType" /> 
-      <pnp:FieldRef ID="d36e9da4-40d2-4e24-9d35-b3f15c30e45b" Name="COM_Group" /> 
-      <pnp:FieldRef ID="22797d97-ce09-4a61-ac9f-ec7567fbde66" Name="COM_Location" /> 
+      <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
+      <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
+      <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
       <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" Hidden="true" />  
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0102AA13DE23CACF40448F3C9C777ABC2106" Name="Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x0100AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="245e8d01-d6e7-41cc-aec9-0473985467ff" Name="COM_EventType" /> 
-      <pnp:FieldRef ID="d36e9da4-40d2-4e24-9d35-b3f15c30e45b" Name="COM_Group" /> 
-      <pnp:FieldRef ID="22797d97-ce09-4a61-ac9f-ec7567fbde66" Name="COM_Location" /> 
+      <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
+      <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
+      <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="D9540795-390B-418A-B7A9-62AAC170E5C4" Name="COM_EventDate" Hidden="true" />      
     	<pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x01023E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01003E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="245e8d01-d6e7-41cc-aec9-0473985467ff" Name="COM_EventType" /> 
+      <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
       <pnp:FieldRef ID="D9540795-390B-418A-B7A9-62AAC170E5C4" Name="COM_EventDate" Hidden="true" />  
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />     
     </pnp:FieldRefs>
@@ -105,12 +105,18 @@
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />    
       <pnp:FieldRef ID="49bf0476-237b-4505-b01a-4acb6ddda3e1" Name="COM_ContactTitle" />
     </pnp:FieldRefs>
-  </pnp:ContentType>  
-  
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100973A29096FFA4B57A15024A2EAB328ED" Name="Group Info Item" Description="Group Information List Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" />
+      <pnp:FieldRef ID="08E5A2BE-E1C5-42AF-A229-1F4426D01396" Name="COM_GroupSiteUrl" />
+      <pnp:FieldRef ID="7EEC25F0-0BEC-48AF-8FAF-545E625EFC61" Name="COM_GroupDescription" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
   <!-- ********      -->
   <!-- DOC TYPES    -->
   <!-- ********      -->
-  <pnp:ContentType ID="0x0101295D73ACDB7A4BAEBE6E712640858F91" Name="Base Document" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x010100295D73ACDB7A4BAEBE6E712640858F91" Name="Base Document" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
       <pnp:FieldRef ID="5f47e085-2150-41dc-b661-442f3027f552" Name="SelectFilename" />
@@ -120,10 +126,10 @@
       <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
       <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
       <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
-      <pnp:FieldRef ID="9ccfd12c-f152-45ee-a9ed-b57c89d3ae57" Name="COM_DocumentType" />
+      <pnp:FieldRef ID="A9C76321-EC4B-4253-8C79-BA6F12F4A6C5" Name="COM_DocumentType" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0101295D73ACDB7A4BAEBE6E712640858F9101" Name="Location Document" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x010100295D73ACDB7A4BAEBE6E712640858F9101" Name="Location Document" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
       <pnp:FieldRef ID="5f47e085-2150-41dc-b661-442f3027f552" Name="SelectFilename" />
@@ -133,8 +139,8 @@
       <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
       <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
       <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
-      <pnp:FieldRef ID="9ccfd12c-f152-45ee-a9ed-b57c89d3ae57" Name="COM_DocumentType" />
-      <pnp:FieldRef ID="22797d97-ce09-4a61-ac9f-ec7567fbde66" Name="COM_Location" />
+      <pnp:FieldRef ID="A9C76321-EC4B-4253-8C79-BA6F12F4A6C5" Name="COM_DocumentType" />
+      <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" />
     </pnp:FieldRefs>
   </pnp:ContentType>
 
@@ -196,9 +202,9 @@
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
       <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
-      <pnp:FieldRef ID="9c56b0ca-3fea-4fd7-bab3-115dafe61958" Name="COM_NewsType" /> 
-      <pnp:FieldRef ID="d36e9da4-40d2-4e24-9d35-b3f15c30e45b" Name="COM_Group" /> 
-      <pnp:FieldRef ID="22797d97-ce09-4a61-ac9f-ec7567fbde66" Name="COM_Location" /> 
+      <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
+      <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
+      <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" /> 
 		</pnp:FieldRefs>

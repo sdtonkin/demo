@@ -182,10 +182,29 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\images\compassion-white-logo%402x.png" />
+    <Content Include="Resources\images\compassion-white-logo%403x.png" />
+    <Content Include="Resources\images\compassion-white-logo.png" />
     <Content Include="Resources\images\compassion.ico" />
+    <Content Include="Resources\images\homepage\1604-io-adit-009%402x.jpg" />
+    <Content Include="Resources\images\homepage\1604-io-adit-009%403x.jpg" />
+    <Content Include="Resources\images\homepage\1604-io-adit-009.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606%402x.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606%403x.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606-copy%402x.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606-copy%403x.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606-copy.jpg" />
+    <Content Include="Resources\images\homepage\cc-ph-9200026-07-1606.jpg" />
+    <Content Include="Resources\images\homepage\oval-2%402x.jpg" />
+    <Content Include="Resources\images\homepage\oval-2%403x.jpg" />
+    <Content Include="Resources\images\homepage\oval-2.jpg" />
+    <Content Include="Resources\images\homepage\social-1%402x.jpg" />
+    <Content Include="Resources\images\homepage\social-1%403x.jpg" />
+    <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
+    <Content Include="Resources\js\includes\Group-Summary.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
     <Content Include="Resources\js\includes\Related-Documents.html" />
@@ -200,6 +219,7 @@
     <Content Include="Resources\js\includes\Toolbar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
@@ -212,6 +232,7 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\group-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
     <Content Include="Resources\js\src\services\related-news-service.js" />
@@ -225,6 +246,9 @@
     <Content Include="Resources\Pages\index.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\XSL\Styles\COM_ContentQueryMain.xsl" />
+    <Content Include="Resources\XSL\Styles\COM_Header.xsl" />
+    <Content Include="Resources\XSL\Styles\COM_ItemStyle.xsl" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml">
       <SubType>Designer</SubType>
@@ -277,6 +301,11 @@
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
+    <None Include="Resources\XSL\Webparts\CustomXSL_CQWP.webpart" />
+    <None Include="Resources\XSL\Webparts\Events.webpart" />
+    <None Include="Resources\XSL\Webparts\News.webpart" />
+    <None Include="Resources\XSL\Webparts\Recent News.webpart" />
+    <None Include="Resources\XSL\Webparts\Trending News.webpart" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
