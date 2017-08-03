@@ -246,6 +246,17 @@
   <Field ID="{66A3DA7E-C614-43F1-BF28-0F4E4C234B5E}" Type="URL" Name="COM_RssFeedUrl" StaticName="COM_RssFeedUrl" DisplayName="RSS Feed URL" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed URL" />
   <!-- Toolbar Icon URL -->
   <Field ID="{32EA0664-97B5-4E5E-8F05-4FCEB25228B8}" Type="URL" Name="COM_ToolbarIconUrl" StaticName="COM_ToolbarIconUrl" DisplayName="Toolbar Icon Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Icon Url" />
-  
-  
+  <!-- Toolbar URL -->
+  <Field ID="{025BF677-9D82-43AD-8869-68FBF582B7B1}" Type="URL" Name="COM_ToolbarUrl" StaticName="COM_ToolbarUrl" DisplayName="Toolbar Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Toolbar Url" />
+
+  <!-- ********   -->
+  <!-- CALC FIELDS -->
+  <!-- ********   -->
+  <Field ID="{D9540795-390B-418A-B7A9-62AAC170E5C4}" Type="Calculated" Name="COM_EventDate" StaticName="COM_EventDate" DisplayName="Event Start Date" Format="DateOnly" LCID="1033" ResultType="DateTime" Required="False" Hidden="True" Group="1 - Compassion Intranet" Description="Date Calculated for All Date Events" >
+    <Formula>=StartDate+1</Formula>
+      <FieldRefs>
+        <FieldRef Name="StartDate" />
+      </FieldRefs>  
+  </Field>
+
 </pnp:SiteFields>

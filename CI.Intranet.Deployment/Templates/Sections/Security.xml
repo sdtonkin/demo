@@ -1,8 +1,100 @@
 ﻿<pnp:Security  xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:SiteGroups>
     <pnp:SiteGroup
-        Title="Owners Team"
-        Description="Members of the Owners team." Owner="development\demo1">
+        Title="Compassion Owners Team"
+        Description="Members of the Home Site Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Compassion Content Owners Team"
+        Description="Members of the Home Site Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Compassion Visitors"
+        Description="All Compassion Users." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GCO Owners Team"
+        Description="Members of the GCO Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GCO Content Owners Team"
+        Description="Members of the GCO Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GCO Members Team"
+        Description="Members of the GCO Members team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GLO Owners Team"
+        Description="Members of the GLO Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GLO Content Owners Team"
+        Description="Members of the GLO Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GLO Members Team"
+        Description="Members of the GLO Members team." Owner="">
     </pnp:SiteGroup>    
+    <pnp:SiteGroup
+        Title="GME Owners Team"
+        Description="Members of the GME Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GME Content Owners Team"
+        Description="Members of the GME Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GME Members Team"
+        Description="Members of the GME Members team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GSS Owners Team"
+        Description="Members of the GSS Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GSS Content Owners Team"
+        Description="Members of the GSS Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="GSS Members Team"
+        Description="Members of the GSS Members team." Owner="">
+    </pnp:SiteGroup>    
+    <pnp:SiteGroup
+        Title="HR Owners Team"
+        Description="Members of the HR Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="HR Content Owners Team"
+        Description="Members of the HR Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="HR Members Team"
+        Description="Members of the HR Members team." Owner="">
+    </pnp:SiteGroup>    
+    <pnp:SiteGroup
+        Title="Global Program Owners Team"
+        Description="Members of the Global Program Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Global Program Content Owners Team"
+        Description="Members of the Global Program Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Global Program Members Team"
+        Description="Members of the Global Program Members team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Creative Services Owners Team"
+        Description="Members of the Creative Services Owners team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Creative Service Owners Team"
+        Description="Members of the Creative Services Content team." Owner="">
+    </pnp:SiteGroup>
+    <pnp:SiteGroup
+        Title="Creative Service Members Team"
+        Description="Members of the Creative Services Members team." Owner="">
+    </pnp:SiteGroup>
   </pnp:SiteGroups>
 </pnp:Security>
