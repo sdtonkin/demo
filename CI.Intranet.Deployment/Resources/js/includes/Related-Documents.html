@@ -1,0 +1,14 @@
+<div ng-show="Documents" class="trending-stories">
+    <span class="line-title">Related Documents</span>
+    <div ng-repeat="x in Documents" class="story">
+        <div class="reminder-date">
+            <a ng-href="{{x.url}}">
+                <h4 class="news-title">{{x.title}}</h4>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div ng-if="notFound" class="trending-stories">
+    <span class="line-title">{{notFound}}</span>
+</div>

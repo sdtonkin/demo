@@ -43,9 +43,7 @@
   
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.min.js"></script> 
-    <!--
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.6/pnp.min.js"></script>
-    -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -90,74 +88,99 @@
 
 <div id="s4-workspace" ng-app="compassionIntranet">
 <div id="s4-bodyContainer">
-
+<div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <!-- Start Top Navigation -->
-
+    <section class="section sub-nav-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="navAccordion" role="tablist" aria-multiselectable="true">
+                              <div class="card">
+                                <div class="card-header" role="tab" id="navHeadingOne">
+                                    <div class="row">
+                                        <div class="col-md-6 card-intro">
+                                            <h2>Good Morning, <span id="ci-user-first-name"></span></h2>
+                                        </div>
+                                        <div class="col-md-3 weather-widget">
+                                            WEATHER WIDGET
+                                        </div>
+                                        <div class="col-md-3 card-close">
+                                           <a class="pull-right hidden-md-down" data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
+                                      Close <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="navCollapseOne" class="collapse show" role="tabpanel" aria-labelledby="navHeadingOne">
+                                  <div class="card-block">
+                                    <my-toolbar></my-toolbar>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-close-mobile col-3 offset-9 text-center">
+                           <a class=" hidden-lg-up " data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
+                      Close <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 <!-- End Top Navigation -->
 
 <!-- Start Main Content -->
-<asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server" />
-<!-- End Main Content -->
-<!-- Start Site Logo -->
-<SharePoint:SPSimpleSiteLink runat="server" id="onetidProjectPropertyTitleGraphic" >
-    <SharePoint:SiteLogoImage CssClass="ms-siteicon-img" name="onetidHeadbnnr0" ID="x45391ca5c0b742979d9a24fcaca94563" LogoImageUrl="/_layouts/15/images/siteIcon.png" runat="server"></SharePoint:SiteLogoImage>
-</SharePoint:SPSimpleSiteLink>
-<!-- End Site Logo -->
-<!-- Start Side Navigation Box -->
-<div id="sideNavBox" role="navigation" class="ms-dialogHidden ms-forceWrap ms-noList">
-    <SharePoint:AjaxDelta ID="DeltaPlaceHolderLeftNavBar" BlockElement="true" CssClass="ms-core-navigation" role="navigation" runat="server">
-        <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBar" runat="server">
-            <SharePoint:DelegateControl runat="server" ControlId="QuickLaunchTop" />
-            <a id="startNavigation" name="startNavigation" tabindex="-1"></a>
-            <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarTop" runat="server" />
-            <asp:ContentPlaceHolder ID="PlaceHolderQuickLaunchTop" runat="server" />
-            <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarDataSource" runat="server" />
-            <asp:ContentPlaceHolder ID="PlaceHolderCalendarNavigator" runat="server" />
-            <asp:ContentPlaceHolder ID="PlaceHolderLeftActions" runat="server" />
-            <div class="ms-core-sideNavBox-removeLeftMargin">
-                <SharePoint:SPNavigationManager ID="QuickLaunchNavigationManager" runat="server" QuickLaunchControlId="V4QuickLaunchMenu" ContainedControl="QuickLaunch" EnableViewState="false">
-
-                    <SharePoint:DelegateControl runat="server" ControlId="QuickLaunchDataSource">
-                        <Template_Controls>
-                            <asp:SiteMapDataSource SiteMapProvider="SPNavigationProvider" ShowStartingNode="False" ID="QuickLaunchSiteMap" StartingNodeUrl="sid:1025" runat="server" />
-                        </Template_Controls>
-                    </SharePoint:DelegateControl>
-                    <SharePoint:AspMenu ID="V4QuickLaunchMenu" runat="server" EnableViewState="false" DataSourceID="QuickLaunchSiteMap" UseSimpleRendering="true" Orientation="Vertical" StaticDisplayLevels="3" AdjustForShowStartingNode="true" MaximumDynamicDisplayLevels="0" SkipLinkText="" />
-                </SharePoint:SPNavigationManager>
-                <SharePoint:SPNavigationManager ID="TreeViewNavigationManagerV4" runat="server" ContainedControl="TreeView" CssClass="ms-tv-box">
-
-                    <SharePoint:SPLinkButton runat="server" NavigateUrl="~site/_layouts/15/viewlsts.aspx" ID="idNavLinkSiteHierarchyV4" Text="&lt;%$Resources:wss,treeview_header%&gt;" AccessKey="&lt;%$Resources:wss,quiklnch_allcontent_AK%&gt;" CssClass="ms-tv-header" />
-                    <SharePoint:DelegateControl runat="server" ControlId="TreeViewAndDataSource">
-                        <Template_Controls>
-                            <SharePoint:SPHierarchyDataSourceControl runat="server" ID="TreeViewDataSourceV4" RootContextObject="Web" IncludeDiscussionFolders="true" />
-                            <SharePoint:SPRememberScroll runat="server" ID="TreeViewRememberScrollV4" onscroll="javascript:_spRecordScrollPositions(this);" Style="overflow: auto;">
-                                <SharePoint:SPTreeView ID="WebTreeViewV4" runat="server" ShowLines="false" DataSourceID="TreeViewDataSourceV4" ExpandDepth="0" SelectedNodeStyle-CssClass="ms-tv-selected" NodeStyle-CssClass="ms-tv-item" SkipLinkText="" NodeIndent="12" ExpandImageUrl="/_layouts/15/images/tvclosed.png?rev=38" ExpandImageUrlRtl="/_layouts/15/images/tvclosedrtl.png?rev=38" CollapseImageUrl="/_layouts/15/images/tvopen.png?rev=38" CollapseImageUrlRtl="/_layouts/15/images/tvopenrtl.png?rev=38" NoExpandImageUrl="/_layouts/15/images/tvblank.gif?rev=38">
-                                </SharePoint:SPTreeView>
-                            </SharePoint:SPRememberScroll>
-                        </Template_Controls>
-                    </SharePoint:DelegateControl>
-                </SharePoint:SPNavigationManager>
-                <asp:ContentPlaceHolder ID="PlaceHolderQuickLaunchBottom" runat="server">
-                    <div class="ms-core-listMenu-verticalBox">
-                        <SharePoint:ClusteredSPLinkButton runat="server" ID="idNavLinkViewAll" PermissionsString="ViewFormPages" NavigateUrl="~site/_layouts/15/viewlsts.aspx" Text="&lt;%$Resources:wss,AllSiteContentMore%&gt;" ToolTip="&lt;%$Resources:wss,AllSiteContentMore%&gt;" AccessKey="&lt;%$Resources:wss,quiklnch_allcontent_AK%&gt;" CssClass="ms-core-listMenu-item ms-core-listMenu-heading" />
-
-                    </div>
-                </asp:ContentPlaceHolder>
-            </div>
-            <SharePoint:DelegateControl runat="server" ControlId="QuickLaunchBottom" />
-        </asp:ContentPlaceHolder>
-    </SharePoint:AjaxDelta>
+<div class="main-container">
+    <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server" />
 </div>
-<!-- End Side Navigation Box -->
+<!-- End Main Content -->
+<!-- Start Footer Content -->
+<div class="container-fluid footer-container">
+    <div class="container">
+        <footer class="footer-inner-container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav>
+                        <ul>
+                            <li>Help</li>
+                            <li>Feedback</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-4 footer-brand">
+                    <img src="../images/compassion-white-logo.png" class="img-fluid pull-right">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="social-container">
+                        <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="#"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+                        <a href="#"><i id="social-in" class="fa fa-instagram fa-3x social"></i></a>
+                        </div>
+                </div>
+                <div class="col-lg-4 footer-copyright">
+                    <p>© 2017 Compassion International</p>
+                </div>
+            </div>
+                        
+        </footer>
+    </div>
+</div>
+<!-- End Footer Content -->
+</div> <!--page-content-->
 </div> <!--s4-bodyContainer-->
 </div> <!--/s4-workspace-->
-
+<ui-helper></ui-helper>
 
 
 
 <!-- scripts -->
 <SharePoint:ScriptLink language="javascript"  name="~sitecollection/_catalogs/masterpage/compassion/js/ensure-scripts.min.js" OnDemand="false" runat="server"/>
-    <script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>
+<script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>
 
 <!-- Form Digest -->
 <asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server"><SharePoint:formdigest runat="server" /></asp:ContentPlaceHolder>
