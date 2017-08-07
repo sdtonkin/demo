@@ -251,6 +251,19 @@
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
+    <Content Include="Resources\PageLayouts\COM_GroupsLanding.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\PageLayouts\COM_3Column.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\PageLayouts\COM_LocationDetail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\PageLayouts\COM_NewsDetail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx" />
     <Content Include="Resources\Pages\index.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -290,6 +303,7 @@
     <None Include="Resources\css\sass\components\_employee-spotlight.scss" />
     <None Include="Resources\css\sass\components\_find-people.scss" />
     <None Include="Resources\css\sass\components\_hero-news-container.scss" />
+    <None Include="Resources\css\sass\components\_nav-toolbar.scss" />
     <None Include="Resources\css\sass\components\_news-events.scss" />
     <None Include="Resources\css\sass\components\_right-rail.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
@@ -328,7 +342,6 @@
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />
     <Folder Include="Resources\js\dist\" />
-    <Folder Include="Resources\PageLayouts\" />
     <Folder Include="Resources\WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

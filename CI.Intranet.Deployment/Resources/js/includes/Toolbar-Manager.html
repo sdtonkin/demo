@@ -1,6 +1,6 @@
 ﻿<div><a ng-click="ctrl.openManageModal()">Manage</a></div>
 <modal id="ci-apps-manage">
-    <div class="modal">
+    <div class="ci-modal">
         <div class="modal-body">
             <h1>Manage My Tools / Apps</h1>
             <h3>Available Tools / Apps</h3>
@@ -19,7 +19,7 @@
     <div class="modal-background"></div>
 </modal>
 <modal id="ci-apps-manage-sort">
-    <div class="modal">
+    <div class="ci-modal">
         <div class="modal-body">
             <h1>Manage My Tools / Apps Sort Order</h1>
             <ul>
@@ -39,7 +39,7 @@
     <div class="modal-background"></div>
 </modal>
 <modal id="ci-bookmarks-manage">
-    <div class="modal">
+    <div class="ci-modal">
         <div class="modal-body">
             <h1>Manage My Bookmarks</h1>
             <ul>
@@ -47,7 +47,7 @@
                     <input type="hidden" ng-model="bk.id" />
                     <input type="text" ng-model="bk.title" ng-change="ctrl.isToolbarDirty = true" />
                     <input type="text" ng-model="bk.url" ng-change="ctrl.isToolbarDirty = true" />
-                    <a ng-click="ctrl.confirmDeletion(bk);">Delete</a>
+                    <i class="fa fa-trash" aria-hidden="true" ng-click="ctrl.confirmDeletion(bk);"></i>
                 </li>
             </ul>
             <div ng-show="ctrl.enableAddNew">
@@ -69,7 +69,7 @@
     <div class="modal-background"></div>
 </modal>
 <modal id="ci-bookmarks-confirm-delete">
-    <div class="modal">
+    <div class="ci-modal">
         <div class="modal-body">
             <h1>Bookmark Deletion Confirmation</h1>
             <p>Please confirm deletion of bookmark.</p>

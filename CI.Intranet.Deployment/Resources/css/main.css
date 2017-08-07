@@ -749,11 +749,13 @@ body {
  * ----------------------------------------- 
  */
 .nav-toolbar .nav-tabs {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff;
   position: relative;
   margin-bottom: 30px; }
+
 .nav-toolbar .nav-item {
   margin-bottom: -1px; }
+
 .nav-toolbar .nav-link {
   text-align: left;
   padding-left: 0;
@@ -771,15 +773,16 @@ body {
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: white; }
+    color: #ffffff; }
   .nav-toolbar .nav-link.active {
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #ffffff;
     border-left: none;
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: white;
+    color: #ffffff;
     background: transparent; }
+
 .nav-toolbar .toolbar-content ul {
   list-style: none;
   display: inline-block;
@@ -787,7 +790,7 @@ body {
   padding-left: 0;
   margin-right: 30px; }
   .nav-toolbar .toolbar-content ul a {
-    color: white;
+    color: #ffffff;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 0.4px; }
@@ -795,8 +798,10 @@ body {
       padding-top: 5px;
       display: block;
       position: relative; }
+
 .nav-toolbar .toolbar-content h3 {
   color: #b8b491; }
+
 .nav-toolbar .manage-toolbar {
   position: absolute;
   right: 0;

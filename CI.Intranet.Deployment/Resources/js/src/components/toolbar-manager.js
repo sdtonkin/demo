@@ -200,7 +200,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             var tool = appsToDelete[i];
             appService.removeMyTool(tool.id);
         }
-        appService.getMyTools(userId).then(function (response) {
+        appService.getMyApps(userId).then(function (response) {
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
             getSortOrderLimits();
