@@ -1,5 +1,5 @@
-import pnp from "sp-pnp-js";
-import { Web } from "sp-pnp-js/lib/sharepoint/webs";
+//import pnp from "sp-pnp-js";
+//import { Web } from "sp-pnp-js/lib/sharepoint/webs";
 
 var myApp = angular.module('compassionIntranet');
 
@@ -22,7 +22,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         var defer = $q.defer();
 
-        pnp.sp.search({
+        $pnp.sp.search({
             Querytext: '' + contentType + 'AND' + category + ' ' + rootNews + '',
             SelectProperties: ['RefinableString1', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
@@ -55,7 +55,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let pageTitle = $(".page-title").text();
         let rootNews = _spPageContextInfo.siteAbsoluteUrl + "/news";
         let path = " Path:" + "" + rootNews + "";
-        pnp.sp.search({
+        $pnp.sp.search({
             Querytext: 'Title= "' + pageTitle + '" ' + path + '',
             SelectProperties: ['RefinableString10', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',

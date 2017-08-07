@@ -28,7 +28,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userRssFeedsListTitle: 'User RSS Feeds',
                 userApps: 'User Tools',
                 toolbarApps: 'Toolbar Tools',
-                userBookmarks: 'User Bookmarks'
+                userBookmarks: 'User Bookmarks',
+                groupInfo: 'Group Info',
+                groupLeadership: 'Contacts',
             }
         });
     }
@@ -56,7 +58,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userRssFeedsListTitle: 'User RSS Feeds',
                 userApps: 'User Tools',
                 toolbarApps: 'Toolbar Tools',
-                userBookmarks: 'User Bookmarks'
+                userBookmarks: 'User Bookmarks',
+                groupInfo: 'Group Info',
+                groupLeadership: 'Contacts',
             }
         });
     }
@@ -86,7 +90,9 @@ else {
             userRssFeedsListTitle: 'User RSS Feeds',
             userApps: 'User Tools',
             toolbarApps: 'Toolbar Tools',
-            userBookmarks: 'User Bookmarks'
+            userBookmarks: 'User Bookmarks',
+            groupInfo: 'Group Info',
+            groupLeadership: 'Contacts',
         }
     });
 }

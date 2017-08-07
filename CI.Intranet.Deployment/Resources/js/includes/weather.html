@@ -1,0 +1,66 @@
+    
+<div class="weather" ng-if="temp">
+  <div class="left">
+    <div class="image">
+      <span ng-class="image"></span>
+        <!--<div ng-switch="forecast.text">
+            <div ng-switch-when="Heavy Snow" ng-show="i.id==1">
+              <span class="icon-weather_cloud_snowflake"></span>
+            </div>
+            <div ng-switch-when="Cloudy" ng-show="i.id==2">
+              <span class="icon-weather_cloud"></span>
+            
+            </div>
+            <div ng-switch-when="Scattered Thunderstorms" ng-show="i.id==3">
+              <span class="icon-weather_downpour_sun"></span>
+            </div>
+            <div ng-switch-when="Fog" ng-show="i.id==4">
+              <span class="icon-weather_fog"></span>
+            </div>
+            <div ng-switch-when="Hail" ng-show="i.id==5">
+              <span class="icon-weather_hail"></span>
+            </div>
+            <div ng-switch-when="Severe Thunderstorms" ng-show="i.id==6">
+              <span class="icon-weather_lightning"></span>
+            </div>
+            <div ng-switch-when="Showers" ng-show="i.id==7">
+              <span class="icon-weather_rain"></span>
+            </div>
+            <div ng-switch-when="Scattered Snow Showers" ng-show="i.id==8">
+               <span class="icon-weather_snow_sun"></span>
+            </div>
+             <div ng-switch-when="Snow Flurries" ng-show="i.id==9">
+              <span class="icon-weather_snow"></span>
+            </div>
+            <div ng-switch-when="Snow" ng-show="i.id==10">
+              <span class="icon-weather_snowflake"></span>
+            </div>
+            <div ng-switch-when="Isolated Thunderstorms" ng-show="i.id==11">
+                <span class="icon-weather_storm_sun"></span>
+            </div>
+            <div ng-switch-when="Sunny" ng-show="i.id==12">
+               <span class="icon-weather_sun"></span>
+            </div>
+            <div ng-switch-when="Partly Cloudy" ng-show="i.id==13">
+               <span class="icon-weather_cloud"></span>
+              
+            </div>
+            
+          </div>-->
+    </div>
+    <div class="temp">{{temp}}&deg{{unit}}</div>
+  </div>
+  <div class="right">
+    <div class="text">{{text}}</div>
+    <div class="location">{{city}}, {{state}}</div>
+  </div>
+</div>
+<div class="weather" ng-if="noWeather">
+  There was an issue connecting to the weather service
+</div>
+
+
+
+    
+    
+   
