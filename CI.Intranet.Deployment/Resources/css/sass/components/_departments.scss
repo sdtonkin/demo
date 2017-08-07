@@ -1,0 +1,19 @@
+/* 
+ * -----------------------------------------
+ *  Departments
+ *  @@ File: components/_departments.scss
+ * ----------------------------------------- 
+ */
+
+ .departments{
+	.nav.nav-pills{
+		display: inline-block;
+		text-align: center;
+		.nav-item{
+			display: inline-block;
+    		margin-right: 15px;
+    		margin-bottom: 20px;
+    		min-width: 200px;
+		}
+	}
+ }
