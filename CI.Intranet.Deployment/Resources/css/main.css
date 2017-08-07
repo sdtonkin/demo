@@ -25,11 +25,11 @@
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec, .nav-toolbar .toolbar-content ul a {
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
@@ -741,6 +741,66 @@ body {
   outline: none; }
   .news-events .btn-block.brown:focus {
     box-shadow: none; }
+
+/* 
+ * -----------------------------------------
+ *  Nav Toolbar
+ *  @@ File: components/_nav-toolbar.scss
+ * ----------------------------------------- 
+ */
+.nav-toolbar .nav-tabs {
+  border-bottom: 1px solid white;
+  position: relative;
+  margin-bottom: 30px; }
+.nav-toolbar .nav-item {
+  margin-bottom: -1px; }
+.nav-toolbar .nav-link {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 16px;
+  color: #88bee7; }
+  .nav-toolbar .nav-link:hover {
+    border-bottom: 4px solid transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: white; }
+  .nav-toolbar .nav-link.active {
+    border-bottom: 4px solid white;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: white;
+    background: transparent; }
+.nav-toolbar .toolbar-content ul {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  padding-left: 0;
+  margin-right: 30px; }
+  .nav-toolbar .toolbar-content ul a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.4px; }
+    .nav-toolbar .toolbar-content ul a div {
+      padding-top: 5px;
+      display: block;
+      position: relative; }
+.nav-toolbar .toolbar-content h3 {
+  color: #b8b491; }
+.nav-toolbar .manage-toolbar {
+  position: absolute;
+  right: 0;
+  top: 45px; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports

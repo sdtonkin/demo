@@ -1,0 +1,8 @@
+<div class="quick-links">
+    <a target="{{item.DiscoverIsExternal ? '_blank' : '_self'}}" ng-repeat="item in news" class="link" ng-href="{{item.DiscoverUrl}}">
+        <div class="image-contain">
+            <img ng-src="{{item.DiscoverPopularIcon}}">
+        </div>
+        <span class="link-title">{{item.Title}}</span>
+    </a>
+</div>
