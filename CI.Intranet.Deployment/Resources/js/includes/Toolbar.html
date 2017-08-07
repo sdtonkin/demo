@@ -1,17 +1,27 @@
-﻿<section id="ci-toolbar-container">
+﻿<section id="ci-toolbar-container" class="nav-toolbar">
     <div id="ci-toolbar" class="row">
         <div class="col-xs-8 col-xs-offset-2">
-            <ul id="ci-toolbar-selector">
-                <li ng-class="{active:ctrl.isSelected('ci-apps')}">
+            <ul id="ci-toolbar-selector" class="nav-toolbar nav-tabs">
+                <div class="manage-toolbar">
+                    <toolbar-manager class="ng-isolate-scope">
+                        <div>
+                            <a ng-click="ctrl.openManageModal()">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                Manage
+                            </a>
+                        </div>
+                    </toolbar-manager>
+                </div>
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-apps')}">
                     <a ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
                 </li>
-                <li ng-class="{active:ctrl.isSelected('ci-documents')}">
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-documents')}">
                     <a ng-click="ctrl.select('ci-documents')" href="javascript: void(0);">documents</a>
                 </li>
-                <li ng-class="{active:ctrl.isSelected('ci-bookmarks')}">
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-bookmarks')}">
                     <a ng-click="ctrl.select('ci-bookmarks')" href="javascript: void(0);">bookmarks</a>
                 </li>
-                <li ng-class="{active:ctrl.isSelected('ci-sites')}">
+                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-sites')}">
                     <a ng-click="ctrl.select('ci-sites')" href="javascript: void(0);">project sites</a>
                 </li>
             </ul>
