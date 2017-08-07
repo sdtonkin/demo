@@ -207,7 +207,7 @@
     <Content Include="Resources\js\includes\Group-Summary.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
-    <Content Include="Resources\js\includes\quick-links.html" />
+    <Content Include="Resources\js\includes\Quick-Links.html" />
     <Content Include="Resources\js\includes\Related-Documents.html" />
     <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\RSS-Feeds.html" />
@@ -220,7 +220,7 @@
     <Content Include="Resources\js\includes\Toolbar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
-    <Content Include="Resources\js\includes\weather.html" />
+    <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
