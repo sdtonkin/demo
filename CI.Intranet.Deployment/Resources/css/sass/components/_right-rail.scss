@@ -10,12 +10,13 @@
 	}
  }
 
-.trending{
+.trending, .related{
 		background-color: transparent;
 		border: none;
 		padding: 20px 0 0 0;
 		max-width: 320px;
 		border-radius: 0;
+		overflow: hidden;
 
 	.card-block{
 		border:1px solid $brand-white;
@@ -56,6 +57,9 @@
 	.img-fluid{
 		height: 100%;
 		width: auto;
+	}
+	.img-card{
+		margin-bottom: 15px;
 	}
 }
 .world-news{

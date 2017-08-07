@@ -144,3 +144,40 @@
 	}
 
  }
+ .news-block{
+ 	color: $brand-darker-gray;
+ 	border-top: 2px solid $brand-brown-gray;
+ 	border-bottom: 2px solid $brand-brown-gray;
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ 	margin-bottom: 30px;
+ }
+ .news-content{
+ 	border-bottom: 2px solid $brand-brown-gray;
+ 	padding-bottom: 20px;
+
+ }
+ .card-tags{
+	margin-bottom: 0;
+	background-color: $brand-white;
+	display: inline-block;
+	border: 1px solid $brand-brown-dull;
+	padding: 4px 10px;
+	color: $brand-brown-gray;
+	text-align: left;
+	margin-right: 20px;
+	font-size: 14px;
+}
+.news-tag-content{
+	margin-bottom: 30px;
+	.card-likes{
+		margin-top: 10px;
+		display: block;	
+	}
+}
+.news-title-block{
+	margin-top: 45px;
+	.card-text{
+		margin-bottom: 40px;
+	}
+}

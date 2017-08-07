@@ -1,0 +1,30 @@
+/* 
+ * -----------------------------------------
+ *  Work Resources
+ *  @@ File: components/_work-resources.scss
+ * ----------------------------------------- 
+ */
+
+ .work-resources{
+	.nav.nav-pills{
+		display: block;
+		text-align: left;
+		.nav-item{
+			display: inline-block;
+    		margin-right: 15px;
+    		margin-bottom: 20px;
+    		width: 23%;
+    		vertical-align: top;
+		}
+		.nav-link{
+			text-align: left;
+			i{ 
+				display: table-cell;
+			}
+			span{
+				display: table-cell;
+				padding-left: 10px;
+			}
+		}
+	}
+ }
