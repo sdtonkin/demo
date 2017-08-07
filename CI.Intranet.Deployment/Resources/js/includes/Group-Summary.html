@@ -1,19 +1,22 @@
 ﻿<section id="ci-group-summary-container">
     <h1>Groups</h1>
     <ul>
-        <li ng-repeat="group in ctrl.groups">
-            <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group)">+</a>
+        <li ng-repeat="group in ctrl.groups track by group.id">
+            <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">+</a>
             <h3>{{group.name}}</h3>
-            <a ng-href="{{group.url}}">GO TO GROUP ></a>
-            <p>{{group.description}}</p>
-            <a ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
-            <h4>Leadership</h4>
-            <ul>
-                <li ng-repeat="leader in group.leaders">
-                    <div>{{leader.name}}</div>
-                    <div>{{leader.title}}</div>
-                </li>
-            </ul>
+            <div class="ci-group-summary" ng-show="ctrl.isGroupActive(group.id)">
+                <a ng-href="{{group.url}}">GO TO GROUP ></a>
+                <p>{{group.description}}</p>
+                <a ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
+                <h4>Leadership</h4>
+                <ul>
+                    <li ng-repeat="leader in group.leaders">
+                        <div>{{leader.name}}</div>
+                        <div>{{leader.title}}</div>
+                    </li>
+                </ul>
+            </div>
+            <input type="hidden" ng-model="group.id" />
         </li>
     </ul>
 </section>

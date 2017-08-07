@@ -31,7 +31,11 @@ myApp.factory('common', ['COM_CONFIG', function (COM_CONFIG) {
             '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
             '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
             return pattern.test(str);
-        }
+        },
+        checkForClearStatement: function (command, storageKey) {
+            if (this.getUrlParamByName(command) == 'true')
+                localStorage.removeItem(storageKey);
+        },
         /*
         isLocalStorageSupported: function () {
             Modernizr.addTest('localstorage', function () {
@@ -46,5 +50,5 @@ myApp.factory('common', ['COM_CONFIG', function (COM_CONFIG) {
             });
         }
         */
-    };
+};
 }]);

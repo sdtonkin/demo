@@ -238,7 +238,7 @@
     <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
-    <Content Include="Resources\js\src\services\apps-service.js" />
+    <Content Include="Resources\js\src\services\app-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />

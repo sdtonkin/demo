@@ -1,6 +1,6 @@
 // import pnp from "sp-pnp-js";
 var ctrlName = "relatedDocCtrl";
-var myApp = angular.module('');
+var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'relatedDocService', 'COM_CONFIG', function($scope, relatedDocService, COM_CONFIG) {
 
