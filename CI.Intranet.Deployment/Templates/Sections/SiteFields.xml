@@ -254,6 +254,8 @@
   <Field ID="{08E5A2BE-E1C5-42AF-A229-1F4426D01396}" Type="URL" Name="COM_GroupSiteUrl" StaticName="COM_GroupSiteUrl" DisplayName="Group Site Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Group Site Url" />
   <!-- Navigation Node URL -->
   <Field ID="{1DDB1115-9830-4976-A86D-8D9591275340}" Type="URL" Name="COM_NavNodeUrl" StaticName="COM_NavNodeUrl" DisplayName="Navigation Node Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Navigation Node Url" />
+  <!-- Employee Life Announcement Icon Url -->
+  <Field ID="{834221FA-7EAD-41DD-A2B2-C9EBE5CCF826}" Type="URL" Name="COM_EmployeeAnnouncementIconUrl" StaticName="COM_EmployeeAnnouncementIconUrl" DisplayName="Employee Life Icon Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Employee Life Icon Url" />
 
   <!-- ********   -->
   <!-- CALC FIELDS -->
