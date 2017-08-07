@@ -192,23 +192,35 @@
     <Content Include="Resources\js\includes\News-Tiles.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\My-Bookmarks.html" />
+    <Content Include="Resources\js\includes\Related-Documents.html" />
+    <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\Toolbar-Manager.html" />
     <Content Include="Resources\js\includes\Toolbar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
+    <Content Include="Resources\js\src\components\bookmark-page.js" />
+    <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
+    <Content Include="Resources\js\src\components\quick-links.js" />
+    <Content Include="Resources\js\src\components\related-documents.js" />
+    <Content Include="Resources\js\src\components\related-news.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
+    <Content Include="Resources\js\src\components\weather-controller.js" />
     <Content Include="Resources\js\src\main\common.js" />
     <Content Include="Resources\js\src\main\modal.js" />
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
+    <Content Include="Resources\js\src\services\related-document-service.js" />
+    <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
     <Content Include="Resources\js\src\services\apps-service.js" />
+    <Content Include="Resources\js\src\services\weather-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
@@ -216,6 +228,9 @@
     <Content Include="Resources\Pages\index.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\XSL\Styles\COM_ContentQueryMain.xsl" />
+    <Content Include="Resources\XSL\Styles\COM_Header.xsl" />
+    <Content Include="Resources\XSL\Styles\COM_ItemStyle.xsl" />
     <Content Include="Templates\1-TermSet.xml" />
     <Content Include="Templates\2-InformationArchitecture.xml">
       <SubType>Designer</SubType>
@@ -268,6 +283,11 @@
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
+    <None Include="Resources\XSL\Webparts\CustomXSL_CQWP.webpart" />
+    <None Include="Resources\XSL\Webparts\Events.webpart" />
+    <None Include="Resources\XSL\Webparts\News.webpart" />
+    <None Include="Resources\XSL\Webparts\Recent News.webpart" />
+    <None Include="Resources\XSL\Webparts\Trending News.webpart" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
