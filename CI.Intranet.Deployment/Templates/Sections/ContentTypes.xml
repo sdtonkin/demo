@@ -113,6 +113,11 @@
       <pnp:FieldRef ID="7EEC25F0-0BEC-48AF-8FAF-545E625EFC61" Name="COM_GroupDescription" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+  <pnp:ContentType ID="0x0100344B4251E45F447B9DF2E39225D540BA" Name="Navigation Node Item" Description="Navigation Node Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="1DDB1115-9830-4976-A86D-8D9591275340" Name="COM_NavNodeUrl" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
   <!-- ********      -->
   <!-- DOC TYPES    -->
   <!-- ********      -->

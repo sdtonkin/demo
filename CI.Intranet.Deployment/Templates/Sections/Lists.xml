@@ -92,4 +92,35 @@
       </pnp:DataRow>
     </pnp:DataRows>
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Navigation" Description="Navigation List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/Navigation" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x0100344B4251E45F447B9DF2E39225D540BA" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Who We Are</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/index.aspx</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">News &amp; Events</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/news.aspx</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Work Resources</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/work-resources.aspx</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Groups</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/groups.aspx</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">People &amp; Places</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/people-places.aspx</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Employee Life</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/employee-life.aspx</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
+  </pnp:ListInstance>
 </pnp:Lists>
