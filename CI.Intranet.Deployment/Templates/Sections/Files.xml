@@ -69,6 +69,11 @@
   <!-- Images -->
   <pnp:File Src="images\compassion.ico" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
   <pnp:File Src="images\toolbar-icon-1.jpg" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
+
+  <!-- XSL Sheets -->
+  <pnp:File Src="XSL\Styles\COM_ContentQueryMain.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
+  <pnp:File Src="XSL\Styles\COM_Header.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
+  <pnp:File Src="XSL\Styles\COM_ItemStyle.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
   
 
   <!-- Includes   

@@ -263,7 +263,9 @@
     <Content Include="Resources\PageLayouts\COM_NewsDetail.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx" />
+    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\index.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -290,6 +292,12 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
+    <Content Include="Templates\Sections\WebParts\Find-People.xml" />
+    <Content Include="Templates\Sections\WebParts\Events.xml" />
+    <Content Include="Templates\Sections\WebParts\World-News.xml" />
+    <Content Include="Templates\Sections\WebParts\Employee-Spotlight.xml" />
+    <Content Include="Templates\Sections\WebParts\News.xml" />
+    <Content Include="Templates\Sections\WebParts\Trending-News.xml" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -300,13 +308,16 @@
     <None Include="Resources\css\sass\base\_mixins.scss" />
     <None Include="Resources\css\sass\base\_typography.scss" />
     <None Include="Resources\css\sass\base\_variables.scss" />
+    <None Include="Resources\css\sass\components\_departments.scss" />
     <None Include="Resources\css\sass\components\_employee-spotlight.scss" />
     <None Include="Resources\css\sass\components\_find-people.scss" />
+    <None Include="Resources\css\sass\components\_group-summary.scss" />
     <None Include="Resources\css\sass\components\_hero-news-container.scss" />
     <None Include="Resources\css\sass\components\_nav-toolbar.scss" />
     <None Include="Resources\css\sass\components\_news-events.scss" />
     <None Include="Resources\css\sass\components\_right-rail.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
+    <None Include="Resources\css\sass\components\_work-resources.scss" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
@@ -323,6 +334,7 @@
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
+    <None Include="Resources\WebParts\Trending-News.webpart" />
     <None Include="Resources\XSL\Webparts\CustomXSL_CQWP.webpart" />
     <None Include="Resources\XSL\Webparts\Events.webpart" />
     <None Include="Resources\XSL\Webparts\News.webpart" />
@@ -342,7 +354,6 @@
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />
     <Folder Include="Resources\js\dist\" />
-    <Folder Include="Resources\WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
