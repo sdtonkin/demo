@@ -5,7 +5,7 @@
  * ----------------------------------------- 
  */
 
- .work-resources{
+ .work-resources, .how-do-i{
 	.nav.nav-pills{
 		display: block;
 		text-align: left;
@@ -27,4 +27,27 @@
 			}
 		}
 	}
+ }
+
+ .how-do-i{
+ 	.nav.nav-pills{
+ 		padding-top: 20px;
+ 		padding-bottom: 20px;
+ 		background-color: $brand-white;
+ 		margin-bottom: 30px;
+ 		margin-top: 30px;
+ 		h3{
+			margin-left: 25px;
+ 		}
+ 		.nav-link{
+ 			background-color: transparent;
+ 			color: $brand-dark-blue;
+ 			&:hover{
+ 				color: $brand-dark-blue-alt ;
+ 			}
+ 		}
+ 		.nav-item{
+ 			width: 47%;
+ 		}
+ 	}
  }
