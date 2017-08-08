@@ -95,7 +95,7 @@
                                             <h2>Good Morning, <span id="ci-user-first-name"></span></h2>
                                         </div>
                                         <div class="col-md-3 weather-widget">
-                                            WEATHER WIDGET
+                                            <weather-ctrl></weather-ctrl>
                                         </div>
                                         <div class="col-md-3 card-close">
                                            <a class="pull-right hidden-md-down" data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">

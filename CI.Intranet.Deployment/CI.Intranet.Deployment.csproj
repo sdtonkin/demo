@@ -309,6 +309,7 @@
     <Content Include="Templates\Sections\TermSets.xml" />
     <Content Include="Templates\Sections\WebParts\Find-People.xml" />
     <Content Include="Templates\Sections\WebParts\Events.xml" />
+    <Content Include="Templates\Sections\WebParts\Group-Summary.xml" />
     <Content Include="Templates\Sections\WebParts\World-News.xml" />
     <Content Include="Templates\Sections\WebParts\Employee-Spotlight.xml" />
     <Content Include="Templates\Sections\WebParts\News.xml" />
