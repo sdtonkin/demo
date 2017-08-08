@@ -30,7 +30,7 @@
             <property name="HelpUrl" type="string" />
             <property name="AdditionalFilterFields" type="string" />
             <property name="DataMappingViewFields" type="string">{94f89715-e097-4e8b-ba79-ea02aa8b7adb},Lookup;{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},Image;{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Text;{691b9a4b-512e-4341-b3f1-68914130d5b2},Text;{6527f95b-2c85-4a16-bfd0-7c660667162f},DateTime;{6203f181-a20f-4c84-a266-ee2844a3fb73},Choice;{3f472a94-9e2d-4e67-bffc-101de0fdcbb8},Choice;{fb992a97-f75a-4336-b090-a162cce2d6d5},Choice;</property>
-            <property name="Title" type="string">News</property>
+            <property name="Title" type="string">Trending News</property>
             <property name="FeedDescription" type="string" />
             <property name="UseCache" type="bool">True</property>
             <property name="XslLink" type="string" null="true" />

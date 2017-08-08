@@ -27,31 +27,27 @@
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
     <div class="container">
         <div class="row">
-        <!-- Webpart Zone - Top Left -->
-	        <div class="mb-wp-zone container-half topleft col-sm-8">
-		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
-	        </div>
-            <!-- Webpart Zone - Right -->
-	        <div class="mb-wp-zone container-half right col-sm-4">
-		        <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" />
-	        </div>
-            <!-- Webpart Zone - Bottom Left -->
-	        <div class="mb-wp-zone container-half bottom-left col-sm-8">
-		        <WebPartPages:WebPartZone runat="server" Title="Bottom Left" ID="BottomLeftZone" />
-	        </div>
-        </div>
         <!-- Webpart Zone - Top -->
         <div class="row">
-	        <div class="mb-wp-zone container-full top col-sm-12">
+	        <div class="mb-wp-zone container-full top col-sm-8">
 		        <WebPartPages:WebPartZone runat="server" Title="Top" ID="TopZone" />
+			</div>
+			<!-- Webpart Zone - Bottom Left -->
+	        <div class="mb-wp-zone container-half topright col-sm-4">
+		        <WebPartPages:WebPartZone runat="server" Title="Top Right" ID="TopRightZone" />
 	        </div>
-        </div>
-        <!-- Webpart Zone - Bottom -->
-        <div class="row">
-	        <div class="mb-wp-zone container-half bottom col-sm-12">
-		        <WebPartPages:WebPartZone runat="server" Title="Bottom" ID="BottomZone" />
+		</div>
+		<div class="row">
+        	<!-- Webpart Zone - Top Left -->
+	        <div class="mb-wp-zone container-half topleft col-sm-4">
+		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
+			</div>
+			<!-- Webpart Zone - Right -->
+	        <div class="mb-wp-zone container-half topmiddle col-sm-4">
+		        <WebPartPages:WebPartZone runat="server" Title="Top Middle" ID="TopMiddleZone" />
 	        </div>
-        </div>
+		</div>
+        </div>        
     </div>
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">    
     </PublishingWebControls:EditModePanel>    

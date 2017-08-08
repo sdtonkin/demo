@@ -205,6 +205,8 @@
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
+    <Content Include="Resources\js\includes\Employee-Announcement.html" />
+    <Content Include="Resources\js\includes\Navigation.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
     <Content Include="Resources\js\includes\Quick-Links.html" />
@@ -224,7 +226,9 @@
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
+    <Content Include="Resources\js\src\components\employee-announcement.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
+    <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
@@ -238,6 +242,8 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\navigation-service.js" />
+    <Content Include="Resources\js\src\services\employee-announcement-service.js" />
     <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
     <Content Include="Resources\js\src\services\group-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
@@ -307,9 +313,14 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
+    <Content Include="Templates\Sections\WebParts\Helpful-Links.xml" />
+    <Content Include="Templates\Sections\WebParts\Job-Opportunities.xml" />
+    <Content Include="Templates\Sections\WebParts\myWellness.xml" />
+    <Content Include="Templates\Sections\WebParts\Benefits.xml" />
     <Content Include="Templates\Sections\WebParts\Find-People.xml" />
     <Content Include="Templates\Sections\WebParts\Events.xml" />
     <Content Include="Templates\Sections\WebParts\Group-Summary.xml" />
+    <Content Include="Templates\Sections\WebParts\Employee-Announcement.xml" />
     <Content Include="Templates\Sections\WebParts\World-News.xml" />
     <Content Include="Templates\Sections\WebParts\Employee-Spotlight.xml" />
     <Content Include="Templates\Sections\WebParts\News.xml" />

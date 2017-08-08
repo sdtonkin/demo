@@ -31,6 +31,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userBookmarks: 'User Bookmarks',
                 groupInfo: 'Group Info',
                 groupLeadership: 'Contacts',
+                navigation: 'Navigation'
             }
         });
     }
@@ -61,6 +62,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userBookmarks: 'User Bookmarks',
                 groupInfo: 'Group Info',
                 groupLeadership: 'Contacts',
+                navigation: 'Navigation'
             }
         });
     }
@@ -93,6 +95,7 @@ else {
             userBookmarks: 'User Bookmarks',
             groupInfo: 'Group Info',
             groupLeadership: 'Contacts',
+            navigation: 'Navigation'
         }
     });
 }
