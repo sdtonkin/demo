@@ -266,6 +266,21 @@
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\Pages\work-resources.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\people-places.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\location.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\groups.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\employee-life.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\index.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

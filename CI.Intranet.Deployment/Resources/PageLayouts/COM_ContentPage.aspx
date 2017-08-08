@@ -31,12 +31,16 @@
 	        <div class="mb-wp-zone container-half topleft col-sm-8">
 		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
 	        </div>
+
             <!-- Webpart Zone - Right -->
 	        <div class="mb-wp-zone container-half right col-sm-4">
 		        <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" />
 	        </div>
             <!-- Webpart Zone - Bottom Left -->
-	        <div class="mb-wp-zone container-half bottom-left col-sm-8">
+	        
+        </div>
+        <div class="row">
+            <div class="mb-wp-zone container-half bottom-left col-sm-8">
 		        <WebPartPages:WebPartZone runat="server" Title="Bottom Left" ID="BottomLeftZone" />
 	        </div>
         </div>
