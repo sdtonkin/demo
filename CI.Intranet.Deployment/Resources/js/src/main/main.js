@@ -43,4 +43,5 @@ require('../components/related-news.js');
 require('../components/employee-announcement.js');
 require('../components/navigation.js');
 require('../components/weather-controller.js');
+require('../components/bookmark-page.js');
 
