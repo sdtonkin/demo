@@ -10,7 +10,7 @@ angular.module('discoverIntranet').controller('bookmarkPageController', ['$scope
             _pageTitle = window.location.href.toLowerCase();
         }
         listService.checkBookmark(window.location.href).then(function (response){
-            $scope.pageBookmarked = (response.length > 0);
+            $scope.pageBookmarked = (response.length > 0); //blah blah
         });
     }
 
