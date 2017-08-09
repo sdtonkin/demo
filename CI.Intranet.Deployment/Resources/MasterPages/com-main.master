@@ -95,16 +95,19 @@
                                             <h2>Good Morning, <span id="ci-user-first-name"></span></h2>
                                         </div>
                                         <div class="col-md-3 weather-widget">
-                                            WEATHER WIDGET
+                                            <!--
+                                            <weather-ctrl></weather-ctrl>
+                                            -->
                                         </div>
-                                        <div class="col-md-3 card-close">
-                                           <a class="pull-right hidden-md-down" data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
-                                      Close <i class="fa fa-times"></i>
-                                            </a>
+                                        <div class="col-md-3" ng-show="ctrl.isToolbarOpen">
+                                           <a ng-click="ctrl.isToolbarOpen = false">Close <i class="fa fa-minus"></i></a>
+                                        </div>
+                                        <div class="col-md-3" ng-show="!ctrl.isToolbarOpen">
+                                           <a ng-click="ctrl.isToolbarOpen = true">Open <i class="fa fa-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="navCollapseOne" class="collapse show" role="tabpanel" aria-labelledby="navHeadingOne">
+                                <div id="navCollapseOne" class="collapse show" ng-show="ctrl.isToolbarOpen">
                                   <div class="card-block">
                                     <my-toolbar></my-toolbar>
                                   </div>
@@ -112,14 +115,7 @@
                               </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-close-mobile col-3 offset-9 text-center">
-                           <a class=" hidden-lg-up " data-toggle="collapse" data-parent="#navAccordion" href="#navCollapseOne" aria-expanded="true" aria-controls="navCollapseOne">
-                      Close <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
             </section>
 <!-- End Top Navigation -->

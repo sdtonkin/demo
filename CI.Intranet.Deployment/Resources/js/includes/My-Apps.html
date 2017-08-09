@@ -1,5 +1,5 @@
-﻿<ul ng-repeat="app in ctrl.myApps">
-    <li>
+﻿<ul>
+    <li ng-repeat="app in ctrl.myApps">
         <a ng-href="{{ app.iconUrl }}">
             <img ng-src="{{ app.iconUrl }}" />
             <div>{{ app.title }}</div>

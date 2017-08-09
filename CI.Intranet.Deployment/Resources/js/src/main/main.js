@@ -21,6 +21,7 @@ require('../services/group-service.js');
 require('../services/related-news-service.js');
 require('../services/employee-announcement-service.js');
 require('../services/navigation-service.js');
+require('../services/weather-service.js');
 
 // System Components
 
@@ -41,4 +42,5 @@ require('../components/related-documents.js');
 require('../components/related-news.js');
 require('../components/employee-announcement.js');
 require('../components/navigation.js');
+require('../components/weather-controller.js');
 

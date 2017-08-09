@@ -6,8 +6,6 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appServic
     var ctrl = this;
     var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;
-    ctrl.myTools = [];
-    ctrl.myToolsFromDb = [];
     ctrl.toolbarSelectorId = 'ci-toolbar-selector',
         ctrl.toolbarContainerId = 'ci-toolbar-container',
         ctrl.toolbarContentClassName = 'toolbar-content';

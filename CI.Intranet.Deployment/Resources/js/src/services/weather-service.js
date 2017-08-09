@@ -1,4 +1,4 @@
-angular.module('discoverIntranet').service('weatherService', function ($q, $http) {
+angular.module('compassionIntranet').service('weatherService', function ($q, $http) {
 
     this.getWeather = function(location, unit) {
        // console.log("getting weather for " + location);
