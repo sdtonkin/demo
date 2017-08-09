@@ -8,6 +8,7 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
         if (newVal == null) return;
         ctrl.myFeeds = newVal;
     });
+
 }]).component('rssFeeds', {
     template: require('../../includes/RSS-Feeds.html'),
     controller: controllerName,

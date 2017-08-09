@@ -74,7 +74,7 @@
             <property name="TitleIconImageUrl" type="string" />
             <property name="PlayMediaInBrowser" type="bool">True</property>
             <property name="ViewFlag" type="string">0</property>
-            <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_Header.xsl" /&gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_ItemStyle.xsl" /&gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
+            <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_Header.xsl" /&gt; &lt;xsl:import href="/../stage/Style Library/XSL Style Sheets/COM_ItemStyle.xsl" /&gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
             <property name="FilterField2" type="string" />
             <property name="ChromeType" type="chrometype">TitleOnly</property>
             <property name="CacheXslTimeOut" type="int">86400</property>
@@ -88,7 +88,7 @@
             <property name="GroupBy" type="string" />
             <property name="FilterIncludeChildren1" type="bool">False</property>
             <property name="BaseType" type="string" />
-            <property name="MainXslLink" type="string">/sites/Compassion/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
+            <property name="MainXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
             <property name="AsyncRefresh" type="bool">False</property>
             <property name="FilterValue1" type="string">[Today]</property>
             <property name="FilterValue2" type="string" />
@@ -107,10 +107,10 @@
             <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Eq</property>
             <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
             <property name="FilterByAudience" type="bool">True</property>
-            <property name="ItemXslLink" type="string">/sites/Compassion/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
+            <property name="ItemXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
             <property name="Hidden" type="bool">False</property>
             <property name="WebUrl" type="string" />
-            <property name="HeaderXslLink" type="string">/sites/Compassion/Style Library/XSL Style Sheets/COM_Header.xsl</property>
+            <property name="HeaderXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_Header.xsl</property>
             <property name="CacheXslStorage" type="bool">True</property>
             <property name="ListsOverride" type="string" />
             <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Asc</property>

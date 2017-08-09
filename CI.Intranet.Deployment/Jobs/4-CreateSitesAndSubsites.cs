@@ -30,10 +30,10 @@ namespace CI.Intranet.Deployment.Jobs
 
                 if (String.IsNullOrEmpty(m_SubSitesList))
                 {
-                    Console.WriteLine("\nThere are no subsites configured for Centene. Please add the sites in the app.config file.");
+                    Console.WriteLine("\nThere are no subsites configured listed. Please add the sites in the app.config file.");
                     return;
                 }
-                Console.WriteLine("\nCreating sub sites for Centene.");
+                Console.WriteLine("\nCreating sub sitesF.");
                 var sites = m_SubSitesList.Split(',').ToList();
                 var site = ctx.Site;
                 ctx.Load(site);

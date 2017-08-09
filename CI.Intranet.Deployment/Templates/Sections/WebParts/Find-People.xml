@@ -12,7 +12,7 @@
             <property name="HelpUrl" type="string" />
             <property name="Hidden" type="bool">False</property>
             <property name="Description" type="string" />
-            <property name="Content" type="string">&lt;employee-spotlight&gt;&lt;/employee-spotlight&gt;</property>
+            <property name="Content" type="string">&lt;find-people&gt;&lt;/find-people&gt;</property>
             <property name="CatalogIconImageUrl" type="string" />
             <property name="Title" type="string">Find People</property>
             <property name="AllowHide" type="bool">False</property>

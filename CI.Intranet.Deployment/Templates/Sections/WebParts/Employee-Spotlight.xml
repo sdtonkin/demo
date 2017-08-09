@@ -22,7 +22,7 @@
             <property name="ChromeType" type="chrometype">None</property>
             <property name="AllowConnect" type="bool">True</property>
             <property name="Width" type="unit" />
-            <property name="Height" type="unit" />
+            <property name="Height" type="unit" />            
             <property name="HelpMode" type="helpmode">Navigate</property>
             <property name="AllowEdit" type="bool">False</property>
             <property name="TitleIconImageUrl" type="string" />
