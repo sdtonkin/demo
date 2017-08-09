@@ -19,18 +19,7 @@
 		text-transform: uppercase;
 	}
  }
- .bookmark{
- 	height: 100%;
- 	display: block;
- 	position: relative;
- 	span{
- 		position: relative;
- 		top: 50%;
- 		i{
- 			margin-left: 10px;
- 		}
- 	}
- }
+ 
  .more-less{
  	&:before{
  		font-family: FontAwesome;
