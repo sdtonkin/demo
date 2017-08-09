@@ -223,6 +223,7 @@
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
     <Content Include="Resources\js\src\services\apps-service.js" />
+    <Content Include="Resources\js\src\services\userProfileService.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />

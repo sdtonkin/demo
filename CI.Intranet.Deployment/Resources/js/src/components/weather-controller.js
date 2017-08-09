@@ -9,7 +9,6 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
     // }
 
     //get user location
-    let now = moment();
     let expire = pnp.util.dateAdd(now, "minute", 60);
     cacheObj.getOrPut(ctrlName, userProfileService.getUserLocation, expire).then(function(data) {
         //    console.log("User Location");
@@ -19,7 +18,7 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
         var unit = "F";
         if (location == "") {
             // console.log("Location is null. Setting location to Colorado Springs, CO");
-            var location = "Riverwoods, Il";
+            var location = "Colorado Springs, CO";
 
         } else {
             if (location == "Colorado Springs") {
