@@ -25,7 +25,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .employee-card .emp-announce, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
 
@@ -530,6 +530,39 @@ body {
     margin-bottom: 25px; }
   .world-news .btn-block {
     max-width: 160px; }
+  .world-news h2 + .rss-feed {
+    margin-top: 30px; }
+  .world-news .btn.btn-cta {
+    margin-top: 0; }
+
+.rss-feed {
+  padding-left: 0;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .rss-feed hr {
+    display: none; }
+  .rss-feed > li {
+    margin-bottom: 20px; }
+  .rss-feed > li:last-child {
+    margin-bottom: 0; }
+    .rss-feed > li:last-child hr {
+      border-color: #88bee7;
+      display: block;
+      margin-top: 40px; }
+  .rss-feed .rss-category {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 15px; }
+  .rss-feed .rss-title a {
+    color: white;
+    font-size: 18px;
+    line-height: 22px; }
+  .rss-feed .rss-date {
+    font-size: 14px;
+    color: #88bee7; }
 
 .upcoming-events {
   background-color: white;
