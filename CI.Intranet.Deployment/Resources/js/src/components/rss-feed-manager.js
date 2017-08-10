@@ -19,6 +19,10 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
         ctrl.myFeeds = newVal;
         ctrl.myFeedsFromDb = angular.copy(newVal);
     });
+    $scope.$parent.$watch('ctrl.showManager', function (newVal, oldVal, scope) {
+        if (newVal != true) return;
+        openManageModal();
+    });
     this.$onInit = function () {
         rssFeedService.getAllRssFeeds().then(function (response) {
             ctrl.allFeeds = response;

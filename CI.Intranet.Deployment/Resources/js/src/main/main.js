@@ -19,6 +19,8 @@ require('../services/bookmark-service.js');
 require('../services/document-service.js');
 require('../services/group-service.js');
 require('../services/related-news-service.js');
+require('../services/employee-announcement-service.js');
+require('../services/navigation-service.js');
 
 // System Components
 
@@ -37,4 +39,6 @@ require('../components/rss-feed-manager.js');
 require('../components/group-summary.js');
 require('../components/related-documents.js');
 require('../components/related-news.js');
+require('../components/employee-announcement.js');
+require('../components/navigation.js');
 
