@@ -73,6 +73,56 @@
 	.btn-block{
 		max-width: 160px;
 	}
+	h2 + .rss-feed{
+		margin-top: 30px;
+	}
+	.btn.btn-cta{
+		margin-top: 0;
+	}
+}
+
+.rss-feed{
+	padding-left: 0;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	hr{
+		display: none;
+	}
+	>li{
+		margin-bottom: 20px;
+	}
+	> li:last-child{
+		//padding-bottom: 20px;
+		margin-bottom: 0;
+		hr{
+			border-color: $brand-light-blue;
+			display: block;
+			margin-top: 40px;
+		}
+		
+	}
+	.rss-category{
+		text-transform: uppercase;
+		color: $brand-white;
+		@extend .font-lato-bold;
+		font-size: 18px;
+		margin-bottom: 15px;
+		display: block;
+		margin-top: 15px;
+	}
+	.rss-title{
+		a{
+			color: $brand-white;
+			font-size: 18px;
+			line-height: 22px;
+			@extend .font-lato-reg;
+		}
+	}
+	.rss-date{
+		font-size: 14px;
+		@extend .font-lato-bold;
+		color: $brand-light-blue;
+	}
 }
 .upcoming-events{
 	background-color: $brand-white;
