@@ -60,20 +60,20 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     $scope.toggleSelection = function (id) {
         ctrl.isToolbarDirty = true;
         var item = _.find(ctrl.myApps, function (i) {
-            return i.toolId == id;
+            return i.appId == id;
         });
         if (item == null) {
-            var tool = _.find(ctrl.allApps, function (i) {
+            var app = _.find(ctrl.allApps, function (i) {
                 return i.id == id;
             });
-            tool.toolId = tool.id;
-            tool.id = -1;
-            ctrl.myApps.push(tool);
+            app.appId = app.id;
+            app.id = -1;
+            ctrl.myApps.push(app);
         }
         else {
             var currentTools = ctrl.myApps;
             ctrl.myApps = _.without(currentTools, _.findWhere(currentTools, {
-                toolId: id
+                appId: id
             }));
         }
     };
@@ -90,15 +90,15 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
 
         return !(ctrl.isToolbarDirty && (isBookmarkValid && isTitleValid));
     }
-    function updateSortOrder(tool, oldOrder) {
+    function updateSortOrder(app, oldOrder) {
         ctrl.isToolbarDirty = true;
         var apps = ctrl.myApps;
-        var newOrder = tool.sortOrder;
+        var newOrder = app.sortOrder;
         if (oldOrder < newOrder) {
             for (var i = oldOrder - 1; i < newOrder; i++) {
                 var t = apps[i];
                 if (i == oldOrder - 1) {
-                    apps[i].sortOrder = tool.sortOrder;
+                    apps[i].sortOrder = app.sortOrder;
                 }
                 else if (i == newOrder - 1) {
                     apps[i].sortOrder = t.sortOrder - 1
@@ -115,7 +115,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                     apps[i].sortOrder = t.sortOrder + 1;
                 }
                 else if (i == oldOrder - 1) {
-                    apps[i].sortOrder = tool.sortOrder;
+                    apps[i].sortOrder = app.sortOrder;
                 }
                 else {
                     apps[i].sortOrder = t.sortOrder + 1;
@@ -193,12 +193,12 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         var appsToDelete = _.difference(fullTools, apps);
 
         for (var i = 0; i < appsToAdd.length; i++) {
-            var tool = appsToAdd[i];
-            appService.addMyTool(userId, tool.toolId);
+            var app = appsToAdd[i];
+            appService.addMyTool(userId, app.appId);
         }
         for (var i = 0; i < appsToDelete.length; i++) {
-            var tool = appsToDelete[i];
-            appService.removeMyTool(tool.id);
+            var app = appsToDelete[i];
+            appService.removeMyTool(app.id);
         }
         appService.getMyApps(userId).then(function (response) {
             ctrl.myAppsFromDb = response;

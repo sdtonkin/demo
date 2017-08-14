@@ -3,14 +3,7 @@
         <div class="col-xs-8 col-xs-offset-2">
             <ul id="ci-toolbar-selector" class="nav-toolbar nav-tabs">
                 <div class="manage-toolbar">
-                    <toolbar-manager class="ng-isolate-scope">
-                        <div>
-                            <a ng-click="ctrl.openManageModal()">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                Manage
-                            </a>
-                        </div>
-                    </toolbar-manager>
+                    <toolbar-manager></toolbar-manager>
                 </div>
                 <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-apps')}">
                     <a ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
@@ -40,9 +33,6 @@
                     <li><a>site 1</a></li>
                 </ul>
             </div>            
-        </div>
-        <div class="col-xs-8 col-xs-offset-2">
-            <toolbar-manager></toolbar-manager>
-        </div>
+        </div>        
     </div>
 </section>

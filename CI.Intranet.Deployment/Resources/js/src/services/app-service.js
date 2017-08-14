@@ -4,7 +4,7 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
     var userAppsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
     
     // clear local storage if url param is detected
-    checkForClearStatement();
+    common.checkForClearStatement('clearMyApps', userAppsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();  
 
@@ -167,20 +167,25 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
 
         return defer.promise;
     }
-    function checkForClearStatement() {
-        if (common.getUrlParamByName('clearMyApps') == 'true')
-            storage.remove(userAppsKey);
-    }
+    
     function formatAppApps(apps) {
         var nullSortOrder = (_.findIndex(apps, function(a){ return a.sortOrder == null; }) != -1);
         for(var i = 0; i < apps.length; i++) {
             var app = apps[i];
+
+            
             if (app.sortOrder == null) {
                 nullSortOrder = true;
                 apps[i].sortOrder = i + 1;
             } else if (nullSortOrder)
                 apps[i].sortOrder = i + 1;
         }
-        return _.sortBy(apps, 'sortOrder');
+        var response = _.sortBy(apps, 'sortOrder');
+        if (response[0].sortOrder != 1) {
+            for (var i = 0; i < response.length; i++) {
+                response[i].sortOrder = i + 1;
+            }
+        }
+        return response;
     }
 }]);

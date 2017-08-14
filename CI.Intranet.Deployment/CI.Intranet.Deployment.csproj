@@ -206,6 +206,7 @@
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
     <Content Include="Resources\js\includes\Employee-Announcement.html" />
+    <Content Include="Resources\js\includes\Bookmark-Page.html" />
     <Content Include="Resources\js\includes\Navigation.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
