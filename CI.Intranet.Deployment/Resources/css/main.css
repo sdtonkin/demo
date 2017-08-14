@@ -559,13 +559,13 @@ body {
       margin-top: 40px; }
   .rss-feed .rss-category {
     text-transform: uppercase;
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     margin-bottom: 15px;
     display: block;
     margin-top: 15px; }
   .rss-feed .rss-title a {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     line-height: 22px; }
   .rss-feed .rss-date {

@@ -225,10 +225,12 @@
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
+    <Content Include="Resources\js\src\components\find-people1.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\employee-announcement.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
+    <Content Include="Resources\js\src\components\find-people.js" />
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
@@ -243,6 +245,7 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
     <Content Include="Resources\js\src\services\employee-spotlight-service.js" />

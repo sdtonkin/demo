@@ -1,17 +1,91 @@
-﻿<section class="find-people">
-    <div>
-        <input type="text" />
-    </div>
-    <h2>Recommended for You</h2>
-    <ul class="people-tiles">
-        <li>
-            <!-- use background image for portrait -->
-            <h3>First Last</h3>
-            <div class="people-title"></div>
-            <div class="people-department"></div>
-            <hr/>
-            <div>City State</div>
-            <div>555.254.3644</div>
-        </li>
-    </ul>
+﻿<section class="background-off-white find-people">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="section">Find People + Collaborate</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="input-group search">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>Recommended for You</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div id="findPeopleCarousel" class="find-people-carousel carousel col-12" data-ride="">
+                <ol class="carousel-indicators">
+                    <li data-target="#findPeopleCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#findPeopleCarousel" data-slide-to="1"></li>
+                    <li data-target="#findPeopleCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3 employee-card-wrapper" ng-repeat="p in ctrl.myPeople track by $index">
+                            <div class="employee-card">
+                                
+                                <img class="align-self-center emp-photo" src="{{p.picUrl}}" alt="{{p.displayName}}">
+                                
+                                <h3 class="emp-name">{{p.displayName}}</h3>
+                                <span class="h5 emp-loc">{{p.group}}</span>
+                                <span class="h5 emp-title">{{p.title}}</span>
+                                <img class="emp-logo" src="http://placehold.it/38x38">
+                                <hr>
+                                <span class="emp-address">{{p.location}}</span>
+                                <span class="emp-phone">{{p.phone}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div ng-if="ctrl.myPeople.length > 4" class="carousel-item">
+                        <div class="col-md-3 employee-card-wrapper" ng-repeat="person in ctrl.myPeople track by person.userPrincipalName | startFrom: currentPage*pageSize | limitTo: pageSize">
+                            <div class="employee-card">
+                                <img class="align-self-center emp-photo" src="{{person.picUrl}}" alt="{{person.displayName}}">
+
+                                <h3 class="emp-name">{{person.displayName}}</h3>
+                                <span class="h5 emp-loc">{{person.group}}</span>
+                                <span class="h5 emp-title">{{person.title}}</span>
+                                <img class="emp-logo" src="http://placehold.it/38x38">
+                                <hr>
+                                <span class="emp-address">{{person.location}}</span>
+                                <span class="emp-phone">{{person.phone}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="ctrl.myPeople.length > 8" class="carousel-item">
+                        <div class="col-md-3 employee-card-wrapper" ng-repeat="person in ctrl.myPeople track by person.userPrincipalName | startFrom: currentPage*pageSize | limitTo: pageSize">
+                            <div class="employee-card">
+                                <img class="align-self-center emp-photo" src="{{person.picUrl}}" alt="{{person.displayName}}">
+
+                                <h3 class="emp-name">{{person.displayName}}</h3>
+                                <span class="h5 emp-loc">{{person.group}}</span>
+                                <span class="h5 emp-title">{{person.title}}</span>
+                                <img class="emp-logo" src="http://placehold.it/38x38">
+                                <hr>
+                                <span class="emp-address">{{person.location}}</span>
+                                <span class="emp-phone">{{person.phone}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                        -->
+                </div>
+            </div><!--/.find-people-carousel-->
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-cta" href="#">View All</a>
+            </div>
+        </div>
+    </div><!--/.container-->
 </section>

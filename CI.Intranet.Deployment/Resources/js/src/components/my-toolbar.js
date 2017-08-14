@@ -2,7 +2,7 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appService', 'bookmarkService', 'COM_CONFIG', function ($scope, common, modalService, appService, bookmarkService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;

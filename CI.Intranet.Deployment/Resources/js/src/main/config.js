@@ -1,8 +1,34 @@
 ﻿
 // set up static configuration entries
 var myApp = angular.module('compassionIntranet');
+/*
+myApp.config(['$httpProvider', 'adalAuthenticationServiceProvider', '$locationProvider',
+  function ($httpProvider, adalProvider, $locationProvider) {
+      $locationProvider.html5Mode({
+          enabled: true,
+          requireBase: false
+      }).hashPrefix('!');
+      var clientId = 'd2ad5f24-6655-40eb-a87c-c8c32eab30f4',
+        tenantId = 'fec6abeb-e9b4-470f-88d4-8e7c2e175a90';
 
-//Discover Dev
+      adalProvider.init(
+          {
+              tenant: tenantId,
+              clientId: clientId,
+              endpoints: {
+                  'https://graph.microsoft.com': 'https://graph.microsoft.com'
+              },
+              extraQueryParameter: 'nux=1',
+              instance: 'https://login.microsoftonline.com/',
+              cacheLocation: "localStorage",
+              //endpoints you want ADAL to ignore, they are inclusive paths, also you must use relative paths, if you include http/https it will look for a resource and automatically append the token of the loginResource
+              anonymousEndpoints: ['/sites/Compassion/_api/',, '/sites/stage/_api/']
+          },
+          $httpProvider
+      );
+  }]);
+  */
+
 if (document.location.host === "compassion.sharepoint.com") {
     if (document.location.pathname.toLowerCase().indexOf('/sites/stage') !== -1) {
         myApp.constant('COM_CONFIG', {
@@ -72,7 +98,11 @@ else {
     myApp.constant('COM_CONFIG', {
         isProduction: false,
         msGraph: {
-            appId: '1d622432-aff2-4037-862d-53c714949c02'
+            appId: 'bc64af36-7263-4bab-8828-c25a37185bb3',
+            redirectUri: 'https://teganwilson.sharepoint.com/sites/compassion',
+            interactionMode: 'popUp',
+            graphEndpoint: 'https://graph.microsoft.com/v1.0/me',
+            graphScopes: ['user.read.all']
         },
         yammer: {
             appId: '',

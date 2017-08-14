@@ -5,6 +5,7 @@ var app = angular.module('compassionIntranet', []).config(function ($sceDelegate
         // Allow loading from our assets domain. **.
         'https://api.rss2json.com/**'
     ]);
+
 });
 
 require("../main/config.js");
@@ -22,6 +23,7 @@ require('../services/related-news-service.js');
 require('../services/employee-announcement-service.js');
 require('../services/navigation-service.js');
 require('../services/weather-service.js');
+require('../services/graph-service.js');
 
 // System Components
 
@@ -44,4 +46,6 @@ require('../components/employee-announcement.js');
 require('../components/navigation.js');
 require('../components/weather-controller.js');
 require('../components/bookmark-page.js');
+require('../components/find-people.js');
+
 
