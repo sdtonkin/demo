@@ -25,7 +25,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .employee-card .emp-announce {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
 
@@ -538,6 +538,39 @@ body {
     margin-bottom: 25px; }
   .world-news .btn-block {
     max-width: 160px; }
+  .world-news h2 + .rss-feed {
+    margin-top: 30px; }
+  .world-news .btn.btn-cta {
+    margin-top: 0; }
+
+.rss-feed {
+  padding-left: 0;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .rss-feed hr {
+    display: none; }
+  .rss-feed > li {
+    margin-bottom: 20px; }
+  .rss-feed > li:last-child {
+    margin-bottom: 0; }
+    .rss-feed > li:last-child hr {
+      border-color: #88bee7;
+      display: block;
+      margin-top: 40px; }
+  .rss-feed .rss-category {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 15px; }
+  .rss-feed .rss-title a {
+    color: white;
+    font-size: 18px;
+    line-height: 22px; }
+  .rss-feed .rss-date {
+    font-size: 14px;
+    color: #88bee7; }
 
 .upcoming-events {
   background-color: #ffffff;
@@ -994,6 +1027,99 @@ body {
       color: #0054a6; }
   .how-do-i .nav.nav-pills .nav-item {
     width: 47%; }
+
+/* 
+ * -----------------------------------------
+ *  Search
+ *  @@ File: components/_search.scss
+ * ----------------------------------------- 
+ */
+.ms-searchCenter-result-main {
+  float: none;
+  padding-top: 30px;
+  max-width: 1700px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .ms-searchCenter-result-main #SearchBox {
+    display: block;
+    max-width: 575px;
+    float: none;
+    margin: 0 auto 15px; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sbLarge {
+      display: flex; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sbLarge, .ms-searchCenter-result-main #SearchBox .ms-srch-sb-borderFocused {
+      border: 1px solid #b8b491;
+      position: relative; }
+    .ms-searchCenter-result-main #SearchBox input {
+      font-size: 16px;
+      line-height: 1.25;
+      padding: 0.5rem 0.75rem;
+      transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+      background-clip: padding-box;
+      background-color: #fff;
+      background-image: none;
+      -moz-box-flex: 1;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+      border: medium none;
+      border-radius: 0;
+      color: #0054a6;
+      height: 60px;
+      border-right: 1px solid #b8b491;
+      margin-right: 15px; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sb-searchLink {
+      position: relative;
+      margin-top: 13px;
+      margin-right: 20px;
+      border: none; }
+      .ms-searchCenter-result-main #SearchBox .ms-srch-sb-searchLink:hover {
+        background-color: transparent; }
+  .ms-searchCenter-result-main .ms-srch-upscope-top {
+    text-align: center;
+    width: 100% !important; }
+  .ms-searchCenter-result-main .ms-srchnav-list {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    width: 100%; }
+    .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #b8b491; }
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a:hover {
+        color: #0054a6; }
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a.ms-srchnav-link-selected {
+        color: #0054a6; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #908b63;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item:hover {
+      background-color: transparent; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 475px; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-path {
+    display: block; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
+    color: #0054a6;
+    width: 475px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link:visited {
+      color: #b8b491; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-highlightedText {
+    color: #0054a6; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports
