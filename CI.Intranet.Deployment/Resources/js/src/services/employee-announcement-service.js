@@ -3,7 +3,7 @@
 'use strict';
 angular.module('compassionIntranet').service('employeeAnnouncementService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userBookmarkKey = 'E5A445DB-8D84-4DC5-AFE4-779DCC86AED6' + _spPageContextInfo.userId;    
+    var userBookmarkKey = '9FAD3EC1-2BF0-4B46-97B9-D868BB406DEB' + _spPageContextInfo.userId;
     
     // clear local storage if url param is detected
     checkForClearStatement();
