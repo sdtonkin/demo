@@ -4,7 +4,7 @@ var myApp = angular.module('compassionIntranet');
 
 //Discover Dev
 if (document.location.host === "compassion.sharepoint.com") {
-    if (document.location.pathname.toLowerCase().indexOf('/sites/dev') !== -1) {
+    if (document.location.pathname.toLowerCase().indexOf('/sites/stage') !== -1) {
         myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
@@ -21,14 +21,17 @@ if (document.location.host === "compassion.sharepoint.com") {
                 newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
             },
             useCaching: false,
-            rootWeb: 'https://compassion.sharepoint.com/sites/dev',
+            rootWeb: 'https://compassion.sharepoint.com/sites/stage',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
-                userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools',
-                userBookmarks: 'User Bookmarks'
+                userApps: 'User Tools',
+                toolbarApps: 'Toolbar Tools',
+                userBookmarks: 'User Bookmarks',
+                groupInfo: 'Group Info',
+                groupLeadership: 'Contacts',
+                navigation: 'Navigation'
             }
         });
     }
@@ -54,9 +57,12 @@ if (document.location.host === "compassion.sharepoint.com") {
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
-                userTools: 'User Tools',
-                toolbarTools: 'Toolbar Tools',
-                userBookmarks: 'User Bookmarks'
+                userApps: 'User Tools',
+                toolbarApps: 'Toolbar Tools',
+                userBookmarks: 'User Bookmarks',
+                groupInfo: 'Group Info',
+                groupLeadership: 'Contacts',
+                navigation: 'Navigation'
             }
         });
     }
@@ -82,11 +88,14 @@ else {
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         lists: {
-            rssFeedsListTitle: 'RSS Feeds List',
+            rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',
-            userTools: 'User Tools',
-            toolbarTools: 'Toolbar Tools',
-            userBookmarks: 'User Bookmarks'
+            userApps: 'User Tools',
+            toolbarApps: 'Toolbar Tools',
+            userBookmarks: 'User Bookmarks',
+            groupInfo: 'Group Info',
+            groupLeadership: 'Contacts',
+            navigation: 'Navigation'
         }
     });
 }

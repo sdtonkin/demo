@@ -1,10 +1,13 @@
 ﻿<div>My RSS Feeds</div>
-<div ng-repeat="item in myFeeds">
-    <h3>{{ item.title }}</h3>
-    <ul ng-repeat="article in item.articles">
-        <li>
-            <a href="{{ article.guid }}">{{ article.title }}</a>
-            <div>{{ article.publishedSpanString }}</div>         
-        </li>
-    </ul>
+<div class="card world-news" ng-show="ctrl.showNoFeedsMessage">
+    <div class="card-block">
+        <h2 class="section">World News</h2>
+        <p class="card-text">
+            Save your favorite external news sites for easy access. News headlines will be updated in real-time.
+        </p>
+        <a class="btn btn-block" ng-click="ctrl.showManager = true;">Get Started</a>
+    </div>
 </div>
+
+<rss-feeds ng-show="!ctrl.showNoFeedsMessage"></rss-feeds>
+<rss-feed-manager ng-show="!ctrl.showNoFeedsMessage"></rss-feed-manager>

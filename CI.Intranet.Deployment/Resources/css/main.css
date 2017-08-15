@@ -21,19 +21,19 @@
 * ------------------------------------------------------- 
 */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
-.font-lato-light, h2, .h2, .btn.btn-cta:after {
+.font-lato-light, h2, .h2, .btn.btn-cta:after, .weather .weather-info {
   font-family: 'Lato', sans-serif;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-spotlight .employee-card .emp-name, .employee-spotlight .employee-card .emp-des, .employee-spotlight .employee-card .submit-line, .news-events .nav-link {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .employee-card .emp-rec {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-card .emp-rec, .employee-card .emp-title, .nav-toolbar .toolbar-content ul a {
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
 
@@ -165,6 +165,47 @@ p {
     color: #ffffff; }
   .btn.btn-block.brown {
     color: #908b63; }
+
+.nav-pills .nav-link {
+  background-color: #003364;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px; }
+  .nav-pills .nav-link:hover {
+    background-color: #ffffff;
+    color: #003364; }
+
+.nav-pills .nav-item {
+  margin-right: 15px;
+  min-width: 200px;
+  margin-bottom: 15px; }
+
+.helpful-links ul {
+  list-style: none;
+  padding-left: 0; }
+
+.helpful-links li {
+  display: table; }
+  .helpful-links li:before {
+    font-family: FontAwesome;
+    content: "\f0c1";
+    display: table-cell;
+    padding-right: 10px; }
+
+.bookmark, .submit, .share {
+  height: 100%;
+  display: block;
+  position: relative;
+  color: #003364; }
+  .bookmark span, .submit span, .share span {
+    position: relative;
+    top: 50%; }
+    .bookmark span i, .submit span i, .share span i {
+      margin-left: 10px; }
+
+.submit span, .share span {
+  top: 0; }
 
 /*
 ---------------
@@ -447,43 +488,46 @@ body {
 .main-right-rail h2.section {
   color: #ffffff; }
 
-.trending {
+.trending, .related {
   background-color: transparent;
   border: none;
   padding: 20px 0 0 0;
   max-width: 320px;
-  border-radius: 0; }
-  .trending .card-block {
+  border-radius: 0;
+  overflow: hidden; }
+  .trending .card-block, .related .card-block {
     border: 1px solid #ffffff;
     border-left: none;
     border-radius: 0;
     border-right: none;
     border-top: none;
     padding: 0 0 15px 0; }
-  .trending .card-title {
+  .trending .card-title, .related .card-title {
     margin-bottom: 30px;
     background-color: #ffffff;
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
     color: #908b63; }
-  .trending .card-likes {
+  .trending .card-likes, .related .card-likes {
     color: #ffffff;
     font-size: 14px; }
-    .trending .card-likes i {
+    .trending .card-likes i, .related .card-likes i {
       margin-right: 5px; }
-  .trending .card-text {
+  .trending .card-text, .related .card-text {
     line-height: 22px;
     font-size: 18px;
     margin-bottom: 14px;
     color: #003364; }
-  .trending .card-date {
+  .trending .card-date, .related .card-date {
     font-size: 14px;
     color: #ffffff;
     margin-bottom: 5px; }
-  .trending .img-fluid {
+  .trending .img-fluid, .related .img-fluid {
     height: 100%;
     width: auto; }
+  .trending .img-card, .related .img-card {
+    margin-bottom: 15px; }
 
 .world-news {
   background-color: #003364;
@@ -494,6 +538,39 @@ body {
     margin-bottom: 25px; }
   .world-news .btn-block {
     max-width: 160px; }
+  .world-news h2 + .rss-feed {
+    margin-top: 30px; }
+  .world-news .btn.btn-cta {
+    margin-top: 0; }
+
+.rss-feed {
+  padding-left: 0;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .rss-feed hr {
+    display: none; }
+  .rss-feed > li {
+    margin-bottom: 20px; }
+  .rss-feed > li:last-child {
+    margin-bottom: 0; }
+    .rss-feed > li:last-child hr {
+      border-color: #88bee7;
+      display: block;
+      margin-top: 40px; }
+  .rss-feed .rss-category {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 15px; }
+  .rss-feed .rss-title a {
+    color: white;
+    font-size: 18px;
+    line-height: 22px; }
+  .rss-feed .rss-date {
+    font-size: 14px;
+    color: #88bee7; }
 
 .upcoming-events {
   background-color: #ffffff;
@@ -573,42 +650,71 @@ body {
     border-radius: 0;
     color: #0054a6; }
 
-.employee-spotlight .employee-card-wrapper {
+.employee-spotlight .employee-spotlight-cta .btn-block {
+  margin-top: 30px;
+  max-width: 242px; }
+
+.employee-card-wrapper {
   margin-bottom: 30px;
   margin-top: 40px; }
-  .employee-spotlight .employee-card-wrapper + .employee-card-wrapper {
+  .employee-card-wrapper + .employee-card-wrapper {
     border-left: 1px solid #b8b491; }
 
-.employee-spotlight .employee-card-container {
+.employee-card-container {
   border-bottom: 1px solid #b8b491; }
-  .employee-spotlight .employee-card-container:last-child {
+  .employee-card-container:last-child {
     border-bottom: 2px solid #88bee7; }
 
-.employee-spotlight .employee-card .emp-photo {
+.employee-card.announce {
+  margin-bottom: 30px; }
+
+.employee-card .emp-photo {
   border-radius: 50%; }
 
-.employee-spotlight .employee-card .emp-name {
+.employee-card .emp-name {
   color: #003364;
   font-size: 25px; }
 
-.employee-spotlight .employee-card .emp-rec {
+.employee-card .emp-rec {
   color: #0054a6;
   font-size: 14px;
   text-transform: uppercase; }
 
-.employee-spotlight .employee-card .emp-des {
+.employee-card .emp-title {
+  color: #0054a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: -10px; }
+
+.employee-card .emp-view {
+  border-left: 1px solid;
+  margin-left: 10px;
+  padding-left: 10px; }
+
+.employee-card .emp-contact {
+  border-bottom: 1px solid #003364;
+  padding-bottom: 20px; }
+
+.employee-card .emp-des {
   color: #003364;
   font-size: 14px;
   line-height: 17px; }
 
-.employee-spotlight .employee-card .submit-line {
+.employee-card .emp-info {
+  display: block; }
+
+.employee-card .emp-announce {
+  color: #003364;
+  display: block; }
+
+.employee-card .submit-line {
   color: #003364;
   font-size: 14px;
   font-style: italic; }
 
-.employee-spotlight .employee-spotlight-cta .btn-block {
-  margin-top: 30px;
-  max-width: 242px; }
+.announce i {
+  font-size: 50px;
+  margin-right: 20px; }
 
 /* 
  * -----------------------------------------
@@ -741,6 +847,295 @@ body {
   outline: none; }
   .news-events .btn-block.brown:focus {
     box-shadow: none; }
+
+.news-block {
+  color: #4a4a4a;
+  border-top: 2px solid #908b63;
+  border-bottom: 2px solid #908b63;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px; }
+
+.news-content {
+  border-bottom: 2px solid #908b63;
+  padding-bottom: 20px; }
+
+.card-tags {
+  margin-bottom: 0;
+  background-color: #ffffff;
+  display: inline-block;
+  border: 1px solid #b8b491;
+  padding: 4px 10px;
+  color: #908b63;
+  text-align: left;
+  margin-right: 20px;
+  font-size: 14px; }
+
+.news-tag-content {
+  margin-bottom: 30px; }
+  .news-tag-content .card-likes {
+    margin-top: 10px;
+    display: block; }
+
+.news-title-block {
+  margin-top: 45px; }
+  .news-title-block .card-text {
+    margin-bottom: 40px; }
+
+/* 
+ * -----------------------------------------
+ *  Nav Toolbar
+ *  @@ File: components/_nav-toolbar.scss
+ * ----------------------------------------- 
+ */
+.nav-toolbar .nav-tabs {
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  margin-bottom: 30px; }
+
+.nav-toolbar .nav-item {
+  margin-bottom: -1px; }
+
+.nav-toolbar .nav-link {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 16px;
+  color: #88bee7; }
+  .nav-toolbar .nav-link:hover {
+    border-bottom: 4px solid transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: #ffffff; }
+  .nav-toolbar .nav-link.active {
+    border-bottom: 4px solid #ffffff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    color: #ffffff;
+    background: transparent; }
+
+.nav-toolbar .toolbar-content ul {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  padding-left: 0;
+  margin-right: 30px; }
+  .nav-toolbar .toolbar-content ul a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.4px; }
+    .nav-toolbar .toolbar-content ul a div {
+      padding-top: 5px;
+      display: block;
+      position: relative; }
+
+.nav-toolbar .toolbar-content h3 {
+  color: #b8b491; }
+
+.nav-toolbar .manage-toolbar {
+  position: absolute;
+  right: 0;
+  top: 45px; }
+
+.weather sup {
+  font-size: 10px;
+  vertical-align: top;
+  top: 5px;
+  display: inline-block; }
+.weather .weather-icon {
+  font-size: 40px;
+  margin-right: 15px; }
+.weather .weather-location {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  display: block; }
+.weather .weather-info {
+  font-size: 22px; }
+
+/* 
+ * -----------------------------------------
+ *  Group Summary
+ *  @@ File: components/_group-summary.scss
+ * ----------------------------------------- 
+ */
+.group-summary .card {
+  border-radius: 0;
+  background-color: #ffffff;
+  border-color: #88bee7; }
+
+.group-summary .card-header {
+  background-color: #ffffff; }
+
+.group-summary h5 a {
+  color: #003364;
+  text-transform: uppercase; }
+
+.more-less:before {
+  font-family: FontAwesome;
+  content: '\f068';
+  display: inline-block;
+  margin-right: 10px; }
+
+.more-less.collapsed:before {
+  content: '\f067'; }
+
+/* 
+ * -----------------------------------------
+ *  Departments
+ *  @@ File: components/_departments.scss
+ * ----------------------------------------- 
+ */
+.departments .nav.nav-pills {
+  display: inline-block;
+  text-align: center; }
+  .departments .nav.nav-pills .nav-item {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    min-width: 200px; }
+
+/* 
+ * -----------------------------------------
+ *  Work Resources
+ *  @@ File: components/_work-resources.scss
+ * ----------------------------------------- 
+ */
+.work-resources .nav.nav-pills, .how-do-i .nav.nav-pills {
+  display: block;
+  text-align: left; }
+  .work-resources .nav.nav-pills .nav-item, .how-do-i .nav.nav-pills .nav-item {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    width: 23%;
+    vertical-align: top; }
+  .work-resources .nav.nav-pills .nav-link, .how-do-i .nav.nav-pills .nav-link {
+    text-align: left; }
+    .work-resources .nav.nav-pills .nav-link i, .how-do-i .nav.nav-pills .nav-link i {
+      display: table-cell; }
+    .work-resources .nav.nav-pills .nav-link span, .how-do-i .nav.nav-pills .nav-link span {
+      display: table-cell;
+      padding-left: 10px; }
+
+.how-do-i .nav.nav-pills {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  margin-top: 30px; }
+  .how-do-i .nav.nav-pills h3 {
+    margin-left: 25px; }
+  .how-do-i .nav.nav-pills .nav-link {
+    background-color: transparent;
+    color: #003364; }
+    .how-do-i .nav.nav-pills .nav-link:hover {
+      color: #0054a6; }
+  .how-do-i .nav.nav-pills .nav-item {
+    width: 47%; }
+
+/* 
+ * -----------------------------------------
+ *  Search
+ *  @@ File: components/_search.scss
+ * ----------------------------------------- 
+ */
+.ms-searchCenter-result-main {
+  float: none;
+  padding-top: 30px;
+  max-width: 1700px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .ms-searchCenter-result-main #SearchBox {
+    display: block;
+    max-width: 575px;
+    float: none;
+    margin: 0 auto 15px; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sbLarge {
+      display: flex; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sbLarge, .ms-searchCenter-result-main #SearchBox .ms-srch-sb-borderFocused {
+      border: 1px solid #b8b491;
+      position: relative; }
+    .ms-searchCenter-result-main #SearchBox input {
+      font-size: 16px;
+      line-height: 1.25;
+      padding: 0.5rem 0.75rem;
+      transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+      background-clip: padding-box;
+      background-color: #fff;
+      background-image: none;
+      -moz-box-flex: 1;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+      border: medium none;
+      border-radius: 0;
+      color: #0054a6;
+      height: 60px;
+      border-right: 1px solid #b8b491;
+      margin-right: 15px; }
+    .ms-searchCenter-result-main #SearchBox .ms-srch-sb-searchLink {
+      position: relative;
+      margin-top: 13px;
+      margin-right: 20px;
+      border: none; }
+      .ms-searchCenter-result-main #SearchBox .ms-srch-sb-searchLink:hover {
+        background-color: transparent; }
+  .ms-searchCenter-result-main .ms-srch-upscope-top {
+    text-align: center;
+    width: 100% !important; }
+  .ms-searchCenter-result-main .ms-srchnav-list {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    width: 100%; }
+    .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #b8b491; }
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a:hover {
+        color: #0054a6; }
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a.ms-srchnav-link-selected {
+        color: #0054a6; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #908b63;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item:hover {
+      background-color: transparent; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 475px; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-path {
+    display: block; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
+    color: #0054a6;
+    width: 475px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link:visited {
+      color: #b8b491; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-highlightedText {
+    color: #0054a6; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports

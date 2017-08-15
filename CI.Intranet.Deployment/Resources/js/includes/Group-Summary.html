@@ -1,0 +1,46 @@
+﻿<section id="group-summary">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Groups</h3>
+        </div>
+    </div>
+    <div id="groupSumAccordion" class="group-summary-accordion" role="tablist" aria-multiselectable="true">
+        <div class="card" ng-repeat="group in ctrl.groups track by group.id">
+            <div class="card-header row" role="tab" id="headingOne">
+                <div class="col-sm-8">
+                    <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">
+                        <i class="fa fa-plus" ng-show="!ctrl.isGroupActive(group.id)"></i>
+                        <i class="fa fa-minus" ng-show="ctrl.isGroupActive(group.id)"></i>
+                    </a>
+                    <h5 class="mb-0">{{group.name}}</h5>
+                </div>
+                <div class="col-sm-4">
+                    <a ng-href="{{group.url}}">GO TO GROUP ></a>
+                </div>
+            </div>
+            <div class="ci-group-summary" ng-show="ctrl.isGroupActive(group.id)">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>{{group.description}}</p>
+                            <h5>Leadership</h5>
+                        </div>
+                        <div class="col-sm-4">
+                            <a ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="leader in group.leaders">
+                        <div class="media employee-card">
+                            <img class="d-flex align-self-start mr-3 emp-photo" ng-src="{{leader.profileUrl}}">
+                            <div class="media-body">
+                                <h3 class="mt-0 emp-name">{{leader.name}}</h3>
+                                <h5 class="emp-title">{{leader.title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" ng-model="group.id" />
+        </div>
+   </div>
+</section>

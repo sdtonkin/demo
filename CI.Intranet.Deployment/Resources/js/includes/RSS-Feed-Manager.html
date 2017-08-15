@@ -1,0 +1,19 @@
+﻿<div><a ng-click="ctrl.openManageModal()">Manage</a></div>
+<modal id="ci-rss-feed-manage">
+    <div class="ci-modal">
+        <div class="modal-body">
+            <h1>Manage My RSS Feeds</h1>
+            <h3>Available RSS Feeds</h3>
+            <ul>
+                <li ng-repeat="feed in ctrl.allFeeds track by feed.id">
+                    <input type="checkbox" ng-click="toggleSelection(feed.id)" value="{{feed.id}}" ng-checked="ctrl.existsFeedInMyFeeds(feed.id)" />{{feed.title}}
+                </li>
+            </ul>
+
+            <button ng-click="ctrl.saveMyFeeds();" ng-disabled="ctrl.enableSaveButton();">Save</button>            
+            <button ng-click="ctrl.closeModal('ci-rss-feed-manage');">Close</button>
+            <span>{{systemMessage}}</span>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

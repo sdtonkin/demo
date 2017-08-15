@@ -2,17 +2,17 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'myAppsCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'appsService', 'COM_CONFIG', function ($scope, common, appsService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'appService', 'COM_CONFIG', function ($scope, common, appService, COM_CONFIG) {
     var ctrl = this;
     var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;
     
-    $scope.$parent.$watch('ctrl', function (newVal, oldVal, scope) {
-        ctrl.myTools = newVal.myTools;
-        ctrl.myToolsFromDb = newVal.myToolsFromDb;
+    $scope.$parent.$watch('ctrl.myApps', function (newVal, oldVal, scope) {
+        ctrl.myApps = newVal;
+        ctrl.myAppsFromDb = scope.ctrl.myAppsFromDb;
     });
     this.$onInit = function () {
-        ctrl.myTools = $scope.$parent.ctrl.myTools;
+        ctrl.myApps = $scope.$parent.ctrl.myApps;
     };
 }]).component('myApps', {
     template: require('../../includes/My-Apps.html'),

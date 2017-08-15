@@ -1,15 +1,17 @@
 import pnp from "sp-pnp-js";
+import moment from "moment";
 
 var ctrlName = "weatherController";
 var myApp = angular.module('compassionIntranet');
 myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileService', 'COM_CONFIG', function($scope, $q, weatherService, userProfileService, COM_CONFIG) {
-    var cacheObj = pnp.storage.local;
+    var cacheObj = $pnp.storage.local;
     // if (!DISCOVER_CONFIG.useCaching) { 
     //     cacheObj.delete(ctrlName);
     // }
 
     //get user location
-    let expire = pnp.util.dateAdd(now, "minute", 60);
+    let now = moment();
+    let expire = $pnp.util.dateAdd(now, "minute", 60);
     cacheObj.getOrPut(ctrlName, userProfileService.getUserLocation, expire).then(function(data) {
         //    console.log("User Location");
         //    console.dir(data);
@@ -34,8 +36,8 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
 
     //pass in location to getWeather
     function getWeather(location, unit) {
-        let now = (now);
-        let expire = pnp.util.dateAdd(now, "minute", 5);
+        let now = moment();
+        let expire = $pnp.util.dateAdd(now, "minute", 5);
         cacheObj.getOrPut(ctrlName + "_weather", weatherService.getWeather.bind(this, location, unit), expire).then(function(response) {
             // $scope.Weather = data;
             $scope.noWeather = false;
@@ -120,7 +122,7 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
     }
 
 }]).component('weatherCtrl', {
-    template: require("./weather.html"),
+    template: require("../../includes/Weather.html"),
     controller: ctrlName,
     controllerAs: 'ctrl'
 });

@@ -1,10 +1,9 @@
 ﻿angular.module('compassionIntranet').service('storage', ['common', function (common) {
-    var userId = _spPageContextInfo.userId;
     var version = 1;
     function set(key, value, expirationDuration) {
         if (key != 'v') {
             // apply userid to make sure storage item is user specific on public methods
-            key = key + userId;
+            key = key;
             value.expiration = (expirationDuration === 0 ? 0 : moment().add(expirationDuration, 'hours'));
         }
         try {
@@ -16,7 +15,7 @@
     function get(key) {
         try {
             if (key != 'v') {
-                key = key + userId;
+                key = key;
                 var item = angular.fromJson(localStorage.getItem(key));
                 if (item != null)
                     item.isExpired = isItemExpired(key, item);
@@ -30,7 +29,6 @@
         }
     }
     function remove(key) {
-        key = key + userId;
         return localStorage.removeItem(key);
     }
     function clearAll() {

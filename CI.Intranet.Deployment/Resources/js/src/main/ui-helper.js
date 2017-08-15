@@ -13,6 +13,9 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
     isTablet = "",
     isDesktop = "";
 
+    var ctrl = this;
+    ctrl.isToolbarOpen = false;
+
     $scope.init = function () {
         addFirstNameToWelcomeMessage(userFirstName);
         $(window).resize(processWindowSize);

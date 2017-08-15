@@ -40,6 +40,15 @@
 			color: $brand-dark-blue-alt;
 		}
 	}
+
+	.employee-spotlight-cta{
+		.btn-block{
+			margin-top: 30px;
+			max-width: 242px;
+		}
+	}
+ }
+ 
 	.employee-card-wrapper{
 		margin-bottom: 30px;
 		margin-top: 40px;
@@ -54,7 +63,9 @@
 		}
 	}
 	.employee-card{
-		
+		&.announce{
+			margin-bottom: 30px;
+		}
 		.emp-photo{
 			border-radius: 50%;
 		}
@@ -69,11 +80,35 @@
 			text-transform: uppercase;
 			@extend .font-lato-med;
 		}
+		.emp-title{
+			color: $brand-dark-blue-alt;
+			font-size: 14px;
+			text-transform: uppercase;
+			@extend .font-lato-med;
+			margin-top: -10px;
+		}
+		.emp-view{
+			border-left:1px solid;
+			margin-left: 10px;
+    		padding-left: 10px; 
+		}
+		.emp-contact{
+			border-bottom: 1px solid $brand-dark-blue;
+			padding-bottom: 20px;
+		}
 		.emp-des{
 			color: $brand-dark-blue;
 			font-size: 14px;
 			@extend .font-lato-reg;
 			line-height: 17px;
+		}
+		.emp-info{
+			display: block;
+		}
+		.emp-announce{
+			@extend .font-lato-bold;
+			color: $brand-dark-blue;
+			display: block;
 		}
 		.submit-line{
 			color: $brand-dark-blue;
@@ -82,10 +117,9 @@
 			font-style: italic;
 		}
 	}
-	.employee-spotlight-cta{
-		.btn-block{
-			margin-top: 30px;
-			max-width: 242px;
+	.announce{
+		i{
+			font-size: 50px;
+			margin-right: 20px;
 		}
 	}
- }

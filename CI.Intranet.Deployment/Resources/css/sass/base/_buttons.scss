@@ -65,3 +65,56 @@
  		color: $brand-brown-gray;
  	}
  }
+
+ .nav-pills {
+ 	.nav-link {
+	    background-color: $brand-dark-blue;
+	    color: #fff;
+	    text-align: center;
+	    text-transform: uppercase;
+	    letter-spacing: 0.3px;
+	    &:hover{
+	    	background-color: $brand-white;
+	    	color: $brand-dark-blue;
+	    }
+	}
+	.nav-item{
+		margin-right: 15px;
+		min-width: 200px;
+		margin-bottom: 15px;
+	}
+}
+
+.helpful-links{
+	ul{
+		list-style: none;
+		padding-left: 0;
+	}
+	li{
+		display: table;
+		&:before{
+			font-family: FontAwesome;
+			content:"\f0c1";
+			display: table-cell;
+			padding-right: 10px;
+		}
+	}
+}
+.bookmark, .submit, .share{
+ 	height: 100%;
+ 	display: block;
+ 	position: relative;
+ 	color: $brand-dark-blue;
+ 	span{
+ 		position: relative;
+ 		top: 50%;
+ 		i{
+ 			margin-left: 10px;
+ 		}
+ 	}
+ }
+ .submit, .share{
+ 	span{
+ 		top: 0;
+ 	}
+ }
