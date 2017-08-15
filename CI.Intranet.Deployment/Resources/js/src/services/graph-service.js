@@ -8,12 +8,12 @@
 (function () {
     angular
       .module('compassionIntranet')
-      .service('graphService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
+      .service('graphService', ['$http', '$q', 'COM_CONFIG', 'common', function ($http, $q, COM_CONFIG, common) {
           var ctrl = this;
           var clientApplication;
           var myDocuments = 'https://graph.microsoft.com/v1.0/me/drive/recent',
               myPeople = 'https://graph.microsoft.com/beta/me/people',
-              users = 'https://graph.microsoft.com/v1.0/users/',
+              users = 'https://graph.microsoft.com/v1.0/users/',              
               userPic = '/photo/$value',
               me = 'https://graph.microsoft.com/v1.0/me';
           // Initialize the auth request
@@ -26,7 +26,7 @@
               if (!ctrl.isAuthenticated()) {
                   login();
               }
-              var headers = new Headers();
+              
               var bearer = 'Bearer ' + localStorage.token;
               var request = {
                   method: 'GET',
@@ -52,7 +52,57 @@
                           location: person.officeLocation,
                           phone: (person.phones.length > 0 ? person.phones[0].number : ''),
                           userPrincipalName: person.userPrincipalName,
-                          picUrl: "/_layouts/15/userphoto.aspx?size=S&accountname=" + person.userPrincipalName
+                          picUrl: "/_layouts/15/userphoto.aspx?size=S&accountname=" + person.userPrincipalName,
+                          logo: COM_CONFIG.rootWeb + '/_catalogs/masterpage/Compassion/images/shape.png'
+                      };
+                      response.push(p);
+                  }
+                  defer.resolve(response);
+              })
+              .catch(function (data) {
+                  if (COM_CONFIG.isProduction) {
+                      defer.reject(data);
+                  }
+                  else {
+                      var p = getMockData();
+                      defer.resolve(p);
+                  }                  
+              });
+              return defer.promise;
+          };
+          ctrl.searchMyUsers = function (queryText) {
+              var defer = $q.defer();
+              if (!ctrl.isAuthenticated()) {
+                  login();
+              }
+              
+              var bearer = 'Bearer ' + localStorage.token;
+              var request = {
+                  method: 'GET',
+                  url: myPeople + '?$search=' + queryText,
+                  headers: {
+                      'Access-Control-Allow-Origin': true,
+                      'Access-Control-Allow-Credentials': true,
+                      'Authorization': bearer
+                  }
+              };
+              $http(request)
+              .then(function (data) {
+                  var ppl = data.data.value;
+                  var response = [];
+                  var promises = [];
+
+                  for (var i = 0; i < ppl.length; i++) {
+                      var person = ppl[i];
+                      var p = {
+                          displayName: person.displayName,
+                          group: person.department,
+                          title: person.title,
+                          location: person.officeLocation,
+                          phone: (person.phones.length > 0 ? person.phones[0].number : ''),
+                          userPrincipalName: person.userPrincipalName,
+                          picUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=' + person.userPrincipalName,
+                          logo: COM_CONFIG.rootWeb + '/_catalogs/masterpage/Compassion/images/shape.png'
                       };
                       response.push(p);
                   }
@@ -64,7 +114,6 @@
               });
               return defer.promise;
           };
-
           function createApplication(applicationConfig) {
               var clientApplication = new Msal.UserAgentApplication(applicationConfig, null, function (errorDesc, token, error, tokenType) {
                   // Called after loginRedirect or acquireTokenPopup
@@ -73,13 +122,13 @@
           }
           function isAuthenticated() {
               return (clientApplication.getAllUsers().length !== 0)
-          }
+          }          
           function login() {
+              return;
               clientApplication.loginPopup(COM_CONFIG.msGraph.graphScopes).then(function (idToken) {
                   localStorage.user = JSON.stringify(clientApplication.getUser());
                   clientApplication.acquireTokenSilent(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
                       localStorage.token = accessToken;
-                      window.location.reload();
                   }, function (error) {
                       clientApplication.acquireTokenPopup(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
                           localStorage.token = accessToken;
@@ -90,40 +139,42 @@
               }, function (error) {
                   window.alert("Error during login:\n" + error);
               });
+              
           }
-          /*
-          return {
-
-              // Sign in and sign out the user
-              login: function login() {
-                  clientApplication.loginPopup(COM_CONFIG.msGraph.graphScopes).then(function (idToken) {
-                      localStorage.user = JSON.stringify(clientApplication.getUser());
-                      clientApplication.acquireTokenSilent(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
-                          localStorage.token = accessToken;
-                          window.location.reload();
-                      }, function (error) {
-                          clientApplication.acquireTokenPopup(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
-                              localStorage.token = accessToken;
-                          }, function (error) {
-                              window.alert("Error acquiring the popup:\n" + error);
-                          });
-                      })
+          function getToken() {
+              clientApplication.acquireTokenSilent(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
+                  localStorage.token = accessToken;
+                  //window.location.reload();
+              }, function (error) {
+                  clientApplication.acquireTokenPopup(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
+                      localStorage.token = accessToken;
                   }, function (error) {
-                      window.alert("Error during login:\n" + error);
+                      window.alert("Error acquiring the popup:\n" + error);
                   });
-              },
-              logout: function logout() {
-                  clientApplication.logout();
-                  delete localStorage.token;
-                  delete localStorage.user;
-              },
-
-              // Get the profile of the current user
-
-              // Send an email on behalf of the current user
-
+              });
           }
-          */
+          function getMockData() {
+              var response = [];
+              var p = {
+                  displayName: 'Mock Data',
+                  group: 'Mock Department',
+                  title: 'Mock Director',
+                  location: 'Mock Location, CO',
+                  phone: '555-555-5555',
+                  userPrincipalName: 'stonkin@us.ci.org',
+                  picUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=stonkin@us.ci.org',
+                  logo: COM_CONFIG.rootWeb + '/_catalogs/masterpage/Compassion/images/shape.png'
+              };
+
+              for (var i = 0; i < 17; i++) {
+                  var p1 = angular.copy(p);
+                  p1.displayName = p.displayName + ' ' + i;
+                  p1.userPrincipalName = p.userPrincipalName + i;
+                  p1.id = common.createGuid();
+                  response.push(p1);
+              }
+              return response;
+          }
       }]);
 })();
 

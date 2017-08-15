@@ -18,7 +18,7 @@
 <meta http-equiv="Expires" content="0" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <SharePoint:RobotsMetaTag runat="server" />
-
+<script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/ensure-scripts.js%>" />"></script>
 <link rel="shortcut icon" href="<% $SPUrl:~SiteCollection/_catalogs/masterpage/Compassion/images/compassion.ico %>" />
 <SharePoint:PageTitle runat="server"><asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server"><SharePoint:ProjectProperty Property="Title" runat="server" /></asp:ContentPlaceHolder></SharePoint:PageTitle>
 <SharePoint:StartScript runat="server" />
@@ -47,7 +47,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"  />
-<SharePoint:CssRegistration name="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/css/main.min.css %>" After="corev15.css" runat="server" /> 
+<link href="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/css/main.min.css%>" />" type="text/css" rel="stylesheet"  />
     <!-- Hide site contents link -->
     <style>        
         #ctl00_PlaceHolderLeftNavBar_PlaceHolderQuickLaunchBottom_idNavLinkViewAll { display: none; }
@@ -72,6 +72,7 @@
 <div id="s4-workspace" ng-app="compassionIntranet" ng-cloak>
 <div id="s4-bodyContainer">
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
+<navigation></navigation>
 <!-- Start Top Navigation -->
     <section class="section sub-nav-container">
                 <div class="container">
@@ -129,7 +130,7 @@
                     </nav>
                 </div>
                 <div class="col-lg-4 footer-brand">
-                    <img src="../images/compassion-white-logo.png" class="img-fluid pull-right">
+                    <img src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/images/compassion-white-logo.png%>" />" class="img-fluid pull-right">
                 </div>
             </div>
             <hr>
@@ -169,7 +170,6 @@
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js"></script>
 
 <!-- scripts -->
-<SharePoint:ScriptLink language="javascript"  name="~sitecollection/_catalogs/masterpage/compassion/js/ensure-scripts.min.js" OnDemand="false" runat="server"/>
 <script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>
 
 <!-- Form Digest -->

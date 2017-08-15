@@ -820,19 +820,21 @@
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
     </xsl:variable>
-
-      <div class="news-date">
-         <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
-      </div>
-
-    <div class="news-details">
-      <div class="title / news-title">
+    <div class="card trending">
+      <div class="card-block">
+        <p class="card-date">
+          <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
+        </p>
         <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
-          <xsl:value-of select="$DisplayTitle"/>
+          <p class="card-text">
+            <xsl:value-of select="$DisplayTitle"/>
+          </p>
         </a>
+        <span class="card-likes">
+          <i class="fa fa-heart-o"></i>
+        </span>
       </div>
-
-    </div>
+    </div>    
   </xsl:template>
 
 

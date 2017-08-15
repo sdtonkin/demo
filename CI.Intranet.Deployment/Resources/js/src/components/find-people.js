@@ -4,9 +4,16 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', 'graphService', 'COM_CONFIG', function ($scope, graphService, COM_CONFIG) {
     var ctrl = this;
+    ctrl.searchText;
 
     this.$onInit = function () {
         graphService.getMyPeople().then(function (data) {
+            ctrl.myPeople = data;
+        });
+    }
+
+    ctrl.searchUsers = function () {
+        graphService.searchMyUsers(ctrl.searchText).then(function (data) {
             ctrl.myPeople = data;
         });
     }
