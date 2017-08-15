@@ -1,0 +1,98 @@
+<div id="SearchBox">
+    <input type="text" placeholder="{{searchText}}" ng-class="{'focus': hasFocus}" ng-focus="hasFocus=true" ng-blur="hasFocus=false" ng-model="searchTerm" search-enter="search()">
+    <a class="click-submit" ng-click="searchTerm = ''"></a>
+</div>
+<div class="search-filters">
+    <span class="filter-by">Filter By:</span>
+    <div class="category">
+        <div id="dd-category" class="compassion-dropdown dd" tabindex="1" ng-class="{'active' : categoryActive}" ng-click="dropdown('category')">
+            {{selectedCategory || 'Category'}}
+            <ul class="dropdown">
+                <li ng-click="categorySelect(this)">
+                    <a href="#"><i class="icon-user"></i>Clear Selection</a>
+                </li>
+                <li ng-repeat="category in categories" ng-click="categorySelect(this)">
+                    <a href="#"><i class="icon-user"></i>{{category}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="location">
+        <div id="dd-location" class="compassion-dropdown dd" tabindex="2" ng-class="{'active' : locationActive}" ng-click="dropdown('location')">
+            {{selectedLocation || 'Location'}}
+            <ul class="dropdown">
+                <li ng-click="locationSelect(this)">
+                    <a href="#"><i class="icon-user"></i>Clear Selection</a>
+                </li>
+                <li ng-repeat="location in locations" ng-click="locationSelect(this)">
+                    <a href="#"><i class="icon-user"></i>{{location}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div ng-show="loading">
+    <img src="/_LAYOUTS/1033/Images/progress.gif" />
+</div>
+<div class="tab-content news" ng-class="{'current': isSet(1)}" ng-show="isSet(1) && !loading">
+    <div class="tab-elements">
+        <div class="row">
+            <div class="col-md-12 news search-results">
+                <div ng-if="totalRows" ng-class="{'no-img': !article.PublishingImage}" class="search-result-item" ng-repeat="article in news">
+                    <div ng-hide="!article.PublishingImage" class="image-contain">
+                        <img ng-src="{{article.ImageUrl}}" />
+                    </div>
+                    <div class="search-results-info">
+                        <span class="event-type" ng-if="article.RefinableString15">{{article.RefinableString15}}</span>
+                        <a href="{{article.Path}}">
+                            <h4 class="event-title">{{article.Title}}</h4>
+                        </a>
+                        <div class="date-share">
+                            <span class="regular-body numbers">{{article.ArticleDate}}</span>
+                            <a href="{{article.Path}}#article-comments">
+                                <card-footer page-url={{article.Path}} item-id={{article.ListItemID}}></card-footer>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="!totalRows">
+                    No Results
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-content events" ng-class="{'current': isSet(2)}" ng-show="isSet(2) && !loading">
+    <div class="tab-elements">
+        <div class="row">
+            <div class="col-md-12 whats-happening">
+                <div ng-if="totalRows" ng-class="{'no-img': !article.PublishingImage}" class="event" ng-repeat="event in events">
+                    <!--<div class="copy-contain">-->
+                    <span class="event-type">{{event.RefinableString14}}</span>
+                    <div class="event-info">
+                        <a href="{{event.Path}}">
+                            <h4 class="event-title">{{event.Title}}</h4>
+                        </a>
+                        <div class="event-date-time">
+                            <span class="event-date">
+									<span class="icon-Calendar"></span>
+                            <span class="date numbers">{{event.ArticleDate}}</span>
+                            </span>
+                            <span class="event-time">
+									<span class="icon-Time"></span>
+                            <span class="time numbers">{{event.startTime}} - {{event.endTime}}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div ng-if="!totalRows">
+                    No Results
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="load-more-contain">
+    <btn ng-show="startRow < totalRows" class="primary" value="Load More" ng-click="getNewsArticles(true)">Load More</btn>
+</div>
