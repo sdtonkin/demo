@@ -6,8 +6,8 @@
                     <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">
                         <i class="fa fa-plus" ng-show="!ctrl.isGroupActive(group.id)"></i>
                         <i class="fa fa-minus" ng-show="ctrl.isGroupActive(group.id)"></i>
+                        <h5 class="mb-0">{{group.name}}</h5>
                     </a>
-                    <h5 class="mb-0">{{group.name}}</h5>
                 </div>
                 <div class="col-sm-4">
                     <a ng-href="{{group.url}}">GO TO GROUP ></a>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-6" ng-repeat="leader in group.leaders">
                         <div class="media employee-card">
-                            <img class="d-flex align-self-start mr-3 emp-photo" ng-src="{{leader.profileUrl}}">
+                            <img class="d-flex align-self-start mr-3 emp-photo" ng-src="{{leader.picUrl}}">
                             <div class="media-body">
                                 <h3 class="mt-0 emp-name">{{leader.name}}</h3>
                                 <h5 class="emp-title">{{leader.title}}</h5>
@@ -39,3 +39,4 @@
         </div>
    </div>
 </section>
+<bookmark-page></bookmark-page>

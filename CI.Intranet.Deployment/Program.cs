@@ -14,6 +14,7 @@ namespace CI.Intranet.Deployment
     {
         private static ConsoleColor defaultForeground = ConsoleColor.DarkCyan;
         private static readonly String TEMPLATEDIRECTORYLOCATION = "../../Templates/";
+        private static readonly String GROUPSTEMPLATEDIRECTORYLOCATION = "../../Templates/Sections/Groups";
         static void Main(string[] args)
         {
             string defaultSiteUrl = ConfigurationManager.AppSettings["SharePointSiteUrl"];
@@ -77,7 +78,7 @@ namespace CI.Intranet.Deployment
             {
                 Console.WriteLine("0 - Get Provisioning Template");
                 Console.WriteLine("1 - Provision Full Site Template");
-                Console.WriteLine("2 - Add Mock Data");
+                Console.WriteLine("2 - Provision Group Sites");
                 Console.WriteLine("3 - Import Data Items");
                 Console.WriteLine("4 - Create Sites and Subsites");
                 Console.WriteLine("  (N/A) - Migrate News");
@@ -187,8 +188,29 @@ namespace CI.Intranet.Deployment
                     }
                     break;
                 case "2":
-                    var mJob = new Jobs.CreateMockData(siteUrl, domain, userName, pwd);
-                    mJob.Start();
+                    List<FileInfo> groupsToProcess = DisplayFileTemplateOptions(GROUPSTEMPLATEDIRECTORYLOCATION, SearchOption.TopDirectoryOnly);
+                    if (groupsToProcess.Count() <= 0)
+                    {
+                        Console.WriteLine("No Files Selected.");
+                        return;
+                    }
+                    var mJob = new Jobs.ProvisionGroupSites(domain, userName, pwd);
+                    foreach (var FileToProcess in groupsToProcess)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Processing ... " + FileToProcess.Name);
+                        if (ValidateSubSiteXml(siteUrl, domain, userName, pwd, FileToProcess.Name))
+                        {
+                            options = "quiet";
+                            mJob.Start(FileToProcess.Name, FileToProcess.Directory);
+                        }
+                        else
+                        {
+                            WriteErrorToScreen("Attempted to deploy Xml to a group site.");
+                        }
+
+
+                    }
                     break;
                 case "3":
                     var nJob = new Jobs.SubmissionImporter(siteUrl, domain, userName, pwd);

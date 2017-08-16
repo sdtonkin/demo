@@ -5,7 +5,7 @@
  * ----------------------------------------- 
  */
 
- .group-summary{
+ #group-summary{
 	.card{
 		border-radius: 0;
 		background-color: $brand-white;
@@ -14,9 +14,10 @@
 	.card-header{
 		background-color: $brand-white;
 	}
-	h5 a{
+	h5 {
 		color: $brand-dark-blue;
 		text-transform: uppercase;
+        display: inline;
 	}
  }
  

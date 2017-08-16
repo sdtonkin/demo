@@ -121,11 +121,10 @@
               return clientApplication;
           }
           function isAuthenticated() {
-              console.log('hi');
               return (clientApplication.getAllUsers().length !== 0)
           }          
           function login() {
-              //return;
+              return;
               clientApplication.loginPopup(COM_CONFIG.msGraph.graphScopes).then(function (idToken) {
                   localStorage.user = JSON.stringify(clientApplication.getUser());
                   clientApplication.acquireTokenSilent(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {
