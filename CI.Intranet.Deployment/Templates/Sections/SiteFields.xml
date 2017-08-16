@@ -267,4 +267,11 @@
       </FieldRefs>  
   </Field>
 
+  <!-- ********   -->
+  <!-- BOOLEAN FIELDS -->
+  <!-- ********   -->
+  <Field ID="{14C03220-C950-4700-9606-3D621733E69B}" Type="Boolean" Name="COM_Featured" StaticName="COM_Featured" DisplayName="Is Featured" EnforceUniqueValues="FALSE" Required="FALSE" Hidden="FALSE" Group="1 - Compassion Intranet" Description="Is Featured Item">
+    <Default>0</Default>
+  </Field>
+  
 </pnp:SiteFields>
