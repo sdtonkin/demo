@@ -1232,6 +1232,14 @@ body {
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
+.main-container h2.ms-webpart-titleText span {
+  font-size: 40px;
+  text-align: left;
+  color: #908b63; }
+
+.main-container h2.ms-webpart-titleText {
+  line-height: 40px; }
+
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */

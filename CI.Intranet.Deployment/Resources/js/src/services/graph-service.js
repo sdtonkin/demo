@@ -19,7 +19,7 @@
           // Initialize the auth request
           clientApplication = createApplication(COM_CONFIG.msGraph.appId);
           clientApplication.redirectUri = COM_CONFIG.msGraph.redirectUri;
-
+          
           ctrl.isAuthenticated = isAuthenticated;
           ctrl.getMyPeople = function () {
               var defer = $q.defer();
@@ -121,10 +121,11 @@
               return clientApplication;
           }
           function isAuthenticated() {
+              console.log('hi');
               return (clientApplication.getAllUsers().length !== 0)
           }          
           function login() {
-              return;
+              //return;
               clientApplication.loginPopup(COM_CONFIG.msGraph.graphScopes).then(function (idToken) {
                   localStorage.user = JSON.stringify(clientApplication.getUser());
                   clientApplication.acquireTokenSilent(COM_CONFIG.msGraph.graphScopes).then(function (accessToken) {

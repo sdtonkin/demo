@@ -348,6 +348,7 @@
     <None Include="Resources\css\sass\components\_nav-toolbar.scss" />
     <None Include="Resources\css\sass\components\_news-events.scss" />
     <None Include="Resources\css\sass\components\_right-rail.scss" />
+    <None Include="Resources\css\sass\components\_search.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\components\_work-resources.scss" />
     <None Include="Resources\css\sass\main.scss" />
