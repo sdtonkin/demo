@@ -1,6 +1,6 @@
-// import pnp from "sp-pnp-js";
+
 var ctrlName = "employeeSpotlight";
-var myApp = angular.module('');
+var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'employeeSpotlightService', 'COM_CONFIG', function ($scope, employeeSpotlightService, COM_CONFIG) {
 

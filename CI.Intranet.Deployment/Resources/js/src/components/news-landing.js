@@ -1,4 +1,3 @@
-// import pnp from "sp-pnp-js";
 var ctrlName = 'NewsLandingCtrl';
 var app = angular.module('compassionIntranet');
 app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService', 'COM_CONFIG', function($scope, $location, newsService, taxonomyService, COM_CONFIG) {

@@ -243,7 +243,6 @@
     <Content Include="Resources\js\includes\News-Landing-Results.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\My-Bookmarks.html" />
-    <Content Include="Resources\js\includes\quick-links.html" />
     <Content Include="Resources\js\includes\Related-Documents.html" />
     <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\RSS-Feed-Manager.html" />
@@ -255,7 +254,6 @@
     <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
-    <Content Include="Resources\js\src\components\find-people1.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\employee-announcement.js" />

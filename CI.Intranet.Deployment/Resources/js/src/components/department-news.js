@@ -1,6 +1,3 @@
-// import pnp from "sp-pnp-js";
-
-
 const ctrlName = "depNewsCtrl";
 // const cacheObj = pnp.storage.local;
 const myApp = angular.module('compassionIntranet');
@@ -47,7 +44,7 @@ myApp.controller(ctrlName, function($scope, departmentNewsService, COM_CONFIG, y
 
 }).component('departmentNews', {
 
-    template: require("./departmentNews.html"),
+    template: require("../../includes/Department-News.html"),
     controller: ctrlName,
     controllerAs: 'ctrl'
 
