@@ -1,46 +1,15 @@
-﻿<section class="employee-spotlight">
-    <ul>
-        <li><a href="#ci-gratitude">gratitude</a></li>
-        <li><a href="#ci-new-hires">new hires</a></li>
-        <li><a href="#ci-anniversaries">anniversaries + retirements</a></li>
-    </ul>
-    <div id="ci-gratitude">
-        <ul class="people-tiles">
-            <li>
-                <!-- use background image for portrait -->
-                <h3>First Last</h3>
-                <div class="people-title">Gratitude</div>
-                <div class="description"></div>
-                <div class="submitted-by"></div>
-            </li>
-        </ul>
-    </div>
-    <div id="ci-new-hires">
-        <ul class="people-tiles">
-            <li>
-                <!-- use background image for portrait -->
-                <h3>First Last</h3>
-                <div class="people-title">senior vice president</div>
-                <div class="people-links">
-                    <span><a>Email</a></span>|
-                    <span><a>View Profile</a></span>
+﻿<div class="spotlights">
+    <div class="row">
+        <div class="col-md-4" ng-repeat="spotlight in item.spotlight">
+            <div class="story">
+                <div class="copy">
+                    <span class="date numbers">{{spotlight.eventDate}}</span>
+                    <a href="{{spotlight.link}}" target="_blank">
+                        <span class="title">{{spotlight.title}}</span>
+                    </a>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
-    <div id="ci-anniversaries">
-        <ul class="people-tiles">
-            <li>
-                <!-- use background image for portrait -->
-                <h3>First Last</h3>
-                <div class="people-title">Gratitude</div>
-                <div class="description"></div>
-                <div class="submitted-by"></div>
-            </li>
-        </ul>
-    </div>
-    <div class="spotlight-links">
-        <a class="ci-btn">Submit</a>
-        <a>View All</a>
-    </div>
-</section>
+    <a class="view-all" target="_blank" href="#">See All</a>
+</div>
