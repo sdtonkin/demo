@@ -52,6 +52,7 @@ require('../components/my-rss-feeds.js');
 require('../components/my-toolbar.js');
 require('../components/navigation.js');
 require('../components/news-landing.js');
+require('../components/people-places.js');
 require('../components/quick-links.js');
 require('../components/related-documents.js');
 require('../components/related-news.js');

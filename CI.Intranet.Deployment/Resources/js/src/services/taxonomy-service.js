@@ -1,9 +1,6 @@
 angular.module('compassionIntranet')
 .service('taxonomyService', ['COM_CONFIG', function(COM_CONFIG){
-    var RP = RP || {};
-    RP.Util = RP.Util || {};
-    RP.Util.Cache = RP.Util.Cache || [];
-
+    
     /*!
     * Termset utilities
     Inspiration: http://www.habaneroconsulting.com/insights/returning-a-sharepoint-2013-termset-in-a-tree-structure-using-javascript
@@ -39,12 +36,12 @@ angular.module('compassionIntranet')
      * @param {string} id - Termset ID
      * @param {object} callback - Callback function to call upon completion and pass termset into
      */
-    function finishTermSetGet(termStore, id, cacheKey, callback, ctx) {
+    function finishTermSetGet(termStore, id, callback, ctx) {
         var termSet = termStore.getTermSet(id);
         var terms = termSet.getAllTerms();
 
         ctx.load(terms);
-        RP.Util.Cache[cacheKey] = terms;
+        
         ctx.executeQueryAsync(Function.createDelegate(this, function (sender, args) {
             callback(terms);
         }),
@@ -70,12 +67,12 @@ angular.module('compassionIntranet')
                     var useSiteCollectionTermStore = false;
                     if (useSiteCollectionTermStore) {
                         termStore = taxonomySession.getDefaultSiteCollectionTermStore();
-                        finishTermSetGet(termStore, id, cacheKey, callback, ctx);
+                        finishTermSetGet(termStore, id, callback, ctx);
                     }
                     else {    //Term Stores
-                        var termStores = taxonomySession.get_termStores();
-                        termStore = termStores.getByName(COM_CONFIG.nav.taxonomyService);
-                        finishTermSetGet(termStore, id, cacheKey, callback, ctx);
+                        //var termStores = taxonomySession.getDefaultSiteCollectionTermStore();
+                        termStore = taxonomySession.getDefaultSiteCollectionTermStore();
+                        finishTermSetGet(termStore, id, callback, ctx);
                     }
                 });
             });
@@ -91,11 +88,6 @@ angular.module('compassionIntranet')
      * @param {object} callback - Callback function to call upon completion and pass termset into
      */
      function getTermSetAsTree(id, filterById, callback) {
-        var cacheKey = 'getTermSetAsTree-' + id;
-        var cacheKeyFound = false;
-        if (filterById != null && filterById != '') {
-            cacheKey = 'getTermSetAsTree-' + filterById;
-        }
         if (false) { }
         else {
             getTermSet(id, function (terms) {
@@ -172,7 +164,6 @@ angular.module('compassionIntranet')
 
                     for (var i = 0; i < parentNode.Nodes.length; i++) {
                         if (parentNode.Nodes[i].NodeGuid == filterById) {
-                            RP.Util.Cache[cacheKey] = parentNode.Nodes[i];
                             callback(parentNode.Nodes[i]);
                         }
                     }
@@ -180,12 +171,8 @@ angular.module('compassionIntranet')
                     callback(null);
                 }
                 else {
-                    RP.Util.Cache[cacheKey] = tree;
                     callback(tree);
                 }
-
-
-
             });
         }
     };

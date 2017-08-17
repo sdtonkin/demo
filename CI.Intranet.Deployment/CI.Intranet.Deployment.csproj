@@ -252,6 +252,7 @@
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\department-news.js" />
+    <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
@@ -385,6 +386,7 @@
     <None Include="Resources\css\sass\base\_mixins.scss" />
     <None Include="Resources\css\sass\base\_typography.scss" />
     <None Include="Resources\css\sass\base\_variables.scss" />
+    <None Include="Resources\css\sass\components\_people-places.scss" />
     <None Include="Resources\css\sass\components\_departments.scss" />
     <None Include="Resources\css\sass\components\_employee-spotlight.scss" />
     <None Include="Resources\css\sass\components\_find-people.scss" />

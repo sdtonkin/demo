@@ -1,27 +1,20 @@
 'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'bookmarkPageController';
+    controllerName = 'locationPlacesController';
 
 myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG', function ($scope, $q, taxonomyService, COM_CONFIG) {
     var ctrl = this;
-    
-    this.$onInit = function(){
-        getLocations().then(function (data) {
-            ctrl.places = data;
+    ctrl.places = [];
+    ctrl.activeTab = 'people';
+
+    this.$onInit = function () {
+        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (data) {
+            ctrl.places = _.reject(data, function (p) {
+                return p.name == 'US';
+            });
+            $scope.$apply();
         });
     }
-
-    function getLocations() {
-        var defer = $q.defer();
-        var termSetId = COM_CONFIG.termSets.locationTermId;
-
-        taxonomyService.getTermSetAsTree(termSetId).then(function (response) {
-            defer.resolve(response);
-        });
-
-        return defer.promise();
-    }
-
 }]).component('locationPlaces', {
     template: require('../../includes/Location-Places.html'),
     controller: controllerName,

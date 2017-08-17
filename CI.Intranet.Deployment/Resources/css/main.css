@@ -1203,6 +1203,21 @@ navigation .nav-search > div.search-button, navigation .nav-search > div.search-
   .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-highlightedText {
     color: #0054a6; }
 
+/* 
+ * -----------------------------------------
+ *  Departments
+ *  @@ File: components/_people-places.scss
+ * ----------------------------------------- 
+ */
+section.people-places ul.tab-picker h2 {
+  font-size: 40px;
+  text-align: left;
+  color: #908b63; }
+
+section.people-places ul.tab-picker li {
+  list-style: none;
+  cursor: pointer; }
+
 /* ----------------------------------------------------
   12) Responsive Style Imports
 ------------------------------------------------------- */
