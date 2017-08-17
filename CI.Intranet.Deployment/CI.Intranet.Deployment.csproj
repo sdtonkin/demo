@@ -223,6 +223,8 @@
     <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\shape.png" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
+    <Content Include="Resources\js\includes\Location-Places.html" />
+    <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
@@ -245,6 +247,7 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
+    <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\find-people1.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />

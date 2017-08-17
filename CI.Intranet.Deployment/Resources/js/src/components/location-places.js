@@ -1,6 +1,6 @@
 'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'locationPlacesController';
+    controllerName = 'bookmarkPageController';
 
 myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope, bookmarkService) {
     var ctrl = this;
@@ -25,8 +25,8 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope,
         });
     }
 
-}]).component('locationPlaces', {
-    template: require('../../includes/Location-Places.html'),
+}]).component('bookmarkPage', {
+    template: require('../../includes/Bookmark-Page.html'),
     controller: controllerName,
     controllerAs: 'ctrl'
 });
