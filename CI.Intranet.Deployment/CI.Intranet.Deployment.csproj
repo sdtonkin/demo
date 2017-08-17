@@ -297,6 +297,9 @@
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\Pages\news.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\work-resources.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

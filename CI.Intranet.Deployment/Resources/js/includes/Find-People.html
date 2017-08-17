@@ -29,8 +29,8 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <div class="col-md-3 employee-card-wrapper">
-                            <div class="employee-card" ng-repeat="person in ctrl.myPeople | limitTo: 4:0 track by person.id">                                
+                        <div class="col-md-3 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 4:0 track by person.id">
+                            <div class="employee-card">                                
                                 <img class="align-self-center emp-photo" ng-src="{{person.picUrl}}" alt="{{person.displayName}}">
                                 
                                 <h3 class="emp-name">{{person.displayName}}</h3>

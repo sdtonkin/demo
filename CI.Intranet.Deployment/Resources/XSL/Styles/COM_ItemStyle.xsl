@@ -831,7 +831,6 @@
           </p>
         </a>
         <span class="card-likes">
-          <i class="fa fa-heart-o"></i>
         </span>
       </div>
     </div>    

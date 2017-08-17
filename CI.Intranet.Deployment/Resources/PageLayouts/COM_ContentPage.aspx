@@ -28,12 +28,12 @@
     <div class="container">
         <div class="row">
         <!-- Webpart Zone - Top Left -->
-	        <div class="mb-wp-zone container-half topleft col-sm-8">
+	        <div class="mb-wp-zone container-half topleft col-sm-8 main-left-content">
 		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
 	        </div>
 
             <!-- Webpart Zone - Right -->
-	        <div class="mb-wp-zone container-half right col-sm-4">
+	        <div class="mb-wp-zone container-half right col-sm-4 main-right-rail">
 		        <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" />
 	        </div>
             <!-- Webpart Zone - Bottom Left -->
