@@ -121,7 +121,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     bindings: {
         default: '@'
     },
-    template: require('../../includes/newsLandingResults.html'),
+    template: require('../../includes/News-Landing-Results.html'),
     controller: ctrlName,
     controllerAs: 'ctrl'
 }).directive('searchEnter', function() {

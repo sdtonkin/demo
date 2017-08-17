@@ -2,31 +2,28 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'bookmarkPageController';
 
-myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope, bookmarkService) {
+myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG', function ($scope, $q, taxonomyService, COM_CONFIG) {
     var ctrl = this;
-    var thisUrl = _spPageContextInfo.siteAbsoluteUrl;
-    var userId = _spPageContextInfo.userId;
-    var webTitle = _spPageContextInfo.webTitle;
     
     this.$onInit = function(){
-        bookmarkService.getMyBookmarks(userId).then(function (response) {
-            ctrl.myBookmarks = response;
+        getLocations().then(function (data) {
+            ctrl.places = data;
         });
     }
 
-    ctrl.isMyBookmark = function () {
-        return _.findIndex(ctrl.myBookmarks, function (b) {
-            return b.url == thisUrl;
-        }) != -1;
-    }
-    ctrl.addMyBookmark = function () {
-        bookmarkService.addMyBookmark(userId, webTitle, thisUrl).then(function (response) {
-            ctrl.myBookmarks.push(response);
+    function getLocations() {
+        var defer = $q.defer();
+        var termSetId = COM_CONFIG.termSets.locationTermId;
+
+        taxonomyService.getTermSetAsTree(termSetId).then(function (response) {
+            defer.resolve(response);
         });
+
+        return defer.promise();
     }
 
-}]).component('bookmarkPage', {
-    template: require('../../includes/Bookmark-Page.html'),
+}]).component('locationPlaces', {
+    template: require('../../includes/Location-Places.html'),
     controller: controllerName,
     controllerAs: 'ctrl'
 });

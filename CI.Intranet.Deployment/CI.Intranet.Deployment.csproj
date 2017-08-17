@@ -240,7 +240,7 @@
     <Content Include="Resources\js\includes\RSS-Feeds.html" />
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
-    <Content Include="Resources\js\includes\newsLandingResults.html" />
+    <Content Include="Resources\js\includes\News-Landing-Results.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\My-Bookmarks.html" />
     <Content Include="Resources\js\includes\quick-links.html" />
@@ -263,7 +263,7 @@
     <Content Include="Resources\js\src\components\find-people.js" />
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
-    <Content Include="Resources\js\src\components\newsLanding.js" />
+    <Content Include="Resources\js\src\components\news-landing.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
@@ -285,8 +285,7 @@
     <Content Include="Resources\js\src\services\group-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
-    <Content Include="Resources\js\src\services\related-news-service.js" />
-    <Content Include="Resources\js\src\services\newsService.js" />
+    <Content Include="Resources\js\src\services\news-service.js" />
     <Content Include="Resources\js\src\services\related-document-service.js" />
     <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />

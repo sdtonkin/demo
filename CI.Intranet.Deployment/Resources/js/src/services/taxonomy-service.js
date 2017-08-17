@@ -55,10 +55,7 @@ angular.module('compassionIntranet')
         }));
     }
     function getTermSet(id, callback) {
-        var cacheKey = 'getTermSet-' + id;
-        //if (RP.Util.Cache.UseLocalCacheArray && RP.Util.Cache[cacheKey] != null) {
-        //    callback(RP.Util.Cache[cacheKey]);
-        //}
+        
         if (false) { }
         else {
             SP.SOD.loadMultiple(['sp.js'], function () {
@@ -99,10 +96,6 @@ angular.module('compassionIntranet')
         if (filterById != null && filterById != '') {
             cacheKey = 'getTermSetAsTree-' + filterById;
         }
-        //if (RP.Util.Cache.UseLocalCacheArray && RP.Util.Cache[cacheKey] != null) {
-        //    callback(RP.Util.Cache[cacheKey]);
-
-            //}
         if (false) { }
         else {
             getTermSet(id, function (terms) {

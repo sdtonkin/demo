@@ -18,9 +18,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 defaultGroupId: ''
             },
             termSets: {
-                locationTermId: "af2b87f4-feae-42c3-a08d-70f9efae0f71",
-                eventCategoryTermId: "6f4ea56b-a45a-499d-9141-b75ed00e14c0",
-                newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
+                locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',                
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/stage',
@@ -54,9 +52,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 defaultGroupId: ''
             },            
             termSets: {
-                locationTermId: "af2b87f4-feae-42c3-a08d-70f9efae0f71",
-                eventCategoryTermId: "6f4ea56b-a45a-499d-9141-b75ed00e14c0",
-                newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
+                locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com',
@@ -92,9 +88,7 @@ else {
             defaultGroupId: ''
         },
         termSets: {
-            locationTermId: "af2b87f4-feae-42c3-a08d-70f9efae0f71",
-            eventCategoryTermId: "6f4ea56b-a45a-499d-9141-b75ed00e14c0",
-            newsCategoryTermId: "67235e27-f37f-4da6-a8e9-e23d6cabfb8f"
+            locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
         },
         useCaching: false,
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
