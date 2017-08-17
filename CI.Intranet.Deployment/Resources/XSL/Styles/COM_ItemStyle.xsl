@@ -726,9 +726,91 @@
   </xsl:template>
 
 
- 
+
+  <!-- Featured News -->
+  <xsl:template name="FeaturedNews" match="Row[@Style='FeaturedNews']" mode="itemstyle">
+    <xsl:variable name="SafeLinkUrl">
+      <xsl:call-template name="OuterTemplate.GetSafeLink">
+        <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="SafeImageUrl">
+      <xsl:call-template name="OuterTemplate.GetSafeStaticUrl">
+        <xsl:with-param name="UrlColumnName" select="'ImageUrl'"/>
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="DisplayTitle">
+      <xsl:call-template name="OuterTemplate.GetTitle">
+        <xsl:with-param name="Title" select="@Title"/>
+        <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
+      </xsl:call-template>
+    </xsl:variable>
+
+    <div class="hero-news-container">
+      <div class="img-fluid">
+        <xsl:if test="string-length($SafeImageUrl) != 0">
+          <a href="{$SafeLinkUrl}" >
+            <img class="image" src="{$SafeImageUrl}" title="{@ImageUrlAltText}"/>
+          </a>
+        </xsl:if>
+      </div>
+
+      <div class="card-group">
+        <div class="card-title">
+          <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
+            <xsl:value-of select="$DisplayTitle"/>
+          </a>
+        </div>
+
+
+        <div class="card-date">
+          <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
+        </div>
+
+        <ul class="tags / inline-tags">
+          <xsl:if test="string-length(@NewsType) != 0">
+            <li>
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
+                </xsl:attribute>
+                <xsl:value-of select="@NewsType"/>
+              </a>
+            </li>
+          </xsl:if>
+          <xsl:if test="string-length(@Location) != 0">
+            <li>
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+                </xsl:attribute>
+                <xsl:value-of select="@Location"/>
+              </a>
+            </li>
+          </xsl:if>
+          <xsl:if test="string-length(@Group) != 0">
+            <li>
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
+                </xsl:attribute>
+                <xsl:value-of select="@Group"/>
+              </a>
+            </li>
+          </xsl:if>
+
+        </ul>
+        <span class="card-likes">
+          <i class="fa fa-heart-o"></i>26
+        </span>
+      </div>
+    </div>
+  </xsl:template>
+
+
+
   <!-- Recent News -->
-<xsl:template name="RecentNews" match="Row[@Style='RecentNews']" mode="itemstyle">
+  <xsl:template name="RecentNews" match="Row[@Style='RecentNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
       <xsl:call-template name="OuterTemplate.GetSafeLink">
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
@@ -755,15 +837,15 @@
 
       </div>
     </xsl:if>
-    <div class="news-details">
+    <div class="card-title">
       <div class="title / news-title">
         <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
           <xsl:value-of select="$DisplayTitle"/>
         </a>
       </div>
-      
-      <div class="news-date">
-         <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
+
+      <div class="card-date">
+        <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
       </div>
 
       <ul class="tags / inline-tags">
@@ -798,40 +880,9 @@
           </li>
         </xsl:if>
       </ul>
-    </div>
-  </xsl:template>
-
-
-  <!-- Trending News -->
-  <xsl:template name="TrendingNews" match="Row[@Style='TrendingNews']" mode="itemstyle">
-    <xsl:variable name="SafeLinkUrl">
-      <xsl:call-template name="OuterTemplate.GetSafeLink">
-        <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="SafeImageUrl">
-      <xsl:call-template name="OuterTemplate.GetSafeStaticUrl">
-        <xsl:with-param name="UrlColumnName" select="'ImageUrl'"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="DisplayTitle">
-      <xsl:call-template name="OuterTemplate.GetTitle">
-        <xsl:with-param name="Title" select="@Title"/>
-        <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
-      </xsl:call-template>
-    </xsl:variable>
-
-      <div class="news-date">
-         <xsl:value-of select="@PublishDate" disable-output-escaping="yes" />
-      </div>
-
-    <div class="news-details">
-      <div class="title / news-title">
-        <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
-          <xsl:value-of select="$DisplayTitle"/>
-        </a>
-      </div>
-
+      <span class="card-likes">
+        <i class="fa fa-heart-o"></i>26
+      </span>
     </div>
   </xsl:template>
 
@@ -883,36 +934,37 @@
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
 
-    <div class="event-date">
-      <span class="event-month">
-        <xsl:value-of select="$monthAbbr"/>
-      </span>
-      <span class="event-day">
-        <xsl:value-of select="$day"/>
-      </span>
-    </div>
-    <div class="event-details">
-      <a class="event-title" onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{$SafeLinkUrl}" >
-        <xsl:value-of select="@Title" />
-      </a>
-      <span class="event-location">
-        <xsl:value-of  select="@Location"/>
-      </span>
-      <xsl:if test="string-length($time) != 0">
-        <span class="event-time">
-          <xsl:value-of select="$time" />
-          <xsl:if test="string-length($endtime) != 0">
-            &#160;-&#160;<xsl:value-of select="$endtime" />
-          </xsl:if>
+    <div class="card upcoming-events">
+      <div class="card-block">
+        <span class="event-month">
+          <xsl:value-of select="$monthAbbr"/>
         </span>
-      </xsl:if>
+        <span class="event-day">
+          <xsl:value-of select="$day"/>
+        </span>
+      </div>
+      <div class="event-details">
+        <a class="event-title" onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{$SafeLinkUrl}" >
+          <xsl:value-of select="@Title" />
+        </a>
+        <span class="card-location">
+          <xsl:value-of  select="@Location"/>
+        </span>
+        <xsl:if test="string-length($time) != 0">
+          <span class="event-time">
+            <xsl:value-of select="$time" />
+            <xsl:if test="string-length($endtime) != 0">
+              &#160;-&#160;<xsl:value-of select="$endtime" />
+            </xsl:if>
+          </span>
+        </xsl:if>
 
 
-      <span class="event-description">
-        <xsl:value-of select="@EventType" />
-      </span>
+        <span class="card-tags">
+          <xsl:value-of select="@EventType" />
+        </span>
+      </div>
     </div>
-
 
   </xsl:template>
 
