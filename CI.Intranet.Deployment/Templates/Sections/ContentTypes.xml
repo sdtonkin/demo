@@ -49,8 +49,10 @@
   <pnp:ContentType ID="0x0100DCE3A2BC1BD240F197EE919521C55C42" Name="Home Page News Item" Description="News Item for Home Page Display" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa" Name="COM_SortOrder" />
+      <pnp:FieldRef ID="3de94b06-4120-41a5-b907-88773e493458" Name="PublishingPageImage" />
       <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
+      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" />
       <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
@@ -59,7 +61,7 @@
       <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" Hidden="true" />  
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0100AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x0102AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
@@ -68,7 +70,7 @@
     	<pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x01003E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01023E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
       <pnp:FieldRef ID="D9540795-390B-418A-B7A9-62AAC170E5C4" Name="COM_EventDate" Hidden="true" />  

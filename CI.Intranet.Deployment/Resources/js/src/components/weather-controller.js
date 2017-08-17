@@ -1,3 +1,6 @@
+import pnp from "sp-pnp-js";
+import moment from "moment";
+
 var ctrlName = "weatherController";
 var myApp = angular.module('compassionIntranet');
 myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileService', 'COM_CONFIG', function($scope, $q, weatherService, userProfileService, COM_CONFIG) {
@@ -16,61 +19,12 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
         var location = $scope.UserLocation;
         var unit = "F";
         if (location == "") {
-            // console.log("Location is null. Setting location to Riverwoods, IL");
-            var location = "Riverwoods, Il";
+            // console.log("Location is null. Setting location to Colorado Springs, CO");
+            var location = "Colorado Springs, CO";
 
         } else {
-            if (location == "Riverwoods") {
-                var location = "Riverwoods, IL";
-            }
-            if (location == "New Albany") {
-                var location = "New Albany, OH";
-            }
-            if (location == "West Valley City") {
-                var location = "West Valley City, UT";
-            }
-            if (location == "UPC") {
-                var location = "Salt Lake City, UT";
-            }
-            if (location == "Phoenix") {
-                var location = "Phoenix, AZ";
-            }
-            if (location == "New Castle") {
-                var location = "New Castle, DE";
-            }
-            if (location == "Houston") {
-                var location = "Houston, TX";
-            }
-            if (location == "Huangpu District") {
-                var location = "Huangpu District, SHANGHAI P.R.";
-                var unit = "C";
-            }
-            if (location == "London") {
-                var location = "London, UK";
-                var unit = "C";
-            }
-            if (location == "Pittsford") {
-                var location = "Pittsford, NY";
-            }
-            if (location == "Greenwood") {
-                var location = "Greenwood, DE";
-            }
-            if (location == "Farnborough") {
-                var location = "Farnborough, UK";
-                var unit = "C";
-            }
-            if (location == "Louisville") {
-                var location = "Louisville, KY";
-            }
-            if (location == "Irvine") {
-                var location = "Irvine, CA";
-            }
-            if (location == "Charlotte") {
-                var location = "Charlotte, NC";
-            }
-            if (location == "Hong Kong") {
-                var location = "Hong Kong, Hong Kong";
-                var unit = "C";
+            if (location == "Colorado Springs") {
+                var location = "Colorado Springs, CO";
             }
         }
 

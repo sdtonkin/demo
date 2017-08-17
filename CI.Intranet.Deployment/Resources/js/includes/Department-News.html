@@ -1,0 +1,62 @@
+<div ng-show="news || events" class="row">
+    <div class="col-md-12">
+        <span class="line-title">Latest From {{department}}</span>
+    </div>
+</div>
+<div ng-show="news || events" class="corporate-communications">
+    <div class="row flex">
+        <div ng-show="news" ng-repeat="item in news" class="col-md-4 flex">
+            <div class="tiles image-top" ng-if="item.img">
+                <div class="image-contain">
+                    <img ng-src="{{item.img}}">
+                </div>
+                <div class="copy-contain">
+                    <div class="title-contain">
+                        <a href="{{departmentUrl}}#?category={{item.RefinableString15}}">
+                            <span class="story-tag blue" ng-if="item.RefinableString15">{{item.RefinableString15}}</span>
+                        </a>
+                        <h2><a ng-href={{item.Path}}>{{item.Title}}</a></h2>
+                    </div>
+
+                    <div class="date-share">
+                        <span class="regular-body numbers">{{item.articleDate}}</span>
+                        <card-footer page-url={{item.Path}} item-id={{ListItemID}}></card-footer>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!item.img" class="tiles no-image">
+                <div class="copy-contain">
+                    <a href="{{departmentUrl}}#?category={{item.RefinableString15}}">
+                        <span class="story-tag blue" ng-if="item.RefinableString15">{{item.RefinableString15}}</span>
+                    </a>
+                    <h2><a href="{{item.Path}}">{{item.Title}}</a></h2>
+                </div>
+                <div class="date-share">
+                    <span class="regular-body numbers">{{item.articleDate}}</span>
+                    <card-footer page-url={{item.Path}} item-id={{ListItemID}}></card-footer>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="events" ng-repeat="item in events" class="col-md-4 flex">
+            <div class="half tiles event">
+                <div class="copy-contain">
+                    <span class="story-tag" ng-if="item.RefinableString14">{{item.RefinableString14}}</span>
+                    <h2><a href="{{item.Path}}">{{item.Title}}</a></h2>
+                    <div class="event-date-time">
+                        <span class="event-date">
+							<span class="icon-Calendar"></span>
+                        <span class="date numbers">{{item.eventStart}}</span>
+                        </span>
+                        <span class="event-time">
+							<span class="icon-Time"></span>
+                        <span class="time numbers">{{item.startTime}} - {{item.endTime}} {{event.RefinableString103}}</span>
+                        </span>
+                    </div>
+                    <add-to-outlook-button subject="{{item.Title}}" body="" start="{{item.OutlookStartDate | date:'yyyy-MM-ddTHH:mm:ss'}}" end="{{item.OutlookEndDate | date:'yyyy-MM-ddTHH:mm:ss'}}" timezone="UTC" location="{{item.RefinableString104}}"></add-to-outlook-button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{{departmentUrl}}" class="view-all">GO TO {{department}}</a>
+</div>

@@ -239,8 +239,12 @@
     <Content Include="Resources\js\includes\RSS-Feeds.html" />
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
+    <Content Include="Resources\js\includes\newsLandingResults.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\My-Bookmarks.html" />
+    <Content Include="Resources\js\includes\quick-links.html" />
+    <Content Include="Resources\js\includes\Related-Documents.html" />
+    <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\RSS-Feed-Manager.html" />
     <Content Include="Resources\js\includes\Toolbar-Manager.html" />
     <Content Include="Resources\js\includes\Toolbar.html" />
@@ -257,6 +261,7 @@
     <Content Include="Resources\js\src\components\find-people.js" />
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
+    <Content Include="Resources\js\src\components\newsLanding.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
@@ -269,6 +274,7 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\department-news-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
@@ -277,9 +283,14 @@
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
     <Content Include="Resources\js\src\services\related-news-service.js" />
+    <Content Include="Resources\js\src\services\newsService.js" />
+    <Content Include="Resources\js\src\services\related-document-service.js" />
+    <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
-    <Content Include="Resources\js\src\services\app-service.js" />
+    <Content Include="Resources\js\src\services\apps-service.js" />
+    <Content Include="Resources\js\src\services\taxonomyService.js" />
+    <Content Include="Resources\js\src\services\userProfileService.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
