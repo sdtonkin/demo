@@ -1,9 +1,4 @@
-//import pnp from "sp-pnp-js";
-//import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-
 var myApp = angular.module('compassionIntranet');
-
-
 myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
     const depNews = function(page) {

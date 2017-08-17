@@ -223,6 +223,7 @@
     <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\shape.png" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
+    <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
@@ -251,6 +252,7 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
+    <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\find-people1.js" />
@@ -274,6 +276,7 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\app-service.js" />
     <Content Include="Resources\js\src\services\department-news-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
@@ -288,9 +291,8 @@
     <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
-    <Content Include="Resources\js\src\services\apps-service.js" />
-    <Content Include="Resources\js\src\services\taxonomyService.js" />
-    <Content Include="Resources\js\src\services\userProfileService.js" />
+    <Content Include="Resources\js\src\services\taxonomy-service.js" />
+    <Content Include="Resources\js\src\services\user-profile-service.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />

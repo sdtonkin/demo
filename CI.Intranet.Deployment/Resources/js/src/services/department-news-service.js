@@ -1,5 +1,3 @@
-import pnp from "sp-pnp-js";
-
 angular.module('compassionIntranet').service('departmentNewsService', function($q, $http, userProfileService, COM_CONFIG) {
     let getImage = function(x) {
 
@@ -114,7 +112,7 @@ angular.module('compassionIntranet').service('departmentNewsService', function($
             var eventQuery = " RefinableDate00>=" + now + " AND RefinableDate00<" + eventDate + " ";
             var newsQuery = " RefinableDate01>" + articleDate + " AND RefinableDate01<=" + now + " ";
 
-            pnp.sp.search({
+            $pnp.sp.search({
                 Querytext: '' + newsQuery + 'OR' + eventQuery + '' + news + '' + event + ' ' + path + '',
                 SelectProperties: ['RefinableString104', 'RefinableString103', 'RefinableDate00', 'RefinableDate01', 'RefinableDate03', 'RefinableString14', 'RefinableString15', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ListItemID', 'ArticleByLineOWSTEXT', 'ContentType'],
                 TrimDuplicates: 'false',

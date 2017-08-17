@@ -12,6 +12,9 @@ require("../main/config.js");
 require('../main/common.js');
 
 // Services
+require('../services/user-profile-service.js');
+require('../services/taxonomy-service.js');
+
 require('../services/storage-service.js');
 require('../services/modal-service.js');
 require('../services/rss-feed-service.js');
