@@ -667,10 +667,10 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <div class="row">
+    <div class="">
 
       <div class="hero-news-container">
-        <div class="card group">
+        <div class="card-group">
           <div class="card img-card">
             <xsl:if test="string-length($SafeImageUrl) != 0">
               <a href="{$SafeLinkUrl}" >
@@ -680,6 +680,7 @@
           </div>
 
           <div class="card">
+          <div class="card-body">
             <div class="card-title">
               <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
                 <xsl:value-of select="$DisplayTitle"/>
@@ -724,6 +725,7 @@
               </xsl:if>
 
             </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -826,7 +828,7 @@
       </xsl:call-template>
     </xsl:variable>
     <div class="card trending">
-      <div class="card-block">
+      <div class="card-body">
         <p class="card-date">
           <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
         </p>
