@@ -1,14 +1,8 @@
-import pnp from "sp-pnp-js";
-import moment from "moment";
-
 var ctrlName = "weatherController";
 var myApp = angular.module('compassionIntranet');
 myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileService', 'COM_CONFIG', function($scope, $q, weatherService, userProfileService, COM_CONFIG) {
     var cacheObj = $pnp.storage.local;
-    // if (!DISCOVER_CONFIG.useCaching) { 
-    //     cacheObj.delete(ctrlName);
-    // }
-
+   
     //get user location
     let now = moment();
     let expire = $pnp.util.dateAdd(now, "minute", 60);

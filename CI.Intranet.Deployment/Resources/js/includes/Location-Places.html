@@ -1,0 +1,12 @@
+﻿<section class="location-places">
+    <div class="card" ng-repeat="place in ctrl.places track by $index">
+         <h5>{{place.name}}</h5>       
+        <ul>
+            <li ng-repeat="country in place.Nodes track by $index">
+                <a ng-href="#">
+                    {{country.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

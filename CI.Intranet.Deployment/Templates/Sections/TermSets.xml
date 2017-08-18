@@ -1,7 +1,7 @@
 ﻿<pnp:TermGroups xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <pnp:TermGroup Name="Compassion" Description="" SiteCollectionTermGroup="true">
+  <pnp:TermGroup Name="{sitecollectiontermgroupname}" Description="" SiteCollectionTermGroup="true">
     <pnp:TermSets>
-      <pnp:TermSet Name="Location" ID="88ed9770-2805-4c59-be2e-d8775b5aedb5" Description="">
+      <pnp:TermSet Name="Location" Description="">
         <pnp:Terms>
           <pnp:Term Name="US" />
           <pnp:Term Name="Latin America and the Caribbean">
@@ -43,7 +43,7 @@
           </pnp:Term> 
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="News Type" ID="b1e0d71d-4c58-4860-bacd-5189e63002be" Description="">
+      <pnp:TermSet Name="News Type" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="All News" />
 	        <pnp:Term Name="Global" />
@@ -53,7 +53,7 @@
   	      <pnp:Term Name="Global Partner" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Event Type" ID="90087864-74f2-425a-ad5d-2d288990a066" Description="">
+      <pnp:TermSet Name="Event Type" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="Global" />
 	        <pnp:Term Name="Chapel" />
@@ -61,7 +61,7 @@
           <pnp:Term Name="Paid Holidays" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Document Type" ID="5f5f761b-f8eb-4c29-a535-f49f764e3f0a" Description="">
+      <pnp:TermSet Name="Document Type" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="Policy" />
 	        <pnp:Term Name="Standard" />
@@ -79,14 +79,14 @@
 	        <pnp:Term Name="New Hire Resource" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Audience" ID="e7ce4a36-a9ca-486a-97c1-b9a1e3d21138" Description="">
+      <pnp:TermSet Name="Audience" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="Global" />
 	        <pnp:Term Name="Country Office" />
 	        <pnp:Term Name="US" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Employee Life Topic" ID="ab34a76b-0cf8-441f-af98-677c3dd2961a" Description="">
+      <pnp:TermSet Name="Employee Life Topic" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="Benefits" />
 	        <pnp:Term Name="Employee Wellness" />
@@ -95,7 +95,7 @@
   	      <pnp:Term Name="Professional Development" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Group" ID="e93cbada-0e8b-4641-8d54-1a7f87bf15de" Description="">
+      <pnp:TermSet Name="Group" Description="">
         <pnp:Terms>
           <pnp:Term Name="Global Leadership Office">
             <pnp:Terms>
