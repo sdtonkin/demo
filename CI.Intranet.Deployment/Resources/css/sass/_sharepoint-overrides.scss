@@ -7,4 +7,18 @@
     h2.ms-webpart-titleText {
         line-height: 40px;
     }
+    
+
+}
+table.ms-ToolPaneOuter {
+    width: 250px;
+    height: auto;
+    top: 175px;
+    left: -100%;
+    position: relative;
+    z-index: 9999;
+
+    .ms-ToolPaneBody {
+        overflow-y: scroll;
+    }
 }

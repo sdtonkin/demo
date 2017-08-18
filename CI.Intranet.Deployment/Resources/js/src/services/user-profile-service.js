@@ -1,30 +1,39 @@
-﻿angular.module('compassionIntranet').service('userProfileService', function($http, $q) {
+﻿angular.module('compassionIntranet').service('userProfileService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     return {
         getUserProfile: getUserProfile,
         getUserLocation: getUserLocation,
         getCurrentUserProfile: getCurrentUserProfile,
-        getUserDepartment: getUserDepartment
+        getUserDepartment: getUserDepartment,
+        getUsersInMyDepartment: getUsersInMyDepartment
     }
+    function getUsersInMyDepartment(department) {
+        var defer = $q.defer();
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        web.lists.getByTitle(COM_CONFIG.lists.userInfo).items
+            .filter("Department eq '" + department + "'")
+            .get()
+            .then(function (data) {
+                defer.resolve(data);
+            });
 
+        return defer.promise;
+    }
     function getCurrentUserProfile() {
-        return pnp.sp.profiles.getPropertiesFor();
+        var defer = $q.defer();
+        $pnp.sp.profiles.myProperties.get().then(function (data) {
+            defer.resolve(data);
+        });
+        
+        return defer.promise;
     }
-
     function getUserLocation() {
-
         var user = "i:0#.f|membership|" + _spPageContextInfo.userLoginName;
         return ($pnp.sp.profiles.getUserProfilePropertyFor(user, "SPS-Location"))
-
     }
-
     function getUserDepartment() {
-
         var user = "i:0#.f|membership|" + _spPageContextInfo.userLoginName;
         return ($pnp.sp.profiles.getUserProfilePropertyFor(user, "Department"))
-
-
     }
-
     function getUserProfile(emailArray) {
         var promiseArray = [];
         for (var i = 0; i < emailArray.length; i++) {
@@ -36,4 +45,4 @@
         return Promise.all(promiseArray);
     }
 
-});
+}]);

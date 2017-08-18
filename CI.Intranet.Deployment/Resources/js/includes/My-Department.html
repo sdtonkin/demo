@@ -1,0 +1,23 @@
+﻿<section class="my-department" ng-show="ctrl.toggleVisibility()">
+    <h2>My Department</h2>
+    <div class="card row" ng-repeat="person in ctrl.myDepartment track by $index">
+        <div class="col-sm-4">
+            <img class="emp-photo" ng-src="{{person.picUrl}}" />
+        </div>
+        <div class="col-sm-8">
+            <div>{{person.title}}</div>
+            <div>{{person.jobTitle}}</div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <a ng-href="mailto: {{person.email}}">
+                        {{person.email}}
+                    </a>                    
+                </div>
+                <div class="col-sm-2">|</div>
+                <div class="col-sm-5">
+                    <a ng-href="{{person.profileUrl}}">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -18,7 +18,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 defaultGroupId: ''
             },
             termSets: {
-                locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',                
+                locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
+                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/stage',
@@ -32,7 +33,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userBookmarks: 'User Bookmarks',
                 groupInfo: 'Group Info',
                 groupLeadership: 'Contacts',
-                navigation: 'Navigation'
+                navigation: 'Navigation',
+                userInfo: 'User Information List',
+                globalPartners: 'Global Partners'
             }
         });
     }
@@ -53,6 +56,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },            
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
+                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com',
@@ -66,7 +70,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 userBookmarks: 'User Bookmarks',
                 groupInfo: 'Group Info',
                 groupLeadership: 'Contacts',
-                navigation: 'Navigation'
+                navigation: 'Navigation',
+                userInfo: 'User Information List',
+                globalPartners: 'Global Partners'
             }
         });
     }
@@ -89,6 +95,7 @@ else {
         },
         termSets: {
             locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
+            globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
         },
         useCaching: false,
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
@@ -102,7 +109,9 @@ else {
             userBookmarks: 'User Bookmarks',
             groupInfo: 'Group Info',
             groupLeadership: 'Contacts',
-            navigation: 'Navigation'
+            navigation: 'Navigation',
+            userInfo: 'User Information List',
+            globalPartners: 'Global Partners'
         }
     });
 }

@@ -21,23 +21,33 @@ myApp.service('employeeSpotlightService', function($q, $http, COM_CONFIG) {
         return def.promise;
     }
 
-    this.getData = function(page) {
-        var def = $q.defer();
+    this.getData = function (page) {
+        try {
+            var def = $q.defer();
 
-        getLocation().then(function(loc) {
+            getLocation().then(function(loc) {
 
-            getAlert(loc).then(function(items) {;
-                def.resolve(items[0]);
+                getAlert(loc).then(function(items) {;
+                    def.resolve(items[0]);
+
+                });
 
             });
-
-        });
-        return def.promise;
+            return def.promise;
+        }
+        catch(ex) {
+            console.error(e);
+        }
 
     }
     
-    this.getSpotlight = function() {
-        return getData();
+    this.getSpotlight = function () {
+        try {
+            return getData();
+        }
+        catch (ex) {
+            console.error(ex);
+        }
     }
 
 
