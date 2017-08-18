@@ -126,7 +126,7 @@
   </pnp:ListInstance>
   -->
 
-  <pnp:ListInstance Title="Global Partners" Description="Contacts List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="105" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+  <pnp:ListInstance Title="Global Partners" Description="Global Partners List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
@@ -135,7 +135,7 @@
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Australia</pnp:DataValue>
         <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
-        <pnp:DataValue FieldName="Title">/_catalog/masterpages/Compassion/images/flag.png</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalog/masterpages/Compassion/images/flag.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Canada</pnp:DataValue>

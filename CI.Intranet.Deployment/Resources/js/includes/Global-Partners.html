@@ -2,8 +2,10 @@
     <h2>Global Partners</h2>
     <ul>
         <li ng-repeat="partner in ctrl.globalPartners track by $index">
-            <img ng-src="{{partner.iconUrl}}" />
-            <span>{{partner.name}}</span>
+            <a ng-href="{{partner.siteUrl}}">
+                <img ng-src="{{partner.iconUrl}}" />
+                <span>{{partner.title}}</span>
+            </a>
         </li>
     </ul>
 </section>

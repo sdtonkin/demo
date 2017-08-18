@@ -2,7 +2,7 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'globalPartnersController';
 
-myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'taxonomyService', function ($scope, $q, COM_CONFIG, taxonomyService) {
+myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'globalPartnerService', function ($scope, $q, COM_CONFIG, globalPartnerService) {
     var ctrl = this;
     var delveUrl = '';
 
@@ -14,7 +14,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'taxonomyService
     });
 
     this.$onInit = function () {
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.globalPartnersTermId).then(function (data) {
+        globalPartnerService.getGlobalPartners().then(function (data) {
             ctrl.globalPartners = data;
         });
     }
