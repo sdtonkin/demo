@@ -181,6 +181,7 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
                 apps[i].sortOrder = i + 1;
         }
         var response = _.sortBy(apps, 'sortOrder');
+        if (response = null) return response;
         if (response[0].sortOrder != 1) {
             for (var i = 0; i < response.length; i++) {
                 response[i].sortOrder = i + 1;

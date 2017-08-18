@@ -1,5 +1,5 @@
 ﻿angular.module('compassionIntranet').service('storage', ['common', function (common) {
-    var version = 1;
+    var version = 2;
     function set(key, value, expirationDuration) {
         if (key != 'v') {
             // apply userid to make sure storage item is user specific on public methods
