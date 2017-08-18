@@ -49,6 +49,9 @@
  			}
  		}
  	}
+ 	.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+ 		display: flex;
+ 	}
  	.employee-card-wrapper{
 
 	}
