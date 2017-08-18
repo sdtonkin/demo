@@ -256,6 +256,8 @@
   <Field ID="{1DDB1115-9830-4976-A86D-8D9591275340}" Type="URL" Name="COM_NavNodeUrl" StaticName="COM_NavNodeUrl" DisplayName="Navigation Node Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Navigation Node Url" />
   <!-- Employee Life Announcement Icon Url -->
   <Field ID="{834221FA-7EAD-41DD-A2B2-C9EBE5CCF826}" Type="URL" Name="COM_EmployeeAnnouncementIconUrl" StaticName="COM_EmployeeAnnouncementIconUrl" DisplayName="Employee Life Icon Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Employee Life Icon Url" />
+  <!-- Link URL -->
+  <Field ID="{7A6D9E62-40D7-4293-A5B7-2C898352BC7A}" Type="URL" Name="COM_LinkUrl" StaticName="COM_LinkUrl" DisplayName="Link URL" Required="False" Hidden="False" Group="1 - Compassion Intranet" Description="RSS Feed URL" />
 
   <!-- ********   -->
   <!-- CALC FIELDS -->
