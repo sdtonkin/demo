@@ -1,4 +1,3 @@
-// import pnp from "sp-pnp-js";
 var ctrlName = 'NewsLandingCtrl';
 var app = angular.module('compassionIntranet');
 app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService', 'COM_CONFIG', function($scope, $location, newsService, taxonomyService, COM_CONFIG) {
@@ -121,7 +120,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     bindings: {
         default: '@'
     },
-    template: require('../../includes/newsLandingResults.html'),
+    template: require('../../includes/News-Landing-Results.html'),
     controller: ctrlName,
     controllerAs: 'ctrl'
 }).directive('searchEnter', function() {

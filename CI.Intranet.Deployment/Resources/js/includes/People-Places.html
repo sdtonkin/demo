@@ -1,0 +1,13 @@
+﻿<section class="people-places">
+    <ul class="tab-picker row">
+        <li class="col-md-4" ng-click="ctrl.activeTab = 'people'"><h2>People</h2></li>
+        <li class="col-md-4" ng-click="ctrl.activeTab = 'places'"><h2>Places</h2></li>
+    </ul>
+    <div class="ci-people" ng-show="ctrl.activeTab == 'people'">
+        <find-people></find-people>
+    </div>
+    <div class="ci-places" ng-show="ctrl.activeTab == 'places'">
+        <location-places></location-places>        
+    </div>
+    <input id="ci-pp-activeTab" type="hidden" ng-model="ctrl.activeTab" />
+</section>

@@ -107,6 +107,7 @@ body {
 .main-container{
 	margin-left: -15px;
 	margin-right: -15px;
+    
 }
 .main-left-content{
 	padding-top: 40px;
@@ -220,11 +221,13 @@ body {
 	@import "components/employee-spotlight";
 	@import "components/stay-connected";
 	@import "components/news-events";
+    @import "components/navigation";
 	@import "components/nav-toolbar";
 	@import "components/group-summary";
 	@import "components/departments";
 	@import "components/work-resources";
 	@import "components/search";
+    @import "components/people-places";
 	
 
 

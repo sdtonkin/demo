@@ -1,4 +1,4 @@
-// import pnp from "sp-pnp-js";
+
 var ctrlName = "relatedNewsCtrl";
 var myApp = angular.module('compassionIntranet');
 

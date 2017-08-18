@@ -81,9 +81,9 @@ angular.module('compassionIntranet').service('groupService', ['$http', '$q', 'CO
                 var leader = items[i];
                 var person = leader.COM_Contact;
                 var l = {};
-                l.name = leader.Title;
-                l.title = person.Title;
-                l.picUrl = picUrlTemplate + person.UserName;
+                l.name = person.Title;
+                l.title = person.JobTitle;
+                l.picUrl = _spPageContextInfo.siteAbsoluteUrl + picUrlTemplate + person.UserName;
                 leaders.push(l);
             }
             groupLeader.leaders = leaders;
