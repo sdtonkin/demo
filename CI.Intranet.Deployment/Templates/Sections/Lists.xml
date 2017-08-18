@@ -1,4 +1,5 @@
 ﻿<pnp:Lists xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <!--
   <pnp:ListInstance Title="RSS Feeds" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Default="true"></pnp:ContentTypeBinding>
@@ -120,6 +121,60 @@
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Employee Life</pnp:DataValue>
         <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/employee-life.aspx</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
+  </pnp:ListInstance>
+  -->
+
+  <pnp:ListInstance Title="Global Partners" Description="Contacts List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="105" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
+      <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+    </pnp:FieldRefs>
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Australia</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="Title">/_catalog/masterpages/Compassion/images/flag.png</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Canada</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">France</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Ireland</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Italy</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Nederlands</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">New Zealand</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Norden</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">South Korea</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Spain</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Sweden</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Switzerland</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">United Kingdom</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">United States of America</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
   </pnp:ListInstance>
