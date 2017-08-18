@@ -1209,14 +1209,22 @@ navigation .nav-search > div.search-button, navigation .nav-search > div.search-
  *  @@ File: components/_people-places.scss
  * ----------------------------------------- 
  */
-section.people-places ul.tab-picker h2 {
+section.people-places ul.tab-picker li {
+  list-style: none;
+  cursor: pointer; }
+
+section.people-places h2 {
   font-size: 40px;
   text-align: left;
   color: #908b63; }
 
-section.people-places ul.tab-picker li {
-  list-style: none;
-  cursor: pointer; }
+section.global-partners h2, section.my-department h2 {
+  font-size: 40px;
+  text-align: left;
+  color: #908b63; }
+
+section.global-partners img.emp-photo, section.my-department img.emp-photo {
+  height: 48px; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports

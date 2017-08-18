@@ -1,6 +1,25 @@
 ﻿<pnp:TermGroups xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:TermGroup Name="{sitecollectiontermgroupname}" Description="" SiteCollectionTermGroup="true">
     <pnp:TermSets>
+      <pnp:TermSet Name="Global Partners" Description="">
+        <pnp:Terms>
+          <pnp:Term Name="Australia" />
+          <pnp:Term Name="Canada" />
+          <pnp:Term Name="Deutschland" />
+          <pnp:Term Name="France" />
+          <pnp:Term Name="Ireland" />
+          <pnp:Term Name="Italy" />
+          <pnp:Term Name="Nederlands" />
+          <pnp:Term Name="New Zealand" />
+          <pnp:Term Name="Norden" />
+          <pnp:Term Name="South Korea" />
+          <pnp:Term Name="Spain" />
+          <pnp:Term Name="Sweden" />
+          <pnp:Term Name="Switzerland" />
+          <pnp:Term Name="United Kingdom" />
+          <pnp:Term Name="United States of America" />
+        </pnp:Terms>
+      </pnp:TermSet>
       <pnp:TermSet Name="Location" Description="">
         <pnp:Terms>
           <pnp:Term Name="US" />
