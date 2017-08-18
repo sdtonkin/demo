@@ -38,7 +38,10 @@ myApp.service('employeeSpotlightService', function($q, $http, COM_CONFIG) {
         return def.promise;
 
     }
-
+    
+    this.getSpotlight = function() {
+        return getData();
+    }
 
 
 });
