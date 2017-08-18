@@ -20,6 +20,7 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
         addFirstNameToWelcomeMessage(userFirstName);
         $(window).resize(processWindowSize);
         processWindowSize();
+        //$('.carousel').carousel();
     };
     //check window size and setup functions
     function processWindowSize() {

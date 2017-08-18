@@ -1,14 +1,8 @@
-// import pnp from "sp-pnp-js";
 var ctrlName = "relatedDocCtrl";
 var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'relatedDocService', 'COM_CONFIG', function($scope, relatedDocService, COM_CONFIG) {
 
-    // var cacheObj = pnp.storage.local;
-    // if (!_CONFIG.useCaching) {
-    //     cacheObj.delete(ctrlName);
-    // }
-    // cacheObj.getOrPut(ctrlName, relatedDocService-service.getData).then(function(data) {
     relatedDocService.getData().then(function (data) {
         $scope.documents = COM_CONFIG.rootWeb;
 

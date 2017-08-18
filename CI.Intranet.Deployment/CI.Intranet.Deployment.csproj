@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -172,12 +187,17 @@
   <ItemGroup>
     <Compile Include="Jobs\0-GetProvisioningXml.cs" />
     <Compile Include="Jobs\1-RunProvisioningXml.cs" />
-    <Compile Include="Jobs\2-CreateMockData.cs" />
+    <Compile Include="Jobs\2-ProvisionGroupSites.cs" />
     <Compile Include="Jobs\3-ImportDataFile.cs" />
     <Compile Include="Jobs\4-CreateSitesAndSubsites.cs" />
     <Compile Include="Jobs\JobBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="ProvisioningHelper.cs" />
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
@@ -201,8 +221,11 @@
     <Content Include="Resources\images\homepage\social-1%402x.jpg" />
     <Content Include="Resources\images\homepage\social-1%403x.jpg" />
     <Content Include="Resources\images\homepage\social-1.jpg" />
+    <Content Include="Resources\images\shape.png" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
     <Content Include="Resources\js\includes\Department-News.html" />
+    <Content Include="Resources\js\includes\Location-Places.html" />
+    <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
@@ -217,10 +240,9 @@
     <Content Include="Resources\js\includes\RSS-Feeds.html" />
     <Content Include="Resources\js\includes\My-RSS-Feeds.html" />
     <Content Include="Resources\js\includes\News-Tiles.html" />
-    <Content Include="Resources\js\includes\newsLandingResults.html" />
+    <Content Include="Resources\js\includes\News-Landing-Results.html" />
     <Content Include="Resources\js\includes\Photo-Share.html" />
     <Content Include="Resources\js\includes\My-Bookmarks.html" />
-    <Content Include="Resources\js\includes\quick-links.html" />
     <Content Include="Resources\js\includes\Related-Documents.html" />
     <Content Include="Resources\js\includes\related-news.html" />
     <Content Include="Resources\js\includes\RSS-Feed-Manager.html" />
@@ -229,15 +251,18 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
-    <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
+    <Content Include="Resources\js\src\components\people-places.js" />
+    <Content Include="Resources\js\src\components\location-places.js" />
+    <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\employee-announcement.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
+    <Content Include="Resources\js\src\components\find-people.js" />
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
-    <Content Include="Resources\js\src\components\newsLanding.js" />
+    <Content Include="Resources\js\src\components\news-landing.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
@@ -250,22 +275,22 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\app-service.js" />
     <Content Include="Resources\js\src\services\department-news-service.js" />
+    <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
     <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
     <Content Include="Resources\js\src\services\group-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
-    <Content Include="Resources\js\src\services\related-news-service.js" />
-    <Content Include="Resources\js\src\services\newsService.js" />
+    <Content Include="Resources\js\src\services\news-service.js" />
     <Content Include="Resources\js\src\services\related-document-service.js" />
     <Content Include="Resources\js\src\services\related-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
-    <Content Include="Resources\js\src\services\apps-service.js" />
-    <Content Include="Resources\js\src\services\taxonomyService.js" />
-    <Content Include="Resources\js\src\services\userProfileService.js" />
+    <Content Include="Resources\js\src\services\taxonomy-service.js" />
+    <Content Include="Resources\js\src\services\user-profile-service.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
@@ -284,6 +309,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\news.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Resources\Pages\work-resources.aspx">
@@ -320,6 +348,11 @@
     <Content Include="Templates\3-Files.xml" />
     <Content Include="Templates\Sections\Files.xml" />
     <Content Include="Templates\Sections\FilesSearch.xml" />
+    <Content Include="Templates\Sections\Groups\1-TermSet.xml" />
+    <Content Include="Templates\Sections\Groups\2-InformationArchitecture.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\Sections\Groups\3-Files.xml" />
     <Content Include="Templates\Sections\Lists.xml" />
     <Content Include="Templates\Sections\Pages.xml" />
     <Content Include="Templates\Sections\Security.xml" />
@@ -344,19 +377,26 @@
     </None>
     <None Include="package.json" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\css\sass\base\_buttons.scss" />
     <None Include="Resources\css\sass\base\_fonts.scss" />
     <None Include="Resources\css\sass\base\_mixins.scss" />
     <None Include="Resources\css\sass\base\_typography.scss" />
     <None Include="Resources\css\sass\base\_variables.scss" />
+    <None Include="Resources\css\sass\components\_people-places.scss" />
     <None Include="Resources\css\sass\components\_departments.scss" />
     <None Include="Resources\css\sass\components\_employee-spotlight.scss" />
     <None Include="Resources\css\sass\components\_find-people.scss" />
     <None Include="Resources\css\sass\components\_group-summary.scss" />
     <None Include="Resources\css\sass\components\_hero-news-container.scss" />
+    <None Include="Resources\css\sass\components\_navigation.scss" />
     <None Include="Resources\css\sass\components\_nav-toolbar.scss" />
     <None Include="Resources\css\sass\components\_news-events.scss" />
     <None Include="Resources\css\sass\components\_right-rail.scss" />
+    <None Include="Resources\css\sass\components\_search.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\components\_work-resources.scss" />
     <None Include="Resources\css\sass\main.scss" />
@@ -395,6 +435,18 @@
   <ItemGroup>
     <Folder Include="Resources\DisplayTemplates\" />
     <Folder Include="Resources\js\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

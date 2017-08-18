@@ -18,7 +18,7 @@
 <meta http-equiv="Expires" content="0" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <SharePoint:RobotsMetaTag runat="server" />
-
+<script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/ensure-scripts.js%>" />"></script>
 <link rel="shortcut icon" href="<% $SPUrl:~SiteCollection/_catalogs/masterpage/Compassion/images/compassion.ico %>" />
 <SharePoint:PageTitle runat="server"><asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server"><SharePoint:ProjectProperty Property="Title" runat="server" /></asp:ContentPlaceHolder></SharePoint:PageTitle>
 <SharePoint:StartScript runat="server" />
@@ -35,18 +35,8 @@
 
 
   
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.min.js"></script> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.6/pnp.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+
 
 <SharePoint:SoapDiscoveryLink runat="server" />
 <asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server" />
@@ -55,9 +45,9 @@
 <!--Compassion Specific Includes -->
 <SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet"  />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet"  />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" type="text/css" rel="stylesheet"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"  />
-<SharePoint:CssRegistration name="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/css/main.min.css %>" After="corev15.css" runat="server" /> 
+<link href="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/css/main.min.css%>" />" type="text/css" rel="stylesheet"  />
     <!-- Hide site contents link -->
     <style>        
         #ctl00_PlaceHolderLeftNavBar_PlaceHolderQuickLaunchBottom_idNavLinkViewAll { display: none; }
@@ -79,9 +69,10 @@
             
 <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly"><wssuc:Welcome runat="server" EnableViewState="false" /></SharePoint:SPSecurityTrimmedControl>
 
-<div id="s4-workspace" ng-app="compassionIntranet">
+<div id="s4-workspace" ng-app="compassionIntranet" ng-cloak>
 <div id="s4-bodyContainer">
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
+<navigation></navigation>
 <!-- Start Top Navigation -->
     <section class="section sub-nav-container">
                 <div class="container">
@@ -95,9 +86,9 @@
                                             <h2>Good Morning, <span id="ci-user-first-name"></span></h2>
                                         </div>
                                         <div class="col-md-3 weather-widget">
-                                            <!--
+                                            
                                             <weather-ctrl></weather-ctrl>
-                                            -->
+                                            
                                         </div>
                                         <div class="col-md-3" ng-show="ctrl.isToolbarOpen">
                                            <a ng-click="ctrl.isToolbarOpen = false">Close <i class="fa fa-minus"></i></a>
@@ -139,7 +130,7 @@
                     </nav>
                 </div>
                 <div class="col-lg-4 footer-brand">
-                    <img src="../images/compassion-white-logo.png" class="img-fluid pull-right">
+                    <img src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/images/compassion-white-logo.png%>" />" class="img-fluid pull-right">
                 </div>
             </div>
             <hr>
@@ -164,11 +155,21 @@
 </div> <!--s4-bodyContainer-->
 </div> <!--/s4-workspace-->
 <ui-helper></ui-helper>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.js"></script>
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.6/pnp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js"></script>
 
 <!-- scripts -->
-<SharePoint:ScriptLink language="javascript"  name="~sitecollection/_catalogs/masterpage/compassion/js/ensure-scripts.min.js" OnDemand="false" runat="server"/>
 <script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>
 
 <!-- Form Digest -->

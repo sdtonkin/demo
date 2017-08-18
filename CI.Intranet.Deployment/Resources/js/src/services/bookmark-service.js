@@ -1,6 +1,4 @@
-﻿//import pnp from "sp-pnp-js";
-//import { Web } from "sp-pnp-js/lib/sharepoint/webs";
-'use strict';
+﻿'use strict';
 angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var userBookmarkKey = 'E5A445DB-8D84-4DC5-AFE4-779DCC86AED6' + _spPageContextInfo.userId;    
