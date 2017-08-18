@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                                 <div id="navCollapseOne" class="collapse show" ng-show="ctrl.isToolbarOpen">
-                                  <div class="card-block">
+                                  <div class="card-body">
                                     <my-toolbar></my-toolbar>
                                   </div>
                                 </div>

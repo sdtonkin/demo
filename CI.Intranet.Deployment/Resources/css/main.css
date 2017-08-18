@@ -265,7 +265,7 @@ body {
     padding-left: 0; }
   .sub-nav-container .card-intro {
     color: white; }
-  .sub-nav-container .card-block {
+  .sub-nav-container .card-body {
     color: white;
     border: none;
     padding-left: 0; }
@@ -487,7 +487,7 @@ body {
   max-width: 320px;
   border-radius: 0;
   overflow: hidden; }
-  .trending .card-block, .related .card-block {
+  .trending .card-body, .related .card-body {
     border: 1px solid white;
     border-left: none;
     border-radius: 0;
@@ -571,7 +571,7 @@ body {
   margin-top: 20px;
   padding: 20px;
   margin-bottom: 30px; }
-  .upcoming-events .card-block {
+  .upcoming-events .card-body {
     border: 1px solid white;
     border-left: none;
     border-radius: 0;
