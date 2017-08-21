@@ -1,0 +1,11 @@
+﻿<section class="global-partners" ng-show="ctrl.toggleVisibility()">
+    <h2>Global Partners</h2>
+    <ul>
+        <li ng-repeat="partner in ctrl.globalPartners track by $index">
+            <a ng-href="{{partner.siteUrl}}">
+                <img ng-src="{{partner.iconUrl}}" />
+                <span>{{partner.title}}</span>
+            </a>
+        </li>
+    </ul>
+</section>

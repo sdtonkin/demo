@@ -7,14 +7,25 @@
 
  section.people-places {
 	ul.tab-picker {
-        h2 {
-            font-size: 40px;
-            text-align: left;
-            color: $brand-brown-gray;
-        }
+        
         li {
             list-style: none;
             cursor: pointer;
         }
 	}
+    h2 {
+            font-size: 40px;
+            text-align: left;
+            color: $brand-brown-gray;
+    }
+ }
+ section.global-partners, section.my-department {
+     h2 {
+            font-size: 40px;
+            text-align: left;
+            color: $brand-brown-gray;
+    }
+     img.emp-photo {
+         height: 48px;
+     }
  }
