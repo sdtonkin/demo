@@ -4,9 +4,6 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', 'common', 'howDoIService', 'COM_CONFIG', function ($scope, common, howDoIService, COM_CONFIG) {
     var ctrl = this;
-    var userId = _spPageContextInfo.userId;
-
-
     this.$onInit = function () {
     }
 }]).component('howDoI', {
