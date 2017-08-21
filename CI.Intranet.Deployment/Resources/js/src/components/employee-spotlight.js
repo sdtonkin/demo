@@ -3,15 +3,14 @@ var ctrlName = "employeeSpotlight";
 var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'employeeSpotlightService', 'COM_CONFIG', function ($scope, employeeSpotlightService, COM_CONFIG) {
+    var ctrl = this;
 
-    try {
-        employeeSpotlightService.getSpotlight().then(function (data) {
-            $scope.spotlight = data;
+    this.$onInit = function () {
+        employeeSpotlightService.getGratitudes().then(function (data) {
+            ctrl.globalPartners = data;
         });
     }
-    catch (ex) {
-        console.error(ex);
-    }
+
 
 }]).component('employeeSpotlight', {
     template: require('../../includes/Employee-Spotlight.html'),
