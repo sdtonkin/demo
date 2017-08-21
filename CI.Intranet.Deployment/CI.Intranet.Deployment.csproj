@@ -223,6 +223,7 @@
     <Content Include="Resources\images\homepage\social-1%403x.jpg" />
     <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\shape.png" />
+    <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
     <Content Include="Resources\js\includes\Business-Units.html" />
     <Content Include="Resources\js\includes\Contacts.html" />
@@ -263,6 +264,7 @@
     <Content Include="Resources\js\src\components\business-units.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
+    <Content Include="Resources\js\src\components\image-loader.js" />
     <Content Include="Resources\js\src\components\global-partners.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\people-places.js" />

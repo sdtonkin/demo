@@ -46,6 +46,7 @@ require('../components/employee-spotlight.js');
 require('../components/find-people.js');
 require('../components/global-partners.js');
 require('../components/group-summary.js');
+require('../components/image-loader.js');
 require('../components/location-places.js');
 require('../components/my-apps.js');
 require('../components/my-bookmarks.js');

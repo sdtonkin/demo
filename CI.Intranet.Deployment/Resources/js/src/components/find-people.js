@@ -17,7 +17,7 @@ myApp.controller(controllerName, ['$scope', 'graphService', 'COM_CONFIG', functi
             ctrl.myPeople = data;
         });
     }
-    
+
 }]).component('findPeople', {
     template: require('../../includes/Find-People.html'),
     controller: controllerName,
