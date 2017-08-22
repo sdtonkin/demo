@@ -3,6 +3,7 @@
             font-size: 40px;
             text-align: left;
             color: $brand-brown-gray;
+            @extend .font-lato-med;
         }
     h2.ms-webpart-titleText {
         line-height: 40px;
