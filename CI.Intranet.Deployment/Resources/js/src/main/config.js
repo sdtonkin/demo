@@ -6,7 +6,7 @@ if (document.location.host === "compassion.sharepoint.com") {
         myApp.constant('COM_CONFIG', {
             isProduction: false,
             msGraph: {
-                appId: 'bc64af36-7263-4bab-8828-c25a37185bb3',
+                appId: '287d9b56-5352-4f58-a8f5-1de40966c6c9',
                 redirectUri: 'https://compassion.sharepoint.com/sites/stage',
                 interactionMode: 'popUp',
                 graphEndpoint: 'https://graph.microsoft.com/v1.0/me',
@@ -43,7 +43,7 @@ if (document.location.host === "compassion.sharepoint.com") {
         myApp.constant('COM_CONFIG', {
             isProduction: true,
             msGraph: {
-                appId: 'bc64af36-7263-4bab-8828-c25a37185bb3',
+                appId: '287d9b56-5352-4f58-a8f5-1de40966c6c9 ',
                 redirectUri: 'https://teganwilson.sharepoint.com/',
                 interactionMode: 'popUp',
                 graphEndpoint: 'https://graph.microsoft.com/v1.0/me',

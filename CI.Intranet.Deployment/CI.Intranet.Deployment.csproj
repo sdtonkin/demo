@@ -223,9 +223,9 @@
     <Content Include="Resources\images\homepage\social-1%403x.jpg" />
     <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\shape.png" />
+    <Content Include="Resources\images\skippy-white.png" />
     <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
-    <Content Include="Resources\js\includes\Business-Units.html" />
     <Content Include="Resources\js\includes\Contacts.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Mission-Photos.html" />
@@ -234,14 +234,12 @@
     <Content Include="Resources\js\includes\My-Sites.html" />
     <Content Include="Resources\js\includes\My-Department.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
-    <Content Include="Resources\js\includes\Departments.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
     <Content Include="Resources\js\includes\Employee-Announcement.html" />
     <Content Include="Resources\js\includes\Bookmark-Page.html" />
     <Content Include="Resources\js\includes\How-Do-I.html" />
-    <Content Include="Resources\js\includes\Share-News.html" />
     <Content Include="Resources\js\includes\Navigation.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
@@ -263,7 +261,6 @@
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
-    <Content Include="Resources\js\src\components\business-units.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\image-loader.js" />
@@ -271,10 +268,10 @@
     <Content Include="Resources\js\src\components\likeController.js" />
     <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
+    <Content Include="Resources\js\src\components\my-sites.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
-    <Content Include="Resources\js\src\components\departments.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\employee-announcement.js" />
@@ -289,7 +286,6 @@
     <Content Include="Resources\js\src\components\related-news.js" />
     <Content Include="Resources\js\src\components\rss-feeds.js" />
     <Content Include="Resources\js\src\components\rss-feed-manager.js" />
-    <Content Include="Resources\js\src\components\share-news.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
     <Content Include="Resources\js\src\components\weather-controller.js" />
     <Content Include="Resources\js\src\main\common.js" />
@@ -300,10 +296,8 @@
     <Content Include="Resources\js\src\services\sp-service.js" />
     <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />
-    <Content Include="Resources\js\src\services\business-units-service.js" />
     <Content Include="Resources\js\src\services\contacts-service.js" />
     <Content Include="Resources\js\src\services\department-news-service.js" />
-    <Content Include="Resources\js\src\services\departments-service.js" />
     <Content Include="Resources\js\src\services\how-do-i-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\mission-photo-service.js" />
@@ -316,13 +310,12 @@
     <Content Include="Resources\js\src\services\news-service.js" />
     <Content Include="Resources\js\src\services\related-document-service.js" />
     <Content Include="Resources\js\src\services\related-news-service.js" />
-    <Content Include="Resources\js\src\services\share-news-service.js" />
     <Content Include="Resources\js\src\services\storage-service.js" />
     <Content Include="Resources\js\src\services\bookmark-service.js" />
     <Content Include="Resources\js\src\services\taxonomy-service.js" />
     <Content Include="Resources\js\src\services\user-profile-service.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
-    <Content Include="Resources\js\src\services\yammerApiService.js" />
+    <Content Include="Resources\js\src\services\yammer-api-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
@@ -339,9 +332,7 @@
     <Content Include="Resources\PageLayouts\COM_NewsDetail.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
+    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx" />
     <Content Include="Resources\Pages\news.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

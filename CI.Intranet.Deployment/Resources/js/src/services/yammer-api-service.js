@@ -2,15 +2,16 @@
 
 angular.module('compassionIntranet')
     .service('yammerApiService', function ($q, $interval, $timeout, COM_CONFIG) {
-        this.authToken = null;
-        this.requestQueue = {
+        var ctrl = this;
+        ctrl.authToken = null;
+        ctrl.requestQueue = {
             items: [],
             slowRequests: false
         }
-        this.numOfRequests = 0;
+        ctrl.numOfRequests = 0;
 
 
-        this.newObject = function (a) {
+        ctrl.newObject = function (a) {
             let array = [];
             let ob;
             a.forEach(function (x) {
@@ -25,7 +26,7 @@ angular.module('compassionIntranet')
             return array;
         }
 
-        this.ensureConnection = function () {
+        ctrl.ensureConnection = function () {
             var deferred = $q.defer();
             // var yam = window.yam || null;
             if (yam !== null) {
@@ -61,7 +62,7 @@ angular.module('compassionIntranet')
             return deferred.promise;
         }
 
-        this.getOpenGraphObjectFull = function (openGraphObjectId) {
+        ctrl.getOpenGraphObjectFull = function (openGraphObjectId) {
             var def = $q.defer();
             var me = this;
             var endpoint = "messages/open_graph_objects/" + openGraphObjectId + ".json";
@@ -94,7 +95,7 @@ angular.module('compassionIntranet')
             return def.promise;
         }
 
-        this.getOpenGraphObjectRecursive = function (openGraphObjectId, olderThanMessageId, messages) {
+        ctrl.getOpenGraphObjectRecursive = function (openGraphObjectId, olderThanMessageId, messages) {
             var def = $q.defer();
             var me = this;
             me.getOpenGraphObject(openGraphObjectId, olderThanMessageId).then(function (data) {
@@ -112,7 +113,7 @@ angular.module('compassionIntranet')
             return def.promise;
         };
 
-        this.getOpenGraphObject = function (openGraphObjectId, olderThanMessageId) {
+        ctrl.getOpenGraphObject = function (openGraphObjectId, olderThanMessageId) {
             var def = $q.defer();
             var me = this;
             var olderThanMessageIdQueryString = "";
@@ -152,7 +153,7 @@ angular.module('compassionIntranet')
         }
 
 
-        this.getOpenGraphItemByUrl = function (url) {
+        ctrl.getOpenGraphItemByUrl = function (url) {
             var def = $q.defer();
             var me = this;
             var endpoint = "open_graph_objects?url=" + url;
@@ -188,7 +189,7 @@ angular.module('compassionIntranet')
             return def.promise;
         }
 
-        this.queueThrottledRequest = function (options) {
+        ctrl.queueThrottledRequest = function (options) {
             if (document.location.href.toLocaleLowerCase() === COM_CONFIG.rootWeb || document.location.href.toLocaleLowerCase() === COM_CONFIG.rootWeb + "/"
                 || document.location.href.toLocaleLowerCase() === COM_CONFIG.rootWeb + "/pages/default.aspx" 
                 || document.location.href.toLocaleLowerCase() === COM_CONFIG.rootWeb + "/news/pages/default.aspx" 
@@ -200,7 +201,7 @@ angular.module('compassionIntranet')
             }
         }
 
-        this.processThrottledRequests = function () {
+        ctrl.processThrottledRequests = function () {
             var me = this;
             var slowSpeed = 1200;
             var fastSpeed = 300;
@@ -229,7 +230,7 @@ angular.module('compassionIntranet')
             
         }
 
-        this.getYammerGroupsForUser = function () {
+        ctrl.getYammerGroupsForUser = function () {
             var def = $q.defer();
             var me = this;
             // var yam = window.yam || null;
@@ -278,7 +279,7 @@ angular.module('compassionIntranet')
             return def.promise;
         }
 
-        this.formatUrl = function (url) {
+        ctrl.formatUrl = function (url) {
             if (url.startsWith("http") == false) {
                 if (url.endsWith("/")) {
                     url = url.substring(0, url.length - 1);
@@ -296,7 +297,7 @@ angular.module('compassionIntranet')
             return url;
         }
 
-        this.isGraphObjectCreatedForUrl = function (url, getCommentsAndLikes) {
+        ctrl.isGraphObjectCreatedForUrl = function (url, getCommentsAndLikes) {
             var defer = $q.defer();
             var me = this;
             me.ensureConnection().then(function (response) {
@@ -357,7 +358,7 @@ angular.module('compassionIntranet')
             return defer.promise;
         }
 
-        this.createGraphObject = function (url, title, defaultGroupId) {
+        ctrl.createGraphObject = function (url, title, defaultGroupId) {
             var defer = $q.defer();
             var endpoint = 'https://api.yammer.com/api/v1/messages.json';
 
@@ -385,5 +386,5 @@ angular.module('compassionIntranet')
         }
 
         // initialize throttle requests
-        this.processThrottledRequests();
+        ctrl.processThrottledRequests();
     });

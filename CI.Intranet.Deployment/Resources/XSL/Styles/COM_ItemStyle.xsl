@@ -753,63 +753,62 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  -->
-    <div class="">
-      <div class="">
-        <div class= "hero-news-container">
-          <xsl:if test="string-length($SafeImageUrl) != 0">
-            <div class="img-card">
-              <a href="{$SafeLinkUrl}" class="recent-news-image-container">
-                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="recent-news-image image"></image-loader>
-              </a>
-            </div>
-          </xsl:if>
+    <!-- <div class= "hero-news-container">
+    <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper">  
+      <div class="row">-->
+    <div class="col-lg-6">
+      <div class="card">
+        <xsl:if test="string-length($SafeImageUrl) != 0">
+          <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
+            <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
+          </a>
+        </xsl:if>
 
-          <div class="card-body">
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@NewsType) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@NewsType"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@Location) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@Location"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@Group) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@Group"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <div class="card-text">
-              <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
-                <xsl:value-of select="$DisplayTitle"/>
+        <div class="card-body">
+          <h4 class="card-tags">
+            <xsl:if test="string-length(@NewsType) != 0">
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
+                </xsl:attribute>
+                <xsl:value-of select="@NewsType"/>
               </a>
-            </div>
-            <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
-            </div>
+            </xsl:if>
+          </h4>
+          <h4 class="card-tags">
+            <xsl:if test="string-length(@Location) != 0">
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+                </xsl:attribute>
+                <xsl:value-of select="@Location"/>
+              </a>
+            </xsl:if>
+          </h4>
+          <h4 class="card-tags">
+            <xsl:if test="string-length(@Group) != 0">
+              <a>
+                <xsl:attribute name="href">
+                  /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
+                </xsl:attribute>
+                <xsl:value-of select="@Group"/>
+              </a>
+            </xsl:if>
+          </h4>
+          <div class="card-date">
+            <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+          </div>
+          <div class="card-text">
+            <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
+              <xsl:value-of select="$DisplayTitle"/>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </xsl:template>
+
 
 
   <!-- Trending News -->
