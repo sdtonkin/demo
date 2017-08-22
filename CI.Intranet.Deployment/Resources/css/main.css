@@ -29,7 +29,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-card .emp-rec, .employee-card .emp-title, .nav-toolbar .toolbar-content ul a {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-card .emp-rec, .employee-card .emp-title, .nav-toolbar .toolbar-content ul a, .main-container h2.ms-webpart-titleText span {
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
@@ -238,7 +238,7 @@ Table of Contents:
   1) General Styles
 ------------------------------------------------------- */
 .container {
-  max-width: 1700px;
+  max-width: 1400px;
   width: auto; }
 
 body {
@@ -602,7 +602,8 @@ body {
     margin-bottom: 14px;
     color: #003364;
     border-bottom: 2px solid #b8b491;
-    padding-bottom: 14px; }
+    padding-bottom: 14px;
+    display: block; }
   .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location {
     font-size: 14px;
     color: #003364;
@@ -862,53 +863,77 @@ body {
  *  @@ File: components/_navigation.scss
  * ----------------------------------------- 
  */
-navigation nav {
-  margin-left: 115px;
-  margin-right: 115px;
-  background-color: #0054a6; }
-navigation div.nav-node, navigation div.nav-search, navigation div.nav-icon {
-  height: 93px;
-  padding: 0; }
-navigation div.nav-node a, navigation div.nav-node a:visited, navigation div.nav-node a:hover, navigation div.nav-search a, navigation div.nav-search a:visited, navigation div.nav-search a:hover, navigation div.nav-search span {
-  color: white;
-  font-size: 21px;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px; }
-navigation div.nav-node > a {
+navigation {
   display: block;
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%); }
-navigation div.search-background {
-  position: absolute;
-  background-color: #0054a6;
-  left: -200px;
-  z-index: 999;
-  height: 93px; }
-navigation div.search-background > input {
-  width: 200px; }
-navigation .nav-icon {
-  padding: 20px;
-  text-align: right; }
-  navigation .nav-icon img {
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color: #0054a6; }
+  navigation nav {
+    margin-left: 115px;
+    margin-right: 115px;
+    background-color: #0054a6; }
+  navigation div.nav-node, navigation div.nav-search, navigation div.nav-icon {
+    height: 93px; }
+  navigation div.nav-node a, navigation div.nav-node a:visited, navigation div.nav-node a:hover, navigation div.nav-search a, navigation div.nav-search a:visited, navigation div.nav-search a:hover, navigation div.nav-search span {
+    color: white;
+    font-size: 21px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer; }
+  navigation .nav-node {
+    display: inline-block;
+    padding-right: 40px; }
+    navigation .nav-node.active a:after {
+      border-bottom: 1px solid #fff;
+      bottom: -10px;
+      content: "";
+      display: block;
+      position: relative; }
+  navigation div.nav-node > a {
     display: block;
     top: 50%;
     position: relative;
     transform: translateY(-50%);
-    float: right; }
-navigation .nav-search {
-  padding: 20px; }
-navigation .nav-search > div.search-button, navigation .nav-search > div.search-background > input {
-  float: left;
-  transform: translateY(-50%);
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+    width: 100%;
+    text-align: center; }
+  navigation div.search-background {
+    background-color: #0054a6;
+    height: 93px;
+    position: absolute;
+    top: 85px;
+    z-index: 999; }
+  navigation div.search-background > input {
+    width: 200px; }
+  navigation .nav-icon {
+    padding: 20px;
+    text-align: right; }
+    navigation .nav-icon img {
+      display: block;
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%); }
+  navigation .nav-search {
+    padding: 20px;
+    position: relative; }
+  navigation .nav-search > div.search-button, navigation .nav-search > div.search-background > input {
+    transform: translateY(-50%);
+    position: relative;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  navigation .search-button > a {
+    display: block;
+    height: 100%;
+    margin-top: 30px; }
+  navigation .search-button > a::before {
+    border-left: 1px solid white;
+    content: "";
+    margin-left: -10px;
+    padding-right: 20px; }
+  navigation .search-button i {
+    color: white;
+    padding-right: 10px; }
 
 /* 
  * -----------------------------------------
