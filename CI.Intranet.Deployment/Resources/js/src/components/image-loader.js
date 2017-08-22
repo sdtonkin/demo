@@ -7,7 +7,7 @@ myApp.directive('imageLoader', function () {
         link: function (scope, element, attrs) {
             scope.$watch('window.lowBandwidth', function () {
                 if (!window.lowBandwidth) {
-                    element.append('<img src="' + scope.imageSrc + '" />');
+                    element.append('<img src="' + scope.imageSrc + '" title="' + scope.imageAltText + '" class="' + scope.imageCssClass + '" />');
                 }
 
             });

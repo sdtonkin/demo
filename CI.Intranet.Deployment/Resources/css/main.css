@@ -81,7 +81,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 40px;
-  color: white; }
+  color: #ffffff; }
   h2.section, .h2.section {
     color: #908b63; }
 
@@ -134,11 +134,11 @@ p {
       margin-left: 10px;
       color: #0054a6; }
     .btn.btn-cta.white {
-      color: white; }
+      color: #ffffff; }
       .btn.btn-cta.white:after {
-        color: white; }
+        color: #ffffff; }
   .btn.btn-input {
-    background-color: white;
+    background-color: #ffffff;
     border: 1px solid #908b63;
     border-radius: 0;
     border-left: none;
@@ -151,7 +151,7 @@ p {
 
 .btn.btn-block {
   color: #0054a6;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 0;
   border: none;
   text-transform: uppercase;
@@ -160,10 +160,10 @@ p {
   padding: 15px; }
   .btn.btn-block.blue {
     background-color: #003364;
-    color: white; }
+    color: #ffffff; }
   .btn.btn-block.blue-alt {
     background-color: #0054a6;
-    color: white; }
+    color: #ffffff; }
   .btn.btn-block.brown {
     color: #908b63; }
 
@@ -174,8 +174,9 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.3px; }
   .nav-pills .nav-link:hover {
-    background-color: white;
+    background-color: #ffffff;
     color: #003364; }
+
 .nav-pills .nav-item {
   margin-right: 15px;
   min-width: 200px;
@@ -184,6 +185,7 @@ p {
 .helpful-links ul {
   list-style: none;
   padding-left: 0; }
+
 .helpful-links li {
   display: table; }
   .helpful-links li:before {
@@ -261,17 +263,17 @@ body {
     border: none; }
   .sub-nav-container .card-header {
     background-color: transparent;
-    color: white;
+    color: #ffffff;
     border: none;
     padding-left: 0; }
   .sub-nav-container .card-intro {
-    color: white; }
+    color: #ffffff; }
   .sub-nav-container .card-body {
-    color: white;
+    color: #ffffff;
     border: none;
     padding-left: 0; }
   .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a {
-    color: white; }
+    color: #ffffff; }
 
 /* ----------------------------------------------------
   2) Main Content Container Styles
@@ -313,10 +315,10 @@ body {
   padding-top: 40px;
   padding-bottom: 30px;
   /*
-      Social Hover Variations
-  */ }
+	    Social Hover Variations
+	*/ }
   .footer-container hr {
-    border-color: white; }
+    border-color: #ffffff; }
   .footer-container nav {
     height: 100%;
     position: relative; }
@@ -328,10 +330,10 @@ body {
       padding-left: 0;
       font-size: 17px; }
       .footer-container nav ul > li {
-        color: white;
+        color: #ffffff;
         display: inline-block;
         margin-right: 10px;
-        border-right: 1px solid white;
+        border-right: 1px solid #ffffff;
         padding-right: 10px; }
         .footer-container nav ul > li:last-child {
           border-right: none; }
@@ -349,11 +351,11 @@ body {
       -moz-transform: scale(1.1);
       -o-transform: scale(1.1); }
   .footer-container #social-fb:hover {
-    color: white; }
+    color: #ffffff; }
   .footer-container #social-tw:hover {
-    color: white; }
+    color: #ffffff; }
   .footer-container #social-in:hover {
-    color: white; }
+    color: #ffffff; }
   .footer-container .footer-copyright p {
     color: #88bee7;
     text-align: right;
@@ -370,28 +372,34 @@ body {
  */
 .hero-news-container .card-group {
   margin-bottom: 20px; }
+
 .hero-news-container .card {
   background-color: #f4f4ef;
   border: none; }
+
 .hero-news-container .card-title {
   margin-bottom: 30px;
-  background-color: white;
+  background-color: #ffffff;
   display: inline-block;
   border: 1px solid #b8b491;
   padding: 4px 10px;
   color: #908b63; }
+
 .hero-news-container .card-likes {
   color: #908b63; }
   .hero-news-container .card-likes i {
     margin-right: 5px; }
+
 .hero-news-container .card-text {
   line-height: 27px;
   font-size: 24px;
   margin-bottom: 50px; }
+
 .hero-news-container .card-date {
   font-size: 14px;
   color: #908b63;
   margin-bottom: 5px; }
+
 .hero-news-container .img-fluid {
   height: 100%;
   width: auto; }
@@ -446,7 +454,7 @@ body {
   .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active {
     display: flex; }
   .find-people-carousel .employee-card {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
     text-align: center; }
     .find-people-carousel .employee-card hr {
@@ -481,7 +489,7 @@ body {
  * ----------------------------------------- 
  */
 .main-right-rail h2.section {
-  color: white; }
+  color: #ffffff; }
 
 .trending, .related {
   background-color: transparent;
@@ -491,7 +499,7 @@ body {
   border-radius: 0;
   overflow: hidden; }
   .trending .card-body, .related .card-body {
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     border-left: none;
     border-radius: 0;
     border-right: none;
@@ -499,13 +507,13 @@ body {
     padding: 0 0 15px 0; }
   .trending .card-title, .related .card-title {
     margin-bottom: 30px;
-    background-color: white;
+    background-color: #ffffff;
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
     color: #908b63; }
   .trending .card-likes, .related .card-likes {
-    color: white;
+    color: #ffffff;
     font-size: 14px; }
     .trending .card-likes i, .related .card-likes i {
       margin-right: 5px; }
@@ -516,7 +524,7 @@ body {
     color: #003364; }
   .trending .card-date, .related .card-date {
     font-size: 14px;
-    color: white;
+    color: #ffffff;
     margin-bottom: 5px; }
   .trending .img-fluid, .related .img-fluid {
     height: 100%;
@@ -529,7 +537,7 @@ body {
   max-width: 320px;
   margin-bottom: 35px; }
   .world-news .card-text {
-    color: white;
+    color: #ffffff;
     margin-bottom: 25px; }
   .world-news .btn-block {
     max-width: 160px; }
@@ -554,13 +562,13 @@ body {
       margin-top: 40px; }
   .rss-feed .rss-category {
     text-transform: uppercase;
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     margin-bottom: 15px;
     display: block;
     margin-top: 15px; }
   .rss-feed .rss-title a {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     line-height: 22px; }
   .rss-feed .rss-date {
@@ -568,14 +576,14 @@ body {
     color: #88bee7; }
 
 .upcoming-events {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 0;
   max-width: 320px;
   margin-top: 20px;
   padding: 20px;
   margin-bottom: 30px; }
   .upcoming-events .card-body {
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     border-left: none;
     border-radius: 0;
     border-right: none;
@@ -583,7 +591,7 @@ body {
     padding: 0; }
   .upcoming-events .card-tags {
     margin-bottom: 0;
-    background-color: white;
+    background-color: #ffffff;
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
@@ -592,7 +600,7 @@ body {
     margin-right: 20px;
     font-size: 14px; }
   .upcoming-events .card-likes {
-    color: white;
+    color: #ffffff;
     font-size: 14px; }
     .upcoming-events .card-likes i {
       margin-right: 5px; }
@@ -619,6 +627,7 @@ body {
  */
 .employee-spotlight .nav-tabs {
   border-bottom: 2px solid #88bee7; }
+
 .employee-spotlight .nav-link {
   text-align: left;
   padding-left: 0;
@@ -644,6 +653,7 @@ body {
     border-top: none;
     border-radius: 0;
     color: #0054a6; }
+
 .employee-spotlight .employee-spotlight-cta .btn-block {
   margin-top: 30px;
   max-width: 242px; }
@@ -661,36 +671,46 @@ body {
 
 .employee-card.announce {
   margin-bottom: 30px; }
+
 .employee-card .emp-photo {
   border-radius: 50%; }
+
 .employee-card .emp-name {
   color: #003364;
   font-size: 25px; }
+
 .employee-card .emp-rec {
   color: #0054a6;
   font-size: 14px;
   text-transform: uppercase; }
+
 .employee-card .emp-title {
   color: #0054a6;
   font-size: 14px;
   text-transform: uppercase;
   margin-top: -10px; }
+
 .employee-card .emp-view {
   border-left: 1px solid;
   margin-left: 10px;
   padding-left: 10px; }
+
 .employee-card .emp-contact {
   border-bottom: 1px solid #003364;
   padding-bottom: 20px; }
+
 .employee-card .emp-des {
   color: #003364;
   font-size: 14px;
   line-height: 17px; }
+
 .employee-card .emp-info {
   display: block; }
+
 .employee-card .emp-announce {
   color: #003364;
   display: block; }
+
 .employee-card .submit-line {
   color: #003364;
   font-size: 14px;
@@ -719,8 +739,10 @@ body {
  */
 .news-events .nav-tabs {
   border-bottom: 2px solid #b8b491; }
+
 .news-events .tab-content {
   margin-top: 30px; }
+
 .news-events .nav-link {
   text-align: left;
   padding-left: 0;
@@ -746,12 +768,15 @@ body {
     border-top: none;
     border-radius: 0;
     color: #908b63; }
+
 .news-events .upcoming-events {
   max-width: none;
   margin-bottom: 0; }
+
 .news-events .news-card-wrapper {
   margin-bottom: 30px;
   margin-top: 0; }
+
 .news-events .search {
   width: auto;
   margin-top: 0;
@@ -780,6 +805,7 @@ body {
     border-radius: 0; }
     .news-events .search .input-group-btn button {
       border: none; }
+
 .news-events .search-filter {
   border: 1px solid #908b63;
   display: flex; }
@@ -792,28 +818,31 @@ body {
     left: -2px;
     width: 100%; }
     .news-events .search-filter .dropdown-menu a {
-      color: white;
+      color: #ffffff;
       font-size: 14px;
       padding-bottom: 15px;
       padding-left: 15px;
       padding-top: 15px; }
       .news-events .search-filter .dropdown-menu a:hover {
         color: #908b63; }
+
 .news-events .sort-filter .dropdown-menu {
   top: 45px;
   background-color: #003364;
   border-radius: 0;
   width: 100%; }
   .news-events .sort-filter .dropdown-menu a {
-    color: white;
+    color: #ffffff;
     font-size: 14px;
     padding: 15px 0 15px 15px; }
     .news-events .sort-filter .dropdown-menu a:hover {
       color: #003364; }
+
 .news-events .sort-filter .dropdown-toggle {
   padding-left: 0; }
   .news-events .sort-filter .dropdown-toggle:focus {
     box-shadow: none; }
+
 .news-events .btn-block.brown {
   float: left;
   width: auto;
@@ -837,7 +866,7 @@ body {
 
 .card-tags {
   margin-bottom: 0;
-  background-color: white;
+  background-color: #ffffff;
   display: inline-block;
   border: 1px solid #b8b491;
   padding: 4px 10px;
@@ -875,7 +904,7 @@ navigation {
   navigation div.nav-node, navigation div.nav-search, navigation div.nav-icon {
     height: 93px; }
   navigation div.nav-node a, navigation div.nav-node a:visited, navigation div.nav-node a:hover, navigation div.nav-search a, navigation div.nav-search a:visited, navigation div.nav-search a:hover, navigation div.nav-search span {
-    color: white;
+    color: #ffffff;
     font-size: 21px;
     font-weight: 500;
     text-decoration: none;
@@ -927,12 +956,12 @@ navigation {
     height: 100%;
     margin-top: 30px; }
   navigation .search-button > a::before {
-    border-left: 1px solid white;
+    border-left: 1px solid #ffffff;
     content: "";
     margin-left: -10px;
     padding-right: 20px; }
   navigation .search-button i {
-    color: white;
+    color: #ffffff;
     padding-right: 10px; }
 
 /* 
@@ -942,11 +971,13 @@ navigation {
  * ----------------------------------------- 
  */
 .nav-toolbar .nav-tabs {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff;
   position: relative;
   margin-bottom: 30px; }
+
 .nav-toolbar .nav-item {
   margin-bottom: -1px; }
+
 .nav-toolbar .nav-link {
   text-align: left;
   padding-left: 0;
@@ -964,15 +995,16 @@ navigation {
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: white; }
+    color: #ffffff; }
   .nav-toolbar .nav-link.active {
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #ffffff;
     border-left: none;
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: white;
+    color: #ffffff;
     background: transparent; }
+
 .nav-toolbar .toolbar-content ul {
   list-style: none;
   display: inline-block;
@@ -980,7 +1012,7 @@ navigation {
   padding-left: 0;
   margin-right: 30px; }
   .nav-toolbar .toolbar-content ul a {
-    color: white;
+    color: #ffffff;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 0.4px; }
@@ -988,8 +1020,10 @@ navigation {
       padding-top: 5px;
       display: block;
       position: relative; }
+
 .nav-toolbar .toolbar-content h3 {
   color: #b8b491; }
+
 .nav-toolbar .manage-toolbar {
   position: absolute;
   right: 0;
@@ -1000,14 +1034,17 @@ navigation {
   vertical-align: top;
   top: 5px;
   display: inline-block; }
+
 .weather .weather-icon {
   font-size: 40px;
   margin-right: 15px; }
+
 .weather .weather-location {
   font-size: 12px;
   text-transform: uppercase;
   margin-top: 14px;
   display: block; }
+
 .weather .weather-info {
   font-size: 22px; }
 
@@ -1019,10 +1056,12 @@ navigation {
  */
 #group-summary .card {
   border-radius: 0;
-  background-color: white;
+  background-color: #ffffff;
   border-color: #88bee7; }
+
 #group-summary .card-header {
-  background-color: white; }
+  background-color: #ffffff; }
+
 #group-summary h5 {
   color: #003364;
   text-transform: uppercase;
@@ -1033,6 +1072,7 @@ navigation {
   content: '\f068';
   display: inline-block;
   margin-right: 10px; }
+
 .more-less.collapsed:before {
   content: '\f067'; }
 
@@ -1077,7 +1117,7 @@ navigation {
 .how-do-i .nav.nav-pills {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: #ffffff;
   margin-bottom: 30px;
   margin-top: 30px; }
   .how-do-i .nav.nav-pills h3 {
@@ -1192,6 +1232,7 @@ navigation {
 section.people-places ul.tab-picker li {
   list-style: none;
   cursor: pointer; }
+
 section.people-places h2 {
   font-size: 40px;
   text-align: left;
@@ -1201,6 +1242,7 @@ section.global-partners h2, section.my-department h2 {
   font-size: 40px;
   text-align: left;
   color: #908b63; }
+
 section.global-partners img.emp-photo, section.my-department img.emp-photo {
   height: 48px; }
 
@@ -1209,17 +1251,17 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
 ------------------------------------------------------- */
 @media screen and (max-width: 575px) {
   /* 
-   * -----------------------------------------
-   *  Phone
-   *  @@ File: responsive/_phone.scss
-   * ----------------------------------------- 
-   */
+ * -----------------------------------------
+ *  Phone
+ *  @@ File: responsive/_phone.scss
+ * ----------------------------------------- 
+ */
   /* ----------------------------------------------------
-    Header Styles
-  ------------------------------------------------------- */
+  Header Styles
+------------------------------------------------------- */
   /* ----------------------------------------------------
-    Hero News Styles
-  ------------------------------------------------------- */
+  Hero News Styles
+------------------------------------------------------- */
   .hero-news-container .card.img-card {
     margin-bottom: 0;
     border-bottom-right-radius: 0;
@@ -1227,30 +1269,29 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
     .hero-news-container .card.img-card + .card {
       border-top-right-radius: 0;
       border-top-left-radius: 0; } }
+
 @media screen and (max-width: 992px) {
   /* 
-   * -----------------------------------------
-   *  Tablet Down
-   *  @@ File: responsive/_tablet-down.scss
-   * ----------------------------------------- 
-   */
+ * -----------------------------------------
+ *  Tablet Down
+ *  @@ File: responsive/_tablet-down.scss
+ * ----------------------------------------- 
+ */
   /* ----------------------------------------------------
-    2) Main Content Container Styles
-  ------------------------------------------------------- */
+  2) Main Content Container Styles
+------------------------------------------------------- */
   .main-left-content {
     padding-left: 30px;
     padding-right: 30px; }
-
   /* 
-   * -----------------------------------------
-   *  Hero News Container
-   * ----------------------------------------- 
-   */
+ * -----------------------------------------
+ *  Hero News Container
+ * ----------------------------------------- 
+ */
   .hero-news-container .card {
     margin-bottom: 20px; }
   .hero-news-container .card-group {
     margin-bottom: 0; }
-
   .sub-nav-container {
     margin-bottom: 30px; }
     .sub-nav-container .card-intro {
@@ -1264,23 +1305,21 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
         display: block;
         padding: 13px;
         text-decoration: none;
-        color: white; }
-
+        color: #ffffff; }
   /* 
-   * -----------------------------------------
-   *  Right Rail
-   *  @@ File: components/_right-rail.scss
-   * ----------------------------------------- 
-   */
+ * -----------------------------------------
+ *  Right Rail
+ *  @@ File: components/_right-rail.scss
+ * ----------------------------------------- 
+ */
   .trending, .world-news, .upcoming-events {
     max-width: none; }
-
   /* 
-  * -----------------------------------------
-  *  Employee Spotlight
-  *  @@ File: components/_employee-spotlight.scss
-  * ----------------------------------------- 
-  */
+ * -----------------------------------------
+ *  Employee Spotlight
+ *  @@ File: components/_employee-spotlight.scss
+ * ----------------------------------------- 
+ */
   .employee-spotlight .tab-content {
     margin-top: 30px; }
   .employee-spotlight .employee-spotlight-cta a, .employee-spotlight .employee-spotlight-cta .btn-block {
@@ -1297,23 +1336,24 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
     border-bottom: none; }
     .employee-spotlight .employee-card-container:last-child {
       border-bottom: none; } }
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   /* 
-   * -----------------------------------------
-   *  Tablet
-   *  @@ File: responsive/_tablet.scss
-   * ----------------------------------------- 
-   */
+ * -----------------------------------------
+ *  Tablet
+ *  @@ File: responsive/_tablet.scss
+ * ----------------------------------------- 
+ */
   /* ----------------------------------------------------
-    2) Main Content Container Styles
-  ------------------------------------------------------- */
+  2) Main Content Container Styles
+------------------------------------------------------- */
   .main-left-content {
     padding-left: 30px;
     padding-right: 30px; }
-
   /* ----------------------------------------------------
-     Hero News Container
-  ------------------------------------------------------- */ }
+   Hero News Container
+------------------------------------------------------- */ }
+
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
@@ -1321,10 +1361,12 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
   font-size: 40px;
   text-align: left;
   color: #908b63; }
+
 .main-container h2.ms-webpart-titleText {
   line-height: 40px; }
+
 .main-container .main-right-rail h2.ms-webpart-titleText span {
-  color: white; }
+  color: #ffffff; }
 
 table.ms-ToolPaneOuter {
   width: 250px;

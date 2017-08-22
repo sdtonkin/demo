@@ -230,6 +230,7 @@
     <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
     <Content Include="Resources\js\includes\Global-Partners.html" />
+    <Content Include="Resources\js\includes\My-Sites.html" />
     <Content Include="Resources\js\includes\My-Department.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Departments.html" />
@@ -266,6 +267,7 @@
     <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\image-loader.js" />
     <Content Include="Resources\js\src\components\global-partners.js" />
+    <Content Include="Resources\js\src\components\my-sites.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
@@ -293,6 +295,7 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\sp-service.js" />
     <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />
     <Content Include="Resources\js\src\services\business-units-service.js" />
