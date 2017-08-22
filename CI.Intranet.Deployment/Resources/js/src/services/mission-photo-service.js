@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('globalPartnerService', ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
+angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$q', 'COM_CONFIG', 'common', function ($http, $q, COM_CONFIG, common) {
     var ctrl = this;
 
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
