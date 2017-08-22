@@ -754,15 +754,15 @@
     </xsl:variable>
 
 
-      <div class="row">
+    <div class="row">
       <div class="">
-          <xsl:if test="string-length($SafeImageUrl) != 0">
-            <div class="card">
-              <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
-                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
-              </a>
-            </div>
-          </xsl:if>
+        <xsl:if test="string-length($SafeImageUrl) != 0">
+          <div class="card">
+            <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
+              <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
+            </a>
+          </div>
+        </xsl:if>
 
         <div class="card-body">
           <h4 class="card-tags">
@@ -795,19 +795,19 @@
               </a>
             </xsl:if>
           </h4>
-          <div class="card-date">
-            <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
-          </div>
           <div class="card-text">
             <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
               <xsl:value-of select="$DisplayTitle"/>
             </a>
           </div>
+          <div class="card-date">
+            <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+          </div>
         </div>
       </div>
+    </div>
 
   </xsl:template>
-
 
 
   <!-- Trending News -->
