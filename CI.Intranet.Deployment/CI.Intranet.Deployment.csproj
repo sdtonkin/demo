@@ -228,6 +228,7 @@
     <Content Include="Resources\js\includes\Business-Units.html" />
     <Content Include="Resources\js\includes\Contacts.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
+    <Content Include="Resources\js\includes\Mission-Photos.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
     <Content Include="Resources\js\includes\Global-Partners.html" />
     <Content Include="Resources\js\includes\My-Sites.html" />
@@ -267,7 +268,8 @@
     <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\image-loader.js" />
     <Content Include="Resources\js\src\components\global-partners.js" />
-    <Content Include="Resources\js\src\components\my-sites.js" />
+    <Content Include="Resources\js\src\components\likeController.js" />
+    <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
@@ -304,6 +306,7 @@
     <Content Include="Resources\js\src\services\departments-service.js" />
     <Content Include="Resources\js\src\services\how-do-i-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
+    <Content Include="Resources\js\src\services\mission-photo-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
     <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
@@ -319,6 +322,7 @@
     <Content Include="Resources\js\src\services\taxonomy-service.js" />
     <Content Include="Resources\js\src\services\user-profile-service.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
+    <Content Include="Resources\js\src\services\yammerApiService.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />

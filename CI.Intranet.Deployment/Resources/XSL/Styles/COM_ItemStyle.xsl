@@ -647,7 +647,6 @@
   </xsl:template>
 
   <!-- Start of Custom Item Styles -->
-
   <!-- Featured News -->
   <xsl:template name="FeaturedNews" match="Row[@Style='FeaturedNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
@@ -667,10 +666,8 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> -->
-    <div class="">
-      <div class="">
+    <div class="row news-card-container">
+      <div class="col-md-6 news-card-wrapper">
         <div class="hero-news-container">
           <div class="card-body">
             <div class="card img-card">
@@ -750,63 +747,61 @@
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
     </xsl:variable>
-
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  -->
-    <div class="">
-      <div class="">
-        <div class= "hero-news-container">
-          <xsl:if test="string-length($SafeImageUrl) != 0">
-            <div class="img-card">
-              <a href="{$SafeLinkUrl}" class="recent-news-image-container">
-                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="recent-news-image image"></image-loader>
-              </a>
-            </div>
-          </xsl:if>
-
-          <div class="card-body">
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@NewsType) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@NewsType"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@Location) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@Location"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <h4 class="card-tags">
-              <xsl:if test="string-length(@Group) != 0">
-                <a>
-                  <xsl:attribute name="href">
-                    /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
-                  </xsl:attribute>
-                  <xsl:value-of select="@Group"/>
-                </a>
-              </xsl:if>
-            </h4>
-            <div class="card-text">
-              <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
-                <xsl:value-of select="$DisplayTitle"/>
-              </a>
-            </div>
-            <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
-            </div>
-          </div>
-        </div>
+    
+    <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper">  
+    <div class= "hero-news-container">
+      <xsl:if test="string-length($SafeImageUrl) != 0">
+      <div class="img-card">
+        <a href="{$SafeLinkUrl}" class="recent-news-image-container">
+          <img class="recent-news-image image" src="{$SafeImageUrl}" title="{@ImageUrlAltText}"/>
+        </a>
       </div>
-    </div>
+    </xsl:if>
+      
+      <div class="card-body">
+        <h4 class="card-tags">
+          <xsl:if test="string-length(@NewsType) != 0">
+            <a>
+              <xsl:attribute name="href">
+                /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
+              </xsl:attribute>
+              <xsl:value-of select="@NewsType"/>
+            </a>
+          </xsl:if>
+          </h4>
+          <h4 class="card-tags">
+          <xsl:if test="string-length(@Location) != 0">
+            <a>
+              <xsl:attribute name="href">
+                /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+              </xsl:attribute>
+              <xsl:value-of select="@Location"/>
+            </a>
+          </xsl:if>
+          </h4>
+          <h4 class="card-tags">
+          <xsl:if test="string-length(@Group) != 0">
+            <a>
+              <xsl:attribute name="href">
+                /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
+              </xsl:attribute>
+              <xsl:value-of select="@Group"/>
+            </a>
+          </xsl:if>
+        </h4>
+      <div class="card-text">
+        <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
+          <xsl:value-of select="$DisplayTitle"/>
+        </a>
+      </div>
+      <div class="card-date">
+        <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+      </div>
+     </div> 
+   </div>
+   </div>
+   </div>
   </xsl:template>
 
 
@@ -891,10 +886,8 @@
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
 
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> -->
-    <div class="">
-      <div class="">
+    <div class="row news-card-container">
+      <div class="col-md-6 news-card-wrapper">
         <div class="card upcoming-events">
 
           <div class="card-body">
