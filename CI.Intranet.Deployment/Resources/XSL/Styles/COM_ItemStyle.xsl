@@ -753,9 +753,7 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <section class= "hero-news-container">
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  -->
+
       <div class="row">
       <div class="col-lg-6">
           <xsl:if test="string-length($SafeImageUrl) != 0">
@@ -808,7 +806,7 @@
           </div>
         </div>
       </div>
-    </section>
+
   </xsl:template>
 
 
