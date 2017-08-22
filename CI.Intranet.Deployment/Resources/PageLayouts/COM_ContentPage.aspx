@@ -46,17 +46,17 @@
         </div>
     </div>
     <!-- Webpart Zone - Top -->
-    <div class="row">
+
         <div class="mb-wp-zone container-full top">
 	        <WebPartPages:WebPartZone runat="server" Title="Top" ID="TopZone" />
         </div>
-    </div>
+
     <!-- Webpart Zone - Bottom -->
-    <div class="row">
+    
         <div class="mb-wp-zone container-half bottom">
 	        <WebPartPages:WebPartZone runat="server" Title="Bottom" ID="BottomZone" />
         </div>
-    </div>
+    
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">    
     </PublishingWebControls:EditModePanel>    
 </asp:Content>
