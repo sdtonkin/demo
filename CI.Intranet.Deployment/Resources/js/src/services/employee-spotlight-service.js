@@ -15,7 +15,7 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
                     var item = items[i];
                     var g = {};
                     g.id = item.Id;
-                    g.name = item.Title;
+                    g.title = item.Title;
                     g.type = item.COM_GratitudeType;
                     g.contact = item.COM_Contact;
                     g.submitted = item.CreatedBy;

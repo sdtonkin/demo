@@ -6,7 +6,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'missionPhotoSer
     var ctrl = this;
 
     this.$onInit = function () {
-        missionPhotoService.getMissionPhoto().then(function (data) {
+        missionPhotoService.getMissionPhotos().then(function (data) {
             ctrl.missionPhoto = data;
         });
     }
