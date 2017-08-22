@@ -753,17 +753,16 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <!-- <div class= "hero-news-container">
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  
-      <div class="row">-->
-    <div class="col-lg-6">
-      <div class="card">
-        <xsl:if test="string-length($SafeImageUrl) != 0">
-          <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
-            <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
-          </a>
-        </xsl:if>
+
+      <div class="row">
+      <div class="col-lg-6">
+          <xsl:if test="string-length($SafeImageUrl) != 0">
+            <div class="card">
+              <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
+                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
+              </a>
+            </div>
+          </xsl:if>
 
         <div class="card-body">
           <h4 class="card-tags">
@@ -806,7 +805,7 @@
           </div>
         </div>
       </div>
-    </div>
+
   </xsl:template>
 
 

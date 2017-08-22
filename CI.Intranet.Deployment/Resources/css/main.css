@@ -913,7 +913,8 @@ navigation {
       display: block;
       top: 50%;
       position: relative;
-      transform: translateY(-50%); }
+      transform: translateY(-50%);
+      max-height: 50px; }
   navigation .nav-search {
     padding: 20px;
     position: relative; }
