@@ -287,7 +287,7 @@
     <xsl:variable name="COMBeginListItem">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
-          <xsl:value-of select="string('&lt;div class=&quot;news-item&quot;&gt;')" />
+          <xsl:value-of select="string('&lt;div class=&quot;col-lg-6&quot;&gt;')" />
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$BeginListItem"/>

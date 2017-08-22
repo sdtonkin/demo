@@ -755,7 +755,7 @@
 
 
       <div class="row">
-      <div class="col-lg-6">
+      <div class="">
           <xsl:if test="string-length($SafeImageUrl) != 0">
             <div class="card">
               <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
