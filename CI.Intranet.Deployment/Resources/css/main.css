@@ -379,7 +379,8 @@ body {
   display: inline-block;
   border: 1px solid #b8b491;
   padding: 4px 10px;
-  color: #908b63; }
+  color: #908b63;
+  margin-right: 5px; }
 .hero-news-container .card-likes {
   color: #908b63; }
   .hero-news-container .card-likes i {

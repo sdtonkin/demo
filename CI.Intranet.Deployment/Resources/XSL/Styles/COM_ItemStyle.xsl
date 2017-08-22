@@ -668,11 +668,13 @@
     </xsl:variable>
 
     <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> --> 
+    <div class="col-md-6 news-card-wrapper"> 
+    FIRST HERO AREA--> 
     <div class="">
     <div class="">  
       <div class="hero-news-container">
-        <div class="card-body">
+      <div class="card-group">
+        
           <div class="card img-card">
             <xsl:if test="string-length($SafeImageUrl) != 0">
               <a href="{$SafeLinkUrl}" >
@@ -680,8 +682,9 @@
               </a>
             </xsl:if>
           </div>
-          
-        <h4 class="card-tags">
+<div class="card">
+<div class="card-body">
+        <h4 class="card-title">
           <xsl:if test="string-length(@NewsType) != 0">
             <a>
               <xsl:attribute name="href">
@@ -691,7 +694,7 @@
             </a>
           </xsl:if>
           </h4>
-          <h4 class="card-tags">
+          <h4 class="card-title">
           <xsl:if test="string-length(@Location) != 0">
             <a>
               <xsl:attribute name="href">
@@ -701,7 +704,7 @@
             </a>
           </xsl:if>
           </h4>
-          <h4 class="card-tags">
+          <h4 class="card-title">
           <xsl:if test="string-length(@Group) != 0">
             <a>
               <xsl:attribute name="href">
@@ -711,7 +714,9 @@
             </a>
           </xsl:if>
         </h4>
-
+            <div class="card-date">
+              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+            </div>
             <div class="card-text">
               <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
                 <xsl:value-of select="$DisplayTitle"/>
@@ -719,11 +724,8 @@
             </div>
 
 
-            <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
-            </div>
-
-
+          </div>
+          </div>
           </div>
         </div>
       </div>
