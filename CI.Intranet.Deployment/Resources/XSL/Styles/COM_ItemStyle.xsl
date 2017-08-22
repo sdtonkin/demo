@@ -667,8 +667,10 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper"> --> 
+    <div class="">
+    <div class="">  
       <div class="hero-news-container">
         <div class="card-body">
           <div class="card img-card">
@@ -749,8 +751,10 @@
       </xsl:call-template>
     </xsl:variable>
     
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper">  -->
+    <div class="">
+    <div class="">  
     <div class= "hero-news-container">
       <xsl:if test="string-length($SafeImageUrl) != 0">
       <div class="img-card">
