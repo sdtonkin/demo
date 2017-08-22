@@ -647,7 +647,6 @@
   </xsl:template>
 
   <!-- Start of Custom Item Styles -->
-
   <!-- Featured News -->
   <xsl:template name="FeaturedNews" match="Row[@Style='FeaturedNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
@@ -667,56 +666,49 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> 
-    FIRST HERO AREA--> 
-    <div class="">
-    <div class="">  
-      <div class="hero-news-container">
-      <div class="card-group">
-        
-          <div class="card img-card">
-            <xsl:if test="string-length($SafeImageUrl) != 0">
-              <a href="{$SafeLinkUrl}" >
-                <img class="img-fluid" src="{$SafeImageUrl}" title="{@ImageUrlAltText}"/>
-              </a>
-            </xsl:if>
-          </div>
-<div class="card">
-<div class="card-body">
-        <h4 class="card-title">
-          <xsl:if test="string-length(@NewsType) != 0">
-            <a>
-              <xsl:attribute name="href">
-                /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
-              </xsl:attribute>
-              <xsl:value-of select="@NewsType"/>
-            </a>
-          </xsl:if>
-          </h4>
-          <h4 class="card-title">
-          <xsl:if test="string-length(@Location) != 0">
-            <a>
-              <xsl:attribute name="href">
-                /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
-              </xsl:attribute>
-              <xsl:value-of select="@Location"/>
-            </a>
-          </xsl:if>
-          </h4>
-          <h4 class="card-title">
-          <xsl:if test="string-length(@Group) != 0">
-            <a>
-              <xsl:attribute name="href">
-                /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
-              </xsl:attribute>
-              <xsl:value-of select="@Group"/>
-            </a>
-          </xsl:if>
-        </h4>
-            <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+    <div class="row news-card-container">
+      <div class="col-md-6 news-card-wrapper">
+        <div class="hero-news-container">
+          <div class="card-body">
+            <div class="card img-card">
+              <xsl:if test="string-length($SafeImageUrl) != 0">
+                <a href="{$SafeLinkUrl}" >
+                  <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}"></image-loader>
+                </a>
+              </xsl:if>
             </div>
+
+            <h4 class="card-tags">
+              <xsl:if test="string-length(@NewsType) != 0">
+                <a>
+                  <xsl:attribute name="href">
+                    /news/pages/news.aspx?newstype=<xsl:value-of select="@NewsType" />
+                  </xsl:attribute>
+                  <xsl:value-of select="@NewsType"/>
+                </a>
+              </xsl:if>
+            </h4>
+            <h4 class="card-tags">
+              <xsl:if test="string-length(@Location) != 0">
+                <a>
+                  <xsl:attribute name="href">
+                    /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+                  </xsl:attribute>
+                  <xsl:value-of select="@Location"/>
+                </a>
+              </xsl:if>
+            </h4>
+            <h4 class="card-tags">
+              <xsl:if test="string-length(@Group) != 0">
+                <a>
+                  <xsl:attribute name="href">
+                    /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
+                  </xsl:attribute>
+                  <xsl:value-of select="@Group"/>
+                </a>
+              </xsl:if>
+            </h4>
+
             <div class="card-text">
               <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
                 <xsl:value-of select="$DisplayTitle"/>
@@ -724,12 +716,15 @@
             </div>
 
 
-          </div>
-          </div>
+            <div class="card-date">
+              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+            </div>
+
+
           </div>
         </div>
       </div>
-     </div>
+    </div>
   </xsl:template>
 
 
@@ -753,10 +748,8 @@
       </xsl:call-template>
     </xsl:variable>
     
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  -->
-    <div class="">
-    <div class="">  
+    <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper">  
     <div class= "hero-news-container">
       <xsl:if test="string-length($SafeImageUrl) != 0">
       <div class="img-card">
@@ -893,46 +886,44 @@
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
 
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> -->
-    <div class="">
-    <div class="">
-    <div class="card upcoming-events">    
+    <div class="row news-card-container">
+      <div class="col-md-6 news-card-wrapper">
+        <div class="card upcoming-events">
 
-    <div class="card-body">
-      <a class="card-text" onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{$SafeLinkUrl}" >
-        <xsl:value-of select="@Title" />
-      </a>
-      
-      <div class="card-date">
-       <span class="event-month">
-        <xsl:value-of select="$monthAbbr"/>
-       </span>
-       <span class="event-day">
-        <xsl:value-of select="$day"/>
-       </span>
+          <div class="card-body">
+            <a class="card-text" onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{$SafeLinkUrl}" >
+              <xsl:value-of select="@Title" />
+            </a>
+
+            <div class="card-date">
+              <span class="event-month">
+                <xsl:value-of select="$monthAbbr"/>
+              </span>
+              <span class="event-day">
+                <xsl:value-of select="$day"/>
+              </span>
+            </div>
+
+
+            <xsl:if test="string-length($time) != 0">
+              <p class="card-time">
+                <xsl:value-of select="$time" />
+                <xsl:if test="string-length($endtime) != 0">
+                  &#160;-&#160;<xsl:value-of select="$endtime" />
+                </xsl:if>
+              </p>
+            </xsl:if>
+
+            <p class="card-location">
+              <xsl:value-of select="@Location"/>
+            </p>
+
+            <h4 class="card-tags">
+              <xsl:value-of select="@EventType" />
+            </h4>
+          </div>
+        </div>
       </div>
-    
-
-      <xsl:if test="string-length($time) != 0">
-        <p class="card-time">
-          <xsl:value-of select="$time" />
-          <xsl:if test="string-length($endtime) != 0">
-            &#160;-&#160;<xsl:value-of select="$endtime" />
-          </xsl:if>
-        </p>
-      </xsl:if>
-      
-      <p class="card-location">
-        <xsl:value-of select="@Location"/>
-      </p>
-
-      <h4 class="card-tags">
-        <xsl:value-of select="@EventType" />
-      </h4>
-    </div>
-    </div>    
-    </div>
     </div>
   </xsl:template>
 
