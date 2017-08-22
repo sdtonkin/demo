@@ -13,14 +13,6 @@
     if (typeof angular == 'undefined') {
         document.write('<script type="text/javascript" src="' + baseUrl + angular + '" />');
     }
-    /*
-    if (window.addEventListener) {
-        window.addEventListener('load', InitiateSpeedDetection, false);
-    } else if (window.attachEvent) {
-        window.attachEvent('onload', InitiateSpeedDetection);
-    }
-    */
-
     function ShowProgressMessage(msg) {
         if (console) {
             if (typeof msg == "string") {
@@ -45,7 +37,6 @@
         link.href = src;
         document.head.appendChild(link);
     }
-
     function InitiateSpeedDetection() {
         ShowProgressMessage("Loading the image, please wait...");
         var count = 0;
@@ -53,7 +44,6 @@
             function () {
                 MeasureConnectionSpeed();
             }, 1);
-
     };
 
     function MeasureConnectionSpeed() {
