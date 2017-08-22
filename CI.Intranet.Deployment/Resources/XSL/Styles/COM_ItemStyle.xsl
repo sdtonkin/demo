@@ -753,15 +753,15 @@
       </xsl:call-template>
     </xsl:variable>
 
+    <section class= "hero-news-container">
     <!-- <div class="row news-card-container">
     <div class="col-md-6 news-card-wrapper">  -->
-    <div class="">
-      <div class="">
-        <div class= "hero-news-container">
+      <div class="row">
+      <div class="col-lg-6">
           <xsl:if test="string-length($SafeImageUrl) != 0">
-            <div class="img-card">
-              <a href="{$SafeLinkUrl}" class="recent-news-image-container">
-                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="recent-news-image image"></image-loader>
+            <div class="card">
+              <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
+                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
               </a>
             </div>
           </xsl:if>
@@ -808,7 +808,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </xsl:template>
 
 
