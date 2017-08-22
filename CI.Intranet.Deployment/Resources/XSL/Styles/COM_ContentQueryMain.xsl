@@ -101,7 +101,7 @@
     <xsl:variable name="COMBeginColumn">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
-          <xsl:value-of select="string('&lt;div class=&quot;hero-news-container&quot;&gt; &lt;ul class=&quot;default&quot;&gt;')" />
+          <xsl:value-of select="string('&lt;div class=&quot;hero-news-container&quot;&gt; &lt;div class=&quot;row&quot;&gt;')" />
         </xsl:when>
 
         <xsl:otherwise>
@@ -113,7 +113,7 @@
     <xsl:variable name="COMEndColumn">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
-          <xsl:value-of select="string('&lt;/ul&gt;&lt;/div&gt;')" />
+          <xsl:value-of select="string('&lt;/div&gt;&lt;/div&gt;')" />
         </xsl:when>
 
         <xsl:otherwise>
@@ -287,7 +287,7 @@
     <xsl:variable name="COMBeginListItem">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
-          <xsl:value-of select="string('&lt;li class=&quot;news-item&quot;&gt;')" />
+          <xsl:value-of select="string('&lt;div class=&quot;news-item&quot;&gt;')" />
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$BeginListItem"/>
@@ -321,7 +321,7 @@
 
     <xsl:variable name="COMEndListItem">
       <xsl:choose>
-        <xsl:when test="$selectedItemStyle='DepartingProvider'">
+        <xsl:when test="$selectedItemStyle='RecentNews'">
           <xsl:value-of select="string('&lt;/div&gt;')" />
         </xsl:when>
 
