@@ -887,8 +887,10 @@
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
 
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper"> -->
+    <div class="">
+    <div class="">
     <div class="card upcoming-events">    
 
     <div class="card-body">
