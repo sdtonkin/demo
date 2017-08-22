@@ -647,6 +647,7 @@
   </xsl:template>
 
   <!-- Start of Custom Item Styles -->
+
   <!-- Featured News -->
   <xsl:template name="FeaturedNews" match="Row[@Style='FeaturedNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
@@ -666,8 +667,10 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <div class="row news-card-container">
-      <div class="col-md-6 news-card-wrapper">
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper"> -->
+    <div class="">
+      <div class="">
         <div class="hero-news-container">
           <div class="card-body">
             <div class="card img-card">
@@ -748,8 +751,10 @@
       </xsl:call-template>
     </xsl:variable>
 
-    <div class="row news-card-container">
-      <div class="col-md-6 news-card-wrapper">
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper">  -->
+    <div class="">
+      <div class="">
         <div class= "hero-news-container">
           <xsl:if test="string-length($SafeImageUrl) != 0">
             <div class="img-card">
@@ -886,8 +891,10 @@
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
 
-    <div class="row news-card-container">
-      <div class="col-md-6 news-card-wrapper">
+    <!-- <div class="row news-card-container">
+    <div class="col-md-6 news-card-wrapper"> -->
+    <div class="">
+      <div class="">
         <div class="card upcoming-events">
 
           <div class="card-body">
