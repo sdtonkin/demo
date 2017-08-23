@@ -183,7 +183,7 @@ gulp.task("min:js", function () {
             babelrc: false,
             exclude: /(node_modules|bower_components)/
 
-        })).on('error', (err) => {
+        })).on('error', function(err) {
             console.log("webpack error");
             console.log(err);
         })
