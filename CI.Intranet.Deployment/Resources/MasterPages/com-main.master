@@ -111,37 +111,39 @@
 </div>
 <!-- End Main Content -->
 <!-- Start Footer Content -->
-<div class="container-fluid footer-container">
-    <div class="container">
-        <footer class="footer-inner-container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <nav>
-                        <ul>
-                            <li>Help</li>
-                            <li>Feedback</li>
-                        </ul>
-                    </nav>
+<div class="footer-container">
+    <div class="container-fluid">
+        <div class="container">
+            <footer class="footer-inner-container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <nav>
+                            <ul>
+                                <li>Help</li>
+                                <li>Feedback</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-4 footer-brand">
+                        <img src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/images/compassion-white-logo.png%>" />" class="img-fluid pull-right">
+                    </div>
                 </div>
-                <div class="col-lg-4 footer-brand">
-                    <img src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/images/compassion-white-logo.png%>" />" class="img-fluid pull-right">
+                <hr>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="social-container">
+                            <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                            <a href="#"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+                            <a href="#"><i id="social-in" class="fa fa-instagram fa-3x social"></i></a>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 footer-copyright">
+                        <p>© 2017 Compassion International</p>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="social-container">
-                        <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                        <a href="#"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
-                        <a href="#"><i id="social-in" class="fa fa-instagram fa-3x social"></i></a>
-                        </div>
-                </div>
-                <div class="col-lg-4 footer-copyright">
-                    <p>© 2017 Compassion International</p>
-                </div>
-            </div>
-                        
-        </footer>
+                            
+            </footer>
+        </div>
     </div>
 </div>
 <!-- End Footer Content -->
