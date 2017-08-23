@@ -117,6 +117,9 @@ p {
  *  @@ File: base/_buttons.scss
  * ----------------------------------------- 
  */
+a {
+  color: #003364; }
+
 .btn {
   color: #0054a6;
   text-transform: uppercase;
@@ -381,6 +384,8 @@ body {
   padding: 4px 10px;
   color: #908b63 !important;
   margin-right: 5px; }
+  .hero-news-container .card-title a, .hero-news-container .card-title a:visited, .hero-news-container .card-title a:hover {
+    color: #908b63 !important; }
 .hero-news-container .card-likes {
   color: #908b63; }
   .hero-news-container .card-likes i {
