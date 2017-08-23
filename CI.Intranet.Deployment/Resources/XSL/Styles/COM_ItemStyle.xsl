@@ -760,8 +760,8 @@
       <div class="recent-news-wrapper">
       <div class="card">
           <xsl:if test="string-length($SafeImageUrl) != 0">
-              <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
-                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top img-fluid"></image-loader>
+              <a href="{$SafeLinkUrl}" class="">
+                <image-loader image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}" image-css-class="card-img-top "></image-loader>
               </a>
           </xsl:if>
 

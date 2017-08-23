@@ -30,10 +30,10 @@
   <xsl:param name="CBQPageUrl" />
   <xsl:param name="CBQPageUrlQueryStringForFilters" />
   <xsl:param name="EffectiveDeviceChannel" />
-  <xsl:variable name="BeginList" select="string('&lt;ul class=&quot;dfwp-list&quot;&gt;')" />
-  <xsl:variable name="EndList" select="string('&lt;/ul&gt;')" />
-  <xsl:variable name="BeginListItem" select="string('&lt;li class=&quot;dfwp-item&quot;&gt;')" />
-  <xsl:variable name="EndListItem" select="string('&lt;/li&gt;')" />
+  <xsl:variable name="BeginList" select="string('&lt;div class=&quot;list-wrapper&quot;&gt;')" />
+  <xsl:variable name="EndList" select="string('&lt;/div&gt;')" />
+  <xsl:variable name="BeginListItem" select="string('&lt;div class=&quot;list-content&quot;&gt;')" />
+  <xsl:variable name="EndListItem" select="string('&lt;/div&gt;')" />
   <xsl:template match="/">
     <xsl:call-template name="OuterTemplate" />
   </xsl:template>

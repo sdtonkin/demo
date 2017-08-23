@@ -1,4 +1,4 @@
-﻿<div class="container">
+﻿<!-- <div class="container">
 <nav class="row">
     <div class="col-sm-1 nav-icon">
         <img src="/sites/stage/_catalogs/masterpage/Compassion/images/skippy-white.png" />
@@ -12,7 +12,6 @@
     </div>
     <div class="col-sm-2 nav-search">
         <div class="search-button">
-            <span>|</span>
             <a ng-click="ctrl.toggleSearchBox()">
                 <i class="fa fa-search"></i>
                 <span ng-bind="ctrl.searchTitle"></span>
@@ -22,5 +21,38 @@
             <input id="searchQueryTerm" type="text" value="Search" />
         </div>
     </div>
+</nav>
+</div> -->
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="/sites/stage/_catalogs/masterpage/Compassion/images/skippy-white.png" /></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav mr-auto">
+      <li ng-repeat="node in ctrl.navNodes" class="nav-item">
+            <a ng-href="{{ node.url }}">
+                <div>{{ node.title }}</div>
+            </a>
+        </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+     <!--  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      <div class="search-button">
+            <a ng-click="ctrl.toggleSearchBox()">
+                <i class="fa fa-search"></i>
+                <span ng-bind="ctrl.searchTitle"></span>
+            </a>            
+        </div>
+        <div class="search-background" style="display: none;">
+            <input id="searchQueryTerm" type="text" value="Search" />
+        </div>
+    </div>
+  </div>
 </nav>
 </div>
