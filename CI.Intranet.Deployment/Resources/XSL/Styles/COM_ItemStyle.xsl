@@ -757,7 +757,7 @@
     <div class="row news-card-container">
     <div class="col-md-6 news-card-wrapper">  
       <div class="row">-->
-      <div class="col-lg-6">
+      <div class="recent-news-wrapper">
       <div class="card">
           <xsl:if test="string-length($SafeImageUrl) != 0">
               <a href="{$SafeLinkUrl}" class="card-img-top img-fluid">
@@ -766,7 +766,7 @@
           </xsl:if>
 
           <div class="card-body">
-            <h4 class="card-tags">
+            <h4 class="card-title">
               <xsl:if test="string-length(@NewsType) != 0">
                 <a>
                   <xsl:attribute name="href">
@@ -776,7 +776,7 @@
                 </a>
               </xsl:if>
             </h4>
-            <h4 class="card-tags">
+            <h4 class="card-title">
               <xsl:if test="string-length(@Location) != 0">
                 <a>
                   <xsl:attribute name="href">
@@ -786,7 +786,7 @@
                 </a>
               </xsl:if>
             </h4>
-            <h4 class="card-tags">
+            <h4 class="card-title">
               <xsl:if test="string-length(@Group) != 0">
                 <a>
                   <xsl:attribute name="href">
@@ -926,7 +926,7 @@
         <xsl:value-of select="@Location"/>
       </p>
 
-      <h4 class="card-tags">
+      <h4 class="card-title">
         <xsl:value-of select="@EventType" />
       </h4>
     </div>
