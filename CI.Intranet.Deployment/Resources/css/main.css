@@ -241,8 +241,6 @@ Table of Contents:
   1) General Styles
 ------------------------------------------------------- */
 .main-content-compassion {
-  padding-left: 0;
-  padding-right: 0;
   overflow-x: hidden; }
 
 .container {
@@ -316,6 +314,8 @@ body {
 .footer-container {
   background-color: #003364;
   margin-top: 0;
+  margin-left: -15px;
+  margin-right: -15px;
   padding-top: 40px;
   padding-bottom: 30px;
   /*
@@ -1366,6 +1366,9 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
+#s4-bodyContainer {
+  padding-bottom: 0; }
+
 .main-container h2.ms-webpart-titleText span {
   font-size: 40px;
   text-align: left;
