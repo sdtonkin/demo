@@ -7,17 +7,17 @@
                 <div class="manage-toolbar">
                     <toolbar-manager></toolbar-manager>
                 </div>
-                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-apps')}">
-                    <a class="nav-link" ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active:ctrl.isSelected('ci-apps')}" ng-click="ctrl.select('ci-apps')" href="javascript: void(0);">apps + tools</a>
                 </li>
-                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-documents')}">
-                    <a class="nav-link" ng-click="ctrl.select('ci-documents')" href="javascript: void(0);">documents</a>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active:ctrl.isSelected('ci-documents')}" ng-click="ctrl.select('ci-documents')" href="javascript: void(0);">documents</a>
                 </li>
-                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-bookmarks')}">
-                    <a class="nav-link" ng-click="ctrl.select('ci-bookmarks')" href="javascript: void(0);">bookmarks</a>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active:ctrl.isSelected('ci-bookmarks')}" ng-click="ctrl.select('ci-bookmarks')" href="javascript: void(0);">bookmarks</a>
                 </li>
-                <li class="nav-item" ng-class="{active:ctrl.isSelected('ci-sites')}">
-                    <a class="nav-link" ng-click="ctrl.select('ci-sites')" href="javascript: void(0);">project sites</a>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active:ctrl.isSelected('ci-sites')}" ng-click="ctrl.select('ci-sites')" href="javascript: void(0);">project sites</a>
                 </li>
             </ul>
             <div class="toolbar-content" id="ci-apps" ng-show="ctrl.selectedTabId == 'ci-apps'">
