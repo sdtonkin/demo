@@ -96,8 +96,8 @@
     <xsl:param name="selectedItemStyle" />
 
     <!--<xsl:variable name="BeginColumn1" select="string('&lt;ul class=&quot;dfwp-column dfwp-list&quot; style=&quot;width:')" />-->
-    <xsl:variable name="BeginColumn1" select="string('&lt;ul class=&quot;dfwp-column dfwp-list&quot;&gt;')" />
-    <xsl:variable name="EndColumn" select="string('&lt;/ul&gt;')" />
+    <xsl:variable name="BeginColumn1" select="string('&lt;div class=&quot;hero-main&quot;&gt;')" />
+    <xsl:variable name="EndColumn" select="string('&lt;/div&gt;')" />
     <xsl:variable name="COMBeginColumn">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
