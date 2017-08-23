@@ -20,7 +20,7 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
                     defer.resolve(response);
                 });
 
-            return defer.promise;
+        return defer.promise;    
     }
 
 }]);
