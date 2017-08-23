@@ -4,6 +4,9 @@
  *  @@ File: base/_buttons.scss
  * ----------------------------------------- 
  */
+ a{
+ 	color: $brand-dark-blue;
+ }
  .btn{
  	color: $brand-dark-blue-alt;
  	text-transform: uppercase;

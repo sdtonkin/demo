@@ -18,8 +18,11 @@
 		display: inline-block;
 		border: 1px solid $brand-brown-dull;
 		padding: 4px 10px;
-		color: $brand-brown-gray;
+		color: $brand-brown-gray !important;
 		margin-right: 5px;
+		a, a:visited, a:hover{
+			color: $brand-brown-gray !important;
+		}
 	}
 	.card-likes{
 		color: $brand-brown-gray;
@@ -42,5 +45,11 @@
 	.img-fluid{
 		height: 100%;
 		width: auto;
+	}
+
+}
+.recent-news-wrapper{
+	.card-title{
+		font-size: 15px;
 	}
 }
