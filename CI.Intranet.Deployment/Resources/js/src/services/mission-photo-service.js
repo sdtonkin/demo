@@ -21,6 +21,5 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
 
             return defer.promise;
     }
-    }
 
 }]);
