@@ -1,12 +1,15 @@
 ﻿<div class="spotlights">
+    <h2>Employee Spotlight</h2>
     <div class="row">
         <div class="col-md-4" ng-repeat="spotlight in item.spotlight">
             <div class="story">
                 <div class="copy">
-                    <span class="date numbers">{{spotlight.eventDate}}</span>
-                    <a href="{{spotlight.link}}" target="_blank">
-                        <span class="title">{{spotlight.title}}</span>
-                    </a>
+                    <span class="name">{{spotlight.contact}}</span>
+                    <span class="type">{{spotlight.type}}</span>
+                        <a href="#" target="_blank">
+                            <span class="content">{{spotlight.description}}</span>
+                        </a>
+                    <span class="submitted">{{spotlight.submitted}}</span>
                 </div>
             </div>
         </div>

@@ -13,8 +13,6 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var g = {};
-                    g.id = item.Id;
-                    g.title = item.Title;
                     g.type = item.COM_GratitudeType;
                     g.contact = item.COM_Contact;
                     g.submitted = item.CreatedBy;
