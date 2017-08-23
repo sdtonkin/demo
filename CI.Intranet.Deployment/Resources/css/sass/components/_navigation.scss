@@ -11,8 +11,8 @@ navigation {
     margin-right: -15px;
     background-color: $brand-dark-blue-alt;
     nav {
-        margin-left: 115px;
-        margin-right: 115px;
+        // margin-left: 115px;
+        // margin-right: 115px;
         background-color: $brand-dark-blue-alt;
             
     }
@@ -29,6 +29,7 @@ navigation {
         cursor: pointer;
         // padding: 10px;            
     }
+
     .nav-node{
         // float: left;
         display: inline-block;
@@ -88,11 +89,7 @@ navigation {
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
      }
-     .search-button > a{
-        display: block;
-        height: 100%;
-        margin-top: 30px;
-     }
+    
      .search-button > a::before {
         border-left: 1px solid $brand-white;
         content: "";
@@ -103,6 +100,52 @@ navigation {
         i{
             color: $brand-white;
             padding-right: 10px;
+        }
+     }
+
+     //updated
+     .navbar-brand{
+        margin-right: 40px;
+     }
+     .navbar-toggler{
+        &:hover{
+            background-color: transparent;
+            border: none;
+        }
+     }
+     .navbar-toggler-icon{
+        background-color: transparent;
+        &:hover{
+            background-color: transparent;
+        }
+        i{
+            font-size: 30px;
+            color: $brand-white;
+        }
+     }
+     .nav-item{
+        padding-right: 40px;
+        a, a:visited, a:hover{
+            color: $brand-white;
+            font-size: 21px;
+            @extend .font-lato-med;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+    }
+     .search-button > a{
+        display: block;
+        height: 100%;
+        color: $brand-white;
+        font-size: 21px;
+        @extend .font-lato-med;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        span{
+            color: $brand-white;
         }
      }
 
