@@ -13,8 +13,7 @@ var gulp = require("gulp"),
   OccurrenceOrderPlugin = require("webpack/lib/optimize/OccurrenceOrderPlugin"),
   DedupePlugin = require("webpack/lib/optimize/DedupePlugin"),
   UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin"),
-  IgnorePlugin = require("webpack/lib/IgnorePlugin"),
-  CompressionPlugin = require("compression-webpack-plugin");
+  IgnorePlugin = require("webpack/lib/IgnorePlugin");
 var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 
 
