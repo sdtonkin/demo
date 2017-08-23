@@ -1,4 +1,7 @@
 .main-container{
+    .ms-webpart-titleText.ms-webpart-titleText, .ms-webpart-titleText > a{
+        @extend .font-lato-med;
+    }
     h2.ms-webpart-titleText span {
             font-size: 40px;
             text-align: left;
@@ -23,5 +26,11 @@ table.ms-ToolPaneOuter {
 
     .ms-ToolPaneBody {
         overflow-y: scroll;
+    }
+}
+
+.main-right-rail{
+    div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
+
     }
 }

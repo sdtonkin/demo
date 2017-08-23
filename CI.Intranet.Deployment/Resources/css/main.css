@@ -29,7 +29,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container h2.ms-webpart-titleText span {
+.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container .ms-webpart-titleText, .main-container .ms-webpart-titleText > a, .main-container h2.ms-webpart-titleText span {
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
