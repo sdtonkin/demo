@@ -1,4 +1,4 @@
-
+'use strict';
 var ctrlName = "employeeSpotlight";
 var myApp = angular.module('compassionIntranet');
 
@@ -7,7 +7,7 @@ myApp.controller(ctrlName, ['$scope', 'employeeSpotlightService', 'COM_CONFIG', 
 
     this.$onInit = function () {
         employeeSpotlightService.getGratitudes().then(function (data) {
-            ctrl.globalPartners = data;
+            ctrl.employeeSpotlight = data;
         });
     }
 

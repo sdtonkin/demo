@@ -3,7 +3,6 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
     var ctrl = this;
     ctrl.getMissionPhotos = function(){
 
-
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
                 .get()
