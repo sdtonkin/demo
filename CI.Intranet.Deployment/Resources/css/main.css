@@ -943,9 +943,13 @@ navigation {
     padding-right: 10px; }
   navigation .navbar-brand {
     margin-right: 40px; }
-  navigation .navbar-toggler:hover {
-    background-color: transparent;
-    border: none; }
+    navigation .navbar-brand > img {
+      max-width: 35px; }
+  navigation .navbar-toggler {
+    min-width: 0; }
+    navigation .navbar-toggler:hover {
+      background-color: transparent;
+      border: none; }
   navigation .navbar-toggler-icon {
     background-color: transparent; }
     navigation .navbar-toggler-icon:hover {
@@ -1299,6 +1303,11 @@ section.global-partners img.emp-photo, section.my-department img.emp-photo {
     margin-bottom: 20px; }
   .hero-news-container .card-group {
     margin-bottom: 0; }
+  .hero-news-container .card-title {
+    margin-top: 5px;
+    margin-bottom: 10px; }
+  .hero-news-container .card-date {
+    margin-top: 15px; }
 
   .sub-nav-container {
     margin-bottom: 30px; }
