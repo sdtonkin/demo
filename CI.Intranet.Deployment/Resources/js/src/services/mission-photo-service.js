@@ -7,6 +7,7 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
             web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
                 .get()
                 .then(function (data) {
+                    var defer = $q.defer();
                     var photo = data;
                     var response = [];
                     for (var i = 0; i < photo.length; i++) {
