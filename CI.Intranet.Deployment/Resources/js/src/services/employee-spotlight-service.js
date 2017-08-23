@@ -1,8 +1,7 @@
 'use strict';
 angular.module('compassionIntranet').service('employeeSpotlightService', ['$http', '$q', 'COM_CONFIG', function ($http, $q, COM_CONFIG) {
     var ctrl = this;
-
-    function getGratitudes() {
+    ctrl.getGratitudes = function () {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.gratitudes).items
