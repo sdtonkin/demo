@@ -1,6 +1,8 @@
 ﻿'use strict';
 angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$q', 'COM_CONFIG', 'common', function ($http, $q, COM_CONFIG, common) {
     var ctrl = this;
+    ctrl.getMissionPhotos = function(){
+
 
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
@@ -18,7 +20,8 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
                     defer.resolve(response);
                 });
 
-        return defer.promise;
+            return defer.promise;
+    }
     }
 
 }]);
