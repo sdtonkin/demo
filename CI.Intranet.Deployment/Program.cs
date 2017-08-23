@@ -22,6 +22,21 @@ namespace CI.Intranet.Deployment
             string defaultPassword = ConfigurationManager.AppSettings["Password"];
             //string defaultDomain = ConfigurationManager.AppSettings["Domain"];
 
+            if (args.Length > 0)
+            {
+                if (args.Contains("autodeploy"))
+                {
+                    SecureString pwd1 = new SecureString();
+                    foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                    var domain = string.Empty;
+                    var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
+                    var files = new DirectoryInfo(TEMPLATEDIRECTORYLOCATION);
+                    var fileName = "3 - Files.xml";
+                    rJob.Start(fileName, files, "quiet");
+                    return;
+                }
+            }
+
             Console.WriteLine("Default Site Url: " + defaultSiteUrl);
             //Console.WriteLine("Default Domain: " + defaultDomain);
             Console.WriteLine("Default Username: " + defaultUserName);
@@ -58,6 +73,7 @@ namespace CI.Intranet.Deployment
             ctx.Load(web, w => w.Title);
             ctx.Load(web, w => w.Url);
             ctx.ExecuteQueryRetry();
+
             Console.WriteLine("Site Title: {0}", web.Title);
             Console.WriteLine("Site URL: {0}", web.Url);
 
@@ -67,7 +83,6 @@ namespace CI.Intranet.Deployment
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("We're done. Press Enter to continue.");
             Console.ReadLine();
-
         }
         public static void DisplayJobRunOptions(string siteUrl, string domain, string userName, SecureString pwd, string RunMode = "")
         {

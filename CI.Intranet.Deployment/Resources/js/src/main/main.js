@@ -31,6 +31,7 @@ require('../services/storage-service.js');
 require('../services/taxonomy-service.js');
 require('../services/user-profile-service.js');
 require('../services/weather-service.js');
+require('../services/yammer-api-service.js');
 
 
 // System Components
@@ -46,13 +47,16 @@ require('../components/employee-spotlight.js');
 require('../components/find-people.js');
 require('../components/global-partners.js');
 require('../components/group-summary.js');
+require('../components/how-do-i.js');
 require('../components/image-loader.js');
 require('../components/location-places.js');
+require('../components/mission-photo.js');
 require('../components/my-apps.js');
 require('../components/my-bookmarks.js');
 require('../components/my-department.js');
 require('../components/my-documents.js');
 require('../components/my-rss-feeds.js');
+require('../components/my-sites.js');
 require('../components/my-toolbar.js');
 require('../components/navigation.js');
 require('../components/news-landing.js');

@@ -296,7 +296,6 @@
     <Content Include="Resources\js\src\services\sp-service.js" />
     <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />
-    <Content Include="Resources\js\src\services\contacts-service.js" />
     <Content Include="Resources\js\src\services\department-news-service.js" />
     <Content Include="Resources\js\src\services\how-do-i-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
@@ -472,7 +471,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cmd.exe /c gulp -b "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment" --color --gulpfile "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment\Gulpfile.js" 1-compile</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

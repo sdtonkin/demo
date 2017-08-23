@@ -51,7 +51,7 @@ namespace CI.Intranet.Deployment.Jobs
         public void Start(string fileName, DirectoryInfo directory)
         {
             // get the list of groups sites
-            var sites = Properties.Settings.Default.Setting;
+            var sites = Properties.Settings.Default.GroupSites;
 
             foreach (var url in sites)
             {
