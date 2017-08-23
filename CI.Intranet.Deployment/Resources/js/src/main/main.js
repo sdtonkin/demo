@@ -21,6 +21,7 @@ require('../services/employee-spotlight-service.js');
 require('../services/global-partner-service.js');
 require('../services/graph-service.js');
 require('../services/group-service.js');
+require('../services/mission-photo-service.js');
 require('../services/modal-service.js');
 require('../services/navigation-service.js');
 require('../services/news-service.js');
