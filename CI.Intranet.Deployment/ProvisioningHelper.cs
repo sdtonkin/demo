@@ -114,6 +114,7 @@ namespace CI.Intranet.Deployment
 
                     // Apply template to the site
                     var applyingInformation = new ProvisioningTemplateApplyingInformation();
+                    
                     applyingInformation.HandlersToProcess = Handlers.All;
                     applyingInformation.ProgressDelegate = new ProvisioningProgressDelegate(progressDelegateHandler);
                     web.ApplyProvisioningTemplate(template, applyingInformation);
@@ -140,9 +141,6 @@ namespace CI.Intranet.Deployment
         {
             // Template to be applied to site
             ProvisioningTemplate template = null;
-            Console.WriteLine(resourcesPath);
-            Console.WriteLine(folderName);
-            Console.WriteLine(templateName);
             XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
             template = provider.GetTemplate(templateName);
 
@@ -151,6 +149,7 @@ namespace CI.Intranet.Deployment
             {
                 ProvisioningResourceFolder = resourcesPath;
             }
+            Console.WriteLine(ProvisioningResourceFolder);
             template.Connector = new FileSystemConnector(ProvisioningResourceFolder, "");
 
             return template;
