@@ -7,7 +7,6 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
 
     ctrl.getMissionPhotos = function () {
         var defer = $q.defer();
-
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
                 .get()

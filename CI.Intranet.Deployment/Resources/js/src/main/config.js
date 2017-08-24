@@ -35,7 +35,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 groupLeadership: 'Contacts',
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
-                globalPartners: 'Global Partners'
+                globalPartners: 'Global Partners',
+                missionPhotos: 'missionPhotos',
+                gratitudes: 'Gratitudes'
             }
         });
     }
@@ -72,7 +74,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 groupLeadership: 'Contacts',
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
-                globalPartners: 'Global Partners'
+                globalPartners: 'Global Partners',
+                missionPhotos: 'missionPhotos',
+                gratitudes: 'Gratitudes'
             }
         });
     }
@@ -111,7 +115,9 @@ else {
             groupLeadership: 'Contacts',
             navigation: 'Navigation',
             userInfo: 'User Information List',
-            globalPartners: 'Global Partners'
+            globalPartners: 'Global Partners',
+            missionPhotos: 'missionPhotos',
+            gratitudes: 'Gratitudes'
         }
     });
 }

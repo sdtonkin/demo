@@ -7,12 +7,10 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
 
     ctrl.getGratitudes = function () {
         var defer = $q.defer();
-
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.gratitudes).items
             .get()
             .then(function (data) {
-
                 var links = [];
                 var promises = [];
                 var items = data;
