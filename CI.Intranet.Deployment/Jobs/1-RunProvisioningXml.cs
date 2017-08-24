@@ -28,6 +28,8 @@ namespace CI.Intranet.Deployment.Jobs
         }
         public void Start(string fileName, DirectoryInfo directory, string options)
         {
+            Console.WriteLine(fileName);
+            Console.WriteLine(directory.FullName);
             using (var ctx = base.GetClientContext())
             {
                 var template = ProvisioningHelper.GetProvisioningTemplateFromResourcePath(fileName, directory);
