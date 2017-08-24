@@ -10,7 +10,7 @@
   </pnp:File>
 -->
 
-  <pnp:File Src="CI.Intranet.Deployment\Resources\PageLayouts\COM_ContentPage.aspx" Folder="{masterpagecatalog}/Compassion/PageLayouts" Overwrite="true" Level="Published">
+  <pnp:File Src="PageLayouts\COM_ContentPage.aspx" Folder="{masterpagecatalog}/Compassion/PageLayouts" Overwrite="true" Level="Published">
     <pnp:Properties>
       <pnp:Property Key="Title" Value="Compassion Content Page Layout" />
       <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Page Layout}" />
