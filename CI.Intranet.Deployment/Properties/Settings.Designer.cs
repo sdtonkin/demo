@@ -35,9 +35,9 @@ namespace CI.Intranet.Deployment.Properties {
   <string>https://compassion.sharepoint.com/sites/stage-hr</string>
   <string>https://compassion.sharepoint.com/sites/stage-innovation</string>
 </ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection GroupSites {
+        public global::System.Collections.Specialized.StringCollection GroupSitesStage {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["GroupSites"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["GroupSitesStage"]));
             }
         }
     }

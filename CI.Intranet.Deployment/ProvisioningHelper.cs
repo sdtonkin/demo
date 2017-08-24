@@ -114,6 +114,7 @@ namespace CI.Intranet.Deployment
 
                     // Apply template to the site
                     var applyingInformation = new ProvisioningTemplateApplyingInformation();
+                    
                     applyingInformation.HandlersToProcess = Handlers.All;
                     applyingInformation.ProgressDelegate = new ProvisioningProgressDelegate(progressDelegateHandler);
                     web.ApplyProvisioningTemplate(template, applyingInformation);
@@ -131,18 +132,18 @@ namespace CI.Intranet.Deployment
         }
 
 
-        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, DirectoryInfo directory)
+        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, DirectoryInfo directory, string provisionResourceFolder = null)
         {
-            return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name);
+            if (provisionResourceFolder == null)
+                return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name);
+            else
+                return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name, provisionResourceFolder);
         }
 
         public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, string resourcesPath, string folderName)
         {
             // Template to be applied to site
             ProvisioningTemplate template = null;
-            Console.WriteLine(resourcesPath);
-            Console.WriteLine(folderName);
-            Console.WriteLine(templateName);
             XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
             template = provider.GetTemplate(templateName);
 
@@ -151,11 +152,21 @@ namespace CI.Intranet.Deployment
             {
                 ProvisioningResourceFolder = resourcesPath;
             }
+            Console.WriteLine(ProvisioningResourceFolder);
             template.Connector = new FileSystemConnector(ProvisioningResourceFolder, "");
 
             return template;
         }
+        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, string resourcesPath, string folderName, string provisionResourceFolderPath)
+        {
+            // Template to be applied to site
+            ProvisioningTemplate template = null;
+            XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
+            template = provider.GetTemplate(templateName);
+            template.Connector = new FileSystemConnector(provisionResourceFolderPath, "");
 
+            return template;
+        }
         public static void ReportOnTemplateStats(ProvisioningTemplate template)
         {
             Console.WriteLine("");
