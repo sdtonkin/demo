@@ -18,7 +18,7 @@
  		margin-top: 30px;
  		margin-bottom: 30px;
  		&:after{
- 			font-family: FontAwesome;
+ 			font-family: FontAwesome !important;
  			content: '\f054';
  			display: inline-block;
  			@extend .font-lato-light;
@@ -97,7 +97,7 @@
 	li{
 		display: table;
 		&:before{
-			font-family: FontAwesome;
+			font-family: FontAwesome !important;
 			content:"\f0c1";
 			display: table-cell;
 			padding-right: 10px;
