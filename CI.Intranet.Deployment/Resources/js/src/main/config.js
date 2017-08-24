@@ -15,7 +15,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             yammer: {
                 appId: '',
                 network: 'compassion.com',
-                defaultGroupId: ''
+                defaultGroupId: '12687321'
             },
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
@@ -35,7 +35,10 @@ if (document.location.host === "compassion.sharepoint.com") {
                 groupLeadership: 'Contacts',
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
-                globalPartners: 'Global Partners'
+                globalPartners: 'Global Partners',
+                missionPhotos: 'missionPhotos',
+                gratitudes: 'Gratitudes',
+                resourceLinks: 'Resource Links'
             }
         });
     }
@@ -52,7 +55,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             yammer: {
                 appId: '',
                 network: 'compassion.com',
-                defaultGroupId: ''
+                defaultGroupId: '12687321'
             },            
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
@@ -72,7 +75,10 @@ if (document.location.host === "compassion.sharepoint.com") {
                 groupLeadership: 'Contacts',
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
-                globalPartners: 'Global Partners'
+                globalPartners: 'Global Partners',
+                missionPhotos: 'missionPhotos',
+                gratitudes: 'Gratitudes',
+                resourceLinks: 'Resource Links'
             }
         });
     }
@@ -91,7 +97,7 @@ else {
         yammer: {
             appId: '',
             network: 'compassion.com',
-            defaultGroupId: ''
+            defaultGroupId: '12687321'
         },
         termSets: {
             locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
@@ -111,7 +117,10 @@ else {
             groupLeadership: 'Contacts',
             navigation: 'Navigation',
             userInfo: 'User Information List',
-            globalPartners: 'Global Partners'
+            globalPartners: 'Global Partners',
+            missionPhotos: 'missionPhotos',
+            gratitudes: 'Gratitudes',
+            resourceLinks: 'Resource Links'
         }
     });
 }

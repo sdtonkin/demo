@@ -1,9 +1,9 @@
-﻿<pnp:Lists xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <!--
+﻿<pnp:Lists xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema"> 
   <pnp:ListInstance Title="RSS Feeds" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">CNN</pnp:DataValue>
@@ -14,6 +14,7 @@
         <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.bbci.co.uk/news/rss.xml</pnp:DataValue>
       </pnp:DataRow>      
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="User RSS Feeds" Description="User RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserRssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -24,6 +25,7 @@
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100176552393A3C4355AE16E44D91877268" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">HR Benefits</pnp:DataValue>
@@ -38,6 +40,7 @@
         <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="User Tools" Description="User Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -48,6 +51,7 @@
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100D9716F4B2E514B688A5333A597E236EE" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">jslint</pnp:DataValue>
@@ -60,11 +64,13 @@
         <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Group Info" Description="Group Info List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GroupInfo" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100973A29096FFA4B57A15024A2EAB328ED" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">General Counsel Office (GCO)</pnp:DataValue>
@@ -92,11 +98,13 @@
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Navigation" Description="Navigation List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/Navigation" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100344B4251E45F447B9DF2E39225D540BA" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Who We Are</pnp:DataValue>
@@ -123,14 +131,14 @@
         <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/employee-life.aspx</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
-  -->
-
   <pnp:ListInstance Title="Global Partners" Description="Global Partners List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
     </pnp:FieldRefs>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Australia</pnp:DataValue>
@@ -177,5 +185,6 @@
         <pnp:DataValue FieldName="Title">United States of America</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
 </pnp:Lists>
