@@ -17,6 +17,7 @@ namespace CI.Intranet.Deployment
         private static readonly String GROUPSTEMPLATEDIRECTORYLOCATION = "../../Templates/Sections/Groups";
         static void Main(string[] args)
         {
+            Console.WriteLine(args[0]);
             string defaultSiteUrl = ConfigurationManager.AppSettings["SharePointSiteUrl"];
             string defaultUserName = ConfigurationManager.AppSettings["UserName"];
             string defaultPassword = ConfigurationManager.AppSettings["Password"];
