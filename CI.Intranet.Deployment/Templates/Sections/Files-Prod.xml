@@ -9,8 +9,8 @@
     </pnp:Properties>
   </pnp:File>
 -->
-
-  <pnp:File Src="CI.Intranet.Deployment\Resources\PageLayouts\COM_ContentPage.aspx" Folder="{masterpagecatalog}/Compassion/PageLayouts" Overwrite="true" Level="Published">
+  
+  <pnp:File Src="Resources\PageLayouts\COM_ContentPage.aspx" Folder="{masterpagecatalog}/Compassion/PageLayouts" Overwrite="true" Level="Published">
     <pnp:Properties>
       <pnp:Property Key="Title" Value="Compassion Content Page Layout" />
       <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Page Layout}" />
@@ -58,7 +58,7 @@
   <pnp:File Src="js\dist\main.min.js.map" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
   -->
 
-  <!-- LIB JS 
+<!-- LIB JS 
   <pnp:File Src="js\lib\angular.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\angular.min.js.map" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\bootstrap.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
