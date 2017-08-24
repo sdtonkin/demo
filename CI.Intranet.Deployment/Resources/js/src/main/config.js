@@ -38,6 +38,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 globalPartners: 'Global Partners',
                 missionPhotos: 'missionPhotos',
                 gratitudes: 'Gratitudes',
+                anniversary: 'Anniversary and Retirement',
+                newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
             }
         });
@@ -78,6 +80,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 globalPartners: 'Global Partners',
                 missionPhotos: 'missionPhotos',
                 gratitudes: 'Gratitudes',
+                anniversary: 'Anniversary and Retirement',
+                newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
             }
         });
@@ -120,6 +124,8 @@ else {
             globalPartners: 'Global Partners',
             missionPhotos: 'missionPhotos',
             gratitudes: 'Gratitudes',
+            anniversary: 'Anniversary and Retirement',
+            newHire: 'New Hires',
             resourceLinks: 'Resource Links'
         }
     });
