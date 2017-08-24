@@ -486,6 +486,23 @@ body {
       font-size: 14px;
       display: block; }
 
+.ci-people .container {
+  padding-left: 30px;
+  padding-right: 30px; }
+
+.ci-places location-places .card {
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 0;
+  border-color: #908b63; }
+  .ci-places location-places .card:first-child {
+    border-top: none; }
+.ci-places location-places h5 {
+  text-transform: uppercase; }
+.ci-places location-places ul {
+  padding-left: 0;
+  list-style: none; }
+
 /* 
  * -----------------------------------------
  *  Right Rail
@@ -758,6 +775,8 @@ body {
     border-right: none;
     border-top: none;
     border-radius: 0;
+    color: #908b63; }
+  .news-events .nav-link.alt {
     color: #908b63; }
 .news-events .upcoming-events {
   max-width: none;
@@ -1234,7 +1253,7 @@ navigation {
 
 /* 
  * -----------------------------------------
- *  Departments
+ *  People Places
  *  @@ File: components/_people-places.scss
  * ----------------------------------------- 
  */
@@ -1249,9 +1268,12 @@ section.people-places h2 {
 section.global-partners h2, section.my-department h2 {
   font-size: 40px;
   text-align: left;
-  color: #908b63; }
+  color: white; }
 section.global-partners img.emp-photo, section.my-department img.emp-photo {
   height: 48px; }
+section.global-partners ul, section.my-department ul {
+  padding-left: 0;
+  list-style: none; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports
