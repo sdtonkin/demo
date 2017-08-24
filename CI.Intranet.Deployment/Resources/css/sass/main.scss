@@ -68,6 +68,8 @@ body {
     p{
         color: $brand-dark-blue;
     }
+
+    
 }
 
 /* ----------------------------------------------------
@@ -274,6 +276,7 @@ body {
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */
-
-@import "low-bandwidth";
+.low-bandwidth{
+	@import "low-bandwidth";
+}
 

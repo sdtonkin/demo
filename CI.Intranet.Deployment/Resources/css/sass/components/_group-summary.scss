@@ -5,14 +5,18 @@
  * ----------------------------------------- 
  */
 
- #group-summary{
+ .group-summary{
 	.card{
 		border-radius: 0;
 		background-color: $brand-white;
-		border-color: $brand-light-blue;
+		//border-color: $brand-light-blue;
+		border-color: transparent;
 	}
 	.card-header{
 		background-color: $brand-white;
+	}
+	.card-body{
+		padding: 20px;
 	}
 	h5 {
 		color: $brand-dark-blue;
