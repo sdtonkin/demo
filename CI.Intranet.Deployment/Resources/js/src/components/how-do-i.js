@@ -4,7 +4,11 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', 'common', 'howDoIService', 'COM_CONFIG', function ($scope, common, howDoIService, COM_CONFIG) {
     var ctrl = this;
+
     this.$onInit = function () {
+        howDoIService.gethowDoI().then(function (data) {
+            ctrl.howDoI = data;
+        });
     }
 }]).component('howDoI', {
     template: require('../../includes/How-Do-I.html'),

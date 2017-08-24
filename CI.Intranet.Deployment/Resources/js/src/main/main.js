@@ -12,6 +12,7 @@ require("../main/config.js");
 require('../main/common.js');
 
 // Services
+require('../components/anniversary-service.js');
 require('../services/app-service.js');
 require('../services/bookmark-service.js');
 require('../services/department-news-service.js');
@@ -20,10 +21,13 @@ require('../services/employee-announcement-service.js');
 require('../services/employee-spotlight-service.js');
 require('../services/global-partner-service.js');
 require('../services/graph-service.js');
+require('../components/gratitudes-service.js');
 require('../services/group-service.js');
+require('../services/how-do-i-service.js');
 require('../services/mission-photo-service.js');
 require('../services/modal-service.js');
 require('../services/navigation-service.js');
+require('../services/new-hire-service.js');
 require('../services/news-service.js');
 require('../services/related-document-service.js');
 require('../services/related-news-service.js');
@@ -41,12 +45,14 @@ require('../main/modal.js');
 require('../main/ui-helper.js');
 
 // Components
+require('../components/anniversary.js');
 require('../components/bookmark-page.js');
 require('../components/department-news.js');
 require('../components/employee-announcement.js');
 require('../components/employee-spotlight.js');
 require('../components/find-people.js');
 require('../components/global-partners.js');
+require('../components/gratitudes.js');
 require('../components/group-summary.js');
 require('../components/how-do-i.js');
 require('../components/image-loader.js');
@@ -60,6 +66,7 @@ require('../components/my-rss-feeds.js');
 require('../components/my-sites.js');
 require('../components/my-toolbar.js');
 require('../components/navigation.js');
+require('../components/newHires.js');
 require('../components/news-landing.js');
 require('../components/people-places.js');
 require('../components/quick-links.js');

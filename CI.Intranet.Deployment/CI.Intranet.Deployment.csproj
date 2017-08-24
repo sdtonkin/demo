@@ -202,6 +202,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\components.html" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
     <Content Include="Resources\images\compassion-white-logo%403x.png" />
@@ -226,13 +227,16 @@
     <Content Include="Resources\images\skippy-white.png" />
     <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
+    <Content Include="Resources\js\includes\Anniversary.html" />
     <Content Include="Resources\js\includes\Contacts.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
+    <Content Include="Resources\js\includes\Gratitudes.html" />
     <Content Include="Resources\js\includes\Mission-Photos.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
     <Content Include="Resources\js\includes\Global-Partners.html" />
     <Content Include="Resources\js\includes\My-Sites.html" />
     <Content Include="Resources\js\includes\My-Department.html" />
+    <Content Include="Resources\js\includes\newHires.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
@@ -260,15 +264,18 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
+    <Content Include="Resources\js\src\components\anniversary.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
+    <Content Include="Resources\js\src\components\gratitudes.js" />
     <Content Include="Resources\js\src\components\image-loader.js" />
     <Content Include="Resources\js\src\components\global-partners.js" />
     <Content Include="Resources\js\src\components\likeController.js" />
     <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\my-sites.js" />
+    <Content Include="Resources\js\src\components\newHires.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
@@ -293,6 +300,9 @@
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\anniversary-service.js" />
+    <Content Include="Resources\js\src\services\gratitudes-service.js" />
+    <Content Include="Resources\js\src\services\new-hire-service.js" />
     <Content Include="Resources\js\src\services\sp-service.js" />
     <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />

@@ -1,0 +1,11 @@
+﻿<section class="gratitudes">
+<div class="card" ng-repeat="anniversary in ctrl.anniversary track by $index">
+    <ul>
+        <li ng-repeat="anniversary.contact">
+            <a ng-href="#">
+                {{anniversary.date}}
+            </a>
+        </li>
+    </ul>
+</div>
+</section>
