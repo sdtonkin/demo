@@ -1,18 +1,30 @@
-﻿<div class="spotlights">
+﻿<section class="spotlights">
     <h2>Employee Spotlight</h2>
-    <div class="row">
-        <div class="col-md-4" ng-repeat="spotlight in item.spotlight">
-            <div class="story">
-                <div class="copy">
-                    <span class="name">{{spotlight.contact}}</span>
-                    <span class="type">{{spotlight.type}}</span>
-                        <a href="#" target="_blank">
-                            <span class="content">{{spotlight.description}}</span>
-                        </a>
-                    <span class="submitted">{{spotlight.submitted}}</span>
-                </div>
-            </div>
-        </div>
+    <ul class="tab-picker row">
+        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('gratitudes')"><h2>gratitudes</h2></li>
+        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('newHires')"><h2>new hires</h2></li>
+        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('anniversary')"><h2>anniversaries + retirements</h2></li>
+    </ul>
+    <div class="ci-gratitudes" ng-show="ctrl.activeTab == 'gratitudes'">
+        <gratitudes></gratitudes>
     </div>
-    <a class="view-all" target="_blank" href="#">See All</a>
-</div>
+    <div class="ci-newHires" ng-show="ctrl.activeTab == 'newHires'">
+        <newHires></newHires>
+    </div>
+    <div class="ci-anniversary" ng-show="ctrl.activeTab == 'anniversary'">
+        <anniversary></anniversary>
+    </div>
+    <input id="ci-pp-activeTab" type="hidden" ng-model="ctrl.activeTab" />
+    
+    <div class="row">
+        <ul>
+            <li class="col-12">
+                <a class="btn btn-cta" href="#">Submit a [Gratitude]</a>
+            </li>
+            <li class="col-12">
+                <a class="btn btn-cta" href="#">View All</a>
+            </li>
+       </ul>
+    </div>
+
+</section>

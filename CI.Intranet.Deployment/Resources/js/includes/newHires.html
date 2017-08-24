@@ -1,0 +1,11 @@
+﻿<section class="new-hires">
+    <div class="card" ng-repeat="newhire in ctrl.newHire track by $index">
+        <ul>
+            <li ng-repeat="newHire.contact">
+                <a ng-href="#">
+                    {{newHire.date}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
