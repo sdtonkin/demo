@@ -98,3 +98,29 @@
 		}
 	}
  }
+ .ci-people{
+ 	.container{
+	 	padding-left: 30px;
+	 	padding-right: 30px;
+ 	}
+}
+.ci-places{
+	location-places{
+		.card{
+			padding: 30px;
+			margin-bottom: 30px;
+			border-radius: 0;
+			border-color: $brand-brown-gray;
+			&:first-child{
+				border-top: none;
+			}
+		}
+		h5{
+			text-transform: uppercase;
+		}
+		ul{
+			padding-left: 0;
+			list-style: none;
+		}
+	}
+}
