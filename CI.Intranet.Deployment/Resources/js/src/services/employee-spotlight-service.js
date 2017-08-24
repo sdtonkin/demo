@@ -6,12 +6,11 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
     ES6Promise.polyfill();
 
     ctrl.getGratitudes = function () {
-
+        var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.gratitudes).items
             .get()
             .then(function (data) {
-                var defer = $q.defer();
                 var links = [];
                 var promises = [];
                 var items = data;
@@ -23,6 +22,7 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
                     g.submitted = item.CreatedBy;
                     g.description = item.COM_GratitudeDescription;
                 }
+                defer.resolve(response);
             });
 
         return defer.promise;
