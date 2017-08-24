@@ -14,7 +14,7 @@
 			After="<% $SPUrl:~sitecollection/Style Library/~language/Themable/Core Styles/pagelayouts15.css %>" runat="server"/>
 	</PublishingWebControls:EditModePanel>
 	<SharePointWebControls:FieldValue id="PageStylesField" FieldName="HeaderStyleDefinitions" runat="server"/>
-    <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
+    
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderPageTitle" runat="server">
 	<SharePointWebControls:FieldValue id="PageTitle" FieldName="Title" runat="server"/>
@@ -65,6 +65,22 @@
             </div>
         </div> <!--/.container-->
     </div><!--main-container-->
+    <div id=”embedded-feed” style=”height:400px;width:100%; “></div>
+    <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
+    <script>
+        yam.connect.embedFeed({
+            container: '#embedded-feed',
+            network: 'compassion.com',
+            feedType: 'open-graph',
+            config: {
+                defaultGroupId: 12687321,
+                showOpenGraphPreview: false,
+                promptText: 'Comment on this article',
+                header: false,
+                footer: false
+            }
+        });
+    </script>
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">
         <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
