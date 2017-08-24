@@ -140,7 +140,9 @@ namespace CI.Intranet.Deployment
         {
             // Template to be applied to site
             ProvisioningTemplate template = null;
-
+            Console.WriteLine(resourcesPath);
+            Console.WriteLine(folderName);
+            Console.WriteLine(templateName);
             XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
             template = provider.GetTemplate(templateName);
 
