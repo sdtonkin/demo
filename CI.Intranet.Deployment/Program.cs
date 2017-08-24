@@ -17,7 +17,7 @@ namespace CI.Intranet.Deployment
         private static readonly String GROUPSTEMPLATEDIRECTORYLOCATION = "../../Templates/Sections/Groups";
         static void Main(string[] args)
         {
-            Console.WriteLine(args[0]);
+            
             string defaultSiteUrl = ConfigurationManager.AppSettings["SharePointSiteUrl"];
             string defaultUserName = ConfigurationManager.AppSettings["UserName"];
             string defaultPassword = ConfigurationManager.AppSettings["Password"];
@@ -31,9 +31,10 @@ namespace CI.Intranet.Deployment
                     foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
                     var domain = string.Empty;
                     var files = new DirectoryInfo("CI.Intranet.Deployment/Templates");
-                    var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                    //var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                    var fileNames = "3-Files.xml".Split(',');
 
-                    foreach(var file in fileNames)
+                    foreach (var file in fileNames)
                     {
                         var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
                         rJob.Start(file, files, "quiet");
