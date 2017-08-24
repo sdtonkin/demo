@@ -27,6 +27,11 @@ namespace CI.Intranet.Deployment
             {
                 if (args[0] == "autodeploy")
                 {
+                    defaultSiteUrl = ConfigurationManager.AppSettings["D-SharePointSiteUrl"];
+                    defaultUserName = ConfigurationManager.AppSettings["D-UserName"];
+                    defaultPassword = ConfigurationManager.AppSettings["D-Password"];
+                    var resourceFolder = ConfigurationManager.AppSettings["D-ProvisioningResourceFolder"];
+                    var exportFolder = ConfigurationManager.AppSettings["D-ExportTemplateFolder"];
                     SecureString pwd1 = new SecureString();
                     foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
                     var domain = string.Empty;
@@ -37,7 +42,7 @@ namespace CI.Intranet.Deployment
                     foreach (var file in fileNames)
                     {
                         var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
-                        rJob.Start(file, files, "quiet");
+                        rJob.Start(file, files, "quiet", resourceFolder);
                     }
                     
                     return;

@@ -132,9 +132,12 @@ namespace CI.Intranet.Deployment
         }
 
 
-        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, DirectoryInfo directory)
+        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, DirectoryInfo directory, string provisionResourceFolder = null)
         {
-            return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name);
+            if (provisionResourceFolder == null)
+                return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name);
+            else
+                return GetProvisioningTemplateFromResourcePath(templateName, directory.Parent.FullName, directory.Name, provisionResourceFolder);
         }
 
         public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, string resourcesPath, string folderName)
@@ -154,7 +157,16 @@ namespace CI.Intranet.Deployment
 
             return template;
         }
+        public static ProvisioningTemplate GetProvisioningTemplateFromResourcePath(string templateName, string resourcesPath, string folderName, string provisionResourceFolderPath)
+        {
+            // Template to be applied to site
+            ProvisioningTemplate template = null;
+            XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
+            template = provider.GetTemplate(templateName);
+            template.Connector = new FileSystemConnector(provisionResourceFolderPath, "");
 
+            return template;
+        }
         public static void ReportOnTemplateStats(ProvisioningTemplate template)
         {
             Console.WriteLine("");

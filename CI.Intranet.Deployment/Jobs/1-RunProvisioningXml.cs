@@ -26,13 +26,15 @@ namespace CI.Intranet.Deployment.Jobs
         public RunProvisioningXml(string siteUrl, string domain, string userName, SecureString pwdS) : base(siteUrl, domain, userName, pwdS) {
 
         }
-        public void Start(string fileName, DirectoryInfo directory, string options)
+        public void Start(string fileName, DirectoryInfo directory, string options, string provisionResourceFolder = null)
         {
-            Console.WriteLine(fileName);
-            Console.WriteLine(directory.FullName);
+            ProvisioningTemplate template = null;
             using (var ctx = base.GetClientContext())
             {
-                var template = ProvisioningHelper.GetProvisioningTemplateFromResourcePath(fileName, directory);
+                if (provisionResourceFolder == null)
+                    template = ProvisioningHelper.GetProvisioningTemplateFromResourcePath(fileName, directory);
+                else
+                    template = ProvisioningHelper.GetProvisioningTemplateFromResourcePath(fileName, directory, provisionResourceFolder);
                 ProvisioningHelper.ReportOnTemplateStats(template);
                 if (options.ToLower().IndexOf("quiet") < 0)
                 {
