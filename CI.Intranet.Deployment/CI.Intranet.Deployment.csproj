@@ -377,6 +377,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\3-Files.xml" />
+    <Content Include="Templates\Sections\Files-Prod.xml" />
     <Content Include="Templates\Sections\Files.xml" />
     <Content Include="Templates\Sections\FilesSearch.xml" />
     <Content Include="Templates\Sections\Groups\1-TermSet.xml" />
