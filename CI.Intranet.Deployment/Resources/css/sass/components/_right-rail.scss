@@ -121,11 +121,20 @@
 		}
 	}
 	.rss-date{
-		font-size: 14px;
+		font-size: 12px;
 		@extend .font-lato-bold;
 		color: $brand-light-blue;
 	}
 }
+// rss-feed-manager{
+// 	a{
+// 		&:before{
+// 			font-family: 'FontAwesome';
+// 			content: "\f013";
+// 			display: inline-block;
+// 		}
+// 	}
+// }
 .upcoming-events{
 	background-color: $brand-white;
 	border-radius: 0;

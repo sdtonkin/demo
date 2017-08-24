@@ -20,7 +20,6 @@
 * @@ Usage .font-lato-reg();
 * ------------------------------------------------------- 
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("sass/base/weather-icons.min.css");
 .font-lato-light, h2, .h2, .btn.btn-cta:after, .weather .weather-info {
   font-family: 'Lato', sans-serif !important;
@@ -131,7 +130,7 @@ a {
     margin-top: 30px;
     margin-bottom: 30px; }
     .btn.btn-cta:after {
-      font-family: FontAwesome;
+      font-family: FontAwesome !important;
       content: '\f054';
       display: inline-block;
       font-size: 15px;
@@ -191,7 +190,7 @@ a {
 .helpful-links li {
   display: table; }
   .helpful-links li:before {
-    font-family: FontAwesome;
+    font-family: FontAwesome !important;
     content: "\f0c1";
     display: table-cell;
     padding-right: 10px; }
@@ -578,7 +577,7 @@ body {
     font-size: 18px;
     line-height: 22px; }
   .rss-feed .rss-date {
-    font-size: 14px;
+    font-size: 12px;
     color: #88bee7; }
 
 .upcoming-events {
@@ -1055,6 +1054,9 @@ navigation {
   display: block; }
 .weather .weather-info {
   font-size: 22px; }
+
+.toolbar-toggle-button {
+  float: right; }
 
 /* 
  * -----------------------------------------
