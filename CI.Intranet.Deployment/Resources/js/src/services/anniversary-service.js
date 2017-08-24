@@ -19,8 +19,9 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
                     var g = {};
                     g.contact = item.COM_Contact;
                     g.date = item.COM_EventDate;
+                    links.push(g);
                 }
-                defer.resolve(response);
+                defer.resolve(links);
             });
 
         return defer.promise;
