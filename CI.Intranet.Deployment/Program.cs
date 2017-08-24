@@ -30,7 +30,7 @@ namespace CI.Intranet.Deployment
                     SecureString pwd1 = new SecureString();
                     foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
                     var domain = string.Empty;
-                    var files = new DirectoryInfo(TEMPLATEDIRECTORYLOCATION);
+                    var files = new DirectoryInfo("../../../" + TEMPLATEDIRECTORYLOCATION);
                     var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
 
                     foreach(var file in fileNames)
