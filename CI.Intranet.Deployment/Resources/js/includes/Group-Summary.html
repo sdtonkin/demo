@@ -3,7 +3,7 @@
         <div class="card" ng-repeat="group in ctrl.groups track by group.id">
             <div class="card-header row" role="tab" id="headingOne">
                 <div class="col-sm-8">
-                    <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">
+                    <a class="toolbar-toggle-button" ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">
                         <i class="fa fa-plus" ng-show="!ctrl.isGroupActive(group.id)"></i>
                         <i class="fa fa-minus" ng-show="ctrl.isGroupActive(group.id)"></i>
                         <h5 class="mb-0">{{group.name}}</h5>
