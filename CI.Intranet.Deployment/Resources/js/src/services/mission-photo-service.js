@@ -6,11 +6,11 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
     ES6Promise.polyfill();
 
     ctrl.getMissionPhotos = function () {
+        var defer = $q.defer();
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
                 .get()
                 .then(function (data) {
-                    var defer = $q.defer();
                     var photo = data;
                     var response = [];
                     for (var i = 0; i < photo.length; i++) {

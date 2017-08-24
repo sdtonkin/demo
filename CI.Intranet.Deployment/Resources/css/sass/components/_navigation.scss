@@ -106,8 +106,12 @@ navigation {
      //updated
      .navbar-brand{
         margin-right: 40px;
+        > img{
+            max-width: 35px;
+        }
      }
      .navbar-toggler{
+        min-width: 0;
         &:hover{
             background-color: transparent;
             border: none;
