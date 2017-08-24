@@ -21,8 +21,9 @@ angular.module('compassionIntranet').service('employeeSpotlightService', ['$http
                     g.contact = item.COM_Contact;
                     g.submitted = item.CreatedBy;
                     g.description = item.COM_GratitudeDescription;
+                    links.push(g);
                 }
-                defer.resolve(response);
+                defer.resolve(links);
             });
 
         return defer.promise;
