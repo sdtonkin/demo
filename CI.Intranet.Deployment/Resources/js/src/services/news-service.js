@@ -2,8 +2,6 @@
 
 angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM_CONFIG', function($q, $http, COM_CONFIG) {
 
-
-
     this.getLandingNews = function(location, category, queryTerm, startrow) {
         var deferred = $q.defer();
         //var start = startrow ? startrow : 0;

@@ -202,6 +202,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\components.html" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
     <Content Include="Resources\images\compassion-white-logo%403x.png" />
