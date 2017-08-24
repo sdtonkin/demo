@@ -21,6 +21,7 @@
 * ------------------------------------------------------- 
 */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url("sass/base/weather-icons.min.css");
 .font-lato-light, h2, .h2, .btn.btn-cta:after, .weather .weather-info {
   font-family: 'Lato', sans-serif !important;
   font-weight: 100; }
@@ -539,7 +540,8 @@ body {
 .world-news {
   background-color: #003364;
   max-width: 320px;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  padding: 20px 20px 0; }
   .world-news .card-text {
     color: white;
     margin-bottom: 25px; }
@@ -551,9 +553,9 @@ body {
     margin-top: 0; }
 
 .rss-feed {
-  padding-left: 0;
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  padding-left: 0; }
   .rss-feed hr {
     display: none; }
   .rss-feed > li {
@@ -1043,7 +1045,9 @@ navigation {
   display: inline-block; }
 .weather .weather-icon {
   font-size: 40px;
-  margin-right: 15px; }
+  margin-right: 15px;
+  position: relative;
+  top: 8px; }
 .weather .weather-location {
   font-size: 12px;
   text-transform: uppercase;
@@ -1058,13 +1062,15 @@ navigation {
  *  @@ File: components/_group-summary.scss
  * ----------------------------------------- 
  */
-#group-summary .card {
+.group-summary .card {
   border-radius: 0;
   background-color: white;
-  border-color: #88bee7; }
-#group-summary .card-header {
+  border-color: transparent; }
+.group-summary .card-header {
   background-color: white; }
-#group-summary h5 {
+.group-summary .card-body {
+  padding: 20px; }
+.group-summary h5 {
   color: #003364;
   text-transform: uppercase;
   display: inline; }
@@ -1400,3 +1406,5 @@ table.ms-ToolPaneOuter {
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */
+.low-bandwidth .card.img-card, .low-bandwidth image-loader, .low-bandwidth .employee-card img {
+  display: none !important; }

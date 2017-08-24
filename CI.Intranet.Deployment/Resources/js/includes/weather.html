@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <div class="weather row" ng-if="temp">
         <div class="col-sm-4">
             <div class="image">
@@ -17,6 +17,27 @@
         There was an issue connecting to the weather service
     </div>
 </section>
+ -->
+
+<div class="media weather" ng-if="temp">
+    <div class="weather-icon">
+      <i ng-class="image" aria-hidden="true"></i>
+      </div>
+      <div class="media-body">
+        <span class="weather-location">{{city}}, {{state}}</span>
+        <span class="weather-info">
+          <span class="weather-temp">{{temp}}</span>
+          <sup>
+          <i class="fa fa-circle-o" aria-hidden="true"></i>
+          </sup>
+          <span class="weather-detail">{{unit}} and {{text}}</span>
+        </span>
+      </div>
+</div>
+<div class="media weather" ng-if="noWeather">
+    There was an issue connecting to the weather service
+</div>
+
 
     
 

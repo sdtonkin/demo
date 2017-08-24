@@ -59,46 +59,46 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
                 var desc = data.query.results.channel.item.condition.text;
                 var span = "";
                 if (desc == "Heavy Snow" || desc == "Snow" || desc == "Snow Showers") {
-                    span = "icon-weather_cloud_snowflake";
+                    span = "wi wi-snowflake-cold";
                 } else {
                     if (desc == "Cloudy" || desc == "Mostly Cloudy" || desc == "Partly Cloudy") {
-                        span = "icon-weather_cloud";
+                        span = "wi wi-cloudy";
                     }
 
                     if (desc == "Scattered Thunderstorms") {
-                        span = "icon-weather_downpour_sun";
+                        span = "wi wi-storm-showers";
                     }
                     if (desc == "Scattered Showers") {
-                        span = "icon-weather_downpour_sun";
+                        span = "wi wi-showers";
 
                     }
                     if (desc == "Fog" || desc == "Foggy" || desc == "Haze") {
-                        span = "icon-weather_fog";
+                        span = "wi wi-fog";
                     }
                     if (desc == "Hail" || desc == "Sleet") {
-                        span = "icon-weather_hail";
+                        span = "wi wi-hail";
                     }
                     if (desc == "Severe Thunderstorms" || desc == "Thuderstorm" || desc == "Thundershowers") {
-                        span = "icon-weather_lightning";
+                        span = "wi wi-lightening";
                     }
                     if (desc == "Showers" || desc == "Rain" || desc == "Freezing Drizzle" || desc == "Drizzle" || desc == "Freezing Rain" || desc == "Mixed Rain and Hail") {
-                        span = "icon-weather_rain";
+                        span = "wi wi-raindrops";
                     }
                     if (desc == "Scattered Snow Showers" || desc == "Light Snow Shower") {
-                        span = "icon-weather_snow_sun";
+                        span = "wi wi-snow";
                     }
                     if (desc == "Snow Flurries" || desc == "Mixed Rain and Snow" || desc == "Mixed Rain and Sleet" || desc == "Mixed Snow and Sleet") {
-                        span = "icon-weather_snow";
+                        span = "wi wi-rain-mix";
                     }
                     if (desc == "Isolated Thunderstorms" || desc == "Isolated Thundershowers") {
-                        span = "icon-weather_storm_sun";
+                        span = "wi wi-thunderstorm";
                     }
                     if (desc == "Sunny") {
-                        span = "icon-weather_sun";
+                        span = "wi wi-day-sunny";
                     }
 
                     if (desc == "Windy" || desc == "Blowing Snow" || desc == "Breezy" || desc == "Blustery") {
-                        span = "icon-weather_windgust";
+                        span = "wi wi-strong-wind";
                     }
                 }
                 //return span;
