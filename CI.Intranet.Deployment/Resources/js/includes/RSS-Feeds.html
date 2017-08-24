@@ -1,10 +1,20 @@
-﻿<div ng-repeat="item in ctrl.myFeeds">
-    <h3>{{ item.title }}</h3>
-    <ul ng-repeat="article in item.articles">
-        <li>
-            <a href="{{ article.guid }}">{{ article.title }}</a>
-            <div>{{ article.publishedSpanString }}</div>
-        </li>
-    </ul>
-</div>
+﻿<section>
+    <div class="card world-news">
+        <div class="card-body">
+            <h2 class="section">World News</h2>
+            <ul ng-repeat="item in ctrl.myFeeds" class="rss-feed">
+                <span class="rss-category">{{ item.title }}</span>
+                <li ng-repeat="article in item.articles" class="row">
+                    <div class="col-10 rss-title">
+                        <a href="{{ article.guid }}">{{ article.title }}</a>
+                    </div>
+                    <div class="col-2 rss-date">
+                        {{ article.publishedSpanString }}
+                    </div>
+                    <div class="col-12 rss-divider"><hr></div>
+                </li>               
+            </ul>
+        </div>
+    </div>
+</section>
 
