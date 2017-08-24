@@ -25,7 +25,7 @@ namespace CI.Intranet.Deployment
 
             if (args.Length > 0)
             {
-                if (args.Contains("autodeploy"))
+                if (args[0] == "autodeploy")
                 {
                     SecureString pwd1 = new SecureString();
                     foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
