@@ -17,10 +17,8 @@
         <pnp:PageLayouts />
       </pnp:Publishing>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/SiteFields.xml"/>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/ContentTypes.xml"/>
-      
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/Lists.xml"/>
-     
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/ContentTypes.xml"/>      
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/Lists.xml"/>     
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
 </pnp:Provisioning>
