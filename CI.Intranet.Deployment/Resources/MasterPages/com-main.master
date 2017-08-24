@@ -92,10 +92,10 @@
                                             
                                         </div>
                                         <div class="col-md-3" ng-show="ctrl.isToolbarOpen">
-                                           <a ng-click="ctrl.isToolbarOpen = false">Close <i class="fa fa-minus"></i></a>
+                                           <a class="toolbar-toggle-button" ng-click="ctrl.isToolbarOpen = false">Close <i class="fa fa-minus"></i></a>
                                         </div>
                                         <div class="col-md-3" ng-show="!ctrl.isToolbarOpen">
-                                           <a ng-click="ctrl.isToolbarOpen = true">Open <i class="fa fa-plus"></i></a>
+                                           <a class="toolbar-toggle-button" ng-click="ctrl.isToolbarOpen = true">Open <i class="fa fa-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
