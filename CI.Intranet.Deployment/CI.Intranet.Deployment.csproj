@@ -259,7 +259,6 @@
     <Content Include="Resources\js\includes\Toolbar.html" />
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
-    <Content Include="Resources\js\includes\Yammer-Feed.html" />
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
@@ -270,7 +269,6 @@
     <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\my-sites.js" />
-    <Content Include="Resources\js\src\components\yammer-feed.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
