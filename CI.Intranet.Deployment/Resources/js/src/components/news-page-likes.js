@@ -7,11 +7,20 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
    
     
     this.$onInit = function () {
-        var messageId = getMessageId();
+        var messageId;
+        if ($scope.messageId == null) {
+            messageId = getMessageId();
+        } else {
+            messageId = $scope.messageId;
+        }
+        
+        if (messageId == null) return;
+
         yammerApiService.getLikesCount(messageId).then(function (response) {
             ctrl.likeCount = response;
         });
     }
+    
     function getMessageId() {
         var messageId = $('iframe#embed-feed').contents().find();
         console.log($('iframe#embed-feed').contents());
@@ -19,5 +28,8 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
 }]).component('newsPageLikes', {
     template: require('../../includes/News-Page-Likes.html'),
     controller: controllerName,
-    controllerAs: 'ctrl'
+    controllerAs: 'ctrl',
+    scope: {
+        messageId: '@'
+    }
 });

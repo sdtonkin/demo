@@ -722,6 +722,7 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
+            <news-page-likes message-id="{@COM_YammerID}"></news-page-likes>
 
 
           </div>
@@ -804,6 +805,7 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
+            <news-page-likes message-id="{@COM_YammerID}"></news-page-likes>
           </div>
          </div>
         </div>
