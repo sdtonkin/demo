@@ -1,15 +1,19 @@
 'use strict';
-var ctrlName = "employeeSpotlight";
-var myApp = angular.module('compassionIntranet');
+var myApp = angular.module('compassionIntranet'),
+    controllerName = 'peoplePlacesController';
 
-myApp.controller(ctrlName, ['$scope', 'employeeSpotlightService', 'COM_CONFIG', function ($scope, employeeSpotlightService, COM_CONFIG) {
+myApp.controller(controllerName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function ($rootScope, $scope, $q, COM_CONFIG) {
     var ctrl = this;
+    ctrl.activeTab = 'gratitudes';
 
     this.$onInit = function () {
-        employeeSpotlightService.getGratitudes().then(function (data) {
-            ctrl.employeeSpotlight = data;
-        });
+        $rootScope.$broadcast('activeTab', 'gratitudes');
+    };
+    ctrl.toggleActiveTab = function (tabName) {
+        ctrl.activeTab = tabName;
+        $rootScope.$broadcast('activeTab', tabName);
     }
+
 
 
 }]).component('employeeSpotlight', {

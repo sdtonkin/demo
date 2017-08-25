@@ -4,6 +4,8 @@ var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'newHireService', 'COM_CONFIG', function ($scope, newHireService, COM_CONFIG) {
     var ctrl = this;
+    ctrl.places = [];
+    ctrl.activeTab = 'newHires';
 
     this.$onInit = function () {
         newHireService.getHire().then(function (data) {
@@ -12,7 +14,7 @@ myApp.controller(ctrlName, ['$scope', 'newHireService', 'COM_CONFIG', function (
     }
 
 
-}]).component('getHire', {
+}]).component('newHire', {
     template: require('../../includes/newHires.html'),
     controller: ctrlName,
     controlleras: 'ctrl',
