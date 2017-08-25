@@ -16,9 +16,9 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
                     g.id = item.Id;
                     g.name = item.Title;
                     g.url = item.Url.Url;
-                    response.push(p);
+                    links.push(p);
                 }
-                defer.resolve(response);
+                defer.resolve(links);
             });
 
             return defer.promise;
