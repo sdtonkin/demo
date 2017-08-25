@@ -230,7 +230,7 @@
     <Content Include="Resources\images\skippy-white.png" />
     <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
-    <Content Include="Resources\js\includes\Anniversary.html" />
+    <Content Include="Resources\js\includes\Anniversary-Card.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Gratitudes.html" />
     <Content Include="Resources\js\includes\Mission-Photos.html" />

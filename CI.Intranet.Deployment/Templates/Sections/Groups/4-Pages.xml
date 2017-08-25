@@ -16,25 +16,27 @@
       <pnp:Publishing AutoCheckRequirements="MakeCompliant">
         <pnp:PageLayouts />
       </pnp:Publishing>
-      <pnp:File Src=".\Pages\index.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
-        <pnp:Properties>
-          <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Groups Page}" />
-          <pnp:Property Key="Title" Value="Compassion Intranet​" />
-          <pnp:Property Key="Comments" Value="PnP Provisioning." />
-          <pnp:Property Key="PublishingPageContent" Value="" />
-          <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/COM_GroupsLanding.aspx, Compassion Groups Page Layout" />
-        </pnp:Properties>
-        <pnp:WebParts>
+        <pnp:Files>
+        <pnp:File Src=".\Pages\index.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Groups Page}" />
+            <pnp:Property Key="Title" Value="Compassion Intranet​" />
+            <pnp:Property Key="Comments" Value="PnP Provisioning." />
+            <pnp:Property Key="PublishingPageContent" Value="" />
+            <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/COM_GroupsLanding.aspx, Compassion Groups Page Layout" />
+          </pnp:Properties>
           <!--
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Spotlight.xml"/>
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Find-People.xml"/>
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/News.xml"/>
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Trending-News.xml"/>
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/World-News.xml"/>
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Events.xml"/>
-          -->
-        </pnp:WebParts>
-      </pnp:File>
+          <pnp:WebParts>            
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Spotlight.xml"/>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Find-People.xml"/>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/News.xml"/>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Trending-News.xml"/>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/World-News.xml"/>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Events.xml"/>           
+          </pnp:WebParts>
+           -->
+        </pnp:File>
+      </pnp:Files>
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
 </pnp:Provisioning>
