@@ -9,7 +9,6 @@ myApp.directive('imageLoader', function () {
                 if (!window.lowBandwidth) {
                     element.append('<img src="' + scope.imageSrc + '" title="' + scope.imageAltText + '" class="' + scope.imageCssClass + '" />');
                 }
-
             });
         },
         scope: {
