@@ -203,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\components.html" />
+    <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
+    <Content Include="Resources\js\includes\News-Page-Likes.html" />
+    <Content Include="Resources\js\lib\weather-icons.min.css" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
     <Content Include="Resources\images\compassion-white-logo%403x.png" />
@@ -227,8 +230,7 @@
     <Content Include="Resources\images\skippy-white.png" />
     <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
-    <Content Include="Resources\js\includes\Anniversary.html" />
-    <Content Include="Resources\js\includes\Contacts.html" />
+    <Content Include="Resources\js\includes\Anniversary-Card.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Gratitudes.html" />
     <Content Include="Resources\js\includes\Mission-Photos.html" />
@@ -265,8 +267,8 @@
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\anniversary.js" />
+    <Content Include="Resources\js\src\components\news-page-likes.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
-    <Content Include="Resources\js\src\components\contacts.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
     <Content Include="Resources\js\src\components\gratitudes.js" />
     <Content Include="Resources\js\src\components\image-loader.js" />
@@ -377,7 +379,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\3-Files.xml" />
-    <Content Include="Templates\Sections\Files-Prod.xml" />
     <Content Include="Templates\Sections\Files.xml" />
     <Content Include="Templates\Sections\FilesSearch.xml" />
     <Content Include="Templates\Sections\Groups\1-TermSet.xml" />
@@ -385,6 +386,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\Groups\3-Files.xml" />
+    <Content Include="Templates\Sections\Groups\4-Pages.xml" />
     <Content Include="Templates\Sections\Lists.xml" />
     <Content Include="Templates\Sections\Pages.xml" />
     <Content Include="Templates\Sections\Security.xml" />
@@ -431,6 +433,10 @@
     <None Include="Resources\css\sass\components\_search.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\components\_work-resources.scss" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.eot" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.ttf" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff2" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />

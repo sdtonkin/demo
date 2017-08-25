@@ -68,6 +68,7 @@ require('../components/my-toolbar.js');
 require('../components/navigation.js');
 require('../components/newHires.js');
 require('../components/news-landing.js');
+require('../components/news-page-likes.js');
 require('../components/people-places.js');
 require('../components/quick-links.js');
 require('../components/related-documents.js');

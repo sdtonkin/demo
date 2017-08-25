@@ -1,5 +1,7 @@
 ﻿'use strict';
 angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
+    var ctrl = this;
+    ctrl.howDoi = function () {
 
     ctrl.gethowDoi = function () {
         var defer = $q.defer();
