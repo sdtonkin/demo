@@ -1,5 +1,5 @@
 'use strict';
-var ctrlName = "anniversaryCtrl";
+var ctrlName = "anniversaryCardsCtrl";
 var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', function ($scope, anniversaryService, COM_CONFIG) {
@@ -12,8 +12,8 @@ myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', functi
     }
 
 
-}]).component('anniversary', {
-    template: require('../../includes/Anniversary.html'),
+}]).component('anniversaryCards', {
+    template: require('../../includes/Anniversary-Card.html'),
     controller: ctrlName,
     controlleras: 'ctrl',
     bindings: {

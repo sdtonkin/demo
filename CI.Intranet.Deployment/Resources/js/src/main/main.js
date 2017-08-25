@@ -12,7 +12,7 @@ require("../main/config.js");
 require('../main/common.js');
 
 // Services
-require('../components/anniversary-service.js');
+require('../services/anniversary-service.js');
 require('../services/app-service.js');
 require('../services/bookmark-service.js');
 require('../services/department-news-service.js');
@@ -68,6 +68,7 @@ require('../components/my-toolbar.js');
 require('../components/navigation.js');
 require('../components/newHires.js');
 require('../components/news-landing.js');
+require('../components/news-page-likes.js');
 require('../components/people-places.js');
 require('../components/quick-links.js');
 require('../components/related-documents.js');
