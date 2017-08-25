@@ -14,16 +14,22 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
             messageId = $scope.messageId;
         }
         
-        if (messageId == null) return;
+        if (messageId == null) {
+            ctrl.likeCount = 0;
+            return;
+        }
 
-        yammerApiService.getLikesCount(messageId).then(function (response) {
+        yammerApiService.getLikeCountForMessage(messageId).then(function (response) {
             ctrl.likeCount = response;
         });
     }
     
     function getMessageId() {
-        var messageId = $('iframe#embed-feed').contents().find();
-        console.log($('iframe#embed-feed').contents());
+        yammerApiService.getMessagesForGroup(COM_CONFIG.yammer.defaultGroupId).then(function (response) {
+            var url = window.location;
+            var thread = _.find(response.messages, function (data) { return _.findIndex(data.attachments, function(a){ return a.name == url; });
+            return thread.liked_by.count;
+        });
     }
 }]).component('newsPageLikes', {
     template: require('../../includes/News-Page-Likes.html'),

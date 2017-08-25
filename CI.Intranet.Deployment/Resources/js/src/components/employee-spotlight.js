@@ -1,8 +1,8 @@
 'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'peoplePlacesController';
+    ctrlName = 'peoplePlacesController';
 
-myApp.controller(controllerName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function ($rootScope, $scope, $q, COM_CONFIG) {
+myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function ($rootScope, $scope, $q, COM_CONFIG) {
     var ctrl = this;
     ctrl.activeTab = 'gratitudes';
 
