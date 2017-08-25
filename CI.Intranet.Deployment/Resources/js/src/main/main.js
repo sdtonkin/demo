@@ -12,7 +12,7 @@ require("../main/config.js");
 require('../main/common.js');
 
 // Services
-require('../components/anniversary-service.js');
+require('../services/anniversary-service.js');
 require('../services/app-service.js');
 require('../services/bookmark-service.js');
 require('../services/department-news-service.js');
