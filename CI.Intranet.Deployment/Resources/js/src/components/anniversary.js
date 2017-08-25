@@ -1,5 +1,5 @@
 'use strict';
-var ctrlName = "anniversary";
+var ctrlName = "anniversaryCtrl";
 var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', function ($scope, anniversaryService, COM_CONFIG) {
