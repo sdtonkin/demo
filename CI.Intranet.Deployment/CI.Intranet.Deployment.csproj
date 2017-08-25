@@ -203,7 +203,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\components.html" />
-    <Content Include="Resources\css\sass\base\weather-icons.min.css" />
+    <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
+    <Content Include="Resources\js\lib\weather-icons.min.css" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
     <Content Include="Resources\images\compassion-white-logo%403x.png" />
@@ -432,6 +433,10 @@
     <None Include="Resources\css\sass\components\_search.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\components\_work-resources.scss" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.eot" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.ttf" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff2" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
