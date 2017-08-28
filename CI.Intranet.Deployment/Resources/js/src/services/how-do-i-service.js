@@ -5,7 +5,7 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
-    ctrl.gethowDoi = function () {
+    ctrl.gethowDoI = function () {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.resourceLinks).items

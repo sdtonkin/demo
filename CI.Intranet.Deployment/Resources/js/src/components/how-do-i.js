@@ -6,7 +6,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'howDoIService', 'CO
     var ctrl = this;
 
     this.$onInit = function () {
-        howDoIService.gethowDoi().then(function (data) {
+        howDoIService.gethowDoI().then(function (data) {
             ctrl.howDoI = data;
         });
     }
