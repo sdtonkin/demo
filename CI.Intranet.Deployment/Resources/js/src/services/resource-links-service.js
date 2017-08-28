@@ -1,11 +1,11 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
+angular.module('compassionIntranet').service('resourceLinksService', ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
     var ctrl = this;
 
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
-    ctrl.gethowDoi = function () {
+    ctrl.getresourceLinks = function () {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.resourceLinks).items
@@ -24,7 +24,7 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
                 defer.resolve(response);
             });
 
-            return defer.promise;
-        }
+        return defer.promise;
+    }
 
 }]);
