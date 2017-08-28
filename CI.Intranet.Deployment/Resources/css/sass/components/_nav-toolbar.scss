@@ -109,3 +109,11 @@
  .toolbar-toggle-button{
  	float: right;
  }
+ toolbar-manager{
+ 	a:before{
+ 		content: "\f013";
+ 		display: inline-block;
+ 		font-family: "FontAwesome";
+ 		margin-right: 10px;
+ 	}
+ }
