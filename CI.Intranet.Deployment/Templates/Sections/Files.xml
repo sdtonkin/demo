@@ -48,18 +48,17 @@
 
   <!-- CSS -->
 <pnp:File Src="css\main.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
-
-
-<!-- JS   
 <pnp:File Src="js\lib\weather-icons.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
+
+<!-- JS-->
 <pnp:File Src="js\dist\main.min.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
 <pnp:File Src="js\src\singular\ensure-scripts.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
--->
+
 <!--
   <pnp:File Src="js\dist\main.min.js.map" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
   -->
 
-  <!-- LIB JS
+  <!-- LIB JS-->
   <pnp:File Src="js\lib\angular.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\angular.min.js.map" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\bootstrap.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
@@ -69,8 +68,8 @@
   <pnp:File Src="js\lib\modernizr.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\pnp.min.js" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
   <pnp:File Src="js\lib\pnp.min.js.map" Folder="{masterpagecatalog}/Compassion/js/lib" Overwrite="true" Level="Published" />
- -->
-  <!-- Images 
+ 
+  <!-- Images -->
   <pnp:File Src="images\compassion.ico" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
   <pnp:File Src="images\compassion-white-logo.png" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
   <pnp:File Src="images\toolbar-icon-1.jpg" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
@@ -78,16 +77,15 @@
   <pnp:File Src="images\flag.png" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
   <pnp:File Src="images\speed-test.jpg" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
   <pnp:File Src="images\skippy-white.png" Folder="{masterpagecatalog}/Compassion/images" Overwrite="true" Level="Published" />
--->
-  <!-- XSL Sheets 
+
+  <!-- XSL Sheets -->
   <pnp:File Src="XSL\Styles\COM_ContentQueryMain.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
   <pnp:File Src="XSL\Styles\COM_Header.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
-  <pnp:File Src="XSL\Styles\COM_ItemStyle.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
-  
+  <pnp:File Src="XSL\Styles\COM_ItemStyle.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />  
   <pnp:File Src="css\sass\font\weathericons-regular-webfont.eot" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
   <pnp:File Src="css\sass\font\weathericons-regular-webfont.svg" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
-<pnp:File Src="css\sass\font\weathericons-regular-webfont.ttf" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
+  <pnp:File Src="css\sass\font\weathericons-regular-webfont.ttf" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
   <pnp:File Src="css\sass\font\weathericons-regular-webfont.woff" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
-<pnp:File Src="css\sass\font\weathericons-regular-webfont.woff2" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
--->
+  <pnp:File Src="css\sass\font\weathericons-regular-webfont.woff2" Folder="{masterpagecatalog}/Compassion/font" Overwrite="true" Level="Published" />
+
 </pnp:Files>
