@@ -118,7 +118,8 @@ p {
  * ----------------------------------------- 
  */
 a {
-  color: #003364; }
+  color: #003364;
+  cursor: pointer; }
 
 .btn {
   color: #0054a6;
@@ -1115,6 +1116,12 @@ navigation {
 
 .toolbar-toggle-button {
   float: right; }
+
+toolbar-manager a:before {
+  content: "\f013";
+  display: inline-block;
+  font-family: "FontAwesome";
+  margin-right: 10px; }
 
 /* 
  * -----------------------------------------
