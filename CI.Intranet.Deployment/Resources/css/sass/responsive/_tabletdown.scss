@@ -135,3 +135,19 @@ navigation{
 		}
 	}
  }
+
+.employee-card-wrapper{
+		&+ .employee-card-wrapper{
+			border-left: none;
+		}
+	}
+/* 
+ * -----------------------------------------
+ *  Find People
+ *  @@ File: components/_find-people.scss
+ * ----------------------------------------- 
+ */
+
+.find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active{
+	display: block;
+}
