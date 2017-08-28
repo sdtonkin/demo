@@ -165,8 +165,6 @@ angular.module('compassionIntranet')
                     method: "GET",
                     data: {},
                     success: function (data) {
-                        //console.log("data", data);
-                        //def.resolve(data);
                         getDataDeferred.resolve(data);
                     },
                     error: function (err) {
