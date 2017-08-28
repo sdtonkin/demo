@@ -1284,6 +1284,11 @@ section.global-partners ul, section.my-department ul {
   padding-left: 0;
   list-style: none; }
 
+.my-department .employee-card {
+  background-color: white;
+  padding: 15px;
+  margin-top: 15px; }
+
 /* ----------------------------------------------------
   12) Responsive Style Imports
 ------------------------------------------------------- */
