@@ -53,7 +53,7 @@ gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
 });
 
-gulp.task("clean:css", function (cb) {
+gulp.task("clean:css", ['sass'], function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 gulp.task("clean", ["clean:js", "clean:css"]);
@@ -218,7 +218,7 @@ gulp.task("min:js", function () {
   });
 });
 */
-gulp.task("min:css", function () {
+gulp.task("min:css", ['clean:css'], function () {
     return gulp.src([paths.css, "!" + paths.minCss])
       .pipe(concat(paths.concatCssDest))
       .pipe(cssmin())

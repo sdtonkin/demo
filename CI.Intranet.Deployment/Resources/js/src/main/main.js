@@ -12,7 +12,7 @@ require("../main/config.js");
 require('../main/common.js');
 
 // Services
-require('../components/anniversary-service.js');
+require('../services/anniversary-service.js');
 require('../services/app-service.js');
 require('../services/bookmark-service.js');
 require('../services/department-news-service.js');
@@ -21,7 +21,7 @@ require('../services/employee-announcement-service.js');
 require('../services/employee-spotlight-service.js');
 require('../services/global-partner-service.js');
 require('../services/graph-service.js');
-require('../components/gratitudes-service.js');
+require('../services/gratitudes-service.js');
 require('../services/group-service.js');
 require('../services/how-do-i-service.js');
 require('../services/mission-photo-service.js');
@@ -68,6 +68,7 @@ require('../components/my-toolbar.js');
 require('../components/navigation.js');
 require('../components/newHires.js');
 require('../components/news-landing.js');
+require('../components/news-page-likes.js');
 require('../components/people-places.js');
 require('../components/quick-links.js');
 require('../components/related-documents.js');

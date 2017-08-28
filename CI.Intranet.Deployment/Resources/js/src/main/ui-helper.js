@@ -20,7 +20,9 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
         addFirstNameToWelcomeMessage(userFirstName);
         $(window).resize(processWindowSize);
         processWindowSize();
-
+        if (!window.lowBandwidth) {
+            $('body').addClass('low-bandwidth');
+        }
         
     };
     //check window size and setup functions

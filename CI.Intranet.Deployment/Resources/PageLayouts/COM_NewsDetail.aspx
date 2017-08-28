@@ -47,7 +47,7 @@
                     </div>
                         <div class="news-tag-content row">
                         <div class="col-md-6">
-                            <span class="card-likes"><i class="fa fa-heart-o"></i>26</span>
+                            <news-page-likes></news-page-likes>
                         </div>
                             <div class="col-md-6">
                             <div class="tag-container pull-right">
@@ -65,11 +65,11 @@
             </div>
         </div> <!--/.container-->
     </div><!--main-container-->
-    <div id="embedded-feed" style="height:400px;width:100%;"></div>
+    <div id="ci-embedded-feed" style="height:400px;width:100%;"></div>
     <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
     <script>
         yam.connect.embedFeed({
-            container: '#embedded-feed',
+            container: '#ci-embedded-feed',
             network: 'compassion.com',
             feedType: 'open-graph',
             config: {

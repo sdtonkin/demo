@@ -2,7 +2,7 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'howDoICtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'howDoIService', 'COM_CONFIG', function ($scope, common, howDoIService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', '$q', 'common', 'howDoIService', 'COM_CONFIG', function ($scope, $q, common, howDoIService, COM_CONFIG) {
     var ctrl = this;
 
     this.$onInit = function () {

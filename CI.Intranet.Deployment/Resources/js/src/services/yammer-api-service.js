@@ -290,6 +290,51 @@ angular.module('compassionIntranet')
                         method: "GET",
                         data: {},
                         success: function (data) {
+                            console.log("Yammer Liked Messages", data);
+                            var groups = data;
+
+                            groups = groups.sort(function (x, y) {
+                                return new Date(x.stats.last_message_at) < new Date(y.stats.last_message_at);
+                            });
+
+                            groups = groups.slice(0, 3);
+                            groups.map(function (item) {
+                                item.Modified = new Date(item.stats.last_message_at);
+                                if (item.Modified.getYear() == 69) {
+                                    item.Modified = "No Yammer Posts";
+                                } else {
+                                    item.Modified = (item.Modified).format('MMMM D, YYYY');
+                                }
+
+                            });
+
+                            def.resolve(groups);
+                        },
+                        error: function (err) {
+                            console.warn(err);
+                            def.reject();
+                        }
+                    });
+                }, function () {
+                    console.log("Not logged in. Trying again");
+                    //setTimeout(me.getYammerGroupsForUser(), 1200);
+                }).catch(function (err) {
+                    console.log("Yammer not logged in.")
+                    def.reject(err);
+                });
+            }
+            return def.promise;
+        }
+        ctrl.getMessagesForGroup = function (groupId) {
+            var def = $q.defer();
+            var me = this;
+            if (yam !== null) {
+                me.ensureConnection().then(function (response) {
+                    yam.platform.request({
+                        url: "https://www.yammer.com/api/v1/messages/in_group/" + groupId + ".json",
+                        method: "GET",
+                        data: {},
+                        success: function (data) {
                             console.log("Yammer Groups", data);
                             var groups = data;
 
@@ -325,7 +370,6 @@ angular.module('compassionIntranet')
             }
             return def.promise;
         }
-
         ctrl.formatUrl = function (url) {
             if (url.startsWith("http") == false) {
                 if (url.endsWith("/")) {

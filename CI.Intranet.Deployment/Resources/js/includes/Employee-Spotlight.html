@@ -1,9 +1,9 @@
-﻿<section class="spotlights">
+﻿<section class="employee-spotlight">
     <h2>Employee Spotlight</h2>
-    <ul class="tab-picker row">
-        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('gratitudes')"><h2>gratitudes</h2></li>
-        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('newHires')"><h2>new hires</h2></li>
-        <li class="col-md-4" ng-click="ctrl.toggleActiveTab('anniversary')"><h2>anniversaries + retirements</h2></li>
+    <ul class="nav nav-tabs">
+        <li class="nav-item" ng-click="ctrl.toggleActiveTab('gratitudes')"><h3>gratitudes</h3></li>
+        <li class="nav-item" ng-click="ctrl.toggleActiveTab('newHires')"><h3>new hires</h3></li>
+        <li class="nav-item" ng-click="ctrl.toggleActiveTab('anniversary')"><h3>anniversaries + retirements</h3></li>
     </ul>
     <div class="ci-gratitudes" ng-show="ctrl.activeTab == 'gratitudes'">
         <gratitudes></gratitudes>
@@ -12,9 +12,9 @@
         <newHires></newHires>
     </div>
     <div class="ci-anniversary" ng-show="ctrl.activeTab == 'anniversary'">
-        <anniversary></anniversary>
+        <anniversary-card></anniversary-card>
     </div>
-    <input id="ci-pp-activeTab" type="hidden" ng-model="ctrl.activeTab" />
+    <input id="nav-link active" type="hidden" ng-model="ctrl.activeTab" />
     
     <div class="row">
         <ul>
