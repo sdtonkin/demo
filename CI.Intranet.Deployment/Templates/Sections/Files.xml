@@ -84,5 +84,10 @@
   <pnp:File Src="XSL\Styles\COM_Header.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
   <pnp:File Src="XSL\Styles\COM_ItemStyle.xsl" Folder="Style%20Library/XSL%20Style%20Sheets" Overwrite="true" Level="Published" />
   
+  <pnp:File Src="css\sass\font\weathericons-regular-webfont.eot" Folder="{masterpagecatalog}/Compassion/fonts" Overwrite="true" Level="Published" />
+  <pnp:File Src="css\sass\font\weathericons-regular-webfont.svg" Folder="{masterpagecatalog}/Compassion/fonts" Overwrite="true" Level="Published" />
+<pnp:File Src="css\sass\font\weathericons-regular-webfont.ttf" Folder="{masterpagecatalog}/Compassion/fonts" Overwrite="true" Level="Published" />
+  <pnp:File Src="css\sass\font\weathericons-regular-webfont.woff" Folder="{masterpagecatalog}/Compassion/fonts" Overwrite="true" Level="Published" />
+<pnp:File Src="css\sass\font\weathericons-regular-webfont.woff2" Folder="{masterpagecatalog}/Compassion/fonts" Overwrite="true" Level="Published" />
 
 </pnp:Files>
