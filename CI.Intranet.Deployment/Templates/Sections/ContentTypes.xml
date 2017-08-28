@@ -121,6 +121,14 @@
       <pnp:FieldRef ID="1DDB1115-9830-4976-A86D-8D9591275340" Name="COM_NavNodeUrl" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+  <pnp:ContentType ID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Name="Resource Link" Description="Resource Link Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="3a1342d7-8d5a-4a29-8eec-f14d1ce5f0cd" Name="COM_ResourceType" />
+      <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+      <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
+      <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
   <!-- ********      -->
   <!-- DOC TYPES    -->
   <!-- ********      -->
