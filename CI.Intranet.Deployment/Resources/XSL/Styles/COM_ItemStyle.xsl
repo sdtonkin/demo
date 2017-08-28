@@ -678,7 +678,7 @@
           <div class="card img-card">
             <xsl:if test="string-length($SafeImageUrl) != 0">
               <a href="{$SafeLinkUrl}" >
-                <img class="img-fluid" src="{$SafeImageUrl}" title="{@ImageUrlAltText}"/>
+                <image-loader image-css-class="img-fluid" image-src="{$SafeImageUrl}" image-alt-text="{@ImageUrlAltText}"/>
               </a>
             </xsl:if>
           </div>
@@ -722,7 +722,7 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
-            <news-page-likes message-id="{@COM_YammerID}"></news-page-likes>
+            <news-page-likes thread-id="{@COM_YammerID}"></news-page-likes>
 
 
           </div>
@@ -805,7 +805,7 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
-            <news-page-likes message-id="{@COM_YammerID}"></news-page-likes>
+            <news-page-likes thread-id="{@COM_YammerID}"></news-page-likes>
           </div>
          </div>
         </div>
