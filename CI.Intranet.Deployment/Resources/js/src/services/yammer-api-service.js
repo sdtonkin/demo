@@ -145,7 +145,7 @@ angular.module('compassionIntranet')
             var cacheObj = $pnp.storage.local;
             let expireMe = $pnp.util.dateAdd((new Date()), "minute", 5);
 
-            cacheObj.getOrPut("yammer_cache/" + endpoint, getData, expireMe).then(function (data) {
+            getData().then(function (data) {
                 def.resolve(data);
             });
 
@@ -156,14 +156,16 @@ angular.module('compassionIntranet')
         ctrl.getOpenGraphItemByUrl = function (url) {
             var def = $q.defer();
             var me = this;
-            var endpoint = "open_graph_objects?url=" + url;
+            var endpoint = "open_graph_objects.json";
 
             var getData = function () {
                 var getDataDeferred = $q.defer();
-                me.queueThrottledRequest({
+                yam.platform.request({
                     url: endpoint,
                     method: "GET",
-                    data: {},
+                    data: {
+                        'url': url
+                    },
                     success: function (data) {
                         getDataDeferred.resolve(data);
                     },
@@ -178,10 +180,14 @@ angular.module('compassionIntranet')
 
             var cacheObj = $pnp.storage.local;
             let expireMe = $pnp.util.dateAdd((new Date()), "minute", 5);
-
-            cacheObj.getOrPut("yammer_cache/" + endpoint, getData, expireMe).then(function (data) {
-                def.resolve(data);
+            me.ensureConnection().then(function (response) {
+                
+                cacheObj.getOrPut("yammer_cache/" + endpoint, getData, expireMe).then(function (data) {
+                    def.resolve(data);
+                });
+                
             });
+            
 
 
             return def.promise;
@@ -276,52 +282,48 @@ angular.module('compassionIntranet')
             }
             return def.promise;
         }
-        ctrl.getLikeCountForMessage = function (messageId) {
+        ctrl.getLikeCountForMessage = function (location) {
             var def = $q.defer();
             var me = this;
             if (yam !== null) {
-                me.ensureConnection().then(function (response) {
-                    //me.makeRequest("https://api.yammer.com/api/v1/users/current.json?include_group_memberships=true", "GET", {}, 
-
-                    yam.platform.request({
-                        url: "https://www.yammer.com/api/v1/users/liked_message/" + messageId + ".json",
-                        method: "GET",
-                        data: {},
-                        success: function (data) {
-                            console.log("Yammer Liked Messages", data);
-                            var groups = data;
-
-                            groups = groups.sort(function (x, y) {
-                                return new Date(x.stats.last_message_at) < new Date(y.stats.last_message_at);
-                            });
-
-                            groups = groups.slice(0, 3);
-                            groups.map(function (item) {
-                                item.Modified = new Date(item.stats.last_message_at);
-                                if (item.Modified.getYear() == 69) {
-                                    item.Modified = "No Yammer Posts";
-                                } else {
-                                    item.Modified = (item.Modified).format('MMMM D, YYYY');
-                                }
-
-                            });
-
-                            def.resolve(groups);
-                        },
-                        error: function (err) {
-                            console.warn(err);
-                            def.reject();
+                ctrl.getOpenGraphItemByUrl(location).then(function (response) {
+                    ctrl.getOpenGraphObject(response.id).then(function (data) {
+                        var likeCount = 0;
+                        for (var i = 0; i < data.messages.length; i++) {
+                            var message = data.messages[i];
+                            likeCount = likeCount + message.liked_by.count;
                         }
+                        def.resolve(likeCount);
                     });
-                }, function () {
-                    console.log("Not logged in. Trying again");
-                    //setTimeout(me.getYammerGroupsForUser(), 1200);
-                }).catch(function (err) {
-                    console.log("Yammer not logged in.")
-                    def.reject(err);
                 });
             }
             return def.promise;
+        }
+        ctrl.getLikesByThreadId = function (threadId) {
+
+            var def = $.Deferred();
+            var url = "messages/in_thread/" + threadId + ".json?threaded=extended";
+            var totalLikes = 0;
+
+            yam.platform.request({
+                url: url,
+                method: "GET",
+                data: {},
+                success: function (data) {
+                    var likeCount = 0;
+                    for (var i = 0; i < data.messages.length; i++) {
+                        var message = data.messages[i];
+                        likeCount = likeCount + message.liked_by.count;
+                    }
+                    def.resolve(likeCount);
+                },
+                error: function (msgErr) {
+                    console.log("getLikestByThreadId - no messages.");
+                    def.reject();
+                }
+            });
+
+            return def.promise();
         }
         ctrl.getMessagesForGroup = function (groupId) {
             var def = $q.defer();

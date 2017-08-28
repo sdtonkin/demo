@@ -7,14 +7,23 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
     var location = window.location.href;
     
     this.$onInit = function () {
-        yammerApiService.getOpenGraphItemByUrl(location).then(function (response) {
-            console.log(response);
-        });
+        if ($scope.threadId == null) {
+            yammerApiService.getLikeCountForMessage(location).then(function (response) {
+                ctrl.likeCount = response;
+            });
+        }
+        else {
+            yammerApiService.getLikesByThreadId($scope.threadId).then(function (response) {
+                ctrl.likeCount = response;
+            });
+        }
     }
     
 }]).component('newsPageLikes', {
     template: require('../../includes/News-Page-Likes.html'),
     controller: controllerName,
     controllerAs: 'ctrl',
-    
+    scope: {
+        threadId: '@'
+    }
 });
