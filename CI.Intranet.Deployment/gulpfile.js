@@ -13,7 +13,8 @@ var gulp = require("gulp"),
   OccurrenceOrderPlugin = require("webpack/lib/optimize/OccurrenceOrderPlugin"),
   DedupePlugin = require("webpack/lib/optimize/DedupePlugin"),
   UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin"),
-  IgnorePlugin = require("webpack/lib/IgnorePlugin");
+  IgnorePlugin = require("webpack/lib/IgnorePlugin"),
+  removeUseStrict = require("gulp-remove-use-strict");
 var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 
 
@@ -116,7 +117,7 @@ gulp.task("min:singular", function () {
 });
 */
 gulp.task("min:js", function () {
-    return gulp.src([paths.js], { base: "." })
+    return gulp.src([paths.js], { base: "." })        
         .pipe(webpack({
             //devtool: 'source-map',
             module: {
