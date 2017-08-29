@@ -27,7 +27,7 @@ namespace CI.Intranet.Deployment
             {
                 switch (args[0])
                 {
-                    case "autodeploy":
+                    case "deploy-all":
                         {
                             defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
                             defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
@@ -55,7 +55,24 @@ namespace CI.Intranet.Deployment
 
                             return;
                         }
-                    case "stagedeploy":
+                    case "deploy-stage":
+                        {
+                            defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
+                            defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
+                            defaultPassword = ConfigurationManager.AppSettings["S-Password"];
+                            var searchUrl = ConfigurationManager.AppSettings["S-SearchSiteUrl"];
+                            var resourceFolder = ConfigurationManager.AppSettings["S-ProvisioningResourceFolder"];
+                            var exportFolder = ConfigurationManager.AppSettings["S-ExportTemplateFolder"];
+                            SecureString pwd1 = new SecureString();
+                            foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                            var domain = string.Empty;
+                            var files = new DirectoryInfo("CI.Intranet.Deployment/Templates");
+                            var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                            var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
+                            rJob.Start("3-Files.xml", files, "quiet", resourceFolder);
+                            return;
+                        }
+                    case "deploy-stage-files":
                         {
                             defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
                             defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
