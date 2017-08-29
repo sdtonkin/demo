@@ -167,6 +167,7 @@ namespace CI.Intranet.Deployment
             template.Connector = new FileSystemConnector(provisionResourceFolderPath, "");
             Console.WriteLine(template.Files[0].Src);
             
+            
 
             return template;
         }
