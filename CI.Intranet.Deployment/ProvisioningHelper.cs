@@ -163,7 +163,10 @@ namespace CI.Intranet.Deployment
             ProvisioningTemplate template = null;
             XMLFileSystemTemplateProvider provider = new XMLFileSystemTemplateProvider(resourcesPath, folderName);
             template = provider.GetTemplate(templateName);
+            Console.WriteLine(provisionResourceFolderPath);
             template.Connector = new FileSystemConnector(provisionResourceFolderPath, "");
+            Console.WriteLine(template.Files[0].Src);
+            
 
             return template;
         }

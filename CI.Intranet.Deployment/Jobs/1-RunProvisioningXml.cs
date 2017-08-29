@@ -44,6 +44,7 @@ namespace CI.Intranet.Deployment.Jobs
                     if (YesNo.ToLower().IndexOf('n') >= 0)
                         return;
                 }
+                
                 ProvisioningHelper.ApplyCustomTemplateToSite(defaultForeground, ctx, template);
 
             }
