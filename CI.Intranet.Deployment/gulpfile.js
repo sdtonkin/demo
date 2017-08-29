@@ -117,8 +117,7 @@ gulp.task("min:singular", function () {
 });
 */
 gulp.task("min:js", function () {
-    return gulp.src([paths.js], { base: "." })
-        .pipe(removeUseStrict())
+    return gulp.src([paths.js], { base: "." })        
         .pipe(webpack({
             //devtool: 'source-map',
             module: {
