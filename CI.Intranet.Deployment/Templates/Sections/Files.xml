@@ -46,10 +46,10 @@
     </pnp:Properties>
   </pnp:File>
 
-  <!-- CSS -->
+  <!-- CSS
 <pnp:File Src="css\main.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
 <pnp:File Src="js\lib\weather-icons.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
-
+ -->
 <!-- JS-->
 <pnp:File Src="js\dist\main.min.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
 <pnp:File Src="js\src\singular\ensure-scripts.js" Folder="{masterpagecatalog}/Compassion/js/" Overwrite="true" Level="Published" />
