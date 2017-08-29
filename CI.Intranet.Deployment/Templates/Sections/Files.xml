@@ -46,8 +46,9 @@
     </pnp:Properties>
   </pnp:File>
 
-  <!-- CSS
 <pnp:File Src="css\main.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
+
+  <!-- CSS
 <pnp:File Src="js\lib\weather-icons.min.css" Folder="{masterpagecatalog}/Compassion/css" Overwrite="true" Level="Published" />
  -->
 <!-- JS-->
