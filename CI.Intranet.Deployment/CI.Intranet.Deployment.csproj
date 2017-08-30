@@ -331,6 +331,7 @@
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
+    <Content Include="Resources\MasterPages\PublishingImageRenditions.xml" />
     <Content Include="Resources\PageLayouts\COM_GroupsLanding.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SiteImageRenditions xmlns="http://schemas.datacontract.org/2004/07/Microsoft.SharePoint.Publishing" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <NextId>5</NextId>
+  <Renditions>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>291</Height>
+      <Id>1</Id>
+      <Name>Recent News Image</Name>
+      <Version>2</Version>
+      <Width>340</Width>
+    </ImageRendition>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>291</Height>
+      <Id>2</Id>
+      <Name>Featured News Image</Name>
+      <Version>2</Version>
+      <Width>475</Width>
+    </ImageRendition>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>359</Height>
+      <Id>3</Id>
+      <Name>News Detail Image</Name>
+      <Version>2</Version>
+      <Width>700</Width>
+    </ImageRendition>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>68</Height>
+      <Id>4</Id>
+      <Name>Display Template Video</Name>
+      <Version>1</Version>
+      <Width>120</Width>
+    </ImageRendition>
+  </Renditions>
+</SiteImageRenditions>
