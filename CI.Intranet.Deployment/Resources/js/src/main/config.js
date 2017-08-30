@@ -1,4 +1,8 @@
-﻿
+﻿$pnp.setup({
+    defaultCachingStore: "local",
+    defaultCachingTimeoutSeconds: 300,
+    globalCacheDisable: false
+});
 // set up static configuration entries
 var myApp = angular.module('compassionIntranet');
 if (document.location.host === "compassion.sharepoint.com") {

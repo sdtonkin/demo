@@ -1,10 +1,11 @@
 ﻿'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'myDocumentsCtrl';
+    controllerName = 'navigationCtrl';
 
-myApp.controller(controllerName, ['$scope', 'navigationService', 'COM_CONFIG', function ($scope, navigationService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM_CONFIG', function ($scope, navigationService, storage, COM_CONFIG) {
     var ctrl = this;
     ctrl.isSearchVisible = false;
+    ctrl.rootSiteUrl = COM_CONFIG.rootWeb;
     this.$onInit = function () {
         navigationService.getAllNodes().then(function (response) {
             ctrl.navNodes = response;
@@ -29,6 +30,15 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'COM_CONFIG', f
             }            
         });
         
+    };
+    ctrl.activeNavNode = function (node) {
+        var pageUrl = _spPageContextInfo.serverRequestPath.toLowerCase();
+        var siteUrl = _spPageContextInfo.webServerRelativeUrl;
+        if (node.url.toLowerCase().endsWith(pageUrl)) 
+            return true;
+        if (node.url.endsWith(siteUrl))
+            return true;
+        return false;
     };
     ctrl.toggleSearchBox = toggleSearchBox;
     ctrl.isSearchBoxVisible = false;

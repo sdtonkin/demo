@@ -51,9 +51,9 @@
                         </div>
                             <div class="col-md-6">
                             <div class="tag-container pull-right">
-                                <h4 class="card-tags">Global Events</h4>
-                                <h4 class="card-tags">Global Events</h4>
-                                <h4 class="card-tags">Global Events</h4>
+                                <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
+        <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
+        <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
                             </div>
                             </div>
                         </div>
@@ -84,9 +84,7 @@
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">
         <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
-        <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
-        <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
-        <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
+        
         <SharePointWebControls:TextField runat="server" FieldName="COM_YammerID"/>
     </PublishingWebControls:EditModePanel>    
 </asp:Content>

@@ -24,7 +24,7 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
                 defer.resolve(response);
             });
 
-            return defer.promise;
-        }
+        return defer.promise;
+    }
 
 }]);
