@@ -2,9 +2,12 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'myDocumentsCtrl';
 
-myApp.controller(controllerName, ['$scope', 'navigationService', 'COM_CONFIG', function ($scope, navigationService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'navigationService', 'storageService', 'COM_CONFIG', function ($scope, navigationService, storage, COM_CONFIG) {
+    var pageUrl = _spPageContextInfo.serverRequestPath;
+    var siteUrl = _spPageContextInfo.siteServerRelativeUrl;
     var ctrl = this;
     ctrl.isSearchVisible = false;
+    
     this.$onInit = function () {
         navigationService.getAllNodes().then(function (response) {
             ctrl.navNodes = response;
@@ -31,7 +34,15 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'COM_CONFIG', f
         
     };
     ctrl.activeNavNode = function () {
-        
+        var url = window.location.href;
+        var navLinks = $('ul.navbar-nav a').each(function (index, link) {
+            var aHref = $(link).attr('href');
+            if (url.endsWith('index.aspx') || url.endsWith(siteUrl)) {
+                $(link).addClass('active');
+            } else if (aHref.endsWith(pageUrl)) {
+                $(link).addClass('active');
+            }
+        });
     };
     ctrl.toggleSearchBox = toggleSearchBox;
     ctrl.isSearchBoxVisible = false;
