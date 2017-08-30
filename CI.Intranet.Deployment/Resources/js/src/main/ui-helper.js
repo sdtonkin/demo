@@ -4,20 +4,22 @@ var myApp = angular.module('compassionIntranet'),
     firstNameId = 'ci-user-first-name',
     greetingId = 'ci-greeting';
 
-myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($scope, storage, COM_CONFIG) {
     var userDisplayName = _spPageContextInfo.userDisplayName,
     userId = _spPageContextInfo.userId;
     var userFirstName = getFirstName(userDisplayName);
     var userLastName = getLastName(userDisplayName);
+    var toolBarStatusCacheKey = 'toolbarStatus';
     //Setup Responsive Variables
     var isMobile = "",
     isTablet = "",
     isDesktop = "";
 
     var ctrl = this;
-    ctrl.isToolbarOpen = false;
+    
 
     $scope.init = function () {
+        ctrl.isToolbarOpen = (storage.get(toolBarStatusCacheKey) == null ? false : storage.get(toolBarStatusCacheKey));
         addFirstNameToWelcomeMessage(userFirstName);
         $(window).resize(processWindowSize);
         processWindowSize();
@@ -26,6 +28,16 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
         }
         
     };
+    ctrl.setToolbarStatus = setToolbarStatus;
+    function setToolbarStatus() {
+        var isOpen = !ctrl.isToolbarOpen;
+        if (isOpen) {
+            storage.set(toolBarStatusCacheKey, isOpen);
+        } else {
+            storage.set(toolBarStatusCacheKey, isOpen);
+        }
+        ctrl.isToolbarOpen = isOpen;
+    }
     //check window size and setup functions
     function processWindowSize() {
         var ua = window.navigator.userAgent;
