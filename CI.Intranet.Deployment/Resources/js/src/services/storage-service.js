@@ -9,15 +9,15 @@
         try {
             if (expire === 0) {
                 if (storageType == 'session') {
-                    $pnp.session.put(key, value);
+                    $pnp.storage.session.put(key, value);
                 } else {
-                    $pnp.local.put(key, value);
+                    $pnp.storage.local.put(key, value);
                 }                
             } else {
                 if (storageType == 'session') {
-                    $pnp.session.put(key, value, expire);
+                    $pnp.storage.session.put(key, value, expire);
                 } else {
-                    $pnp.local.put(key, value, expire);
+                    $pnp.storage.local.put(key, value, expire);
                 }
             }
         } catch (e) {
@@ -28,9 +28,9 @@
         try {
             var item;
             if (storageType == 'session') {
-                item = $pnp.session.get(key);
+                item = $pnp.storage.session.get(key);
             } else {
-                item = $pnp.local.get(key);
+                item = $pnp.storage.local.get(key);
             }            
             return item;
         } catch (e) {
@@ -39,7 +39,8 @@
         return null;
     }
     function remove(key) {
-        return $pnp.local.delete(key);
+        $pnp.storage.local.delete(key);
+        $pnp.storage.session.delete(key);
     }
     function clearAll() {
         localStorage.clear();

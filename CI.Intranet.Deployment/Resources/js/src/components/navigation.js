@@ -1,8 +1,8 @@
 ﻿'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'myDocumentsCtrl';
+    controllerName = 'navigationCtrl';
 
-myApp.controller(controllerName, ['$scope', 'navigationService', 'storageService', 'COM_CONFIG', function ($scope, navigationService, storage, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM_CONFIG', function ($scope, navigationService, storage, COM_CONFIG) {
     var pageUrl = _spPageContextInfo.serverRequestPath;
     var siteUrl = _spPageContextInfo.siteServerRelativeUrl;
     var ctrl = this;
@@ -33,16 +33,14 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storageService
         });
         
     };
-    ctrl.activeNavNode = function () {
+    ctrl.activeNavNode = function (link) {
         var url = window.location.href;
-        var navLinks = $('ul.navbar-nav a').each(function (index, link) {
-            var aHref = $(link).attr('href');
-            if (url.endsWith('index.aspx') || url.endsWith(siteUrl)) {
-                $(link).addClass('active');
-            } else if (aHref.endsWith(pageUrl)) {
-                $(link).addClass('active');
-            }
-        });
+        var aHref = $(link).attr('href');
+        if (url.endsWith('index.aspx') || url.endsWith(siteUrl)) {
+            return true;
+        } else if (aHref.endsWith(pageUrl)) {
+            return true;
+        }
     };
     ctrl.toggleSearchBox = toggleSearchBox;
     ctrl.isSearchBoxVisible = false;
