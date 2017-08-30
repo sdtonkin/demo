@@ -59,7 +59,7 @@
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
-      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" Hidden="false" />  
+      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" />  
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x010200AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
@@ -119,6 +119,14 @@
   <pnp:ContentType ID="0x0100344B4251E45F447B9DF2E39225D540BA" Name="Navigation Node Item" Description="Navigation Node Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="1DDB1115-9830-4976-A86D-8D9591275340" Name="COM_NavNodeUrl" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Name="Resource Link" Description="Resource Link Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="3a1342d7-8d5a-4a29-8eec-f14d1ce5f0cd" Name="COM_ResourceType" />
+      <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+      <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
+      <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <!-- ********      -->

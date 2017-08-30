@@ -205,6 +205,7 @@
     <Content Include="Resources\components.html" />
     <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
     <Content Include="Resources\js\includes\News-Page-Likes.html" />
+    <Content Include="Resources\js\includes\Resource-Links.html" />
     <Content Include="Resources\js\lib\weather-icons.min.css" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
@@ -293,6 +294,7 @@
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
+    <Content Include="Resources\js\src\components\resource-links.js" />
     <Content Include="Resources\js\src\components\rss-feeds.js" />
     <Content Include="Resources\js\src\components\rss-feed-manager.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
@@ -305,6 +307,7 @@
     <Content Include="Resources\js\src\services\anniversary-service.js" />
     <Content Include="Resources\js\src\services\gratitudes-service.js" />
     <Content Include="Resources\js\src\services\new-hire-service.js" />
+    <Content Include="Resources\js\src\services\resource-links-service.js" />
     <Content Include="Resources\js\src\services\sp-service.js" />
     <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />

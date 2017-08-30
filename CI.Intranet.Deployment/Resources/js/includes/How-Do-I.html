@@ -1,7 +1,13 @@
-﻿<div ng-repeat="item in ctrl.howDoI">
-    <h3>{{ item.title }}</h3>
-        <li>
-            <a href="{{ item.URL }}">{{ item.title }}</a>
-        </li>
-    </ul>
-</div>
+﻿<section class="how-do-i">
+    <div class="row">
+        <div class="col-12">
+            <h3>How Do I?</h3>
+        </div>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item" ng-repeat="link in ctrl.howDoI">
+                    <li class="nav-link"{{ link.title }}>
+                        <a href="{{ link.URL }}">{{ link.title }}</a>
+                    </li>
+            </ul>
+        </div>
+</section>

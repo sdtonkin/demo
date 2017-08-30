@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8">
                 <div class="input-group search">
                     <input type="text" class="form-control" placeholder="Search for..." ng-model="ctrl.searchText">
                     <span class="input-group-btn">
@@ -29,7 +29,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <div class="col-lg-3 col-md-6 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 4:0 track by person.id">
+                        <div class="col-lg-3  col-12 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 4:0 track by person.id">
                             <div class="employee-card">                                
                                 <img class="align-self-center emp-photo" ng-src="{{person.picUrl}}" alt="{{person.displayName}}">
                                 
@@ -46,7 +46,7 @@
                     </div>
                     
                     <div ng-if="ctrl.myPeople.length > 4" class="carousel-item">
-                        <div class="col-lg-3 col-md-6 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 8:4 track by person.id">
+                        <div class="col-lg-3 col-12 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 8:4 track by person.id">
                             <div class="employee-card">
                                 
                                 <img class="align-self-center emp-photo" ng-src="{{person.picUrl}}" alt="{{person.displayName}}">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div ng-if="ctrl.myPeople.length > 8" class="carousel-item">
-                        <div class="col-lg-3 col-md-6 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 12:8 track by person.id">
+                        <div class="col-lg-3  col-12 employee-card-wrapper" ng-repeat="person in ctrl.myPeople | limitTo: 12:8 track by person.id">
                             <div class="employee-card">
                                 
                                 <img class="align-self-center emp-photo" ng-src="{{person.picUrl}}" alt="{{person.displayName}}">

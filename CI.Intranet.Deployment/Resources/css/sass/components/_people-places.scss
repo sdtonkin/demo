@@ -33,3 +33,11 @@
         list-style: none;
      }
  }
+
+ .my-department{
+    .employee-card{
+        background-color: $brand-white;
+        padding:15px;
+        margin-top: 15px;
+    }
+ }
