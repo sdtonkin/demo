@@ -61,7 +61,7 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
                 if (desc == "Heavy Snow" || desc == "Snow" || desc == "Snow Showers") {
                     span = "wi wi-snowflake-cold";
                 } else {
-                    if (desc == "Cloudy" || desc == "Mostly Cloudy" || desc == "Partly Cloudy") {
+                    if (desc == "Cloudy" || desc == "Mostly Cloudy" || desc == "Partly Cloudy" || desc == "Mostly Sunny") {
                         span = "wi wi-cloudy";
                     }
 
