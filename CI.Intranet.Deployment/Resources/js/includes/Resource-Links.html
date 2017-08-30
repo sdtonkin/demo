@@ -1,7 +1,16 @@
-﻿<div ng-repeat="link in ctrl.resourceLinks">
-    <h3>{{ link.title }}</h3>
-    <li>
-        <a href="{{ link.URL }}">{{ link.title }}</a>
-    </li>
-    </ul>
-</div>
+﻿<section class="work-resources">
+    <div class="row">
+        <div class="col-12">
+            <h3>Work Resources</h3>
+        </div>
+        <div class="col-12">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <div class="nav-link" ng-repeat="link in ctrl.resourceLinks">
+                        <a href="{{ link.URL }}">{{ link.title }}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
