@@ -666,7 +666,11 @@
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
     </xsl:variable>
-
+    
+     <xsl:variable name="YammerID">
+      <xsl:value-of select="@YammerIDNumber" />
+    </xsl:variable>
+    
     <!-- <div class="row news-card-container">
     <div class="col-md-6 news-card-wrapper"> 
     FIRST HERO AREA--> 
@@ -722,8 +726,8 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
-            <news-page-likes thread-id="{@COM_YammerID}"></news-page-likes>
-
+                 <xsl:value-of select="$YammerID"/>
+            <news-page-likes thread-id="{$YammerID}"></news-page-likes>
 
           </div>
           </div>
@@ -752,6 +756,9 @@
         <xsl:with-param name="Title" select="@Title"/>
         <xsl:with-param name="UrlColumnName" select="'LinkUrl'"/>
       </xsl:call-template>
+    </xsl:variable>
+     <xsl:variable name="YammerID">
+      <xsl:value-of select="@YammerIDNumber" />
     </xsl:variable>
 
     <!-- <div class= "hero-news-container">
@@ -805,7 +812,9 @@
                 <xsl:value-of select="$DisplayTitle"/>
               </a>
             </div>
-            <news-page-likes thread-id="{@COM_YammerID}"></news-page-likes>
+                 <xsl:value-of select="$YammerID"/>
+            <news-page-likes thread-id="{$YammerID}"></news-page-likes>
+
           </div>
          </div>
         </div>
