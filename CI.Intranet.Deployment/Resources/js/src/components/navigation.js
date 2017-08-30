@@ -3,11 +3,9 @@ var myApp = angular.module('compassionIntranet'),
     controllerName = 'navigationCtrl';
 
 myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM_CONFIG', function ($scope, navigationService, storage, COM_CONFIG) {
-    var pageUrl = _spPageContextInfo.serverRequestPath;
-    var siteUrl = _spPageContextInfo.siteServerRelativeUrl;
     var ctrl = this;
     ctrl.isSearchVisible = false;
-    
+    ctrl.rootSiteUrl = COM_CONFIG.rootWeb;
     this.$onInit = function () {
         navigationService.getAllNodes().then(function (response) {
             ctrl.navNodes = response;
@@ -33,14 +31,14 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
         });
         
     };
-    ctrl.activeNavNode = function (link) {
-        var url = window.location.href;
-        var aHref = $(link).attr('href');
-        if (url.endsWith('index.aspx') || url.endsWith(siteUrl)) {
+    ctrl.activeNavNode = function (node) {
+        var pageUrl = _spPageContextInfo.serverRequestPath.toLowerCase();
+        var siteUrl = _spPageContextInfo.webServerRelativeUrl;
+        if (node.url.toLowerCase().endsWith(pageUrl)) 
             return true;
-        } else if (aHref.endsWith(pageUrl)) {
+        if (node.url.endsWith(siteUrl))
             return true;
-        }
+        return false;
     };
     ctrl.toggleSearchBox = toggleSearchBox;
     ctrl.isSearchBoxVisible = false;
