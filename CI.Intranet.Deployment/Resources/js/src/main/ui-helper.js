@@ -1,7 +1,8 @@
 ﻿'use strict';
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'uiHelper',
-    firstNameId = 'ci-user-first-name';
+    firstNameId = 'ci-user-first-name',
+    greetingId = 'ci-greeting';
 
 myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_CONFIG) {
     var userDisplayName = _spPageContextInfo.userDisplayName,
@@ -77,6 +78,7 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
     }
     function addFirstNameToWelcomeMessage(firstName) {
         $('#' + firstNameId).text(firstName);
+        $('#' + greetingId).text(getGreeting());
     }
     function getFirstName(fullName) {
         var names = fullName.split(' ');
@@ -84,6 +86,22 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
             return names[0];
         else
             return '';
+    }
+    function getGreeting() {
+        var currentHour = new Date().getHours();
+        console.log(currentHour);
+        switch(true) {
+            case (currentHour >= 0 && currentHour < 12):
+                return "Good Morning";
+                break;
+            case (currentHour >= 12 && currentHour < 17):
+                return "Good Afternoon";
+                break;
+            case (currentHour >= 17 && currentHour <= 24):
+                return "Good Evening";
+                break;
+        }
+
     }
     function getLastName(fullName) {
         var names = fullName.split(' ');

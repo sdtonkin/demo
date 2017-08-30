@@ -7,7 +7,7 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
     ctrl.showManager = false;
     this.$onInit = function () {
         var userId = _spPageContextInfo.userId;
-        var articleLimit = ($scope.ctrl.articlelimit != null ? $scope.ctrl.articlelimit : 5);
+        var articleLimit = ($scope.ctrl.articleLimit != null ? $scope.ctrl.articleLimit : 5);
         rssFeedService.getMyRssFeeds(userId, articleLimit).then(function (response) {
             ctrl.myFeeds = response;
             ctrl.showNoFeedsMessage = ctrl.myFeeds.length == 0;
@@ -19,6 +19,6 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
     controller: controllerName,
     controllerAs: 'ctrl',
     bindings: {
-        articlelimit: '@'
+        articleLimit: '@'
     }
 });

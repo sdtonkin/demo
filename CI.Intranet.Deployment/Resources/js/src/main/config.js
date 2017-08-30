@@ -23,7 +23,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/stage',
-            searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
+            searchWeb: 'https://compassion.sharepoint.com/sites/stage-search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
