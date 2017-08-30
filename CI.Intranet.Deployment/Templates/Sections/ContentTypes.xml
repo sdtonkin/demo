@@ -59,7 +59,7 @@
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
-      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" Hidden="false" />  
+      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" />  
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x010200AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">

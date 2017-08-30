@@ -151,7 +151,7 @@
    <!-- Annoucement Text -->
 	<Field ID="{f3c81eaa-d29a-4a0c-91b6-765150ee1655}" Type="Text" Name="COM_AnnoucementText" StaticName="COM_AnnoucementText" DisplayName="Annoucement Text" Required="False" Hidden="False" Group="1 - Compassion Columns" Description="" />
    <!-- Yammer ID -->
-	<Field ID="{e8bb0dba-efca-4a9a-abd7-919bf94629cd}" Type="Text" Name="COM_YammerID" StaticName="COM_YammerID" DisplayName="Yammer ID" Required="FALSE" Hidden="TRUE" Group="1 - Compassion Columns" Description="" />
+	<Field ID="{e8bb0dba-efca-4a9a-abd7-919bf94629cd}" Type="Text" Name="COM_YammerID" StaticName="COM_YammerID" DisplayName="Yammer ID" Required="FALSE" Hidden="False" Group="1 - Compassion Columns" Description="" />
   <!-- Bookmark URL -->
   <Field ID="{651262AD-E8A1-4339-B5D4-1D94118EF2D4}" Type="Text" Name="COM_BookmarkUrl" StaticName="COM_BookmarkUrl" DisplayName="Bookmark Url" Required="True" Hidden="False" Group="1 - Compassion Intranet" Description="Bookmark Url" />
   <!-- Group Description -->
