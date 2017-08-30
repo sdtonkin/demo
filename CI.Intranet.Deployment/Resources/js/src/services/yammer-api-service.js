@@ -300,29 +300,29 @@ angular.module('compassionIntranet')
             return def.promise;
         }
         ctrl.getLikesByThreadId = function (threadId) {
-
+            var me = this;
             var def = $.Deferred();
             var url = "messages/in_thread/" + threadId + ".json?threaded=extended";
             var totalLikes = 0;
-
-            yam.platform.request({
-                url: url,
-                method: "GET",
-                data: {},
-                success: function (data) {
-                    var likeCount = 0;
-                    for (var i = 0; i < data.messages.length; i++) {
-                        var message = data.messages[i];
-                        likeCount = likeCount + message.liked_by.count;
+            me.ensureConnection().then(function (response) {
+                yam.platform.request({
+                    url: url,
+                    method: "GET",
+                    data: {},
+                    success: function (data) {
+                        var likeCount = 0;
+                        for (var i = 0; i < data.messages.length; i++) {
+                            var message = data.messages[i];
+                            likeCount = likeCount + message.liked_by.count;
+                        }
+                        def.resolve(likeCount);
+                    },
+                    error: function (msgErr) {
+                        console.log("getLikestByThreadId - no messages.");
+                        def.reject();
                     }
-                    def.resolve(likeCount);
-                },
-                error: function (msgErr) {
-                    console.log("getLikestByThreadId - no messages.");
-                    def.reject();
-                }
+                });
             });
-
             return def.promise();
         }
         ctrl.getMessagesForGroup = function (groupId) {
