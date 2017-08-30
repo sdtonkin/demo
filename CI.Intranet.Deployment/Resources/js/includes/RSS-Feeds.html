@@ -6,7 +6,7 @@
                 <span class="rss-category">{{ item.title }}</span>
                 <li ng-repeat="article in item.articles" class="row">
                     <div class="col-10 rss-title">
-                        <a href="{{ article.guid }}">{{ article.title }}</a>
+                        <a href="{{ article.guid }}" target="_blank">{{ article.title }}</a>
                     </div>
                     <div class="col-2 rss-date">
                         {{ article.publishedSpanString }}
