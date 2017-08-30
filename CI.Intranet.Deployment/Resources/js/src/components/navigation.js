@@ -30,6 +30,9 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'COM_CONFIG', f
         });
         
     };
+    ctrl.activeNavNode = function () {
+        
+    };
     ctrl.toggleSearchBox = toggleSearchBox;
     ctrl.isSearchBoxVisible = false;
     ctrl.searchTitle = 'Search';

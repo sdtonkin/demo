@@ -1,51 +1,50 @@
 ﻿angular.module('compassionIntranet').service('storage', ['common', function (common) {
     var version = 2;
-    function set(key, value, expirationDuration) {
+    function set(key, value, expirationDuration, storageType) {
+        var expire;
         if (key != 'v') {
-            // apply userid to make sure storage item is user specific on public methods
             key = key;
-            value.expiration = (expirationDuration === 0 ? 0 : moment().add(expirationDuration, 'hours'));
+            expire = (expirationDuration === 0 ? 0 : moment().add(expirationDuration, 'hours'));
         }
         try {
-            return localStorage.setItem(key, angular.toJson(value));
+            if (expire === 0) {
+                if (storageType == 'session') {
+                    $pnp.session.put(key, value);
+                } else {
+                    $pnp.local.put(key, value);
+                }                
+            } else {
+                if (storageType == 'session') {
+                    $pnp.session.put(key, value, expire);
+                } else {
+                    $pnp.local.put(key, value, expire);
+                }
+            }
         } catch (e) {
             throw new Error('Storage set error for key: ' + key);
         }
-    }
-    function get(key) {
+    }    
+    function get(key, storageType) {
         try {
-            if (key != 'v') {
-                key = key;
-                var item = angular.fromJson(localStorage.getItem(key));
-                if (item != null)
-                    item.isExpired = isItemExpired(key, item);
-                return item;
+            var item;
+            if (storageType == 'session') {
+                item = $pnp.session.get(key);
             } else {
-                var item = angular.fromJson(localStorage.getItem(key));
-                return item;
-            }
+                item = $pnp.local.get(key);
+            }            
+            return item;
         } catch (e) {
             throw new Error('Storage get error for key: ' + key);
         }
+        return null;
     }
     function remove(key) {
-        return localStorage.removeItem(key);
+        return $pnp.local.delete(key);
     }
     function clearAll() {
         localStorage.clear();
     }
-    function isItemExpired(key, item) {
-        if (item == null)
-            return false;
-        else if (item.expiration === 0) 
-            return false;
-        else if (moment(item.expiration) > moment()) {
-            remove(key);
-            return true;
-        }            
-        else
-            return false;
-    }
+   
     /* Clear storage in old format */
     if (get('v') !== version) {
         localStorage.clear();
