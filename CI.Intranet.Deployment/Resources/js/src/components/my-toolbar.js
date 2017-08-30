@@ -2,16 +2,20 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, storage, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
     var ctrl = this;
+    var selectedTabCacheKey = 'navSelectedTab';
     var userId = _spPageContextInfo.userId;    
     var isToolbarDirty = false;
     ctrl.toolbarSelectorId = 'ci-toolbar-selector',
         ctrl.toolbarContainerId = 'ci-toolbar-container',
         ctrl.toolbarContentClassName = 'toolbar-content';
 
-    ctrl.selectedTabId = 'ci-apps';
+    
     this.$onInit = function () {
+        var selectedTabId = storage.get(selectedTabCacheKey);
+        ctrl.selectedTabId =  (selectedTabId == null ? 'ci-apps' : selectedTabId);
+        
         appService.getMyApps(userId).then(function (response) {
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
@@ -21,7 +25,11 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appServic
             ctrl.myBookmarksFromDb = response;
         });
     };
+    ctrl.isSelected = function (tabId) {
+        return ctrl.selectedTabId == tabId;
+    }
     ctrl.select = function (tabId) {
+        storage.set(selectedTabCacheKey, tabId);
         if (ctrl.selectedTabId === tabId)
             return;
         ctrl.selectedTabId = tabId;

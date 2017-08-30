@@ -7,7 +7,7 @@
             expire = (expirationDuration === 0 ? 0 : moment().add(expirationDuration, 'hours'));
         }
         try {
-            if (expire === 0) {
+            if (!expirationDuration) {
                 if (storageType == 'session') {
                     $pnp.storage.session.put(key, value);
                 } else {
