@@ -12,7 +12,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     if (parameters.location) {
         $scope.selectedLocation = parameters.location;
     } else {
-        if (COM_CONFIG.rootWeb.toLowerCase() + "/news" === bones.web.url.toLowerCase()) { //On main news landing site
+        if (COM_CONFIG.rootWeb.toLowerCase() + "/news" === _spPageContextInfo.webServerRelativeUrl.toLowerCase()) { //On main news landing site
             $scope.selectedLocation = "All";
         } else {
             $scope.selectedLocation = "";
@@ -120,7 +120,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     bindings: {
         default: '@'
     },
-    template: require('../../includes/News-Landing-Results.html'),
+    template: require('../../includes/News-Events-Browser.html'),
     controller: ctrlName,
     controllerAs: 'ctrl'
 }).directive('searchEnter', function() {

@@ -5,7 +5,7 @@ angular.module('compassionIntranet').service('navigationService', ['$http', '$q'
     var delveUrl = '';
     // clear local storage if url param is detected
     common.checkForClearStatement('clearNavNodes', navKey);
-
+    ES6Promise.polyfill();
     // set default expiration at 0 hours
     ctrl.expirationDuration = 0;
     ctrl.getAllNodes = function () {
@@ -24,8 +24,7 @@ angular.module('compassionIntranet').service('navigationService', ['$http', '$q'
         return defer.promise;
     };
     function getNavigationNodes() {
-        // ensure Promise for pnp is loaded prior to using pnp module
-        ES6Promise.polyfill();
+        
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.navigation).items
