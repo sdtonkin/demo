@@ -38,7 +38,10 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         return defer.promise;
     }
     function getImage(element) {
-        return $(element).attr('src');
+        var src = $(element).attr('src');
+        if (src.indexOf('?') != -1)
+            src = src.substring(0, src.indexOf('?'));
+        return src;
     }
     function getEvents(searchTerm) {
         var defer = $q.defer();

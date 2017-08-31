@@ -1,6 +1,6 @@
-﻿var ctrlName = 'NewsLandingCtrl';
+﻿var ctrlName = 'newsEventsBrowserCtrl';
 var app = angular.module('compassionIntranet');
-app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService', 'COM_CONFIG', function ($scope, $location, newsService, taxonomyService, COM_CONFIG) {
+app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyService', 'COM_CONFIG', function ($scope, $q, $location, newsService, taxonomyService, COM_CONFIG) {
     var ctrl = this;
     ctrl.newsCategories = [];
     ctrl.eventCategories = [];
@@ -14,36 +14,30 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     ctrl.activeTab = 'news';
 
     this.$onInit = function () {
-        getData();
-        
+        getData();        
     };
 
     function getData() {
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.newsTypeTermId).then(function (data) {
-            console.log(data);
-            ctrl.newsCategories = data;
-            if (ctrl.activeTab == 'news') {
-                ctrl.categories = data;
-            }
-        });
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.eventTypeTermId).then(function (data) {
-            console.log(data);
-            ctrl.eventCategories = data;
+        var p1 = taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.newsTypeTermId);
+        var p2 = taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.eventTypeTermId);
+        var p3 = taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId);
+        var p4 = newsService.getNews();
+        var p5 = newsService.getEvents();
+
+        $q.all([p1, p2, p3, p4, p5]).then(function (data) {
+            ctrl.newsCategories = data[0];
+            ctrl.eventCategories = data[1];
+            ctrl.regions = data[2];
+            ctrl.newsArticles = data[3];
+            ctrl.events = data[4];
+
             if (ctrl.activeTab == 'events') {
-                ctrl.categories = data;
+                ctrl.categories = d2;
+            } else {
+                ctrl.categories = d1;
             }
-        });
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (data) {
-            console.log(data);
-            ctrl.regions = data;
-        });
-        newsService.getNews().then(function (data) {
-            console.log(data);
-            ctrl.newsArticles = data
-        });
-        newsService.getEvents().then(function (data) {
-            console.log(data);
-            ctrl.events = data
+
+            //$scope.$apply();
         });
     }
     
