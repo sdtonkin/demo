@@ -1,30 +1,35 @@
 ﻿<section class="employee-spotlight">
-    <h2>Employee Spotlight</h2>
-    <ul class="nav nav-tabs">
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('gratitudes')"><h3>gratitudes</h3></li>
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('newHires')"><h3>new hires</h3></li>
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('anniversary')"><h3>anniversaries + retirements</h3></li>
-    </ul>
-    <div class="ci-gratitudes" ng-show="ctrl.activeTab == 'gratitudes'">
-        <gratitudes></gratitudes>
-    </div>
-    <div class="ci-newHires" ng-show="ctrl.activeTab == 'newHires'">
-        <newHires></newHires>
-    </div>
-    <div class="ci-anniversary" ng-show="ctrl.activeTab == 'anniversary'">
-        <anniversary-card></anniversary-card>
-    </div>
-    <input id="nav-link active" type="hidden" ng-model="ctrl.activeTab" />
-    
-    <div class="row">
-        <ul>
-            <li class="col-12">
-                <a class="btn btn-cta" href="#">Submit a [Gratitude]</a>
-            </li>
-            <li class="col-12">
-                <a class="btn btn-cta" href="#">View All</a>
-            </li>
-       </ul>
-    </div>
+    <div class="container">
+        <div class="row">
+            <h2>Employee Spotlight</h2>
+            <div class="employee-spotlight-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item" ng-click="ctrl.toggleActiveTab('gratitudes')"><h3>gratitudes</h3></li>
+                    <li class="nav-item" ng-click="ctrl.toggleActiveTab('newHires')"><h3>new hires</h3></li>
+                    <li class="nav-item" ng-click="ctrl.toggleActiveTab('anniversary')"><h3>anniversaries + retirements</h3></li>
+                </ul>
+             </div>
+                <div class="tab-content" ng-show="ctrl.activeTab == 'gratitudes'">
+                    <gratitudes></gratitudes>
+                </div>
+                <div class="tab-content" ng-show="ctrl.activeTab == 'newHires'">
+                    <newHires></newHires>
+                </div>
+                <div class="tab-content" ng-show="ctrl.activeTab == 'anniversary'">
+                    <anniversary-card></anniversary-card>
+                </div>
+                <input id="nav-link active" type="hidden" ng-model="ctrl.activeTab" />
 
+                <div class="row">
+                    <ul>
+                        <li class="col-12">
+                            <a class="btn btn-cta" href="#">Submit a [Gratitude]</a>
+                        </li>
+                        <li class="col-12">
+                            <a class="btn btn-cta" href="#">View All</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
 </section>
