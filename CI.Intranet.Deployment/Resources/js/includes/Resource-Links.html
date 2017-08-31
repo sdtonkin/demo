@@ -5,14 +5,12 @@
         </div>
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <div class="nav-link" ng-repeat="link in ctrl.resourceLinks">
+                    <li class="nav-item" ng-repeat="link in ctrl.resourceLinks">
                         <a ng-href="{{ link.URL }}">
                             <img ng-src="{{ link.iconUrl }}" />
                         </a>
-                        <a href="{{ link.URL }}">{{ link.title }}</a>
-                        </div>
-                </li>
+                        <a class="nav-link" href="{{ link.URL }}">{{ link.title }}</a>
+                        </li>
             </ul>
         </div>
     </div>
