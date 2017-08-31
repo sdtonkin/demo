@@ -1,24 +1,25 @@
 ﻿<section class="news-events">
     <div class="container">
+        <bookmark-page></bookmark-page>
         <div class="row">
             <div class="news-events-tabs">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active alt" data-toggle="tab" href="#news" role="tab">News</a>
+                        <a class="nav-link active alt" data-toggle="tab" role="tab" ng-click="ctrl.activeTab = 'news'">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link alt" data-toggle="tab" href="#events" role="tab">Events</a>
+                        <a class="nav-link alt" data-toggle="tab" role="tab" ng-click="ctrl.activeTab = 'events'">Events</a>
                     </li>
-                </ul>
+                </ul>                
                 <div class="search-filter">
                     <div class="dropdown">
                         <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             cateogry
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a ng-click="ctrl.clearCategory()"><i class="dropdown-item"></i>Clear Selection</a>
-                            <a class="dropdown-item" ng-click="ctrl.selectCategory(category)" ng-repeat="category in ctrl.categories">{{category.name}}</a>
+                            <a ng-click="ctrl.clearCategory()">Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.filterByCategory(category)" ng-repeat="category in ctrl.categories">{{category.name}}</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -26,8 +27,8 @@
                             region
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a ng-click="ctrl.clearCategory()"><i class="dropdown-item"></i>Clear Selection</a>
-                            <a class="dropdown-item" ng-click="ctrl.selectCategory(category)" ng-repeat="region in ctrl.regions">{{region.name}}</a>
+                            <a ng-click="ctrl.clearRegion()">Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.filterByRegion(region)" ng-repeat="region in ctrl.regions">{{region.name}}</a>
                         </div>
                     </div>
                     <div class="input-group search">
@@ -41,18 +42,18 @@
                 <div class="row">
                     <div class="col-md-4 offset-md-8">
                         <div class="dropdown pull-right sort-filter">
-                            <button class="btn btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Sort by: Newest First
+                            <button class="btn btn-block dropdown-toggle" ng-repeat="sort in ctrl.sortOptions | limitTo: 1:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sort by: {{sort.title}}
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" ng-click="ctrl.sortBy(sortOption)" ng-repeat="sortOption in ctrl.sortOptions">{{sortOption.title}}</a>
+                            <div id="ci-filter-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" ng-repeat="sort in ctrl.sortOptions | limitTo: ctrl.sortOptions.length:1" ng-click="ctrl.sortBy(sort)" ng-repeat="sortOption in ctrl.sortOptions">{{sort.title}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
+                    <div class="active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
                         <div class="hero-news-container">
                             <div class="card-group" ng-repeat="article in ctrl.newsArticles">
                                 <div class="card img-card">
@@ -62,25 +63,27 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title" ng-repeat="tag in article.tags"><a ng-href="/news/pages/news.aspx?newstype={{tag.title}}">{{tag.title}}</a></h4>
+                                        <h4 class="card-tags" ng-show="article.NewsTypes != null">{{article.NewsTypes}}</h4>
+                                        <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.LocationTag}}</h4>
                                         <div class="card-date">{{article.ArticleDate}}</div>
                                         <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
-                                        <news-page-likes thread-id="{{article.threadId}}"></news-page-likes>
+                                        <news-page-likes ng-cloak page-url="{{article.Path}}"></news-page-likes>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>                        
-                    <div class="tab-pane" id="events" role="tabpanel" ng-show="ctrl.activeTab == 'events'">
+                    <div id="events" role="tabpanel" ng-show="ctrl.activeTab == 'events'">
                         <div class="row news-card-container">
                             <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.events">
                                 <div class="card upcoming-events">
                                     <div class="card-body">
-                                        <a href="#"><p class="card-text">{{event.title}}</p></a>
-                                        <p class="card-date">{{event.date}}</p>
-                                        <p class="card-time">{{event.time}}</p>
-                                        <p class="card-location">{{event.location}}</p>
-                                        <h4 class="card-tags" ng-repeat="tag in event.tags">{{tag.title}}</h4>
+                                        <a href="#"><p class="card-text">{{event.Title}}</p></a>
+                                        <p class="card-date">{{event.EventDate}}</p>
+                                        <p class="card-time">{{event.StartTime}}-{{event.EndTime}}</p>
+                                        <p class="card-location">{{event.Location}}</p>
+                                        <h4 class="card-tags" ng-show="event.EventTypes != null">{{event.EventTypes}}</h4>
+                                        <h4 class="card-tags" ng-show="event.LocationTag != null">{{event.LocationTag}}</h4>
                                     </div>
                                 </div>
                             </div>

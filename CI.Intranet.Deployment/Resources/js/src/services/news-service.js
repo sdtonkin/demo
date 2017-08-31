@@ -10,16 +10,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         var defer = $q.defer();
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
-            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
-            //SelectProperties: ['RefinableDate01', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04', 'RefinableString06', 'RefinableString07', 'RefinableString12', 'RefinableString15', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID'],
-            //Refiners: 'RefinableString15,RefinableString03',
-            /*
-            SortList: [{
-                'Property': 'RefinableDate01',
-                'Direction': '1'
-            }],
-            */
-            //StartRow: startrow
+            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],            
         }).then(function (response) {
             
             response.PrimarySearchResults.map(function (item) {
@@ -27,9 +18,17 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                     item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
                 }
                 if (item.RefinableDate00) {
-
                     var artDate = new Date(item.RefinableDate00);
                     item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
+                }                
+                if (item.RefinableString00) {
+                    item.LocationTag = item.RefinableString00;
+                }
+                if (item.RefinableString01) {
+                    item.NewsType = item.RefinableString01;
+                }
+                if (item.RefinableString02) {
+                    item.EventType = item.RefinableString02;
                 }
             });
             defer.resolve(response.PrimarySearchResults);
@@ -47,24 +46,33 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         var defer = $q.defer();
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
-            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
-            //Refiners: 'RefinableString15,RefinableString03',
-            /*
+            SelectProperties: ['Path', 'Title', 'Location', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
             SortList: [{
                 'Property': 'RefinableDate01',
                 'Direction': '1'
             }],
-            */
-            //StartRow: startrow
         }).then(function (response) {
             response.PrimarySearchResults.map(function (item) {
                 if (item.PublishingImage) {
                     item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
                 }
-                if (item.RefinableDate00) {
-
-                    var artDate = new Date(item.RefinableDate00);
-                    item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
+                if (item.RefinableDate01) {
+                    var eventDate = new Date(item.RefinableDate01);
+                    item.EventDate = moment(eventDate).format('MMMM D, YYYY');
+                    item.StartTime = moment(eventDate).format('h:mm a');
+                }
+                if (item.RefinableDate02) {
+                    var endDate = new Date(item.RefinableDate02);
+                    item.EndTime = moment(endDate).format('h:mm a');
+                }
+                if (item.RefinableString00) {
+                    item.LocationTag = item.RefinableString00;
+                }
+                if (item.RefinableString01) {
+                    item.NewsType = item.RefinableString01;
+                }
+                if (item.RefinableString02) {
+                    item.EventType = item.RefinableString02;
                 }
             });
             defer.resolve(response.PrimarySearchResults);
