@@ -1123,14 +1123,16 @@ toolbar-manager a:before {
  *  @@ File: components/_departments.scss
  * ----------------------------------------- 
  */
-.departments .nav.nav-pills, .work-resources .nav.nav-pills {
+.departments .nav.nav-pills, .work-resourcess .nav.nav-pills {
   display: inline-block;
   text-align: center; }
-  .departments .nav.nav-pills .nav-item, .work-resources .nav.nav-pills .nav-item {
+  .departments .nav.nav-pills .nav-item, .work-resourcess .nav.nav-pills .nav-item {
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 20px;
     min-width: 200px; }
+  .departments .nav.nav-pills .nav-link a, .work-resourcess .nav.nav-pills .nav-link a {
+    color: white; }
 
 /* 
  * -----------------------------------------
@@ -1154,6 +1156,20 @@ toolbar-manager a:before {
     .work-resources .nav.nav-pills .nav-link span, .how-do-i .nav.nav-pills .nav-link span {
       display: table-cell;
       padding-left: 10px; }
+    .work-resources .nav.nav-pills .nav-link:hover, .how-do-i .nav.nav-pills .nav-link:hover {
+      border: 1px solid #003364; }
+      .work-resources .nav.nav-pills .nav-link:hover a, .how-do-i .nav.nav-pills .nav-link:hover a {
+        color: #003364;
+        text-decoration: none; }
+    .work-resources .nav.nav-pills .nav-link a, .how-do-i .nav.nav-pills .nav-link a {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block; }
+      .work-resources .nav.nav-pills .nav-link a:hover, .how-do-i .nav.nav-pills .nav-link a:hover {
+        color: #003364;
+        text-decoration: none; }
 
 .how-do-i .nav.nav-pills {
   padding-top: 20px;
