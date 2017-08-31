@@ -7,12 +7,15 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
     var location = window.location.href;
     
     this.$onInit = function () {
-        if (ctrl.threadId == null) {
+        if (ctrl.pageUrl != null) {
+            yammerApiService.getLikeCountForMessage(ctrl.pageUrl).then(function (response) {
+                ctrl.likeCount = response;
+            });        
+        } else if (ctrl.threadId == null) {
             yammerApiService.getLikeCountForMessage(location).then(function (response) {
                 ctrl.likeCount = response;
             });
-        }
-        else {
+        } else {
             if (ctrl.threadId == '') {
                 ctrl.likeCount = 0;
             } else {
@@ -28,6 +31,7 @@ myApp.controller(controllerName, ['$scope', 'yammerApiService', function ($scope
     controller: controllerName,
     controllerAs: 'ctrl',
     bindings: {
-        threadId: '@'
+        threadId: '@',
+        pageUrl: '@'
     }
 });

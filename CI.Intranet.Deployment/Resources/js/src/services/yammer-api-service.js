@@ -41,8 +41,9 @@ angular.module('compassionIntranet')
                         //deferred.reject();
 
                         var loginName = "i:0#.f|membership|" + _spPageContextInfo.userLoginName;
+                        //var loginName = _spPageContextInfo.userLoginName;
 
-                        $pnp.sp.profiles.getUserProfilePropertyFor(loginName, "YammerOAuth").then(function (authToken) {
+                        $pnp.sp.profiles.getUserProfilePropertyFor(loginName).then(function (authToken) {
                             if (authToken) {
                                 localStorage.removeItem("yammer_token");
                                 localStorage.setItem("yammer_token", authToken);
@@ -286,14 +287,16 @@ angular.module('compassionIntranet')
             var def = $q.defer();
             var me = this;
             if (yam !== null) {
-                ctrl.getOpenGraphItemByUrl(location).then(function (response) {
-                    ctrl.getOpenGraphObject(response.id).then(function (data) {
-                        var likeCount = 0;
-                        for (var i = 0; i < data.messages.length; i++) {
-                            var message = data.messages[i];
-                            likeCount = likeCount + message.liked_by.count;
-                        }
-                        def.resolve(likeCount);
+                me.ensureConnection().then(function (response) {
+                    ctrl.getOpenGraphItemByUrl(location).then(function (response) {
+                        ctrl.getOpenGraphObject(response.id).then(function (data) {
+                            var likeCount = 0;
+                            for (var i = 0; i < data.messages.length; i++) {
+                                var message = data.messages[i];
+                                likeCount = likeCount + message.liked_by.count;
+                            }
+                            def.resolve(likeCount);
+                        });
                     });
                 });
             }
