@@ -1,8 +1,77 @@
 'use strict'
 
 angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM_CONFIG', function($q, $http, COM_CONFIG) {
+    var ctrl = this;
+    ctrl.getNews = getNews;
+    ctrl.getEvents = getEvents;
+    ES6Promise.polyfill();
 
-    this.getLandingNews = function(location, category, queryTerm, startrow) {
+    function getNews(searchTerm) {
+        var defer = $q.defer();
+        $pnp.sp.search({
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
+            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
+            //SelectProperties: ['RefinableDate01', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04', 'RefinableString06', 'RefinableString07', 'RefinableString12', 'RefinableString15', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID'],
+            //Refiners: 'RefinableString15,RefinableString03',
+            /*
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }],
+            */
+            //StartRow: startrow
+        }).then(function (response) {
+            
+            response.PrimarySearchResults.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate00) {
+
+                    var artDate = new Date(item.RefinableDate00);
+                    item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
+                }
+            });
+            defer.resolve(response.PrimarySearchResults);
+        });
+
+        return defer.promise;
+    }
+    function getImage(element) {
+        return $(element).attr('src');
+    }
+    function getEvents(searchTerm) {
+        var defer = $q.defer();
+        $pnp.sp.search({
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
+            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
+            //Refiners: 'RefinableString15,RefinableString03',
+            /*
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }],
+            */
+            //StartRow: startrow
+        }).then(function (response) {
+            response.PrimarySearchResults.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate00) {
+
+                    var artDate = new Date(item.RefinableDate00);
+                    item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
+                }
+            });
+            defer.resolve(response.PrimarySearchResults);
+        });
+
+        return defer.promise;
+    }
+
+
+    ctrl.getLandingNews = function(location, category, queryTerm, startrow) {
         var deferred = $q.defer();
         //var start = startrow ? startrow : 0;
         var queryText = queryTerm + ' Path:"' + bones.web.url + '/pages" ContentType:"News Page"';
