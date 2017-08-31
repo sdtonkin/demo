@@ -23,10 +23,13 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
-                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
+                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
+                newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
+                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/stage',
+            newsWeb: 'https://compassion.sharepoint.com/sites/stage/news',
             searchWeb: 'https://compassion.sharepoint.com/sites/stage-search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             lists: {
@@ -45,6 +48,10 @@ if (document.location.host === "compassion.sharepoint.com") {
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
+            },
+            contentTypeIds: {
+                newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
+                event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
             }
         });
     }
@@ -65,7 +72,9 @@ if (document.location.host === "compassion.sharepoint.com") {
             },            
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
-                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
+                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
+                newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
+                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
             },
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com',
@@ -87,6 +96,10 @@ if (document.location.host === "compassion.sharepoint.com") {
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
+            },
+            contentTypeIds: {
+                newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
+                event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
             }
         });
     }
@@ -109,7 +122,9 @@ else {
         },
         termSets: {
             locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
-            globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484'
+            globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
+            newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
+            eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
         },
         useCaching: false,
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
@@ -131,6 +146,10 @@ else {
             anniversary: 'Anniversary and Retirement',
             newHire: 'New Hires',
             resourceLinks: 'Resource Links'
+        },
+        contentTypeIds: {
+            newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
+            event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
         }
     });
 }

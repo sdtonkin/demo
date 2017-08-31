@@ -1,0 +1,93 @@
+﻿<section class="news-events">
+    <div class="container">
+        <div class="row">
+            <div class="news-events-tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active alt" data-toggle="tab" href="#news" role="tab">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link alt" data-toggle="tab" href="#events" role="tab">Events</a>
+                    </li>
+                </ul>
+                <div class="search-filter">
+                    <div class="dropdown">
+                        <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            cateogry
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a ng-click="ctrl.clearCategory()"><i class="dropdown-item"></i>Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.selectCategory(category)" ng-repeat="category in ctrl.categories">{{category.name}}</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            region
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a ng-click="ctrl.clearCategory()"><i class="dropdown-item"></i>Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.selectCategory(category)" ng-repeat="region in ctrl.regions">{{region.name}}</a>
+                        </div>
+                    </div>
+                    <div class="input-group search">
+                        <input type="text" placeholder="{{searchText}}" class="form-control" placeholder="Search for..." ng-class="{'focus': hasFocus}" ng-focus="hasFocus=true" ng-blur="hasFocus=false" ng-model="searchTerm" search-enter="search()">
+                        <span class="input-group-btn">
+                            <button class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+
+                </div><!--search-filter-->
+                <div class="row">
+                    <div class="col-md-4 offset-md-8">
+                        <div class="dropdown pull-right sort-filter">
+                            <button class="btn btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sort by: Newest First
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" ng-click="ctrl.sortBy(sortOption)" ng-repeat="sortOption in ctrl.sortOptions">{{sortOption.title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
+                        <div class="hero-news-container">
+                            <div class="card-group" ng-repeat="article in ctrl.newsArticles">
+                                <div class="card img-card">
+                                    <a ng-href="{{article.Path}}">
+                                        <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
+                                    </a>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title" ng-repeat="tag in article.tags"><a ng-href="/news/pages/news.aspx?newstype={{tag.title}}">{{tag.title}}</a></h4>
+                                        <div class="card-date">{{article.ArticleDate}}</div>
+                                        <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
+                                        <news-page-likes thread-id="{{article.threadId}}"></news-page-likes>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="tab-pane" id="events" role="tabpanel" ng-show="ctrl.activeTab == 'events'">
+                        <div class="row news-card-container">
+                            <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.events">
+                                <div class="card upcoming-events">
+                                    <div class="card-body">
+                                        <a href="#"><p class="card-text">{{event.title}}</p></a>
+                                        <p class="card-date">{{event.date}}</p>
+                                        <p class="card-time">{{event.time}}</p>
+                                        <p class="card-location">{{event.location}}</p>
+                                        <h4 class="card-tags" ng-repeat="tag in event.tags">{{tag.title}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
