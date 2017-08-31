@@ -174,10 +174,21 @@
 		margin-top: 10px;
 		display: block;	
 	}
+	.tag-container{
+		> span{
+			@extend .card-tags;
+			@extend .h4;
+		}
+	}
 }
 .news-title-block{
 	margin-top: 45px;
 	.card-text{
 		margin-bottom: 40px;
 	}
+}
+
+#ci-embedded-feed{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }

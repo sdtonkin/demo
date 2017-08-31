@@ -65,7 +65,7 @@
             </div>
         </div> <!--/.container-->
     </div><!--main-container-->
-    <div id="ci-embedded-feed" style="height:400px;width:100%;"></div>
+    <div id="ci-embedded-feed" class="container" style="height:400px;width:100%;"></div>
     <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
     <script>
         yam.connect.embedFeed({

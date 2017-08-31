@@ -25,7 +25,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, .news-tag-content .tag-container > span, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-name, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, .ms-searchCenter-result-main #SearchBox input {
   font-family: 'Lato', sans-serif !important;
   font-weight: 300; }
 
@@ -81,7 +81,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 40px;
-  color: #ffffff; }
+  color: white; }
   h2.section, .h2.section {
     color: #908b63; }
 
@@ -92,7 +92,7 @@ h3, .h3 {
   margin-bottom: 20px;
   display: block; }
 
-h4, .h4 {
+h4, .h4, .news-tag-content .tag-container > span {
   font-size: 22px;
   color: #0054a6;
   display: block;
@@ -138,11 +138,11 @@ a {
       margin-left: 10px;
       color: #0054a6; }
     .btn.btn-cta.white {
-      color: #ffffff; }
+      color: white; }
       .btn.btn-cta.white:after {
-        color: #ffffff; }
+        color: white; }
   .btn.btn-input {
-    background-color: #ffffff;
+    background-color: white;
     border: 1px solid #908b63;
     border-radius: 0;
     border-left: none;
@@ -155,7 +155,7 @@ a {
 
 .btn.btn-block {
   color: #0054a6;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 0;
   border: none;
   text-transform: uppercase;
@@ -164,10 +164,10 @@ a {
   padding: 15px; }
   .btn.btn-block.blue {
     background-color: #003364;
-    color: #ffffff; }
+    color: white; }
   .btn.btn-block.blue-alt {
     background-color: #0054a6;
-    color: #ffffff; }
+    color: white; }
   .btn.btn-block.brown {
     color: #908b63; }
 
@@ -178,9 +178,8 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.3px; }
   .nav-pills .nav-link:hover {
-    background-color: #ffffff;
+    background-color: white;
     color: #003364; }
-
 .nav-pills .nav-item {
   margin-right: 15px;
   min-width: 200px;
@@ -189,7 +188,6 @@ a {
 .helpful-links ul {
   list-style: none;
   padding-left: 0; }
-
 .helpful-links li {
   display: table; }
   .helpful-links li:before {
@@ -270,17 +268,17 @@ body {
     border: none; }
   .sub-nav-container .card-header {
     background-color: transparent;
-    color: #ffffff;
+    color: white;
     border: none;
     padding-left: 0; }
   .sub-nav-container .card-intro {
-    color: #ffffff; }
+    color: white; }
   .sub-nav-container .card-body {
-    color: #ffffff;
+    color: white;
     border: none;
     padding-left: 0; }
   .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a {
-    color: #ffffff; }
+    color: white; }
 
 /* ----------------------------------------------------
   2) Main Content Container Styles
@@ -322,10 +320,10 @@ body {
   padding-top: 40px;
   padding-bottom: 30px;
   /*
-	    Social Hover Variations
-	*/ }
+      Social Hover Variations
+  */ }
   .footer-container hr {
-    border-color: #ffffff; }
+    border-color: white; }
   .footer-container nav {
     height: 100%;
     position: relative; }
@@ -337,10 +335,10 @@ body {
       padding-left: 0;
       font-size: 17px; }
       .footer-container nav ul > li {
-        color: #ffffff;
+        color: white;
         display: inline-block;
         margin-right: 10px;
-        border-right: 1px solid #ffffff;
+        border-right: 1px solid white;
         padding-right: 10px; }
         .footer-container nav ul > li:last-child {
           border-right: none; }
@@ -358,11 +356,11 @@ body {
       -moz-transform: scale(1.1);
       -o-transform: scale(1.1); }
   .footer-container #social-fb:hover {
-    color: #ffffff; }
+    color: white; }
   .footer-container #social-tw:hover {
-    color: #ffffff; }
+    color: white; }
   .footer-container #social-in:hover {
-    color: #ffffff; }
+    color: white; }
   .footer-container .footer-copyright p {
     color: #88bee7;
     text-align: right;
@@ -379,14 +377,12 @@ body {
  */
 .hero-news-container .card-group {
   margin-bottom: 20px; }
-
 .hero-news-container .card {
   background-color: #f4f4ef;
   border: none; }
-
 .hero-news-container .card-title {
   margin-bottom: 30px;
-  background-color: #ffffff;
+  background-color: white;
   display: inline-block;
   border: 1px solid #b8b491;
   padding: 4px 10px;
@@ -394,22 +390,18 @@ body {
   margin-right: 5px; }
   .hero-news-container .card-title a, .hero-news-container .card-title a:visited, .hero-news-container .card-title a:hover {
     color: #908b63 !important; }
-
 .hero-news-container .card-likes {
   color: #908b63; }
   .hero-news-container .card-likes i {
     margin-right: 5px; }
-
 .hero-news-container .card-text {
   line-height: 27px;
   font-size: 24px;
   margin-bottom: 50px; }
-
 .hero-news-container .card-date {
   font-size: 14px;
   color: #908b63;
   margin-bottom: 5px; }
-
 .hero-news-container .img-fluid {
   height: 100%;
   width: auto; }
@@ -467,7 +459,7 @@ body {
   .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active {
     display: flex; }
   .find-people-carousel .employee-card {
-    background-color: #ffffff;
+    background-color: white;
     padding: 20px;
     text-align: center; }
     .find-people-carousel .employee-card hr {
@@ -506,10 +498,8 @@ body {
   border-color: #908b63; }
   .ci-places location-places .card:first-child {
     border-top: none; }
-
 .ci-places location-places h5 {
   text-transform: uppercase; }
-
 .ci-places location-places ul {
   padding-left: 0;
   list-style: none; }
@@ -521,7 +511,7 @@ body {
  * ----------------------------------------- 
  */
 .main-right-rail h2.section {
-  color: #ffffff; }
+  color: white; }
 
 .trending, .related {
   background-color: transparent;
@@ -531,7 +521,7 @@ body {
   border-radius: 0;
   overflow: hidden; }
   .trending .card-body, .related .card-body {
-    border: 1px solid #ffffff;
+    border: 1px solid white;
     border-left: none;
     border-radius: 0;
     border-right: none;
@@ -539,13 +529,13 @@ body {
     padding: 0 0 15px 0; }
   .trending .card-title, .related .card-title {
     margin-bottom: 30px;
-    background-color: #ffffff;
+    background-color: white;
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
     color: #908b63; }
   .trending .card-likes, .related .card-likes {
-    color: #ffffff;
+    color: white;
     font-size: 14px; }
     .trending .card-likes i, .related .card-likes i {
       margin-right: 5px; }
@@ -556,7 +546,7 @@ body {
     color: #003364; }
   .trending .card-date, .related .card-date {
     font-size: 14px;
-    color: #ffffff;
+    color: white;
     margin-bottom: 5px; }
   .trending .img-fluid, .related .img-fluid {
     height: 100%;
@@ -570,7 +560,7 @@ body {
   margin-bottom: 35px;
   padding: 20px 20px 0; }
   .world-news .card-text {
-    color: #ffffff;
+    color: white;
     margin-bottom: 25px; }
   .world-news .btn-block {
     max-width: 160px; }
@@ -595,13 +585,13 @@ body {
       margin-top: 40px; }
   .rss-feed .rss-category {
     text-transform: uppercase;
-    color: #ffffff;
+    color: white;
     font-size: 18px;
     margin-bottom: 15px;
     display: block;
     margin-top: 15px; }
   .rss-feed .rss-title a {
-    color: #ffffff;
+    color: white;
     font-size: 18px;
     line-height: 22px; }
   .rss-feed .rss-date {
@@ -609,22 +599,22 @@ body {
     color: #88bee7; }
 
 .upcoming-events {
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 0;
   max-width: 320px;
   margin-top: 20px;
   padding: 20px;
   margin-bottom: 30px; }
   .upcoming-events .card-body {
-    border: 1px solid #ffffff;
+    border: 1px solid white;
     border-left: none;
     border-radius: 0;
     border-right: none;
     border-top: none;
     padding: 0; }
-  .upcoming-events .card-tags {
+  .upcoming-events .card-tags, .upcoming-events .news-tag-content .tag-container > span, .news-tag-content .upcoming-events .tag-container > span {
     margin-bottom: 0;
-    background-color: #ffffff;
+    background-color: white;
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
@@ -633,7 +623,7 @@ body {
     margin-right: 20px;
     font-size: 14px; }
   .upcoming-events .card-likes {
-    color: #ffffff;
+    color: white;
     font-size: 14px; }
     .upcoming-events .card-likes i {
       margin-right: 5px; }
@@ -660,7 +650,6 @@ body {
  */
 .employee-spotlight .nav-tabs {
   border-bottom: 2px solid #88bee7; }
-
 .employee-spotlight .nav-link {
   text-align: left;
   padding-left: 0;
@@ -686,7 +675,6 @@ body {
     border-top: none;
     border-radius: 0;
     color: #0054a6; }
-
 .employee-spotlight .employee-spotlight-cta .btn-block {
   margin-top: 30px;
   max-width: 242px; }
@@ -704,46 +692,36 @@ body {
 
 .employee-card.announce {
   margin-bottom: 30px; }
-
 .employee-card .emp-photo {
   border-radius: 50%; }
-
 .employee-card .emp-name {
   color: #003364;
   font-size: 25px; }
-
 .employee-card .emp-rec {
   color: #0054a6;
   font-size: 14px;
   text-transform: uppercase; }
-
 .employee-card .emp-title {
   color: #0054a6;
   font-size: 14px;
   text-transform: uppercase;
   margin-top: -10px; }
-
 .employee-card .emp-view {
   border-left: 1px solid;
   margin-left: 10px;
   padding-left: 10px; }
-
 .employee-card .emp-contact {
   border-bottom: 1px solid #003364;
   padding-bottom: 20px; }
-
 .employee-card .emp-des {
   color: #003364;
   font-size: 14px;
   line-height: 17px; }
-
 .employee-card .emp-info {
   display: block; }
-
 .employee-card .emp-announce {
   color: #003364;
   display: block; }
-
 .employee-card .submit-line {
   color: #003364;
   font-size: 14px;
@@ -772,10 +750,8 @@ body {
  */
 .news-events .nav-tabs {
   border-bottom: 2px solid #b8b491; }
-
 .news-events .tab-content {
   margin-top: 30px; }
-
 .news-events .nav-link {
   text-align: left;
   padding-left: 0;
@@ -803,15 +779,12 @@ body {
     color: #908b63; }
   .news-events .nav-link.alt {
     color: #908b63; }
-
 .news-events .upcoming-events {
   max-width: none;
   margin-bottom: 0; }
-
 .news-events .news-card-wrapper {
   margin-bottom: 30px;
   margin-top: 0; }
-
 .news-events .search {
   width: auto;
   margin-top: 0;
@@ -840,7 +813,6 @@ body {
     border-radius: 0; }
     .news-events .search .input-group-btn button {
       border: none; }
-
 .news-events .search-filter {
   border: 1px solid #908b63;
   display: flex; }
@@ -853,31 +825,28 @@ body {
     left: -2px;
     width: 100%; }
     .news-events .search-filter .dropdown-menu a {
-      color: #ffffff;
+      color: white;
       font-size: 14px;
       padding-bottom: 15px;
       padding-left: 15px;
       padding-top: 15px; }
       .news-events .search-filter .dropdown-menu a:hover {
         color: #908b63; }
-
 .news-events .sort-filter .dropdown-menu {
   top: 45px;
   background-color: #003364;
   border-radius: 0;
   width: 100%; }
   .news-events .sort-filter .dropdown-menu a {
-    color: #ffffff;
+    color: white;
     font-size: 14px;
     padding: 15px 0 15px 15px; }
     .news-events .sort-filter .dropdown-menu a:hover {
       color: #003364; }
-
 .news-events .sort-filter .dropdown-toggle {
   padding-left: 0; }
   .news-events .sort-filter .dropdown-toggle:focus {
     box-shadow: none; }
-
 .news-events .btn-block.brown {
   float: left;
   width: auto;
@@ -899,9 +868,9 @@ body {
   border-bottom: 2px solid #908b63;
   padding-bottom: 20px; }
 
-.card-tags {
+.card-tags, .news-tag-content .tag-container > span {
   margin-bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   display: inline-block;
   border: 1px solid #b8b491;
   padding: 4px 10px;
@@ -921,6 +890,10 @@ body {
   .news-title-block .card-text {
     margin-bottom: 40px; }
 
+#ci-embedded-feed {
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
 /* 
  * -----------------------------------------
  *  Navigation
@@ -937,7 +910,7 @@ navigation {
   navigation div.nav-node, navigation div.nav-search, navigation div.nav-icon {
     height: 93px; }
   navigation div.nav-node a, navigation div.nav-node a:visited, navigation div.nav-node a:hover, navigation div.nav-search a, navigation div.nav-search a:visited, navigation div.nav-search a:hover, navigation div.nav-search span {
-    color: #ffffff;
+    color: white;
     font-size: 21px;
     font-weight: 500;
     text-decoration: none;
@@ -986,12 +959,12 @@ navigation {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
   navigation .search-button > a::before {
-    border-left: 1px solid #ffffff;
+    border-left: 1px solid white;
     content: "";
     margin-left: -10px;
     padding-right: 20px; }
   navigation .search-button i {
-    color: #ffffff;
+    color: white;
     padding-right: 10px; }
   navigation .navbar-brand {
     margin-right: 40px; }
@@ -1008,11 +981,11 @@ navigation {
       background-color: transparent; }
     navigation .navbar-toggler-icon i {
       font-size: 30px;
-      color: #ffffff; }
+      color: white; }
   navigation .nav-item {
     padding-right: 40px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
-      color: #ffffff;
+      color: white;
       font-size: 21px;
       text-decoration: none;
       text-align: center;
@@ -1020,13 +993,13 @@ navigation {
   navigation .search-button > a {
     display: block;
     height: 100%;
-    color: #ffffff;
+    color: white;
     font-size: 21px;
     text-decoration: none;
     text-align: center;
     cursor: pointer; }
     navigation .search-button > a span {
-      color: #ffffff; }
+      color: white; }
 
 /* 
  * -----------------------------------------
@@ -1035,13 +1008,11 @@ navigation {
  * ----------------------------------------- 
  */
 .nav-toolbar .nav-tabs {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid white;
   position: relative;
   margin-bottom: 30px; }
-
 .nav-toolbar .nav-item {
   margin-bottom: -1px; }
-
 .nav-toolbar .nav-link {
   text-align: left;
   padding-left: 0;
@@ -1059,16 +1030,15 @@ navigation {
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: #ffffff; }
+    color: white; }
   .nav-toolbar .nav-link.active {
-    border-bottom: 4px solid #ffffff;
+    border-bottom: 4px solid white;
     border-left: none;
     border-right: none;
     border-top: none;
     border-radius: 0;
-    color: #ffffff;
+    color: white;
     background: transparent; }
-
 .nav-toolbar .toolbar-content ul {
   list-style: none;
   display: inline-block;
@@ -1076,7 +1046,7 @@ navigation {
   padding-left: 0;
   margin-right: 30px; }
   .nav-toolbar .toolbar-content ul a {
-    color: #ffffff;
+    color: white;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 0.4px; }
@@ -1084,10 +1054,8 @@ navigation {
       padding-top: 5px;
       display: block;
       position: relative; }
-
 .nav-toolbar .toolbar-content h3 {
   color: #b8b491; }
-
 .nav-toolbar .manage-toolbar {
   position: absolute;
   right: 0;
@@ -1098,19 +1066,16 @@ navigation {
   vertical-align: top;
   top: 5px;
   display: inline-block; }
-
 .weather .weather-icon {
   font-size: 40px;
   margin-right: 15px;
   position: relative;
   top: 8px; }
-
 .weather .weather-location {
   font-size: 12px;
   text-transform: uppercase;
   margin-top: 14px;
   display: block; }
-
 .weather .weather-info {
   font-size: 22px; }
 
@@ -1131,20 +1096,16 @@ toolbar-manager a:before {
  */
 .group-summary .card {
   border-radius: 0;
-  background-color: #ffffff;
+  background-color: white;
   border-color: transparent; }
-
 .group-summary .card-header {
-  background-color: #ffffff; }
-
+  background-color: white; }
 .group-summary .card-body {
   padding: 20px; }
-
 .group-summary h5 {
   color: #003364;
   text-transform: uppercase;
   display: inline; }
-
 .group-summary .toolbar-toggle-button {
   float: none; }
 
@@ -1153,7 +1114,6 @@ toolbar-manager a:before {
   content: '\f068';
   display: inline-block;
   margin-right: 10px; }
-
 .more-less.collapsed:before {
   content: '\f067'; }
 
@@ -1198,7 +1158,7 @@ toolbar-manager a:before {
 .how-do-i .nav.nav-pills {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #ffffff;
+  background-color: white;
   margin-bottom: 30px;
   margin-top: 30px; }
   .how-do-i .nav.nav-pills h3 {
@@ -1313,7 +1273,6 @@ toolbar-manager a:before {
 section.people-places ul.tab-picker li {
   list-style: none;
   cursor: pointer; }
-
 section.people-places h2 {
   font-size: 40px;
   text-align: left;
@@ -1322,17 +1281,15 @@ section.people-places h2 {
 section.global-partners h2, section.my-department h2 {
   font-size: 40px;
   text-align: left;
-  color: #ffffff; }
-
+  color: white; }
 section.global-partners img.emp-photo, section.my-department img.emp-photo {
   height: 48px; }
-
 section.global-partners ul, section.my-department ul {
   padding-left: 0;
   list-style: none; }
 
 .my-department .employee-card {
-  background-color: #ffffff;
+  background-color: white;
   padding: 15px;
   margin-top: 15px; }
 
@@ -1341,17 +1298,17 @@ section.global-partners ul, section.my-department ul {
 ------------------------------------------------------- */
 @media screen and (max-width: 575px) {
   /* 
- * -----------------------------------------
- *  Phone
- *  @@ File: responsive/_phone.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Phone
+   *  @@ File: responsive/_phone.scss
+   * ----------------------------------------- 
+   */
   /* ----------------------------------------------------
-  Header Styles
-------------------------------------------------------- */
+    Header Styles
+  ------------------------------------------------------- */
   /* ----------------------------------------------------
-  Hero News Styles
-------------------------------------------------------- */
+    Hero News Styles
+  ------------------------------------------------------- */
   .hero-news-container .card.img-card {
     margin-bottom: 0;
     border-bottom-right-radius: 0;
@@ -1359,36 +1316,37 @@ section.global-partners ul, section.my-department ul {
     .hero-news-container .card.img-card + .card {
       border-top-right-radius: 0;
       border-top-left-radius: 0; } }
-
 @media screen and (max-width: 992px) {
   /* 
- * -----------------------------------------
- *  Tablet Down
- *  @@ File: responsive/_tablet-down.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Tablet Down
+   *  @@ File: responsive/_tablet-down.scss
+   * ----------------------------------------- 
+   */
   /* 
- * -----------------------------------------
- *  navigation
- *  @@ File: components/_navigation.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  navigation
+   *  @@ File: components/_navigation.scss
+   * ----------------------------------------- 
+   */
   navigation .nav-item {
     padding-right: 0;
     padding-bottom: 10px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
       text-transform: uppercase; }
+
   /* ----------------------------------------------------
-  2) Main Content Container Styles
-------------------------------------------------------- */
+    2) Main Content Container Styles
+  ------------------------------------------------------- */
   .main-left-content {
     padding-left: 30px;
     padding-right: 30px; }
+
   /* 
- * -----------------------------------------
- *  Hero News Container
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Hero News Container
+   * ----------------------------------------- 
+   */
   .hero-news-container .card {
     margin-bottom: 20px; }
   .hero-news-container .card-group {
@@ -1398,6 +1356,7 @@ section.global-partners ul, section.my-department ul {
     margin-bottom: 10px; }
   .hero-news-container .card-date {
     margin-top: 15px; }
+
   .sub-nav-container {
     margin-bottom: 30px; }
     .sub-nav-container .card-intro {
@@ -1411,21 +1370,23 @@ section.global-partners ul, section.my-department ul {
         display: block;
         padding: 13px;
         text-decoration: none;
-        color: #ffffff; }
+        color: white; }
+
   /* 
- * -----------------------------------------
- *  Right Rail
- *  @@ File: components/_right-rail.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Right Rail
+   *  @@ File: components/_right-rail.scss
+   * ----------------------------------------- 
+   */
   .trending, .world-news, .upcoming-events {
     max-width: none; }
+
   /* 
- * -----------------------------------------
- *  Employee Spotlight
- *  @@ File: components/_employee-spotlight.scss
- * ----------------------------------------- 
- */
+  * -----------------------------------------
+  *  Employee Spotlight
+  *  @@ File: components/_employee-spotlight.scss
+  * ----------------------------------------- 
+  */
   .employee-spotlight .tab-content {
     margin-top: 30px; }
   .employee-spotlight .employee-spotlight-cta a, .employee-spotlight .employee-spotlight-cta .btn-block {
@@ -1442,34 +1403,35 @@ section.global-partners ul, section.my-department ul {
     border-bottom: none; }
     .employee-spotlight .employee-card-container:last-child {
       border-bottom: none; }
+
   .employee-card-wrapper + .employee-card-wrapper {
     border-left: none; }
+
   /* 
- * -----------------------------------------
- *  Find People
- *  @@ File: components/_find-people.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Find People
+   *  @@ File: components/_find-people.scss
+   * ----------------------------------------- 
+   */
   .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active {
     display: block; } }
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
   /* 
- * -----------------------------------------
- *  Tablet
- *  @@ File: responsive/_tablet.scss
- * ----------------------------------------- 
- */
+   * -----------------------------------------
+   *  Tablet
+   *  @@ File: responsive/_tablet.scss
+   * ----------------------------------------- 
+   */
   /* ----------------------------------------------------
-  2) Main Content Container Styles
-------------------------------------------------------- */
+    2) Main Content Container Styles
+  ------------------------------------------------------- */
   .main-left-content {
     padding-left: 30px;
     padding-right: 30px; }
-  /* ----------------------------------------------------
-   Hero News Container
-------------------------------------------------------- */ }
 
+  /* ----------------------------------------------------
+     Hero News Container
+  ------------------------------------------------------- */ }
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
@@ -1480,12 +1442,10 @@ section.global-partners ul, section.my-department ul {
   font-size: 40px;
   text-align: left;
   color: #908b63; }
-
 .main-container h2.ms-webpart-titleText {
   line-height: 40px; }
-
 .main-container .main-right-rail h2.ms-webpart-titleText span {
-  color: #ffffff; }
+  color: white; }
 
 table.ms-ToolPaneOuter {
   width: 250px;
