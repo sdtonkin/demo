@@ -34,10 +34,9 @@
                     <div class="input-group search">
                         <input type="text" placeholder="{{searchText}}" class="form-control" placeholder="Search for..." ng-class="{'focus': hasFocus}" ng-focus="hasFocus=true" ng-blur="hasFocus=false" ng-model="searchTerm" search-enter="search()">
                         <span class="input-group-btn">
-                            <button class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
+                            <button class="btn btn-input" ng-click="ctrl.goSearch()" ng-model="searchTerm" type="button"><i class="fa fa-search"></i></button>
                         </span>
                     </div>
-
                 </div><!--search-filter-->
                 <div class="row">
                     <div class="col-md-4 offset-md-8">

@@ -1176,7 +1176,7 @@ toolbar-manager a:before {
     margin-bottom: 20px;
     min-width: 200px; }
   .departments .nav.nav-pills .nav-link a, .work-resourcess .nav.nav-pills .nav-link a {
-    color: white; }
+    color: #ffffff; }
 
 /* 
  * -----------------------------------------
@@ -1355,6 +1355,7 @@ section.global-partners ul, section.my-department ul {
   background-color: #ffffff;
   padding: 15px;
   margin-top: 15px; }
+
 .my-department .employee-card .emp-contact {
   border: none; }
 
