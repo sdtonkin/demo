@@ -4,7 +4,8 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'userProfileService', function ($scope, $q, COM_CONFIG, userProfileService) {
     var ctrl = this;
-    var delveUrl = '';    
+    var delveUrl = '',
+        picUrl = '/_layouts/15/userphoto.aspx?size=S&accountname='; 
 
     ctrl.toggleVisibility = function () {
         return ctrl.activeTab == 'people';
@@ -26,7 +27,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'userProfileServ
                 for (var i = 0; i < data.length; i++) {
                     var p = data[i];
                     var d = {};
-                    d.picUrl = p.Picture.Url;
+                    d.picUrl = picUrl + p.UserName;
                     d.title = p.Title;
                     d.jobTitle = p.JobTitle;
                     d.email = p.EMail;
