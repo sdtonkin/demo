@@ -25,6 +25,24 @@
 				display: table-cell;
 				padding-left: 10px;
 			}
+			&:hover{
+				border: 1px solid $brand-dark-blue;
+				a{
+					color: $brand-dark-blue;
+			    	text-decoration: none;
+				}
+			}
+			a{
+			    color: #fff;
+			    text-align: center;
+			    text-transform: uppercase;
+			    letter-spacing: 0.3px;
+			    display: block;
+			    &:hover{
+			    	color: $brand-dark-blue;
+			    	text-decoration: none;
+			    }
+			}
 		}
 	}
  }
