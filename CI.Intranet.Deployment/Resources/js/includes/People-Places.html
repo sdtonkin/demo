@@ -1,7 +1,11 @@
 ﻿<section class="people-places news-events">
     <ul class="nav nav-tabs">
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('people')"><a class="nav-link alt">People</a></li>
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('places')"><a class="nav-link alt">Places</a></li>
+        <li class="nav-item" ng-click="ctrl.toggleActiveTab('people')">
+            <a class="nav-link alt" ng-class="{}active: ctrl.activeTab == 'people'">People</a>
+        </li>
+        <li class="nav-item" ng-click="ctrl.toggleActiveTab('places')">
+            <a class="nav-link alt" ng-class="{}active: ctrl.activeTab == 'places'">Places</a>
+        </li>
     </ul>
     <div class="ci-people" ng-show="ctrl.activeTab == 'people'">
         <find-people></find-people>
