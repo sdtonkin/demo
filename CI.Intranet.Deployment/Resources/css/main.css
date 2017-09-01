@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -990,6 +990,11 @@ navigation {
       text-decoration: none;
       text-align: center;
       cursor: pointer; }
+    navigation .nav-item .active:after {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px; }
   navigation .search-button > a {
     display: block;
     height: 100%;
