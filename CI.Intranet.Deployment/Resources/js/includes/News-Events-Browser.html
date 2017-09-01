@@ -15,7 +15,7 @@
                 <div class="search-filter">
                     <div class="dropdown">
                         <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            cateogry
+                            category
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a ng-click="ctrl.clearCategory()">Clear Selection</a>
@@ -39,7 +39,7 @@
                     </div>
                 </div><!--search-filter-->
                 <div class="row">
-                    <div class="col-md-4 offset-md-8">
+                    <div class="col-md-4 ml-md-auto">
                         <div class="dropdown pull-right sort-filter">
                             <button class="btn btn-block dropdown-toggle" ng-repeat="sort in ctrl.sortOptions | limitTo: 1:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Sort by: {{sort.title}}
