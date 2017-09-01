@@ -4,13 +4,26 @@
         getUserLocation: getUserLocation,
         getCurrentUserProfile: getCurrentUserProfile,
         getUserDepartment: getUserDepartment,
-        getUsersInMyDepartment: getUsersInMyDepartment
+        getUsersInMyDepartment: getUsersInMyDepartment,
+        getUserFromUserInfo: getUserFromUserInfo
     }
     function getUsersInMyDepartment(department) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.userInfo).items
             .filter("Department eq '" + department + "'")
+            .get()
+            .then(function (data) {
+                defer.resolve(data);
+            });
+
+        return defer.promise;
+    }
+    function getUserFromUserInfo(id) {
+        var defer = $q.defer();
+        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        web.lists.getByTitle(COM_CONFIG.lists.userInfo).items
+            .getById(id)
             .get()
             .then(function (data) {
                 defer.resolve(data);

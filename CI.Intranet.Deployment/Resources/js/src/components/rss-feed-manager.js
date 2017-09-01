@@ -31,7 +31,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
     $scope.toggleSelection = function (id) {
         ctrl.isToolbarDirty = true;
         var item = _.find(ctrl.myFeeds, function (i) {
-            return i.id == id;
+            return i.feedId == id;
         });
         if (item == null) {
             var feed = _.find(ctrl.allFeeds, function (i) {
@@ -43,18 +43,23 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
         }
         else {
             var currentFeeds = ctrl.myFeeds;
-            ctrl.myFeeds = _.without(currentFeeds, _.findWhere(currentFeeds, {
-                id: id
-            }));
+            ctrl.myFeeds = _.reject(currentFeeds, function (f) {
+                return f.id == item.id;
+            });
         }
     };
     function saveMyFeeds() {
         var feeds = ctrl.myFeeds;
         var dbFeeds = ctrl.myFeedsFromDb;
         var feedsToAdd = _.where(feeds, { id: -1 });
-        var feedsToDelete = _.filter(dbFeeds, function (a) {
-            return !_.findWhere(feeds, { id: a.id });
-        });
+        var feedsToDelete;
+        if (feeds.length == 0) {
+            feedsToDelete = dbFeeds;
+        } else {
+            feedsToDelete = _.filter(dbFeeds, function (a) {
+                return !_.findWhere(feeds, { id: a.id });
+            });
+        }
         var promises = [];
         for (var i = 0; i < feedsToAdd.length; i++) {
             var feed = feedsToAdd[i];

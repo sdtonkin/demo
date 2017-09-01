@@ -240,7 +240,7 @@
     <Content Include="Resources\js\includes\Global-Partners.html" />
     <Content Include="Resources\js\includes\My-Sites.html" />
     <Content Include="Resources\js\includes\My-Department.html" />
-    <Content Include="Resources\js\includes\newHires.html" />
+    <Content Include="Resources\js\includes\New-Hires.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
@@ -280,7 +280,7 @@
     <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\my-sites.js" />
-    <Content Include="Resources\js\src\components\newHires.js" />
+    <Content Include="Resources\js\src\components\new-hires.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />

@@ -7,10 +7,10 @@ myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', functi
     ctrl.places = [];
     ctrl.activeTab = 'anniversary';
 
-
     this.$onInit = function () {
         anniversaryService.getAnniversary().then(function (data) {
-            ctrl.anniversary = data;
+            console.log('anniversary', data);
+            $scope.events = data;
         });
     }
 

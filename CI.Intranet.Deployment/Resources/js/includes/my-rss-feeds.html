@@ -1,4 +1,4 @@
-﻿<div class="card world-news" ng-show="ctrl.showNoFeedsMessage">
+﻿<div class="card world-news" ng-show="ctrl.myFeeds.length == 0">
     <div class="card-body">
         <h2 class="section">World News</h2>
         <p class="card-text">
@@ -8,5 +8,5 @@
     </div>
 </div>
 
-<rss-feeds ng-show="!ctrl.showNoFeedsMessage"></rss-feeds>
-<rss-feed-manager ng-show="!ctrl.showNoFeedsMessage"></rss-feed-manager>
+<rss-feeds ng-show="!ctrl.myFeeds.length == 0"></rss-feeds>
+<rss-feed-manager ng-show="!ctrl.myFeeds.length == 0"></rss-feed-manager>
