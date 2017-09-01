@@ -18,8 +18,8 @@ angular.module('compassionIntranet').service('resourceLinksService', ['$http', '
                     var g = {};
                     g.id = l.Id;
                     g.title = l.Title;
-                    g.url = l.COM_LinkUrl.Url;
-                    g.iconUrl = l.COM_ToolbarIconUrl.Url;
+                    g.url = (l.COM_LinkUrl != null ? l.COM_LinkUrl.Url : '');
+                    g.iconUrl = (l.COM_ToolbarIconUrl != null ? l.COM_ToolbarIconUrl.Url : '');
                     response.push(g);
                 }
                 defer.resolve(response);
