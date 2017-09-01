@@ -136,7 +136,17 @@ navigation {
             text-decoration: none;
             text-align: center;
             cursor: pointer;
-            
+             
+        }
+        .active{
+            @extend .font-lato-bold;
+            //text-decoration: underline;
+            &:after{
+                content: " ";
+                display: block;
+                border-bottom: 1px solid $brand-white;
+                padding-bottom: 5px;
+            }
         }
     }
      .search-button > a{
