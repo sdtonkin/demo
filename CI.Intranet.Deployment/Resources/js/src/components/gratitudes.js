@@ -1,5 +1,5 @@
 'use strict';
-var ctrlName = "gratitudes";
+var ctrlName = "gratitudesCtrl";
 var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'gratitudesService', 'COM_CONFIG', function ($scope, gratitudesService, COM_CONFIG) {
@@ -12,8 +12,6 @@ myApp.controller(ctrlName, ['$scope', 'gratitudesService', 'COM_CONFIG', functio
             ctrl.gratitudes = data;
         });
     }
-
-
 }]).component('gratitudes', {
     template: require('../../includes/Gratitudes.html'),
     controller: ctrlName,
