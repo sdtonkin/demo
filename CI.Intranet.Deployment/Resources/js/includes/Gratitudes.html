@@ -1,14 +1,29 @@
-﻿<<div class="row employee-card-container">
-     <div class="col-md-6 employee-card-wrapper">
-             <div class="media employee-card" ng-repeat="gratitude in ctrl.gratitudes track by $index">
-                 <ul>
-                     <li ng-repeat="gratitude.contact">
-                         <a ng-href="#">
-                             {{gratitude.description}}
-                         </a>
-                     </li>
-                 </ul>
-             </div>
-         </div>
-     </div>
+﻿<section>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="grat in gratitudes | limitTo:2:0 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{grat.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{grat.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{grat.targetName}}</h3>
+                    <h5 class="emp-rec">{{grat.type}}</h5>
+                    <p>{{grat.description}}</p>
+                    <span class="submit-line">Submitted by: {{grat.submittedBy}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="grat in gratitudes | limitTo:2:2 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{grat.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{grat.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{grat.targetName}}</h3>
+                    <h5 class="emp-rec">{{grat.type}}</h5>
+                    <p>{{grat.description}}</p>
+                    <span class="submit-line">Submitted by: {{grat.submittedBy}}</span>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
 

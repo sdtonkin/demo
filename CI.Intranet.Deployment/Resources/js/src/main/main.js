@@ -67,7 +67,7 @@ require('../components/my-rss-feeds.js');
 require('../components/my-sites.js');
 require('../components/my-toolbar.js');
 require('../components/navigation.js');
-require('../components/newHires.js');
+require('../components/new-hires.js');
 require('../components/news-events-browser.js');
 require('../components/news-page-likes.js');
 require('../components/people-places.js');

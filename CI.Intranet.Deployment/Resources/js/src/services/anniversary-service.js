@@ -1,5 +1,5 @@
 'use strict';
-angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q', 'COM_CONFIG', 'common', function ($http, $q, COM_CONFIG, common) {
+angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q', 'userProfileService', 'COM_CONFIG', 'common', function ($http, $q, userProfileService, COM_CONFIG, common) {
     var ctrl = this;
 
     // ensure Promise for pnp is loaded prior to using pnp module
@@ -11,17 +11,29 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
         web.lists.getByTitle(COM_CONFIG.lists.anniversary).items
             .get()
             .then(function (data) {
-                var links = [];
+                console.log('anniversary', data);
+                var events = [];
                 var promises = [];
                 var items = data;
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var g = {};
-                    g.contact = item.COM_Contact;
-                    g.date = item.COM_EventDate;
-                    links.push(g);
+                    var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);
+                    promises.push(p1);
+                    g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
+                    g.description = moment().diff(item.StartDate, 'years') + ' year anniversary';
+                    events.push(g);
                 }
-                defer.resolve(links);
+                $q.all(promises).then(function (data) {
+                    console.log(data);
+                    for (var i = 0; i < events.length; i++) {
+                        var g = events[i];
+                        g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
+                        g.targetName = data[i].FirstName + ' ' + data[i].LastName;
+                        events[i] = g;
+                    }
+                    defer.resolve(events);
+                });            
             });
 
         return defer.promise;

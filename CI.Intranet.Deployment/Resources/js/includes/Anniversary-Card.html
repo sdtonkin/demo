@@ -1,11 +1,26 @@
-﻿<section class="gratitudes">
-<div class="card" ng-repeat="anniversary in ctrl.anniversary track by $index">
-    <ul>
-        <li ng-repeat="anniversary.contact">
-            <a ng-href="#">
-                {{anniversary.date}}
-            </a>
-        </li>
-    </ul>
-</div>
+﻿<section>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="event in events | limitTo:2:0 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{event.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{event.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{event.targetName}}</h3>
+                    <p>{{event.description}}</p>                
+                    <span class="submit-line">Start Date: {{event.startDate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="hire in newHires | limitTo:2:2 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{event.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{event.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{event.targetName}}</h3>
+                    <p>{{event.description}}</p>
+                    <span class="submit-line">Start Date: {{event.startDate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
