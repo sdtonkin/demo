@@ -8,6 +8,8 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
     ctrl.myFeeds = [];
     
     this.$onInit = function () {
+        $scope.lowBandwidth = window.lowBandwidth;
+        if (window.lowBandwidth) return;
         var userId = _spPageContextInfo.userId;
         var articleLimit = ($scope.ctrl.articleLimit != null ? $scope.ctrl.articleLimit : 5);
         rssFeedService.getMyRssFeeds(userId, articleLimit).then(function (response) {

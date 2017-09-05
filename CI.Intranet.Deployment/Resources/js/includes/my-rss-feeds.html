@@ -1,12 +1,14 @@
-﻿<div class="card world-news" ng-show="ctrl.myFeeds.length == 0">
-    <div class="card-body">
-        <h2 class="section">World News</h2>
-        <p class="card-text">
-            Save your favorite external news sites for easy access. News headlines will be updated in real-time.
-        </p>
-        <a class="btn btn-block" ng-click="ctrl.showManager = true;">Get Started</a>
+﻿<section ng-show="!lowBandwidth">
+    <div class="card world-news" ng-show="ctrl.myFeeds.length == 0">
+        <div class="card-body">
+            <h2 class="section">World News</h2>
+            <p class="card-text">
+                Save your favorite external news sites for easy access. News headlines will be updated in real-time.
+            </p>
+            <a class="btn btn-block" ng-click="ctrl.showManager = true;">Get Started</a>
+        </div>
     </div>
-</div>
 
-<rss-feeds ng-show="!ctrl.myFeeds.length == 0"></rss-feeds>
-<rss-feed-manager ng-show="!ctrl.myFeeds.length == 0"></rss-feed-manager>
+    <rss-feeds ng-show="!ctrl.myFeeds.length == 0"></rss-feeds>
+    <rss-feed-manager ng-show="!ctrl.myFeeds.length == 0"></rss-feed-manager>
+</section>
