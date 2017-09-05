@@ -1,6 +1,6 @@
-﻿$pnp.setup({
+﻿locationByIPUrl: 'http://ip-api.com/json', $pnp.setup({
     defaultCachingStore: "local",
-    defaultCachingTimeoutSeconds: 300,
+    defaultCachingTimeoutSeconds: 600,
     globalCacheDisable: false
 });
 // set up static configuration entries
@@ -33,6 +33,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             newsWeb: 'https://compassion.sharepoint.com/sites/stage/news',
             searchWeb: 'https://compassion.sharepoint.com/sites/stage-search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
+            locationByIPUrl: 'http://ip-api.com/json',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -82,6 +83,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com',
             searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
+            locationByIPUrl: 'http://ip-api.com/json',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -133,6 +135,7 @@ else {
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
+        locationByIPUrl: 'http://ip-api.com/json',
         lists: {
             rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',
