@@ -187,4 +187,6 @@
     </pnp:DataRows>
     -->
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Mission Photos" Description="Mission Photos List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="109" Url="Lists/MissionPhotos" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+  </pnp:ListInstance>
 </pnp:Lists>

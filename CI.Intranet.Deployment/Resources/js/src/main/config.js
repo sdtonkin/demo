@@ -1,4 +1,4 @@
-﻿locationByIPUrl: 'http://ip-api.com/json', $pnp.setup({
+﻿$pnp.setup({
     defaultCachingStore: "local",
     defaultCachingTimeoutSeconds: 600,
     globalCacheDisable: false
@@ -46,7 +46,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
                 globalPartners: 'Global Partners',
-                missionPhotos: 'missionPhotos',
+                missionPhotos: 'Mission Photos',
                 gratitudes: 'Gratitudes',
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
@@ -97,7 +97,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 navigation: 'Navigation',
                 userInfo: 'User Information List',
                 globalPartners: 'Global Partners',
-                missionPhotos: 'missionPhotos',
+                missionPhotos: 'Mission Photos',
                 gratitudes: 'Gratitudes',
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
@@ -150,7 +150,7 @@ else {
             navigation: 'Navigation',
             userInfo: 'User Information List',
             globalPartners: 'Global Partners',
-            missionPhotos: 'missionPhotos',
+            missionPhotos: 'Mission Photos',
             gratitudes: 'Gratitudes',
             anniversary: 'Anniversary and Retirement',
             newHire: 'New Hires',

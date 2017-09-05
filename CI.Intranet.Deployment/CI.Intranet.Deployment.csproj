@@ -235,7 +235,6 @@
     <Content Include="Resources\js\includes\Anniversary-Card.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
     <Content Include="Resources\js\includes\Gratitudes.html" />
-    <Content Include="Resources\js\includes\Mission-Photos.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
     <Content Include="Resources\js\includes\Global-Partners.html" />
     <Content Include="Resources\js\includes\My-Sites.html" />
@@ -277,7 +276,6 @@
     <Content Include="Resources\js\src\components\image-loader.js" />
     <Content Include="Resources\js\src\components\global-partners.js" />
     <Content Include="Resources\js\src\components\likeController.js" />
-    <Content Include="Resources\js\src\components\mission-photo.js" />
     <Content Include="Resources\js\src\components\my-department.js" />
     <Content Include="Resources\js\src\components\my-sites.js" />
     <Content Include="Resources\js\src\components\new-hires.js" />
@@ -293,6 +291,7 @@
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
     <Content Include="Resources\js\src\components\news-landing.js" />
+    <Content Include="Resources\js\src\components\photo-share.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
@@ -308,6 +307,7 @@
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
     <Content Include="Resources\js\src\services\anniversary-service.js" />
+    <Content Include="Resources\js\src\services\photo-service.js" />
     <Content Include="Resources\js\src\services\gratitudes-service.js" />
     <Content Include="Resources\js\src\services\new-hire-service.js" />
     <Content Include="Resources\js\src\services\resource-links-service.js" />
@@ -317,7 +317,6 @@
     <Content Include="Resources\js\src\services\department-news-service.js" />
     <Content Include="Resources\js\src\services\how-do-i-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
-    <Content Include="Resources\js\src\services\mission-photo-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
     <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
