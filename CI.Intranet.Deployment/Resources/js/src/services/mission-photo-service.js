@@ -16,7 +16,7 @@ angular.module('compassionIntranet').service('missionPhotoService', ['$http', '$
                     for (var i = 0; i < photo.length; i++) {
                         var d = photo[i];
                         var p = {};
-                        p.thumbnail = d.thumbnailUrl;
+                        p.thumbnail = (d.thumbnailUrl != null ? d.thumbnailUrl.Url : '');
                         p.caption = d.COM_PhotoCaption;
                         response.push(p);
                     }
