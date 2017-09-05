@@ -9,7 +9,11 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
         var location = weatherService.getLocation();
         var loc = location.city + ', ' + location.region;
 
-        getWeather(loc, 'F');
+        weatherService.getWeather(loc, 'F').then(function (data) {
+            console.log(data);
+        });
+
+        
     };
     
     function getWeather(location, unit) {
