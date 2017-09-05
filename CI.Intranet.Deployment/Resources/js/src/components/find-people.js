@@ -7,6 +7,7 @@ myApp.controller(controllerName, ['$scope', 'graphService', 'COM_CONFIG', functi
     ctrl.searchText;
 
     this.$onInit = function () {
+        if (window.lowBandwidth) return;
         graphService.getMyPeople().then(function (data) {
             ctrl.myPeople = data;
         });

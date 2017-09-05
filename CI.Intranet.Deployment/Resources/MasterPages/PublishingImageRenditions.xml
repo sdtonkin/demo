@@ -34,5 +34,13 @@
       <Version>1</Version>
       <Width>120</Width>
     </ImageRendition>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>279</Height>
+      <Id>5</Id>
+      <Name>Share Our Mission Photos</Name>
+      <Version>1</Version>
+      <Width>279</Width>
+    </ImageRendition>
   </Renditions>
 </SiteImageRenditions>

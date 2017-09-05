@@ -1,34 +1,21 @@
 var ctrlName = "weatherController";
 var myApp = angular.module('compassionIntranet');
 myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileService', 'COM_CONFIG', function($scope, $q, weatherService, userProfileService, COM_CONFIG) {
-    var cacheObj = $pnp.storage.local;
-   
-    //get user location
-    let now = moment();
-    let expire = $pnp.util.dateAdd(now, "minute", 60);
-    cacheObj.getOrPut(ctrlName, userProfileService.getUserLocation, expire).then(function(data) {
-        //    console.log("User Location");
-        //    console.dir(data);
-        $scope.UserLocation = data;
-        var location = $scope.UserLocation;
-        var unit = "F";
-        if (location == "") {
-            // console.log("Location is null. Setting location to Colorado Springs, CO");
-            var location = "Colorado Springs, CO";
+    
+     
+    this.$onInit = function () {
+        $scope.lowBandwidth = window.lowBandwidth;
+        if (window.lowBandwidth) return;
+        var location = weatherService.getLocation();
+        var loc = location.city + ', ' + location.region;
 
-        } else {
-            if (location == "Colorado Springs") {
-                var location = "Colorado Springs, CO";
-            }
-        }
+        weatherService.getWeather(loc, 'F').then(function (data) {
+            console.log(data);
+        });
 
-        getWeather(location, unit);
-    });
-
-
-    //get weather
-
-    //pass in location to getWeather
+        
+    };
+    
     function getWeather(location, unit) {
         let now = moment();
         let expire = $pnp.util.dateAdd(now, "minute", 5);
@@ -43,12 +30,6 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
                 data = response;
             }
             if (data) {
-                //var forecast = data.query.results.channel.item.forecast;
-
-                // var js = JSON.stringify(forecast);
-                // for (var i = 0; i < 1; i++) {
-                //     $scope.forecast = data.query.results.channel.item.forecast[i];
-                // }
                 $scope.title = data.query.results.channel.item.title;
                 $scope.temp = data.query.results.channel.item.condition.temp;
                 $scope.text = data.query.results.channel.item.condition.text;

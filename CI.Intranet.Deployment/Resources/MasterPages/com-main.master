@@ -7,7 +7,6 @@
 <%@Register TagPrefix="SearchWC" Namespace="Microsoft.Office.Server.Search.WebControls" Assembly="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
 <%@Register TagPrefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
 <%@Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx"%>
-
 <!DOCTYPE HTML>
 <SharePoint:SPHtmlTag runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
 <head runat="server">
@@ -89,7 +88,7 @@
                                         </div>
                                         <div class="col-md-3 weather-widget">
                                             
-                                            <weather-ctrl></weather-ctrl>
+                                            <weather-control></weather-control>
                                             
                                         </div>
                                         <div class="col-md-3" ng-show="ctrl.isToolbarOpen">

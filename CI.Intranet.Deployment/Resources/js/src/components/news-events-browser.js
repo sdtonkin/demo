@@ -67,50 +67,91 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     function filterByCategory(category) {
         ctrl.selectedCategory = category;
         if (ctrl.activeTab == 'news') {
-            ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                return a.NewsType == category.name;
-            });
+            if (ctrl.selectedRegion == '') {
+                ctrl.newsArticles = _.filter(masterArticles, function (a) {
+                    return a.NewsType == category.name;
+                });
+            } else {
+                ctrl.newsArticles = _.filter(masterArticles, function (a) {
+                    return a.NewsType == category.name && a.LocationTag == ctrl.selectedRegion.name;
+                });
+            }            
         } else {
-            ctrl.events = _.filter(masterEvents, function (e) {
-                return e.EventType == category.name;
-            });
+            if (ctrl.selectedRegion != '') {
+                ctrl.events = _.filter(masterEvents, function (a) {
+                    return a.NewsType == category.name;
+                });
+            } else {
+                ctrl.events = _.filter(masterEvents, function (a) {
+                    return a.NewsType == category.name && a.LocationTag == ctrl.selectedRegion.name;
+                });
+            }
         }
     }
     function filterByRegion(region) {
         ctrl.selectedRegion = region;
         if (ctrl.activeTab == 'news') {
-            ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                return a.LocationTag == region.name;
-            });
-            if (ctrl.newsArticles.length == 0) {
+            if (ctrl.selectedCategory == '') {
                 ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                    return _.find(region.Nodes, function (n) {
-                        return n.name == a.LocationTag;
-                    });
+                    return a.LocationTag == region.name;
                 });
+            } else {
+                ctrl.newsArticles = _.filter(masterArticles, function (a) {
+                    return a.LocationTag == region.name && a.NewsType == ctrl.selectedCategory.name;
+                });
+            }            
+            if (ctrl.newsArticles.length == 0) {
+                if (ctrl.selectedCategory == '') {
+                    ctrl.newsArticles = _.filter(masterArticles, function (a) {
+                        return _.find(region.Nodes, function (n) {
+                            return n.name == a.LocationTag;
+                        });
+                    });
+                } else {
+                    ctrl.newsArticles = _.filter(masterArticles, function (a) {
+                        return _.find(region.Nodes, function (n) {
+                            return n.name == a.LocationTag && a.NewsType == ctrl.selectedCategory.name;
+                        });
+                    });
+                }
             }
         } else {
-            ctrl.events = _.filter(masterEvents, function (e) {
-                return e.LocationTag == region.name;
-            });
-            if (ctrl.events.length == 0) {
+            if (ctrl.selectedCategory == '') {
                 ctrl.events = _.filter(masterEvents, function (a) {
-                    return _.find(region.Nodes, function (n) {
-                        return n.name == a.LocationTag;
-                    });
+                    return a.LocationTag == region.name;
+                });
+            } else {
+                ctrl.events = _.filter(masterEvents, function (a) {
+                    return a.LocationTag == region.name && a.NewsType == ctrl.selectedCategory.name;
                 });
             }
+            if (ctrl.events.length == 0) {
+                if (ctrl.selectedCategory == '') {
+                    ctrl.events = _.filter(masterEvents, function (a) {
+                        return _.find(region.Nodes, function (n) {
+                            return n.name == a.LocationTag;
+                        });
+                    });
+                } else {
+                    ctrl.events = _.filter(masterEvents, function (a) {
+                        return _.find(region.Nodes, function (n) {
+                            return n.name == a.LocationTag && a.NewsType == ctrl.selectedCategory.name;
+                        });
+                    });
+                }
+            }            
         }
     }
     function clearCategory() {
+        ctrl.selectedCategory = '';
         if (ctrl.selectedRegion != '') {
             if (ctrl.activeTab == 'news') {
                 ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                    return a.LocationTag == ctrl.selectedRegion;
+                    return a.LocationTag == ctrl.selectedRegion.name;
                 });
             } else {
                 ctrl.events = _.filter(masterEvents, function (e) {
-                    return e.LocationTag == ctrl.selectedRegion;
+                    return e.LocationTag == ctrl.selectedRegion.name;
                 });
             }
         } else {
@@ -122,14 +163,15 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         }
     }
     function clearRegion() {
+        ctrl.selectedRegion = '';
         if (ctrl.selectedCategory != '') {
             if (ctrl.activeTab == 'news') {
                 ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                    return a.NewsType == ctrl.selectedCategory;
+                    return a.NewsType == ctrl.selectedCategory.name;
                 });
             } else {
                 ctrl.events = _.filter(masterEvents, function (e) {
-                    return e.EventType == ctrl.selectedCategory;
+                    return e.EventType == ctrl.selectedCategory.name;
                 });
             }
         } else {

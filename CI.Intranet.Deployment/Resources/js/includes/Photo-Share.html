@@ -1,10 +1,10 @@
-﻿<section class="photo-share">
+﻿<section class="photo-share" ng-show="!lowBandwidth">
     <h5>Stay connected with Conapssion International</h5>
     <ul>
-        <li>
-            <img />
-            <span class="description"></span>
+        <li ng-repeat="photo in ctrl.photos | limitTo: 2 track by $index">
+            <img ng-src="{{photo.source}}"/>
+            <span class="description">{{photo.description}}</span>
         </li>
     </ul>
-    <div><a>Share your photos ></a></div>
+    <div><a ng-click="ctrl.displayNewPhotoForm()">Share your photos ></a></div>
 </section>
