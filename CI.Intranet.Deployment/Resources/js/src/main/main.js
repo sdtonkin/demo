@@ -18,7 +18,6 @@ require('../services/bookmark-service.js');
 require('../services/department-news-service.js');
 require('../services/document-service.js');
 require('../services/employee-announcement-service.js');
-require('../services/employee-spotlight-service.js');
 require('../services/global-partner-service.js');
 require('../services/graph-service.js');
 require('../services/gratitudes-service.js');

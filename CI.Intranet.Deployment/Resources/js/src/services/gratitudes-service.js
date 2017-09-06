@@ -2,6 +2,9 @@
 angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
     var picUrl = '/_layouts/15/userphoto.aspx?size=S&accountname=';
+    var gratsKey = 'CI_GROUPS_KEY';
+
+    common.checkForClearStatement('clearGratitudes', gratsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
@@ -14,7 +17,8 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                 console.log('gratitudesService.getGratitudes', data);
                 var grats = [];
                 var promises = [];
-                var items = data;
+                var items = data,
+                    pplCount = 0;
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var g = {};
@@ -30,9 +34,11 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                     console.log(data);
                     for (var i = 0; i < grats.length; i++) {
                         var g = grats[i];
-                        g.targetPicUrl = picUrl + data[i].UserName;
-                        g.targetName = data[i].FirstName + ' ' + data[i].LastName;
-                        g.submittedBy = data[i+1].FirstName + ' ' + data[i+1].LastName;
+                        g.targetPicUrl = picUrl + data[pplCount].UserName;
+                        g.targetName = data[pplCount].FirstName + ' ' + data[pplCount].LastName;
+                        pplCount++;
+                        g.submittedBy = data[pplCount].FirstName + ' ' + data[pplCount].LastName;
+                        pplCount++;
                         grats[i] = g;
                     }
 

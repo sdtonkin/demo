@@ -34,5 +34,5 @@ myApp.controller(ctrlName, ['$scope', 'gratitudesService', 'COM_CONFIG', functio
     controlleras: 'ctrl',
     bindings: {
         gratitudelimit: '@'
-}
+    }
 });

@@ -62,6 +62,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                 }
                 if (item.RefinableDate01) {
                     var eventDate = new Date(item.RefinableDate01);
+                    item.RawEventDate = eventDate
                     item.EventDate = moment(eventDate).format('MMMM D, YYYY');
                     item.StartTime = moment(eventDate).format('h:mm a');
                 }
