@@ -10,7 +10,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         var defer = $q.defer();
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
-            SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],            
+            SelectProperties: ['ContentType','Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
         }).then(function (response) {
             
             response.PrimarySearchResults.map(function (item) {
@@ -34,6 +34,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                     item.Group = item.RefinableString04;
                 }
             });
+            console.log('news search', response.PrimarySearchResults);
             defer.resolve(response.PrimarySearchResults);
         });
 
