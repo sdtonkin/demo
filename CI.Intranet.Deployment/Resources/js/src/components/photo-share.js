@@ -1,4 +1,4 @@
-﻿var ctrlName = 'newsEventsBrowserCtrl';
+﻿var ctrlName = 'photoShareCtrl';
 var app = angular.module('compassionIntranet');
 app.controller(ctrlName, ['$scope', '$q', '$location', 'photoService', 'COM_CONFIG', function ($scope, $q, $location, photoService, COM_CONFIG) {
     var ctrl = this;
