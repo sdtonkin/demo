@@ -31,10 +31,13 @@
             <div class="row">
                 <div class="col-lg-8 main-left-content">
                 <section class="hero-news-container">
+                    <div>
+                        <bookmark-page></bookmark-page>
+                    </div>
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
                     <div class="card">
                         <div class="news-title-block">
-                            <p class="card-date"><SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" /></p>
+                            <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_DateFormat" runat="server"/></p>
                             <p class="card-text"><SharePointWebControls:TextField runat="server" FieldName="Title"/></p>
                         </div>
                     </div>
@@ -42,7 +45,7 @@
                     <div class="news-content">
                         <SharePointWebControls:FieldValue FieldName="PublishingPageContent" runat="server"/>
                         <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">    
-                            <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" runat="server" id="RichHtmlField1"/>
+                        <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" runat="server" id="RichHtmlField1"/>
                         </PublishingWebControls:EditModePanel> 
                     </div>
                         <div class="news-tag-content row">
@@ -52,8 +55,8 @@
                             <div class="col-md-6">
                             <div class="tag-container pull-right">
                                 <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
-        <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
-        <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
+                                <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
+                                <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
                             </div>
                             </div>
                         </div>
@@ -84,7 +87,7 @@
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">
         <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
-        
+        <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
         <SharePointWebControls:TextField runat="server" FieldName="COM_YammerID"/>
     </PublishingWebControls:EditModePanel>    
 </asp:Content>
