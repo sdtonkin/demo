@@ -719,7 +719,7 @@
           </xsl:if>
         </h4>
             <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+        <xsl:value-of select="ddwrt:FormatDateTime(string(@PublishDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
             </div>
             <div class="card-text">
               <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
@@ -805,7 +805,7 @@
               </xsl:if>
             </h4>
             <div class="card-date">
-              <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+        <xsl:value-of select="ddwrt:FormatDateTime(string(@PublishDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
             </div>
             <div class="card-text">
               <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
@@ -843,7 +843,7 @@
     <div class="card trending">
       <div class="card-body">
         <p class="card-date">
-          <xsl:value-of select="ddwrt:FormatDate(@PublishDate, 1033, 3)" disable-output-escaping="yes"/>
+        <xsl:value-of select="ddwrt:FormatDateTime(string(@PublishDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
         </p>
         <a href="{$SafeLinkUrl}" title="{@LinkToolTip}" class="title">
           <p class="card-text">
