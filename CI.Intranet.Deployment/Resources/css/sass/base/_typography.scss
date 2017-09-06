@@ -29,6 +29,7 @@ h2, .h2{
     &.section{
         color: $brand-brown-gray;
         @extend .font-lato-reg;
+        width: 100%;
     }
 }
 h3, .h3 {

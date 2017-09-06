@@ -7,6 +7,9 @@
  a{
  	color: $brand-dark-blue;
  	cursor: pointer;
+ 	&:visited{
+ 		color: inherit;
+ 	}
  }
  .btn{
  	color: $brand-dark-blue-alt;
