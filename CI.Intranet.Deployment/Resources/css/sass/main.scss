@@ -53,7 +53,7 @@ Table of Contents:
 }
 .container{
   // max-width: 1700px;
-  max-width: 1400px;
+  max-width: 1300px;
   width: auto;
 }
 .container-fluid{
@@ -66,7 +66,8 @@ body {
 	font-size: 14px;
 	color: $brand-dark-blue;
     p{
-        color: $brand-dark-blue;
+        //color: $brand-dark-blue;
+        color: $brand-darker-gray;
     }
 
     
@@ -105,6 +106,18 @@ body {
 	.card-close, .card-close-mobile{
 		a{
 			color: $brand-white;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			@extend .font-lato-bold;
+		}
+	}
+	.toolbar-toggle-button{
+		color: $brand-white;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		@extend .font-lato-bold;
+		i{
+			margin-left: 5px;
 		}
 	}
 }

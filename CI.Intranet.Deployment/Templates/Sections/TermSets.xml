@@ -135,16 +135,9 @@
               <pnp:Term Name="Global Partner Alliance" />
             </pnp:Terms>
           </pnp:Term>
-		      <pnp:Term Name="Global Support Services">
-           <pnp:Terms>
-            <pnp:Term Name="HR" CustomSortOrder="1" />
-            <pnp:Term Name="IT" CustomSortOrder="2" />
-			      <pnp:Term Name="Finance" CustomSortOrder="3" />
-            <pnp:Term Name="Building Operations and Services" CustomSortOrder="4" />
-			      <pnp:Term Name="Source to Settle" CustomSortOrder="5" />
-			      <pnp:Term Name="Safety and Security" CustomSortOrder="6" />
-          </pnp:Terms>
-        </pnp:Term>
+          <pnp:Term Name="Innovation" />
+          <pnp:Term Name="HR" />
+          <pnp:Term Name="Office of the CFO" />
         </pnp:Terms>
       </pnp:TermSet>
     </pnp:TermSets>
