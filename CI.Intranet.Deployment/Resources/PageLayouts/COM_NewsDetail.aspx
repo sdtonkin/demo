@@ -48,18 +48,19 @@
                         <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" runat="server" id="RichHtmlField1"/>
                         </PublishingWebControls:EditModePanel> 
                     </div>
-                        <div class="news-tag-content row">
+                    <div class="news-tag-content row">
+                    <div class="col-md-6">
+                        <news-page-likes></news-page-likes>
+                    </div>
                         <div class="col-md-6">
-                            <news-page-likes></news-page-likes>
+                        <div class="tag-container pull-right">
+                            <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
+                            <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
+                            <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
                         </div>
-                            <div class="col-md-6">
-                            <div class="tag-container pull-right">
-                                <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
-                                <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
-                                <Taxonomy:TaxonomyFieldControl FieldName="COM_Location" InputFieldLabel="Location" runat="server"></Taxonomy:TaxonomyFieldControl>
-                            </div>
-                            </div>
                         </div>
+                    </div>
+                    <div id="ci-embedded-feed" class="container" style="height:400px;width:100%;"></div>
                 </section>
             </div><!--main-left-content-->
                 <div class="col-lg-4 main-right-rail">
@@ -67,8 +68,7 @@
                 </div> <!--main-right-rail-->
             </div>
         </div> <!--/.container-->
-    </div><!--main-container-->
-    <div id="ci-embedded-feed" class="container" style="height:400px;width:100%;"></div>
+    </div><!--main-container-->    
     <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
     <script>
         yam.connect.embedFeed({
