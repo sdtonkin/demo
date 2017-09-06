@@ -268,7 +268,7 @@
         <FieldRef Name="StartDate" />
       </FieldRefs>  
   </Field>
-  <Field Type="Calculated" DisplayName="Published Date Format" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" ID="{03467F71-35A2-45E2-A2FB-0ABF120A6E18}" StaticName="COM_DateFormat" Name="COM_DateFormat" RowOrdinal="0" Version="3" CustomFormatter="" Required="FALSE" >
+  <Field Type="Calculated" DisplayName="Published Date Format" Group="1 - Compassion Intranet" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" ID="{03467F71-35A2-45E2-A2FB-0ABF120A6E18}" StaticName="COM_DateFormat" Name="COM_DateFormat" RowOrdinal="0" Version="3" CustomFormatter="" Required="FALSE" >
     <Formula>
       =TEXT(COM_PublishDate,&quot;MMMM d, yyyy&quot;)
     </Formula>

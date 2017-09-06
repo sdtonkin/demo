@@ -1528,6 +1528,9 @@ table.ms-ToolPaneOuter {
   table.ms-ToolPaneOuter .ms-ToolPaneBody {
     overflow-y: scroll; }
 
+.wi-day-sunny {
+  color: yellow; }
+
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */
