@@ -7,7 +7,8 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     var userId = _spPageContextInfo.userId;
     ctrl.isToolbarDirty = false;
     ctrl.manageBookmarkId = 'ci-bookmarks-manage',
-        ctrl.confirmDeleteBookmarkId = 'ci-bookmarks-confirm-delete';
+    ctrl.confirmDeleteBookmarkId = 'ci-bookmarks-confirm-delete';
+    
 
     $scope.$parent.$watch('ctrl.myApps', function (newVal, oldVal, scope) {
         if (newVal == null) return;
@@ -19,6 +20,11 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         if (newVal == null) return;
         ctrl.myBookmarks = newVal;
         ctrl.myBookmarksFromDb = scope.ctrl.myBookmarksFromDb;
+    });
+    $scope.$parent.$watch('ctrl.selectedTabId', function (newVal, oldVal, scope) {
+        if (newVal == null) return;
+        console.log(newVal);
+        ctrl.selectedTabId = newVal;
     });
     ctrl.enableSaveBookmarkButton = enableSaveBookmarkButton;
     ctrl.newBookmark = {};
@@ -48,6 +54,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         appService.getAllApps().then(function (response) {
             ctrl.allApps = response;
         });
+        ctrl.viewAllDocumentsUrl = ($scope.$parent.ctrl.viewAllDocumentsUrl == null ? '#' : $scope.$parent.ctrl.viewAllDocumentsUrl)
     };
     $scope.myAppsSortList = [];
     $scope.existsAppInMyApps = function (appId) {
@@ -63,12 +70,18 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             return i.appId == id;
         });
         if (item == null) {
-            var app = _.find(ctrl.allApps, function (i) {
-                return i.id == id;
+            var app = _.find(ctrl.myAppsFromDb, function (i) {
+                return i.appId == id;
             });
-            app.appId = app.id;
-            app.id = -1;
+            if (app == null) {
+                app = _.clone(_.find(ctrl.allApps, function (i) {
+                    return i.id == id;
+                }));
+                app.appId = app.id;
+                app.id = -1;
+            } 
             ctrl.myApps.push(app);
+            ctrl.myApps = _.sortBy(ctrl.myApps, 'sortOrder');
         }
         else {
             var currentTools = ctrl.myApps;
@@ -83,7 +96,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         openModal(ctrl.confirmDeleteBookmarkId);
     }
     function enableSaveBookmarkButton() {
-        var isBookmarkValid = (ctrl.newBookmark.url != null ? common.isUrl(ctrl.newBookmark.url) : false);
+        var isBookmarkValid = (ctrl.newBookmark != null ? common.isUrl(ctrl.newBookmark.url) : false);
         var isTitleValid = false;
         if (ctrl.newBookmark.title)
             isTitleValid = ctrl.newBookmark.title !== '';
@@ -194,7 +207,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
 
         for (var i = 0; i < appsToAdd.length; i++) {
             var app = appsToAdd[i];
-            appService.addMyTool(userId, app.appId);
+            appService.addMyApp(userId, app.appId);
         }
         for (var i = 0; i < appsToDelete.length; i++) {
             var app = appsToDelete[i];

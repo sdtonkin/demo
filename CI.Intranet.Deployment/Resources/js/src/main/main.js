@@ -34,6 +34,7 @@ require('../services/related-news-service.js');
 require('../services/resource-links-service.js');
 require('../services/rss-feed-service.js');
 require('../services/storage-service.js');
+require('../services/sp-service.js');
 require('../services/taxonomy-service.js');
 require('../services/user-profile-service.js');
 require('../services/weather-service.js');

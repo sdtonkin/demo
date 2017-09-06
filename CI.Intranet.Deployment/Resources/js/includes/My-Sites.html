@@ -1,8 +1,9 @@
-﻿<ul ng-repeat="site in ctrl.mySites track by $index">
-    <li>
-        <a ng-href="{{ site.url }}">
-            <div>{{ site.title }}</div>                        
-        </a>                    
-    </li>
-</ul>
-    
+﻿<section>
+    <ul ng-repeat="site in ctrl.mySites track by $index">
+        <li>
+            <a ng-href="{{ site.url }}">
+                <div>{{ site.title }}</div>
+            </a>
+        </li>
+    </ul>
+</section>
