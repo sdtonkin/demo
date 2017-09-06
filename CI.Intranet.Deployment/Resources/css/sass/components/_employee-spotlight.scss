@@ -41,6 +41,7 @@
 			border-top: none;
 			border-radius: 0;
 			color: $brand-dark-blue-alt;
+			@extend .font-lato-med;
 		}
 	}
 
@@ -48,6 +49,7 @@
 		.btn-block{
 			margin-top: 30px;
 			max-width: 242px;
+			background-color: $brand-dark-blue-alt;
 		}
 	}
  }
@@ -71,11 +73,12 @@
 		}
 		.emp-photo{
 			border-radius: 50%;
+			width: 100px;
 		}
 		.emp-name{
 			color: $brand-dark-blue;
 			font-size: 25px;
-			@extend .font-lato-reg;
+			@extend .font-lato-med;
 		}
 		.emp-rec{
 			color: $brand-dark-blue-alt;
