@@ -42,5 +42,13 @@
       <Version>1</Version>
       <Width>279</Width>
     </ImageRendition>
+    <ImageRendition>
+      <Group i:nil="true" />
+      <Height>65</Height>
+      <Id>6</Id>
+      <Name>Toolbar Icons</Name>
+      <Version>1</Version>
+      <Width>65</Width>
+    </ImageRendition>
   </Renditions>
 </SiteImageRenditions>

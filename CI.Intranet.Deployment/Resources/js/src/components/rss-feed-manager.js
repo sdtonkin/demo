@@ -34,12 +34,19 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
             return i.feedId == id;
         });
         if (item == null) {
-            var feed = _.find(ctrl.allFeeds, function (i) {
-                return i.id == id;
+            var feed = _.find(ctrl.myFeedsFromDb, function (i) {
+                return i.feedId == id;
             });
-            feed.feedId = feed.id;
-            feed.id = -1;
+            if (feed == null) {
+                feed = _.find(ctrl.allFeeds, function (i) {
+                    return i.id == id;
+                });
+                feed.feedId = feed.id;
+                feed.id = -1;
+            }
+            
             ctrl.myFeeds.push(feed);
+            ctrl.myFeeds = _.sortBy(ctrl.myFeeds, 'sortOrder');
         }
         else {
             var currentFeeds = ctrl.myFeeds;

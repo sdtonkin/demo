@@ -23,7 +23,7 @@ myApp.factory('common', ['COM_CONFIG', function (COM_CONFIG) {
             var results = regex.exec(location.search);
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         },
-        isURL: function(str) {
+        isUrl: function(str) {
             var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
             '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
             '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address

@@ -30,6 +30,9 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                 if (item.RefinableString02) {
                     item.EventType = item.RefinableString02;
                 }
+                if (item.RefinableString04) {
+                    item.Group = item.RefinableString04;
+                }
             });
             defer.resolve(response.PrimarySearchResults);
         });

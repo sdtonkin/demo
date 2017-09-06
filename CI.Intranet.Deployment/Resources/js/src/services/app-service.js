@@ -95,12 +95,13 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
         web.lists.getByTitle(COM_CONFIG.lists.toolbarApps).items
             .getById(appId)
             .get()
-            .then(function(item){ 
+            .then(function (item) {
+                var iconUrl = (item.COM_ToolbarIconUrl == null ? '' : item.COM_ToolbarIconUrl.Url);
                 var f = {};
                 f.id = item.Id;
                 f.title = item.Title;
                 f.url = item.COM_ToolbarUrl.Url;
-                f.iconUrl = item.COM_ToolbarIconUrl.Url;
+                f.iconUrl = iconUrl + (iconUrl.indexOf('?') != -1 ? '&' : '?') + 'RenditionId=6';
                 f.sortOrder = item.COM_ListSortOrder;
                 defer.resolve(f); 
             });
