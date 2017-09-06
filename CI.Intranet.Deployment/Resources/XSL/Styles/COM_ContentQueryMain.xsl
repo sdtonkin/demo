@@ -113,12 +113,12 @@
     <xsl:variable name="COMEndColumn">
       <xsl:choose>
         <xsl:when test="$selectedItemStyle='RecentNews'">
-          <a class="btn btn-cta" href="https://compassion.sharepoint.com/sites/stage/news">View All News</a>
+          <a href="https://compassion.sharepoint.com/sites/stage/news/">View All News</a>
           <xsl:value-of select="string('&lt;/div&gt;&lt;/div&gt;')" />
         </xsl:when>
 
         <xsl:when test="$selectedItemStyle='TrendingNews'">
-          <a class="btn btn-cta" href="https://compassion.sharepoint.com/sites/stage/news">View All News</a>
+          <a href="https://compassion.sharepoint.com/sites/stage/news/">View All News</a>
           <xsl:value-of select="string('&lt;/div&gt;')" />
         </xsl:when>
 
