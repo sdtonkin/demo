@@ -52,6 +52,15 @@ if (document.location.host === "compassion.sharepoint.com") {
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
             },
+            groupSites: [
+                "https://compassion.sharepoint.com/sites/stage-cfo",
+                "https://compassion.sharepoint.com/sites/stage-gco",
+                "https://compassion.sharepoint.com/sites/stage-glo",
+                "https://compassion.sharepoint.com/sites/stage-gme",
+                "https://compassion.sharepoint.com/sites/stage-gp",
+                "https://compassion.sharepoint.com/sites/stage-hr",
+                "https://compassion.sharepoint.com/sites/stage-innovation"
+            ],
             contentTypeIds: {
                 newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
                 event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
@@ -103,6 +112,15 @@ if (document.location.host === "compassion.sharepoint.com") {
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links'
             },
+            groupSites: [
+                "https://compassion.sharepoint.com/sites/cfo",
+                "https://compassion.sharepoint.com/site/gco",
+                "https://compassion.sharepoint.com/sites/glo",
+                "https://compassion.sharepoint.com/sites/gme",
+                "https://compassion.sharepoint.com/sites/gp",
+                "https://compassion.sharepoint.com/sites/hr",
+                "https://compassion.sharepoint.com/sites/innovation"
+            ],
             contentTypeIds: {
                 newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
                 event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
@@ -156,6 +174,15 @@ else {
             newHire: 'New Hires',
             resourceLinks: 'Resource Links'
         },
+        groupSites: [
+                "https://compassion.sharepoint.com/sites/stage-cfo",
+                "https://compassion.sharepoint.com/site/stage-gco",
+                "https://compassion.sharepoint.com/sites/stage-glo",
+                "https://compassion.sharepoint.com/sites/stage-gme",
+                "https://compassion.sharepoint.com/sites/stage-gp",
+                "https://compassion.sharepoint.com/sites/stage-hr",
+                "https://compassion.sharepoint.com/sites/stage-innovation"
+        ],
         contentTypeIds: {
             newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
             event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'

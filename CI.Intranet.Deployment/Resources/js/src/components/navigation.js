@@ -38,6 +38,8 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
             return true;
         if (node.url.endsWith(siteUrl))
             return true;
+        if (_.contains(COM_CONFIG.groupSites, window.location.origin  + siteUrl) && node.title == 'Groups')
+            return true;
         return false;
     };
     ctrl.toggleSearchBox = toggleSearchBox;
