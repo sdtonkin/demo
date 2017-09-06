@@ -67,6 +67,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-tags" ng-show="article.NewsTypes != null">{{article.NewsType}}</h4>
+                                        <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.Group}}</h4>
                                         <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.LocationTag}}</h4>
                                         <div class="card-date">{{article.ArticleDate}}</div>
                                         <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
@@ -86,6 +87,7 @@
                                         <p class="card-time">{{event.StartTime}}-{{event.EndTime}}</p>
                                         <p class="card-location">{{event.Location}}</p>
                                         <h4 class="card-tags" ng-show="event.EventTypes != null">{{event.EventType}}</h4>
+                                        <h4 class="card-tags" ng-show="event.EventTypes != null">{{event.Group}}</h4>
                                         <h4 class="card-tags" ng-show="event.LocationTag != null">{{event.LocationTag}}</h4>
                                     </div>
                                 </div>
