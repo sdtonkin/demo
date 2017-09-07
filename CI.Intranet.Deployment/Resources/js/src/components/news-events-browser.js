@@ -46,7 +46,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         }
     }
     function sortBy(sort) {
-        var articles = _.sortBy(masterArticles, 'ArticleDate');
+        var articles = _.sortBy(masterArticles, 'RawArticleDate');
         var events = _.sortBy(masterEvents, 'RawEventDate');
         if (sort.direction == 'asc') {
             ctrl.newsArticles = articles;
