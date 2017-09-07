@@ -35,6 +35,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             locationByIPUrl: 'http://ip-api.com/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
+            workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -97,6 +98,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             locationByIPUrl: 'http://ip-api.com/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
+            workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -161,6 +163,7 @@ else {
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         locationByIPUrl: 'http://ip-api.com/json',
         locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
+        workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
         lists: {
             rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',

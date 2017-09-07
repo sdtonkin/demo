@@ -4,10 +4,9 @@
             <h3>How Do I?</h3>
         </div>
             <ul class="nav nav-pills nav-fill">
-                <li class="nav-item" ng-repeat="link in ctrl.howDoI">
-                    <li class="nav-link">
-                            <a href="{{ link.URL }}">{{ link.title }}</a>
-                    </li>
+                <li class="nav-item" ng-repeat="link in ctrl.howDoI track by $index">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
             </ul>
         </div>
 </section>

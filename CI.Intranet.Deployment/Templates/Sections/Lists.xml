@@ -194,6 +194,11 @@
       <pnp:ContentTypeBinding ContentTypeID="0x01005D2C171542AB48A48B6898A8D875E6FB" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Work Resource Documents" Description="Work Resource Documents List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="101" Url="Lists/WorkResourceDocuments" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01005D2C171542AB48A48B6898A8D875E6FB" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
   <pnp:ListInstance Title="Work Resources" Description="Work Resources List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/WorkResources" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Default="true"></pnp:ContentTypeBinding>

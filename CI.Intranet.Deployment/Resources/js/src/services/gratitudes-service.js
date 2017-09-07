@@ -1,7 +1,7 @@
 'use strict';
 angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
-    var picUrl = '/_layouts/15/userphoto.aspx?size=S&accountname=';
+    var picUrl = '/_layouts/15/userphoto.aspx?size=M&accountname=';
     var gratsKey = 'CI_GROUPS_KEY';
 
     common.checkForClearStatement('clearGratitudes', gratsKey);
@@ -14,7 +14,6 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
         web.lists.getByTitle(COM_CONFIG.lists.gratitudes).items
             .get()
             .then(function (data) {
-                console.log('gratitudesService.getGratitudes', data);
                 var grats = [];
                 var promises = [];
                 var items = data,
@@ -31,7 +30,6 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                     grats.push(g);
                 }
                 $q.all(promises).then(function (data) {
-                    console.log(data);
                     for (var i = 0; i < grats.length; i++) {
                         var g = grats[i];
                         g.targetPicUrl = picUrl + data[pplCount].UserName;
@@ -41,8 +39,8 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                         pplCount++;
                         grats[i] = g;
                     }
-
-                    defer.resolve(grats);
+                    var response = _.sortBy(grats, 'Created').reverse();
+                    defer.resolve(response);
                 });
             });
 

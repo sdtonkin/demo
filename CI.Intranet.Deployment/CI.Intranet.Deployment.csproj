@@ -352,6 +352,12 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx" />
+    <Content Include="Resources\Pages\gratitudes.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\work-resources-search.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\news.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -402,6 +408,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
+    <Content Include="Templates\Sections\WebParts\Work-Resource-Search-Results.xml" />
     <Content Include="Templates\Sections\WebParts\Helpful-Links.xml" />
     <Content Include="Templates\Sections\WebParts\Job-Opportunities.xml" />
     <Content Include="Templates\Sections\WebParts\myWellness.xml" />
