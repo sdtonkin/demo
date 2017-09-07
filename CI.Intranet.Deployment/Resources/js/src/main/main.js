@@ -49,7 +49,7 @@ require('../main/ui-helper.js');
 // Components
 require('../components/anniversary.js');
 require('../components/bookmark-page.js');
-require('../components/contact.js');
+require('../components/contacts.js');
 require('../components/department-news.js');
 require('../components/employee-announcement.js');
 require('../components/employee-spotlight.js');

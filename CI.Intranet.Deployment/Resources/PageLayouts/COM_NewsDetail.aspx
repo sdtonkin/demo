@@ -37,7 +37,7 @@
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
                     <div class="card">
                         <div class="news-title-block">
-                            <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_DateFormat" runat="server"/></p>
+                            <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_PublishDateFormat" runat="server"/></p>
                             <p class="card-text"><SharePointWebControls:TextField runat="server" FieldName="Title"/></p>
                         </div>
                     </div>

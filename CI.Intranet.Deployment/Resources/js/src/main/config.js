@@ -50,7 +50,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 gratitudes: 'Gratitudes',
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
-                resourceLinks: 'Resource Links'
+                resourceLinks: 'Resource Links',
+                employeeAnnouncements: 'Employee Announcements',
             },
             groupSites: [
                 "https://compassion.sharepoint.com/sites/stage-cfo",
@@ -110,7 +111,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 gratitudes: 'Gratitudes',
                 anniversary: 'Anniversary and Retirement',
                 newHire: 'New Hires',
-                resourceLinks: 'Resource Links'
+                resourceLinks: 'Resource Links',
+                employeeAnnouncements: 'Employee Announcements',
             },
             groupSites: [
                 "https://compassion.sharepoint.com/sites/cfo",
@@ -172,7 +174,8 @@ else {
             gratitudes: 'Gratitudes',
             anniversary: 'Anniversary and Retirement',
             newHire: 'New Hires',
-            resourceLinks: 'Resource Links'
+            resourceLinks: 'Resource Links',
+            employeeAnnouncements: 'Employee Announcements',
         },
         groupSites: [
                 "https://compassion.sharepoint.com/sites/stage-cfo",

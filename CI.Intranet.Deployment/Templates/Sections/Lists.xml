@@ -189,4 +189,9 @@
   </pnp:ListInstance>
   <pnp:ListInstance Title="Mission Photos" Description="Mission Photos List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="109" Url="Lists/MissionPhotos" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Employee Announcements" Description="Employee Announcements List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/EmployeeAnnouncements" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01005D2C171542AB48A48B6898A8D875E6FB" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
 </pnp:Lists>
