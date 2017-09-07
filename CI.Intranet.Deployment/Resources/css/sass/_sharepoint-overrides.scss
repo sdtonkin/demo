@@ -41,6 +41,13 @@ table.ms-ToolPaneOuter {
 #ci-apps-manage{
     li{
         list-style: none;   
+        max-width: 200px;
+        padding: 10px;
+        &:hover{
+            cursor: pointer;
+            color: $brand-white;
+            background-color: $brand-dark-blue-alt;
+        }
     }
     input{
         margin-right: 5px;
