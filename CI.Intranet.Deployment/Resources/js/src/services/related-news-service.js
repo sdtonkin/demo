@@ -8,7 +8,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let x = page.ContentType
         if (x.indexOf('Article') > 0) {
             //set news content type
-            contentType = " ContentTypeId:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D0017899C3E9B390F4E9BD82B8F03AFD6E6* ";
+            contentType = " ContentTypeId:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301* ";
             category = " RefinableString15: '" + page.newsCategory + "'";
         }
 
