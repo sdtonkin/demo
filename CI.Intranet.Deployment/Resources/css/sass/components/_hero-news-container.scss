@@ -16,7 +16,7 @@
 		border: none;
 	}
 	.card-title{
-		margin-bottom: 30px;
+		margin-bottom: 5px;
 		background-color: $brand-white;
 		display: inline-block;
 		border: 1px solid $brand-brown-dull;
@@ -44,10 +44,11 @@
 		color: $brand-brown-gray;
 		@extend .font-lato-reg;
 		margin-bottom: 5px;
+		margin-top: 25px;
 	}
 	.img-fluid{
 		height: 100%;
-		width: auto;
+		width: 100%;
 	}
 
 }

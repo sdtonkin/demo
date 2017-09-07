@@ -394,7 +394,7 @@ body {
   background-color: #f4f4ef;
   border: none; }
 .hero-news-container .card-title {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   background-color: white;
   display: inline-block;
   border: 1px solid #b8b491;
@@ -414,10 +414,11 @@ body {
 .hero-news-container .card-date {
   font-size: 14px;
   color: #908b63;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  margin-top: 25px; }
 .hero-news-container .img-fluid {
   height: 100%;
-  width: auto; }
+  width: 100%; }
 
 .recent-news-wrapper .card-title {
   font-size: 15px; }
