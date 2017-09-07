@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-apps-manage button:disabled {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -1536,6 +1536,15 @@ table.ms-ToolPaneOuter {
   padding: 15px;
   background-color: #003364;
   color: white; }
+#ci-apps-manage button:disabled {
+  border-radius: 0;
+  border: solid 1px #000000;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 15px;
+  background-color: white;
+  color: #003364; }
 
 @media screen and (min-width: 992px) and (max-width: 1220px) {
   navigation .nav-item {
