@@ -1009,7 +1009,7 @@ navigation {
       font-size: 30px;
       color: white; }
   navigation .nav-item {
-    padding-right: 40px; }
+    padding-right: 25px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
       color: white;
       font-size: 21px;
@@ -1481,6 +1481,11 @@ section.global-partners ul, section.my-department ul {
   /* ----------------------------------------------------
      Hero News Container
   ------------------------------------------------------- */ }
+@media screen and (min-width: 992px) {
+  navigation .nav-item {
+    padding-right: 35px; }
+    navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
+      font-size: 21px; } }
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
@@ -1520,6 +1525,13 @@ table.ms-ToolPaneOuter {
   background-color: #003364;
   color: white; }
 
+@media screen and (min-width: 992px) and (max-width: 1220px) {
+  navigation .nav-item {
+    padding-right: 35px; }
+    navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
+      font-size: 16px; }
+  navigation .search-button > a {
+    font-size: 16px; } }
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */
