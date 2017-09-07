@@ -20,6 +20,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                 if (item.RefinableDate00) {
                     var artDate = new Date(item.RefinableDate00);
                     item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
+                    item.RawArticleDate = artDate;
                 }                
                 if (item.RefinableString00) {
                     item.LocationTag = item.RefinableString00;
@@ -33,9 +34,11 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                 if (item.RefinableString04) {
                     item.Group = item.RefinableString04;
                 }
+
             });
             console.log('news search', response.PrimarySearchResults);
-            defer.resolve(response.PrimarySearchResults);
+            var results = _.sortBy(response.PrimarySearchResults, 'RawArticleDate');
+            defer.resolve(results.reverse());
         });
 
         return defer.promise;
