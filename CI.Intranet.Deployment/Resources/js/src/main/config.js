@@ -52,6 +52,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links',
                 employeeAnnouncements: 'Employee Announcements',
+                workResources: 'Work Resources',
             },
             groupSites: [
                 "https://compassion.sharepoint.com/sites/stage-cfo",
@@ -113,6 +114,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 newHire: 'New Hires',
                 resourceLinks: 'Resource Links',
                 employeeAnnouncements: 'Employee Announcements',
+                workResources: 'Work Resources',
             },
             groupSites: [
                 "https://compassion.sharepoint.com/sites/cfo",
@@ -176,6 +178,7 @@ else {
             newHire: 'New Hires',
             resourceLinks: 'Resource Links',
             employeeAnnouncements: 'Employee Announcements',
+            workResources: 'Work Resources',
         },
         groupSites: [
                 "https://compassion.sharepoint.com/sites/stage-cfo",
