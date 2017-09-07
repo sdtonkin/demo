@@ -129,7 +129,7 @@ navigation {
      }
      .nav-item{
         padding-right: 25px;
-        a, a:visited, a:hover{
+        a, a:visited{
             color: $brand-white;
             font-size: 21px;
             @extend .font-lato-med;
@@ -137,6 +137,14 @@ navigation {
             text-align: center;
             cursor: pointer;
              
+        }
+        a:hover{
+            &:after{
+                content: " ";
+                display: block;
+                border-bottom: 1px solid $brand-white;
+                padding-bottom: 5px;
+            }
         }
         .active{
             @extend .font-lato-bold;
