@@ -14,7 +14,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'resourceLinksServic
 
     ctrl.searchTitle = 'Search';
     ctrl.goSearch = function () {
-        window.location.href = COM_CONFIG.lists.workResources + '?k=' + $scope.searchText;
+        window.location.href = COM_CONFIG.workResourceSearchUrl + '?k=' + $scope.searchText;
     }
 
 
