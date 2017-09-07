@@ -223,7 +223,7 @@
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" />
-      <pnp:FieldRef ID="03467F71-35A2-45E2-A2FB-0ABF120A6E18" Name="COM_DateFormat" />
+      <pnp:FieldRef ID="12C75227-FE01-49AD-874A-88E76454010D" Name="COM_PublishDateFormat" />
     </pnp:FieldRefs>
 		<pnp:DocumentTemplate TargetName="/_layouts/15/CreatePage.aspx" />
 	</pnp:ContentType>  
