@@ -36,7 +36,6 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
                 }
 
             });
-            console.log('news search', response.PrimarySearchResults);
             var results = _.sortBy(response.PrimarySearchResults, 'RawArticleDate');
             defer.resolve(results.reverse());
         });
@@ -85,7 +84,6 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
             });
             defer.resolve(response.PrimarySearchResults);
         });
-
         return defer.promise;
     }
 
