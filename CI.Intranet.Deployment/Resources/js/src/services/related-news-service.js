@@ -9,7 +9,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         if (x.indexOf('Article') > 0) {
             //set news content type
             contentType = " ContentTypeId:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301* ";
-            category = " RefinableString15: '" + page.newsCategory + "'";
+            category = " RefinableString01: '" + page.newsCategory + "'";
         }
 
         //specify query variables
@@ -19,7 +19,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         $pnp.sp.search({
             Querytext: '' + contentType + 'AND' + category + ' ' + rootNews + '',
-            SelectProperties: ['RefinableString1', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
@@ -52,7 +52,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let path = " Path:" + "" + rootNews + "";
         $pnp.sp.search({
             Querytext: 'Title= "' + pageTitle + '" ' + path + '',
-            SelectProperties: ['RefinableString10', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['RefinableString01', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
@@ -63,9 +63,9 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         }).then(function(data) {
 
             var items = data.PrimarySearchResults[0];
-            if (items.RefinableString15) {
+            if (items.RefinableString01) {
 
-                items.newsCategory = items.RefinableString15;
+                items.newsType = items.RefinableString01;
             }
 
             defer.resolve(items);
