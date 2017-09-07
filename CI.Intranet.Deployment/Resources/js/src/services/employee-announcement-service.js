@@ -8,15 +8,26 @@ angular.module('compassionIntranet').service('employeeAnnouncementService', ['$h
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
-ctrl.getAnnouncement = getEmployeeAnnouncement
-    function getEmployeeAnnouncement() {
+ctrl.getAnnouncements = getEmployeeAnnouncements
+    function getEmployeeAnnouncements() {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        var today = new Date();
+        var today = moment().format('YYYY-MM-DD') + 'T00:00:00Z';
         web.lists.getByTitle(COM_CONFIG.lists.employeeAnnouncements).items
-            .filter("COM_PublishDate <= '" + today + "' AND COM_ExpirationDate > '" + today + "'")
+            .filter("COM_PublishDate le '" + today + "' and COM_ExpirationDate gt '" + today + "'")
             .get()
             .then(function (data) {
+                data.map(function (item) {
+                    if (item.Title) {
+                        item.title = item.Title
+                    }            
+                    if (item.COM_AnnoucementText) {
+                        item.message = item.COM_AnnoucementText;
+                    }
+                    if (item.COM_ToolbarIconUrl) {
+                        item.iconUrl = item.COM_ToolbarIconUrl;
+                    }
+                });
                 console.log('employee announcement', data);
                 defer.resolve(data);
             });
