@@ -916,11 +916,11 @@
       
       <div class="card-date">
        <span class="event-month">
-        <xsl:value-of select="$monthAbbr"/>
+         <xsl:value-of select="ddwrt:FormatDateTime(string(@EventDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
        </span>
-       <span class="event-day">
+       <!--<span class="event-day">
         <xsl:value-of select="$day"/>
-       </span>
+       </span>-->
       </div>
     
 

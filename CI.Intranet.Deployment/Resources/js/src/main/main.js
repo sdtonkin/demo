@@ -15,6 +15,7 @@ require('../main/common.js');
 require('../services/anniversary-service.js');
 require('../services/app-service.js');
 require('../services/bookmark-service.js');
+require('../services/contact-service.js');
 require('../services/department-news-service.js');
 require('../services/document-service.js');
 require('../services/employee-announcement-service.js');
@@ -48,6 +49,7 @@ require('../main/ui-helper.js');
 // Components
 require('../components/anniversary.js');
 require('../components/bookmark-page.js');
+require('../components/contact.js');
 require('../components/department-news.js');
 require('../components/employee-announcement.js');
 require('../components/employee-spotlight.js');
