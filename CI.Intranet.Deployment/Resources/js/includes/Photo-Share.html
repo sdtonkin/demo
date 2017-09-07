@@ -1,10 +1,29 @@
-﻿<section class="photo-share" ng-show="!lowBandwidth">
-    <h5>Stay connected with Conapssion International</h5>
-    <ul>
+﻿<section class="photo-share stay-connected" ng-show="!lowBandwidth">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="section">Celebrate Our Mission</h2>
+        <h4>Stay connected with Compassion International</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6" ng-repeat="photo in ctrl.photos | limitTo: 2 track by $index">
+            <div class="photo-container">
+              <img ng-src="{{photo.source}}" class="img-fluid">
+              <p>{{photo.description}}</p>
+            </div>
+          </div>
+      </div>
+   <!--  <ul>
         <li ng-repeat="photo in ctrl.photos | limitTo: 2 track by $index">
-            <img ng-src="{{photo.source}}"/>
+            <img ng-src="{{photo.source}}" />
             <span class="description">{{photo.description}}</span>
         </li>
-    </ul>
-    <div><a ng-click="ctrl.displayNewPhotoForm()">Share your photos ></a></div>
+    </ul> -->
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-cta" ng-click="ctrl.displayNewPhotoForm()">Share your photos ></a>
+        </div>
+    </div>
+</div>
 </section>

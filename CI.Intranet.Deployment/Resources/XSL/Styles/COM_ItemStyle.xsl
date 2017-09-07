@@ -818,6 +818,9 @@
           </div>
          </div>
         </div>
+    <xsl:if test="count(preceding-sibling::*)=0">
+      <a class="btn btn-cta" href="/sites/stage/news">View All News</a>
+    </xsl:if>
   </xsl:template>
 
 
@@ -853,6 +856,9 @@
         <span class="card-likes"></span>
       </div>
     </div>
+    <xsl:if test="count(following-sibling::*)=0">
+      <a class="btn btn-cta" href="/sites/stage/news">View All News</a>
+    </xsl:if>
   </xsl:template>
 
 
@@ -944,6 +950,9 @@
     </div>    
     </div>
     </div>
+    <xsl:if test="count(following-sibling::*)=0">
+      <a class="btn btn-cta" href="/sites/stage/news">View All Events</a>
+    </xsl:if>
   </xsl:template>
 
 
