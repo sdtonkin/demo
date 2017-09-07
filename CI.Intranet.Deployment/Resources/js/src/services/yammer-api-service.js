@@ -182,11 +182,14 @@ angular.module('compassionIntranet')
             var cacheObj = $pnp.storage.local;
             let expireMe = $pnp.util.dateAdd((new Date()), "minute", 5);
             me.ensureConnection().then(function (response) {
-                
+                /*
                 cacheObj.getOrPut("yammer_cache/" + endpoint, getData, expireMe).then(function (data) {
                     def.resolve(data);
                 });
-                
+                */
+                getData().then(function (data) {
+                    def.resolve(data);
+                });
             });
             
 
