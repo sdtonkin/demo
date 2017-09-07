@@ -11,7 +11,6 @@ myApp.controller(ctrlName, ['$scope', 'gratitudesService', 'COM_CONFIG', functio
     ctrl.card4 = {};
     this.$onInit = function () {
         gratitudesService.getGratitudes().then(function (data) {
-            console.log('ctrl - gratitudesService.getGratitudes', data);
             $scope.gratitudes = data;
             assignCards(data);
             
