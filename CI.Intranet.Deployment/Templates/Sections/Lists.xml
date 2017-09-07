@@ -203,6 +203,7 @@
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Policies and Procedures</pnp:DataValue>
@@ -318,6 +319,7 @@
         <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/get-in-touch.aspx</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ListSortOrder">5</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>    
-  </pnp:ListInstance>
+    </pnp:DataRows>
+    -->
+  </pnp:ListInstance>  
 </pnp:Lists>
