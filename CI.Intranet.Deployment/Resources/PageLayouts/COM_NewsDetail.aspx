@@ -64,7 +64,27 @@
                 </section>
             </div><!--main-left-content-->
                 <div class="col-lg-4 main-right-rail">
-                    <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" />                   
+                    <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" /> 
+                    <!--trending-news-webpart-->
+                     <PublishingWebControls:ContentByQueryWebPart runat="server" ItemStyle="TrendingNews" GroupStyle="DefaultHeader" SortBy="{0b784073-3117-4340-8475-a63c087a464e}" SortByDirection="Desc" 
+                            DataMappings="NewsType:{60677f2d-9b5c-4278-9352-87cfee8a28ca},COM_NewsType,TaxonomyFieldType;|LinkUrl:{94f89715-e097-4e8b-ba79-ea02aa8b7adb},FileRef,Lookup;|Description:{691b9a4b-512e-4341-b3f1-68914130d5b2},ShortComment,Text;|YammerIDNumber:|AllDayEvent:|EventDate:|ImageUrl:{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},EncodedAbsThumbnailUrl,Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},PublishingRollupImage,Image;|Title:{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Title,Text;|EventType:|Group:{f1f1f3f0-639f-4240-9e77-9164aa7ebdf4},COM_Group,TaxonomyFieldType;|PublishDate:{0b784073-3117-4340-8475-a63c087a464e},COM_PublishDate,DateTime;|Location:{a0107484-a768-4873-9942-e33f818a8701},COM_Location,TaxonomyFieldType;|NewsAbstract:{efb26898-314c-427b-afda-96c0b69b74dd},COM_NewsAbstract,Text;|EndTime:|EventDateAllDay:|" 
+                            ServerTemplate="850" EnableOriginalValue="False" ViewFlag="0" ViewContentTypeId="" ListUrl="" ListDisplayName="" ListId="00000000-0000-0000-0000-000000000000" PageSize="-1" UseSQLDataSourcePaging="True" DataSourceID="" ShowWithSampleData="False" AsyncRefresh="False" ManualRefresh="False" AutoRefresh="False" AutoRefreshInterval="60" NoDefaultStyle="" InitialAsyncDataFetch="False" Title="Trending News" FrameType="TitleBarOnly" SuppressWebPartChrome="False" Description="$Resources:cmscore,ContentQueryWebPart_Description" IsIncluded="True" ZoneID="" PartOrder="1" FrameState="Normal" AllowRemove="Fales" AllowZoneChange="False" AllowMinimize="False" AllowConnect="False" AllowEdit="False" AllowHide="False" IsVisible="True" DetailLink="" HelpLink="" HelpMode="Modeless" Dir="Default" PartImageSmall="" MissingAssembly="$Resources:cmscore,WebPartImportError" ImportErrorMessage="$Resources:cmscore,WebPartImportError" PartImageLarge="" IsIncludedFilter="" ExportControlledProperties="True" ConnectionID="00000000-0000-0000-0000-000000000000" ID="ContentByQueryWebPart1" ChromeType="TitleOnly" ExportMode="All" __MarkupType="vsattributemarkup" __WebPartId="{0eebbafa-56d2-4ee0-a0dc-6661adc97402}" WebPart="true" Height="" Width=""><Xsl>
+                            <xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" > <xsl:import href="/Style Library/XSL Style Sheets/Header.xsl" /> <xsl:import href="/Style Library/XSL Style Sheets/ItemStyle.xsl" /> <xsl:import href="/Style Library/XSL Style Sheets/ContentQueryMain.xsl" /> </xsl:stylesheet></Xsl>
+                            <SampleData>
+                            <dsQueryResponse>
+                                                <Rows>
+                                                    <Row Title="Item 1" LinkUrl="http://Item1" Group="Group Header" __begincolumn="True" __begingroup="True" />
+                                                    <Row Title="Item 2" LinkUrl="http://Item2" __begincolumn="False" __begingroup="False" />
+                                                    <Row Title="Item 3" LinkUrl="http://Item3" __begincolumn="False" __begingroup="False" />
+                                                </Rows>
+                                                </dsQueryResponse></SampleData>
+                            <DataFields>
+                            </DataFields>
+                    </PublishingWebControls:ContentByQueryWebPart>
+                    <!--related-news-webpart-->   
+                    <div>
+                        <related-news></related-news>
+                    </div>                                     
                 </div> <!--main-right-rail-->
             </div>
         </div> <!--/.container-->
