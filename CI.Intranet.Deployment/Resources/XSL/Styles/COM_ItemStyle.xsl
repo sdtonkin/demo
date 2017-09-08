@@ -857,7 +857,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta" href="/sites/stage/news">View All News</a>
+      <a class="btn btn-cta white" href="/sites/stage/news">View All News</a>
     </xsl:if>
   </xsl:template>
 
@@ -951,7 +951,7 @@
     </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta" href="/sites/stage/news">View All Events</a>
+      <a class="btn btn-cta white" href="/sites/stage/news">View All Events</a>
     </xsl:if>
   </xsl:template>
 

@@ -77,6 +77,12 @@ table.ms-ToolPaneOuter {
 
 }
 
+.hero-main > .list-content:last-child .card-body {
+    border: medium none;
+    padding-bottom: 0;
+}
+
+
 @media  screen and (min-width:992px) and (max-width:1220px) {
   navigation{
         .nav-item{

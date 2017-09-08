@@ -113,8 +113,10 @@
 			}
 			> a:first-child{
 				color: $brand-white;
+				display: block;
 				&:hover{
-					color: $brand-white;
+					color: $brand-brown-gray;
+					background-color: $brand-white;
 				}
 			}
 		}

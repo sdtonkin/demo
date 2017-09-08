@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <h2 class="section">Work Resources</h2>
-            <div class="row">
+            <div class="col-12">
                 <div class="col-lg-8">
                     <div class="input-group search">
                         <input type="text" class="form-control" placeholder="Search content in Work Resources" ng-model="ctrl.searchText">
@@ -20,7 +20,7 @@
                         <a ng-href="{{ link.URL }}">
                             <img ng-src="{{ link.iconUrl }}" />
                         </a>
-                        <a href="{{ link.URL }}">{{ link.title }}</a>
+                        <a class="nav-link" href="{{ link.URL }}"><span>{{ link.title }}</span></a>
                         </li>
             </ul>
         </div>

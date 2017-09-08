@@ -29,7 +29,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 300; }
 
-.font-lato-med, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .nav-link.active, .employee-card .emp-name, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container .ms-webpart-titleText, .main-container .ms-webpart-titleText > a, .main-container h2.ms-webpart-titleText span {
+.font-lato-med, .groupmarker li .link-item a, .global-partners li a span, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .nav-link.active, .employee-card .emp-name, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container .ms-webpart-titleText, .main-container .ms-webpart-titleText > a, .main-container h2.ms-webpart-titleText span {
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
@@ -188,16 +188,30 @@ a {
   min-width: 200px;
   margin-bottom: 15px; }
 
-.helpful-links ul {
+.helpful-links ul, .groupmarker ul, .global-partners ul {
   list-style: none;
   padding-left: 0; }
-.helpful-links li {
+.helpful-links li, .groupmarker li, .global-partners li {
   display: table; }
-  .helpful-links li:before {
+  .helpful-links li:before, .groupmarker li:before, .global-partners li:before {
     font-family: FontAwesome !important;
     content: "\f0c1";
     display: table-cell;
     padding-right: 10px; }
+
+.groupmarker li:before {
+  color: white;
+  font-size: 18px; }
+.groupmarker li .link-item a {
+  color: #0054a6;
+  font-size: 18px; }
+
+.global-partners li:before {
+  display: none; }
+.global-partners li a span {
+  color: #0054a6; }
+  .global-partners li a span:hover {
+    text-decoration: underline; }
 
 .bookmark, .submit, .share {
   height: 100%;
@@ -510,8 +524,6 @@ body {
   margin-bottom: 30px;
   border-radius: 0;
   border-color: #908b63; }
-  .ci-places location-places .card:first-child {
-    border-top: none; }
 .ci-places location-places h5 {
   text-transform: uppercase; }
 .ci-places location-places ul {
@@ -703,7 +715,8 @@ body {
     border-left: 1px solid #b8b491; }
 
 .employee-card-container {
-  border-bottom: 1px solid #b8b491; }
+  border-bottom: 1px solid #b8b491;
+  height: 250px; }
   .employee-card-container:last-child {
     border-bottom: 2px solid #88bee7; }
 
@@ -714,7 +727,8 @@ body {
   width: 100px; }
 .employee-card .emp-name {
   color: #003364;
-  font-size: 25px; }
+  font-size: 25px;
+  margin-bottom: 10px; }
 .employee-card .emp-rec {
   color: #0054a6;
   font-size: 14px;
@@ -855,9 +869,11 @@ body {
       .news-events .search-filter .dropdown-menu a:hover {
         color: #908b63; }
     .news-events .search-filter .dropdown-menu > a:first-child {
-      color: white; }
+      color: white;
+      display: block; }
       .news-events .search-filter .dropdown-menu > a:first-child:hover {
-        color: white; }
+        color: #908b63;
+        background-color: white; }
 .news-events .sort-filter .dropdown-menu {
   top: 45px;
   background-color: #003364;
@@ -1125,6 +1141,14 @@ toolbar-manager a:before {
   font-family: "FontAwesome";
   margin-right: 10px; }
 
+my-bookmarks > ul a div:before {
+  font-family: FontAwesome;
+  content: "\f097";
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  color: white; }
+
 /* 
  * -----------------------------------------
  *  Group Summary
@@ -1187,7 +1211,8 @@ toolbar-manager a:before {
     width: 23%;
     vertical-align: top; }
   .work-resources .nav.nav-pills .nav-link, .how-do-i .nav.nav-pills .nav-link {
-    text-align: left; }
+    text-align: left;
+    border: 1px solid #003364; }
     .work-resources .nav.nav-pills .nav-link i, .how-do-i .nav.nav-pills .nav-link i {
       display: table-cell; }
     .work-resources .nav.nav-pills .nav-link span, .how-do-i .nav.nav-pills .nav-link span {
@@ -1218,9 +1243,12 @@ toolbar-manager a:before {
     margin-left: 25px; }
   .how-do-i .nav.nav-pills .nav-link {
     background-color: transparent;
-    color: #003364; }
+    color: #003364;
+    border: none; }
     .how-do-i .nav.nav-pills .nav-link:hover {
-      color: #0054a6; }
+      color: #0054a6;
+      border: none;
+      text-decoration: underline; }
   .how-do-i .nav.nav-pills .nav-item {
     width: 47%; }
 
@@ -1545,6 +1573,10 @@ table.ms-ToolPaneOuter {
   padding: 15px;
   background-color: white;
   color: #003364; }
+
+.hero-main > .list-content:last-child .card-body {
+  border: medium none;
+  padding-bottom: 0; }
 
 @media screen and (min-width: 992px) and (max-width: 1220px) {
   navigation .nav-item {
