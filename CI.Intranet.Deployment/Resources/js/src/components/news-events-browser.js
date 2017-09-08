@@ -103,42 +103,20 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         }
     }
     function clearCategory() {
-        if (ctrl.selectedRegion != '') {
-            if (ctrl.activeTab == 'news') {
-                ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                    return a.LocationTag == ctrl.selectedRegion;
-                });
-            } else {
-                ctrl.events = _.filter(masterEvents, function (e) {
-                    return e.LocationTag == ctrl.selectedRegion;
-                });
-            }
+        if (ctrl.activeTab == 'news') {
+            ctrl.newsArticles = masterArticles;
         } else {
-            if (ctrl.activeTab == 'news') {
-                ctrl.newsArticles = masterArticles;
-            } else {
-                ctrl.events = masterEvents
-            }
+            ctrl.events = masterEvents
         }
+        ctrl.selectedCategory = '';
     }
     function clearRegion() {
-        if (ctrl.selectedCategory != '') {
-            if (ctrl.activeTab == 'news') {
-                ctrl.newsArticles = _.filter(masterArticles, function (a) {
-                    return a.NewsType == ctrl.selectedCategory;
-                });
-            } else {
-                ctrl.events = _.filter(masterEvents, function (e) {
-                    return e.EventType == ctrl.selectedCategory;
-                });
-            }
+        if (ctrl.activeTab == 'news') {
+            ctrl.newsArticles = masterArticles;
         } else {
-            if (ctrl.activeTab == 'news') {
-                ctrl.newsArticles = masterArticles;
-            } else {
-                ctrl.events = masterEvents
-            }
+            ctrl.events = masterEvents
         }
+        ctrl.selectedRegion = '';
     }
     function getData() {
         var p1 = taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.newsTypeTermId);
