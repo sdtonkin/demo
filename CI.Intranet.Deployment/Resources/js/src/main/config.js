@@ -33,7 +33,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             newsWeb: 'https://compassion.sharepoint.com/sites/stage/news',
             searchWeb: 'https://compassion.sharepoint.com/sites/stage-search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
-            locationByIPUrl: 'http://ip-api.com/json',
+            locationByIPUrl: 'https://ipinfo.io/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             lists: {
@@ -96,7 +96,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             rootWeb: 'https://compassion.sharepoint.com',
             searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
-            locationByIPUrl: 'http://ip-api.com/json',
+            locationByIPUrl: 'https://ipinfo.io/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             lists: {
@@ -161,7 +161,7 @@ else {
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
         searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
-        locationByIPUrl: 'http://ip-api.com/json',
+        locationByIPUrl: 'https://ipinfo.io/json',
         locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
         workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
         lists: {

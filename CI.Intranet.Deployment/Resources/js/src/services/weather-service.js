@@ -109,26 +109,44 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
         return defer.promise;
     };
     ctrl.getIpAddress = function () {
-        $http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
-            resp.on('data', function (ip) {
-                console.log("My public IP address is: " + ip);
-            });
+        var defer = $q.defer();
+        $.get("https://ipinfo.io/json", function (data) {
+            console.log('ip', data);
+            defer.resolve(data);
         });
+        return defer.promise;
+    }
+    ctrl.getLocationFromService = function () {
+        var defer = $q.defer();
+        $.get(COM_CONFIG.locationByIPUrl, function (data) {
+            console.log('ip', data);
+            defer.resolve(data);
+        });
+        return defer.promise;
     }
     ctrl.getLocation = function () {
         var defer = $q.defer();
-        if (storage.get(locationKey) != null) {
+        if (storage.get(locationKey) != null) {        
             defer.resolve(storage.get(locationKey));
-        } else if (navigator.geolocation) {
-            getPosition().then(function (position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude
-                ctrl.getLocationFromLatLong(latitude, longitude).then(function (data) {
-                    defer.resolve(data);
+        } else if (navigator.geolocation) {        
+            try {
+                getPosition().then(function (position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude
+                    ctrl.getLocationFromLatLong(latitude, longitude).then(function (data) {
+                        defer.resolve(data);
+                    });
                 });
-            });
+            }
+            catch(ex) {
+                ctrl.getLocationFromService().then(function (data) {
+                    defer.resolve(data.city + ', ' + data.region);
+                });
+            }
         } else {
-            
+            ctrl.getLocationFromService().then(function (data) {
+                defer.resolve(data.city + ', ' + data.region);
+            });
         }
 
         return defer.promise;
