@@ -117,3 +117,15 @@
  		margin-right: 10px;
  	}
  }
+ my-bookmarks{
+ 	> ul{
+ 		a div:before{
+ 			font-family: FontAwesome;
+ 			content: "\f097";
+ 			display: inline-block;
+ 			position: relative;
+ 			margin-right: 10px;
+ 			color: $brand-white;
+ 		}
+ 	}
+ }
