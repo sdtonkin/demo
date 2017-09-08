@@ -30,13 +30,12 @@
             <div class="mb-wp-zone container-half col-sm-4">
 		        <WebPartPages:WebPartZone runat="server" Title="Bottom Left" ID="BottomLeftZone" />
 	        </div>
-        <!-- Webpart Zone - Top Main-->
+            <!-- Webpart Zone - Top Main-->
 	        <div class="mb-wp-zone container-half topleft col-lg-8 main-left-content">
 		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
 	        </div>
         </div>        
-    </div>
-    
+    </div>    
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">    
     </PublishingWebControls:EditModePanel>    
 </asp:Content>
