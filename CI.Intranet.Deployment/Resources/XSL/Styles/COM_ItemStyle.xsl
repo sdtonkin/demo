@@ -856,7 +856,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta white" href="/sites/stage/news">View All News</a>
+      <a class="btn btn-cta" href="/sites/stage/news">View All News</a>
     </xsl:if>
   </xsl:template>
 
@@ -943,14 +943,41 @@
       </p>
 
       <h4 class="card-tags">
-        <xsl:value-of select="@EventType" />
+        <xsl:if test="string-length(@EventType) != 0">
+          <a>
+            <xsl:attribute name="href">
+              /news/pages/news.aspx?newstype=<xsl:value-of select="@EventType" />
+            </xsl:attribute>
+            <xsl:value-of select="@EventType"/>
+          </a>
+        </xsl:if>
+      </h4>
+      <h4 class="card-tags">
+        <xsl:if test="string-length(@Location) != 0">
+          <a>
+            <xsl:attribute name="href">
+              /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+            </xsl:attribute>
+            <xsl:value-of select="@Location"/>
+          </a>
+        </xsl:if>
+      </h4>
+      <h4 class="card-tags">
+        <xsl:if test="string-length(@Group) != 0">
+          <a>
+            <xsl:attribute name="href">
+              /news/pages/news.aspx?group=<xsl:value-of select="@Group" />
+            </xsl:attribute>
+            <xsl:value-of select="@Group"/>
+          </a>
+        </xsl:if>
       </h4>
     </div>
     </div>    
     </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta white" href="/sites/stage/news">View All Events</a>
+      <a class="btn btn-cta" href="/sites/stage/news">View All Events</a>
     </xsl:if>
   </xsl:template>
 
