@@ -942,7 +942,7 @@
         <xsl:value-of select="@Location"/>
       </p>
 
-      <h4 class="card-title">
+      <h4 class="card-tags">
         <xsl:value-of select="@EventType" />
       </h4>
     </div>
