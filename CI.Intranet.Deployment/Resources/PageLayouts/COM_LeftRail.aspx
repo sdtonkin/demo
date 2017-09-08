@@ -26,35 +26,16 @@
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
     <div class="container">
         <div class="row">
-            <div class="mb-wp-zone container-half bottom-left col-sm-8">
+            <!-- Webpart Zone - Left -->
+            <div class="mb-wp-zone container-half col-sm-4">
 		        <WebPartPages:WebPartZone runat="server" Title="Bottom Left" ID="BottomLeftZone" />
 	        </div>
-        </div>
-        <div class="row">
-        <!-- Webpart Zone - Top Left -->
+        <!-- Webpart Zone - Top Main-->
 	        <div class="mb-wp-zone container-half topleft col-lg-8 main-left-content">
 		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
 	        </div>
-
-            <!-- Webpart Zone - Right -->
-	        <div class="mb-wp-zone container-half right col-lg-4 main-right-rail">
-		        <WebPartPages:WebPartZone runat="server" Title="Right" ID="RightZone" />
-	        </div>
-            <!-- Webpart Zone - Bottom Left -->
-	        
         </div>        
     </div>
-    <!-- Webpart Zone - Top -->
-
-        <div class="mb-wp-zone container-full top">
-	        <WebPartPages:WebPartZone runat="server" Title="Top" ID="TopZone" />
-        </div>
-
-    <!-- Webpart Zone - Bottom -->
-    
-        <div class="mb-wp-zone container-half bottom">
-	        <WebPartPages:WebPartZone runat="server" Title="Bottom" ID="BottomZone" />
-        </div>
     
     <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">    
     </PublishingWebControls:EditModePanel>    

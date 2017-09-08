@@ -470,9 +470,6 @@
     <None Include="Resources\css\sass\_sharepoint-overrides.scss" />
     <None Include="Resources\js\lib\angular.min.js.map" />
     <None Include="Resources\js\lib\pnp.min.js.map" />
-    <None Include="Resources\MasterPages\com-search.master">
-      <SubType>ASPXCodeBehind</SubType>
-    </None>
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
