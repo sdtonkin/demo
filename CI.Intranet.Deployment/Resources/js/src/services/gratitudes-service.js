@@ -22,7 +22,7 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                     var item = items[i];
                     var g = {};
                     g.type = item.COM_GratitudeType;
-                    g.description = item.COM__x0020_GratitudeDescription.substring(0, 150);
+                    g.description = item.COM__x0020_GratitudeDescription.substring(0, 175);
                     var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);                    
                     var p2 = userProfileService.getUserFromUserInfo(item.AuthorId);
                     promises.push(p1);
