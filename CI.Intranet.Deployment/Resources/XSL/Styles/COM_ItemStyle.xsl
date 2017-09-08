@@ -952,7 +952,7 @@
           </a>
         </xsl:if>
       </h4>
-      <h4 class="card-title">
+      <h4 class="card-tags">
         <xsl:if test="string-length(@LocationTag) != 0">
           <a>
             <xsl:attribute name="href">
