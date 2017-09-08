@@ -1229,9 +1229,12 @@ my-bookmarks > ul a div:before {
  *  @@ File: components/_work-resources.scss
  * ----------------------------------------- 
  */
+.work-resources h2.section, .how-do-i h2.section {
+  margin-top: 20px;
+  margin-bottom: 20px; }
 .work-resources .nav.nav-pills, .how-do-i .nav.nav-pills {
   display: block;
-  text-align: left; }
+  text-align: center; }
   .work-resources .nav.nav-pills .nav-item, .how-do-i .nav.nav-pills .nav-item {
     display: inline-block;
     margin-right: 15px;
@@ -1268,7 +1271,8 @@ my-bookmarks > ul a div:before {
   margin-bottom: 30px;
   margin-top: 30px; }
   .how-do-i .nav.nav-pills h3 {
-    margin-left: 25px; }
+    margin-left: 25px;
+    text-align: left; }
   .how-do-i .nav.nav-pills .nav-link {
     background-color: transparent;
     color: #003364;
