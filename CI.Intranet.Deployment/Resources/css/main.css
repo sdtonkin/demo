@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-apps-manage button:disabled {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-apps-manage button:disabled {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -179,7 +179,8 @@ a {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.3px; }
+  letter-spacing: 0.3px;
+  height: 60px; }
   .nav-pills .nav-link:hover {
     background-color: white;
     color: #003364; }
@@ -187,6 +188,20 @@ a {
   margin-right: 15px;
   min-width: 200px;
   margin-bottom: 15px; }
+
+.nav-button {
+  background-color: #003364;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  height: auto;
+  padding: 10px;
+  border-radius: 0.25rem; }
+  .nav-button:hover {
+    background-color: white;
+    color: #003364;
+    text-decoration: none; }
 
 .helpful-links ul, .groupmarker ul, .global-partners ul {
   list-style: none;
@@ -424,7 +439,7 @@ body {
 .hero-news-container .card-text {
   line-height: 27px;
   font-size: 24px;
-  margin-bottom: 50px; }
+  margin-bottom: 30px; }
 .hero-news-container .card-date {
   font-size: 14px;
   color: #908b63;
@@ -525,10 +540,17 @@ body {
   border-radius: 0;
   border-color: #908b63; }
 .ci-places location-places h5 {
-  text-transform: uppercase; }
+  text-transform: none;
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 20px; }
 .ci-places location-places ul {
   padding-left: 0;
   list-style: none; }
+  .ci-places location-places ul li {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 15px; }
 
 /* 
  * -----------------------------------------
@@ -785,7 +807,8 @@ body {
 .news-events .news-events-tabs {
   width: 100%; }
 .news-events .nav-tabs {
-  border-bottom: 2px solid #b8b491; }
+  border-bottom: 2px solid #b8b491;
+  margin-bottom: 30px; }
 .news-events .tab-content {
   margin-top: 30px; }
 .news-events .nav-link {
@@ -854,6 +877,8 @@ body {
   display: flex; }
   .news-events .search-filter .dropdown {
     display: table-cell; }
+    .news-events .search-filter .dropdown button {
+      text-transform: none; }
   .news-events .search-filter .dropdown-menu {
     top: 58px;
     background-color: #908b63;
@@ -1247,7 +1272,8 @@ my-bookmarks > ul a div:before {
   .how-do-i .nav.nav-pills .nav-link {
     background-color: transparent;
     color: #003364;
-    border: none; }
+    border: none;
+    height: auto; }
     .how-do-i .nav.nav-pills .nav-link:hover {
       color: #0054a6;
       border: none;
@@ -1420,6 +1446,17 @@ section.global-partners ul, section.my-department ul {
     padding-bottom: 10px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
       text-transform: uppercase; }
+  navigation div.search-background {
+    height: auto;
+    position: relative;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px; }
+  navigation .search-button {
+    width: 100%; }
+    navigation .search-button > a:before {
+      display: none; }
 
   /* ----------------------------------------------------
     2) Main Content Container Styles
@@ -1445,8 +1482,15 @@ section.global-partners ul, section.my-department ul {
 
   .sub-nav-container {
     margin-bottom: 30px; }
+    .sub-nav-container .nav-toolbar .nav-item {
+      width: 100%;
+      margin-bottom: 5px; }
     .sub-nav-container .card-intro {
       margin-bottom: 15px; }
+      .sub-nav-container .card-intro h2 {
+        font-size: 30px; }
+    .sub-nav-container .card-body {
+      padding-top: 0; }
     .sub-nav-container .card-close-mobile {
       position: absolute;
       bottom: -70px;
@@ -1457,6 +1501,35 @@ section.global-partners ul, section.my-department ul {
         padding: 13px;
         text-decoration: none;
         color: white; }
+
+  .nav-toolbar .toolbar-content ul {
+    width: 33%;
+    margin-right: 0; }
+
+  .toggle-row:after {
+    border-bottom: 1px solid #88bee7;
+    content: "";
+    display: block;
+    margin-top: 10px;
+    position: relative; }
+
+  .toolbar-toggle-button {
+    margin-top: 15px; }
+    .toolbar-toggle-button span {
+      display: none; }
+
+  .weather .weather-icon {
+    font-size: 20px;
+    top: 0; }
+
+  .weather .weather-location {
+    display: inline;
+    font-size: 15px; }
+
+  .weather .weather-info {
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 400; }
 
   /* 
    * -----------------------------------------
@@ -1529,6 +1602,9 @@ section.global-partners ul, section.my-department ul {
 #s4-bodyContainer {
   padding-bottom: 0; }
 
+#s4-workspace {
+  -webkit-overflow-scrolling: touch; }
+
 .main-container h2.ms-webpart-titleText span {
   font-size: 40px;
   text-align: left;
@@ -1537,6 +1613,8 @@ section.global-partners ul, section.my-department ul {
   line-height: 40px; }
 .main-container .main-right-rail h2.ms-webpart-titleText span {
   color: white; }
+.main-container .main-left-content .ms-webpart-zone {
+  display: block; }
 
 table.ms-ToolPaneOuter {
   width: 250px;
@@ -1580,6 +1658,9 @@ table.ms-ToolPaneOuter {
 .hero-main > .list-content:last-child .card-body {
   border: medium none;
   padding-bottom: 0; }
+
+.ms-taxonomy .ms-taxonomy-browser-button {
+  width: auto; }
 
 @media screen and (min-width: 992px) and (max-width: 1220px) {
   navigation .nav-item {

@@ -116,11 +116,20 @@
 			}
 		}
 		h5{
-			text-transform: uppercase;
+			text-transform: none;
+			margin-bottom: 30px;
+			width: 100%;
+			@extend .font-lato-bold;
+			font-size: 20px;
 		}
 		ul{
 			padding-left: 0;
 			list-style: none;
+			li{
+				width: 50%;
+				display: inline-block;
+				margin-bottom: 15px;
+			}
 		}
 	}
 }
