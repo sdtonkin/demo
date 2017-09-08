@@ -218,6 +218,7 @@
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
       <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
+      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" />
       <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
