@@ -8,20 +8,20 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
     ctrl.gethowDoI = function () {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.resourceLinks).items
+        web.lists.getByTitle(COM_CONFIG.lists.workResources).items
+            .filter("COM_ResourceType eq 'How Do I'")
             .get()
             .then(function (data) {
-                var links = data;
-                var response = [];
-                for (var i = 0; i < links.length; i++) {
-                    var l = links[i];
-                    var g = {};
-                    g.id = l.Id;
-                    g.title = l.Title;
-                    g.url = (l.COM_LinkUrl != null ? l.COM_LinkUrl.Url : '');
-                    response.push(g);
-                }
-                defer.resolve(response);
+                data.map(function (item) {
+                    if (item.COM_LinkUrl)
+                        item.url = item.COM_LinkUrl.Url;
+                    if (item.COM_ToolbarIconUrl)
+                        item.iconUrl = item.COM_ToolbarIconUrl;
+                    if (item.Title)
+                        item.title = item.Title;
+                });
+                console.log('how do I', data);
+                defer.resolve(data);
             });
 
         return defer.promise;

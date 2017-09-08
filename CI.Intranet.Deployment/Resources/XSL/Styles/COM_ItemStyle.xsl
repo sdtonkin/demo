@@ -727,8 +727,7 @@
               </a>
             </div>
                  <xsl:value-of select="$YammerID"/>
-            <news-page-likes thread-id="{$YammerID}"></news-page-likes>
-
+                 <news-page-likes page-url="{$SafeLinkUrl}"></news-page-likes>
           </div>
           </div>
           </div>
@@ -813,7 +812,7 @@
               </a>
             </div>
                  <xsl:value-of select="$YammerID"/>
-            <news-page-likes thread-id="{$YammerID}"></news-page-likes>
+            <news-page-likes page-url="{$SafeLinkUrl}"></news-page-likes>
 
           </div>
          </div>
@@ -853,7 +852,7 @@
             <xsl:value-of select="$DisplayTitle"/>
           </p>
         </a>
-        <span class="card-likes"></span>
+        <news-page-likes page-url="{$SafeLinkUrl}"></news-page-likes>
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">

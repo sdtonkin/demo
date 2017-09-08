@@ -1163,6 +1163,9 @@ my-bookmarks > ul a div:before {
   background-color: white; }
 .group-summary .card-body {
   padding: 20px; }
+  .group-summary .card-body .employee-card img.emp-photo {
+    width: 100px;
+    height: 100px; }
 .group-summary h5 {
   color: #003364;
   text-transform: uppercase;

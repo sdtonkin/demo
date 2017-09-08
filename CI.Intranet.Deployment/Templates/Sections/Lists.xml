@@ -194,4 +194,132 @@
       <pnp:ContentTypeBinding ContentTypeID="0x01005D2C171542AB48A48B6898A8D875E6FB" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
   </pnp:ListInstance>
+  <pnp:ListInstance Title="Work Resource Documents" Description="Work Resource Documents List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="101" Url="Lists/WorkResourceDocuments" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01005D2C171542AB48A48B6898A8D875E6FB" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
+  <pnp:ListInstance Title="Work Resources" Description="Work Resources List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/WorkResources" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+    <!--
+    <pnp:DataRows>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Policies and Procedures</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/policy.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Manuals and Guidelines</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/manuals.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Reports</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/reports.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">3</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Forms and Templates</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/forms.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">4</pnp:DataValue>
+      </pnp:DataRow>      
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Toolkits</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/toolkits.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">5</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Research Papers, Whitepapers and Studies</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/papers.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">6</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Global Content</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/global-content.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">7</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">MAX +</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/max-plus.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">8</pnp:DataValue>
+      </pnp:DataRow>      
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">New Hire Resources</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/new-hires.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">9</pnp:DataValue>
+      </pnp:DataRow>      
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Glossary</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/glossary.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">10</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">IT FAQs</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/it-faq.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">11</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Off-site Meetings</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/offsite-meetings.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">12</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Ethics Point</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/ethics-point.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">13</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Classified Ads</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">Resource</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/classified-ads.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">14</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Set up email on my phone</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">How Do I</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/email.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Request software</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">How Do I</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/request-software.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Reset my login and password</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">How Do I</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/password-reset.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">3</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Submit a Gateway service ticket</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">How Do I</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/gateway-ticket.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">4</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Get in touch with an Human Resource representative</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ResourceType">How Do I</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">/WorkResources/Pages/get-in-touch.aspx</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ListSortOrder">5</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>
+    -->
+  </pnp:ListInstance>  
 </pnp:Lists>

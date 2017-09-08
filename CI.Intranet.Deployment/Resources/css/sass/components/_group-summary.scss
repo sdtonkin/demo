@@ -17,6 +17,12 @@
 	}
 	.card-body{
 		padding: 20px;
+        .employee-card {
+            img.emp-photo {
+                width: 100px;
+                height: 100px;
+            }
+        }
 	}
 	h5 {
 		color: $brand-dark-blue;

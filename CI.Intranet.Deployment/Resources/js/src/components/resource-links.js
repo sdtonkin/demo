@@ -4,7 +4,7 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', '$q', 'common', 'resourceLinksService', 'COM_CONFIG', function ($scope, $q, common, resourceLinksService, COM_CONFIG) {
     var ctrl = this;
-
+    $scope.searchText = '';
 
     this.$onInit = function () {
         resourceLinksService.getresourceLinks().then(function (data) {
@@ -13,11 +13,9 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'resourceLinksServic
     }
 
     ctrl.searchTitle = 'Search';
-    ctrl.searchBox = function() {
-            $('div.search-background').show("slide", { direction: "right" }, 1000);
-            $('#searchQueryTerm').focus();
-            ctrl.searchTitle = '';
-        }
+    ctrl.goSearch = function () {
+        window.location.href = COM_CONFIG.workResourceSearchUrl + '?k=' + $scope.searchText;
+    }
 
 
 }]).component('resourceLinks', {

@@ -26,7 +26,8 @@ angular.module('compassionIntranet').service('photoService', ['$http', '$q', 'CO
                     photo.source = p.EncodedAbsUrl + (p.EncodedAbsUrl.indexOf('?') != -1 ? '&' : '?') + 'RenditionId=5';
                     photos.push(photo);
                 }
-                defer.resolve(photos);
+                var response = _.sortBy(photos, 'Created').reverse();
+                defer.resolve(response);
             })
             .catch(e => { console.error(e); });
 

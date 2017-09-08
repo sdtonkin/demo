@@ -1,13 +1,13 @@
-﻿<section class="work-resources">
+<section class="work-resources">
     <div class="row">
         <div class="col-12">
             <h2 class="section">Work Resources</h2>
             <div class="col-12">
                 <div class="col-lg-8">
                     <div class="input-group search">
-                        <input type="text" class="form-control" placeholder="Search content in Work Resources" ng-model="ctrl.searchText">
+                        <input type="text" class="form-control" placeholder="Search content in Work Resources" ng-model="searchText">
                         <span class="input-group-btn">
-                            <button ng-click="ctrl.searchBox()" class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
+                            <button ng-click="ctrl.goSearch()" class="btn btn-input" type="button"><i class="fa fa-search"></i></button>
                         </span>
                     </div>
                 </div>
@@ -17,12 +17,13 @@
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
                     <li class="nav-item" ng-repeat="link in ctrl.resourceLinks">
-                        <a ng-href="{{ link.URL }}">
+                        <a class="nav-link" ng-href="{{ link.url }}">
                             <img ng-src="{{ link.iconUrl }}" />
+                            <span>{{ link.title }}</span>
                         </a>
-                        <a class="nav-link" href="{{ link.URL }}"><span>{{ link.title }}</span></a>
-                        </li>
+                    </li>
             </ul>
         </div>
     </div>
 </section>
+
