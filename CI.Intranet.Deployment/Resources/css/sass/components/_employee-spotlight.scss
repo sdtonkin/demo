@@ -63,6 +63,7 @@
 	}
 	.employee-card-container{
 		border-bottom: 1px solid $brand-brown-dull;
+		height: 250px;
 		&:last-child{
 			border-bottom: 2px solid $brand-light-blue;
 		}
@@ -79,6 +80,7 @@
 			color: $brand-dark-blue;
 			font-size: 25px;
 			@extend .font-lato-med;
+			margin-bottom: 10px;
 		}
 		.emp-rec{
 			color: $brand-dark-blue-alt;

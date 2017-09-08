@@ -1,8 +1,8 @@
-﻿<section class="work-resources">
+<section class="work-resources">
     <div class="row">
         <div class="col-12">
             <h2 class="section">Work Resources</h2>
-            <div class="row">
+            <div class="col-12">
                 <div class="col-lg-8">
                     <div class="input-group search">
                         <input type="text" class="form-control" placeholder="Search content in Work Resources" ng-model="searchText">
@@ -13,16 +13,20 @@
                 </div>
             </div>
         </div>
-        <h2 class="section">Or Browse by Category</h2>
+        <div class="col-12">
+            <h2 class="section">Or Browse by Category</h2>
+        </div>
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
                     <li class="nav-item" ng-repeat="link in ctrl.resourceLinks">
-                        <a ng-href="{{ link.url }}">
+                        <a class="nav-link" ng-href="{{ link.url }}">
                             <img ng-src="{{ link.iconUrl }}" />
-                            {{ link.title }}
+                            <span>{{ link.title }}</span>
                         </a>
                     </li>
             </ul>
         </div>
     </div>
+
 </section>
+

@@ -18,6 +18,7 @@
 		}
 		.nav-link{
 			text-align: left;
+			border: 1px solid $brand-dark-blue;
 			i{ 
 				display: table-cell;
 			}
@@ -60,8 +61,13 @@
  		.nav-link{
  			background-color: transparent;
  			color: $brand-dark-blue;
+ 			border: none;
+ 			height: auto;
+
  			&:hover{
  				color: $brand-dark-blue-alt ;
+ 				border: none;
+ 				text-decoration: underline;
  			}
  		}
  		.nav-item{

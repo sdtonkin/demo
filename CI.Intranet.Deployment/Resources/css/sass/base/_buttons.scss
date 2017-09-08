@@ -81,6 +81,7 @@
 	    text-align: center;
 	    text-transform: uppercase;
 	    letter-spacing: 0.3px;
+	    height: 60px;
 	    &:hover{
 	    	background-color: $brand-white;
 	    	color: $brand-dark-blue;
@@ -93,7 +94,23 @@
 	}
 }
 
-.helpful-links{
+.nav-button{
+	background-color: $brand-dark-blue;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    height: auto;
+    padding: 10px;
+    border-radius: 0.25rem;
+    &:hover{
+    	background-color: $brand-white;
+    	color: $brand-dark-blue;
+    	text-decoration: none;
+    }
+}
+
+.helpful-links, .groupmarker, .global-partners{
 	ul{
 		list-style: none;
 		padding-left: 0;
@@ -105,6 +122,35 @@
 			content:"\f0c1";
 			display: table-cell;
 			padding-right: 10px;
+		}
+	}
+}
+
+.groupmarker{
+	li{
+		&:before{
+			color: $brand-white;
+			font-size: 18px;
+		}
+		.link-item a{
+			color: $brand-dark-blue-alt;
+			@extend .font-lato-med;
+			font-size: 18px;
+		}
+	}
+}
+.global-partners{
+	li{
+		&:before{
+			display: none;
+		}
+		a span{
+			color: $brand-dark-blue-alt;
+			@extend .font-lato-med;
+			// font-size: 18px;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 }
