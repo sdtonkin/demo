@@ -36,7 +36,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 if (pageTitle != item.Title) return item;
             });
             //create array of objects
-            items = items.map(createObject);
+            //items = items.map(createObject);
 
             defer.resolve(items);
         });
@@ -47,7 +47,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         var defer = $q.defer();
 
-        let pageTitle = $(".page-title").text();
+        let pageTitle = $(".news-title-block > p.card-text").text();
         let rootNews = _spPageContextInfo.siteAbsoluteUrl + "/news";
         let path = " Path:" + "" + rootNews + "";
         $pnp.sp.search({
@@ -67,7 +67,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
                 items.newsType = items.RefinableString01;
             }
-
+            console.log('related news', data);
             defer.resolve(items);
         });
 

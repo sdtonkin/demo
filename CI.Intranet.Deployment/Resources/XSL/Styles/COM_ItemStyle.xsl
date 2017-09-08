@@ -952,13 +952,13 @@
           </a>
         </xsl:if>
       </h4>
-      <h4 class="card-tags">
-        <xsl:if test="string-length(@Location) != 0">
+      <h4 class="card-title">
+        <xsl:if test="string-length(@LocationTag) != 0">
           <a>
             <xsl:attribute name="href">
-              /news/pages/news.aspx?location=<xsl:value-of select="@Location" />
+              /news/pages/news.aspx?location=<xsl:value-of select="@LocationTag" />
             </xsl:attribute>
-            <xsl:value-of select="@Location"/>
+            <xsl:value-of select="@LocationTag"/>
           </a>
         </xsl:if>
       </h4>
