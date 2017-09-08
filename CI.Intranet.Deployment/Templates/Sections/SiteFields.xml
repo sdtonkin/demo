@@ -270,10 +270,10 @@
   </Field>
   <Field Type="Calculated" DisplayName="Publish Date Format" Group="1 - Compassion Intranet Columns" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" ID="{12C75227-FE01-49AD-874A-88E76454010D}" StaticName="COM_PublishDateFormat" Name="COM_PublishDateFormat" RowOrdinal="0" Required="FALSE" >
     <Formula>
-      =TEXT(COM_PublishDate,&quot;MMMM d, yyyy&quot;)
+      =TEXT(COM_PublishDateFormat,&quot;MMMM d, yyyy&quot;)
     </Formula>
     <FieldRefs>
-      <FieldRef Name="COM_PublishDate" />
+      <FieldRef Name="COM_PublishDateFormat" />
     </FieldRefs>
   </Field>
   <!-- ********   -->
