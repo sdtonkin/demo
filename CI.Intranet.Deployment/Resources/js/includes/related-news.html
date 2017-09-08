@@ -1,10 +1,9 @@
-<div ng-show="News" class="trending-stories">
-    <span class="line-title">Related Articles</span>
-    <div ng-repeat="x in news" class="story">
+<div ng-show="news.length > 0" class="trending-stories">
+    <div ng-repeat="article in news track by $index" class="story">
         <div class="reminder-date">
-            <span class="regular-body numbers">{{x.publishDate}}</span>
-            <a ng-href="{{x.url}}">
-                <h4 class="news-title">{{x.title}}</h4>
+            <span class="regular-body numbers">{{article.articleDate}}</span>
+            <a ng-href="{{article.Path}}">
+                <h4 class="news-title">{{article.Title}}</h4>
             </a>
         </div>
     </div>
