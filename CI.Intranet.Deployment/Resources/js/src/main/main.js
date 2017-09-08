@@ -4,8 +4,7 @@ var app = angular.module('compassionIntranet', []).config(function ($sceDelegate
         'self',
         // Allow loading from our assets domain. **.
         'https://api.rss2json.com/**',
-        '',
-        ''
+        'https://api.ipify.org/**',
     ]);
 
 });
