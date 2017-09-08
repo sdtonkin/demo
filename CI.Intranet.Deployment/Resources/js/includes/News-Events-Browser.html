@@ -56,9 +56,48 @@
                 </div>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
-                        <div class="hero-news-container">
-                            <div class="card-group" ng-repeat="article in ctrl.newsArticles">
+                    <div class="active carousel" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
+                        <ol class="carousel-indicators">
+                            <li data-target="#ci-news-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#ci-news-carousel" data-slide-to="1"></li>
+                            <li data-target="#ci-news-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="hero-news-container carousel-inner">                            
+                            <div class="card-group carousel-item" ng-repeat="article in ctrl.newsArticles | limitTo: 5:0 track by $index">
+                                <div class="card img-card">
+                                    <a ng-href="{{article.Path}}">
+                                        <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
+                                    </a>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-tags" ng-show="article.NewsType != null">{{article.NewsType}}</h4>
+                                        <h4 class="card-tags" ng-show="article.Group != null">{{article.Group}}</h4>
+                                        <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.LocationTag}}</h4>
+                                        <div class="card-date">{{article.ArticleDate}}</div>
+                                        <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
+                                        <news-page-likes ng-cloak page-url="{{article.Path}}"></news-page-likes>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-group carousel-item" ng-repeat="article in ctrl.newsArticles | limitTo: 5:5 track by $index">
+                                <div class="card img-card">
+                                    <a ng-href="{{article.Path}}">
+                                        <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
+                                    </a>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-tags" ng-show="article.NewsType != null">{{article.NewsType}}</h4>
+                                        <h4 class="card-tags" ng-show="article.Group != null">{{article.Group}}</h4>
+                                        <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.LocationTag}}</h4>
+                                        <div class="card-date">{{article.ArticleDate}}</div>
+                                        <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
+                                        <news-page-likes ng-cloak page-url="{{article.Path}}"></news-page-likes>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-group carousel-item" ng-repeat="article in ctrl.newsArticles | limitTo: 5:10 track by $index">
                                 <div class="card img-card">
                                     <a ng-href="{{article.Path}}">
                                         <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
