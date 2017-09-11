@@ -17,6 +17,12 @@
         <pnp:PageLayouts />
       </pnp:Publishing>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/FilesSearch.xml"/>
+      <pnp:WebSettings
+        WelcomePage="Pages/default.aspx"
+        SiteLogo="{sitecollection}/_catalogs/masterpage/Compassion/images/compassion-white-logo.png"
+        MasterPageUrl="{sitecollection}/_catalogs/MasterPage/oslo.master"
+        CustomMasterPageUrl="{sitecollection}/_catalogs/MasterPage/Compassion/MasterPages/com-main.master"
+        />
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
 </pnp:Provisioning>

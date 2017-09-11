@@ -89,7 +89,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         return defer.promise;
     }
 
-    function getRelatedNews(newsType) {
+    function getRelatedNewsByType(newsType) {
         var defer = $q.defer();
 
         let listItemId = _spPageContextInfo.pageItemId;
@@ -120,6 +120,29 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 }
             });
 
+        return defer.promise;
+    }
+    function getRelatedNews(newsType, currentPageItemId, rowLimit) {
+        var defer = $q.defer();
+
+        $pnp.sp.search({
+            Querytext: 'Path:' + COM_CONFIG.newsWeb + ' AND RefinableString01=' + newsType,
+            SelectProperties: ['RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            RowLimit: rowLimit,
+            TrimDuplicates: false,
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }]
+        }).then(function (data) {
+            var items = data.PrimarySearchResults
+            items = items.filter(function (item) {
+                //filter out current page
+                if (currentPageItemId != item.ID) return item;
+            });
+            console.log('related news', items);
+            defer.resolve(items);
+        });
         return defer.promise;
     }
 });
