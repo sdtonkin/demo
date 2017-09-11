@@ -16,7 +16,7 @@ angular.module('compassionIntranet').service('resourceLinksService', ['$http', '
                     if (item.COM_LinkUrl) 
                         item.url = item.COM_LinkUrl.Url;
                     if (item.COM_ToolbarIconUrl)
-                        item.iconUrl = item.COM_ToolbarIconUrl;
+                        item.iconUrl = item.COM_ToolbarIconUrl.Url;
                     if (item.Title)
                         item.title = item.Title;
                 });
