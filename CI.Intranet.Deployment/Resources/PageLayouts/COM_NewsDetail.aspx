@@ -95,5 +95,8 @@
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
         <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
         <SharePointWebControls:TextField runat="server" FieldName="COM_YammerID"/>
-    </PublishingWebControls:EditModePanel>    
+    </PublishingWebControls:EditModePanel> 
+    <span id="article-news-type" class="ng-hide">
+        <SharePointWebControls:FieldValue FieldName="COM_NewsType" runat="server"/>
+    </span>
 </asp:Content>

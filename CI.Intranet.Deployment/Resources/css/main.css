@@ -1242,6 +1242,7 @@ my-bookmarks > ul a div:before {
 .work-resources h2.section, .how-do-i h2.section {
   margin-top: 20px;
   margin-bottom: 20px; }
+
 .work-resources .nav.nav-pills, .how-do-i .nav.nav-pills {
   display: block;
   text-align: left; }

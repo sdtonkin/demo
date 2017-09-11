@@ -1,21 +1,17 @@
-<section class="news-events">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="section">Related Articles</h2>
-                <div ng-show="news.length > 0" class="trending-stories">
-                    <div class="card-related">
-                        <img src="{{topImageUrl}}" />
-                    </div>
-                    <div ng-repeat="article in news track by $index" class="story">
-                        <div class="card-body">
-                            <span class="card-date">{{article.articleDate}}</span>
-                            <a ng-href="{{article.Path}}">
-                                <h4 class="card-text">{{article.Title}}</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div ng-show="news.length > 0" class="trending-stories">
+    <h2>Related Articles</h2>
+    <div class="top-image">
+        <img src="{{topImageUrl}}" />
+    </div>
+    <div ng-repeat="article in news track by $index" class="story">
+        <div class="reminder-date">
+            <span class="regular-body numbers">{{article.articleDate}}</span>
+            <a ng-href="{{article.Path}}">
+                <h4 class="news-title">{{article.Title}}</h4>
+            </a>
+        </div>
+    </div>
+</div>
 
                 <div ng-if="notFound" class="card-related">
                     <span class="card-text">{{notFound}}</span>
