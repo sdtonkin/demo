@@ -53,7 +53,7 @@
       <pnp:FieldRef ID="3de94b06-4120-41a5-b907-88773e493458" Name="PublishingPageImage" />
       <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" Required="true" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
-      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" />
+      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" /> 
       <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
