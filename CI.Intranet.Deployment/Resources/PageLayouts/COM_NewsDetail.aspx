@@ -48,10 +48,10 @@
                         </PublishingWebControls:EditModePanel> 
                     </div>
                     <div class="news-tag-content row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <news-page-likes></news-page-likes>
                     </div>
-                        <div class="col-md-6">
+                        <div class="col-md-9">
                         <div class="tag-container pull-right">
                             <Taxonomy:TaxonomyFieldControl FieldName="COM_NewsType" InputFieldLabel="News Type" runat="server"></Taxonomy:TaxonomyFieldControl>
                             <Taxonomy:TaxonomyFieldControl FieldName="COM_Group" InputFieldLabel="Group" runat="server"></Taxonomy:TaxonomyFieldControl>
