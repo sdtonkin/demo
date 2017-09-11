@@ -69,6 +69,7 @@
                     <!--related-news-webpart-->   
                     <div>
                         <related-news></related-news>
+
                     </div>                                     
                 </div> <!--main-right-rail-->
             </div>

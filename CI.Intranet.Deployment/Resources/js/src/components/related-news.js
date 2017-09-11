@@ -4,7 +4,7 @@ var myApp = angular.module('compassionIntranet');
 
 myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', function ($scope, relatedNewsService, COM_CONFIG) {
     var ctrl = this;
-
+    $scope.notFound = 'Retrieving related articles...';
     this.$onInit = function () {
         relatedNewsService.getData().then(function (data) {
             $scope.newsSite = COM_CONFIG.rootWeb + "/news/pages/default.aspx";
@@ -12,6 +12,7 @@ myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', functi
             if (data.length === 0) {
                 $scope.notFound = "No related stories found";
             } else {
+                $scope.notFound = '';
                 $scope.news = data;
             }
         });

@@ -1,4 +1,7 @@
 <div ng-show="news.length > 0" class="trending-stories">
+    <div class="top-image">
+        <img src="{{topImageUrl}}" />
+    </div>
     <div ng-repeat="article in news track by $index" class="story">
         <div class="reminder-date">
             <span class="regular-body numbers">{{article.articleDate}}</span>

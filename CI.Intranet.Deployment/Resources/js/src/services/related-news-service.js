@@ -70,8 +70,9 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                     item.articleDate = moment(artDate).format('MMMM D, YYYY');
                     item.rawArticleDate = artDate;
                 }
+                
             });
-
+            console.log(data);
             if (data.PrimarySearchResults.length > 0) {
                 defer.resolve(data.PrimarySearchResults[0]);
             }
