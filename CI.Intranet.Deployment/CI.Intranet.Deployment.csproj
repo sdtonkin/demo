@@ -339,6 +339,9 @@
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
     <Content Include="Resources\MasterPages\PublishingImageRenditions.xml" />
+    <Content Include="Resources\PageLayouts\COM_LeftRail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\PageLayouts\COM_GroupsLanding.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -351,7 +354,9 @@
     <Content Include="Resources\PageLayouts\COM_NewsDetail.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx" />
+    <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\gratitudes.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

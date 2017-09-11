@@ -6,10 +6,12 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let contentType = "";
         let category = "";
         let x = page.ContentType
-        if (x.indexOf('Article') > 0) {
+        if (x.indexOf('News Page') > 0) {
             //set news content type
-            contentType = " ContentTypeId:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301* ";
-            category = " RefinableString01: '" + page.newsCategory + "'";
+            contentType = " ContentTypeId:" + COM_CONFIG.contentTypeIds.newsPage + "* ";
+            if (page.newsType) {
+                category = " RefinableString01: '" + page.newsType + "'";
+            }
         }
 
         //specify query variables
@@ -35,8 +37,6 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 let pageTitle = page.Title;
                 if (pageTitle != item.Title) return item;
             });
-            //create array of objects
-            //items = items.map(createObject);
 
             defer.resolve(items);
         });
@@ -61,14 +61,25 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
             }]
 
         }).then(function(data) {
-
-            var items = data.PrimarySearchResults[0];
-            if (items.RefinableString01) {
-
-                items.newsType = items.RefinableString01;
+            data.PrimarySearchResults.map(function (item) {
+                if (item.RefinableString01) {
+                    item.newsType = item.RefinableString01;
+                }
+                if (item.RefinableDate00) {
+                    var artDate = new Date(item.RefinableDate00);
+                    item.articleDate = moment(artDate).format('MMMM D, YYYY');
+                    item.rawArticleDate = artDate;
+                }
+                
+            });
+            console.log(data);
+            if (data.PrimarySearchResults.length > 0) {
+                defer.resolve(data.PrimarySearchResults[0]);
             }
-            console.log('related news', data);
-            defer.resolve(items);
+            else {
+                defer.resolve(null);
+            }
+            
         });
 
         return defer.promise;

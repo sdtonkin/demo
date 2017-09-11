@@ -70,7 +70,7 @@
             
 <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly"><wssuc:Welcome runat="server" EnableViewState="false" /></SharePoint:SPSecurityTrimmedControl>
 
-<div id="s4-workspace" ng-app="compassionIntranet" ng-cloak>
+<div id="s4-workspace" ng-app="compassionIntranet">
 <div id="s4-bodyContainer">
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <navigation></navigation>
