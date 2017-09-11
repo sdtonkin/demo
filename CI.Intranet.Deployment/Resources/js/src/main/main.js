@@ -55,6 +55,7 @@ require('../components/department-news.js');
 require('../components/employee-announcement.js');
 require('../components/employee-spotlight.js');
 require('../components/find-people.js');
+require('../components/global-links.js');
 require('../components/global-partners.js');
 require('../components/gratitudes.js');
 require('../components/group-summary.js');
@@ -81,6 +82,7 @@ require('../components/resource-links.js');
 require('../components/rss-feed-manager.js');
 require('../components/rss-feeds.js');
 require('../components/toolbar-manager.js');
+require('../components/us-links.js');
 require('../components/weather-control.js');
 
 
