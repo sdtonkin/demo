@@ -6,7 +6,8 @@ myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', functi
     var ctrl = this;
     $scope.notFound = 'Retrieving related articles...';
     this.$onInit = function () {
-        relatedNewsService.getData().then(function (data) {
+        var newsType = $('#article-news-type').text().trim();
+        relatedNewsService.getRelatedNews(newsType).then(function (data) {
             $scope.newsSite = COM_CONFIG.rootWeb + "/news/pages/default.aspx";
             console.log('related news', data);
             if (data.length === 0) {

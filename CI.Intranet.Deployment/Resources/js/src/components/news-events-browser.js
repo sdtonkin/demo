@@ -102,6 +102,14 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             }
         }
     }
+    function filterByGroup(group) {
+        ctrl.newsArticles = _.filter(masterArticles, function (a) {
+            return a.Group == group.name;
+        });
+        ctrl.events = _.filter(masterEvents, function (e) {
+            return e.Group == group.name;
+        });
+    }
     function clearCategory() {
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = masterArticles;
