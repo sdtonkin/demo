@@ -12,7 +12,7 @@
  	}
 	.nav.nav-pills{
 		display: block;
-		text-align: center;
+		text-align: left;
 		.nav-item{
 			display: inline-block;
     		margin-right: 15px;
@@ -78,5 +78,8 @@
  		.nav-item{
  			width: 47%;
  		}
+ 	}
+ 	.nav-fill .nav-item{
+ 		// text-align: left;
  	}
  }
