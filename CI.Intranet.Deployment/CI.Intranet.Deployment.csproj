@@ -205,9 +205,12 @@
     <Content Include="Resources\components.html" />
     <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
     <Content Include="Resources\js\includes\Contacts.html" />
+    <Content Include="Resources\js\includes\Employee-Life.html" />
+    <Content Include="Resources\js\includes\Global-Links.html" />
     <Content Include="Resources\js\includes\News-Events-Browser.html" />
     <Content Include="Resources\js\includes\News-Page-Likes.html" />
     <Content Include="Resources\js\includes\Resource-Links.html" />
+    <Content Include="Resources\js\includes\Us-Links.html" />
     <Content Include="Resources\js\lib\weather-icons.min.css" />
     <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
@@ -270,6 +273,7 @@
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\anniversary.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
+    <Content Include="Resources\js\src\components\global-links.js" />
     <Content Include="Resources\js\src\components\news-events-browser.js" />
     <Content Include="Resources\js\src\components\news-page-likes.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
@@ -301,6 +305,7 @@
     <Content Include="Resources\js\src\components\rss-feeds.js" />
     <Content Include="Resources\js\src\components\rss-feed-manager.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
+    <Content Include="Resources\js\src\components\us-links.js" />
     <Content Include="Resources\js\src\components\weather-control.js" />
     <Content Include="Resources\js\src\components\weather-controller.js" />
     <Content Include="Resources\js\src\main\common.js" />
