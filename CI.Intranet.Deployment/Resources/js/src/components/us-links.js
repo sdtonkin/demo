@@ -1,6 +1,6 @@
 ﻿'use strict';
 var myApp = angular.module('compassionIntranet'),
-    controllerName = 'UsLinksController';
+    controllerName = 'usLinksController';
 
 myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG', function ($scope, $q, taxonomyService, COM_CONFIG) {
     var ctrl = this;
@@ -15,7 +15,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
             $scope.$apply();
         });
     }
-}]).component('UsLinks', {
+}]).component('usLinks', {
     template: require('../../includes/Us-Links.html'),
     controller: controllerName,
     controllerAs: 'ctrl'
