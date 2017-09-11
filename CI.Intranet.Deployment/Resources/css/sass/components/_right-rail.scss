@@ -126,6 +126,11 @@
 		color: $brand-light-blue;
 	}
 }
+rss-feed-manager{
+	.btn-cta{
+		margin-top: 0 !important;
+	}
+}
 // rss-feed-manager{
 // 	a{
 // 		&:before{

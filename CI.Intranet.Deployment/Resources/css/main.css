@@ -646,6 +646,9 @@ body {
     font-size: 12px;
     color: #88bee7; }
 
+rss-feed-manager .btn-cta {
+  margin-top: 0 !important; }
+
 .upcoming-events {
   background-color: white;
   border-radius: 0;
