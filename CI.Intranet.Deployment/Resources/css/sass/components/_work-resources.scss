@@ -26,6 +26,11 @@
 			i{ 
 				display: table-cell;
 			}
+			> img{
+			    display: table-cell;
+			    float: left;
+			    width: 20px;
+			}
 			span{
 				display: table-cell;
 				padding-left: 10px;
