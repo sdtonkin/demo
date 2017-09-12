@@ -207,19 +207,28 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
 
         for (var i = 0; i < appsToAdd.length; i++) {
             var app = appsToAdd[i];
-            appService.addMyApp(userId, app.appId);
+            appService.addMyApp(userId, app.appId).then(function () {
+                appService.getMyApps(userId).then(function (response) {
+                    ctrl.myAppsFromDb = response;
+                    ctrl.myApps = angular.copy(response);
+                    getSortOrderLimits();
+                    ctrl.isToolbarDirty = false;
+                    ctrl.systemMessage = 'Success';
+                });
+            });
         }
         for (var i = 0; i < appsToDelete.length; i++) {
             var app = appsToDelete[i];
-            appService.removeMyTool(app.id);
-        }
-        appService.getMyApps(userId).then(function (response) {
-            ctrl.myAppsFromDb = response;
-            ctrl.myApps = angular.copy(response);
-            getSortOrderLimits();
-            ctrl.isToolbarDirty = false;
-            ctrl.systemMessage = 'Success';
-        });
+            appService.removeMyTool(app.id).then(function () {
+                appService.getMyApps(userId).then(function (response) {
+                    ctrl.myAppsFromDb = response;
+                    ctrl.myApps = angular.copy(response);
+                    getSortOrderLimits();
+                    ctrl.isToolbarDirty = false;
+                    ctrl.systemMessage = 'Success';
+                });
+            });
+        }        
     }
     function getSortOrderLimits() {
         if (ctrl.myApps == null) return;
