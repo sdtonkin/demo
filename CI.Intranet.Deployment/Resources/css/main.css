@@ -1094,7 +1094,7 @@ navigation {
     navigation .nav-item .active:after {
       content: " ";
       display: block;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid white !important;
       padding-bottom: 5px; }
   navigation #navbarContent .form-inline {
     position: relative; }

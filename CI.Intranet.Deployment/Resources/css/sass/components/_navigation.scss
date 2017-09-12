@@ -172,7 +172,7 @@ navigation {
             &:after{
                 content: " ";
                 display: block;
-                border-bottom: 1px solid $brand-white;
+                border-bottom: 1px solid $brand-white !important;
                 padding-bottom: 5px;
             }
         }
