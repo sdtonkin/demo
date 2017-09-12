@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-bookmarks-manage button, #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-bookmarks-manage button, #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -1018,12 +1018,14 @@ navigation {
     text-align: center; }
   navigation div.search-background {
     background-color: #0054a6;
-    height: 93px;
+    height: auto;
     position: absolute;
-    top: 85px;
+    top: 0;
+    right: 0;
     z-index: 999; }
   navigation div.search-background > input {
-    width: 200px; }
+    width: 200px;
+    padding: 5px; }
   navigation .nav-icon {
     padding: 20px;
     text-align: right; }
@@ -1047,9 +1049,15 @@ navigation {
     content: "";
     margin-left: -10px;
     padding-right: 20px; }
-  navigation .search-button i {
-    color: white;
-    padding-right: 10px; }
+  navigation .search-button {
+    z-index: 9999; }
+    navigation .search-button i {
+      color: white;
+      padding-right: 10px; }
+  navigation #navbarContent.active .search-button i {
+    color: #003364; }
+  navigation #navbarContent.active .search-button a:before {
+    border-color: #003364; }
   navigation .navbar {
     padding: 0.5rem 0; }
   navigation .navbar-brand {
@@ -1060,7 +1068,7 @@ navigation {
     min-width: 0; }
     navigation .navbar-toggler:hover {
       background-color: transparent;
-      border: none; }
+      border: 1px solid transparent; }
   navigation .navbar-toggler-icon {
     background-color: transparent; }
     navigation .navbar-toggler-icon:hover {
@@ -1088,6 +1096,8 @@ navigation {
       display: block;
       border-bottom: 1px solid white;
       padding-bottom: 5px; }
+  navigation #navbarContent .form-inline {
+    position: relative; }
   navigation .search-button > a {
     display: block;
     height: 100%;
@@ -1317,7 +1327,7 @@ my-bookmarks > ul a div:before {
  *  @@ File: components/_search.scss
  * ----------------------------------------- 
  */
-.ms-searchCenter-result-main {
+.ms-searchCenter-result-main, .ms-srch-result {
   float: none;
   padding-top: 30px;
   max-width: 1700px;
@@ -1326,45 +1336,46 @@ my-bookmarks > ul a div:before {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .ms-searchCenter-result-main .ms-srch-upscope-top {
+  .ms-searchCenter-result-main .ms-srch-upscope-top, .ms-srch-result .ms-srch-upscope-top {
     text-align: center;
     width: 100% !important; }
-  .ms-searchCenter-result-main .ms-srchnav-list {
+  .ms-searchCenter-result-main .ms-srchnav-list, .ms-srch-result .ms-srchnav-list {
     display: inline-block;
     text-align: center;
     padding: 0;
     width: 100%; }
-    .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a {
+    .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a {
       font-size: 20px;
       text-transform: uppercase;
       color: #b8b491; }
-      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a:hover {
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a:hover, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a:hover {
         color: #0054a6; }
-      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a.ms-srchnav-link-selected {
+      .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a.ms-srchnav-link-selected, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a.ms-srchnav-link-selected {
         color: #0054a6; }
-  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item {
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item, .ms-srch-result .ms-srch-result-groups .ms-srch-item {
     padding-bottom: 30px;
     border-bottom: 2px solid #908b63;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item:hover {
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item:hover, .ms-srch-result .ms-srch-result-groups .ms-srch-item:hover {
       background-color: transparent; }
-  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary {
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary, .ms-srch-result .ms-srch-result-groups .ms-srch-item-summary {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 475px; }
-  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-path {
-    display: block; }
-  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link {
-    color: #0054a6;
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-path, .ms-srch-result .ms-srch-result-groups .ms-srch-item-path {
+    display: block;
+    color: #003364; }
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link {
+    color: #0054a6 !important;
     width: 475px;
     overflow: hidden;
     text-overflow: ellipsis; }
-    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link:visited {
+    .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link:visited, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link:visited {
       color: #b8b491; }
-  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-highlightedText {
+  .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-highlightedText, .ms-srch-result .ms-srch-result-groups .ms-srch-item-highlightedText {
     color: #0054a6; }
 
 #SearchBox {
@@ -1405,8 +1416,15 @@ my-bookmarks > ul a div:before {
     #SearchBox .ms-srch-sb-searchLink:hover {
       background-color: transparent; }
 
+.left-rail-page #SearchBox {
+  margin: 0;
+  max-width: 650px; }
+
 h2.ms-displayInline a.ms-ref-name {
-  display: none; }
+  display: block;
+  visibility: hidden;
+  font-size: 0;
+  margin-top: 20px; }
 
 .ms-ref-uparrow {
   display: block; }
@@ -1680,6 +1698,10 @@ table.ms-ToolPaneOuter {
   z-index: 9999; }
   table.ms-ToolPaneOuter .ms-ToolPaneBody {
     overflow-y: scroll; }
+
+.ms-ToolPaneBody {
+  max-height: 400px;
+  overflow: scroll; }
 
 #ci-apps-manage li, #ci-bookmarks-manage li {
   list-style: none;

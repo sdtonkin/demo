@@ -39,6 +39,10 @@ table.ms-ToolPaneOuter {
         overflow-y: scroll;
     }
 }
+.ms-ToolPaneBody{
+    max-height: 400px;
+    overflow: scroll;
+}
 
 .main-right-rail{
     div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{

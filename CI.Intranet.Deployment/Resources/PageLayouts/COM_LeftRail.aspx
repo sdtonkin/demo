@@ -24,14 +24,14 @@
     <SharePointWebControls:ListSiteMapPath runat="server" SiteMapProviders="CurrentNavigationSwitchableProvider" RenderCurrentNodeAsLink="false" PathSeparator="" CssClass="s4-breadcrumb" NodeStyle-CssClass="s4-breadcrumbNode" CurrentNodeStyle-CssClass="s4-breadcrumbCurrentNode" RootNodeStyle-CssClass="s4-breadcrumbRootNode" NodeImageOffsetX=0 NodeImageOffsetY=289 NodeImageWidth=16 NodeImageHeight=16 NodeImageUrl="/_layouts/15/images/fgimg.png?rev=40" HideInteriorRootNodes="true" SkipLinkText="" /> 
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
-    <div class="container">
+    <div class="container left-rail-page">
         <div class="row">
             <!-- Webpart Zone - Left -->
-            <div class="mb-wp-zone container-half col-sm-4">
+            <div class="mb-wp-zone container-half col-sm-2">
 		        <WebPartPages:WebPartZone runat="server" Title="Bottom Left" ID="BottomLeftZone" />
 	        </div>
             <!-- Webpart Zone - Top Main-->
-	        <div class="mb-wp-zone container-half topleft col-lg-8 main-left-content">
+	        <div class="mb-wp-zone container-half topleft col-lg-10 main-left-content">
 		        <WebPartPages:WebPartZone runat="server" Title="Top Left" ID="TopLeftZone" />
 	        </div>
         </div>        

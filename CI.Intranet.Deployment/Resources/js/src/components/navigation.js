@@ -53,10 +53,12 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
             $('div.search-background').show("slide", { direction: "right" }, 1000);
             $('#searchQueryTerm').focus();
             ctrl.searchTitle = '';
+            $('#navbarContent').addClass('active');
         }            
         else {
             $('div.search-background').hide("slide", { direction: "right" }, 1000);
             ctrl.searchTitle = 'Search';
+            $('#navbarContent').removeClass('active');
         }
             
     }

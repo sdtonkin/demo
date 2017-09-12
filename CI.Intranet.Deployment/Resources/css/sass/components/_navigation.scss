@@ -55,13 +55,15 @@ navigation {
 
     div.search-background {
         background-color: $brand-dark-blue-alt;
-        height: 93px;
+        height: auto;
         position: absolute;
-        top: 85px;
+        top: 0;
+        right: 0;
         z-index: 999;
     }
     div.search-background > input {
-        width: 200px;        
+        width: 200px; 
+        padding: 5px;       
     }
     .nav-icon {
         padding: 20px;
@@ -97,9 +99,21 @@ navigation {
         padding-right: 20px;
     }
      .search-button{
+        z-index: 9999;
         i{
             color: $brand-white;
             padding-right: 10px;
+        }
+     }
+     //active searchbar
+     #navbarContent.active{
+        .search-button {
+            i{
+                color: $brand-dark-blue;
+            }
+            a:before{
+                border-color: $brand-dark-blue;
+            }
         }
      }
 
@@ -117,7 +131,7 @@ navigation {
         min-width: 0;
         &:hover{
             background-color: transparent;
-            border: none;
+            border: 1px solid transparent;
         }
      }
      .navbar-toggler-icon{
@@ -161,6 +175,12 @@ navigation {
                 border-bottom: 1px solid $brand-white;
                 padding-bottom: 5px;
             }
+        }
+    }
+
+    #navbarContent{
+        .form-inline{
+            position: relative;
         }
     }
      .search-button > a{
