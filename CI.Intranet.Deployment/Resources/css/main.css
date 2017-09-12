@@ -451,8 +451,9 @@ body {
   margin-bottom: 5px;
   margin-top: 25px; }
 .hero-news-container .img-fluid {
-  height: 100%;
-  width: 100%; }
+  height: auto;
+  width: 425px;
+  max-width: none; }
 
 .recent-news-wrapper .card-title {
   font-size: 15px; }
@@ -1482,7 +1483,9 @@ section.global-partners ul, section.my-department ul {
     border-bottom-left-radius: 0; }
     .hero-news-container .card.img-card + .card {
       border-top-right-radius: 0;
-      border-top-left-radius: 0; } }
+      border-top-left-radius: 0; }
+  .hero-news-container .img-fluid {
+    width: 100%; } }
 @media screen and (max-width: 992px) {
   /* 
    * -----------------------------------------
