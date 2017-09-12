@@ -122,13 +122,14 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         return defer.promise;
     }
-    function getRelatedNews(newsType, currentPageItemId, rowLimit) {
+    function getRelatedNews(newsType, pageUrl, rowLimit) {
         var defer = $q.defer();
 
         $pnp.sp.search({
-            Querytext: 'Path:' + COM_CONFIG.newsWeb + ' AND RefinableString01=' + newsType,
-            SelectProperties: ['RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
-            RowLimit: rowLimit,
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*',
+            SelectProperties: ['Id','RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            RefinementFilters: ['RefinableString01:equals("Country Office")'],
+            RowLimit: (rowLimit == null ? 3 : rowLimit),
             TrimDuplicates: false,
             SortList: [{
                 'Property': 'RefinableDate01',
@@ -138,7 +139,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
             var items = data.PrimarySearchResults
             items = items.filter(function (item) {
                 //filter out current page
-                if (currentPageItemId != item.ID) return item;
+                if (pageUrl != item.Path) return item;
             });
             console.log('related news', items);
             defer.resolve(items);

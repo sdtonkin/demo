@@ -9,9 +9,9 @@ myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', 'commo
 
     this.$onInit = function () {
         var newsType = $('#article-news-type').text().trim();
-        var pageItemId = _spPageContextInfo.pageItemId;
+        var pageUrl = window.location.href;
         
-        relatedNewsService.getRelatedNews(newsType, articleLimit).then(function (data) {
+        relatedNewsService.getRelatedNews(newsType, pageUrl, articleLimit).then(function (data) {
             $scope.newsSite = COM_CONFIG.rootWeb + "/news/pages/default.aspx";
             console.log('related news', data);
             if (data.length === 0) {
