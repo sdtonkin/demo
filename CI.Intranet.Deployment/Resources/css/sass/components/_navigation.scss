@@ -92,9 +92,9 @@ navigation {
         transform: translateY(-50%);
      }
     
-     .search-button > a::before {
+     .search-button > a:before {
         border-left: 1px solid $brand-white;
-        content: "";
+        content: " ";
         margin-left: -10px;
         padding-right: 20px;
     }
@@ -113,6 +113,23 @@ navigation {
             }
             a:before{
                 border-color: $brand-dark-blue;
+            }
+            .fa-search:before {
+                content: "\f00d";
+            }
+        }
+        .search-background{
+            &:after{
+                content: "\f002";
+                display: block;
+                position: relative;
+                color: $brand-dark-blue;
+                font-family: FontAwesome;
+                font-size: 19px;
+                position: absolute;
+                right: 60px;
+                top: 2px;
+                cursor: pointer;
             }
         }
      }
@@ -184,7 +201,7 @@ navigation {
         }
     }
      .search-button > a{
-        display: block;
+        display: inline;
         height: 100%;
         color: $brand-white;
         font-size: 21px;
