@@ -52,7 +52,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         let path = " Path:" + "" + rootNews + "";
         $pnp.sp.search({
             Querytext: 'Title= "' + pageTitle + '" ' + path + '',
-            SelectProperties: ['RefinableString01', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['RefinableString01', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'RefinableDate00', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
