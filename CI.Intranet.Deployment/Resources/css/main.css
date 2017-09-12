@@ -1063,9 +1063,9 @@ navigation {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-  navigation .search-button > a::before {
+  navigation .search-button > a:before {
     border-left: 1px solid white;
-    content: "";
+    content: " ";
     margin-left: -10px;
     padding-right: 20px; }
   navigation .search-button {

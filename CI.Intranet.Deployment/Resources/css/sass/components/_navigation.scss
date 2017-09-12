@@ -92,9 +92,9 @@ navigation {
         transform: translateY(-50%);
      }
     
-     .search-button > a::before {
+     .search-button > a:before {
         border-left: 1px solid $brand-white;
-        content: "";
+        content: " ";
         margin-left: -10px;
         padding-right: 20px;
     }
