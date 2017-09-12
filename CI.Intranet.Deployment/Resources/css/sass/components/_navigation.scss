@@ -114,6 +114,23 @@ navigation {
             a:before{
                 border-color: $brand-dark-blue;
             }
+            .fa-search:before {
+                content: "\f00d";
+            }
+        }
+        .search-background{
+            &:after{
+                content: "\f002";
+                display: block;
+                position: relative;
+                color: $brand-dark-blue;
+                font-family: FontAwesome;
+                font-size: 19px;
+                position: absolute;
+                right: 60px;
+                top: 2px;
+                cursor: pointer;
+            }
         }
      }
 

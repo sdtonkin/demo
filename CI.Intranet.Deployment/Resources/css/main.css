@@ -1077,6 +1077,19 @@ navigation {
     color: #003364; }
   navigation #navbarContent.active .search-button a:before {
     border-color: #003364; }
+  navigation #navbarContent.active .search-button .fa-search:before {
+    content: "\f00d"; }
+  navigation #navbarContent.active .search-background:after {
+    content: "\f002";
+    display: block;
+    position: relative;
+    color: #003364;
+    font-family: FontAwesome;
+    font-size: 19px;
+    position: absolute;
+    right: 60px;
+    top: 2px;
+    cursor: pointer; }
   navigation .navbar {
     padding: 0.5rem 0; }
   navigation .navbar-brand {
