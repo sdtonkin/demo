@@ -208,27 +208,51 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         for (var i = 0; i < appsToAdd.length; i++) {
             var app = appsToAdd[i];
             appService.addMyApp(userId, app.appId).then(function () {
-                appService.getMyApps(userId).then(function (response) {
-                    ctrl.myAppsFromDb = response;
-                    ctrl.myApps = angular.copy(response);
-                    getSortOrderLimits();
-                    ctrl.isToolbarDirty = false;
-                    ctrl.systemMessage = 'Success';
-                });
+                if (i + 1 == appsToAdd.length) {
+                    appService.getMyApps(userId).then(function (response) {
+                        ctrl.myAppsFromDb = response;
+                        ctrl.myApps = angular.copy(response);
+                        getSortOrderLimits();
+                        ctrl.isToolbarDirty = false;
+                        ctrl.systemMessage = 'Success';
+                    });
+                }
             });
         }
         for (var i = 0; i < appsToDelete.length; i++) {
             var app = appsToDelete[i];
-            appService.removeMyTool(app.id).then(function () {
-                appService.getMyApps(userId).then(function (response) {
-                    ctrl.myAppsFromDb = response;
-                    ctrl.myApps = angular.copy(response);
-                    getSortOrderLimits();
-                    ctrl.isToolbarDirty = false;
-                    ctrl.systemMessage = 'Success';
-                });
+            appService.removeMyApp(app.id).then(function () {
+                if (i + 1 == appsToDelete.length) {
+                    appService.getMyApps(userId).then(function (response) {
+                        ctrl.myAppsFromDb = response;
+                        ctrl.myApps = angular.copy(response);
+                        getSortOrderLimits();
+                        ctrl.isToolbarDirty = false;
+                        ctrl.systemMessage = 'Success';
+                    });
+                }
             });
-        }        
+        }
+        if (apps.length == 0) {
+            for (var i = 0; i < ctrl.myAppsFromDb.length; i++) {
+                var app = ctrl.myAppsFromDb[i];
+                appService.removeMyApp(app.id).then(function () {
+                    if (i + 1 == ctrl.myAppsFromDb.length) {
+                        appService.getMyApps(userId).then(function (response) {
+                            ctrl.myAppsFromDb = response;
+                            ctrl.myApps = angular.copy(response);
+                            getSortOrderLimits();
+                            ctrl.isToolbarDirty = false;
+                            ctrl.systemMessage = 'Success';
+                        });
+                    }
+                });
+            }
+        }
+    }
+    function setUpdateStatus(message) {
+        ctrl.isToolbarDirty = false;
+        ctrl.systemMessage = message;
     }
     function getSortOrderLimits() {
         if (ctrl.myApps == null) return;
