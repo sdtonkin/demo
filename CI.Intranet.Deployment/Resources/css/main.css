@@ -1504,17 +1504,6 @@ section.global-partners ul, section.my-department ul {
     padding-bottom: 10px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
       text-transform: uppercase; }
-  navigation div.search-background {
-    height: auto;
-    position: relative;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px; }
-  navigation .search-button {
-    width: 100%; }
-    navigation .search-button > a:before {
-      display: none; }
 
   /* ----------------------------------------------------
     2) Main Content Container Styles
