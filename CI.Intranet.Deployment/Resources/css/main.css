@@ -197,7 +197,8 @@ a {
   letter-spacing: 0.3px;
   height: auto;
   padding: 10px;
-  border-radius: 0.25rem; }
+  border-radius: 0.25rem;
+  display: block; }
   .nav-button:hover {
     background-color: white;
     color: #003364 !important;
@@ -455,8 +456,19 @@ body {
   width: 425px;
   max-width: none; }
 
+.hero-main > .list-content:last-child .card-body {
+  border: medium none;
+  padding-bottom: 0; }
+
+.recent-news-wrapper .card > a {
+  overflow: hidden;
+  height: 260px; }
 .recent-news-wrapper .card-title {
   font-size: 15px; }
+.recent-news-wrapper .card img {
+  width: 425px; }
+.recent-news-wrapper .card-body {
+  height: 250px; }
 
 /* 
  * -----------------------------------------
@@ -1557,6 +1569,13 @@ section.global-partners ul, section.my-department ul {
     margin-bottom: 10px; }
   .hero-news-container .card-date {
     margin-top: 15px; }
+  .hero-news-container .recent-news-wrapper {
+    height: auto; }
+    .hero-news-container .recent-news-wrapper .card img {
+      width: 100%; }
+
+  .hero-main > .list-content:last-child .card-body {
+    padding-bottom: 1.25rem; }
 
   .sub-nav-container {
     margin-bottom: 30px; }
@@ -1765,10 +1784,6 @@ table.ms-ToolPaneOuter {
     cursor: pointer;
     color: #0054a6;
     background-color: transparent; }
-
-.hero-main > .list-content:last-child .card-body {
-  border: medium none;
-  padding-bottom: 0; }
 
 .ms-taxonomy .ms-taxonomy-browser-button {
   width: auto; }

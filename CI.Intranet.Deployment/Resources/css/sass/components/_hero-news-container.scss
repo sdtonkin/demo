@@ -57,8 +57,22 @@
 	}
 
 }
+.hero-main > .list-content:last-child .card-body {
+    border: medium none;
+    padding-bottom: 0;
+}
 .recent-news-wrapper{
+	.card > a{
+		overflow: hidden;
+		height: 260px;
+	}
 	.card-title{
 		font-size: 15px;
+	}
+	.card img{
+		width: 425px;
+	}
+	.card-body{
+		height: 250px;
 	}
 }

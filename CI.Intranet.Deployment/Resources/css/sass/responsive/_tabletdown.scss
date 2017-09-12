@@ -72,6 +72,15 @@ navigation{
 	.card-date{
 		margin-top: 15px;
 	}
+	.recent-news-wrapper {
+		height: auto;
+		.card img{
+			width: 100%;
+		}
+	}
+}
+.hero-main > .list-content:last-child .card-body{
+	padding-bottom: 1.25rem;
 }
 
 .sub-nav-container{
