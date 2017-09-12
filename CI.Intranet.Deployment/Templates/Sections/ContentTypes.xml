@@ -71,13 +71,19 @@
     	<pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0102003E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x0100C1B4897E97C34ACE92D0AE6A9237078C" Name="PersonalEvent" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
-      <pnp:FieldRef ID="D9540795-390B-418A-B7A9-62AAC170E5C4" Name="COM_EventDate" Hidden="true" />  
-      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />     
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />
+      <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+  <pnp:ContentType ID="0x0100E58CF9B3FACA4A1B9F813472C406CB46" Name="New Hire" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />
+      <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>  
   <pnp:ContentType ID="0x01006471C7EEC28E4422BA450A0491B5CF5E" Name="Gratitude" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />     
