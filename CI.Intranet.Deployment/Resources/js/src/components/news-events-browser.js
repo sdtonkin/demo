@@ -69,6 +69,8 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
 
         newSortOptions.unshift(sort);
         ctrl.sortOptions = newSortOptions;
+        ctrl.setEventsPage(1);
+        ctrl.setNewsPage(1);
         $('#ci-filter-menu').removeClass('show');
     }
     function filterByCategory(category) {
