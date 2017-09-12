@@ -104,6 +104,9 @@ navigation {
      }
 
      //updated
+     .navbar{
+        padding: 0.5rem 0;
+     }
      .navbar-brand{
         margin-right: 40px;
         > img{
@@ -136,14 +139,17 @@ navigation {
             text-decoration: none;
             text-align: center;
             cursor: pointer;
+            &:after{
+                content: " ";
+                display: block;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 5px;
+            }
              
         }
         a:hover{
             &:after{
-                content: " ";
-                display: block;
-                border-bottom: 1px solid $brand-white;
-                padding-bottom: 5px;
+                border-color: $brand-white;
             }
         }
         .active{

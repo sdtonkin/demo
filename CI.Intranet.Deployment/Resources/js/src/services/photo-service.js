@@ -16,6 +16,7 @@ angular.module('compassionIntranet').service('photoService', ['$http', '$q', 'CO
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.missionPhotos).items
             .select('COM_PhotoCaption', 'EncodedAbsUrl')
+            .orderBy('Created', false)
             .get()
             .then(function (data) {
                 var photos = [];
@@ -26,6 +27,7 @@ angular.module('compassionIntranet').service('photoService', ['$http', '$q', 'CO
                     photo.source = p.EncodedAbsUrl + (p.EncodedAbsUrl.indexOf('?') != -1 ? '&' : '?') + 'RenditionId=5';
                     photos.push(photo);
                 }
+                console.log('photo shares', data);
                 var response = _.sortBy(photos, 'Created').reverse();
                 defer.resolve(response);
             })

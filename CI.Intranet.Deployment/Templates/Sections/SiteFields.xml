@@ -156,7 +156,8 @@
   <Field ID="{651262AD-E8A1-4339-B5D4-1D94118EF2D4}" Type="Text" Name="COM_BookmarkUrl" StaticName="COM_BookmarkUrl" DisplayName="Bookmark Url" Required="True" Hidden="False" Group="1 - Compassion Intranet Columns" Description="Bookmark Url" />
   <!-- Group Description -->
   <Field ID="{7EEC25F0-0BEC-48AF-8FAF-545E625EFC61}" Type="Text" Name="COM_GroupDescription" StaticName="COM_GroupDescription" DisplayName="Group Description" Required="True" Hidden="False" Group="1 - Compassion Intranet Columns" Description="Group Description" />
-
+  <!-- Gratitude Description -->
+  <Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Text" Name="COM_ GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" Required="False" Hidden="False" Group="1 - Compassion Intranet Columns" Description="" />
    <!-- MULTI LINE FIELDS -->
    <!-- News Abstract -->
 	<Field ID="{8f3b564d-c0ad-44ac-b3a4-567d8cc55617}" Type="Note" Name="COM_NewsAbstract" StaticName="COM_NewsAbstract" DisplayName="News Abstract" NumLines="5" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - Compassion Intranet Columns" Description="" />
@@ -174,8 +175,7 @@
 	<Field ID="{5a82cfb4-6f1d-47f8-829f-a9c2d4187505}" Type="Note" Name="COM_SubmitMessage" StaticName="COM_SubmitMessage" DisplayName="Story Submit Message" NumLines="6" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - Compassion Intranet Columns" Description="" />
    <!-- Photo Caption -->
 	<Field ID="{fc3f1b87-ac13-437c-86f4-58c4a144ae4a}" Type="Note" Name="COM_PhotoCaption" StaticName="COM_PhotoCaption" DisplayName="Photo Caption" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - Compassion Intranet Columns" Description="" />
-   <!-- Gratitude Description -->
-	<Field ID="{f4fa017b-d8c6-4f5c-9978-a8c3e63c1381}" Type="Note" Name="COM_ GratitudeDescription" StaticName="COM_ GratitudeDescription" DisplayName="Gratitude Description" NumLines="3" UnlimitedLengthInDocumentLibrary="TRUE" Required="False" Hidden="False" Group="1 - Compassion Intranet Columns" Description="" />
+   
 
   <!-- NUMBER FIELDS -->
   <!-- Sort Order -->

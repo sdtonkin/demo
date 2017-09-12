@@ -21,53 +21,7 @@
     padding-right: 15px;
 
     
-	#SearchBox{
-		display: block;
-    	// margin-top: 0;
-    	max-width: 575px;
-    	float: none;
-    	// margin-bottom: 15px;
-    	margin: 0 auto 15px;
-    	.ms-srch-sbLarge{
-    		display: flex;
-    	}
-    	.ms-srch-sbLarge, .ms-srch-sb-borderFocused{
-			border: 1px solid $brand-brown-dull;
-			position: relative;
-    	}
-    	input{
-    		font-size: 16px;
-    		line-height: 1.25;
-    		padding: 0.5rem 0.75rem;
-    		transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
-    		background-clip: padding-box;
-		    background-color: #fff;
-		    background-image: none;
-		    -moz-box-flex: 1;
-		    flex: 1 1 auto;
-		    margin-bottom: 0;
-		    position: relative;
-		    width: 100%;
-		    z-index: 2;
-
-		    border: medium none;
-		    border-radius: 0;
-		    color: #0054a6;
-		    height: 60px;
-		    @extend .font-lato-reg;
-		    border-right: 1px solid $brand-brown-dull;
-		    margin-right: 15px;
-		}
-		.ms-srch-sb-searchLink{
-			position: relative;
-			margin-top: 13px;
-			margin-right: 20px;
-			border: none;
-			&:hover{
-				background-color: transparent;
-			}
-		}
-	}
+	
 	.ms-srch-upscope-top{
 		text-align: center;
 		width: 100% !important;
@@ -130,3 +84,51 @@
 		}
 	}
  }
+ #SearchBox{
+		display: block;
+    	// margin-top: 0;
+    	max-width: 575px;
+    	float: none;
+    	// margin-bottom: 15px;
+    	margin: 0 auto 15px;
+    	.ms-srch-sbLarge{
+    		display: flex;
+    	}
+    	.ms-srch-sbLarge, .ms-srch-sb-borderFocused{
+			border: 1px solid $brand-brown-dull;
+			position: relative;
+    	}
+    	input{
+    		font-size: 16px;
+    		line-height: 1.25;
+    		padding: 0.5rem 0.75rem;
+    		transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+    		background-clip: padding-box;
+		    background-color: #fff;
+		    background-image: none;
+		    -moz-box-flex: 1;
+		    flex: 1 1 auto;
+		    margin-bottom: 0;
+		    position: relative;
+		    width: 100%;
+		    z-index: 2;
+
+		    border: medium none;
+		    border-radius: 0;
+		    color: #0054a6;
+		    height: 60px;
+		    @extend .font-lato-reg;
+		    border-right: 1px solid $brand-brown-dull;
+		    margin-right: 15px;
+		}
+		.ms-srch-sb-searchLink{
+			position: relative;
+			margin-top: 13px;
+			margin-right: 20px;
+			border: none;
+			&:hover{
+				background-color: transparent;
+			}
+		}
+	}
+ h2.ms-displayInline a.ms-ref-name{ display:none;}

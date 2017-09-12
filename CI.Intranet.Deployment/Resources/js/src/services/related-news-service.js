@@ -1,6 +1,7 @@
 var myApp = angular.module('compassionIntranet');
 myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
-
+    var ctrl = this;
+    ctrl.getRelatedNews = getRelatedNews;
     const depNews = function(page) {
         let eventQuery = "";
         let contentType = "";
@@ -44,48 +45,38 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
     }
 
     const getPage = function() {
-
         var defer = $q.defer();
 
-        let pageTitle = $(".news-title-block > p.card-text").text();
-        let rootNews = _spPageContextInfo.siteAbsoluteUrl + "/news";
-        let path = " Path:" + "" + rootNews + "";
-        $pnp.sp.search({
-            Querytext: 'Title= "' + pageTitle + '" ' + path + '',
-            SelectProperties: ['RefinableString01', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'RefinableDate00', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
-            TrimDuplicates: 'false',
-            RowLimit: 3,
-            SortList: [{
-                'Property': 'RefinableDate01',
-                'Direction': '0'
-            }]
+        let listItemId = _spPageContextInfo.pageItemId;
+        let web = new $pnp.Web(COM_CONFIG.newsWeb);
 
-        }).then(function(data) {
-            data.PrimarySearchResults.map(function (item) {
-                if (item.RefinableString01) {
-                    item.newsType = item.RefinableString01;
+        web.lists.getByTitle('Pages').items
+            .getById(listItemId)
+            .get()
+            .then(function (data) {
+                data.map(function (item) {
+                    if (item.RefinableString01) {
+                        item.newsType = item.RefinableString01;
+                    }
+                    if (item.RefinableDate00) {
+                        var artDate = new Date(item.RefinableDate00);
+                        item.articleDate = moment(artDate).format('MMMM D, YYYY');
+                        item.rawArticleDate = artDate;
+                    }                
+                });
+                console.log(data);
+                if (data.length > 0) {
+                    defer.resolve(data.PrimarySearchResults[0]);
                 }
-                if (item.RefinableDate00) {
-                    var artDate = new Date(item.RefinableDate00);
-                    item.articleDate = moment(artDate).format('MMMM D, YYYY');
-                    item.rawArticleDate = artDate;
+                else {
+                    defer.resolve(null);
                 }
-                
-            });
-            console.log(data);
-            if (data.PrimarySearchResults.length > 0) {
-                defer.resolve(data.PrimarySearchResults[0]);
-            }
-            else {
-                defer.resolve(null);
-            }
-            
         });
 
         return defer.promise;
     }
 
-    this.getData = function() {
+    ctrl.getData = function() {
 
         var defer = $q.defer();
         getPage().then(function(page) {
@@ -94,6 +85,63 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 defer.resolve(items);
             });
 
+        });
+        return defer.promise;
+    }
+
+    function getRelatedNewsByType(newsType) {
+        var defer = $q.defer();
+
+        let listItemId = _spPageContextInfo.pageItemId;
+        let web = new $pnp.Web(COM_CONFIG.newsWeb);
+
+        web.lists.getByTitle('Pages').items
+            .filter('COM_NewsType eq ' + newsType)
+            .top(3)
+            .orderBy('COM_PublishDate', false)
+            .get()
+            .then(function (data) {
+                data.map(function (item) {
+                    if (item.RefinableString01) {
+                        item.newsType = item.RefinableString01;
+                    }
+                    if (item.RefinableDate00) {
+                        var artDate = new Date(item.RefinableDate00);
+                        item.articleDate = moment(artDate).format('MMMM D, YYYY');
+                        item.rawArticleDate = artDate;
+                    }
+                });
+                console.log(data);
+                if (data.length > 0) {
+                    defer.resolve(data.PrimarySearchResults[0]);
+                }
+                else {
+                    defer.resolve(null);
+                }
+            });
+
+        return defer.promise;
+    }
+    function getRelatedNews(newsType, currentPageItemId, rowLimit) {
+        var defer = $q.defer();
+
+        $pnp.sp.search({
+            Querytext: 'Path:' + COM_CONFIG.newsWeb + ' AND RefinableString01=' + newsType,
+            SelectProperties: ['RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            RowLimit: rowLimit,
+            TrimDuplicates: false,
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }]
+        }).then(function (data) {
+            var items = data.PrimarySearchResults
+            items = items.filter(function (item) {
+                //filter out current page
+                if (currentPageItemId != item.ID) return item;
+            });
+            console.log('related news', items);
+            defer.resolve(items);
         });
         return defer.promise;
     }
