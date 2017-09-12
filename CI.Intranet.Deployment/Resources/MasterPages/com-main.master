@@ -75,7 +75,7 @@
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <navigation></navigation>
 <!-- Start Top Navigation -->
-    <section class="section sub-nav-container">
+    <section class="section sub-nav-container" id="ci-sub-nav">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
