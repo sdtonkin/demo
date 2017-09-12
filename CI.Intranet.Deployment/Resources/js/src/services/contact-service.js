@@ -7,9 +7,9 @@ angular.module('compassionIntranet').service('contactService', ['$http', '$q', '
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
-    ctrl.getContacts = function () {
+    ctrl.getContacts = function (siteCollectionUrl) {
         var defer = $q.defer();
-        let web = new $pnp.Web(COM_CONFIG.rootWeb);
+        let web = new $pnp.Web(siteCollectionUrl);
         web.lists.getByTitle(COM_CONFIG.lists.contacts).items
             .get()
             .then(function (data) {
