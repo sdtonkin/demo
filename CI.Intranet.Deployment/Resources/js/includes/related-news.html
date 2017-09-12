@@ -1,4 +1,4 @@
-<section class="news-events">
+<!-- <section class="news-events">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -22,4 +22,34 @@
             </div>
         </div>
     </div>
+</section> -->
+
+
+<section class="related-news">
+    <div class="row">
+        <div class="col">
+            <h2 class="section">Related Articles</h2>
+        </div>
+    </div>
+    <div class="card related">
+        <div class="card-body">
+            <img class="img-card" src="{{topImageUrl}}" alt="">
+        </div>
+    </div>
+    <div class="card related" ng-repeat="article in news track by $index">
+          <div class="card-body">
+          <!-- <img class="img-card" src="http://placehold.it/320x161" alt=""> -->
+              <p class="card-date">{{article.articleDate}}</p>
+              <a ng-href="{{article.Path}}">
+                    <p class="card-text">{{article.Title}} 
+                    </p>
+                </a>
+              <!-- <span class="card-likes"><i class="fa fa-heart-o"></i>26</span> -->
+            </div>
+        </div>
+        <div ng-if="notFound" class="card related">
+                    <span class="card-text">{{notFound}}</span>
+                </div>
 </section>
+
+
