@@ -63,7 +63,8 @@
 	}
 	.employee-card-container{
 		border-bottom: 1px solid $brand-brown-dull;
-		height: 250px;
+		min-height: 250px;
+		height: auto;
 		&:last-child{
 			border-bottom: 2px solid $brand-light-blue;
 		}

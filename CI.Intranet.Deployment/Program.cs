@@ -55,7 +55,7 @@ namespace CI.Intranet.Deployment
 
                             // run search settings
                             var rJobSearch = new Jobs.RunProvisioningXml(searchUrl, domain, defaultUserName, pwd1);
-                            rJobSearch.Start("6 - Search.xml", files, "quiet", resourceFolder);
+                            rJobSearch.Start("6-Search.xml", files, "quiet", resourceFolder);
 
                             return;
                         }

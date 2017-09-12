@@ -42,7 +42,7 @@
     }//processWindowSize
 
 function initFunctions() {
-    
+    // SearchBar();
 }
     //change left rail height on resize to match main content container
     function rightRailHeight(){
@@ -64,6 +64,9 @@ function initFunctions() {
         }
       }, 2000);
     }
+
+
+
 
     
 // _spBodyOnLoadFunctionNames.push("initFunctions");
