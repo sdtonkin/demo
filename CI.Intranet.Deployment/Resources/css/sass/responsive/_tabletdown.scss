@@ -201,3 +201,24 @@ navigation{
 .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active{
 	display: block;
 }
+
+/* 
+ * -----------------------------------------
+ *  General Overrides
+ *  
+ * ----------------------------------------- 
+ */
+.ms-srch-ellipsis{
+	white-space: normal;
+}
+.ms-srch-item{
+	width: auto;
+}
+.main-left-content{
+	div.ms-webpart-cell-vertical-inline-table, .ms-webpart-chrome-vertical{
+		display: block;
+	}
+}
+.ms-srch-item-body{
+	width: 100%;
+}

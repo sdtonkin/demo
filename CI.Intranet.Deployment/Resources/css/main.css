@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-apps-manage button:disabled {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-bookmarks-manage button, #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -191,7 +191,7 @@ a {
 
 .nav-button {
   background-color: #003364;
-  color: #fff;
+  color: white !important;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -200,7 +200,7 @@ a {
   border-radius: 0.25rem; }
   .nav-button:hover {
     background-color: white;
-    color: #003364;
+    color: #003364 !important;
     text-decoration: none; }
 
 .helpful-links ul, .groupmarker ul, .global-partners ul {
@@ -223,8 +223,11 @@ a {
 
 .global-partners li:before {
   display: none; }
+.global-partners li a img {
+  margin-right: 5px; }
 .global-partners li a span {
-  color: #0054a6; }
+  color: white;
+  margin-bottom: 15px; }
   .global-partners li a span:hover {
     text-decoration: underline; }
 
@@ -429,7 +432,9 @@ body {
   border: 1px solid #b8b491;
   padding: 4px 10px;
   color: #908b63 !important;
-  margin-right: 5px; }
+  margin-right: 5px;
+  margin-top: 10px;
+  font-size: 15px; }
   .hero-news-container .card-title a, .hero-news-container .card-title a:visited, .hero-news-container .card-title a:hover {
     color: #908b63 !important; }
 .hero-news-container .card-likes {
@@ -669,10 +674,12 @@ rss-feed-manager .btn-cta {
     display: inline-block;
     border: 1px solid #b8b491;
     padding: 4px 10px;
-    color: #908b63;
+    color: #908b63 !important;
     text-align: left;
     margin-right: 20px;
     font-size: 14px; }
+    .upcoming-events .card-tags a, .upcoming-events .news-tag-content .tag-container > span a, .news-tag-content .upcoming-events .tag-container > span a, .upcoming-events .card-tags a:visited, .upcoming-events .news-tag-content .tag-container > span a:visited, .news-tag-content .upcoming-events .tag-container > span a:visited, .upcoming-events .card-tags a:hover, .upcoming-events .news-tag-content .tag-container > span a:hover, .news-tag-content .upcoming-events .tag-container > span a:hover {
+      color: #908b63 !important; }
   .upcoming-events .card-likes {
     color: white;
     font-size: 14px; }
@@ -741,7 +748,8 @@ rss-feed-manager .btn-cta {
 
 .employee-card-container {
   border-bottom: 1px solid #b8b491;
-  height: 250px; }
+  min-height: 250px;
+  height: auto; }
   .employee-card-container:last-child {
     border-bottom: 2px solid #88bee7; }
 
@@ -955,6 +963,8 @@ rss-feed-manager .btn-cta {
   .news-tag-content .card-likes {
     margin-top: 10px;
     display: block; }
+  .news-tag-content .tag-container > span {
+    font-size: 15px; }
 
 .news-title-block {
   margin-top: 45px; }
@@ -1190,23 +1200,25 @@ my-bookmarks > ul a div:before {
  *  @@ File: components/_group-summary.scss
  * ----------------------------------------- 
  */
-.group-summary .card {
-  border-radius: 0;
-  background-color: white;
-  border-color: transparent; }
-.group-summary .card-header {
-  background-color: white; }
-.group-summary .card-body {
-  padding: 20px; }
-  .group-summary .card-body .employee-card img.emp-photo {
-    width: 100px;
-    height: 100px; }
-.group-summary h5 {
-  color: #003364;
-  text-transform: uppercase;
-  display: inline; }
-.group-summary .toolbar-toggle-button {
-  float: none; }
+.group-summary {
+  margin-top: 30px; }
+  .group-summary .card {
+    border-radius: 0;
+    background-color: white;
+    border-color: transparent; }
+  .group-summary .card-header {
+    background-color: white; }
+  .group-summary .card-body {
+    padding: 20px; }
+    .group-summary .card-body .employee-card img.emp-photo {
+      width: 100px;
+      height: 100px; }
+  .group-summary h5 {
+    color: #003364;
+    text-transform: uppercase;
+    display: inline; }
+  .group-summary .toolbar-toggle-button {
+    float: none; }
 
 .more-less:before {
   font-family: FontAwesome;
@@ -1242,7 +1254,6 @@ my-bookmarks > ul a div:before {
 .work-resources h2.section, .how-do-i h2.section {
   margin-top: 20px;
   margin-bottom: 20px; }
-
 .work-resources .nav.nav-pills, .how-do-i .nav.nav-pills {
   display: block;
   text-align: left; }
@@ -1396,6 +1407,9 @@ my-bookmarks > ul a div:before {
 
 h2.ms-displayInline a.ms-ref-name {
   display: none; }
+
+.ms-ref-uparrow {
+  display: block; }
 
 /* 
  * -----------------------------------------
@@ -1596,7 +1610,25 @@ section.global-partners ul, section.my-department ul {
    * ----------------------------------------- 
    */
   .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active {
-    display: block; } }
+    display: block; }
+
+  /* 
+   * -----------------------------------------
+   *  General Overrides
+   *  
+   * ----------------------------------------- 
+   */
+  .ms-srch-ellipsis {
+    white-space: normal; }
+
+  .ms-srch-item {
+    width: auto; }
+
+  .main-left-content div.ms-webpart-cell-vertical-inline-table, .main-left-content .ms-webpart-chrome-vertical {
+    display: block; }
+
+  .ms-srch-item-body {
+    width: 100%; } }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   /* 
    * -----------------------------------------
@@ -1649,17 +1681,17 @@ table.ms-ToolPaneOuter {
   table.ms-ToolPaneOuter .ms-ToolPaneBody {
     overflow-y: scroll; }
 
-#ci-apps-manage li {
+#ci-apps-manage li, #ci-bookmarks-manage li {
   list-style: none;
   max-width: 200px;
   padding: 10px; }
-  #ci-apps-manage li:hover {
+  #ci-apps-manage li:hover, #ci-bookmarks-manage li:hover {
     cursor: pointer;
     color: white;
     background-color: #0054a6; }
-#ci-apps-manage input {
+#ci-apps-manage input, #ci-bookmarks-manage input {
   margin-right: 5px; }
-#ci-apps-manage button {
+#ci-apps-manage button, #ci-bookmarks-manage button {
   border-radius: 0;
   border: none;
   text-transform: uppercase;
@@ -1668,7 +1700,7 @@ table.ms-ToolPaneOuter {
   padding: 15px;
   background-color: #003364;
   color: white; }
-#ci-apps-manage button:disabled {
+#ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
   border-radius: 0;
   border: solid 1px #000000;
   text-transform: uppercase;
@@ -1677,6 +1709,13 @@ table.ms-ToolPaneOuter {
   padding: 15px;
   background-color: white;
   color: #003364; }
+
+#ci-bookmarks-manage li {
+  max-width: none; }
+  #ci-bookmarks-manage li:hover {
+    cursor: pointer;
+    color: #0054a6;
+    background-color: transparent; }
 
 .hero-main > .list-content:last-child .card-body {
   border: medium none;

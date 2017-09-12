@@ -1,4 +1,6 @@
-﻿<section id="group-summary" class="group-summary">
+﻿<div class="row">
+<div class="col-12">
+<section id="group-summary" class="group-summary">
     <div id="groupSumAccordion" class="group-summary-accordion" role="tablist" aria-multiselectable="true">
         <div class="card" ng-repeat="group in ctrl.groups track by group.id">
             <div class="card-header row" role="tab" id="headingOne">
@@ -21,7 +23,7 @@
                             <h5>Leadership</h5>
                         </div>
                         <div class="col-sm-4">
-                            <a ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
+                            <a class="nav-button" ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
                         </div>
                     </div>
                     <div class="col-md-6" ng-repeat="leader in group.leaders">
@@ -39,3 +41,5 @@
         </div>
    </div>
 </section>
+</div>
+</div>

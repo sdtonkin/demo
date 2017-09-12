@@ -46,7 +46,7 @@ table.ms-ToolPaneOuter {
     }
 }
 
-#ci-apps-manage{
+#ci-apps-manage, #ci-bookmarks-manage{
     li{
         list-style: none;   
         max-width: 200px;
@@ -84,7 +84,16 @@ table.ms-ToolPaneOuter {
     }
 
 }
-
+#ci-bookmarks-manage{
+    li{
+        max-width: none;
+        &:hover{
+            cursor: pointer;
+            color: $brand-dark-blue-alt;
+            background-color: transparent;
+        }
+    }
+}
 .hero-main > .list-content:last-child .card-body {
     border: medium none;
     padding-bottom: 0;
