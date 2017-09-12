@@ -1,19 +1,18 @@
 ﻿<section class="people-places news-events">
     <ul class="nav nav-tabs">
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('US')">
-            <a class="nav-link alt" ng-class="{active: ctrl.activeTab == 'US'}">US</a>
+        <li class="nav-item" ng-click="toggleActiveTab('US')">
+            <a class="nav-link alt" ng-class="{active: activeTab == 'US'}">US</a>
         </li>
-        <li class="nav-item" ng-click="ctrl.toggleActiveTab('Global')">
-            <a class="nav-link alt" ng-class="{active: ctrl.activeTab == 'Global'}">Global</a>
+        <li class="nav-item" ng-click="toggleActiveTab('Global')">
+            <a class="nav-link alt" ng-class="{active: activeTab == 'Global'}">Global</a>
         </li>
     </ul>
-    <div class="ci-people" ng-show="ctrl.activeTab == 'US'">
-        <employee-annoucement></employee-annoucement>
+    <div class="ci-people" ng-show="activeTab == 'US'">
+        <employee-announcement></employee-announcement>
         <us-links></us-links>
     </div>
-    <div class="ci-places" ng-show="ctrl.activeTab == 'Global'">
+    <div class="ci-places" ng-show="activeTab == 'Global'">
         <global-links></global-links>
     </div>
-    <input id="ci-pp-activeTab" type="hidden" ng-model="ctrl.activeTab" />
 </section>
 

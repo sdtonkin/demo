@@ -25,7 +25,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
                 globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
                 newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
-                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
+                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066',
+                employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a'
             },
             pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
             useCaching: false,
@@ -89,7 +90,8 @@ if (document.location.host === "compassion.sharepoint.com") {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
                 globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
                 newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
-                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
+                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066',
+                employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a'
             },
             useCaching: false,
             pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
@@ -154,7 +156,8 @@ else {
             locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
             globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
             newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
-            eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066'
+            eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066',
+            employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a'
         },
         useCaching: false,
         pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',

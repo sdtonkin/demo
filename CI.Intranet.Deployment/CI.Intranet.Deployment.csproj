@@ -273,6 +273,7 @@
     <Content Include="Resources\js\includes\Weather.html" />
     <Content Include="Resources\js\src\components\anniversary.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
+    <Content Include="Resources\js\src\components\employee-life.js" />
     <Content Include="Resources\js\src\components\global-links.js" />
     <Content Include="Resources\js\src\components\news-events-browser.js" />
     <Content Include="Resources\js\src\components\news-page-likes.js" />
