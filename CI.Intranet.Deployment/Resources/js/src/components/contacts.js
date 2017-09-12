@@ -6,7 +6,8 @@ myApp.controller(controllerName, ['$scope', 'common', 'contactService', 'COM_CON
     var ctrl = this;
 
     this.$onInit = function () {
-        contactService.getContacts().then(function (data) {
+        var siteCollectionUrl = _spPageContextInfo.siteAbsoluteUrl;
+        contactService.getContacts(siteCollectionUrl).then(function (data) {
             ctrl.contact = data;
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
@@ -14,7 +15,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'contactService', 'COM_CON
         });
     };
 
-}]).component('contact', {
+}]).component('contacts', {
     template: require('../../includes/Contacts.html'),
     controller: controllerName,
     controllerAs: 'ctrl'

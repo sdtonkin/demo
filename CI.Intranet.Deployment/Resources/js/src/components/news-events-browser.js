@@ -40,6 +40,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             newsService.getEvents($scope.searchTerm).then(function (data) {
                 masterEvents = data;
                 ctrl.events = data;
+                ctrl.setEventsPage(1);                
             });
             ctrl.selectedRegion = '';
             ctrl.selectedCategory = '';
@@ -47,10 +48,12 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             newsService.getNews($scope.searchTerm).then(function (data) {
                 masterArticles = data;
                 ctrl.newsArticles = data;
+                ctrl.setNewsPage(1);
             });
             ctrl.selectedRegion = '';
             ctrl.selectedCategory = '';
         }
+        
     }
     function sortBy(sort) {
         var articles = _.sortBy(masterArticles, 'RawArticleDate');
@@ -69,6 +72,8 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
 
         newSortOptions.unshift(sort);
         ctrl.sortOptions = newSortOptions;
+        ctrl.setEventsPage(1);
+        ctrl.setNewsPage(1);
         $('#ci-filter-menu').removeClass('show');
     }
     function filterByCategory(category) {
