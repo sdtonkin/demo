@@ -10,7 +10,8 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         var defer = $q.defer();
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
-            SelectProperties: ['ContentType12','Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
+            SelectProperties: ['ContentType12', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
+            TrimDuplicates: false
         }).then(function (response) {            
             response.PrimarySearchResults.map(function (item) {
                 if (item.PublishingImage) {
