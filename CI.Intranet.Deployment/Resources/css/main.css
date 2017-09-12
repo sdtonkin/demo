@@ -1131,7 +1131,7 @@ navigation {
   navigation #navbarContent .form-inline {
     position: relative; }
   navigation .search-button > a {
-    display: block;
+    display: inline;
     height: 100%;
     color: white;
     font-size: 21px;
