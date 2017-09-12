@@ -1,6 +1,6 @@
 ﻿var ctrlName = 'newsEventsBrowserCtrl';
 var app = angular.module('compassionIntranet');
-app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyService', 'yammerApiService', 'pagerService', 'COM_CONFIG', function ($scope, $q, $location, newsService, taxonomyService, yammerApiService, pagerService, COM_CONFIG) {
+app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyService', 'yammerApiService', 'pagerService', 'COM_CONFIG', 'common', function ($scope, $q, $location, newsService, taxonomyService, yammerApiService, pagerService, COM_CONFIG, common) {
     var ctrl = this,
         masterArticles,
         masterEvents;
@@ -30,11 +30,17 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     ctrl.selectedCategory = '';
     ctrl.sortBy = sortBy;
     ctrl.goSearch = goSearch;
+    ctrl.checkForGoSearch = checkForGoSearch;
     $scope.searchTerm = '';
 
     this.$onInit = function () {
         getData();        
     };
+    function checkForGoSearch($event) {
+        if ($event.keyCode === 13) {
+            goSearch();
+        }
+    }
     function goSearch() {
         if (ctrl.activeTab == 'events') {
             newsService.getEvents($scope.searchTerm).then(function (data) {
@@ -52,8 +58,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             });
             ctrl.selectedRegion = '';
             ctrl.selectedCategory = '';
-        }
-        
+        }        
     }
     function sortBy(sort) {
         var articles = _.sortBy(masterArticles, 'RawArticleDate');
@@ -160,6 +165,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             } else {
                 ctrl.categories = ctrl.newsCategories;
             }
+            checkForNewsTypeInUrl();
             ctrl.setEventsPage(1);
             ctrl.setNewsPage(1);
         });
@@ -185,6 +191,24 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
 
         // get current page of items
         ctrl.eventItems = ctrl.events.slice(ctrl.eventsPager.startIndex, ctrl.eventsPager.endIndex + 1);
+    }
+    function checkForNewsTypeInUrl() {
+        var newsType = common.getUrlParamByName('newstype');
+        var location = common.getUrlParamByName('location');
+        var group = common.getUrlParamByName('group');
+        if (newsType != '') {
+            var type = {};
+            type.name = newsType;
+            filterByCategory(type);
+        } else if (location != '') {
+            var type = {};
+            type.name = location;
+            filterByRegion(type);
+        } else if (group != '') {
+            var type = {};
+            type.name = group;
+            filterByRegion(type);
+        }
     }
 }]).component('newsEventsBrowser', {
     bindings: {
