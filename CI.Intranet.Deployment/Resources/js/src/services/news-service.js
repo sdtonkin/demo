@@ -11,7 +11,12 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
             SelectProperties: ['ContentType12', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
-            TrimDuplicates: false
+            TrimDuplicates: false,
+            RowLimit: 100,
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }],
         }).then(function (response) {            
             response.PrimarySearchResults.map(function (item) {
                 if (item.PublishingImage) {
@@ -53,6 +58,8 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
             SelectProperties: ['Path', 'Title', 'Location', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
+            TrimDuplicates: false,
+            RowLimit: 100,
             SortList: [{
                 'Property': 'RefinableDate01',
                 'Direction': '1'
