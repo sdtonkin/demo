@@ -26,20 +26,20 @@ navigation{
             
         }
     }
-    div.search-background{
-	    height: auto;
-	    position: relative;
-	    top: 0;
-	    width: 100%;
-	    text-align: center;
-	    margin-top: 10px;
-    }
-    .search-button {
-    	width: 100%;
-	    > a:before{
-	    	display: none;
-	    }
-	}
+ //    div.search-background{
+	//     height: auto;
+	//     position: relative;
+	//     top: 0;
+	//     width: 100%;
+	//     text-align: center;
+	//     margin-top: 10px;
+ //    }
+ //    .search-button {
+ //    	width: 100%;
+	//     > a:before{
+	//     	display: none;
+	//     }
+	// }
 }
 
 
@@ -72,6 +72,15 @@ navigation{
 	.card-date{
 		margin-top: 15px;
 	}
+	.recent-news-wrapper {
+		height: auto;
+		.card img{
+			width: 100%;
+		}
+	}
+}
+.hero-main > .list-content:last-child .card-body{
+	padding-bottom: 1.25rem;
 }
 
 .sub-nav-container{
@@ -200,4 +209,31 @@ navigation{
 
 .find-people-carousel .carousel-item-next, .find-people-carousel .carousel-item-prev, .find-people-carousel .carousel-item.active{
 	display: block;
+}
+
+/* 
+ * -----------------------------------------
+ *  General Overrides
+ *  
+ * ----------------------------------------- 
+ */
+.ms-srch-ellipsis, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item, .ms-srch-result .ms-srch-result-groups .ms-srch-item{
+	white-space: normal;
+}
+.ms-srch-item, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link{
+	width: auto;
+}
+.main-left-content{
+	div.ms-webpart-cell-vertical-inline-table, .ms-webpart-chrome-vertical{
+		display: block;
+	}
+}
+.ms-srch-item-body{
+	width: 100%;
+}
+.ms-srchnav-list{
+	.ms-srchnav-item{
+		display: block;
+		padding: 0 20px 10px 0;
+	}
 }

@@ -50,13 +50,17 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
         
         ctrl.isSearchVisible = !ctrl.isSearchVisible;
         if (ctrl.isSearchVisible) {
-            $('div.search-background').show("slide", { direction: "right" }, 1000);
+            // $('div.search-background').show("slide", { direction: "right" }, 1000);
+            $('div.search-background').show();
             $('#searchQueryTerm').focus();
             ctrl.searchTitle = '';
+            $('#navbarContent').addClass('active');
         }            
         else {
-            $('div.search-background').hide("slide", { direction: "right" }, 1000);
+            //$('div.search-background').hide("slide", { direction: "right" }, 1000);
+            $('div.search-background').hide();
             ctrl.searchTitle = 'Search';
+            $('#navbarContent').removeClass('active');
         }
             
     }

@@ -96,16 +96,17 @@
 
 .nav-button{
 	background-color: $brand-dark-blue;
-    color: #fff;
+    color: $brand-white !important;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     height: auto;
     padding: 10px;
     border-radius: 0.25rem;
+    display: block;
     &:hover{
     	background-color: $brand-white;
-    	color: $brand-dark-blue;
+    	color: $brand-dark-blue !important;
     	text-decoration: none;
     }
 }
@@ -144,8 +145,12 @@
 		&:before{
 			display: none;
 		}
+		a img{
+			margin-right: 5px;
+		}
 		a span{
-			color: $brand-dark-blue-alt;
+			color: $brand-white;
+			margin-bottom: 15px;
 			@extend .font-lato-med;
 			// font-size: 18px;
 			&:hover{

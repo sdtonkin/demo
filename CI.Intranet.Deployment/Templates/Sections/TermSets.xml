@@ -74,6 +74,8 @@
       </pnp:TermSet>
       <pnp:TermSet Name="Event Type" Description="">
         <pnp:Terms>
+          <pnp:Term Name="Anniversary" />
+          <pnp:Term Name="Retirement" />
 	        <pnp:Term Name="Global" />
 	        <pnp:Term Name="Chapel" />
 	        <pnp:Term Name="Volunteering" />
@@ -105,13 +107,69 @@
 	        <pnp:Term Name="US" />
         </pnp:Terms>
       </pnp:TermSet>
-      <pnp:TermSet Name="Employee Life Topic" Description="">
+      <pnp:TermSet Name="US Employee Life Topic" Description="">
         <pnp:Terms>
 	        <pnp:Term Name="Benefits" />
+          <pnp:Terms>
+            <pnp:Term Name="24 Hour Flex" />
+            <pnp:Term Name="eEmployee" />
+            <pnp:Term Name="Health" />
+            <pnp:Term Name="Life Insurance" />
+            <pnp:Term Name="Retirement" />
+            <pnp:Term Name="Time Off" />
+            <pnp:Term Name="Staff Care" />
+          </pnp:Terms>
 	        <pnp:Term Name="Employee Wellness" />
+          <pnp:Terms>
+            <pnp:Term Name="Emotional" />
+            <pnp:Term Name="Financial" />
+            <pnp:Term Name="Social" />
+          </pnp:Terms>
 	        <pnp:Term Name="Work-Life Experience" />
+          <pnp:Terms>
+            <pnp:Term Name="Annual Performance Review" />
+            <pnp:Term Name="Rewards and Recognition" />
+          </pnp:Terms>
 	        <pnp:Term Name="Performance and Recognition" />
+          <pnp:Terms>
+            <pnp:Term Name="Careers" />
+            <pnp:Term Name="Axuano" />
+            <pnp:Term Name="JDXpert" />
+          </pnp:Terms>
   	      <pnp:Term Name="Professional Development" />
+          <pnp:Terms>
+            <pnp:Term Name="Cafe Corner" />
+            <pnp:Term Name="Chapel" />
+            <pnp:Term Name="Community Outreach" />
+          </pnp:Terms>
+        </pnp:Terms>
+      </pnp:TermSet>
+      <pnp:TermSet Name="Global Employee Life Topic" Description="">
+        <pnp:Terms>
+          <pnp:Term Name="Benefits" />
+          <pnp:Terms>
+            <pnp:Term Name="24 Hour Flex" />
+            <pnp:Term Name="eEmployee" />
+            <pnp:Term Name="Health" />
+          </pnp:Terms>
+          <pnp:Term Name="Employee Wellness" />
+          <pnp:Terms>
+            <pnp:Term Name="Emotional" />
+            <pnp:Term Name="Financial" />
+          </pnp:Terms>
+          <pnp:Term Name="Work-Life Experience" />
+          <pnp:Terms>
+            <pnp:Term Name="Annual Performance Review" />
+            <pnp:Term Name="Rewards and Recognition" />
+          </pnp:Terms>
+          <pnp:Term Name="Performance and Recognition" />
+          <pnp:Terms>
+            <pnp:Term Name="Careers" />
+          </pnp:Terms>
+          <pnp:Term Name="Professional Development" />
+          <pnp:Terms>
+            <pnp:Term Name="Community Outreach" />
+          </pnp:Terms>
         </pnp:Terms>
       </pnp:TermSet>
       <pnp:TermSet Name="Group" Description="">

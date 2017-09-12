@@ -39,6 +39,10 @@ table.ms-ToolPaneOuter {
         overflow-y: scroll;
     }
 }
+.ms-ToolPaneBody{
+    max-height: 400px;
+    overflow: scroll;
+}
 
 .main-right-rail{
     div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
@@ -46,7 +50,7 @@ table.ms-ToolPaneOuter {
     }
 }
 
-#ci-apps-manage{
+#ci-apps-manage, #ci-bookmarks-manage{
     li{
         list-style: none;   
         max-width: 200px;
@@ -84,11 +88,20 @@ table.ms-ToolPaneOuter {
     }
 
 }
-
-.hero-main > .list-content:last-child .card-body {
-    border: medium none;
-    padding-bottom: 0;
+#ci-bookmarks-manage{
+    li{
+        max-width: none;
+        &:hover{
+            cursor: pointer;
+            color: $brand-dark-blue-alt;
+            background-color: transparent;
+        }
+    }
 }
+// .hero-main > .list-content:last-child .card-body {
+//     border: medium none;
+//     padding-bottom: 0;
+// }
 
 .ms-taxonomy .ms-taxonomy-browser-button{
     width: auto;

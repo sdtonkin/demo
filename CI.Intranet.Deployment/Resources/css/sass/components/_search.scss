@@ -5,7 +5,9 @@
  * ----------------------------------------- 
  */
 
- .ms-searchCenter-result-main{
+
+
+ .ms-searchCenter-result-main, .ms-srch-result{
 	float: none;
 	padding-top: 30px;
 	// margin-left: 30px;
@@ -68,9 +70,10 @@
 		}
 		.ms-srch-item-path{
 			display: block;
+			color: $brand-dark-blue;
 		}
 		.ms-srch-item-link{
-			color: $brand-dark-blue-alt;
+			color: $brand-dark-blue-alt !important;
 			@extend .font-lato-bold;
 			width: 475px;
 			overflow: hidden;
@@ -131,4 +134,19 @@
 			}
 		}
 	}
- h2.ms-displayInline a.ms-ref-name{ display:none;}
+	.left-rail-page{
+		#SearchBox{
+			margin:0;
+			max-width: 650px;
+		}
+	}
+ h2.ms-displayInline a.ms-ref-name{ 
+ 	display:block;
+ 	visibility: hidden;
+ 	font-size: 0;
+ 	margin-top: 20px;
+ 	
+ }
+ .ms-ref-uparrow{
+ 	display: block;
+ }
