@@ -74,6 +74,8 @@
       </pnp:TermSet>
       <pnp:TermSet Name="Event Type" Description="">
         <pnp:Terms>
+          <pnp:Term Name="Anniversary" />
+          <pnp:Term Name="Retirement" />
 	        <pnp:Term Name="Global" />
 	        <pnp:Term Name="Chapel" />
 	        <pnp:Term Name="Volunteering" />
