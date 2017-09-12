@@ -161,10 +161,13 @@ rss-feed-manager{
 		display: inline-block;
 		border: 1px solid $brand-brown-dull;
 		padding: 4px 10px;
-		color: $brand-brown-gray;
+		color: $brand-brown-gray !important;
 		text-align: left;
 		margin-right: 20px;
 		font-size: 14px;
+		a, a:visited, a:hover{
+			color: $brand-brown-gray !important;
+		}
 	}
 	.card-likes{
 		color: $brand-white;
