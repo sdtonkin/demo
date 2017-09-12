@@ -4,7 +4,7 @@ angular.module('compassionIntranet').service('spService', ['$http', '$q', 'COM_C
     var siteKey = 'CI_PROJECT_SITE_LIST';
 
     // clear local storage if url param is detected
-    common.checkForClearStatement('siteKey', siteKey);
+    common.checkForClearStatement('clearSiteKey', siteKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
@@ -12,7 +12,10 @@ angular.module('compassionIntranet').service('spService', ['$http', '$q', 'COM_C
     function getMySites(siteCollectionUrl) {
         var defer = $q.defer();
         $pnp.sp.search({
-            Querytext: 'path:' + siteCollectionUrl + '/* AND contentclass:equals("STS_Web")',
+            Querytext: 'path:' + siteCollectionUrl + '/*',
+            TrimDuplicates: false,
+            RowLimit: 100,
+            RefinementFilters: ['contentclass:equals("STS_Web")'],
             //SelectProperties: ['Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
         }).then(function (response) {
 
@@ -34,6 +37,7 @@ angular.module('compassionIntranet').service('spService', ['$http', '$q', 'COM_C
                     item.EventType = item.RefinableString02;
                 }
             });
+            console.log('service sites', response.PrimarySearchResults);
             defer.resolve(response.PrimarySearchResults);
         });
 

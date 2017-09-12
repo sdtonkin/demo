@@ -8,11 +8,11 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
     ctrl.activeTab = 'US';
 
     this.$onInit = function () {
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (data) {
+        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.employeeLifeTermId).then(function (data) {
             ctrl.groups = _.reject(data, function (p) {
                 return p.name == 'Benefits';
             });
-            $scope.$apply();
+            console.log('us link', data);
         });
     }
 }]).component('usLinks', {

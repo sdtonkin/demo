@@ -20,7 +20,7 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
         SP.UI.ModalDialog.showModalDialog(options);
     }
 }]).component('employeeSpotlight', {
-    template: require('../../includes/Employee-Spotlight.html'),
+    template: require('../../includes/Employee-Life.html'),
     controller: ctrlName,
     controlleras: 'ctrl',
     bindings: {

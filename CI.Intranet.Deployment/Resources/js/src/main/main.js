@@ -54,6 +54,7 @@ require('../components/bookmark-page.js');
 require('../components/contacts.js');
 require('../components/department-news.js');
 require('../components/employee-announcement.js');
+require('../components/employee-life.js');
 require('../components/employee-spotlight.js');
 require('../components/find-people.js');
 require('../components/global-links.js');
