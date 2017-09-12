@@ -17,6 +17,13 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
         });
         return defer.promise;
     };
+    ctrl.getMyAppsByName = function (userName) {
+        var defer = $q.defer();
+        getUserAppItemsByName(userName).then(function (apps) {
+            defer.resolve(apps);
+        });
+        return defer.promise;
+    };
     ctrl.getAllApps = function () {
         var defer = $q.defer();
         getApps().then(function (apps) {
@@ -74,6 +81,38 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
                         storage.set(userAppsKey, response, 0);
                         defer.resolve(response);
                     });                
+                });
+        }
+
+        return defer.promise;
+    }
+    function getUserAppItemsByName(userName) {
+        var defer = $q.defer();
+        var local = storage.get(userAppsKey);
+        if (local == null) {
+            local = {};
+            local.isExpired = true;
+        }
+        if (!local.isExpired)
+            defer.resolve(local);
+        else {
+            let web = new $pnp.Web(COM_CONFIG.rootWeb);
+            web.lists.getByTitle(COM_CONFIG.lists.userApps).items
+                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_UserToolbarId','COM_ListSortOrder')
+                .filter("COM_ToolbarUser/SipAddress eq '" + userName + "'")
+                .expand('COM_ToolbarUser')
+                .get()
+                .then(function (data) {
+                    var promises = new Array();
+                    for (var i = 0; data.length > i; i++) {
+                        var p = getUserApp(data[i]);
+                        promises.push(p)
+                    }
+                    $q.all(promises).then(function (response) {
+                        response = formatAppApps(response);
+                        storage.set(userAppsKey, response, 0);
+                        defer.resolve(response);
+                    });
                 });
         }
 
