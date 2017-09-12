@@ -1,9 +1,16 @@
 ﻿var ctrlName = 'newsEventsBrowserCtrl';
 var app = angular.module('compassionIntranet');
-app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyService', 'yammerApiService', 'COM_CONFIG', function ($scope, $q, $location, newsService, taxonomyService, yammerApiService, COM_CONFIG) {
+app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyService', 'yammerApiService', 'pagerService', 'COM_CONFIG', function ($scope, $q, $location, newsService, taxonomyService, yammerApiService, pagerService, COM_CONFIG) {
     var ctrl = this,
         masterArticles,
         masterEvents;
+    ctrl.newsPager = {};
+    ctrl.eventsPager = {};
+    ctrl.setNewsPage = setNewsPage;
+    ctrl.setEventsPage = setEventsPage;
+    ctrl.newsItems = [];
+    ctrl.eventItems = [];
+
     ctrl.newsCategories = [];
     ctrl.eventCategories = [];
     ctrl.categories = [];
@@ -148,10 +155,32 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             } else {
                 ctrl.categories = ctrl.newsCategories;
             }
-
+            ctrl.setEventsPage(1);
+            ctrl.setNewsPage(1);
         });
     }
-    
+    function setNewsPage(page) {
+        if (page < 1 || page > ctrl.newsPager.totalPages) {
+            return;
+        }
+
+        // get pager object from service
+        ctrl.newsPager = pagerService.getPager(ctrl.newsArticles.length, page);
+
+        // get current page of items
+        ctrl.newsItems = ctrl.newsArticles.slice(ctrl.newsPager.startIndex, ctrl.newsPager.endIndex + 1);
+    }
+    function setEventsPage(page) {
+        if (page < 1 || page > ctrl.eventsPager.totalPages) {
+            return;
+        }
+
+        // get pager object from service
+        ctrl.eventsPager = pagerService.getPager(ctrl.events.length, page);
+
+        // get current page of items
+        ctrl.eventItems = ctrl.events.slice(ctrl.eventsPager.startIndex, ctrl.eventsPager.endIndex + 1);
+    }
 }]).component('newsEventsBrowser', {
     bindings: {
         default: '@'

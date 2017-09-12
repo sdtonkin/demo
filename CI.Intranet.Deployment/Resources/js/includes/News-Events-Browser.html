@@ -58,7 +58,7 @@
                 <div class="tab-content">
                     <div class="active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
                         <div class="hero-news-container">
-                            <div class="card-group" ng-repeat="article in ctrl.newsArticles">
+                            <div class="card-group" ng-repeat="article in ctrl.newsItems">
                                 <div class="card img-card">
                                     <a ng-href="{{article.Path}}">
                                         <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
@@ -76,10 +76,28 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- pager -->
+                        <ul ng-if="ctrl.newsPager.pages.length" class="pagination">
+                            <li class="page-item" ng-class="{disabled:ctrl.newsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(1)">First</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li class="page-item"  ng-repeat="page in ctrl.newsPager.pages" ng-class="{active:ctrl.newsPager.currentPage === page}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(page)">{{page}}</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === ctrl.newsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.currentPage + 1)">Next</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === ctrl.newsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.totalPages)">Last</a>
+                            </li>
+                        </ul>
                     </div>                        
                     <div id="events" role="tabpanel" ng-show="ctrl.activeTab == 'events'">
                         <div class="row news-card-container">
-                            <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.events">
+                            <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.eventItems">
                                 <div class="card upcoming-events">
                                     <div class="card-body">
                                         <a href="#"><p class="card-text">{{event.Title}}</p></a>
@@ -93,6 +111,24 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- pager -->
+                        <ul ng-if="ctrl.eventsPager.pages.length" class="pagination">
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(1)">First</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li class="page-item" ng-repeat="page in ctrl.eventsPager.pages" ng-class="{active:ctrl.eventsPager.currentPage === page}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(page)">{{page}}</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === ctrl.eventsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage + 1)">Next</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === ctrl.eventsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.totalPages)">Last</a>
+                            </li>
+                        </ul>
                     </div>                    
                 </div>
             </div>

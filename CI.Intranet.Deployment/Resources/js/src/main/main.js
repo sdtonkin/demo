@@ -29,6 +29,7 @@ require('../services/modal-service.js');
 require('../services/navigation-service.js');
 require('../services/new-hire-service.js');
 require('../services/news-service.js');
+require('../services/pager-service.js');
 require('../services/photo-service.js');
 require('../services/related-document-service.js');
 require('../services/related-news-service.js');

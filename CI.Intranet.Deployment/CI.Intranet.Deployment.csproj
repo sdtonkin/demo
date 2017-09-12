@@ -315,6 +315,7 @@
     <Content Include="Resources\js\src\main\ui-helper.js" />
     <Content Include="Resources\js\src\services\anniversary-service.js" />
     <Content Include="Resources\js\src\services\contact-service.js" />
+    <Content Include="Resources\js\src\services\pager-service.js" />
     <Content Include="Resources\js\src\services\photo-service.js" />
     <Content Include="Resources\js\src\services\gratitudes-service.js" />
     <Content Include="Resources\js\src\services\new-hire-service.js" />
