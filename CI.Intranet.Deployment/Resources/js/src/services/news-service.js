@@ -9,7 +9,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
     function getNews(searchTerm) {
         var defer = $q.defer();
         $pnp.sp.search({
-            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
             SelectProperties: ['ContentType12', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
             TrimDuplicates: false,
             RowLimit: 100,
@@ -56,7 +56,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
     function getEvents(searchTerm) {
         var defer = $q.defer();
         $pnp.sp.search({
-            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerms),
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
             SelectProperties: ['Path', 'Title', 'Location', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
             TrimDuplicates: false,
             RowLimit: 100,
