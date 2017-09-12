@@ -56,7 +56,8 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
             $('#navbarContent').addClass('active');
         }            
         else {
-            $('div.search-background').hide("slide", { direction: "right" }, 1000);
+            //$('div.search-background').hide("slide", { direction: "right" }, 1000);
+            $('div.search-background').hide();
             ctrl.searchTitle = 'Search';
             $('#navbarContent').removeClass('active');
         }
