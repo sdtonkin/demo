@@ -1768,7 +1768,8 @@ table.ms-ToolPaneOuter {
   letter-spacing: 2px;
   padding: 15px;
   background-color: #003364;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
   border-radius: 0;
   border: solid 1px #000000;
@@ -1777,7 +1778,8 @@ table.ms-ToolPaneOuter {
   letter-spacing: 2px;
   padding: 15px;
   background-color: white;
-  color: #003364; }
+  color: #003364;
+  opacity: 0.4; }
 
 #ci-bookmarks-manage li {
   max-width: none; }
