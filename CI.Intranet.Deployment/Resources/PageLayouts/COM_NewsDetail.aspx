@@ -26,8 +26,9 @@
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
     <div class="main-container background-off-white">
-    <div class="container-fluid back-image"></div>
-        <div class="container">
+    
+        <div class="container with-rail">
+        <div class="container-fluid back-image"></div>
             <div class="row">
                 <div class="col-lg-8 main-left-content">
                 <section class="hero-news-container">
