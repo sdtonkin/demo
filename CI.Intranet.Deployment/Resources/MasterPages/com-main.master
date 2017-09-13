@@ -56,7 +56,7 @@
 <SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
 <SharePoint:ImageLink runat="server" />
 <SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server">
-<script type="text/javascript"> var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; </script>
+<script type="text/javascript">g_wsaEnabled = false; var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; </script>
 <WebPartPages:SPWebPartManager runat="server" />        
 <asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
         
@@ -209,7 +209,8 @@
 
 <PublishingWebControls:EditModePanel runat="server" id="SetEditModeClass">
 <script language="javascript">
-$("body").addClass("edit-mode");
+    $("body").addClass("edit-mode");
+    
 </script>
 </PublishingWebControls:EditModePanel>
 

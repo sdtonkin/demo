@@ -22,7 +22,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         $pnp.sp.search({
             Querytext: '' + contentType + 'AND' + category + ' ' + rootNews + '',
-            SelectProperties: ['RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['PublishingImage', 'RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
@@ -37,6 +37,20 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 //filter out current page
                 let pageTitle = page.Title;
                 if (pageTitle != item.Title) return item;
+            });
+
+            item.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate01) {
+                    var eventDate = new Date(item.RefinableDate01);
+                    item.rawArticleDate = eventDate
+                    item.articleDate = moment(eventDate).format('MMMM D, YYYY');
+                }                
+                if (item.RefinableString01) {
+                    item.newsType = item.RefinableString01;
+                }                
             });
 
             defer.resolve(items);
@@ -127,7 +141,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         $pnp.sp.search({
             Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*',
-            SelectProperties: ['Id','RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['PublishingImage', 'Id','RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             RefinementFilters: ['RefinableString01:equals("Country Office")'],
             RowLimit: (rowLimit == null ? 3 : rowLimit),
             TrimDuplicates: false,
@@ -141,9 +155,28 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 //filter out current page
                 if (pageUrl != item.Path) return item;
             });
-            console.log('related news', items);
+            items.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate00) {
+                    var eventDate = new Date(item.RefinableDate00);
+                    item.rawArticleDate = eventDate
+                    item.articleDate = moment(eventDate).format('MMMM D, YYYY');
+                }
+                if (item.RefinableString01) {
+                    item.newsType = item.RefinableString01;
+                }
+            });
+            console.log('getRelatedNews', items);
             defer.resolve(items);
         });
         return defer.promise;
+    }
+    function getImage(element) {
+        var src = $(element).attr('src');
+        if (src.indexOf('?') != -1)
+            src = src.substring(0, src.indexOf('?'));
+        return src;
     }
 });
