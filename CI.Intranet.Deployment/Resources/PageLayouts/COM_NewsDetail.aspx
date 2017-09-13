@@ -32,7 +32,6 @@
                 <div class="col-lg-8 main-left-content">
                 <section class="hero-news-container">
                     <div>
-                        <submit-news></submit-news>
                         <span class="share" style="display:none;position:absolute;top:10px; left:63px;" >
 							<a href="#">
 							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
