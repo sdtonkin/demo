@@ -74,6 +74,7 @@ table.ms-ToolPaneOuter {
         padding: 15px;
         background-color: $brand-dark-blue;
         color: $brand-white;
+        cursor: pointer;
     }
     button:disabled {
         border-radius: 0;
@@ -85,6 +86,7 @@ table.ms-ToolPaneOuter {
         padding: 15px;
         background-color: $brand-white;
         color: $brand-dark-blue;
+        opacity: 0.4;
     }
 
 }
