@@ -44,9 +44,9 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         });
         return defer.promise;
     };
-    ctrl.addMyBookmark = function (userId, title, url) {
+    ctrl.addMyBookmark = function (userId, pageId, url, siteUrl) {
         var defer = $q.defer();
-        addUserBookmark(userId, title, url).then(function (bookmark) {
+        addUserBookmark(userId, pageId, url, siteUrl).then(function (bookmark) {
             storage.remove(userBookmarkKey);
             defer.resolve(bookmark);
         });
@@ -118,22 +118,37 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
 
         return defer.promise;
     }
-    function addUserBookmark(userId, title, url) {
+    function addUserBookmark(userId, pageId, url, siteUrl) {
         var defer = $q.defer();
-        let web = new $pnp.Web(COM_CONFIG.rootWeb);
-        web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
-            .add({
-                COM_ToolbarUserId: userId,
-                COM_BookmarkUrl: url,
-                Title: title
-            })
-            .then(function (item) {
-                var bk = {};
-                bk.id = item.data.Id;
-                bk.title = item.data.Title;
-                bk.url = item.data.COM_BookmarkUrl;
-                bk.userId = item.data.COM_ToolbarUserId;
-                defer.resolve(bk);
+        getPage(pageId, siteUrl).then(function (item) {
+            let web = new $pnp.Web(COM_CONFIG.rootWeb);
+            web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
+                .add({
+                    COM_ToolbarUserId: userId,
+                    COM_BookmarkUrl: url,
+                    Title: item.Title
+                })
+                .then(function (item) {
+                    var bk = {};
+                    bk.id = item.data.Id;
+                    bk.title = item.data.Title;
+                    bk.url = item.data.COM_BookmarkUrl;
+                    bk.userId = item.data.COM_ToolbarUserId;
+                    defer.resolve(bk);
+                });
+        });
+
+        return defer.promise;
+    }
+    function getPage(pageId, siteUrl) {
+        var defer = $q.defer();
+        let web = new $pnp.Web(siteUrl);
+        web.lists.getByTitle('Pages').items
+            .select('Title')
+            .getById(pageId)
+            .get()
+            .then(function (item) {                
+                defer.resolve(item);
             });
 
         return defer.promise;
