@@ -45,9 +45,15 @@ table.ms-ToolPaneOuter {
 }
 
 .main-right-rail{
-    div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
-
+    > div{
+        max-width: 320px;
     }
+    div.ms-webpart-cell-vertical-inline-table, .ms-webpart-chrome-vertical, .js-webpart-titleCell, .ms-webpart-controlBox, .js-webpart-menuCell, .ms-webpart-checkboxTd{
+        display: block;
+    }
+    // div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
+
+    // }
 }
 
 #ci-apps-manage, #ci-bookmarks-manage{

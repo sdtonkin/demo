@@ -56,6 +56,9 @@ Table of Contents:
   // max-width: 1300px;
   max-width: 1185px;
   width: auto;
+  &.with-rail{
+  	position: relative;
+  }
 }
 .container-fluid{
 	// margin-left: -15px;
@@ -64,8 +67,8 @@ Table of Contents:
 		background-color: #88bee7;
 	    height: 100%;
 	    position: absolute;
-	    right: 0;
-	    width: 33%;
+	    right: -60px;
+	    width: 80px;
 	}
 }
 body {

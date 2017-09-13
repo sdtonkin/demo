@@ -283,13 +283,15 @@ Table of Contents:
 .container {
   max-width: 1185px;
   width: auto; }
+  .container.with-rail {
+    position: relative; }
 
 .container-fluid .back-image {
   background-color: #88bee7;
   height: 100%;
   position: absolute;
-  right: 0;
-  width: 33%; }
+  right: -60px;
+  width: 80px; }
 
 body {
   font-size: 14px;
@@ -1794,6 +1796,11 @@ table.ms-ToolPaneOuter {
 .ms-ToolPaneBody {
   max-height: 400px;
   overflow: scroll; }
+
+.main-right-rail > div {
+  max-width: 320px; }
+.main-right-rail div.ms-webpart-cell-vertical-inline-table, .main-right-rail .ms-webpart-chrome-vertical, .main-right-rail .js-webpart-titleCell, .main-right-rail .ms-webpart-controlBox, .main-right-rail .js-webpart-menuCell, .main-right-rail .ms-webpart-checkboxTd {
+  display: block; }
 
 #ci-apps-manage li, #ci-bookmarks-manage li {
   list-style: none;
