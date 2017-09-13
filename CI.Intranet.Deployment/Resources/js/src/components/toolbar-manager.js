@@ -198,13 +198,24 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             });
         });
     }
+    function getAppsToDelete(master, apps) {
+        var response = [];
+        for (var i = 0; i < master.length; i++) {
+            var app = master[i];
+            var item = _.filter(apps, function (x) { return x.appId == app.appId; });
+            if (item.length == 0)
+                response.push(app);
+        }
+
+        return response;
+    }
     function saveMyApps() {
         ctrl.isToolbarDirty = false;
         var apps = ctrl.myApps;
         var dbApps = ctrl.myAppsFromDb;
         var appsToAdd = _.where(apps, { id: -1 });
-        var fullTools = _.filter(apps, function (t) { return t.id != -1; });
-        var appsToDelete = _.difference(fullTools, apps);
+        //var fullTools = _.filter(apps, function (t) { return t.id != -1; });
+        var appsToDelete = getAppsToDelete(dbApps, apps);
 
         for (var i = 0; i < appsToAdd.length; i++) {
             var app = appsToAdd[i];

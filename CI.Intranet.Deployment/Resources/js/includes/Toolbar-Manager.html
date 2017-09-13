@@ -6,7 +6,7 @@
                 <h1>Manage My Tools / Apps</h1>
                 <h3>Available Tools / Apps</h3>
                 <ul>
-                    <li ng-repeat="app in ctrl.allApps track by app.id">
+                    <li ng-repeat="app in ctrl.allApps track by $index">
                         <input type="checkbox" ng-click="toggleSelection(app.id)" value="{{app.id}}" ng-checked="existsAppInMyApps(app.id)" />{{app.title}}
                     </li>
                 </ul>
@@ -24,7 +24,7 @@
             <div class="modal-body">
                 <h1>Manage My Tools / Apps Sort Order</h1>
                 <ul>
-                    <li ng-repeat="app in ctrl.myApps track by app.id">
+                    <li ng-repeat="app in ctrl.myApps track by $index">
                         {{app.title}}
                         <select ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
                             <option ng-repeat="sort in myAppsSortList" ng-value="{{sort}}">{{sort}}</option>
@@ -44,7 +44,7 @@
             <div class="modal-body">
                 <h1>Manage My Bookmarks</h1>
                 <ul>
-                    <li ng-repeat="bk in ctrl.myBookmarks track by bk.id">
+                    <li ng-repeat="bk in ctrl.myBookmarks track by $index">
                         <input type="hidden" ng-model="bk.id" />
                         <input type="text" ng-model="bk.title" ng-change="ctrl.isToolbarDirty = true" />
                         <input type="text" ng-model="bk.url" ng-change="ctrl.isToolbarDirty = true" />
