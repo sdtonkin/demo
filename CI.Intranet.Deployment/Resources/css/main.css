@@ -281,8 +281,15 @@ Table of Contents:
   overflow-x: hidden; }
 
 .container {
-  max-width: 1300px;
+  max-width: 1185px;
   width: auto; }
+
+.container-fluid .back-image {
+  background-color: #88bee7;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 33%; }
 
 body {
   font-size: 14px;
@@ -1537,6 +1544,9 @@ section.global-partners ul, section.my-department ul {
    *  @@ File: responsive/_tablet-down.scss
    * ----------------------------------------- 
    */
+  .container-fluid .back-image {
+    display: none; }
+
   /* 
    * -----------------------------------------
    *  navigation

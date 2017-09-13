@@ -53,13 +53,20 @@ Table of Contents:
 }
 .container{
   // max-width: 1700px;
-  max-width: 1300px;
+  // max-width: 1300px;
+  max-width: 1185px;
   width: auto;
 }
 .container-fluid{
 	// margin-left: -15px;
 	// margin-right: -15px;
-	
+	.back-image{
+		background-color: #88bee7;
+	    height: 100%;
+	    position: absolute;
+	    right: 0;
+	    width: 33%;
+	}
 }
 body {
 	@extend .font-lato-reg;
