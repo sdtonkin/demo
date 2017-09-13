@@ -1,11 +1,17 @@
-﻿<section class="my-department">
-    <h2 class="section">Key Contacts</h2>
-    <div class="media employee-card" ng-repeat="person in ctrl.contact track by $index">
-        <img class="d-flex align-self-start mr-3 emp-photo" ng-src="{{person.picUrl}}" alt="Employee photo">
-        <div class="media-body">
-            <h3 class="mt-0 emp-name">{{person.title}}</h3>
-            <h5 class="emp-title">{{person.jobTitle}}</h5>
-            <span class="emp-contact"><a>{{person.email}}</a> <span class="emp-view"><a ng-href="{{person.profileUrl}}">View Profile</a></span></span>
+﻿<section class="key-contacts">
+    <div class="row">
+        <div class="col-12">
+            <h3>Key Contacts</h3>
+        </div>
+        <div class="col-12">
+            <div class="media employee-card">
+                <image-loader image-css-class="d-flex align-self-start mr-3 emp-photo" image-src="{{person.picUrl}}" image-alt-text="{{person.title}}">
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{person.title}}</h3>
+                    <h5 class="emp-title">{{person.jobTitle}}</h5>
+                    <span class="emp-contact"><a ng-href="emailto:{{person.email}}">Email</a> <span class="emp-view"><a ng-href="devUrl">View Profile</a></span></span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
