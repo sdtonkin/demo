@@ -26,7 +26,10 @@ if (document.location.host === "compassion.sharepoint.com") {
                 globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
                 newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
                 eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066',
-                employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a'
+                employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a',
+                usEmployeeLifeTermId: '4ede5c1c-acfd-406e-88bd-0d279bc4535c',
+                globalEmployeeLifeTermId: '0a678df8-43b8-452c-8d13-f4f058828569'
+
             },
             pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
             useCaching: false,
