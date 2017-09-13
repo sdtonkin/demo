@@ -26,7 +26,7 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
         if (window.lowBandwidth) {
             $('body').addClass('low-bandwidth');
         }
-        
+        //$('#ci-sub-nav').show("slow");
     };
     ctrl.setToolbarStatus = setToolbarStatus;
     function setToolbarStatus() {
@@ -86,6 +86,13 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
                 $rightRail.css('height', 'auto');
             }
             */
+
+            // $leftContent = $('.main-left-content');
+            // $rightBack = $('.container-fluid .back-image');
+            // $leftBackInitial = $leftContent.height();
+
+            $('.container-fluid .back-image').css('height', $('.main-left-content').height() + 40);
+            
         }, 2000);
     }
     function addFirstNameToWelcomeMessage(firstName) {

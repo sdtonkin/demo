@@ -31,11 +31,7 @@
 <SharePoint:CssLink runat="server" Version="15" />
 <SharePoint:CacheManifestLink runat="server" />
 <SharePoint:PageRenderMode runat="server" RenderModeType="Standard" />
-
-
 <SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false" />
-
-
 <SharePoint:SoapDiscoveryLink runat="server" />
 <asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server" />
 <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
@@ -75,7 +71,7 @@
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <navigation></navigation>
 <!-- Start Top Navigation -->
-    <section class="section sub-nav-container">
+    <section class="section sub-nav-container" id="ci-sub-nav" ng-cloak>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">

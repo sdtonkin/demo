@@ -5,10 +5,10 @@
             <ul ng-repeat="item in ctrl.myFeeds" class="rss-feed">
                 <span class="rss-category">{{ item.title }}</span>
                 <li ng-repeat="article in item.articles" class="row">
-                    <div class="col-10 rss-title">
+                    <div class="col-9 rss-title">
                         <a href="{{ article.guid }}" target="_blank">{{ article.title }}</a>
                     </div>
-                    <div class="col-2 rss-date">
+                    <div class="col-3 rss-date">
                         {{ article.publishedSpanString }}
                     </div>
                     <div class="col-12 rss-divider"><hr></div>

@@ -281,8 +281,15 @@ Table of Contents:
   overflow-x: hidden; }
 
 .container {
-  max-width: 1300px;
+  max-width: 1185px;
   width: auto; }
+
+.container-fluid .back-image {
+  background-color: #88bee7;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 33%; }
 
 body {
   font-size: 14px;
@@ -455,6 +462,13 @@ body {
   height: auto;
   width: 425px;
   max-width: none; }
+.hero-news-container .card.img-card {
+  flex: 2; }
+  .hero-news-container .card.img-card img {
+    height: 100%;
+    width: 500px; }
+  .hero-news-container .card.img-card a {
+    overflow: hidden; }
 
 .hero-main > .list-content:last-child .card-body {
   border: medium none;
@@ -913,6 +927,7 @@ rss-feed-manager .btn-cta {
   .news-events .search .input-group-btn {
     border-radius: 0; }
     .news-events .search .input-group-btn button {
+      cursor: pointer;
       border: none; }
 .news-events .search-filter {
   border: 1px solid #908b63;
@@ -1492,17 +1507,18 @@ section.global-partners h2, section.my-department h2 {
   text-align: left;
   color: white; }
 section.global-partners img.emp-photo, section.my-department img.emp-photo {
-  height: 48px; }
+  height: auto; }
 section.global-partners ul, section.my-department ul {
   padding-left: 0;
   list-style: none; }
 
 .my-department .employee-card {
-  background-color: white;
+  background-color: transparent;
   padding: 15px;
   margin-top: 15px; }
-.my-department .employee-card .emp-contact {
-  border: none; }
+.my-department .employee-card .emp-contact, .my-department .employee-card .emp-contact a, .my-department .employee-card .emp-contact span a {
+  border: none;
+  color: white; }
 
 /* ----------------------------------------------------
   12) Responsive Style Imports
@@ -1536,6 +1552,9 @@ section.global-partners ul, section.my-department ul {
    *  @@ File: responsive/_tablet-down.scss
    * ----------------------------------------- 
    */
+  .container-fluid .back-image {
+    display: none; }
+
   /* 
    * -----------------------------------------
    *  navigation
@@ -1561,9 +1580,15 @@ section.global-partners ul, section.my-department ul {
    * ----------------------------------------- 
    */
   .hero-news-container .card {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: block; }
+    .hero-news-container .card.img-card {
+      margin-bottom: 0; }
+      .hero-news-container .card.img-card img {
+        width: 100%; }
   .hero-news-container .card-group {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    display: block; }
   .hero-news-container .card-title {
     margin-top: 5px;
     margin-bottom: 10px; }
@@ -1573,6 +1598,8 @@ section.global-partners ul, section.my-department ul {
     height: auto; }
     .hero-news-container .recent-news-wrapper .card img {
       width: 100%; }
+    .hero-news-container .recent-news-wrapper .card-body {
+      height: auto; }
 
   .hero-main > .list-content:last-child .card-body {
     padding-bottom: 1.25rem; }
@@ -1681,6 +1708,10 @@ section.global-partners ul, section.my-department ul {
   .ms-srch-ellipsis, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item, .ms-srch-result .ms-srch-result-groups .ms-srch-item {
     white-space: normal; }
 
+  .ms-srch-item-path, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary, .ms-srch-result .ms-srch-result-groups .ms-srch-item-summary {
+    width: auto;
+    white-space: normal; }
+
   .ms-srch-item, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link {
     width: auto; }
 
@@ -1767,7 +1798,8 @@ table.ms-ToolPaneOuter {
   letter-spacing: 2px;
   padding: 15px;
   background-color: #003364;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
   border-radius: 0;
   border: solid 1px #000000;
@@ -1776,7 +1808,8 @@ table.ms-ToolPaneOuter {
   letter-spacing: 2px;
   padding: 15px;
   background-color: white;
-  color: #003364; }
+  color: #003364;
+  opacity: 0.4; }
 
 #ci-bookmarks-manage li {
   max-width: none; }

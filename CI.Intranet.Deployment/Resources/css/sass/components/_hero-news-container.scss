@@ -8,6 +8,7 @@
 	img{
 		width: 100%;
 	}
+
 	.card-group{
 		margin-bottom: 20px;
 	}
@@ -54,6 +55,16 @@
 		height: auto;
 		width: 425px;
 		max-width: none;
+	}
+	.card.img-card{
+		flex: 2;
+		img{
+			height: 100%;
+			width: 500px;
+		}
+		a{
+			overflow: hidden;
+		}
 	}
 
 }

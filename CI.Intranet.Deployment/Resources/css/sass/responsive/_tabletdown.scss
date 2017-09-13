@@ -10,6 +10,9 @@
 	// margin-left: 30px;
 }
 
+.container-fluid .back-image{
+	display: none;
+}
 /* 
  * -----------------------------------------
  *  navigation
@@ -61,9 +64,17 @@ navigation{
  .hero-news-container{
 	.card{
 		margin-bottom: 20px;
+		display: block;
+		&.img-card{
+			margin-bottom: 0;
+			img{
+				width: 100%;
+			}
+		}
 	}
 	.card-group{
 		margin-bottom: 0;
+		display: block;
 	}
 	.card-title{
 		margin-top: 5px;
@@ -76,6 +87,9 @@ navigation{
 		height: auto;
 		.card img{
 			width: 100%;
+		}
+		.card-body{
+			height: auto;
 		}
 	}
 }
@@ -218,6 +232,10 @@ navigation{
  * ----------------------------------------- 
  */
 .ms-srch-ellipsis, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item, .ms-srch-result .ms-srch-result-groups .ms-srch-item{
+	white-space: normal;
+}
+.ms-srch-item-path, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary, .ms-srch-result .ms-srch-result-groups .ms-srch-item-summary{
+	width: auto;
 	white-space: normal;
 }
 .ms-srch-item, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link{

@@ -5,7 +5,8 @@ var myApp = angular.module('compassionIntranet'),
 myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, storage, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
     var ctrl = this;
     var selectedTabCacheKey = 'navSelectedTab';
-    var userId = _spPageContextInfo.userId;    
+    var userId = _spPageContextInfo.userId;
+    var userLoginName = _spPageContextInfo.userLoginName;
     var isToolbarDirty = false;
     ctrl.toolbarSelectorId = 'ci-toolbar-selector',
         ctrl.toolbarContainerId = 'ci-toolbar-container',
@@ -16,7 +17,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService',
         var selectedTabId = storage.get(selectedTabCacheKey);
         ctrl.selectedTabId =  (selectedTabId == null ? 'ci-apps' : selectedTabId);
         
-        appService.getMyApps(userId).then(function (response) {
+        appService.getMyAppsByName(userLoginName).then(function (response) {
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
         });
