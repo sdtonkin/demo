@@ -8,7 +8,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
     ctrl.activeTab = 'Global';
 
     this.$onInit = function () {
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (data) {
+        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.usemployeeLifeTermId).then(function (data) {
             ctrl.groups = _.reject(data, function (p) {
                 return p.name == 'Benefits';
             });
