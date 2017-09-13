@@ -1797,6 +1797,11 @@ table.ms-ToolPaneOuter {
   max-height: 400px;
   overflow: scroll; }
 
+.main-right-rail > div {
+  max-width: 320px; }
+.main-right-rail div.ms-webpart-cell-vertical-inline-table, .main-right-rail .ms-webpart-chrome-vertical, .main-right-rail .js-webpart-titleCell, .main-right-rail .ms-webpart-controlBox, .main-right-rail .js-webpart-menuCell, .main-right-rail .ms-webpart-checkboxTd {
+  display: block; }
+
 #ci-apps-manage li, #ci-bookmarks-manage li {
   list-style: none;
   max-width: 200px;
