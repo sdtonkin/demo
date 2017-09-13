@@ -281,7 +281,7 @@ Table of Contents:
   overflow-x: hidden; }
 
 .container {
-  max-width: 1185px;
+  max-width: 1250px;
   width: auto; }
   .container.with-rail {
     position: relative; }
@@ -1104,7 +1104,7 @@ navigation {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-  navigation .search-button > a:before {
+  navigation a.search-close:before {
     border-left: 1px solid white;
     content: " ";
     margin-left: -10px;
@@ -1114,23 +1114,19 @@ navigation {
     navigation .search-button i {
       color: white;
       padding-right: 10px; }
+  navigation .search-glass {
+    display: none !important; }
   navigation #navbarContent.active .search-button i {
     color: #003364; }
   navigation #navbarContent.active .search-button a:before {
     border-color: #003364; }
-  navigation #navbarContent.active .search-button .fa-search:before {
+  navigation #navbarContent.active .search-button .search-close:before {
+    padding-right: 15px; }
+  navigation #navbarContent.active .search-button .search-close .fa-search:before {
     content: "\f00d"; }
-  navigation #navbarContent.active .search-background:after {
-    content: "\f002";
-    display: block;
-    position: relative;
-    color: #003364;
-    font-family: FontAwesome;
-    font-size: 19px;
-    position: absolute;
-    right: 60px;
-    top: 2px;
-    cursor: pointer; }
+  navigation #navbarContent.active .search-glass {
+    display: inline-block !important;
+    margin-right: 10px; }
   navigation .navbar {
     padding: 0.5rem 0; }
   navigation .navbar-brand {
@@ -1799,7 +1795,7 @@ table.ms-ToolPaneOuter {
 
 .main-right-rail > div {
   max-width: 320px; }
-.main-right-rail div.ms-webpart-cell-vertical-inline-table, .main-right-rail .ms-webpart-chrome-vertical, .main-right-rail .js-webpart-titleCell, .main-right-rail .ms-webpart-controlBox, .main-right-rail .js-webpart-menuCell, .main-right-rail .ms-webpart-checkboxTd {
+.main-right-rail div.ms-webpart-cell-vertical-inline-table, .main-right-rail .ms-webpart-chrome-vertical, .main-right-rail .js-webpart-titleCell, .main-right-rail .ms-webpart-controlBox, .main-right-rail .js-webpart-menuCell, .main-right-rail .ms-webpart-checkboxTd, .main-right-rail .ms-webpart-zone {
   display: block; }
 
 #ci-apps-manage li, #ci-bookmarks-manage li {
