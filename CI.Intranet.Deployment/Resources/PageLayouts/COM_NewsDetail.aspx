@@ -31,13 +31,18 @@
             <div class="row">
                 <div class="col-lg-8 main-left-content">
                 <section class="hero-news-container">
-                    <div>
-                        <submit-news></submit-news>
-                        <span class="share" style="display:none;position:absolute;top:10px; left:63px;" >
-							<a href="#">
-							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
-							</a>
-						</span>
+                    <div class="row page-controls">
+                        <div class="col-12">
+                        <div class="page-control-wrapper">
+                        <div class="page-control-wrap"><submit-news></submit-news> </div>
+
+                        <div class="page-control-wrap">
+                            <span class="share">
+    							<a href="#">
+    							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
+    							</a>
+    						</span>
+                        </div>
 						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 						<script type="text/javascript">
@@ -48,7 +53,11 @@
 							jQuery('.share a').attr('href',mailToLink);
 							jQuery('.share').css('display', 'block');
 						</script>
-                        <bookmark-page></bookmark-page>
+                        <div class="page-control-wrap">
+                            <bookmark-page></bookmark-page>
+                        </div>
+                    </div>
+                    </div>
                     </div>
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
                     <div class="card">
