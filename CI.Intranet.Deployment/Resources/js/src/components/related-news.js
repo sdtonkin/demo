@@ -17,6 +17,7 @@ myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', 'commo
             if (data.length === 0) {
                 $scope.notFound = "No related stories found";
             } else {
+                $scope.topImageUrl = (data[0].ImageUrl == null ? '' : data[0].ImageUrl);
                 $scope.notFound = '';
                 $scope.news = data;
             }

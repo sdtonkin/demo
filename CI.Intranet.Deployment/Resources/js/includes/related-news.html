@@ -1,55 +1,26 @@
-<!-- <section class="news-events">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="section">Related Articles</h2>
-                <div ng-show="news.length > 0" class="trending-stories">
-                    <div class="card-related">
-                        <img src="{{topImageUrl}}" />
-                    </div>
-                    <div ng-repeat="article in news track by $index" class="story">
-                        <div class="card-body">
-                            <span class="card-date">{{article.articleDate}}</span>
-                            <a ng-href="{{article.Path}}">
-                                <h4 class="card-text">{{article.Title}}</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div ng-if="notFound" class="card-related">
-                    <span class="card-text">{{notFound}}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<section class="related-news">
+<section class="related-news"> 
     <div class="row">
         <div class="col">
             <h2 class="section">Related Articles</h2>
         </div>
-    </div>
+    </div>  
     <div class="card related">
         <div class="card-body">
             <img class="img-card" src="{{topImageUrl}}" alt="">
         </div>
     </div>
     <div class="card related" ng-repeat="article in news track by $index">
-          <div class="card-body">
-          <!-- <img class="img-card" src="http://placehold.it/320x161" alt=""> -->
-              <p class="card-date">{{article.articleDate}}</p>
-              <a ng-href="{{article.Path}}">
-                    <p class="card-text">{{article.Title}} 
-                    </p>
-                </a>
-              <!-- <span class="card-likes"><i class="fa fa-heart-o"></i>26</span> -->
-            </div>
+        <div class="card-body">
+            <p class="card-date">{{article.articleDate}}</p>
+            <a ng-href="{{article.Path}}">
+                <p class="card-text">{{article.Title}}</p>
+            </a>
+            <news-page-likes page-url="{{article.Path}}"></news-page-likes>
         </div>
-        <div ng-if="notFound" class="card related">
-                    <span class="card-text">{{notFound}}</span>
-                </div>
+    </div>
+    <div ng-if="notFound" class="card related">
+        <span class="card-text">{{notFound}}</span>
+    </div>
 </section>
 
 
