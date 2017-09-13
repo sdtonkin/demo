@@ -34,8 +34,6 @@
                     <div class="row page-controls">
                         <div class="col-12">
                         <div class="page-control-wrapper">
-                        <div class="page-control-wrap"><submit-news></submit-news> </div>
-
                         <div class="page-control-wrap">
                             <span class="share">
     							<a href="#">
