@@ -64,9 +64,16 @@ navigation{
  .hero-news-container{
 	.card{
 		margin-bottom: 20px;
+		&.img-card{
+			margin-bottom: 0;
+			img{
+				width: 100%;
+			}
+		}
 	}
 	.card-group{
 		margin-bottom: 0;
+		display: block;
 	}
 	.card-title{
 		margin-top: 5px;

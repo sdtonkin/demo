@@ -462,6 +462,13 @@ body {
   height: auto;
   width: 425px;
   max-width: none; }
+.hero-news-container .card.img-card {
+  flex: 2; }
+  .hero-news-container .card.img-card img {
+    height: 100%;
+    width: 500px; }
+  .hero-news-container .card.img-card a {
+    overflow: hidden; }
 
 .hero-main > .list-content:last-child .card-body {
   border: medium none;
@@ -1574,8 +1581,13 @@ section.global-partners ul, section.my-department ul {
    */
   .hero-news-container .card {
     margin-bottom: 20px; }
+    .hero-news-container .card.img-card {
+      margin-bottom: 0; }
+      .hero-news-container .card.img-card img {
+        width: 100%; }
   .hero-news-container .card-group {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    display: block; }
   .hero-news-container .card-title {
     margin-top: 5px;
     margin-bottom: 10px; }
