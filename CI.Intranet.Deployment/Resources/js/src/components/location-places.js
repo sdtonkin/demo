@@ -12,6 +12,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
             ctrl.places = _.reject(data, function (p) {
                 return p.name == 'US';
             });
+            console.log('places', ctrl.places);
             $scope.$apply();
         });
     }

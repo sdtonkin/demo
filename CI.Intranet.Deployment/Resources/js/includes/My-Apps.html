@@ -1,6 +1,6 @@
 ﻿<ul ng-repeat="app in ctrl.myApps track by $index">
     <li >
-        <a ng-href="{{ app.iconUrl }}">
+        <a ng-href="{{ app.url }}" target="_blank">
             <img ng-src="{{ app.iconUrl }}" class="app-icon" />
             <div>{{ app.title }}</div>
         </a>
