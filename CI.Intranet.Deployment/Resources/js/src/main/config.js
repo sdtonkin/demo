@@ -40,6 +40,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             locationByIPUrl: 'https://ipinfo.io/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
+            delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -105,6 +106,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             locationByIPUrl: 'https://ipinfo.io/json',
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
+            delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -172,6 +174,7 @@ else {
         locationByIPUrl: 'https://ipinfo.io/json',
         locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
         workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
+        delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
         lists: {
             rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',

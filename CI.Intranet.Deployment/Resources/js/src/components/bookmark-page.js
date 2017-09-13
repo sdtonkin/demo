@@ -6,7 +6,8 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', 'COM_CONFIG', fun
     var ctrl = this;
     var thisUrl = window.location.href;
     var userId = _spPageContextInfo.userId;
-    var webTitle = _spPageContextInfo.webTitle;
+    var pageId = _spPageContextInfo.pageItemId;
+    var webUrl = _spPageContextInfo.webAbsoluteUrl;
     
     this.$onInit = function(){
         bookmarkService.getMyBookmarks(userId).then(function (response) {
@@ -19,8 +20,8 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', 'COM_CONFIG', fun
             return b.url == thisUrl;
         }) != -1;
     }
-    ctrl.addMyBookmark = function () {
-        bookmarkService.addMyBookmark(userId, webTitle, thisUrl).then(function (response) {
+    ctrl.addMyBookmark = function () {        
+        bookmarkService.addMyBookmark(userId, pageId, thisUrl, webUrl).then(function (response) {
             ctrl.myBookmarks.push(response);
         });
     }
