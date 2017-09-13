@@ -1580,7 +1580,8 @@ section.global-partners ul, section.my-department ul {
    * ----------------------------------------- 
    */
   .hero-news-container .card {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: block; }
     .hero-news-container .card.img-card {
       margin-bottom: 0; }
       .hero-news-container .card.img-card img {
@@ -1597,6 +1598,8 @@ section.global-partners ul, section.my-department ul {
     height: auto; }
     .hero-news-container .recent-news-wrapper .card img {
       width: 100%; }
+    .hero-news-container .recent-news-wrapper .card-body {
+      height: auto; }
 
   .hero-main > .list-content:last-child .card-body {
     padding-bottom: 1.25rem; }
