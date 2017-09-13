@@ -32,6 +32,22 @@
                 <div class="col-lg-8 main-left-content">
                 <section class="hero-news-container">
                     <div>
+                        <submit-news></submit-news>
+                        <span class="share" style="display:none;position:absolute;top:10px; left:63px;" >
+							<a href="#">
+							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
+							</a>
+						</span>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+						<script type="text/javascript">
+							var subject = jQuery('.news-title-block .card-text').text();
+							var body = 'I thought you would find this article interesting';
+							var mailToLink = 'mailto:?subject={0}&body={1}:\r\n\r\n{2}';
+							mailToLink = mailToLink.replace('{0}', subject).replace('{1}', body).replace('{2}', window.location.origin + window.location.pathname);
+							jQuery('.share a').attr('href',mailToLink);
+							jQuery('.share').css('display', 'block');
+						</script>
                         <bookmark-page></bookmark-page>
                     </div>
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
@@ -51,21 +67,6 @@
                     <div class="news-tag-content row">
                     <div class="col-md-3">
                         <news-page-likes></news-page-likes>
-                        <span class="share" style="display:none;position:absolute;top:10px; left:63px;" >
-							<a href="#">
-							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
-							</a>
-						</span>
-						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-						<script type="text/javascript">
-							var subject = jQuery('.news-title-block .card-text').text();
-							var body = 'I thought you would find this article interesting';
-							var mailToLink = 'mailto:?subject={0}&body={1}:\r\n\r\n{2}';
-							mailToLink = mailToLink.replace('{0}', subject).replace('{1}', body).replace('{2}', window.location.origin + window.location.pathname);
-							jQuery('.share a').attr('href',mailToLink);
-							jQuery('.share').css('display', 'block');
-						</script>
                     </div>
                         <div class="col-md-9">
                         <div class="tag-container pull-right">
