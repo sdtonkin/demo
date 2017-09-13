@@ -21,7 +21,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService',
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
         });
-        bookmarkService.getMyBookmarks(userId).then(function (response) {
+        bookmarkService.getMyBookmarksByName(userLoginName).then(function (response) {
             ctrl.myBookmarks = angular.copy(response);
             ctrl.myBookmarksFromDb = response;
         });

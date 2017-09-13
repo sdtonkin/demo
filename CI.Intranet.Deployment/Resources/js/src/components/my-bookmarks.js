@@ -13,11 +13,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'bookmarkS
         return !isDirty;
     };
     this.$onInit = function () {
-        bookmarkService.getMyBookmarks(userId).then(function (response) {
-            ctrl.myBookmarks = angular.copy(response);
-            ctrl.myBookmarksFromDb = response;
-            getSortOrderLimits();
-        });        
+        ctrl.myBookmarks = $scope.$parent.ctrl.myBookmarks;
     };
     $scope.$parent.$watch('ctrl.myBookmarks', function (newVal, oldVal, scope) {
         if (newVal == null) return;

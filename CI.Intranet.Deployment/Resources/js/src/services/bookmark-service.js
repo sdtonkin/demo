@@ -1,10 +1,10 @@
 ﻿'use strict';
 angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userBookmarkKey = 'E5A445DB-8D84-4DC5-AFE4-779DCC86AED6' + _spPageContextInfo.userId;
+    var userBookmarkKey = 'CI_MY_BOOKMARKS_KEY';
 
     // clear local storage if url param is detected
-    checkForClearStatement();
+    common.checkForClearStatement('clearMyBookmarks', userBookmarkKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
@@ -13,6 +13,23 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
     ctrl.getMyBookmarks = function (userId) {
         var defer = $q.defer();
         getUserBookmarkItems(userId).then(function (bookmarks) {
+            var bks = [];
+            for (var i = 0; i < bookmarks.length; i++) {
+                var b = bookmarks[i];
+                var bk = {};
+                bk.id = b.Id;
+                bk.title = b.Title;
+                bk.url = b.COM_BookmarkUrl;
+                bk.userId = b.COM_ToolbarUserId;
+                bks.push(bk);
+            }
+            defer.resolve(bks);
+        });
+        return defer.promise;
+    };
+    ctrl.getMyBookmarksByName = function (userName) {
+        var defer = $q.defer();
+        getUserBookmarkItemsByName(userName).then(function (bookmarks) {
             var bks = [];
             for (var i = 0; i < bookmarks.length; i++) {
                 var b = bookmarks[i];
@@ -71,6 +88,36 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         }
         return defer.promise;
     }
+    function getUserBookmarkItemsByName(userName) {
+        var defer = $q.defer();
+        var local = storage.get(userBookmarkKey);
+        if (local == null) {
+            local = {};
+            local.isExpired = true;
+        }
+        if (!local.isExpired)
+            defer.resolve(local);
+        else {
+            let web = new $pnp.Web(COM_CONFIG.rootWeb);
+            web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
+                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_BookmarkUrl', 'COM_ListSortOrder')
+                .filter("COM_ToolbarUser/SipAddress eq '" + userName + "'")
+                .expand('COM_ToolbarUser')
+                .get()
+                .then(function (data) {
+                    data.map(function (item) {
+                        if (item.Title)
+                            item.title = item.Title;
+                        if (item.COM_BookmarkUrl)
+                            item.url = item.COM_BookmarkUrl;
+                    });
+                    console.log('getUserBookmarkItemsByName', data);
+                    defer.resolve(data);
+                });
+        }
+
+        return defer.promise;
+    }
     function addUserBookmark(userId, title, url) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
@@ -113,10 +160,6 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
                 defer.resolve(true);
             });
         return defer.promise;
-    }
-    function checkForClearStatement() {
-        if (common.getUrlParamByName('clearMyBookmarks') == 'true')
-            storage.remove(userBookmarkKey);
     }
     function formatAppTools(apps) {
         var nullSortOrder = (_.findIndex(apps, function (a) { return a.sortOrder == null; }) != -1);
