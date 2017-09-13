@@ -920,6 +920,7 @@ rss-feed-manager .btn-cta {
   .news-events .search .input-group-btn {
     border-radius: 0; }
     .news-events .search .input-group-btn button {
+      cursor: pointer;
       border: none; }
 .news-events .search-filter {
   border: 1px solid #908b63;
