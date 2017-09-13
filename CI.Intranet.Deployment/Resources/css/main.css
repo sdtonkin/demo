@@ -1708,6 +1708,10 @@ section.global-partners ul, section.my-department ul {
   .ms-srch-ellipsis, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item, .ms-srch-result .ms-srch-result-groups .ms-srch-item {
     white-space: normal; }
 
+  .ms-srch-item-path, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-summary, .ms-srch-result .ms-srch-result-groups .ms-srch-item-summary {
+    width: auto;
+    white-space: normal; }
+
   .ms-srch-item, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link {
     width: auto; }
 
