@@ -86,6 +86,13 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
                 $rightRail.css('height', 'auto');
             }
             */
+
+            $leftContent = $('.main-left-content');
+            $rightBack = $('.container-fluid .back-image');
+            $leftBackInitial = $leftContent.height();
+
+            $rightBack.css('height', $leftBackInitial + 40);
+            
         }, 2000);
     }
     function addFirstNameToWelcomeMessage(firstName) {
