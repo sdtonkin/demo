@@ -214,6 +214,23 @@
 	}
 }
 
+.page-controls{
+	margin-bottom: 15px;
+	.page-control-wrapper{
+		float: right;
+	}
+	.page-control-wrap{
+		display: inline-block;
+	    margin-right: 10px;
+	    &:last-child{
+	    	margin-right: 0;
+	    }
+	    a, a span, a span i{
+	    	color: $brand-dark-blue !important;
+	    }
+	}
+}
+
 #ci-embedded-feed{
 	margin-top: 30px;
 	margin-bottom: 30px;

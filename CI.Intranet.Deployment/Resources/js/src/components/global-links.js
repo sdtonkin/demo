@@ -4,15 +4,15 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG', function ($scope, $q, taxonomyService, COM_CONFIG) {
     var ctrl = this;
-    ctrl.groups = [];
+    ctrl.globalGroups = [];
     ctrl.activeTab = 'Global';
 
     this.$onInit = function () {
-        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.usEmployeeLifeTermId).then(function (data) {
-            ctrl.groups = _.reject(data, function (p) {
+        taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.globalEmployeeLifeTermId).then(function (data) {
+            ctrl.globalGroups = _.reject(data, function (p) {
                 return p.name == 'Benefits';
             });
-            $scope.$apply();
+            console.log('us link', data);
         });
     }
 }]).component('globalLinks', {
