@@ -8,7 +8,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'contactService', 'COM_CON
     this.$onInit = function () {
         var siteCollectionUrl = _spPageContextInfo.siteAbsoluteUrl;
         contactService.getContacts(siteCollectionUrl).then(function (data) {
-            ctrl.contact = data;
+            ctrl.contacts = data;
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
             }
