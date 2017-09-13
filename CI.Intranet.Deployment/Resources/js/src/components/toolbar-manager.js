@@ -184,6 +184,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         
     }
     function saveMyBookmarks() {
+        ctrl.isToolbarDirty = false;
         var promises = [];
         for (var i = 0; i < ctrl.myBookmarks.length; i++)
         {
@@ -191,14 +192,14 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             promises.push(p);
         }
         $q.all(promises).then(function (response) {
-            bookmarkService.getMyBookmarks(userId).then(function (data) {
-                ctrl.isToolbarDirty = false;
+            bookmarkService.getMyBookmarks(userId).then(function (data) {                
                 $scope.systemMessage = 'Success updating bookmarks';
                 $scope.$parent.ctrl.myBookmarks = data;
             });
         });
     }
     function saveMyApps() {
+        ctrl.isToolbarDirty = false;
         var apps = ctrl.myApps;
         var dbApps = ctrl.myAppsFromDb;
         var appsToAdd = _.where(apps, { id: -1 });
@@ -210,11 +211,10 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             appService.addMyApp(userId, app.appId).then(function () {
                 if (i + 1 == appsToAdd.length) {
                     appService.getMyApps(userId).then(function (response) {
-                        ctrl.myAppsFromDb = response;
-                        ctrl.myApps = angular.copy(response);
-                        getSortOrderLimits();
-                        ctrl.isToolbarDirty = false;
-                        ctrl.systemMessage = 'Success';
+                        ctrl.parent.myAppsFromDb = response;
+                        ctrl.parent.myApps = angular.copy(response);
+                        getSortOrderLimits();                        
+                        $scope.systemMessage = 'Success';
                     });
                 }
             });
@@ -224,11 +224,10 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             appService.removeMyApp(app.id).then(function () {
                 if (i + 1 == appsToDelete.length) {
                     appService.getMyApps(userId).then(function (response) {
-                        ctrl.myAppsFromDb = response;
-                        ctrl.myApps = angular.copy(response);
-                        getSortOrderLimits();
-                        ctrl.isToolbarDirty = false;
-                        ctrl.systemMessage = 'Success';
+                        ctrl.parent.myAppsFromDb = response;
+                        ctrl.parent.myApps = angular.copy(response);
+                        getSortOrderLimits();                        
+                        $scope.systemMessage = 'Success';
                     });
                 }
             });
@@ -239,11 +238,10 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 appService.removeMyApp(app.id).then(function () {
                     if (i + 1 == ctrl.myAppsFromDb.length) {
                         appService.getMyApps(userId).then(function (response) {
-                            ctrl.myAppsFromDb = response;
-                            ctrl.myApps = angular.copy(response);
+                            ctrl.parent.myAppsFromDb = response;
+                            ctrl.parent.myApps = angular.copy(response);
                             getSortOrderLimits();
-                            ctrl.isToolbarDirty = false;
-                            ctrl.systemMessage = 'Success';
+                            $scope.systemMessage = 'Success';
                         });
                     }
                 });
