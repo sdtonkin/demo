@@ -6,7 +6,10 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
     var ctrl = this;
     ctrl.isSearchVisible = false;
     ctrl.rootSiteUrl = COM_CONFIG.rootWeb;
-    ctrl.showAlert = function () { alert('hi'); };
+    
+    ctrl.goSearch = function () {
+        window.location.href = COM_CONFIG.searchWeb + '?k=' + $scope.searchTerm;
+    };
     this.$onInit = function () {
         navigationService.getAllNodes().then(function (response) {
             ctrl.navNodes = response;
