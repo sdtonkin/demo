@@ -98,7 +98,7 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
         else {
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.userApps).items
-                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_UserToolbarId','COM_ListSortOrder')
+                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_UserToolbarId','COM_ListSortOrder', 'ID')
                 .filter("COM_ToolbarUser/SipAddress eq '" + userName + "'")
                 .expand('COM_ToolbarUser')
                 .get()
