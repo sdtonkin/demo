@@ -207,7 +207,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         } else if (group != '') {
             var type = {};
             type.name = group;
-            filterByRegion(type);
+            filterByGroup(type);
         }
     }
 }]).component('newsEventsBrowser', {
