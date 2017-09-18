@@ -17,13 +17,16 @@
     </ul>
     <div class="form-inline my-2 my-lg-0">     
       <div class="search-button">
-            <a ng-click="ctrl.toggleSearchBox()">
+            <a ng-click="ctrl.goSearch()" class="search-glass">
+                <i class="fa fa-search"></i>
+            </a>           
+            <a class="search-close" ng-click="ctrl.toggleSearchBox()">
                 <i class="fa fa-search"></i>
                 <span ng-bind="ctrl.searchTitle"></span>
             </a>            
         </div>
         <div class="search-background" style="display: none;">
-            <input id="searchQueryTerm" type="text" value="Search" />
+            <input id="searchQueryTerm" type="text" value="Search" ng-model="searchTerm" />
         </div>
     </div>
   </div>

@@ -91,7 +91,7 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
             // $rightBack = $('.container-fluid .back-image');
             // $leftBackInitial = $leftContent.height();
 
-            $('.container-fluid .back-image').css('height', $('.main-left-content').height() + 40);
+            //$('.container-fluid .back-image').css('height', $('.main-left-content').height() + 40);
             
         }, 2000);
     }
