@@ -136,7 +136,11 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
                     ctrl.getLocationFromLatLong(latitude, longitude).then(function (data) {
                         defer.resolve(data);
                     });
-                });
+                }).catch(function (err) {
+                    ctrl.getLocationFromService().then(function (data) {
+                        defer.resolve(data.city + ', ' + data.region);
+                    });
+                });;
             }
             catch(ex) {
                 ctrl.getLocationFromService().then(function (data) {

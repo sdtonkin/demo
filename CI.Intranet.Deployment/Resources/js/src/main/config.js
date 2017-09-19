@@ -146,7 +146,7 @@ if (document.location.host === "compassion.sharepoint.com") {
     //Dev Tenant
 else {
     myApp.constant('COM_CONFIG', {
-        isProduction: false,
+        isProduction: true,
         msGraph: {
             appId: 'bc64af36-7263-4bab-8828-c25a37185bb3',
             redirectUri: 'https://teganwilson.sharepoint.com/sites/compassion',
