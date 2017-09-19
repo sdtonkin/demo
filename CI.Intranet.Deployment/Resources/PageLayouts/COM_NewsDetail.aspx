@@ -111,7 +111,6 @@
         <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
         <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
-        <SharePointWebControls:TextField runat="server" FieldName="COM_YammerID"/>
     </PublishingWebControls:EditModePanel> 
     <span id="article-news-type" class="ng-hide">
         <SharePointWebControls:FieldValue FieldName="COM_NewsType" runat="server"/>

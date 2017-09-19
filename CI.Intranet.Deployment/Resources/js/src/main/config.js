@@ -41,6 +41,8 @@ if (document.location.host === "compassion.sharepoint.com") {
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
+            delveSearchUrlPrefix: 'https://nam.delve.office.com/?q=',
+            delveSearchUrlSuffix: '&searchpage=1&searchview=people&v=search',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -107,6 +109,8 @@ if (document.location.host === "compassion.sharepoint.com") {
             locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
             workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
             delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
+            delveSearchUrlPrefix: 'https://nam.delve.office.com/?q=',
+            delveSearchUrlSuffix: '&searchpage=1&searchview=people&v=search',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
@@ -175,6 +179,8 @@ else {
         locationByLatLongUrl: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
         workResourceSearchUrl: 'https://compassion.sharepoint.com/sites/stage/Pages/Work-Resource-Search.aspx',
         delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
+        delveSearchUrlPrefix: 'https://nam.delve.office.com/?q=',
+        delveSearchUrlSuffix: '&searchpage=1&searchview=people&v=search',
         lists: {
             rssFeedsListTitle: 'RSS Feeds',
             userRssFeedsListTitle: 'User RSS Feeds',
