@@ -31,7 +31,7 @@
       <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">
         <![CDATA[
           <h3>Job Opportunities</h3>
-          <a href="#">View All Jobs</a>
+          <a href="https://internal-compassion.icims.com/jobs/dashboard">View All Jobs</a>
           <hr/>
         ]]>
       </Content>
