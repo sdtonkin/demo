@@ -11,13 +11,16 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
     };
 
     $scope.submitGratitude = function () {
+        ExecuteOrDelayUntilScriptLoaded(displaySubmitGratitude, "SP.JS");
+    }
+    function displaySubmitGratitude() {
         var url = ctrl.submitGratitudeUrl;
         if (ctrl.newFormUrl) url = newFormUrl;
-        var options = SP.UI.$create_DialogOptions();
+        var options = {};
         options.url = url;
         options.dialogReturnValueCallback = Function.createDelegate(null, null);
 
-        SP.UI.ModalDialog.showModalDialog(options);
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
     }
 }]).component('employeeSpotlight', {
     template: require('../../includes/Employee-Spotlight.html'),
