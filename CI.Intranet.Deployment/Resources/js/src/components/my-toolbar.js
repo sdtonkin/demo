@@ -25,6 +25,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService',
         bookmarkService.getMyBookmarksByName(userLoginName).then(function (response) {
             ctrl.myBookmarks = angular.copy(response);
             ctrl.myBookmarksFromDb = response;
+            console.log('getMyBookmarksByName', response);
         });
     };
     ctrl.isSelected = function (tabId) {
