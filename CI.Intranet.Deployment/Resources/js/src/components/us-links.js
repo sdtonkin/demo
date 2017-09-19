@@ -12,7 +12,6 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
             ctrl.groups = _.reject(data, function (p) {
                 return p.name == 'Benefits';
             });
-            console.log('us link', data);
         });
     }
 }]).component('usLinks', {
