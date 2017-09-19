@@ -68,6 +68,7 @@
 
 <div id="s4-workspace" ng-app="compassionIntranet">
 <div id="s4-bodyContainer">
+    <yammer-login></yammer-login>
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <navigation></navigation>
 <!-- Start Top Navigation -->
