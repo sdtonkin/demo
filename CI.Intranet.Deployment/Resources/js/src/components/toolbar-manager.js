@@ -79,17 +79,23 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 }));
                 app.appId = app.id;
                 app.id = -1;
+                app.sortOrder = getMaxSortValue() + 1;
             } 
             ctrl.myApps.push(app);
             ctrl.myApps = _.sortBy(ctrl.myApps, 'sortOrder');
+            $scope.$parent.ctrl.myApps = ctrl.myApps;
         }
         else {
             var currentTools = ctrl.myApps;
             ctrl.myApps = _.without(currentTools, _.findWhere(currentTools, {
                 appId: id
             }));
+            $scope.$parent.ctrl.myApps = ctrl.myApps;
         }
     };
+    function getMaxSortValue() {
+        return _.max($scope.myAppsSortList);
+    }
     function confirmDeletion(bookmark) {
         $scope.bookmarkIdToDelete = bookmark.id;
         closeModal(ctrl.manageBookmarkId);
@@ -142,7 +148,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
             var bk = ctrl.myApps[i];
             appService.updateUserApp(bk);
         }
-        ctrl.myAppsFromDb = angular.copy(ctrl.myBookmarks);
+        ctrl.myAppsFromDb = angular.copy(ctrl.myApps);
         isToolbarDirty = false;
         $scope.systemMessage = 'Success';
     }
@@ -234,13 +240,24 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         } else {
             for (var i = 0; i < appsToAdd.length; i++) {
                 var app = appsToAdd[i];
+                var addIndex = i;
                 appService.addMyApp(userId, app.appId).then(function () {
-
+                    if (i + 1 == ctrl.myAppsFromDb.length) {
+                        alert(addIndex);
+                        appService.getMyApps(userId).then(function (response) {
+                            ctrl.parent.myAppsFromDb = response;
+                            ctrl.parent.myApps = angular.copy(response);
+                            getSortOrderLimits();
+                            $scope.systemMessage = 'Success';
+                        });
+                    }
                 });
             }
             for (var i = 0; i < appsToDelete.length; i++) {
                 var app = appsToDelete[i];
+                var deleteIndex = i;
                 appService.removeMyApp(app.id).then(function () {
+                    alert(deleteIndex);
                     if (i + 1 == appsToDelete.length) {
                         appService.getMyApps(userId).then(function (response) {
                             ctrl.parent.myAppsFromDb = response;
@@ -252,13 +269,6 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 });
             }
         }
-        
-        appService.getMyApps(userId).then(function (response) {
-            ctrl.parent.myAppsFromDb = response;
-            ctrl.parent.myApps = angular.copy(response);
-            getSortOrderLimits();
-            $scope.systemMessage = 'Success';
-        });
     }
     function setUpdateStatus(message) {
         ctrl.isToolbarDirty = false;

@@ -31,7 +31,7 @@ if (document.location.host === "compassion.sharepoint.com") {
                 globalEmployeeLifeTermId: '0a678df8-43b8-452c-8d13-f4f058828569'
 
             },
-            pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
+            pictureUrl: '/_layouts/15/userphoto.aspx?size=L&accountname=',
             useCaching: false,
             rootWeb: 'https://compassion.sharepoint.com/sites/stage',
             newsWeb: 'https://compassion.sharepoint.com/sites/stage/news',

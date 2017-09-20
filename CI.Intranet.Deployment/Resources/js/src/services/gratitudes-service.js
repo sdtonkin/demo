@@ -1,7 +1,6 @@
 'use strict';
 angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
-    var picUrl = '/_layouts/15/userphoto.aspx?size=M&accountname=';
     var gratsKey = 'CI_GROUPS_KEY';
 
     common.checkForClearStatement('clearGratitudes', gratsKey);
@@ -32,7 +31,7 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                 $q.all(promises).then(function (data) {
                     for (var i = 0; i < grats.length; i++) {
                         var g = grats[i];
-                        g.targetPicUrl = picUrl + data[pplCount].UserName;
+                        g.targetPicUrl = COM_CONFIG.pictureUrl + data[pplCount].UserName;
                         g.targetName = data[pplCount].FirstName + ' ' + data[pplCount].LastName;
                         pplCount++;
                         g.submittedBy = data[pplCount].FirstName + ' ' + data[pplCount].LastName;

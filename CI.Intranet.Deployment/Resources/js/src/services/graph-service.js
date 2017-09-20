@@ -22,53 +22,58 @@
           
           ctrl.isAuthenticated = isAuthenticated;
           ctrl.getMyPeople = function () {
-              var defer = $q.defer();
-              if (!ctrl.isAuthenticated()) {
-                  login();
-              }
-              
-              var bearer = 'Bearer ' + localStorage.token;
-              var request = {
-                  method: 'GET',
-                  url: myPeople,
-                  headers: {
-                      'Access-Control-Allow-Origin': true,
-                      'Access-Control-Allow-Credentials': true,
-                      'Authorization': bearer
+              try {
+                  var defer = $q.defer();
+                  if (!ctrl.isAuthenticated()) {
+                      login();
                   }
-              };
-              $http(request)
-              .then(function (data) {
-                  var ppl = data.data.value;
-                  var response = [];
-                  var promises = [];
 
-                  for (var i = 0; i < ppl.length; i++) {
-                      var person = ppl[i];
-                      var p = {
-                          displayName: person.displayName,
-                          group: person.department,
-                          title: person.title,
-                          location: person.officeLocation,
-                          phone: (person.phones.length > 0 ? person.phones[0].number : ''),
-                          userPrincipalName: person.userPrincipalName,
-                          picUrl: "/_layouts/15/userphoto.aspx?size=S&accountname=" + person.userPrincipalName,
-                          logo: COM_CONFIG.rootWeb + '/_catalogs/masterpage/Compassion/images/shape.png'
-                      };
-                      response.push(p);
-                  }
-                  defer.resolve(response);
-              })
-              .catch(function (data) {
-                  if (COM_CONFIG.isProduction) {
-                      defer.reject(data);
-                  }
-                  else {
-                      var p = getMockData();
-                      defer.resolve(p);
-                  }                  
-              });
-              return defer.promise;
+                  var bearer = 'Bearer ' + localStorage.token;
+                  var request = {
+                      method: 'GET',
+                      url: myPeople,
+                      headers: {
+                          'Access-Control-Allow-Origin': true,
+                          'Access-Control-Allow-Credentials': true,
+                          'Authorization': bearer
+                      }
+                  };
+                  $http(request)
+                  .then(function (data) {
+                      var ppl = data.data.value;
+                      var response = [];
+                      var promises = [];
+
+                      for (var i = 0; i < ppl.length; i++) {
+                          var person = ppl[i];
+                          var p = {
+                              displayName: person.displayName,
+                              group: person.department,
+                              title: person.title,
+                              location: person.officeLocation,
+                              phone: (person.phones.length > 0 ? person.phones[0].number : ''),
+                              userPrincipalName: person.userPrincipalName,
+                              picUrl: "/_layouts/15/userphoto.aspx?size=S&accountname=" + person.userPrincipalName,
+                              logo: COM_CONFIG.rootWeb + '/_catalogs/masterpage/Compassion/images/shape.png'
+                          };
+                          response.push(p);
+                      }
+                      defer.resolve(response);
+                  })
+                  .catch(function (data) {
+                      if (COM_CONFIG.isProduction) {
+                          defer.reject(data);
+                      }
+                      else {
+                          var p = getMockData();
+                          defer.resolve(p);
+                      }
+                  });
+                  return defer.promise;
+            }
+            catch(err) {
+                console.log(err);
+            }
           };
           ctrl.searchMyUsers = function (queryText) {
               var defer = $q.defer();
