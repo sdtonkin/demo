@@ -43,14 +43,7 @@
     							</a>
     						</span>
                         </div>
-						<script type="text/javascript">
-							var subject = jQuery('.news-title-block .card-text').text();
-							var body = 'I thought you would find this article interesting';
-							var mailToLink = 'mailto:?subject={0}&body={1}:\r\n\r\n{2}';
-							mailToLink = mailToLink.replace('{0}', subject).replace('{1}', body).replace('{2}', window.location.origin + window.location.pathname);
-							jQuery('.share a').attr('href',mailToLink);
-							jQuery('.share').css('display', 'block');
-						</script>
+						
                         <div class="page-control-wrap">
                             <bookmark-page></bookmark-page>
                         </div>
@@ -122,9 +115,29 @@
         <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
         <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
         <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
-        <SharePointWebControls:TextField runat="server" FieldName="COM_YammerID"/>
     </PublishingWebControls:EditModePanel> 
     <span id="article-news-type" class="ng-hide">
         <SharePointWebControls:FieldValue FieldName="COM_NewsType" runat="server"/>
     </span>
+    <script type="text/javascript">
+    
+    function setShareLink() {
+        var subject = jQuery('.news-title-block .card-text').text();
+        var body = 'I thought you would find this article interesting';
+        var mailToLink = 'mailto:?subject={0}&body={1}:\r\n\r\n{2}';
+        mailToLink = mailToLink.replace('{0}', subject).replace('{1}', body).replace('{2}', window.location.origin + window.location.pathname);
+        jQuery('.share a').attr('href',mailToLink);
+        jQuery('.share').css('display', 'block');
+    }
+    function defer(method) {
+        if (window.jQuery) {
+            method();
+        } else {
+            setTimeout(function() { defer(method) }, 50);
+        }
+    }
+    defer(function(){
+        setShareLink();
+    });
+    </script>
 </asp:Content>

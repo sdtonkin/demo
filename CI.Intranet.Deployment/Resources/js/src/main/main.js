@@ -86,6 +86,7 @@ require('../components/rss-feeds.js');
 require('../components/submit-news.js');
 require('../components/toolbar-manager.js');
 require('../components/us-links.js');
+require('../components/yammer-login.js');
 require('../components/weather-control.js');
 
 
