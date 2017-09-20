@@ -26,7 +26,12 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
         if (window.lowBandwidth) {
             $('body').addClass('low-bandwidth');
         }
-        //$('#ci-sub-nav').show("slow");
+        
+        // session storage
+        $pnp.storage.session.deleteExpired();
+
+        // local storage
+        $pnp.storage.local.deleteExpired();
     };
     ctrl.setToolbarStatus = setToolbarStatus;
     function setToolbarStatus() {
