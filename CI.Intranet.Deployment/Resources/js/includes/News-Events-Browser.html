@@ -100,7 +100,7 @@
                             <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.eventItems">
                                 <div class="card upcoming-events">
                                     <div class="card-body">
-                                        <a href="#"><p class="card-text">{{event.Title}}</p></a>
+                                        <a onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{{event.Path}}event.Path"><p class="card-text">{{event.Title}}</p></a>
                                         <p class="card-date">{{event.EventDate}}</p>
                                         <p class="card-time">{{event.StartTime}}-{{event.EndTime}}</p>
                                         <p class="card-location">{{event.Location}}</p>

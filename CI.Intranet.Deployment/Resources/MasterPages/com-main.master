@@ -68,6 +68,7 @@
 
 <div id="s4-workspace" ng-app="compassionIntranet">
 <div id="s4-bodyContainer">
+    <yammer-login></yammer-login>
 <div id="page-content" class="main-content-compassion container-fluid" ng-controller="uiHelper" data-ng-init="init()">
 <navigation></navigation>
 <!-- Start Top Navigation -->
@@ -156,7 +157,7 @@
 </div> <!--s4-bodyContainer-->
 </div> <!--/s4-workspace-->
 
-
+<SharePoint:ScriptLink language="javascript" name="sp.js" OnDemand="true" runat="server" Localizable="true" />
 <SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false" />
 <SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false" />
 <SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false" />

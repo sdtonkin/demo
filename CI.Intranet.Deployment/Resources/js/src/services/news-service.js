@@ -9,7 +9,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
     function getNews(searchTerm) {
         var defer = $q.defer();
         $pnp.sp.search({
-            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
+            Querytext: 'Path:' + COM_CONFIG.newsWeb + ' AND ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
             SelectProperties: ['ContentType12', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID', 'RefinableDate00', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04'],
             TrimDuplicates: false,
             RowLimit: 100,
@@ -56,7 +56,7 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
     function getEvents(searchTerm) {
         var defer = $q.defer();
         $pnp.sp.search({
-            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
+            Querytext: 'Path:' + COM_CONFIG.newsWeb + ' AND ContentTypeId:' + COM_CONFIG.contentTypeIds.event + '*' + (searchTerm == null ? '' : ' AND ' + searchTerm),
             SelectProperties: ['Path', 'Title', 'Location', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'RefinableString00', 'RefinableString01', 'RefinableString02'],
             TrimDuplicates: false,
             RowLimit: 100,
@@ -92,48 +92,5 @@ angular.module('compassionIntranet').service('newsService', ['$q', '$http', 'COM
             defer.resolve(response.PrimarySearchResults);
         });
         return defer.promise;
-    }
-
-
-    ctrl.getLandingNews = function(location, category, queryTerm, startrow) {
-        var deferred = $q.defer();
-        //var start = startrow ? startrow : 0;
-        var queryText = queryTerm + ' Path:"' + bones.web.url + '/pages" ContentType:"News Page"';
-        //var queryText = queryTerm + ' ContentType:"News Article"';
-        if (location) {
-            if (location !== "All") {
-                queryText += ' RefinableString03:"' + location + '"'
-            } else { //Look for All or null
-                queryText += ' (RefinableString03:"' + location + '" OR RefinableString03:"")'
-            }
-        }
-        if (category) { queryText += ' RefinableString15:"' + category + '"' }
-        $pnp.sp.search({
-            Querytext: queryText,
-            SelectProperties: ['RefinableDate01', 'RefinableString00', 'RefinableString01', 'RefinableString02', 'RefinableString04', 'RefinableString06', 'RefinableString07', 'RefinableString12', 'RefinableString15', 'Path', 'PublishingImage', 'SiteTitle', 'Title', 'ListItemID'],
-            Refiners: 'RefinableString15,RefinableString03',
-            SortList: [{
-                'Property': 'RefinableDate01',
-                'Direction': '1'
-            }],
-            StartRow: startrow
-        }).then(function(response) {
-
-            response.PrimarySearchResults.map(function(item) {
-                if (item.PublishingImage) {
-                    item.ImageUrl = getImage(item.PublishingImage);
-                }
-                if (item.RefinableDate01) {
-
-                    var artDate = new Date(item.RefinableDate01);
-                    item.ArticleDate = moment(artDate).format('MMMM D, YYYY');
-                }
-            });
-            deferred.resolve(response);
-        });
-        return deferred.promise;
-    }
-
-  
-
+    }    
 }]);

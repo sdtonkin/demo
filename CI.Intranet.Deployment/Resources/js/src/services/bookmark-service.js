@@ -100,7 +100,7 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
         else {
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
-                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_BookmarkUrl', 'COM_ListSortOrder')
+                .select('Id','COM_ToolbarUser/SipAddress', 'Title', 'COM_BookmarkUrl', 'COM_ListSortOrder')
                 .filter("COM_ToolbarUser/SipAddress eq '" + userName + "'")
                 .expand('COM_ToolbarUser')
                 .get()

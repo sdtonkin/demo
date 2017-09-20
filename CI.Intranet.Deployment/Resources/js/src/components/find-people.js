@@ -11,12 +11,18 @@ myApp.controller(controllerName, ['$scope', 'graphService', 'COM_CONFIG', functi
         graphService.getMyPeople().then(function (data) {
             ctrl.myPeople = data;
         });
+
+        $('#ci-find-people-search').on('keypress', function (ev) {
+            var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+            var txtVal = $('#ci-find-people-search').val();
+            if (keycode == '13') {
+                ctrl.searchUsers();
+            }
+        });
     }
 
     ctrl.searchUsers = function () {
-        graphService.searchMyUsers(ctrl.searchText).then(function (data) {
-            ctrl.myPeople = data;
-        });
+        window.location.href = COM_CONFIG.delveSearchUrlPrefix + ctrl.searchText + COM_CONFIG.delveSearchUrlSuffix;
     }
 
 }]).component('findPeople', {

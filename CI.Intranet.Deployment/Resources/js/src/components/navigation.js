@@ -30,7 +30,8 @@ myApp.controller(controllerName, ['$scope', 'navigationService', 'storage', 'COM
             var keycode = (ev.keyCode ? ev.keyCode : ev.which);
             var txtVal = $('div.search-background > input').val();
             if (keycode == '13') {
-                window.location = COM_CONFIG.searchWeb + '?k=' + txtVal;
+                ev.preventDefault();
+                ctrl.goSearch();
             }            
         });
         

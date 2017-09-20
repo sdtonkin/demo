@@ -87,10 +87,14 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             ctrl.newsArticles = _.filter(masterArticles, function (a) {
                 return a.NewsType == category.name;
             });
+            ctrl.newsItems = ctrl.newsArticles;
+            ctrl.setNewsPage(1);
         } else {
             ctrl.events = _.filter(masterEvents, function (e) {
                 return e.EventType == category.name;
             });
+            ctrl.eventItems = ctrl.events;
+            ctrl.setEventsPage(1);
         }
     }
     function filterByRegion(region) {
@@ -98,7 +102,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = _.filter(masterArticles, function (a) {
                 return a.LocationTag == region.name;
-            });
+            });            
             if (ctrl.newsArticles.length == 0) {
                 ctrl.newsArticles = _.filter(masterArticles, function (a) {
                     return _.find(region.Nodes, function (n) {
@@ -106,10 +110,12 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
                     });
                 });
             }
+            ctrl.newsItems = ctrl.newsArticles;
+            ctrl.setNewsPage(1);
         } else {
             ctrl.events = _.filter(masterEvents, function (e) {
                 return e.LocationTag == region.name;
-            });
+            });            
             if (ctrl.events.length == 0) {
                 ctrl.events = _.filter(masterEvents, function (a) {
                     return _.find(region.Nodes, function (n) {
@@ -117,6 +123,8 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
                     });
                 });
             }
+            ctrl.eventItems = ctrl.events;
+            ctrl.setEventsPage(1);
         }
     }
     function filterByGroup(group) {
@@ -126,6 +134,10 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         ctrl.events = _.filter(masterEvents, function (e) {
             return e.Group == group.name;
         });
+        ctrl.newsItems = ctrl.newsArticles;
+        ctrl.setNewsPage(1);
+        ctrl.eventItems = ctrl.events;
+        ctrl.setEventsPage(1);
     }
     function clearCategory() {
         if (ctrl.activeTab == 'news') {
