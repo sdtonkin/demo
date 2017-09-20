@@ -56,6 +56,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
         }
     };
     function saveMyFeeds() {
+        ctrl.isToolbarDirty = true;
         var feeds = ctrl.myFeeds;
         var dbFeeds = ctrl.myFeedsFromDb;
         var feedsToAdd = _.where(feeds, { id: -1 });
