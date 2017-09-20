@@ -214,6 +214,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         var newsType = common.getUrlParamByName('newstype');
         var location = common.getUrlParamByName('location');
         var group = common.getUrlParamByName('group');
+        var activeTab = common.getUrlParamByName('activeTab');
         if (newsType != '') {
             var type = {};
             type.name = newsType;
@@ -227,6 +228,9 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             type.name = group;
             filterByGroup(type);
         }
+
+        if (activeTab != '')
+            ctrl.activeTab = activeTab;
     }
 }]).component('newsEventsBrowser', {
     bindings: {

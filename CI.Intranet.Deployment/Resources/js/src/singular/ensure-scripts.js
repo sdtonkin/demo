@@ -50,11 +50,6 @@
         var startTime, endTime;
         var download = new Image();
 
-        for (el of document.querySelectorAll("img[src]")) {
-            console.log(el);
-        }
-
-
         download.onload = function () {
             endTime = (new Date()).getTime();
             showResults();

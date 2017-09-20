@@ -9,6 +9,8 @@ myApp.controller(ctrlName, function ($scope, $q) {
     var ctrl = this;
     var profileUpdated = false;
 
+    ES6Promise.polyfill();
+
     this.$onInit = function () {
         ctrl.checkForAuthToken().then(function (yammerToken){
             // if we have a yammer token, tell yam that we should use that token for all requests
