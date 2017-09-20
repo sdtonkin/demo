@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'globalLinksController';
 
@@ -12,7 +12,6 @@ myApp.controller(controllerName, ['$scope', '$q', 'taxonomyService', 'COM_CONFIG
             ctrl.globalGroups = _.reject(data, function (p) {
                 return p.name == 'Benefits';
             });
-            console.log('us link', data);
         });
     }
 }]).component('globalLinks', {

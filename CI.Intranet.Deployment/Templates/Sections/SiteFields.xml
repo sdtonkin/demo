@@ -224,8 +224,11 @@
    	<Field ID="{0856e24f-d76b-4b19-92fb-7985f9b5f0c0}" Type="Choice" Name="COM_GratitudeType" StaticName="COM_GratitudeType" DisplayName="Gratitude Type" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="1 - Compassion Intranet Columns" Description="">
 		<Default></Default>
 		<CHOICES>
-			<CHOICE>Choice 1</CHOICE>
-			<CHOICE>Choice 2</CHOICE>
+			<CHOICE>Here for a Reason</CHOICE>
+			<CHOICE>Serious about Growth</CHOICE>
+      <CHOICE>100% for One Another</CHOICE>
+      <CHOICE>Careful with Our Words</CHOICE>
+      <CHOICE>Invite Others In</CHOICE>
 		</CHOICES>
 	</Field>
 

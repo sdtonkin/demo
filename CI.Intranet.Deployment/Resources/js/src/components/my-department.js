@@ -4,7 +4,7 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'userProfileService', function ($scope, $q, COM_CONFIG, userProfileService) {
     var ctrl = this;
-    var delveUrl = '',
+    var delveUrl = COM_CONFIG.delveProfileUrl,
         picUrl = '/_layouts/15/userphoto.aspx?size=S&accountname='; 
 
     ctrl.toggleVisibility = function () {

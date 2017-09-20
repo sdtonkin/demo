@@ -3,7 +3,9 @@ var myApp = angular.module('compassionIntranet'),
     ctrlName = 'employeeLifeCtrl';
 
 myApp.controller(ctrlName, function ($scope) {
-    var ctrl = this;    
+    var ctrl = this;
+    ctrl.activeTab = 'US';
+
     $scope.toggleActiveTab = toggleActiveTab;    
     this.$onInit = function () {
         $scope.activeTab = 'US'

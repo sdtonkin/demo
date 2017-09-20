@@ -692,7 +692,7 @@
                   <xsl:if test="string-length(@NewsType) != 0">
                     <a>
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?newstype=<xsl:value-of select="@NewsType" />
+                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                       </xsl:attribute>
                       <xsl:value-of select="@NewsType"/>
                     </a>
@@ -702,7 +702,7 @@
                   <xsl:if test="string-length(@Location) != 0">
                     <a>
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?location=<xsl:value-of select="@Location" />
+                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                       </xsl:attribute>
                       <xsl:value-of select="@Location"/>
                     </a>
@@ -712,7 +712,7 @@
                   <xsl:if test="string-length(@Group) != 0">
                     <a>
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?group=<xsl:value-of select="@Group" />
+                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                       </xsl:attribute>
                       <xsl:value-of select="@Group"/>
                     </a>
@@ -777,7 +777,7 @@
             <xsl:if test="string-length(@NewsType) != 0">
               <a>
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?newstype=<xsl:value-of select="@NewsType" />
+                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                 </xsl:attribute>
                 <xsl:value-of select="@NewsType"/>
               </a>
@@ -787,7 +787,7 @@
             <xsl:if test="string-length(@Location) != 0">
               <a>
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?location=<xsl:value-of select="@Location" />
+                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                 </xsl:attribute>
                 <xsl:value-of select="@Location"/>
               </a>
@@ -797,7 +797,7 @@
             <xsl:if test="string-length(@Group) != 0">
               <a>
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?group=<xsl:value-of select="@Group" />
+                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                 </xsl:attribute>
                 <xsl:value-of select="@Group"/>
               </a>
@@ -946,7 +946,7 @@
               <xsl:if test="string-length(@EventType) != 0">
                 <a>
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?newstype=<xsl:value-of select="@EventType" />
+                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;newstype=<xsl:value-of select="@EventType" />
                   </xsl:attribute>
                   <xsl:value-of select="@EventType"/>
                 </a>
@@ -956,7 +956,7 @@
               <xsl:if test="string-length(@LocationTag) != 0">
                 <a>
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?location=<xsl:value-of select="@LocationTag" />
+                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;location=<xsl:value-of select="@LocationTag" />
                   </xsl:attribute>
                   <xsl:value-of select="@LocationTag"/>
                 </a>
@@ -966,7 +966,7 @@
               <xsl:if test="string-length(@Group) != 0">
                 <a>
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?group=<xsl:value-of select="@Group" />
+                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;group=<xsl:value-of select="@Group" />
                   </xsl:attribute>
                   <xsl:value-of select="@Group"/>
                 </a>
