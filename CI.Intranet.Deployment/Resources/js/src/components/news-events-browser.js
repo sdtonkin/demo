@@ -142,16 +142,22 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     function clearCategory() {
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = masterArticles;
+            ctrl.setNewsPage(1);
         } else {
             ctrl.events = masterEvents
-        }
+            ctrl.eventItems = ctrl.events;
+            ctrl.setEventsPage(1);
+        }        
         ctrl.selectedCategory = '';
     }
     function clearRegion() {
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = masterArticles;
+            ctrl.setNewsPage(1);
         } else {
-            ctrl.events = masterEvents
+            ctrl.events = masterEvents;
+            ctrl.eventItems = ctrl.events;
+            ctrl.setEventsPage(1);
         }
         ctrl.selectedRegion = '';
     }
