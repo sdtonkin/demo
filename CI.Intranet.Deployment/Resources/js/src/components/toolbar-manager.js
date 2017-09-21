@@ -226,8 +226,9 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         if (apps.length == 0) {
             for (var i = 0; i < ctrl.myAppsFromDb.length; i++) {
                 var app = ctrl.myAppsFromDb[i];
+                var totalIndex = i;
                 appService.removeMyApp(app.id).then(function () {
-                    if (i + 1 == ctrl.myAppsFromDb.length) {
+                    if (totalIndex + 1 == ctrl.myAppsFromDb.length) {
                         appService.getMyApps(userId).then(function (response) {
                             ctrl.parent.myAppsFromDb = response;
                             ctrl.parent.myApps = angular.copy(response);
@@ -242,7 +243,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 var app = appsToAdd[i];
                 var addIndex = i;
                 appService.addMyApp(userId, app.appId).then(function () {
-                    if (i + 1 == ctrl.myAppsFromDb.length) {
+                    if (addIndex + 1 == appsToAdd.length) {
                         alert(addIndex);
                         appService.getMyApps(userId).then(function (response) {
                             ctrl.parent.myAppsFromDb = response;
@@ -258,7 +259,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
                 var deleteIndex = i;
                 appService.removeMyApp(app.id).then(function () {
                     alert(deleteIndex);
-                    if (i + 1 == appsToDelete.length) {
+                    if (deleteIndex + 1 == appsToDelete.length) {
                         appService.getMyApps(userId).then(function (response) {
                             ctrl.parent.myAppsFromDb = response;
                             ctrl.parent.myApps = angular.copy(response);
