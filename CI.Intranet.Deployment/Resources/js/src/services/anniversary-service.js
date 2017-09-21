@@ -21,7 +21,9 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
                     var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);
                     promises.push(p1);
                     g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
-                    g.description = moment().diff(item.StartDate, 'years') + ' year anniversary';
+                    g.eventType = (item.COM_EventType.TermGuid == COM_CONFIG.anniversaryTermId ? 'anniversary' : 'retirement');
+                    g.description = moment().diff(item.StartDate, 'years') + ' year ' + g.eventType;
+                    
                     events.push(g);
                 }
                 $q.all(promises).then(function (data) {
