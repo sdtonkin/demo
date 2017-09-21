@@ -33,7 +33,7 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
-.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link, #ci-apps-manage button, #ci-bookmarks-manage button, #ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
+.font-lato-bold, h1, .h1, .body-ex-bold, .btn, .btn.btn-block, .sub-nav-container .card-close a, .sub-nav-container .card-close-mobile a, .sub-nav-container .toolbar-toggle-button, .ci-places location-places h5, .trending .card-date, .related .card-date, .rss-feed .rss-category, .rss-feed .rss-date, .employee-card .emp-announce, navigation .nav-item .active, .weather .weather-location, .ms-searchCenter-result-main .ms-srchnav-list > .ms-srchnav-item a, .ms-srch-result .ms-srchnav-list > .ms-srchnav-item a, .ms-searchCenter-result-main .ms-srch-result-groups .ms-srch-item-link, .ms-srch-result .ms-srch-result-groups .ms-srch-item-link, modal button, modal button:disabled {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700; }
 
@@ -434,7 +434,8 @@ body {
   margin-bottom: 20px; }
 .hero-news-container .card {
   background-color: #f4f4ef;
-  border: none; }
+  border: none;
+  overflow: hidden; }
 .hero-news-container .card-title {
   margin-bottom: 5px;
   background-color: white;
@@ -746,6 +747,11 @@ rss-feed-manager .btn-cta {
     margin-bottom: 0; }
   .upcoming-events .card-time, .upcoming-events .card-location {
     margin-bottom: 15px; }
+
+.media.employee-card {
+  padding-bottom: 30px; }
+  .media.employee-card .employee-card .emp-contact {
+    display: block; }
 
 /* 
  * -----------------------------------------
@@ -1084,7 +1090,7 @@ navigation {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 999; }
+    z-index: 4; }
   navigation div.search-background > input {
     width: 200px;
     padding: 5px; }
@@ -1112,7 +1118,7 @@ navigation {
     margin-left: -10px;
     padding-right: 20px; }
   navigation .search-button {
-    z-index: 9999; }
+    z-index: 5; }
     navigation .search-button i {
       color: white;
       padding-right: 10px; }
@@ -1550,6 +1556,48 @@ section.global-partners ul, section.my-department ul {
   /* ----------------------------------------------------
     Header Styles
   ------------------------------------------------------- */
+  .sub-nav-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0; }
+    .sub-nav-container .card-intro {
+      margin-bottom: 0; }
+    .sub-nav-container .toolbar-toggle-button span {
+      display: inline-block;
+      font-size: 10px; }
+      .sub-nav-container .toolbar-toggle-button span:after {
+        content: '\f106';
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 14px;
+        margin-left: 10px; }
+    .sub-nav-container .toolbar-toggle-button i {
+      display: none; }
+    .sub-nav-container .toggle-row {
+      background-color: #003364;
+      bottom: -21px;
+      padding: 0;
+      position: absolute;
+      right: -15px;
+      width: 75px; }
+      .sub-nav-container .toggle-row .toolbar-toggle-button {
+        width: 100%;
+        text-align: center; }
+        .sub-nav-container .toggle-row .toolbar-toggle-button span {
+          font-size: 10px;
+          margin-bottom: 5px;
+          display: inline-block; }
+          .sub-nav-container .toggle-row .toolbar-toggle-button span:after {
+            content: '\f107';
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: 14px;
+            margin-left: 10px; }
+        .sub-nav-container .toggle-row .toolbar-toggle-button i {
+          display: none; }
+    .sub-nav-container .toggle-row:after {
+      border-bottom: none; }
+
   /* ----------------------------------------------------
     Hero News Styles
   ------------------------------------------------------- */
@@ -1561,7 +1609,54 @@ section.global-partners ul, section.my-department ul {
       border-top-right-radius: 0;
       border-top-left-radius: 0; }
   .hero-news-container .img-fluid {
-    width: 100%; } }
+    width: 100%; }
+
+  /* ----------------------------------------------------
+    General Styles
+  ------------------------------------------------------- */
+  .ms-table .sp-peoplepicker-topLevel, .ms-table .sp-peoplepicker-topLevelDisabled, .ms-table .ms-long {
+    width: auto; }
+
+  /* ----------------------------------------------------
+    Find People Styles
+  ------------------------------------------------------- */
+  .find-people .search {
+    display: block; }
+    .find-people .search .form-control {
+      width: 100%;
+      border-right: 1px solid #b8b491 !important; }
+      .find-people .search .form-control::-webkit-input-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control:-moz-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control::-moz-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control:-ms-input-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+    .find-people .search .input-group-btn {
+      float: right; }
+      .find-people .search .input-group-btn button {
+        border-left: 1px solid #b8b491 !important;
+        min-width: 1px;
+        padding-left: 15px;
+        cursor: pointer; }
+
+  /* ----------------------------------------------------
+    News Events Styles
+  ------------------------------------------------------- */
+  .news-events .search-filter {
+    display: block; }
+
+  .news-events .search {
+    border-top: 1px solid #b8b491; } }
 @media screen and (max-width: 992px) {
   /* 
    * -----------------------------------------
@@ -1794,7 +1889,7 @@ table.ms-ToolPaneOuter {
   position: relative;
   z-index: 9999; }
   table.ms-ToolPaneOuter .ms-ToolPaneBody {
-    overflow-y: scroll; }
+    overflow-y: scroll !important; }
 
 .ms-ToolPaneBody {
   max-height: 400px;
@@ -1805,17 +1900,20 @@ table.ms-ToolPaneOuter {
 .main-right-rail div.ms-webpart-cell-vertical-inline-table, .main-right-rail .ms-webpart-chrome-vertical, .main-right-rail .js-webpart-titleCell, .main-right-rail .ms-webpart-controlBox, .main-right-rail .js-webpart-menuCell, .main-right-rail .ms-webpart-checkboxTd, .main-right-rail .ms-webpart-zone {
   display: block; }
 
-#ci-apps-manage li, #ci-bookmarks-manage li {
+.ms-dlgTitleBtns {
+  margin-right: 0; }
+
+modal li {
   list-style: none;
   max-width: 200px;
   padding: 10px; }
-  #ci-apps-manage li:hover, #ci-bookmarks-manage li:hover {
+  modal li:hover {
     cursor: pointer;
     color: white;
     background-color: #0054a6; }
-#ci-apps-manage input, #ci-bookmarks-manage input {
+modal input {
   margin-right: 5px; }
-#ci-apps-manage button, #ci-bookmarks-manage button {
+modal button {
   border-radius: 0;
   border: none;
   text-transform: uppercase;
@@ -1825,7 +1923,7 @@ table.ms-ToolPaneOuter {
   background-color: #003364;
   color: white;
   cursor: pointer; }
-#ci-apps-manage button:disabled, #ci-bookmarks-manage button:disabled {
+modal button:disabled {
   border-radius: 0;
   border: solid 1px #000000;
   text-transform: uppercase;
