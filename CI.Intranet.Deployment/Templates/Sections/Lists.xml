@@ -187,6 +187,22 @@
     </pnp:DataRows>
     -->
   </pnp:ListInstance>
+
+  <pnp:ListInstance Title="Anniversary and Retirement" Description="Anniversary and Retirement List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/AnniversaryAndRetirement" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01004E05F80379CB7C4E8169D8407B6E9C6C" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
+  <pnp:ListInstance Title="New Hires" Description="New Hire List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/NewHires" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x010079B24C73F76FA940A4E110C36A7BA97B" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
+  <pnp:ListInstance Title="Gratitudes" Description="Gratitudes List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/Gratitudes" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
+    <pnp:ContentTypeBindings>
+      <pnp:ContentTypeBinding ContentTypeID="0x01006471C7EEC28E4422BA450A0491B5CF5E" Default="true"></pnp:ContentTypeBinding>
+    </pnp:ContentTypeBindings>
+  </pnp:ListInstance>
   <pnp:ListInstance Title="Mission Photos" Description="Mission Photos List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="109" Url="Lists/MissionPhotos" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
   </pnp:ListInstance>
   <pnp:ListInstance Title="Employee Announcements" Description="Employee Announcements List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/EmployeeAnnouncements" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">

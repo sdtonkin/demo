@@ -71,20 +71,20 @@
     	<pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0100C1B4897E97C34ACE92D0AE6A9237078C" Name="PersonalEvent" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01004E05F80379CB7C4E8169D8407B6E9C6C" Name="Home Page Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" Required="true" /> 
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />
       <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0100E58CF9B3FACA4A1B9F813472C406CB46" Name="New Hire" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x010079B24C73F76FA940A4E110C36A7BA97B" Name="New Hire" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />
       <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>  
-  <pnp:ContentType ID="0x01006471C7EEC28E4422BA450A0491B5CF5E" Name="Skippy" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01006471C7EEC28E4422BA450A0491B5CF5E" Name="Gratitude" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />     
       <pnp:FieldRef ID="f4fa017b-d8c6-4f5c-9978-a8c3e63c1381" Name="COM_GratitudeDescription" Required="true" />
