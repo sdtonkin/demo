@@ -40,7 +40,7 @@ table.ms-ToolPaneOuter {
     z-index: 9999;
 
     .ms-ToolPaneBody {
-        overflow-y: scroll;
+        overflow-y: scroll !important;
     }
 }
 .ms-ToolPaneBody{
@@ -58,6 +58,10 @@ table.ms-ToolPaneOuter {
     // div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
 
     // }
+}
+
+.ms-dlgTitleBtns{
+    margin-right: 0;
 }
 
 modal {

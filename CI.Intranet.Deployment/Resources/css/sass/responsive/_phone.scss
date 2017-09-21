@@ -69,3 +69,28 @@
 	}
 }
 
+/* ----------------------------------------------------
+  General Styles
+------------------------------------------------------- */
+
+.ms-table{
+	.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .ms-long{
+		width: auto;
+	}
+}
+
+/* ----------------------------------------------------
+  Find People Styles
+------------------------------------------------------- */
+
+.find-people{
+ 	.search{
+ 		.form-control{
+ 			@include placeholder{
+ 				font-size: 10px;
+ 			}
+
+ 		}
+ 	}
+ 	
+ }
