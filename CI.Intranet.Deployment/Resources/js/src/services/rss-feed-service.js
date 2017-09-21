@@ -87,6 +87,8 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
         $http.jsonp(COM_CONFIG.rssProxyUrl + encodeURIComponent(feed.url)).then(function (response) {
             if (!response.data) {
                 console.error('Unable to fetch RSS feed from provided URL. Please check the URL.');
+            } else if (response.data.status == 'error') {
+                console.log('RSS fetch error: ' + response.data.message + ', RSS URL: ' + feed.url);
             }
             var feeds = _.sortBy(response.data.items, function(item){ return item.pubDate; }).reverse();
 
