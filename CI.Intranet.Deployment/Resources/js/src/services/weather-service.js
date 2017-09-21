@@ -3,6 +3,7 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
     var locationKey = 'CI-Intranet-Location-Key',
         weatherKey = 'CI-Intranet-Weather-Key';
     var cityLocation;
+    var locationExpiration = 24;
     
     common.checkForClearStatement('clearLocation', locationKey);
 
@@ -85,7 +86,7 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
         var url = COM_CONFIG.locationByIPUrl;
         $http.get(url).
             then(function (data, status, headers) {
-                storage.set(locationKey, data, 24);
+                storage.set(locationKey, data, locationExpiration);
                 defer.resolve(data);
             }, function (data) {
                 console.error("Error calling the ip / location service", data);
@@ -100,7 +101,7 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
             then(function (data, status, headers) {
                 var loc = _.filter(data.data.results, function (d) { return _.contains(d.types, 'locality') });
                 if (loc.length == 0) defer.resolve('Colorado Springs, CO');
-                storage.set(locationKey, loc[0].formatted_address, 12);
+                storage.set(locationKey, loc[0].formatted_address, locationExpiration);
                 defer.resolve(loc[0].formatted_address);
             }, function (data) {
                 console.error("Error calling the ip / location service", data);
@@ -111,7 +112,6 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
     ctrl.getIpAddress = function () {
         var defer = $q.defer();
         $.get("https://ipinfo.io/json", function (data) {
-            console.log('ip', data);
             defer.resolve(data);
         });
         return defer.promise;
@@ -119,7 +119,6 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
     ctrl.getLocationFromService = function () {
         var defer = $q.defer();
         $.get(COM_CONFIG.locationByIPUrl, function (data) {
-            console.log('ip', data);
             defer.resolve(data);
         });
         return defer.promise;

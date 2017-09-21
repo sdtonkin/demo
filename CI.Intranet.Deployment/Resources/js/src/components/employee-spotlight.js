@@ -11,7 +11,7 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
     };
 
     $scope.submitGratitude = function () {
-        ExecuteOrDelayUntilScriptLoaded(displaySubmitGratitude, "SP.JS");
+        displaySubmitGratitude();
     }
     function displaySubmitGratitude() {
         var url = ctrl.submitGratitudeUrl;
