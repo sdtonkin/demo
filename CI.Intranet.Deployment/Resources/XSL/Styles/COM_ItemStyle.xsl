@@ -726,7 +726,6 @@
                     <xsl:value-of select="$DisplayTitle"/>
                   </a>
                 </div>
-                <xsl:value-of select="$YammerID"/>
                 <news-page-likes page-url="{$SafeLinkUrl}"></news-page-likes>
               </div>
             </div>
@@ -811,7 +810,6 @@
               <xsl:value-of select="$DisplayTitle"/>
             </a>
           </div>
-          <xsl:value-of select="$YammerID"/>
           <news-page-likes page-url="{$SafeLinkUrl}"></news-page-likes>
 
         </div>
