@@ -59,7 +59,7 @@ navigation {
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 999;
+        z-index: 4;
     }
     div.search-background > input {
         width: 200px; 
@@ -99,7 +99,7 @@ navigation {
         padding-right: 20px;
     }
      .search-button{
-        z-index: 9999;
+        z-index: 5;
         i{
             color: $brand-white;
             padding-right: 10px;
