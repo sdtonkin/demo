@@ -30,8 +30,10 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
                     console.log(data);
                     for (var i = 0; i < events.length; i++) {
                         var g = events[i];
+                        var firstName = (data[i].FirstName == null ? '' : data[i].FirstName);
+                        var lastName = (data[i].LastName == null ? '' : data[i].LastName);
                         g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
-                        g.targetName = data[i].FirstName + ' ' + data[i].LastName;
+                        g.targetName = firstName + ' ' + lastName;
                         events[i] = g;
                     }
                     defer.resolve(events);

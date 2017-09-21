@@ -27,8 +27,10 @@ angular.module('compassionIntranet').service('newHireService', ['$http', '$q', '
                 $q.all(promises).then(function (data) {
                     for (var i = 0; i < newHires.length; i++) {
                         var g = newHires[i];
+                        var firstName = (data[i].FirstName == null ? '' : data[i].FirstName);
+                        var lastName = (data[i].LastName == null ? '' : data[i].LastName);
                         g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
-                        g.targetName = data[i].FirstName + ' ' + data[i].LastName;
+                        g.targetName = firstName + ' ' + lastName;
                         newHires[i] = g;
                     }
 

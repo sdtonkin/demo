@@ -31,8 +31,11 @@ angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q'
                 $q.all(promises).then(function (data) {
                     for (var i = 0; i < grats.length; i++) {
                         var g = grats[i];
+                        var firstName = (data[pplCount].FirstName == null ? '' : data[pplCount].FirstName);
+                        var lastName = (data[pplCount].LastName == null ? '' : data[pplCount].LastName);
+
                         g.targetPicUrl = COM_CONFIG.pictureUrl + data[pplCount].UserName;
-                        g.targetName = data[pplCount].FirstName + ' ' + data[pplCount].LastName;
+                        g.targetName = firstName + ' ' + lastName;
                         pplCount++;
                         g.submittedBy = data[pplCount].FirstName + ' ' + data[pplCount].LastName;
                         pplCount++;

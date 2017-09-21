@@ -10,7 +10,6 @@ myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', functi
     this.$onInit = function () {
         if (window.lowBandwidth) return;
         anniversaryService.getAnniversary().then(function (data) {
-            console.log('anniversary', data);
             $scope.events = data;
         });
     }
