@@ -21,15 +21,19 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
                     var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);
                     promises.push(p1);
                     g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
-                    g.description = moment().diff(item.StartDate, 'years') + ' year anniversary';
+                    g.eventType = (item.COM_EventType.TermGuid == COM_CONFIG.terms.anniversaryTermId ? 'anniversary' : 'retirement');
+                    g.description = moment().diff(item.StartDate, 'years') + ' year ' + g.eventType;
+                    
                     events.push(g);
                 }
                 $q.all(promises).then(function (data) {
                     console.log(data);
                     for (var i = 0; i < events.length; i++) {
                         var g = events[i];
+                        var firstName = (data[i].FirstName == null ? '' : data[i].FirstName);
+                        var lastName = (data[i].LastName == null ? '' : data[i].LastName);
                         g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
-                        g.targetName = data[i].FirstName + ' ' + data[i].LastName;
+                        g.targetName = firstName + ' ' + lastName;
                         events[i] = g;
                     }
                     defer.resolve(events);

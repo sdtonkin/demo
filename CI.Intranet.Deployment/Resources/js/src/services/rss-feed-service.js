@@ -87,6 +87,8 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
         $http.jsonp(COM_CONFIG.rssProxyUrl + encodeURIComponent(feed.url)).then(function (response) {
             if (!response.data) {
                 console.error('Unable to fetch RSS feed from provided URL. Please check the URL.');
+            } else if (response.data.status == 'error') {
+                console.log('RSS fetch error: ' + response.data.message + ', RSS URL: ' + feed.url);
             }
             var feeds = _.sortBy(response.data.items, function(item){ return item.pubDate; }).reverse();
 
@@ -95,10 +97,15 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
                 f.feedId = feed.feedId;
                 f.feedTitle = feed.title;
                 f.id = feed.id;
-                f.pDate = moment().utc(f.pubDate);
-                f.publishedDate = moment(f.pubDate);
-                f.currentTime = moment.utc().format();
-                f.publishedSpanString = getPublishedDurationString(f.pubDate);
+                f.pDate = (f.pubDate == '' || f.pubDate == null ? '' : moment().utc(f.pubDate));
+                if (f.pDate != '' && f.pDate != null) {
+                    f.publishedDate = moment(f.pubDate);
+                    f.publishedSpanString = getPublishedDurationString(f.pubDate);
+                }
+                
+                f.currentTime = moment.utc().format();                
+                if (f.guid.startsWith('http'))
+                    f.link = f.guid;
             }
 
             defer.resolve(feeds);

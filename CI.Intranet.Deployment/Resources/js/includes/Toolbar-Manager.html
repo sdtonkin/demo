@@ -53,16 +53,15 @@
                 </ul>
                 <div ng-show="ctrl.enableAddNew">
                     <label for="bookmark-title">Title</label>
-                    <input type="text" id="bookmark-title" ng-model="ctrl.newBookmark.title" ng-change="ctrl.isToolbarDirty = true" />
+                    <input type="text" id="bookmark-title" ng-model="ctrl.newBookmark.title" ng-change="ctrl.isAddNewDirty = true" />
                     <label for="bookmark-url">Bookmark Url</label>
-                    <input type="text" id="bookmark-url" ng-model="ctrl.newBookmark.url" ng-change="ctrl.isToolbarDirty = true" />
-                    <button ng-click="ctrl.saveMyNewBookmark();" ng-disabled="ctrl.enableSaveBookmarkButton()">Save</button>
+                    <input type="text" id="bookmark-url" ng-model="ctrl.newBookmark.url" ng-change="ctrl.isAddNewDirty = true" />
+                    <button ng-click="ctrl.saveMyNewBookmark();" ng-disabled="ctrl.enableAddNewSaveButton()">Save</button>
                 </div>
 
-                <button ng-click="ctrl.addMyBookmark();">Add New</button>
-                <!--
+                      
                 <button ng-click="ctrl.saveMyBookmarks()" ng-disabled="ctrl.enableSaveButton()">Save</button>
-                    -->
+                <button ng-click="ctrl.addMyBookmark();" ng-disabled="ctrl.enableAddNewButton()">Add New</button>           
                 <button ng-click="ctrl.closeModal('ci-bookmarks-manage');">Close</button>
                 <span>{{systemMessage}}</span>
             </div>

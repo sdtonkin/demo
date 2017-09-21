@@ -6,6 +6,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     var ctrl = this;
     var userId = _spPageContextInfo.userId;
     ctrl.isToolbarDirty = false;
+    ctrl.isAddNewDirty = false;
     ctrl.manageBookmarkId = 'ci-bookmarks-manage',
     ctrl.confirmDeleteBookmarkId = 'ci-bookmarks-confirm-delete';
     
@@ -40,6 +41,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     ctrl.confirmDeletion = confirmDeletion;
     ctrl.enableAddNew = false;
     ctrl.addMyBookmark = function () {
+        ctrl.isAddNewDirty = true;
         ctrl.enableAddNew = true;
         $scope.systemMessage = '';
     };
@@ -47,6 +49,16 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         if (ctrl.isToolbarDirty)
             $scope.systemMessage = '';
         return !ctrl.isToolbarDirty;
+    };
+    ctrl.enableAddNewButton = function () {
+        if (!ctrl.isAddNewDirty)
+            $scope.systemMessage = '';
+        return ctrl.isAddNewDirty;
+    };
+    ctrl.enableAddNewSaveButton = function () {
+        if (!ctrl.isAddNewDirty)
+            $scope.systemMessage = '';
+        return !ctrl.isAddNewDirty;
     };
     
     this.$onInit = function () {
@@ -177,6 +189,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
         bookmarkService.addMyBookmark(userId, title, url).then(function (data) {
             ctrl.enableAddNew = false;
             ctrl.isToolbarDirty = false;
+            ctrl.isAddNewDirty = false;
             ctrl.systemMessage = 'Success adding bookmark';
             /*
             var newBookmark = {};
