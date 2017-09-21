@@ -120,13 +120,13 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
     }
     function addUserBookmark(userId, pageId, url, siteUrl) {
         var defer = $q.defer();
-        getPage(pageId, siteUrl).then(function (item) {
+        if (siteUrl == null) {
             let web = new $pnp.Web(COM_CONFIG.rootWeb);
             web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
                 .add({
                     COM_ToolbarUserId: userId,
                     COM_BookmarkUrl: url,
-                    Title: item.Title
+                    Title: pageId
                 })
                 .then(function (item) {
                     var bk = {};
@@ -136,7 +136,26 @@ angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 
                     bk.userId = item.data.COM_ToolbarUserId;
                     defer.resolve(bk);
                 });
-        });
+        } else {
+            getPage(pageId, siteUrl).then(function (item) {
+                let web = new $pnp.Web(COM_CONFIG.rootWeb);
+                web.lists.getByTitle(COM_CONFIG.lists.userBookmarks).items
+                    .add({
+                        COM_ToolbarUserId: userId,
+                        COM_BookmarkUrl: url,
+                        Title: item.Title
+                    })
+                    .then(function (item) {
+                        var bk = {};
+                        bk.id = item.data.Id;
+                        bk.title = item.data.Title;
+                        bk.url = item.data.COM_BookmarkUrl;
+                        bk.userId = item.data.COM_ToolbarUserId;
+                        defer.resolve(bk);
+                    });
+            });
+        }
+        
 
         return defer.promise;
     }
