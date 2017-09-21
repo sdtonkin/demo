@@ -1090,7 +1090,7 @@ navigation {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 999; }
+    z-index: 4; }
   navigation div.search-background > input {
     width: 200px;
     padding: 5px; }
@@ -1118,7 +1118,7 @@ navigation {
     margin-left: -10px;
     padding-right: 20px; }
   navigation .search-button {
-    z-index: 9999; }
+    z-index: 5; }
     navigation .search-button i {
       color: white;
       padding-right: 10px; }
@@ -1556,6 +1556,48 @@ section.global-partners ul, section.my-department ul {
   /* ----------------------------------------------------
     Header Styles
   ------------------------------------------------------- */
+  .sub-nav-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0; }
+    .sub-nav-container .card-intro {
+      margin-bottom: 0; }
+    .sub-nav-container .toolbar-toggle-button span {
+      display: inline-block;
+      font-size: 10px; }
+      .sub-nav-container .toolbar-toggle-button span:after {
+        content: '\f106';
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 14px;
+        margin-left: 10px; }
+    .sub-nav-container .toolbar-toggle-button i {
+      display: none; }
+    .sub-nav-container .toggle-row {
+      background-color: #003364;
+      bottom: -21px;
+      padding: 0;
+      position: absolute;
+      right: -15px;
+      width: 75px; }
+      .sub-nav-container .toggle-row .toolbar-toggle-button {
+        width: 100%;
+        text-align: center; }
+        .sub-nav-container .toggle-row .toolbar-toggle-button span {
+          font-size: 10px;
+          margin-bottom: 5px;
+          display: inline-block; }
+          .sub-nav-container .toggle-row .toolbar-toggle-button span:after {
+            content: '\f107';
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: 14px;
+            margin-left: 10px; }
+        .sub-nav-container .toggle-row .toolbar-toggle-button i {
+          display: none; }
+    .sub-nav-container .toggle-row:after {
+      border-bottom: none; }
+
   /* ----------------------------------------------------
     Hero News Styles
   ------------------------------------------------------- */
@@ -1578,14 +1620,43 @@ section.global-partners ul, section.my-department ul {
   /* ----------------------------------------------------
     Find People Styles
   ------------------------------------------------------- */
-  .find-people .search .form-control::-webkit-input-placeholder {
-    font-size: 10px; }
-  .find-people .search .form-control:-moz-placeholder {
-    font-size: 10px; }
-  .find-people .search .form-control::-moz-placeholder {
-    font-size: 10px; }
-  .find-people .search .form-control:-ms-input-placeholder {
-    font-size: 10px; } }
+  .find-people .search {
+    display: block; }
+    .find-people .search .form-control {
+      width: 100%;
+      border-right: 1px solid #b8b491 !important; }
+      .find-people .search .form-control::-webkit-input-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control:-moz-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control::-moz-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+      .find-people .search .form-control:-ms-input-placeholder {
+        font-size: 10px;
+        text-overflow: ellipsis;
+        width: 100px; }
+    .find-people .search .input-group-btn {
+      float: right; }
+      .find-people .search .input-group-btn button {
+        border-left: 1px solid #b8b491 !important;
+        min-width: 1px;
+        padding-left: 15px;
+        cursor: pointer; }
+
+  /* ----------------------------------------------------
+    News Events Styles
+  ------------------------------------------------------- */
+  .news-events .search-filter {
+    display: block; }
+
+  .news-events .search {
+    border-top: 1px solid #b8b491; } }
 @media screen and (max-width: 992px) {
   /* 
    * -----------------------------------------

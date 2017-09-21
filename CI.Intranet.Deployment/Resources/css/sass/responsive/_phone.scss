@@ -12,34 +12,73 @@
   Header Styles
 ------------------------------------------------------- */
 
-// .sub-nav-container{
-// 	margin-bottom: 30px;
-// 	.card{
-		
-// 	}
-// 	.card-header{
-		
-// 	}
-// 	.card-intro{
-// 		margin-bottom: 15px;
-// 	}
-// 	.card-body{
-		
-// 	}
+.sub-nav-container{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	.card-intro{
+		margin-bottom: 0;
+	}
+	.toolbar-toggle-button{
+		span{
+			display: inline-block;
+			font-size: 10px;
+			&:after{
+				content: '\f106';
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: 14px;
+				margin-left: 10px;
+    		}
+		}
+		i{
+			display: none;
+		}
+	}
+	.toggle-row{
+		background-color: $brand-dark-blue;
+    	bottom: -21px;
+    	padding: 0;
+    	position: absolute;
+    	right: -15px;
+    	width: 75px;
+    	.toolbar-toggle-button{
+    		width: 100%;
+    		text-align: center;
+    		span{
+    			font-size: 10px;
+    			margin-bottom: 5px;
+    			display: inline-block;
+    			&:after{
+    				content: '\f107';
+    				display: inline-block;
+    				font-family: FontAwesome;
+    				font-size: 14px;
+    				margin-left: 10px;
+    			}
+    		}
+    		i{
+    			display: none;
+    		}
+    	}
+	}
+	.toggle-row:after{
+		border-bottom: none;
+	}
 
-// 	.card-close-mobile{
-// 		position: absolute;
-// 		bottom: -70px;
-// 		background-color: $brand-dark-blue;
-// 		padding: 0;
-// 		a{
-// 			display: block;
-// 			padding: 13px;
-// 			text-decoration: none;
-// 			color: $brand-white;
-// 		}
-// 	}
-// }
+	// .card-close-mobile{
+	// 	position: absolute;
+	// 	bottom: -70px;
+	// 	background-color: $brand-dark-blue;
+	// 	padding: 0;
+	// 	a{
+	// 		display: block;
+	// 		padding: 13px;
+	// 		text-decoration: none;
+	// 		color: $brand-white;
+	// 	}
+	// }
+}
 
 
 /* ----------------------------------------------------
@@ -85,12 +124,38 @@
 
 .find-people{
  	.search{
+ 		display: block;
  		.form-control{
+ 			width: 100%;
+ 			border-right: 1px solid $brand-brown-dull !important;
  			@include placeholder{
  				font-size: 10px;
+ 				text-overflow: ellipsis;
+    			width: 100px;
  			}
 
  		}
+ 		.input-group-btn {
+ 			button{
+ 				border-left: 1px solid $brand-brown-dull !important;
+ 				min-width: 1px;
+ 				padding-left: 15px;
+ 				cursor: pointer;
+ 			}
+ 			float: right;
+ 		}
  	}
  	
+ }
+
+/* ----------------------------------------------------
+  News Events Styles
+------------------------------------------------------- */
+
+
+ .news-events .search-filter{
+ 	display: block;
+ }
+ .news-events .search{
+ 	border-top: 1px solid $brand-brown-dull;
  }
