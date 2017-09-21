@@ -95,10 +95,15 @@ angular.module('compassionIntranet').service('rssFeedService', ['$http', '$q', '
                 f.feedId = feed.feedId;
                 f.feedTitle = feed.title;
                 f.id = feed.id;
-                f.pDate = moment().utc(f.pubDate);
-                f.publishedDate = moment(f.pubDate);
-                f.currentTime = moment.utc().format();
-                f.publishedSpanString = getPublishedDurationString(f.pubDate);
+                f.pDate = (f.pubDate == '' || f.pubDate == null ? '' : moment().utc(f.pubDate));
+                if (f.pDate != '' && f.pDate != null) {
+                    f.publishedDate = moment(f.pubDate);
+                    f.publishedSpanString = getPublishedDurationString(f.pubDate);
+                }
+                
+                f.currentTime = moment.utc().format();                
+                if (f.guid.startsWith('http'))
+                    f.link = f.guid;
             }
 
             defer.resolve(feeds);
