@@ -137,12 +137,23 @@
  		}
  		.input-group-btn {
  			button{
- 				border-left: 1px solid $brand-brown-dull !important;
- 				min-width: 1px;
- 				padding-left: 15px;
- 				cursor: pointer;
+ 				//border-left: 1px solid $brand-brown-dull !important;
+ 				// min-width: 1px;
+ 				//padding-left: 15px;
+ 				//cursor: pointer;
+
+ 				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+			    border: medium none !important;
+			    cursor: pointer;
+			    min-width: 1px;
+			    padding-left: 15px;
+			    padding-top: 15px;
  			}
- 			float: right;
+ 			
+    		position: absolute;
+    		right: 0;
+    		top: 0;
+    		z-index: 5;
  		}
  	}
  	

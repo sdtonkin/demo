@@ -343,6 +343,8 @@ body {
 .main-left-content {
   padding-top: 40px;
   padding-right: 95px; }
+  .main-left-content .ms-webpart-chrome-vertical, .main-left-content .div.ms-webpart-cell-vertical-inline-table {
+    display: block; }
 
 .main-right-rail {
   background-color: #88bee7;
@@ -1642,12 +1644,17 @@ section.global-partners ul, section.my-department ul {
         text-overflow: ellipsis;
         width: 100px; }
     .find-people .search .input-group-btn {
-      float: right; }
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 5; }
       .find-people .search .input-group-btn button {
-        border-left: 1px solid #b8b491 !important;
+        background: transparent none repeat scroll 0 0;
+        border: medium none !important;
+        cursor: pointer;
         min-width: 1px;
         padding-left: 15px;
-        cursor: pointer; }
+        padding-top: 15px; }
 
   /* ----------------------------------------------------
     News Events Styles
