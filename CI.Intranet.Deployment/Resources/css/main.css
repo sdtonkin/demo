@@ -1953,7 +1953,7 @@ table.ms-ToolPaneOuter {
 
 modal li {
   list-style: none;
-  max-width: 200px;
+  max-width: 400px;
   padding: 10px; }
   modal li:hover {
     cursor: pointer;
