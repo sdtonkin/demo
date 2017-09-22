@@ -54,14 +54,29 @@ table.ms-ToolPaneOuter {
     }
     div.ms-webpart-cell-vertical-inline-table, .ms-webpart-chrome-vertical, .js-webpart-titleCell, .ms-webpart-controlBox, .js-webpart-menuCell, .ms-webpart-checkboxTd, .ms-webpart-zone{
         display: block;
-    }
-    // div.ms-webpart-cell-vertical-inline-table, .ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical{
-
-    // }
+    }    
 }
 
 .ms-dlgTitleBtns{
     margin-right: 0;
+}
+
+.ms-taxonomy .ms-taxonomy-browser-button{
+    width: auto;
+}
+
+@media  screen and (min-width:992px) and (max-width:1220px) {
+  navigation{
+        .nav-item{
+            padding-right: 35px;
+            a, a:visited, a:hover{
+                font-size: 16px;
+            }
+        }
+        .search-button > a{
+            font-size: 16px;
+        }
+    }
 }
 
 modal {
@@ -101,38 +116,5 @@ modal {
         background-color: $brand-white;
         color: $brand-dark-blue;
         opacity: 0.4;
-    }
-
-}
-#ci-bookmarks-manage{
-    li{
-        max-width: none;
-        &:hover{
-            cursor: pointer;
-            color: $brand-dark-blue-alt;
-            background-color: transparent;
-        }
-    }
-}
-// .hero-main > .list-content:last-child .card-body {
-//     border: medium none;
-//     padding-bottom: 0;
-// }
-
-.ms-taxonomy .ms-taxonomy-browser-button{
-    width: auto;
-}
-
-@media  screen and (min-width:992px) and (max-width:1220px) {
-  navigation{
-        .nav-item{
-            padding-right: 35px;
-            a, a:visited, a:hover{
-                font-size: 16px;
-            }
-        }
-        .search-button > a{
-            font-size: 16px;
-        }
     }
 }
