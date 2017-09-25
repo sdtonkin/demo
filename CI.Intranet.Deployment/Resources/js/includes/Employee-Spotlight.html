@@ -1,7 +1,7 @@
 ﻿<section class="employee-spotlight">
     <div class="container">
         <div class="row">
-            <h2 class="section">Employee Spotlight</h2>
+            <h2 class="section">Our People</h2>
             <div class="employee-spotlight-tabs">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -33,6 +33,17 @@
                         <a class="btn btn-cta pull-right" href="{{viewAllUrl}}">View All Skippys</a>
                     </div>
                 </div>
+                <div class="row employee-spotlight-cta" ng-if="activeTab == 'h'">
+                    <div class="col-md-6">
+                        <a class="btn btn-cta pull-right" href="{{viewAllHiresUrl}}">View All Hires</a>
+                    </div>
+                </div>
+                <div class="row employee-spotlight-cta" ng-if="activeTab == 'a'">
+                    <div class="col-md-6">
+                        <a class="btn btn-cta pull-right" href="{{viewAllAnniversaryUrl}}">View All</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
