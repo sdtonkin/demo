@@ -23,10 +23,10 @@
         <div class="ci-modal">
             <div class="modal-body">
                 <h1>Manage My Tools / Apps Sort Order</h1>
-                <ul>
-                    <li ng-repeat="app in ctrl.myApps track by $index">
-                        {{app.title}}
-                        <select ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
+                <ul class="container">
+                    <li ng-repeat="app in ctrl.myApps track by $index" class="row">
+                        <span class="col-8">{{app.title}}</span>
+                        <select class="col-4" ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
                             <option ng-repeat="sort in myAppsSortList" ng-value="{{sort}}">{{sort}}</option>
                         </select>
                     </li>
