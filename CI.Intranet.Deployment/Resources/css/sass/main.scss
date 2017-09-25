@@ -144,6 +144,9 @@ body {
 	padding-top: 40px;
 	padding-right: 95px;
 	// padding-left: 115px;
+	.ms-webpart-chrome-vertical, .div.ms-webpart-cell-vertical-inline-table{
+		display: block;
+	}
 }
 
 .main-right-rail{
