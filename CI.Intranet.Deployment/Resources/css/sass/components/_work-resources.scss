@@ -23,13 +23,16 @@
 		.nav-link{
 			text-align: left;
 			border: 1px solid $brand-dark-blue;
+			background-color: $brand-white;
+			color: $brand-dark-blue;
+			height: 70px;
 			i{ 
 				display: table-cell;
 			}
 			> img{
 			    display: table-cell;
 			    float: left;
-			    width: 20px;
+			    width: 30px;
 			}
 			span{
 				display: table-cell;
@@ -37,8 +40,10 @@
 			}
 			&:hover{
 				border: 1px solid $brand-dark-blue;
+				background-color: $brand-dark-blue;
+				color: $brand-white;
 				a{
-					color: $brand-dark-blue;
+					color: $brand-white;
 			    	text-decoration: none;
 				}
 			}
@@ -65,7 +70,7 @@
  		margin-bottom: 30px;
  		margin-top: 30px;
  		h3{
-			margin-left: 25px;
+			margin-left: 0;
 			text-align: left;
  		}
  		.nav-link{
@@ -73,9 +78,10 @@
  			color: $brand-dark-blue;
  			border: none;
  			height: auto;
-
+			
  			&:hover{
- 				color: $brand-dark-blue-alt ;
+ 				color: $brand-dark-blue-alt;
+ 				background-color: $brand-white;
  				border: none;
  				text-decoration: underline;
  			}
