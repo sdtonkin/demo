@@ -8,6 +8,8 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
     this.$onInit = function () {
         console.log('employeeSpotlightCtrl', ctrl);
         $scope.viewAllUrl = ctrl.viewAllGratitudesUrl;
+        $scope.viewAllHiresUrl = ctrl.viewAllHiresUrl;
+        $scope.viewAllAnniversaryUrl = ctrl.viewAllAnniversaryUrl;
     };
 
     $scope.submitGratitude = function () {
@@ -28,6 +30,8 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
     controlleras: 'ctrl',
     bindings: {
         viewAllGratitudesUrl: '@',
-        submitGratitudeUrl: '@'
+        submitGratitudeUrl: '@',
+        viewAllHiresUrl: '@',
+        viewAllAnniversaryUrl: '@'
     }
 });
