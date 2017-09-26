@@ -50,7 +50,7 @@
                     </div>
                     </div>
                     </div>
-                    <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
+                    <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid ci-article-image" />
                     <div class="card">
                         <div class="news-title-block">
                             <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_PublishDateFormat" runat="server"/></p>

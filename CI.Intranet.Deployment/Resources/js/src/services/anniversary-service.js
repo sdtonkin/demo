@@ -9,35 +9,29 @@ angular.module('compassionIntranet').service('anniversaryService', ['$http', '$q
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.anniversary).items
+            .select('StartDate', 'COM_Contact/FirstName', 'COM_Contact/LastName', 'COM_Contact/SipAddress', '*')
+            .expand('COM_Contact')
             .get()
             .then(function (data) {
-                console.log('anniversary', data);
                 var events = [];
-                var promises = [];
                 var items = data;
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var g = {};
-                    var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);
-                    promises.push(p1);
+                    var firstName = (item.COM_Contact.FirstName == null ? '' : item.COM_Contact.FirstName);
+                    var lastName = (item.COM_Contact.LastName == null ? '' : item.COM_Contact.LastName);
+                    var yearCount = moment().diff(item.StartDate, 'years');
+
                     g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
                     g.eventType = (item.COM_EventType.TermGuid == COM_CONFIG.terms.anniversaryTermId ? 'anniversary' : 'retirement');
-                    g.description = moment().diff(item.StartDate, 'years') + ' year ' + g.eventType;
-                    
+                    g.description = (g.eventType == 'retirement' ? g.eventType : yearCount + ' year anniversary');
+                    g.targetPicUrl = COM_CONFIG.pictureUrl + item.COM_Contact.SipAddress;
+                    g.targetName = firstName + ' ' + lastName;
+
                     events.push(g);
                 }
-                $q.all(promises).then(function (data) {
-                    console.log(data);
-                    for (var i = 0; i < events.length; i++) {
-                        var g = events[i];
-                        var firstName = (data[i].FirstName == null ? '' : data[i].FirstName);
-                        var lastName = (data[i].LastName == null ? '' : data[i].LastName);
-                        g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
-                        g.targetName = firstName + ' ' + lastName;
-                        events[i] = g;
-                    }
-                    defer.resolve(events);
-                });            
+
+                defer.resolve(events);
             });
 
         return defer.promise;

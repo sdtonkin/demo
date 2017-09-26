@@ -9,33 +9,25 @@ angular.module('compassionIntranet').service('newHireService', ['$http', '$q', '
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
         web.lists.getByTitle(COM_CONFIG.lists.newHire).items
+            .select('StartDate', 'COM_Contact/FirstName', 'COM_Contact/LastName', 'COM_Contact/SipAddress')
+            .expand('COM_Contact')
             .get()
             .then(function (data) {
                 var newHires = [];
-                var promises = [];
-                var items = data;
-                console.log('new hire list', data);
+                var items = data;                
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var g = {};
-                    var p1 = userProfileService.getUserFromUserInfo(item.COM_ContactId);
-                    promises.push(p1);
+                    var firstName = (item.COM_Contact.FirstName == null ? '' : item.COM_Contact.FirstName);
+                    var lastName = (item.COM_Contact.LastName == null ? '' : item.COM_Contact.LastName);
                     g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
+                    g.targetPicUrl = COM_CONFIG.pictureUrl + item.SipAddress;
+                    g.targetName = firstName + ' ' + lastName;
 
                     newHires.push(g);
                 }
-                $q.all(promises).then(function (data) {
-                    for (var i = 0; i < newHires.length; i++) {
-                        var g = newHires[i];
-                        var firstName = (data[i].FirstName == null ? '' : data[i].FirstName);
-                        var lastName = (data[i].LastName == null ? '' : data[i].LastName);
-                        g.targetPicUrl = COM_CONFIG.pictureUrl + data[i].UserName;
-                        g.targetName = firstName + ' ' + lastName;
-                        newHires[i] = g;
-                    }
 
-                    defer.resolve(newHires);
-                });
+                defer.resolve(newHires);
             });
 
         return defer.promise;
