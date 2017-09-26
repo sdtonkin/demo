@@ -91,8 +91,8 @@ body {
 	background-color: $brand-dark-blue;
 	margin-left: -15px;
 	margin-right: -15px;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	//padding: 30px 75px 30px 100px;
 	.card{
 		background-color: transparent;
@@ -103,7 +103,7 @@ body {
 		background-color: transparent;
 		color: $brand-white;
 		border: none;
-		padding-left: 0;
+		padding: 0;
 	}
 	.card-intro{
 		color: $brand-white;
@@ -144,6 +144,9 @@ body {
 	padding-top: 40px;
 	padding-right: 95px;
 	// padding-left: 115px;
+	.ms-webpart-chrome-vertical, .div.ms-webpart-cell-vertical-inline-table{
+		display: block;
+	}
 }
 
 .main-right-rail{
@@ -295,6 +298,7 @@ body {
 ------------------------------------------------------- */
 
 @import "sharepoint-overrides";
+@import "modal";
 
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports

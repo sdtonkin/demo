@@ -39,7 +39,7 @@
                         <div class="page-control-wrap">
                             <span class="share">
     							<a href="#">
-    							  <span style="color:#908b63">Share<i class="fa fa-share-square-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
+    							  <span style="color:#908b63">Share<i class="fa fa-envelope-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
     							</a>
     						</span>
                         </div>

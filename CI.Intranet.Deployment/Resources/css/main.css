@@ -25,11 +25,11 @@
   font-family: 'Lato', sans-serif !important;
   font-weight: 100; }
 
-.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, .news-tag-content .tag-container > span, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, #SearchBox input, .main-container .main-right-rail h2.ms-webpart-titleText span {
+.font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, .news-tag-content .tag-container > span, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, #SearchBox input {
   font-family: 'Lato', sans-serif !important;
   font-weight: 300; }
 
-.font-lato-med, .groupmarker li .link-item a, .global-partners li a span, .hero-news-container .card-text, .upcoming-events .card-text, .employee-spotlight .nav-link.active, .employee-card .emp-name, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container .ms-webpart-titleText, .main-container .ms-webpart-titleText > a, .main-container h2.ms-webpart-titleText span {
+.font-lato-med, .groupmarker li .link-item a, .global-partners li a span, .hero-news-container .card-text, .main-right-rail h2.section, .upcoming-events .card-text, .employee-spotlight .nav-link.active, .employee-card .emp-name, .employee-card .emp-rec, .employee-card .emp-title, navigation .nav-item a, navigation .nav-item a:visited, navigation .search-button > a, .nav-toolbar .toolbar-content ul a, .main-container .ms-webpart-titleText, .main-container .ms-webpart-titleText > a, .main-container h2.ms-webpart-titleText span, .main-container .main-right-rail h2.ms-webpart-titleText span {
   font-family: 'Lato', sans-serif !important;
   font-weight: 400; }
 
@@ -236,12 +236,15 @@ a {
   height: 100%;
   display: block;
   position: relative;
-  color: #003364; }
+  color: #003364;
+  float: right; }
   .bookmark span, .submit span, .share span {
     position: relative;
     top: 50%; }
     .bookmark span i, .submit span i, .share span i {
-      margin-left: 10px; }
+      margin-right: 5px;
+      float: left;
+      margin-top: 4px; }
 
 .submit span, .share span {
   top: 0; }
@@ -306,8 +309,8 @@ body {
   background-color: #003364;
   margin-left: -15px;
   margin-right: -15px;
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-top: 15px;
+  padding-bottom: 15px; }
   .sub-nav-container .card {
     background-color: transparent;
     border: none; }
@@ -315,7 +318,7 @@ body {
     background-color: transparent;
     color: white;
     border: none;
-    padding-left: 0; }
+    padding: 0; }
   .sub-nav-container .card-intro {
     color: white; }
   .sub-nav-container .card-body {
@@ -343,6 +346,8 @@ body {
 .main-left-content {
   padding-top: 40px;
   padding-right: 95px; }
+  .main-left-content .ms-webpart-chrome-vertical, .main-left-content .div.ms-webpart-cell-vertical-inline-table {
+    display: block; }
 
 .main-right-rail {
   background-color: #88bee7;
@@ -910,6 +915,8 @@ rss-feed-manager .btn-cta {
 .news-events .news-card-wrapper {
   margin-bottom: 30px;
   margin-top: 0; }
+.news-events .bookmark {
+  float: right; }
 .news-events .search {
   width: auto;
   margin-top: 0;
@@ -1265,7 +1272,7 @@ navigation {
   margin-top: 14px;
   display: block; }
 .weather .weather-info {
-  font-size: 22px; }
+  font-size: 21px; }
 
 .toolbar-toggle-button {
   float: right; }
@@ -1357,20 +1364,25 @@ my-bookmarks > ul a div:before {
     vertical-align: top; }
   .work-resources .nav.nav-pills .nav-link, .how-do-i .nav.nav-pills .nav-link {
     text-align: left;
-    border: 1px solid #003364; }
+    border: 1px solid #003364;
+    background-color: white;
+    color: #003364;
+    height: 70px; }
     .work-resources .nav.nav-pills .nav-link i, .how-do-i .nav.nav-pills .nav-link i {
       display: table-cell; }
     .work-resources .nav.nav-pills .nav-link > img, .how-do-i .nav.nav-pills .nav-link > img {
       display: table-cell;
       float: left;
-      width: 20px; }
+      width: 30px; }
     .work-resources .nav.nav-pills .nav-link span, .how-do-i .nav.nav-pills .nav-link span {
       display: table-cell;
       padding-left: 10px; }
     .work-resources .nav.nav-pills .nav-link:hover, .how-do-i .nav.nav-pills .nav-link:hover {
-      border: 1px solid #003364; }
+      border: 1px solid #003364;
+      background-color: #003364;
+      color: white; }
       .work-resources .nav.nav-pills .nav-link:hover a, .how-do-i .nav.nav-pills .nav-link:hover a {
-        color: #003364;
+        color: white;
         text-decoration: none; }
     .work-resources .nav.nav-pills .nav-link a, .how-do-i .nav.nav-pills .nav-link a {
       color: #fff;
@@ -1389,7 +1401,7 @@ my-bookmarks > ul a div:before {
   margin-bottom: 30px;
   margin-top: 30px; }
   .how-do-i .nav.nav-pills h3 {
-    margin-left: 25px;
+    margin-left: 0;
     text-align: left; }
   .how-do-i .nav.nav-pills .nav-link {
     background-color: transparent;
@@ -1398,6 +1410,7 @@ my-bookmarks > ul a div:before {
     height: auto; }
     .how-do-i .nav.nav-pills .nav-link:hover {
       color: #0054a6;
+      background-color: white;
       border: none;
       text-decoration: underline; }
   .how-do-i .nav.nav-pills .nav-item {
@@ -1562,6 +1575,8 @@ section.global-partners ul, section.my-department ul {
     padding-top: 0; }
     .sub-nav-container .card-intro {
       margin-bottom: 0; }
+    .sub-nav-container .card-header {
+      padding: 15px 0; }
     .sub-nav-container .toolbar-toggle-button span {
       display: inline-block;
       font-size: 10px; }
@@ -1642,12 +1657,17 @@ section.global-partners ul, section.my-department ul {
         text-overflow: ellipsis;
         width: 100px; }
     .find-people .search .input-group-btn {
-      float: right; }
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 5; }
       .find-people .search .input-group-btn button {
-        border-left: 1px solid #b8b491 !important;
+        background: transparent none repeat scroll 0 0;
+        border: medium none !important;
+        cursor: pointer;
         min-width: 1px;
         padding-left: 15px;
-        cursor: pointer; }
+        padding-top: 15px; }
 
   /* ----------------------------------------------------
     News Events Styles

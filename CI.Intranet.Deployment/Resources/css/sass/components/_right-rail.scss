@@ -7,6 +7,7 @@
  .main-right-rail{
  	h2.section{
 		color: $brand-white;
+		@extend .font-lato-med;
 	}
  }
 

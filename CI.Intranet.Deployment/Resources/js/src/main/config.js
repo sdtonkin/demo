@@ -18,7 +18,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             yammer: {
                 appId: '',
-                network: 'compassion.com',
+                network: 'us.ci.org',
                 defaultGroupId: '12687321'
             },
             termSets: {
@@ -94,7 +94,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             },
             yammer: {
                 appId: '',
-                network: 'compassion.com',
+                network: 'us.ci.org',
                 defaultGroupId: '12687321'
             },            
             termSets: {
@@ -168,7 +168,7 @@ else {
         },
         yammer: {
             appId: '',
-            network: 'compassion.com',
+            network: 'us.ci.org',
             defaultGroupId: '12687321'
         },
         termSets: {
