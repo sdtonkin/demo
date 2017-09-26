@@ -100,10 +100,10 @@
     <script>
         yam.connect.embedFeed({
             container: '#ci-embedded-feed',
-            network: 'compassion.com',
+            network: 'us.ci.org',
             feedType: 'open-graph',
             config: {
-                defaultGroupId: 12687321,
+                defaultGroupId: 12856760,
                 showOpenGraphPreview: false,
                 promptText: 'Comment on this article',
                 header: false,
