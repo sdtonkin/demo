@@ -38,36 +38,39 @@
 			display: none;
 		}
 	}
-	.toggle-row{
-		background-color: $brand-dark-blue;
-    	bottom: -21px;
-    	padding: 0;
-    	position: absolute;
-    	right: -15px;
-    	width: 75px;
-    	.toolbar-toggle-button{
-    		width: 100%;
-    		text-align: center;
-    		span{
-    			font-size: 10px;
-    			margin-bottom: 5px;
-    			display: inline-block;
-    			&:after{
-    				content: '\f107';
-    				display: inline-block;
-    				font-family: FontAwesome;
-    				font-size: 14px;
-    				margin-left: 10px;
-    			}
-    		}
-    		i{
-    			display: none;
-    		}
-    	}
-	}
-	.toggle-row:after{
-		border-bottom: none;
-	}
+
+	
+
+	// .toggle-row{
+	// 	background-color: $brand-dark-blue;
+ //    	bottom: -21px;
+ //    	padding: 0;
+ //    	position: absolute;
+ //    	right: -15px;
+ //    	width: 75px;
+ //    	.toolbar-toggle-button{
+ //    		width: 100%;
+ //    		text-align: center;
+ //    		span{
+ //    			font-size: 10px;
+ //    			margin-bottom: 5px;
+ //    			display: inline-block;
+ //    			&:after{
+ //    				content: '\f107';
+ //    				display: inline-block;
+ //    				font-family: FontAwesome;
+ //    				font-size: 14px;
+ //    				margin-left: 10px;
+ //    			}
+ //    		}
+ //    		i{
+ //    			display: none;
+ //    		}
+ //    	}
+	// }
+	// .toggle-row:after{
+	// 	border-bottom: none;
+	// }
 
 
 	// .card-close-mobile{
@@ -82,6 +85,24 @@
 	// 		color: $brand-white;
 	// 	}
 	// }
+	.nav-toolbar div.manage-toolbar{
+		top: -15px;
+
+		.btn.btn-cta.white{
+			font-size: 14px;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-weight: 400;
+			text-transform: none;
+			padding: 0;
+			&:after{
+				font-size: 12px;
+			}
+			&:before{
+				display: none;
+			}
+		}
+	}
 }
 
 
