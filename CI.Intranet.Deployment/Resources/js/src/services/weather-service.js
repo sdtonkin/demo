@@ -99,10 +99,14 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
         var url = COM_CONFIG.locationByLatLongUrl + latitude + ',' + longitude;
         $http.get(url).
             then(function (data, status, headers) {
-                var loc = _.filter(data.data.results, function (d) { return _.contains(d.types, 'locality') });
-                if (loc.length == 0) defer.resolve('Colorado Springs, CO');
-                storage.set(locationKey, loc[0].formatted_address, locationExpiration);
-                defer.resolve(loc[0].formatted_address);
+                var loc = _.filter(data.data.results, function (d) { return _.contains(d.types, 'locality') });                
+                if (loc.length == 0) {
+                    console.log('getLocationFromLatLong Error: ', data);
+                    defer.resolve('Colorado Springs, CO');                    
+                } else {
+                    storage.set(locationKey, loc[0].formatted_address, locationExpiration);
+                    defer.resolve(loc[0].formatted_address);
+                }
             }, function (data) {
                 console.error("Error calling the ip / location service", data);
                 defer.reject(data);

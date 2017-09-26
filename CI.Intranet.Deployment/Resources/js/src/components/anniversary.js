@@ -8,7 +8,6 @@ myApp.controller(ctrlName, ['$scope', 'anniversaryService', 'COM_CONFIG', functi
     ctrl.activeTab = 'anniversary';
 
     this.$onInit = function () {
-        if (window.lowBandwidth) return;
         anniversaryService.getAnniversary().then(function (data) {
             $scope.events = data;
         });
