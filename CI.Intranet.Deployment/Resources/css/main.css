@@ -815,7 +815,8 @@ rss-feed-manager .btn-cta {
   margin-bottom: 30px; }
 .employee-card .emp-photo {
   border-radius: 50%;
-  width: 100px; }
+  width: 100px;
+  height: 100px; }
 .employee-card .emp-name {
   color: #003364;
   font-size: 25px;
@@ -1255,6 +1256,8 @@ navigation {
   position: absolute;
   right: 0;
   top: 45px; }
+.nav-toolbar .mobile-tool {
+  display: none; }
 
 .weather sup {
   font-size: 10px;
@@ -1588,30 +1591,19 @@ section.global-partners ul, section.my-department ul {
         margin-left: 10px; }
     .sub-nav-container .toolbar-toggle-button i {
       display: none; }
-    .sub-nav-container .toggle-row {
-      background-color: #003364;
-      bottom: -21px;
-      padding: 0;
-      position: absolute;
-      right: -15px;
-      width: 75px; }
-      .sub-nav-container .toggle-row .toolbar-toggle-button {
-        width: 100%;
-        text-align: center; }
-        .sub-nav-container .toggle-row .toolbar-toggle-button span {
-          font-size: 10px;
-          margin-bottom: 5px;
-          display: inline-block; }
-          .sub-nav-container .toggle-row .toolbar-toggle-button span:after {
-            content: '\f107';
-            display: inline-block;
-            font-family: FontAwesome;
-            font-size: 14px;
-            margin-left: 10px; }
-        .sub-nav-container .toggle-row .toolbar-toggle-button i {
+    .sub-nav-container .nav-toolbar div.manage-toolbar {
+      top: -15px; }
+      .sub-nav-container .nav-toolbar div.manage-toolbar .btn.btn-cta.white {
+        font-size: 14px;
+        margin-bottom: 0;
+        margin-top: 0;
+        font-weight: 400;
+        text-transform: none;
+        padding: 0; }
+        .sub-nav-container .nav-toolbar div.manage-toolbar .btn.btn-cta.white:after {
+          font-size: 12px; }
+        .sub-nav-container .nav-toolbar div.manage-toolbar .btn.btn-cta.white:before {
           display: none; }
-    .sub-nav-container .toggle-row:after {
-      border-bottom: none; }
 
   /* ----------------------------------------------------
     Hero News Styles
@@ -1746,7 +1738,8 @@ section.global-partners ul, section.my-department ul {
       .sub-nav-container .card-intro h2 {
         font-size: 30px; }
     .sub-nav-container .card-body {
-      padding-top: 0; }
+      padding-top: 0;
+      padding-bottom: 0; }
     .sub-nav-container .card-close-mobile {
       position: absolute;
       bottom: -70px;
@@ -1757,17 +1750,86 @@ section.global-partners ul, section.my-department ul {
         padding: 13px;
         text-decoration: none;
         color: white; }
+    .sub-nav-container .nav-toolbar .toolbar-content {
+      display: none; }
+      .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool {
+        width: 100%;
+        margin-top: -15px; }
+        .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool.active {
+          display: block; }
+        .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool ul {
+          width: 33%;
+          margin-right: 0;
+          padding: 15px; }
+    .sub-nav-container .nav-toolbar .nav-tabs {
+      border-bottom: none;
+      margin-bottom: 0; }
+    .sub-nav-container .nav-toolbar .nav-link {
+      border-bottom: 1px solid #88bee7;
+      color: white;
+      font-size: 20px; }
+      .sub-nav-container .nav-toolbar .nav-link.active {
+        border: none;
+        color: white;
+        font-size: 20px; }
+    .sub-nav-container .nav-toolbar .nav-item a {
+      padding-right: 0;
+      padding-bottom: 10px; }
+      .sub-nav-container .nav-toolbar .nav-item a:after {
+        content: '\f067';
+        font-family: FontAwesome;
+        display: inline-block;
+        float: right; }
+      .sub-nav-container .nav-toolbar .nav-item a.active {
+        padding-bottom: 0; }
+        .sub-nav-container .nav-toolbar .nav-item a.active:after {
+          content: '\f068'; }
+    .sub-nav-container .nav-toolbar .nav-item.active + .mobile-tool {
+      display: block;
+      border-bottom: 1px solid #88bee7; }
+    .sub-nav-container .nav-toolbar .manage-toolbar {
+      top: -70px; }
+      .sub-nav-container .nav-toolbar .manage-toolbar .btn.btn-cta.white {
+        font-size: 14px;
+        margin-bottom: 0;
+        margin-top: 0; }
+        .sub-nav-container .nav-toolbar .manage-toolbar .btn.btn-cta.white:after {
+          font-size: 12px; }
+        .sub-nav-container .nav-toolbar .manage-toolbar .btn.btn-cta.white:before {
+          display: none; }
 
-  .nav-toolbar .toolbar-content ul {
-    width: 33%;
-    margin-right: 0; }
+  .toggle-row {
+    background-color: #003364;
+    bottom: -39px;
+    padding: 0;
+    position: absolute;
+    right: -15px;
+    width: 75px; }
+    .toggle-row .toolbar-toggle-button {
+      width: 100%;
+      text-align: center; }
+      .toggle-row .toolbar-toggle-button span {
+        font-size: 10px;
+        margin-bottom: 5px;
+        display: inline-block; }
+        .toggle-row .toolbar-toggle-button span:after {
+          content: '\f107';
+          display: inline-block;
+          font-family: FontAwesome;
+          font-size: 14px;
+          margin-left: 10px; }
+      .toggle-row .toolbar-toggle-button i {
+        display: none; }
 
-  .toggle-row:after {
+  .weather-widget:after {
     border-bottom: 1px solid #88bee7;
     content: "";
     display: block;
     margin-top: 10px;
     position: relative; }
+
+  .toggle-row:after {
+    border-bottom: none; }
 
   .toolbar-toggle-button {
     margin-top: 15px; }
@@ -1775,8 +1837,10 @@ section.global-partners ul, section.my-department ul {
       display: none; }
 
   .weather .weather-icon {
-    font-size: 20px;
+    font-size: 15px;
     top: 0; }
+    .weather .weather-icon i {
+      font-weight: 600; }
 
   .weather .weather-location {
     display: inline;
@@ -1923,9 +1987,19 @@ table.ms-ToolPaneOuter {
 .ms-dlgTitleBtns {
   margin-right: 0; }
 
+.ms-taxonomy .ms-taxonomy-browser-button {
+  width: auto; }
+
+@media screen and (min-width: 992px) and (max-width: 1220px) {
+  navigation .nav-item {
+    padding-right: 35px; }
+    navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
+      font-size: 16px; }
+  navigation .search-button > a {
+    font-size: 16px; } }
 modal li {
   list-style: none;
-  max-width: 200px;
+  max-width: 400px;
   padding: 10px; }
   modal li:hover {
     cursor: pointer;
@@ -1954,23 +2028,44 @@ modal button:disabled {
   color: #003364;
   opacity: 0.4; }
 
-#ci-bookmarks-manage li {
-  max-width: none; }
-  #ci-bookmarks-manage li:hover {
-    cursor: pointer;
-    color: #0054a6;
-    background-color: transparent; }
+/* MODAL STYLES
+-------------------------------*/
+modal {
+  /* modals are hidden by default */
+  display: none; }
+  modal .ci-modal {
+    /* modal container fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* z-index must be higher than .modal-background */
+    z-index: 1000;
+    /* enables scrolling for tall modals */
+    overflow: auto; }
+    modal .ci-modal .modal-body {
+      padding: 20px;
+      background: #fff;
+      /* margin exposes part of the modal background */
+      margin: 40px; }
+  modal .modal-background {
+    /* modal background fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* semi-transparent black  */
+    background-color: #000;
+    opacity: 0.75;
+    /* z-index must be below .modal and above everything else  */
+    z-index: 900; }
 
-.ms-taxonomy .ms-taxonomy-browser-button {
-  width: auto; }
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden; }
 
-@media screen and (min-width: 992px) and (max-width: 1220px) {
-  navigation .nav-item {
-    padding-right: 35px; }
-    navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
-      font-size: 16px; }
-  navigation .search-button > a {
-    font-size: 16px; } }
 /* ----------------------------------------------------
   13) Low Bandwidth Override Imports
 ------------------------------------------------------- */

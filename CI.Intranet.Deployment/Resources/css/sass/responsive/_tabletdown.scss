@@ -117,6 +117,7 @@ navigation{
 	}
 	.card-body{
 		padding-top: 0;
+		padding-bottom: 0;
 	}
 
 	.card-close-mobile{
@@ -131,18 +132,120 @@ navigation{
 			color: $brand-white;
 		}
 	}
+
+
+	.nav-toolbar{
+		.toolbar-content{ 
+			display: none;
+			&.mobile-tool{
+				width: 100%;
+				margin-top: -15px;
+				&.active{
+					display: block;
+				}
+				ul{
+					width: 33%;
+					margin-right: 0;
+					padding: 15px;
+				}
+				// &.active{
+				// 	border-bottom: 1px solid $brand-light-blue;
+				// }
+			}
+		}
+		.nav-tabs{
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+		.nav-link{
+			border-bottom: 1px solid $brand-light-blue;
+			color: $brand-white;
+			font-size: 20px;
+			&.active{
+				border: none;
+				color: $brand-white;
+				font-size: 20px;
+				// border: 1px solid $brand-light-blue;
+			}
+		}
+		.nav-item{
+			a{
+				padding-right: 0;
+				padding-bottom: 10px;
+				&:after{
+					content: '\f067';
+					font-family: FontAwesome;
+					display: inline-block;
+					float: right;
+				}
+				&.active{
+					padding-bottom: 0;
+					&:after{
+						content: '\f068';
+					}
+				}
+				
+			}
+			&.active + .mobile-tool{
+				display: block;
+					border-bottom: 1px solid $brand-light-blue;
+			}
+		}
+		.manage-toolbar{
+			top: -70px;
+			.btn.btn-cta.white{
+				font-size: 14px;
+				margin-bottom: 0;
+				margin-top: 0;
+				&:after{
+					font-size: 12px;
+				}
+				&:before{
+					display: none;
+				}
+			}
+		}
+	}
 }
-.nav-toolbar .toolbar-content ul{
-	width: 33%;
-	margin-right: 0;
-}
-.toggle-row:after {
+	.toggle-row{
+			background-color: $brand-dark-blue;
+	    	bottom: -39px;
+	    	padding: 0;
+	    	position: absolute;
+	    	right: -15px;
+	    	width: 75px;
+	    	.toolbar-toggle-button{
+	    		width: 100%;
+	    		text-align: center;
+	    		span{
+	    			font-size: 10px;
+	    			margin-bottom: 5px;
+	    			display: inline-block;
+	    			&:after{
+	    				content: '\f107';
+	    				display: inline-block;
+	    				font-family: FontAwesome;
+	    				font-size: 14px;
+	    				margin-left: 10px;
+	    			}
+	    		}
+	    		i{
+	    			display: none;
+	    		}
+	    	}
+		}
+
+
+.weather-widget:after {
     border-bottom: 1px solid $brand-light-blue;
     content: "";
     display: block;
     margin-top: 10px;
     position: relative;
 }
+.toggle-row:after{
+		border-bottom: none;
+	}
 .toolbar-toggle-button{
 	margin-top: 15px;
 	span{
@@ -150,8 +253,12 @@ navigation{
 	}
 }
 .weather .weather-icon{
-	font-size: 20px;
+	font-size: 15px;
+	//font-size: 20px;
 	top: 0;
+	i{
+		font-weight: 600;
+	}
 }
 .weather .weather-location{
 	display: inline;
