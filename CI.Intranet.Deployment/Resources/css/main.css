@@ -1754,7 +1754,8 @@ section.global-partners ul, section.my-department ul {
       display: none; }
       .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool {
         width: 100%;
-        margin-top: -15px; }
+        margin-top: -15px;
+        display: block; }
         .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool.active {
           display: block; }
         .sub-nav-container .nav-toolbar .toolbar-content.mobile-tool ul {
@@ -1800,7 +1801,7 @@ section.global-partners ul, section.my-department ul {
 
   .toggle-row {
     background-color: #003364;
-    bottom: -39px;
+    bottom: -45px;
     padding: 0;
     position: absolute;
     right: -15px;
