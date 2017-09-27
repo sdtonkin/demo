@@ -7,10 +7,18 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
     $scope.$parent.$watch('ctrl.myFeeds', function (newVal, oldVal, scope) {
         if (newVal == null) return;
         ctrl.myFeeds = newVal;
+        $scope.activeFeedId = (newVal.length > 0 ? newVal[0].id : 0);
     });
-    this.$onInit = function () {
+    this.$onInit = function () {        
         ctrl.articleLimit = (ctrl.articleLimit ? ctrl.articleLimit : 5);
     };
+    $scope.toggleActiveFeed = function (articleId) {
+        if ($scope.activeFeedId == articleId) {
+            $scope.activeFeedId = 0;
+        } else {
+            $scope.activeFeedId = articleId;
+        }
+    }
 }]).component('rssFeeds', {
     template: require('../../includes/RSS-Feeds.html'),
     controller: controllerName,
