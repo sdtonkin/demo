@@ -82,6 +82,17 @@
 		position: absolute;
 		right: 0;
 		top: 45px;
+		.btn.btn-cta.white{
+				font-size: 14px;
+				margin-bottom: 0;
+				margin-top: 0;
+				&:after{
+					font-size: 12px;
+				}
+				&:before{
+					display: none;
+				}
+			}
 	}
 	.mobile-tool{
 		display: none;

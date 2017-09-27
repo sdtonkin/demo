@@ -1256,6 +1256,14 @@ navigation {
   position: absolute;
   right: 0;
   top: 45px; }
+  .nav-toolbar .manage-toolbar .btn.btn-cta.white {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 0; }
+    .nav-toolbar .manage-toolbar .btn.btn-cta.white:after {
+      font-size: 12px; }
+    .nav-toolbar .manage-toolbar .btn.btn-cta.white:before {
+      display: none; }
 .nav-toolbar .mobile-tool {
   display: none; }
 
