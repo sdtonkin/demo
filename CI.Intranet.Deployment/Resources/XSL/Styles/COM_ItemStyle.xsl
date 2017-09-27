@@ -975,7 +975,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta white" href="/sites/stage/news/default.aspx?activeTab=events">View All Events</a>
+      <a class="btn btn-cta white" href="/sites/stage/news/pages/default.aspx?activeTab=events">View All Events</a>
     </xsl:if>
   </xsl:template>
 
