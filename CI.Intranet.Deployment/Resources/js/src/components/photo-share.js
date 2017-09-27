@@ -6,6 +6,8 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'photoService', 'COM_CONF
     ctrl.displayNewPhotoForm = displayNewPhotoForm;
 
     this.$onInit = function () {
+        $scope.isLowBandwidth = window.lowBandwidth;
+        if (window.lowBandwidth) return;
         photoService.getPhotos().then(function (data) {
             ctrl.photos = data;
         });

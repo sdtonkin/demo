@@ -1,5 +1,8 @@
 //low-bandwidth.scss
 
-.card.img-card, image-loader, .employee-card img{
+.card.img-card, image-loader, .employee-card img {
 	display: none !important;
+}
+.ci-article-image {
+    display: none !important;
 }

@@ -29,6 +29,7 @@ namespace CI.Intranet.Deployment.Jobs
         public void Start(string fileName, DirectoryInfo directory, string options, string provisionResourceFolder = null)
         {
             ProvisioningTemplate template = null;
+            
             using (var ctx = base.GetClientContext())
             {
                 if (provisionResourceFolder == null)
