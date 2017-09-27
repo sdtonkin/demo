@@ -140,6 +140,7 @@ navigation{
 			&.mobile-tool{
 				width: 100%;
 				margin-top: -15px;
+				display: block;
 				&.active{
 					display: block;
 				}
@@ -209,7 +210,7 @@ navigation{
 }
 	.toggle-row{
 			background-color: $brand-dark-blue;
-	    	bottom: -39px;
+	    	bottom: -45px;
 	    	padding: 0;
 	    	position: absolute;
 	    	right: -15px;

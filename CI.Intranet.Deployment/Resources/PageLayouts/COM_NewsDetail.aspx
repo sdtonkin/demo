@@ -43,12 +43,11 @@
     							</a>
     						</span>
                         </div>
-						
-                        <div class="page-control-wrap">
-                            <bookmark-page></bookmark-page>
-                        </div>
                         <div class="page-control-wrap">
                             <submit-news></submit-news>
+                        </div>						
+                        <div class="page-control-wrap">
+                            <bookmark-page></bookmark-page>
                         </div>
                     </div>
                     </div>
