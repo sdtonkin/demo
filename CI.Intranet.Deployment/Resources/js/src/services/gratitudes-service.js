@@ -3,7 +3,7 @@ var serviceName = 'gratitudesService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var gratsKey = store.key;
 

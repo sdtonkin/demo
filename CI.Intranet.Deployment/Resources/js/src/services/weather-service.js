@@ -3,7 +3,7 @@ var serviceName = 'weatherService';
 angular.module('compassionIntranet').service(serviceName, ['$q', '$http', 'COM_CONFIG', 'storage', 'common', function ($q, $http, COM_CONFIG, storage, common) {
     var ctrl = this;
     var store = _.where(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var locationStore = _.find(store, function (l) {
         return l.key.indexOf('LOCATION') != -1;
