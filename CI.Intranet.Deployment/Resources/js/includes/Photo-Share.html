@@ -1,4 +1,4 @@
-﻿<section class="photo-share stay-connected" ng-show="!lowBandwidth">
+﻿<section class="photo-share stay-connected" ng-if="!isLowBandwidth">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -14,15 +14,12 @@
             </div>
           </div>
       </div>
-   <!--  <ul>
-        <li ng-repeat="photo in ctrl.photos | limitTo: 2 track by $index">
-            <img ng-src="{{photo.source}}" />
-            <span class="description">{{photo.description}}</span>
-        </li>
-    </ul> -->
     <div class="row">
         <div class="col">
-            <a class="btn btn-cta" ng-click="ctrl.displayNewPhotoForm()">Share your photos</a>
+            <a class="btn btn-block blue" ng-click="ctrl.displayNewPhotoForm()">Share your photos</a>
+        </div>
+        <div class="col">
+            <a class="btn btn-cta pull-right" href="{{viewAllUrl}}">View All Photos</a>
         </div>
     </div>
 </div>

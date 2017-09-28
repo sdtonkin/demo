@@ -52,7 +52,7 @@
                     </div>
                     </div>
                     </div>
-                    <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid" />
+                    <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid ci-article-image" />
                     <div class="card">
                         <div class="news-title-block">
                             <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_PublishDateFormat" runat="server"/></p>
@@ -102,10 +102,10 @@
     <script>
         yam.connect.embedFeed({
             container: '#ci-embedded-feed',
-            network: 'compassion.com',
+            network: 'us.ci.org',
             feedType: 'open-graph',
             config: {
-                defaultGroupId: 12687321,
+                defaultGroupId: 12856760,
                 showOpenGraphPreview: false,
                 promptText: 'Comment on this article',
                 header: false,

@@ -19,7 +19,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             yammer: {
                 appId: '',
                 network: 'us.ci.org',
-                defaultGroupId: '12687321'
+                defaultGroupId: '12856760'
             },
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
@@ -95,7 +95,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             yammer: {
                 appId: '',
                 network: 'us.ci.org',
-                defaultGroupId: '12687321'
+                defaultGroupId: '12856760'
             },            
             termSets: {
                 locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
@@ -169,7 +169,7 @@ else {
         yammer: {
             appId: '',
             network: 'us.ci.org',
-            defaultGroupId: '12687321'
+            defaultGroupId: '12856760'
         },
         termSets: {
             locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',

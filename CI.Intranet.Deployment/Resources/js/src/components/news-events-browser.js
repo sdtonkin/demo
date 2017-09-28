@@ -46,6 +46,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             newsService.getEvents($scope.searchTerm).then(function (data) {
                 masterEvents = data;
                 ctrl.events = data;
+                ctrl.eventItems = data;
                 ctrl.setEventsPage(1);                
             });
             ctrl.selectedRegion = '';
@@ -54,6 +55,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             newsService.getNews($scope.searchTerm).then(function (data) {
                 masterArticles = data;
                 ctrl.newsArticles = data;
+                ctrl.newsItems = data;
                 ctrl.setNewsPage(1);
             });
             ctrl.selectedRegion = '';

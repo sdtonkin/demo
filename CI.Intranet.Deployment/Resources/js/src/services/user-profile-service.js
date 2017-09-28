@@ -19,6 +19,16 @@
 
         return defer.promise;
     }
+    function getUserByUserName(userName) {
+        var defer = $q.defer();
+        $pnp.sp.profiles.getPropertiesFor(userName).then(function (result) {
+            console.log("User Profile Service", result);
+            defer.resolve(result);
+        }).catch(function (err) {
+            console.log("User Profile Service Error: " + err);
+        });
+        return defer.promise;
+    }
     function getUserFromUserInfo(id) {
         var defer = $q.defer();
         let web = new $pnp.Web(COM_CONFIG.rootWeb);
