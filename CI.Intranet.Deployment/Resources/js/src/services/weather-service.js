@@ -1,11 +1,23 @@
-angular.module('compassionIntranet').service('weatherService', ['$q', '$http', 'COM_CONFIG', 'storage', 'common', function ($q, $http, COM_CONFIG, storage, common) {
+
+var serviceName = 'weatherService';
+angular.module('compassionIntranet').service(serviceName, ['$q', '$http', 'COM_CONFIG', 'storage', 'common', function ($q, $http, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var locationKey = 'CI-Intranet-Location-Key',
-        weatherKey = 'CI-Intranet-Weather-Key';
-    var cityLocation;
-    var locationExpiration = 24;
+    var store = _.where(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var locationStore = _.find(store, function (l) {
+        return l.key.indexOf('LOCATION') != -1;
+    });
+    var weatherStore = _.find(store, function (l) {
+        return l.key.indexOf('WEATHER') != -1;
+    });
+    var locationKey = locationStore.key,
+        weatherKey = weatherStore.key,
+        locationExpiration = locationStore.expire,
+        weatherExpiration = weatherStore.expire;
     
-    common.checkForClearStatement('clearLocation', locationKey);
+    common.checkForClearStatement(locationStore.clearCommand, locationKey);
+    common.checkForClearStatement(weatherStore.clearCommand, weatherKey);
 
     ctrl.getWeather = function (location, unit) {
         var defer = $q.defer();
@@ -22,6 +34,7 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
                 w.weatherIcon = getIcon(w.description);
                 w.unit = unit;
 
+                storage.set(weatherKey, w, weatherExpiration);
                 defer.resolve(w);
             }, function (data) {
                 console.error("Error calling the yahoo weather service", data);
@@ -166,8 +179,6 @@ angular.module('compassionIntranet').service('weatherService', ['$q', '$http', '
     function successLocation(position) {
         var loc = {};
         var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        
+        var longitude = position.coords.longitude;        
     }
 }]);

@@ -1,13 +1,16 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('navigationService', ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
+var serviceName = 'navigationService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
     var ctrl = this;
-    var navKey = 'DE783DB7-A21E-4372-BB64-B193DEB85CD3';
-    var delveUrl = '';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var navKey = store.key;
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearNavNodes', navKey);
+    common.checkForClearStatement(store.clearCommand, navKey);
     ES6Promise.polyfill();
     // set default expiration at 0 hours
-    ctrl.expirationDuration = 0;
+    ctrl.expirationDuration = store.expire;
     ctrl.getAllNodes = function () {
         var defer = $q.defer();
         var local = storage.get(navKey);

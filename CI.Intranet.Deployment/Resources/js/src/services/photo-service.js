@@ -1,15 +1,19 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('photoService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'photoService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var photoKey = 'CI-INTRANET-PHOTOS';    
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var photoKey = store.key;    
     
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearPhotos', photoKey);
+    common.checkForClearStatement(store.clearCommand, photoKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();  
 
     // set default expiration at 24 hours
-    ctrl.expirationDuration = 24;
+    ctrl.expirationDuration = store.expire;
     ctrl.getPhotos = getPhotos;
     function getPhotos() {
         var defer = $q.defer();        

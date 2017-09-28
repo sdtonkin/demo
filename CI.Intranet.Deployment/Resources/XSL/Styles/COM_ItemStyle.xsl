@@ -6,8 +6,6 @@
   xmlns:cmswrt="http://schemas.microsoft.com/WebParts/v3/Publishing/runtime"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
   xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime">
-
-
   <xsl:param name="ItemsHaveStreams">
     <xsl:value-of select="'False'" />
   </xsl:param>
@@ -670,10 +668,6 @@
     <xsl:variable name="YammerID">
       <xsl:value-of select="@YammerIDNumber" />
     </xsl:variable>
-
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> 
-    FIRST HERO AREA-->
     <div class="">
       <div class="">
         <div class="hero-news-container">
@@ -759,10 +753,6 @@
       <xsl:value-of select="@YammerIDNumber" />
     </xsl:variable>
 
-    <!-- <div class= "hero-news-container">
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  
-      <div class="row">-->
     <div class="recent-news-wrapper">
       <div class="card">
         <xsl:if test="string-length($SafeImageUrl) != 0">
@@ -819,9 +809,6 @@
       <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
     </xsl:if>
   </xsl:template>
-
-
-
   <!-- Trending News -->
   <xsl:template name="TrendingNews" match="Row[@Style='TrendingNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
@@ -905,9 +892,6 @@
     <!--end time details-->
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
-
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> -->
     <div class="">
       <div class="">
         <div class="card upcoming-events">
@@ -920,13 +904,8 @@
             <div class="card-date">
               <span class="event-month">
                 <xsl:value-of select="ddwrt:FormatDateTime(string(@EventDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
-              </span>
-              <!--<span class="event-day">
-        <xsl:value-of select="$day"/>
-       </span>-->
+              </span>              
             </div>
-
-
             <xsl:if test="string-length($time) != 0">
               <p class="card-time">
                 <xsl:value-of select="$time" />
@@ -978,8 +957,5 @@
       <a class="btn btn-cta white" href="/sites/stage/news/pages/default.aspx?activeTab=events">View All Events</a>
     </xsl:if>
   </xsl:template>
-
-
   <!-- End of Custom Styles -->
-
 </xsl:stylesheet>
