@@ -5,7 +5,9 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'photoService', 'COM_CONF
     
     ctrl.displayNewPhotoForm = displayNewPhotoForm;
 
+
     this.$onInit = function () {
+        $scope.viewAllUrl = ctrl.viewAllPhotosUrl;
         $scope.isLowBandwidth = window.lowBandwidth;
         if (window.lowBandwidth) return;
         photoService.getPhotos().then(function (data) {
@@ -24,9 +26,11 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'photoService', 'COM_CONF
 }]).component('photoShare', {
     bindings: {
         pictureLimit: '@',
-        newFormUrl: '@'
+        newFormUrl: '@',
+        viewAllPhotosUrl: '@'
     },
     template: require('../../includes/Photo-Share.html'),
     controller: ctrlName,
     controllerAs: 'ctrl'
+
 });

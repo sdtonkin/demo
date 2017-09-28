@@ -10,6 +10,9 @@ navigation {
     margin-left: -15px;
     margin-right: -15px;
     background-color: $brand-dark-blue-alt;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
     nav {
         // margin-left: 115px;
         // margin-right: 115px;
