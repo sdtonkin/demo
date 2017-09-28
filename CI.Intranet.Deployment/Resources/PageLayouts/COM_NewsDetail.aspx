@@ -24,8 +24,7 @@
     <SharePointWebControls:ListSiteMapPath runat="server" SiteMapProviders="CurrentNavigationSwitchableProvider" RenderCurrentNodeAsLink="false" PathSeparator="" CssClass="s4-breadcrumb" NodeStyle-CssClass="s4-breadcrumbNode" CurrentNodeStyle-CssClass="s4-breadcrumbCurrentNode" RootNodeStyle-CssClass="s4-breadcrumbRootNode" NodeImageOffsetX=0 NodeImageOffsetY=289 NodeImageWidth=16 NodeImageHeight=16 NodeImageUrl="/_layouts/15/images/fgimg.png?rev=40" HideInteriorRootNodes="true" SkipLinkText="" /> 
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
-    <div class="main-container background-off-white">
-    
+    <div class="main-container background-off-white">    
         <div class="container with-rail">
         <div class="container-fluid back-image"></div>
             <div class="row">
@@ -33,24 +32,22 @@
                 <section class="hero-news-container">
                     <div class="row page-controls">
                         <div class="col-12">
-                        <div class="page-control-wrapper">
-                        
-
-                        <div class="page-control-wrap">
-                            <span class="share">
-    							<a href="#">
-    							  <span style="color:#908b63">Share<i class="fa fa-envelope-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
-    							</a>
-    						</span>
+                            <div class="page-control-wrapper">
+                                <div class="page-control-wrap">
+                                    <span class="share">
+    							        <a href="#">
+    							          <span style="color:#908b63">Share<i class="fa fa-envelope-o" aria-hidden="true" style="margin-left:4px;"></i></span> 
+    							        </a>
+    						        </span>
+                                </div>
+                                <div class="page-control-wrap">
+                                    <submit-news></submit-news>
+                                </div>						
+                                <div class="page-control-wrap">
+                                    <bookmark-page></bookmark-page>
+                                </div>
+                            </div>
                         </div>
-                        <div class="page-control-wrap">
-                            <submit-news></submit-news>
-                        </div>						
-                        <div class="page-control-wrap">
-                            <bookmark-page></bookmark-page>
-                        </div>
-                    </div>
-                    </div>
                     </div>
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid ci-article-image" />
                     <div class="card">
