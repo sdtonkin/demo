@@ -1,10 +1,14 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('employeeAnnouncementService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'employeeAnnouncementService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var announcementKey = 'CI_EMPLOYEE_ANNOUNCEMENT_KEY';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var announcementKey = store.key;
     
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearEmployeeAnnouncements', announcementKey);
+    common.checkForClearStatement(store.clearCommand, announcementKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 

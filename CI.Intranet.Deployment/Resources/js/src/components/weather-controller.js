@@ -12,8 +12,6 @@ myApp.controller(ctrlName, ['$scope', '$q', 'weatherService', 'userProfileServic
         weatherService.getWeather(loc, 'F').then(function (data) {
             console.log(data);
         });
-
-        
     };
     
     function getWeather(location, unit) {

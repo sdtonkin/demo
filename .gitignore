@@ -223,3 +223,4 @@ ModelManifest.xml
 /CI.Intranet.Deployment/Resources/js/src/services/contacts-service.js
 /CI.Intranet.Deployment/Resources/js/src/services/departments-service.js
 /CI.Intranet.Deployment/Resources/js/src/services/share-news-service.js
+/CI.Intranet.Deployment/Resources/js/src/components/base-controller.js

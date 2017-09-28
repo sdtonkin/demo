@@ -1,15 +1,19 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('globalPartnerService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'globalPartnerService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var globalPartnerKey = 'DB61A9E9-6805-4388-8271-4C2F8BB48EF9';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var globalPartnerKey = store.key;
     
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearGlobalPartners', globalPartnerKey);
+    common.checkForClearStatement(store.clearCommand, globalPartnerKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();  
 
     // set default expiration at 0 hours
-    ctrl.expirationDuration = 0;
+    ctrl.expirationDuration = store.expire;
     ctrl.getGlobalPartners = function () {
         var defer = $q.defer();
         getGlobalPartners().then(function (partners) {
