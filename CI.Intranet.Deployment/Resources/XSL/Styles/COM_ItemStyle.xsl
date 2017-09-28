@@ -688,9 +688,9 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">
+                <h4>
                   <xsl:if test="string-length(@NewsType) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                       </xsl:attribute>
@@ -698,9 +698,9 @@
                     </a>
                   </xsl:if>
                 </h4>
-                <h4 class="card-title">
+                <h4>
                   <xsl:if test="string-length(@Location) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                       </xsl:attribute>
@@ -708,9 +708,9 @@
                     </a>
                   </xsl:if>
                 </h4>
-                <h4 class="card-title">
+                <h4>
                   <xsl:if test="string-length(@Group) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                       </xsl:attribute>
@@ -772,9 +772,9 @@
         </xsl:if>
 
         <div class="card-body">
-          <h4 class="card-title">
+          <h4>
             <xsl:if test="string-length(@NewsType) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                 </xsl:attribute>
@@ -782,9 +782,9 @@
               </a>
             </xsl:if>
           </h4>
-          <h4 class="card-title">
+          <h4>
             <xsl:if test="string-length(@Location) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                 </xsl:attribute>
@@ -792,9 +792,9 @@
               </a>
             </xsl:if>
           </h4>
-          <h4 class="card-title">
+          <h4>
             <xsl:if test="string-length(@Group) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                 </xsl:attribute>
@@ -816,7 +816,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-        <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
+      <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
     </xsl:if>
   </xsl:template>
 
