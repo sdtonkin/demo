@@ -272,7 +272,6 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
-    <Content Include="Resources\js\src\components\base-controller.js" />
     <Content Include="Resources\js\src\components\anniversary.js" />
     <Content Include="Resources\js\src\components\contacts.js" />
     <Content Include="Resources\js\src\components\employee-life.js" />
