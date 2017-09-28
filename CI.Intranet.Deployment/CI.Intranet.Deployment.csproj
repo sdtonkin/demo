@@ -204,6 +204,7 @@
   <ItemGroup>
     <Content Include="Resources\components.html" />
     <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
+    <Content Include="Resources\images\headerBackground.png" />
     <Content Include="Resources\js\includes\Contacts.html" />
     <Content Include="Resources\js\includes\Employee-Life.html" />
     <Content Include="Resources\js\includes\Global-Links.html" />
