@@ -682,7 +682,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h4>
+                  <h4>
                   <xsl:if test="string-length(@NewsType) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
@@ -691,8 +691,7 @@
                       <xsl:value-of select="@NewsType"/>
                     </a>
                   </xsl:if>
-                </h4>
-                <h4>
+
                   <xsl:if test="string-length(@Location) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
@@ -701,8 +700,8 @@
                       <xsl:value-of select="@Location"/>
                     </a>
                   </xsl:if>
-                </h4>
-                <h4>
+
+
                   <xsl:if test="string-length(@Group) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
@@ -711,7 +710,7 @@
                       <xsl:value-of select="@Group"/>
                     </a>
                   </xsl:if>
-                </h4>
+                  </h4>
                 <div class="card-date">
                   <xsl:value-of select="ddwrt:FormatDateTime(string(@PublishDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
                 </div>
@@ -771,8 +770,7 @@
                 <xsl:value-of select="@NewsType"/>
               </a>
             </xsl:if>
-          </h4>
-          <h4>
+
             <xsl:if test="string-length(@Location) != 0">
               <a class="card-title">
                 <xsl:attribute name="href">
@@ -781,8 +779,7 @@
                 <xsl:value-of select="@Location"/>
               </a>
             </xsl:if>
-          </h4>
-          <h4>
+
             <xsl:if test="string-length(@Group) != 0">
               <a class="card-title">
                 <xsl:attribute name="href">
@@ -919,29 +916,27 @@
               <xsl:value-of select="@Location"/>
             </p>
 
-            <h4 class="card-tags">
+            <h4>
               <xsl:if test="string-length(@EventType) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;newstype=<xsl:value-of select="@EventType" />
                   </xsl:attribute>
                   <xsl:value-of select="@EventType"/>
                 </a>
               </xsl:if>
-            </h4>
-            <h4 class="card-tags">
+
               <xsl:if test="string-length(@LocationTag) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;location=<xsl:value-of select="@LocationTag" />
                   </xsl:attribute>
                   <xsl:value-of select="@LocationTag"/>
                 </a>
               </xsl:if>
-            </h4>
-            <h4 class="card-tags">
+
               <xsl:if test="string-length(@Group) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;group=<xsl:value-of select="@Group" />
                   </xsl:attribute>
