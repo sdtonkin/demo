@@ -478,6 +478,9 @@ body {
     width: 500px; }
   .hero-news-container .card.img-card a {
     overflow: hidden; }
+.hero-news-container .card-img-top, .hero-news-container .card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
 
 .hero-main > .list-content:last-child .card-body {
   border: medium none;
@@ -697,6 +700,8 @@ body {
     margin-bottom: 15px;
     display: block;
     margin-top: 15px; }
+    .rss-feed .rss-category i.fa {
+      margin-right: 5px; }
   .rss-feed .rss-title a {
     color: white;
     font-size: 18px;
@@ -1957,7 +1962,10 @@ section.global-partners ul, section.my-department ul {
   navigation .nav-item {
     padding-right: 35px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
-      font-size: 21px; } }
+      font-size: 21px; }
+
+  .hero-news-container .recent-news-wrapper {
+    margin-bottom: 30px; } }
 /* ----------------------------------------------------
   13) Sharepoint Override Imports
 ------------------------------------------------------- */
