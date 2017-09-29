@@ -3,7 +3,7 @@ var serviceName = 'gratitudesService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var gratsKey = store.key;
 
@@ -19,7 +19,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
             .expand('COM_Contact', 'Author')
             .get()
             .then(function (data) {
-                console.log('getGratitudes', data);
+                if (!COM_CONFIG.isProduction) { console.log('getGratitudes', data); }                
                 var grats = [];
                 var items = data,
                     pplCount = 0;

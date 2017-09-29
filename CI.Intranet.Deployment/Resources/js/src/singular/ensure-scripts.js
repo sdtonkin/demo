@@ -6,8 +6,7 @@
         defaultStyleSheet = '/sites/stage/_catalogs/masterpage/Compassion/css/main.min.css';
     lowStyleSheet = '/sites/stage/_catalogs/masterpage/Compassion/css/low.min.css';
     downloadSize = 190497; //bytes;
-    console.log(typeof angular == 'undefined');
-
+    
     InitiateSpeedDetection();
 
     if (typeof angular == 'undefined') {

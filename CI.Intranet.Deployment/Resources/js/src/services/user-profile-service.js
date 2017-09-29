@@ -22,7 +22,7 @@
     function getUserByUserName(userName) {
         var defer = $q.defer();
         $pnp.sp.profiles.getPropertiesFor(userName).then(function (result) {
-            console.log("User Profile Service", result);
+            if (!COM_CONFIG.isProduction) { console.log("User Profile Service", result); }            
             defer.resolve(result);
         }).catch(function (err) {
             console.log("User Profile Service Error: " + err);
@@ -60,7 +60,6 @@
     function getUserProfile(emailArray) {
         var promiseArray = [];
         for (var i = 0; i < emailArray.length; i++) {
-            //  console.log("Calling UserProfile for " + emailArray[i]);
             promiseArray.push($pnp.sp.profiles.getPropertiesFor("i:0#.f|membership|" + emailArray[i]));
         }
         //Since there aree multiple calls we need to push each of them to an array and return that array of promises

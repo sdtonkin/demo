@@ -3,7 +3,7 @@ var serviceName = 'employeeAnnouncementService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var announcementKey = store.key;
     
@@ -32,7 +32,7 @@ ctrl.getAnnouncements = getEmployeeAnnouncements
                         item.iconUrl = item.COM_ToolbarIconUrl;
                     }
                 });
-                console.log('employee announcement', data);
+                if (!COM_CONFIG.isProduction) { console.log('employee announcement', data); }
                 defer.resolve(data);
             });
         return defer.promise;

@@ -177,7 +177,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js"></script>
-<script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"  data-app-id="GXcqaLjokP6aYhbY2hgkQ"></script>
+<script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"  data-app-id="8kFMGWMz5rY9pDXeI0ZoFA"></script>
 
 <!-- scripts -->
 <script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>
@@ -211,9 +211,16 @@
 <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" Visible="False" runat="server" />
 
 <PublishingWebControls:EditModePanel runat="server" id="SetEditModeClass">
-<script language="javascript">
+<script language="text/javascript">
     $("body").addClass("edit-mode");
-    
+    var appInsights=window.appInsights||function(config){
+    function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+    }({
+        instrumentationKey:"fc2fcfc9-92d7-4660-bcd2-63ad51e7eba3"
+    });
+       
+    window.appInsights=appInsights;
+    appInsights.trackPageView(); 
 </script>
 </PublishingWebControls:EditModePanel>
 

@@ -24,7 +24,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'app
     });
     $scope.$parent.$watch('ctrl.selectedTabId', function (newVal, oldVal, scope) {
         if (newVal == null) return;
-        console.log(newVal);
+        if (!COM_CONFIG.isProduction) { console.log('selecteed tab id', newVal); }
         ctrl.selectedTabId = newVal;
     });
     ctrl.enableSaveBookmarkButton = enableSaveBookmarkButton;

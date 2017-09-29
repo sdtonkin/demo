@@ -115,7 +115,7 @@
               })
               .catch(function (data) {
                   defer.reject(data);
-                  console.log(JSON.stringify(data));
+                  if (!COM_CONFIG.isProduction) { console.log('search my users', JSON.stringify(data)); }
               });
               return defer.promise;
           };

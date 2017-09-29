@@ -3,7 +3,7 @@ var serviceName = 'bookmarkService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
 
     var userBookmarkKey = store.key;
@@ -116,7 +116,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                         if (item.COM_BookmarkUrl)
                             item.url = item.COM_BookmarkUrl;
                     });
-                    console.log('getUserBookmarkItemsByName', data);
+                    if (!COM_CONFIG.isProduction) { console.log('getUserBookmarkItemsByName', data); }                    
                     defer.resolve(data);
                 });
         }

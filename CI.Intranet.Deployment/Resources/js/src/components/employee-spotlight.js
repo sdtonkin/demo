@@ -6,7 +6,7 @@ myApp.controller(ctrlName, ['$rootScope', '$scope', '$q', 'COM_CONFIG', function
     var ctrl = this;
     $scope.activeTab = 'g';
     this.$onInit = function () {
-        console.log('employeeSpotlightCtrl', ctrl);
+        if (!COM_CONFIG.isProduction) { console.log('employeeSpotlightCtrl', ctrl); }
         $scope.viewAllUrl = ctrl.viewAllGratitudesUrl;
         $scope.viewAllHiresUrl = ctrl.viewAllHiresUrl;
         $scope.viewAllAnniversaryUrl = ctrl.viewAllAnniversaryUrl;

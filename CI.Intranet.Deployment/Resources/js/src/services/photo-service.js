@@ -3,7 +3,7 @@ var serviceName = 'photoService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var photoKey = store.key;    
     
@@ -33,8 +33,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                     photo.created = new moment(p.Created);
                     photos.push(photo);
                 }
-                console.log('photo shares', photos);
-                
+                if (!COM_CONFIG.isProduction) { console.log('photo shares', photos); }
                 defer.resolve(photos);
             })
             .catch(e => { console.error(e); });

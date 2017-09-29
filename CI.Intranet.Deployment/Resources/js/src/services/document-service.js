@@ -8,8 +8,9 @@ angular.module('compassionIntranet').service('documentService', ['$http', '$q', 
             EnableInterleaving: true,
             RefinementFilters: ['fileExtension:equals("txt")'],
             SelectProperties: ['Title', 'FileDirRef', 'EncodedAbsUrl', 'Author', 'ModifiedBy']
-        }).then(function(results) {
-            console.log(results);
+        }).then(function (results) {            
+            defer.resolve(results);
+            if (!COM_CONFIG.isProduction) { console.log('getMyDocuments', results); }
         });
 
         return defer.promise;

@@ -3,7 +3,7 @@ var serviceName = 'groupService';
 angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
     var ctrl = this;
     var store = _.find(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var groupsKey = store.key;
     
@@ -45,7 +45,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                     g.name = item.Title;
                     g.url = item.COM_GroupSiteUrl.Url;
                     g.description = item.COM_GroupDescription;
-                    g.profileUrl = delveUrl;
+                    g.profileUrl = '';
                     groups.push(g);
                     promises.push(getGroupLeadership(g.url, item.Id));
                 }

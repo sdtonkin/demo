@@ -38,9 +38,9 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
                 return i.feedId == id;
             });
             if (feed == null) {
-                feed = _.find(ctrl.allFeeds, function (i) {
+                feed = angular.copy(_.find(ctrl.allFeeds, function (i) {
                     return i.id == id;
-                });
+                }));
                 feed.feedId = feed.id;
                 feed.id = -1;
             }
@@ -56,7 +56,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'common', 'modalService', 'rss
         }
     };
     function saveMyFeeds() {
-        ctrl.isToolbarDirty = true;
+        ctrl.isToolbarDirty = false;
         var feeds = ctrl.myFeeds;
         var dbFeeds = ctrl.myFeedsFromDb;
         var feedsToAdd = _.where(feeds, { id: -1 });

@@ -3,7 +3,7 @@ var serviceName = 'weatherService';
 angular.module('compassionIntranet').service(serviceName, ['$q', '$http', 'COM_CONFIG', 'storage', 'common', function ($q, $http, COM_CONFIG, storage, common) {
     var ctrl = this;
     var store = _.where(COM_CONFIG.storage, function (s) {
-        return s.service = serviceName;
+        return s.service == serviceName;
     });
     var locationStore = _.find(store, function (l) {
         return l.key.indexOf('LOCATION') != -1;
@@ -114,7 +114,7 @@ angular.module('compassionIntranet').service(serviceName, ['$q', '$http', 'COM_C
             then(function (data, status, headers) {
                 var loc = _.filter(data.data.results, function (d) { return _.contains(d.types, 'locality') });                
                 if (loc.length == 0) {
-                    console.log('getLocationFromLatLong Error: ', data);
+                    if (!COM_CONFIG.isProduction) { console.log('getLocationFromLatLong Error: ', data); }                    
                     defer.resolve('Colorado Springs, CO');                    
                 } else {
                     storage.set(locationKey, loc[0].formatted_address, locationExpiration);

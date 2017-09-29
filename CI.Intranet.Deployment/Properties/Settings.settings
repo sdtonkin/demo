@@ -14,5 +14,17 @@
   &lt;string&gt;https://compassion.sharepoint.com/sites/stage-innovation&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
+    <Setting Name="GroupSites" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/cfo&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/gco&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/global-leadership&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/gme&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/gp&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/hr&lt;/string&gt;
+  &lt;string&gt;https://compassion.sharepoint.com/sites/innovation&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
