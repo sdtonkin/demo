@@ -10,7 +10,7 @@
                 </li>
             </ul>
 
-            <button ng-click="ctrl.saveMyFeeds();" ng-disabled="ctrl.enableSaveButton();">Save</button>            
+            <button ng-click="ctrl.saveMyFeeds();" ng-disabled="!ctrl.isToolbarDirty">Save</button>            
             <button ng-click="ctrl.closeModal('ci-rss-feed-manage');">Close</button>
             <span>{{systemMessage}}</span>
         </div>
