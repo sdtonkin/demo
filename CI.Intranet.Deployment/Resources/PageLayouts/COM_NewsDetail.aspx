@@ -53,6 +53,12 @@
                     </div>
                     </div>
                     <PublishingWebControls:RichImageField FieldName="PublishingPageImage" runat="server" CssClass="img-fluid ci-article-image" />
+                         <div class="news-content">
+                            <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">
+                                <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
+                                <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
+                            </PublishingWebControls:EditModePanel> 
+                        </div>
                     <div class="card">
                         <div class="news-title-block">
                             <p class="card-date"><SharePointWebControls:FieldValue FieldName="COM_PublishDateFormat" runat="server"/></p>
@@ -113,11 +119,6 @@
             }
         });
     </script>
-    <PublishingWebControls:EditModePanel runat="server" PageDisplayMode="Edit" CssClass="edit-mode-panel title-edit">
-        <SharePointWebControls:DateTimeField runat="server" FieldName="COM_ExpirationDate"/>
-        <SharePointWebControls:NumberField runat="server" FieldName="COM_SortOrder"/>
-        <SharePointWebControls:DateTimeField FieldName="COM_PublishDate" runat="server" id="ArticleDate" />
-    </PublishingWebControls:EditModePanel> 
     <span id="article-news-type" class="ng-hide">
         <SharePointWebControls:FieldValue FieldName="COM_NewsType" runat="server"/>
     </span>
