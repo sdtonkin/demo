@@ -171,8 +171,12 @@ angular.module('compassionIntranet')
                         getDataDeferred.resolve(data);
                     },
                     error: function (err) {
-                        console.warn(err);
-                        def.reject(err);
+                        if (err.status == 404) {
+                            getDataDeferred.resolve(null);
+                        } else {
+                            console.warn(err);
+                            def.reject(err);
+                        }
                     }
                 });
 
@@ -290,18 +294,27 @@ angular.module('compassionIntranet')
             var def = $q.defer();
             var me = this;
             if (yam !== null) {
-                me.ensureConnection().then(function (response) {
-                    ctrl.getOpenGraphItemByUrl(location).then(function (response) {
-                        ctrl.getOpenGraphObject(response.id).then(function (data) {
-                            var likeCount = 0;
-                            for (var i = 0; i < data.messages.length; i++) {
-                                var message = data.messages[i];
-                                likeCount = likeCount + message.liked_by.count;
+                try {
+                    me.ensureConnection().then(function (response) {
+                        ctrl.getOpenGraphItemByUrl(location).then(function (response) {
+                            if (response == null) {
+                                def.resolve(0);
+                                return def.promise;
                             }
-                            def.resolve(likeCount);
+                            ctrl.getOpenGraphObject(response.id).then(function (data) {
+                                var likeCount = 0;
+                                for (var i = 0; i < data.messages.length; i++) {
+                                    var message = data.messages[i];
+                                    likeCount = likeCount + message.liked_by.count;
+                                }
+                                def.resolve(likeCount);
+                            });
                         });
                     });
-                });
+                }
+                catch(err) {
+                    def.resolve(0);
+                }
             }
             return def.promise;
         }
