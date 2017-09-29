@@ -45,7 +45,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                     g.name = item.Title;
                     g.url = item.COM_GroupSiteUrl.Url;
                     g.description = item.COM_GroupDescription;
-                    g.profileUrl = delveUrl;
+                    g.profileUrl = '';
                     groups.push(g);
                     promises.push(getGroupLeadership(g.url, item.Id));
                 }
