@@ -1,9 +1,13 @@
 'use strict';
-angular.module('compassionIntranet').service('gratitudesService', ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
+var serviceName = 'gratitudesService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'userProfileService', function ($http, $q, COM_CONFIG, common, userProfileService) {
     var ctrl = this;
-    var gratsKey = 'CI_GROUPS_KEY';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var gratsKey = store.key;
 
-    common.checkForClearStatement('clearGratitudes', gratsKey);
+    common.checkForClearStatement(store.clearCommand, gratsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 

@@ -197,10 +197,7 @@
 			        <pnp:Term Name="Global Board Engagement" />
             </pnp:Terms>
           </pnp:Term>
-		      <pnp:Term Name="General Program" />
-          <pnp:Terms>
-            <pnp:Term Name="Global Program" />
-          </pnp:Terms>
+		      <pnp:Term Name="Global Program" />
 		      <pnp:Term Name="Global Marketing and Engagement">
             <pnp:Terms>
               <pnp:Term Name="Global Partner Alliance" />

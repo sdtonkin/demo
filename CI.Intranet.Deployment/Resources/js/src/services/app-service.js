@@ -1,15 +1,18 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'appService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userAppsKey = 'CI_USER_APP_KEY';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+    var userAppsKey = store.key;
+    ctrl.expirationDuration = store.expire;
     
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearMyApps', userAppsKey);
+    common.checkForClearStatement(store.clearCommand, userAppsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
-    ES6Promise.polyfill();  
-
-    // set default expiration at 24 hours
-    ctrl.expirationDuration = 24;
+    ES6Promise.polyfill();
+    
     ctrl.getMyApps = function (userId) {
         var defer = $q.defer();
         getUserAppItems(userId).then(function (apps) {

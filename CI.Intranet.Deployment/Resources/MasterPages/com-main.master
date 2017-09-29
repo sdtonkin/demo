@@ -177,7 +177,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js"></script>
-<script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"  data-app-id="5YtVEVzXIadgTHFqv3g"></script>
+<script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"  data-app-id="GXcqaLjokP6aYhbY2hgkQ"></script>
 
 <!-- scripts -->
 <script type="text/javascript" src="<asp:Literal runat="server" Text="<%$SPUrl: ~sitecollection/_catalogs/masterpage/Compassion/js/main.min.js%>" />"></script>

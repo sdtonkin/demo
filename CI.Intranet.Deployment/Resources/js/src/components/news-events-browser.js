@@ -32,6 +32,8 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     ctrl.goSearch = goSearch;
     ctrl.checkForGoSearch = checkForGoSearch;
     $scope.searchTerm = '';
+    $scope.selectedCategoryTitle = 'category';
+    $scope.selectedRegionTitle = 'region';
 
     this.$onInit = function () {
         getData();        
@@ -85,6 +87,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     }
     function filterByCategory(category) {
         ctrl.selectedCategory = category;
+        $scope.selectedCategoryTitle = category.Key;
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = _.filter(masterArticles, function (a) {
                 return a.NewsType == category.name;
@@ -101,6 +104,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     }
     function filterByRegion(region) {
         ctrl.selectedRegion = region;
+        $scope.selectedRegionTitle = region.Key;
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = _.filter(masterArticles, function (a) {
                 return a.LocationTag == region.name;
@@ -151,6 +155,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             ctrl.setEventsPage(1);
         }        
         ctrl.selectedCategory = '';
+        $scope.selectedCategoryTitle = 'category';
     }
     function clearRegion() {
         if (ctrl.activeTab == 'news') {
@@ -162,6 +167,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
             ctrl.setEventsPage(1);
         }
         ctrl.selectedRegion = '';
+        $scope.selectedRegionTitle = 'region';
     }
     function getData() {
         var p1 = taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.newsTypeTermId);

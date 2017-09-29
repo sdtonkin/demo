@@ -1,15 +1,20 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('bookmarkService', ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'bookmarkService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userBookmarkKey = 'CI_MY_BOOKMARKS_KEY';
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service = serviceName;
+    });
+
+    var userBookmarkKey = store.key;
 
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearMyBookmarks', userBookmarkKey);
+    common.checkForClearStatement(store.clearCommand, userBookmarkKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
     // set default expiration at 24 hours
-    ctrl.expirationDuration = 24;
+    ctrl.expirationDuration = store.expire;
     ctrl.getMyBookmarks = function (userId) {
         var defer = $q.defer();
         getUserBookmarkItems(userId).then(function (bookmarks) {

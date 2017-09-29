@@ -76,6 +76,18 @@ if (document.location.host === "compassion.sharepoint.com") {
                 "https://compassion.sharepoint.com/sites/stage-hr",
                 "https://compassion.sharepoint.com/sites/stage-innovation"
             ],
+            storage: [
+                { service: 'appService', key: 'CI_USER_APP_KEY', expire: 24, clearCommand: 'clearMyApps' },
+                { service: 'bookmarkService', key: 'CI_MY_BOOKMARKS_KEY', expire: 24, clearCommand: 'clearMyBookmarks' },
+                { service: 'employeeAnnouncementService', key: 'CI_EMPLOYEE_ANNOUNCEMENT_KEY', expire: 8, clearCommand: 'clearEmployeeAnnouncements' },
+                { service: 'globalPartnerService', key: 'CI_GLOBAL_PARTNER_KEY', expire: 0, clearCommand: 'clearGlobalPartners' },
+                { service: 'gratitudesService', key: 'CI_GRATITUDE_KEY', expire: 4, clearCommand: 'clearGratitudes' },
+                { service: 'groupService', key: 'CI_GROUPS_KEY', expire: 24, clearCommand: 'clearGroups' },
+                { service: 'navigationService', key: 'CI_NAVIGATION_KEY', expire: 0, clearCommand: 'clearNavNodes' },
+                { service: 'photoService', key: 'CI_INTRANET_PHOTOS', expire: 24, clearCommand: 'clearPhotos' },
+                { service: 'weatherService', key: 'CI_LOCATION_KEY', expire: 4, clearCommand: 'clearLocation' },
+                { service: 'weatherService', key: 'CI_WEATHER_KEY', expire: 2, clearCommand: 'clearWeather' }
+            ],
             contentTypeIds: {
                 newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
                 event: '0x010200AA13DE23CACF40448F3C9C777ABC2106'
@@ -147,6 +159,18 @@ if (document.location.host === "compassion.sharepoint.com") {
                 "https://compassion.sharepoint.com/sites/gp",
                 "https://compassion.sharepoint.com/sites/hr",
                 "https://compassion.sharepoint.com/sites/innovation"
+            ],
+            storage: [
+                { service: 'appService', key: 'CI_USER_APP_KEY', expire: 24, clearCommand: 'clearMyApps' },
+                { service: 'bookmarkService', key: 'CI_MY_BOOKMARKS_KEY', expire: 24, clearCommand: 'clearMyBookmarks' },
+                { service: 'employeeAnnouncementService', key: 'CI_EMPLOYEE_ANNOUNCEMENT_KEY', expire: 8, clearCommand: 'clearEmployeeAnnouncements' },
+                { service: 'globalPartnerService', key: 'CI_GLOBAL_PARTNER_KEY', expire: 0, clearCommand: 'clearGlobalPartners' },
+                { service: 'gratitudesService', key: 'CI_GRATITUDE_KEY', expire: 4, clearCommand: 'clearGratitudes' },
+                { service: 'groupService', key: 'CI_GROUPS_KEY', expire: 24, clearCommand: 'clearGroups' },
+                { service: 'navigationService', key: 'CI_NAVIGATION_KEY', expire: 0, clearCommand: 'clearNavNodes' },
+                { service: 'photoService', key: 'CI_INTRANET_PHOTOS', expire: 24, clearCommand: 'clearPhotos' },
+                { service: 'weatherService', key: 'CI_LOCATION_KEY', expire: 4, clearCommand: 'clearLocation' },
+                { service: 'weatherService', key: 'CI_WEATHER_KEY', expire: 2, clearCommand: 'clearWeather' }
             ],
             contentTypeIds: {
                 newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',
@@ -223,6 +247,18 @@ else {
                 "https://compassion.sharepoint.com/sites/stage-gp",
                 "https://compassion.sharepoint.com/sites/stage-hr",
                 "https://compassion.sharepoint.com/sites/stage-innovation"
+        ],
+        storage: [
+                { service: 'appService', key: 'CI_USER_APP_KEY', expire: 24, clearCommand: 'clearMyApps' },
+                { service: 'bookmarkService', key: 'CI_MY_BOOKMARKS_KEY', expire: 24, clearCommand: 'clearMyBookmarks' },
+                { service: 'employeeAnnouncementService', key: 'CI_EMPLOYEE_ANNOUNCEMENT_KEY', expire: 8, clearCommand: 'clearEmployeeAnnouncements' },
+                { service: 'globalPartnerService', key: 'CI_GLOBAL_PARTNER_KEY', expire: 0, clearCommand: 'clearGlobalPartners' },
+                { service: 'gratitudesService', key: 'CI_GRATITUDE_KEY', expire: 4, clearCommand: 'clearGratitudes' },
+                { service: 'groupService', key: 'CI_GROUPS_KEY', expire: 24, clearCommand: 'clearGroups' },
+                { service: 'navigationService', key: 'CI_NAVIGATION_KEY', expire: 0, clearCommand: 'clearNavNodes' },
+                { service: 'photoService', key: 'CI_INTRANET_PHOTOS', expire: 24, clearCommand: 'clearPhotos' },
+                { service: 'weatherService', key: 'CI_LOCATION_KEY', expire: 4, clearCommand: 'clearLocation' },
+                { service: 'weatherService', key: 'CI_WEATHER_KEY', expire: 2, clearCommand: 'clearWeather' }
         ],
         contentTypeIds: {
             newsPage: '0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390064DEA0F50FC8C147B0B6EA0636C4A7D400391165E9D2147C40AB7727C9F70AF24301',

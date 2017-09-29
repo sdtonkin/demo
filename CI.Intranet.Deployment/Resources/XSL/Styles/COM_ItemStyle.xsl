@@ -6,8 +6,6 @@
   xmlns:cmswrt="http://schemas.microsoft.com/WebParts/v3/Publishing/runtime"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
   xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime">
-
-
   <xsl:param name="ItemsHaveStreams">
     <xsl:value-of select="'False'" />
   </xsl:param>
@@ -670,10 +668,6 @@
     <xsl:variable name="YammerID">
       <xsl:value-of select="@YammerIDNumber" />
     </xsl:variable>
-
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> 
-    FIRST HERO AREA-->
     <div class="">
       <div class="">
         <div class="hero-news-container">
@@ -688,36 +682,35 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">
+                  <h4>
                   <xsl:if test="string-length(@NewsType) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                       </xsl:attribute>
                       <xsl:value-of select="@NewsType"/>
                     </a>
                   </xsl:if>
-                </h4>
-                <h4 class="card-title">
+
                   <xsl:if test="string-length(@Location) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                       </xsl:attribute>
                       <xsl:value-of select="@Location"/>
                     </a>
                   </xsl:if>
-                </h4>
-                <h4 class="card-title">
+
+
                   <xsl:if test="string-length(@Group) != 0">
-                    <a>
+                    <a class="card-title">
                       <xsl:attribute name="href">
                         /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                       </xsl:attribute>
                       <xsl:value-of select="@Group"/>
                     </a>
                   </xsl:if>
-                </h4>
+                  </h4>
                 <div class="card-date">
                   <xsl:value-of select="ddwrt:FormatDateTime(string(@PublishDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
                 </div>
@@ -759,10 +752,6 @@
       <xsl:value-of select="@YammerIDNumber" />
     </xsl:variable>
 
-    <!-- <div class= "hero-news-container">
-    <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper">  
-      <div class="row">-->
     <div class="recent-news-wrapper">
       <div class="card">
         <xsl:if test="string-length($SafeImageUrl) != 0">
@@ -772,29 +761,27 @@
         </xsl:if>
 
         <div class="card-body">
-          <h4 class="card-title">
+          <h4>
             <xsl:if test="string-length(@NewsType) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                 </xsl:attribute>
                 <xsl:value-of select="@NewsType"/>
               </a>
             </xsl:if>
-          </h4>
-          <h4 class="card-title">
+
             <xsl:if test="string-length(@Location) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                 </xsl:attribute>
                 <xsl:value-of select="@Location"/>
               </a>
             </xsl:if>
-          </h4>
-          <h4 class="card-title">
+
             <xsl:if test="string-length(@Group) != 0">
-              <a>
+              <a class="card-title">
                 <xsl:attribute name="href">
                   /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                 </xsl:attribute>
@@ -816,12 +803,9 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-        <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
+      <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
     </xsl:if>
   </xsl:template>
-
-
-
   <!-- Trending News -->
   <xsl:template name="TrendingNews" match="Row[@Style='TrendingNews']" mode="itemstyle">
     <xsl:variable name="SafeLinkUrl">
@@ -905,9 +889,6 @@
     <!--end time details-->
     <xsl:variable name="enddateTimeCondensed" select="ddwrt:FormatDate(string(@EndTime), 1033, 2)"/>
     <xsl:variable name="endtime"  select="substring-after($enddateTimeCondensed, ' ')" />
-
-    <!-- <div class="row news-card-container">
-    <div class="col-md-6 news-card-wrapper"> -->
     <div class="">
       <div class="">
         <div class="card upcoming-events">
@@ -920,13 +901,8 @@
             <div class="card-date">
               <span class="event-month">
                 <xsl:value-of select="ddwrt:FormatDateTime(string(@EventDate),1033,'MMMM d, yyyy')" disable-output-escaping="yes"/>
-              </span>
-              <!--<span class="event-day">
-        <xsl:value-of select="$day"/>
-       </span>-->
+              </span>              
             </div>
-
-
             <xsl:if test="string-length($time) != 0">
               <p class="card-time">
                 <xsl:value-of select="$time" />
@@ -940,29 +916,27 @@
               <xsl:value-of select="@Location"/>
             </p>
 
-            <h4 class="card-tags">
+            <h4>
               <xsl:if test="string-length(@EventType) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;newstype=<xsl:value-of select="@EventType" />
                   </xsl:attribute>
                   <xsl:value-of select="@EventType"/>
                 </a>
               </xsl:if>
-            </h4>
-            <h4 class="card-tags">
+
               <xsl:if test="string-length(@LocationTag) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;location=<xsl:value-of select="@LocationTag" />
                   </xsl:attribute>
                   <xsl:value-of select="@LocationTag"/>
                 </a>
               </xsl:if>
-            </h4>
-            <h4 class="card-tags">
+
               <xsl:if test="string-length(@Group) != 0">
-                <a>
+                <a class="card-tags">
                   <xsl:attribute name="href">
                     /sites/stage/news/pages/default.aspx?activeTab=events&amp;group=<xsl:value-of select="@Group" />
                   </xsl:attribute>
@@ -978,8 +952,5 @@
       <a class="btn btn-cta white" href="/sites/stage/news/pages/default.aspx?activeTab=events">View All Events</a>
     </xsl:if>
   </xsl:template>
-
-
   <!-- End of Custom Styles -->
-
 </xsl:stylesheet>
