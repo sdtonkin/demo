@@ -32,16 +32,12 @@ angular.module('compassionIntranet')
             if (yam !== null) {
                 yam.getLoginStatus(function (response) {
                     if (response.authResponse) {
-                        //console.log("Yammer logged in.");
-                        //console.dir("Yammer user information", response); //print user information to the console
                         yam.platform.setAuthToken(response.access_token.token);
                         deferred.resolve();
                     } else {
                         console.log("Not logged in. Pulling token from User Profile");
-                        //deferred.reject();
 
                         var loginName = "i:0#.f|membership|" + _spPageContextInfo.userLoginName;
-                        //var loginName = _spPageContextInfo.userLoginName;
 
                         $pnp.sp.profiles.getUserProfilePropertyFor(loginName).then(function (authToken) {
                             if (authToken) {

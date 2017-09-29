@@ -7,7 +7,7 @@ myApp.controller(ctrlName, ['$scope', 'newHireService', 'COM_CONFIG', function (
 
     this.$onInit = function () {
         newHireService.getHire().then(function (data) {
-            console.log('new hires', data);
+            if (!COM_CONFIG.isProduction) { console.log('new hires', data); }
             $scope.newHires = data;
         });
     }

@@ -114,7 +114,7 @@ angular.module('compassionIntranet').service(serviceName, ['$q', '$http', 'COM_C
             then(function (data, status, headers) {
                 var loc = _.filter(data.data.results, function (d) { return _.contains(d.types, 'locality') });                
                 if (loc.length == 0) {
-                    console.log('getLocationFromLatLong Error: ', data);
+                    if (!COM_CONFIG.isProduction) { console.log('getLocationFromLatLong Error: ', data); }                    
                     defer.resolve('Colorado Springs, CO');                    
                 } else {
                     storage.set(locationKey, loc[0].formatted_address, locationExpiration);

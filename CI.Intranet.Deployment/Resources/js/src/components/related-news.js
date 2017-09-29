@@ -13,7 +13,7 @@ myApp.controller(ctrlName, ['$scope', 'relatedNewsService', 'COM_CONFIG', 'commo
         
         relatedNewsService.getRelatedNews(newsType, pageUrl, articleLimit).then(function (data) {
             $scope.newsSite = COM_CONFIG.rootWeb + "/news/pages/default.aspx";
-            console.log('related news', data);
+            if (!COM_CONFIG.isProduction) { console.log('related news', data); }
             if (data.length === 0) {
                 $scope.notFound = "No related stories found";
             } else {

@@ -20,12 +20,12 @@ myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService',
         appService.getMyAppsByName(userLoginName).then(function (response) {
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
-            console.log('getMyAppsByName', response);
+            if (!COM_CONFIG.isProduction) { console.log('getMyAppsByName', response); }
         });
         bookmarkService.getMyBookmarksByName(userLoginName).then(function (response) {
             ctrl.myBookmarks = angular.copy(response);
             ctrl.myBookmarksFromDb = response;
-            console.log('getMyBookmarksByName', response);
+            if (!COM_CONFIG.isProduction) { console.log('getMyBookmarksByName', response); }
         });
     };
     ctrl.isSelected = function (tabId) {

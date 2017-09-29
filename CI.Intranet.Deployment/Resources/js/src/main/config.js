@@ -8,7 +8,7 @@ var myApp = angular.module('compassionIntranet');
 if (document.location.host === "compassion.sharepoint.com") {
     if (document.location.pathname.toLowerCase().indexOf('/sites/stage') !== -1) {
         myApp.constant('COM_CONFIG', {
-            isProduction: false,
+            isProduction: true,
             msGraph: {
                 appId: '287d9b56-5352-4f58-a8f5-1de40966c6c9',
                 redirectUri: 'https://compassion.sharepoint.com/sites/stage',

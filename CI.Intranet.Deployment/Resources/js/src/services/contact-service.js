@@ -28,7 +28,7 @@ angular.module('compassionIntranet').service('contactService', ['$http', '$q', '
                     g.profileUrl = delveUrl + c.COM_Contact.SipAddress;
                     response.push(g);
                 }
-                console.log('getContacts', response);
+                if (!COM_CONFIG.isProduction) { console.log('getContacts', response); }                
                 defer.resolve(response);
             });
 

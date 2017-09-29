@@ -48,8 +48,8 @@ angular.module('').controller('likeController', function ($scope, COM_CONFIG, li
                         $scope.actionText = "Unlike";
                     }
                     $scope.$apply();
-                }), Function.createDelegate(this, function (response){
-                    console.log("Failure to change like", response);
+                }), Function.createDelegate(this, function (response) {
+                    if (!COM_CONFIG.isProduction) { console.log("Failure to change like", response); }
                 }));
             });    
         });

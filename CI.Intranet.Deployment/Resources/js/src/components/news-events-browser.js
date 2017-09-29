@@ -177,7 +177,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         var p5 = newsService.getEvents();
 
         $q.all([p1, p2, p3, p4, p5]).then(function (data) {
-            console.log(data);
+            if (!COM_CONFIG.isProduction) { console.log('news and events', data); }
             ctrl.newsCategories = data[0];
             ctrl.eventCategories = data[1];
             ctrl.regions = data[2];

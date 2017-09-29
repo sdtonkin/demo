@@ -4,7 +4,8 @@ var myApp = angular.module('compassionIntranet'),
 
 myApp.controller(controllerName, ['$scope', 'documentService', 'COM_CONFIG', function ($scope, documentService, COM_CONFIG) {
     var userId = _spPageContextInfo.userId,
-        userDisplayName = _spPageContextInfo.userDisplayName;
+        userDisplayName = _spPageContextInfo.userDisplayName,
+        ctrl = this;
 
     this.$onInit = function () {
         documentService.getMyDocuments(userDisplayName).then(function (response) {
