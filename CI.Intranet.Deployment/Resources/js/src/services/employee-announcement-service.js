@@ -32,7 +32,7 @@ ctrl.getAnnouncements = getEmployeeAnnouncements
                         item.iconUrl = item.COM_ToolbarIconUrl;
                     }
                 });
-                console.log('employee announcement', data);
+                if (!COM_CONFIG.isProduction) { console.log('employee announcement', data); }
                 defer.resolve(data);
             });
         return defer.promise;

@@ -23,7 +23,7 @@
 @import url("sass/base/weather-icons.min.css");
 .font-lato-light, h2, .h2, .btn.btn-cta:after, .news-block, .weather .weather-info {
   font-family: 'Lato', sans-serif !important;
-  font-weight: 100; }
+  font-weight: 300; }
 
 .font-lato-reg, body, h2.section, .h2.section, h3, .h3, h4, .h4, .news-tag-content .tag-container > span, h5, .h5, .footer-container nav ul, .hero-news-container .card-date, .find-people-carousel .employee-card .emp-name, .find-people-carousel .employee-card .emp-title, .find-people-carousel .employee-card .emp-address, .find-people-carousel .employee-card .emp-phone, .trending .card-text, .related .card-text, .rss-feed .rss-title a, .upcoming-events .card-date, .upcoming-events .card-time, .upcoming-events .card-location, .employee-card .emp-des, .employee-card .submit-line, .news-events .nav-link, .nav-toolbar .nav-link, #SearchBox input {
   font-family: 'Lato', sans-serif !important;
@@ -491,6 +491,10 @@ body {
     width: 500px; }
   .hero-news-container .card.img-card a {
     overflow: hidden; }
+
+.hero-news-container .card-img-top, .hero-news-container .card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
 
 .hero-main > .list-content:last-child .card-body {
   border: medium none;
@@ -1992,7 +1996,9 @@ section.global-partners ul, section.my-department ul {
   navigation .nav-item {
     padding-right: 35px; }
     navigation .nav-item a, navigation .nav-item a:visited, navigation .nav-item a:hover {
-      font-size: 21px; } }
+      font-size: 21px; }
+  .hero-news-container .recent-news-wrapper {
+    margin-bottom: 30px; } }
 
 /* ----------------------------------------------------
   13) Sharepoint Override Imports

@@ -38,7 +38,7 @@ myApp.controller(ctrlName, function($scope, departmentNewsService, COM_CONFIG, y
             $scope.news = news;
             $scope.events = events;
         } else {
-            console.log("No department results");
+            if (!COM_CONFIG.isProduction) { console.log("No department results"); }
         }
     });
 

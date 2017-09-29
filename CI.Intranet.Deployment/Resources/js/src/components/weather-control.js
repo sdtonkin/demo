@@ -49,7 +49,7 @@ myApp.controller(controllerName, ['$scope', 'weatherService', 'COM_CONFIG', 'sto
     function getWeather() {
         weatherService.getLocation().then(function (location) {
             weatherService.getWeather(location, 'F').then(function (data) {
-                console.log('weather', data);
+                if (!COM_CONFIG.isProduction) { console.log('weather', data); }
                 $scope.noWeather = false;
                 $scope.title = data.title;
                 $scope.temp = data.temp;

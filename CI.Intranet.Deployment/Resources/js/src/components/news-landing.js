@@ -21,9 +21,8 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     $scope.selectedCategory = parameters.category ? parameters.category : '';
 
 
-    taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function(response) {
-        console.log('location terms');
-        console.dir(response);
+    taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (response) {
+        if (!COM_CONFIG.isProduction) { console.log('location terms', response); }
         $scope.allLocations = response.map(function(item) {
             return item.Key;
         });
@@ -67,8 +66,8 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
         $scope.loading = true;
         var start = 0;
         if (loadMore) { start = $scope.startRow; }
-        newsService.getLandingNews($scope.selectedLocation, $scope.selectedCategory, $scope.searchTerm, start).then(function(news) {
-            console.log("News:", news);
+        newsService.getLandingNews($scope.selectedLocation, $scope.selectedCategory, $scope.searchTerm, start).then(function (news) {
+            if (!COM_CONFIG.isProduction) { console.log('news', news); }
             if (loadMore) {
                 $scope.news = $scope.news.concat(news.PrimarySearchResults);
             } else {

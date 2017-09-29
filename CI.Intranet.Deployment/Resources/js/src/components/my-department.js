@@ -21,7 +21,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'userProfileServ
             var department = _.find(data.UserProfileProperties, function (d) {
                 return d.Key == 'Department';
             }).Value;
-            console.log(department);
+            if (!COM_CONFIG.isProduction) { console.log('getCurrentUserProfile', department); }
             userProfileService.getUsersInMyDepartment(department).then(function (data) {
                 var response = [];
                 for (var i = 0; i < data.length; i++) {

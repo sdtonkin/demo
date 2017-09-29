@@ -33,8 +33,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                     photo.created = new moment(p.Created);
                     photos.push(photo);
                 }
-                console.log('photo shares', photos);
-                
+                if (!COM_CONFIG.isProduction) { console.log('photo shares', photos); }
                 defer.resolve(photos);
             })
             .catch(e => { console.error(e); });

@@ -20,7 +20,8 @@ angular.module('compassionIntranet').service('resourceLinksService', ['$http', '
                     if (item.Title)
                         item.title = item.Title;
                 });
-                console.log('resource', data);
+                if (!COM_CONFIG.isProduction) { console.log('getRelatedNews', items); }
+                if (!COM_CONFIG.isProduction) { console.log('resource', data); }
                 defer.resolve(data);
             });
 

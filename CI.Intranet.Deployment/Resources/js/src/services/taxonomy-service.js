@@ -16,10 +16,6 @@ angular.module('compassionIntranet')
 
         getTermSetAsTree(masterTermSetId, '', function (terms) {
             if (terms != null) {
-                // Kick off the term rendering
-                for (var i = 0; i < terms.Nodes.length; i++) {
-                    //console.log(terms.Nodes[i]);
-                }
                 deferred.resolve(terms.Nodes);
             }
             else {
@@ -47,6 +43,8 @@ angular.module('compassionIntranet')
         }),
 
         Function.createDelegate(this, function (sender, args) {
+            
+            
             console.log(args);
         
         }));

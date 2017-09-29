@@ -116,7 +116,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
                         if (item.COM_BookmarkUrl)
                             item.url = item.COM_BookmarkUrl;
                     });
-                    console.log('getUserBookmarkItemsByName', data);
+                    if (!COM_CONFIG.isProduction) { console.log('getUserBookmarkItemsByName', data); }                    
                     defer.resolve(data);
                 });
         }

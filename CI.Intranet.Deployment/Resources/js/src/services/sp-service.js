@@ -37,7 +37,9 @@ angular.module('compassionIntranet').service('spService', ['$http', '$q', 'COM_C
                     item.EventType = item.RefinableString02;
                 }
             });
-            console.log('service sites', response.PrimarySearchResults);
+            
+            if (!COM_CONFIG.isProduction) { console.log('service sites', response.PrimarySearchResults); }
+            
             defer.resolve(response.PrimarySearchResults);
         });
 

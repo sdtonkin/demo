@@ -78,7 +78,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                         item.rawArticleDate = artDate;
                     }                
                 });
-                console.log(data);
+                if (!COM_CONFIG.isProduction) { console.log('get page', data); }
                 if (data.length > 0) {
                     defer.resolve(data.PrimarySearchResults[0]);
                 }
@@ -125,7 +125,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                         item.rawArticleDate = artDate;
                     }
                 });
-                console.log(data);
+                if (!COM_CONFIG.isProduction) { console.log('getRelatedNewsByType', data); }
                 if (data.length > 0) {
                     defer.resolve(data.PrimarySearchResults[0]);
                 }
@@ -168,7 +168,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                     item.newsType = item.RefinableString01;
                 }
             });
-            console.log('getRelatedNews', items);
+            if (!COM_CONFIG.isProduction) { console.log('getRelatedNews', items); }            
             defer.resolve(items);
         });
         return defer.promise;

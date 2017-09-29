@@ -311,7 +311,6 @@
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
     <Content Include="Resources\js\src\components\us-links.js" />
     <Content Include="Resources\js\src\components\weather-control.js" />
-    <Content Include="Resources\js\src\components\weather-controller.js" />
     <Content Include="Resources\js\src\components\yammer-login.js" />
     <Content Include="Resources\js\src\main\common.js" />
     <Content Include="Resources\js\src\main\modal.js" />

@@ -19,7 +19,7 @@ angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_C
             .expand('COM_Contact', 'Author')
             .get()
             .then(function (data) {
-                console.log('getGratitudes', data);
+                if (!COM_CONFIG.isProduction) { console.log('getGratitudes', data); }                
                 var grats = [];
                 var items = data,
                     pplCount = 0;

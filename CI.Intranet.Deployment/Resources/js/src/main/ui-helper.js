@@ -107,7 +107,7 @@ myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($
     }
     function getGreeting() {
         var currentHour = new Date().getHours();
-        console.log(currentHour);
+        if (!COM_CONFIG.isProduction) { console.log('current hour', currentHour); }
         switch(true) {
             case (currentHour >= 0 && currentHour < 12):
                 return "Good Morning";

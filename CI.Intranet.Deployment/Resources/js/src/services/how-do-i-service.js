@@ -20,11 +20,9 @@ angular.module('compassionIntranet').service('howDoIService', ['$http', '$q', 'C
                     if (item.Title)
                         item.title = item.Title;
                 });
-                console.log('how do I', data);
+                if (!COM_CONFIG.isProduction) { console.log('how do I', data); }                
                 defer.resolve(data);
             });
-
         return defer.promise;
     }
-
 }]);
