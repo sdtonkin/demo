@@ -511,7 +511,7 @@ body {
   width: 425px; }
 
 .recent-news-wrapper .card-body {
-  height: 250px; }
+  height: 280px; }
 
 /* 
  * -----------------------------------------
@@ -903,6 +903,8 @@ rss-feed-manager .btn-cta {
   margin-top: 50px; }
   .stay-connected .photo-container p {
     margin-top: 15px; }
+  .stay-connected .share-buts .view-all-photos {
+    margin-top: 0; }
 
 /* 
  * -----------------------------------------
