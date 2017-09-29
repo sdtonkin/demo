@@ -67,7 +67,10 @@
 			overflow: hidden;
 		}
 	}
-
+	.card-img-top, .card {
+	    border-top-left-radius: 0;
+	    border-top-right-radius: 0;
+	}
 }
 .hero-main > .list-content:last-child .card-body {
     border: medium none;
