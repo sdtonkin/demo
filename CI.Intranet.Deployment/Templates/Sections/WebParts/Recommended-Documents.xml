@@ -17,22 +17,24 @@
               &lt;div title="_schemaversion" id="_3"&gt;
               &lt;div title="_links"&gt;
               &lt;div title="_link"&gt;
-              &lt;span title="_title"&gt;Helpful Link 1&lt;/span&gt;
+              &lt;span title="_title"&gt;Helpful Document&lt;/span&gt;
               &lt;span title="_order"&gt;1&lt;/span&gt;
               &lt;span title="_begincolumn"&gt;True&lt;/span&gt;
               &lt;span title="_linkurl"&gt;
-              &lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt;
+              &lt;a href="/SiteCollectionDocuments/Test Document.docx?d=w1aee96de8e1143779bf3b9a81bdda87d&amp;amp;csf=1"&gt;/sites/stage/SiteCollectionDocuments/Test Document.docx?d=w1aee96de8e1143779bf3b9a81bdda87d&amp;amp;csf=1&lt;/a&gt;
               &lt;/span&gt;
               &lt;span title="_style"&gt;Default&lt;/span&gt;
+              &lt;span title="_openinnewwindow"&gt;True&lt;/span&gt;
               &lt;/div&gt;
               &lt;div title="_link"&gt;
-              &lt;span title="_title"&gt;Helpful Link 2&lt;/span&gt;
+              &lt;span title="_title"&gt;Helpful PDF&lt;/span&gt;
               &lt;span title="_order"&gt;2&lt;/span&gt;
               &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
               &lt;span title="_linkurl"&gt;
-              &lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt;
+              &lt;a href="/SiteCollectionDocuments/TestPDF.pdf?csf=1"&gt;/sites/stage/SiteCollectionDocuments/TestPDF.pdf?csf=1&lt;/a&gt;
               &lt;/span&gt;
-              &lt;span title="_style"&gt;Default&lt;/span&gt;
+              &lt;span title="_style"&gt;TitleOnly&lt;/span&gt;
+              &lt;span title="_openinnewwindow"&gt;True&lt;/span&gt;
               &lt;/div&gt;
               &lt;/div&gt;
               &lt;div title="_view"&gt;
@@ -43,7 +45,7 @@
               &lt;/div&gt;
             </property>
             <property name="ListName" type="string">{0710472F-F441-4A1B-B3B9-4E0BEB9985A6}</property>
-            <property name="AllowZoneChange" type="bool">False</property>
+            <property name="AllowZoneChange" type="bool">True</property>
             <property name="AutoRefresh" type="bool">False</property>
             <property name="XmlDefinitionLink" type="string" />
             <property name="DataFields" type="string" />
@@ -68,7 +70,7 @@
             <property name="ManualRefresh" type="bool">False</property>
             <property name="ViewFlags" type="Microsoft.SharePoint.SPViewFlags, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">None</property>
             <property name="ChromeState" type="chromestate">Normal</property>
-            <property name="AllowHide" type="bool">False</property>
+            <property name="AllowHide" type="bool">True</property>
             <property name="ListDisplayName" type="string" null="true" />
             <property name="SampleData" type="string">
               &lt;dsQueryResponse&gt;
@@ -81,17 +83,17 @@
               &lt;/dsQueryResponse&gt;
             </property>
             <property name="AsyncRefresh" type="bool">False</property>
-            <property name="Title" type="string">Helpful Links</property>
+            <property name="Title" type="string">Recommended Documents</property>
             <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0710472f-f441-4a1b-b3b9-4e0beb9985a6</property>
             <property name="Description" type="string">Allows authors to create links that can be grouped and styled.</property>
-            <property name="AllowMinimize" type="bool">False</property>
+            <property name="AllowMinimize" type="bool">True</property>
             <property name="TitleUrl" type="string" />
             <property name="ItemXslLink" type="string" />
             <property name="CacheXslTimeOut" type="int">86400</property>
             <property name="DisplayName" type="string" />
             <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
             <property name="Width" type="string" />
-            <property name="AllowEdit" type="bool">False</property>
+            <property name="AllowEdit" type="bool">True</property>
             <property name="ExportMode" type="exportmode">All</property>
             <property name="Direction" type="direction">NotSet</property>
             <property name="PageSize" type="int">-1</property>

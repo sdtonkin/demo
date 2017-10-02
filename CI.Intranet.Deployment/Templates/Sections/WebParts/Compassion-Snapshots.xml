@@ -1,4 +1,4 @@
-﻿<pnp:WebPart Title="World News Web Part" Zone="RightZone" Order="2" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+﻿<pnp:WebPart Title="Compassion Snapshots Web Part" Zone="TopZone" Order="2" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:Contents>
     <webParts>
       <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -12,9 +12,9 @@
             <property name="HelpUrl" type="string" />
             <property name="Hidden" type="bool">False</property>
             <property name="Description" type="string" />
-            <property name="Content" type="string">&lt;my-rss-feeds article-limit="3"&gt;&lt;/my-rss-feeds&gt;</property>
+            <property name="Content" type="string">&lt;photo-share view-all-photos-url =&quot;/pages/snapshots.aspx&quot;&gt; &lt;/photo-share&gt;</property>
             <property name="CatalogIconImageUrl" type="string" />
-            <property name="Title" type="string">World News</property>
+            <property name="Title" type="string">Compassion Snapshots</property>
             <property name="AllowHide" type="bool">False</property>
             <property name="AllowMinimize" type="bool">False</property>
             <property name="AllowZoneChange" type="bool">False</property>
