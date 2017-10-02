@@ -8,12 +8,14 @@
       <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Base Page Layout" />
     </pnp:Properties>
     <pnp:WebParts>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Spotlight.xml"/>      
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/News.xml"/>      
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Recent-News.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Spotlight.xml"/>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Find-People.xml"/>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/News.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Compassion-Snapshots.xml"/>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Trending-News.xml"/>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/World-News.xml"/>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Events.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Upcoming-Events.xml"/>
     </pnp:WebParts>
   </pnp:File>
   <pnp:File Src=".\Pages\groups.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
@@ -37,20 +39,23 @@
       <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Base Page" />
     </pnp:Properties>
     <pnp:WebParts>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Announcement.xml"/>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Benefits.xml"/>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/myWellness.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Employee-Life.xml"/>
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Job-Opportunities.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Helpful-Links.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Recommended-Documents.xml"/>
     </pnp:WebParts>
   </pnp:File>
   <pnp:File Src=".\Pages\work-resources.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
     <pnp:Properties>
-      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Base Page}" />
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Group Page}" />
       <pnp:Property Key="Title" Value="Work Resources" />
       <pnp:Property Key="Comments" Value="PnP Provisioning." />
       <pnp:Property Key="PublishingPageContent" Value="" />
-      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Base Page" />
-    </pnp:Properties>    
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_GroupsLanding.aspx, Base Page" />
+    </pnp:Properties>
+  <pnp:WebParts>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Work-Resources.xml"/>
+    </pnp:WebParts>
   </pnp:File>
   <pnp:File Src=".\Pages\news.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
     <pnp:Properties>
@@ -59,7 +64,13 @@
       <pnp:Property Key="Comments" Value="PnP Provisioning." />
       <pnp:Property Key="PublishingPageContent" Value="" />
       <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Base Page" />
-    </pnp:Properties>    
+    </pnp:Properties>  
+  <pnp:WebParts>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/News-Events-Browser.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Trending-News.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/World-News.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Events.xml"/>
+    </pnp:WebParts>
   </pnp:File>
   <pnp:File Src=".\Pages\location.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
     <pnp:Properties>
@@ -90,5 +101,46 @@
       <pnp:Property Key="PublishingPageContent" Value="" />
       <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_GroupsLanding.aspx, Group Page" />
     </pnp:Properties>
+  </pnp:File>
+  <pnp:File Src=".\Pages\anniversary.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+    <pnp:Properties>
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Base Page}" />
+      <pnp:Property Key="Title" Value="Anniversaries and Retirements" />
+      <pnp:Property Key="Comments" Value="PnP Provisioning." />
+      <pnp:Property Key="PublishingPageContent" Value="" />
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_GroupsLanding.aspx, Group Page" />
+    </pnp:Properties>
+  </pnp:File>
+  <pnp:File Src=".\Pages\people-places.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+    <pnp:Properties>
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Base Page}" />
+      <pnp:Property Key="Title" Value="People and Places" />
+      <pnp:Property Key="Comments" Value="PnP Provisioning." />
+      <pnp:Property Key="PublishingPageContent" Value="" />
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Group Page" />
+    </pnp:Properties>
+    <pnp:WebParts>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/People-Places.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/Global-Partners.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sections/WebParts/My-Department.xml"/>
+    </pnp:WebParts>
+  </pnp:File>
+  <pnp:File Src=".\Pages\snapshots.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+    <pnp:Properties>
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Base Page}" />
+      <pnp:Property Key="Title" Value="Snapshots" />
+      <pnp:Property Key="Comments" Value="PnP Provisioning." />
+      <pnp:Property Key="PublishingPageContent" Value="" />
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_GroupsLanding.aspx, Group Page" />
+    </pnp:Properties>    
+  </pnp:File>
+  <pnp:File Src=".\Pages\who_we_are.aspx" Folder="{site}/Pages" Overwrite="true" Level="Published">
+    <pnp:Properties>
+      <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Base Page}" />
+      <pnp:Property Key="Title" Value="Who We Are" />
+      <pnp:Property Key="Comments" Value="PnP Provisioning." />
+      <pnp:Property Key="PublishingPageContent" Value="" />
+      <pnp:Property Key="PublishingPageLayout" Value="{masterpagecatalog}/Compassion/PageLayouts/com_ContentPage.aspx, Group Page" />
+    </pnp:Properties>    
   </pnp:File>
 </pnp:Files>
