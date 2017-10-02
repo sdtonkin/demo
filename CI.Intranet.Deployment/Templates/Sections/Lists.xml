@@ -2,8 +2,7 @@
   <pnp:ListInstance Title="RSS Feeds" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>
-    <!--
+    </pnp:ContentTypeBindings>    
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">CNN</pnp:DataValue>
@@ -12,9 +11,28 @@
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">BBC</pnp:DataValue>
         <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.bbci.co.uk/news/rss.xml</pnp:DataValue>
-      </pnp:DataRow>      
-    </pnp:DataRows>
-    -->
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Fox News</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.foxnews.com/foxnews/world.rss</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Al Jazeera</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://www.aljazeera.com/xml/rss/all.xml</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Wall Street Journal</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://www.wsj.com/xml/rss/3_7085.xml</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Reuters</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.reuters.com/Reuters/worldNews.rss</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Christianity Today</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.christianitytoday.com/christianitytoday/ctmag.rss</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>    
   </pnp:ListInstance>
   <pnp:ListInstance Title="User RSS Feeds" Description="User RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserRssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -24,23 +42,15 @@
   <pnp:ListInstance Title="Toolbar Tools" Description="Toolbar Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/ToolbarTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100176552393A3C4355AE16E44D91877268" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>
-    <!--
+    </pnp:ContentTypeBindings>    
     <pnp:DataRows>
       <pnp:DataRow>
-        <pnp:DataValue FieldName="Title">HR Benefits</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.google.com</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
-      </pnp:DataRow>
-      <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Gateway to Service</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.bing.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarUrl">https://compassion.service-now.com/ess/main.do</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>
-    -->
+    </pnp:DataRows>    
   </pnp:ListInstance>
   <pnp:ListInstance Title="User Tools" Description="User Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -50,61 +60,54 @@
   <pnp:ListInstance Title="User Bookmarks" Description="User Bookmarks List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserBookmarks" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100D9716F4B2E514B688A5333A597E236EE" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>
-    <!--
-    <pnp:DataRows>
-      <pnp:DataRow>
-        <pnp:DataValue FieldName="Title">jslint</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarUrl">http://www.jslint.com</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ListSortOrder">1</pnp:DataValue>
-      </pnp:DataRow>
-      <pnp:DataRow>
-        <pnp:DataValue FieldName="Title">JavaScript Style Guide and Coding Conventions</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarUrl">https://www.w3schools.com/js/js_conventions.asp</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
-      </pnp:DataRow>
-    </pnp:DataRows>
-    -->
+    </pnp:ContentTypeBindings>    
   </pnp:ListInstance>
   <pnp:ListInstance Title="Group Info" Description="Group Info List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GroupInfo" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100973A29096FFA4B57A15024A2EAB328ED" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>
-    <!--
+    </pnp:ContentTypeBindings>    
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">General Counsel Office (GCO)</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Global Leadership Office (GLO)</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/global-leadership, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Global Marketing &amp; Engagement (GME)</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/gme, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Global Program (GP)</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/gp, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
-        <pnp:DataValue FieldName="Title">Global Support Services (GSS)</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://teganwilson.sharepoint.com/sites/gco, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="Title">Office of the CFO (CFO)</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/cfo, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>
-    -->
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Innovation</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/innovation, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+      <pnp:DataRow>
+        <pnp:DataValue FieldName="Title">Human Resources</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/hr, Group Url</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
+      </pnp:DataRow>
+    </pnp:DataRows>    
   </pnp:ListInstance>
   <pnp:ListInstance Title="Navigation" Description="Navigation List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/Navigation" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100344B4251E45F447B9DF2E39225D540BA" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
-    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Who We Are</pnp:DataValue>
@@ -131,63 +134,85 @@
         <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/employee-life.aspx</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
-    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Global Partners" Description="Global Partners List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
     </pnp:FieldRefs>
-    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Australia</pnp:DataValue>
         <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
-        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalog/masterpages/Compassion/images/flag.png</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Australia.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Canada</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Canada.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">France</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/France.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Ireland</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Ireland.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Italy</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Italy.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Nederlands</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Nederlands.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">New Zealand</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/New Zealand.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Norden</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Norway.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">South Korea</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/South Korea.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Spain</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Spain.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Sweden</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Sweden.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Switzerland</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/Switerland.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">United Kingdom</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/United Kingdom.png</pnp:DataValue>
       </pnp:DataRow>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">United States of America</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
+        <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/United States of America(USA).png</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>
-    -->
+    </pnp:DataRows>    
   </pnp:ListInstance>
-
   <pnp:ListInstance Title="Anniversary and Retirement" Description="Anniversary and Retirement List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/AnniversaryAndRetirement" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01004E05F80379CB7C4E8169D8407B6E9C6C" Default="true"></pnp:ContentTypeBinding>
@@ -218,8 +243,7 @@
   <pnp:ListInstance Title="Work Resources" Description="Work Resources List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/WorkResources" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>
-    <!--
+    </pnp:ContentTypeBindings>    
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Policies and Procedures</pnp:DataValue>
@@ -336,6 +360,5 @@
         <pnp:DataValue FieldName="COM_ListSortOrder">5</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
-    -->
   </pnp:ListInstance>  
 </pnp:Lists>
