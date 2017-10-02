@@ -1,0 +1,34 @@
+﻿<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="Microsoft.SharePoint.WebPartPages.ScriptEditorWebPart, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="ExportMode" type="exportmode">All</property>
+        <property name="HelpUrl" type="string" />
+        <property name="Hidden" type="bool">False</property>
+        <property name="Description" type="string" />
+        <property name="Content" type="string">
+&lt;employee-spotlight view-all-gratitudes-url ="/sites/stage/pages/gratitudes.aspx" submit-gratitude-url ="/sites/stage/Lists/Gratitudes/NewForm.aspx?Source=https%3A%2F%2Fcompassion%2Esharepoint%2Ecom%2Fsites%2Fstage%2FLists%2FGratitudes%2FAllItems%2Easpx&amp;ContentTypeId=0x01006471C7EEC28E4422BA450A0491B5CF5E00E4B4E3F22946414F8141F62558A10752&amp;RootFolder=" view-all-hires-url ="/sites/stage/pages/hires.aspx" view-all-anniversary-url ="/sites/stage/pages/anniversary.aspx" anniversary-limit="4"&gt;&lt;/employee-spotlight&gt; </property>
+        <property name="CatalogIconImageUrl" type="string" />
+        <property name="Title" type="string">Employee Spotlight</property>
+        <property name="AllowHide" type="bool">False</property>
+        <property name="AllowMinimize" type="bool">False</property>
+        <property name="AllowZoneChange" type="bool">True</property>
+        <property name="TitleUrl" type="string" />
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="AllowConnect" type="bool">True</property>
+        <property name="Width" type="unit" />
+        <property name="Height" type="unit" />
+        <property name="HelpMode" type="helpmode">Navigate</property>
+        <property name="AllowEdit" type="bool">False</property>
+        <property name="TitleIconImageUrl" type="string" />
+        <property name="Direction" type="direction">NotSet</property>
+        <property name="AllowClose" type="bool">False</property>
+        <property name="ChromeState" type="chromestate">Normal</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
