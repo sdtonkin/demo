@@ -367,6 +367,15 @@
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Resources\Pages\who_we_are.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\snapshots.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\anniversary.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\Pages\gratitudes.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -493,7 +502,18 @@
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
-    <None Include="Resources\WebParts\Trending-News.webpart" />
+    <None Include="Resources\WebParts\Employee Spotlight.webpart" />
+    <None Include="Resources\WebParts\Events.webpart" />
+    <None Include="Resources\WebParts\Find People.webpart" />
+    <None Include="Resources\WebParts\Groups.webpart" />
+    <None Include="Resources\WebParts\Helpful Links.webpart" />
+    <None Include="Resources\WebParts\News.webpart" />
+    <None Include="Resources\WebParts\Recent News1.webpart" />
+    <None Include="Resources\WebParts\Recommended Documents.webpart" />
+    <None Include="Resources\WebParts\Search Results.webpart" />
+    <None Include="Resources\WebParts\Trending News.webpart" />
+    <None Include="Resources\WebParts\Upcoming Events.webpart" />
+    <None Include="Resources\WebParts\World News.webpart" />
     <None Include="Resources\XSL\Webparts\CustomXSL_CQWP.webpart" />
     <None Include="Resources\XSL\Webparts\Events.webpart" />
     <None Include="Resources\XSL\Webparts\News.webpart" />
