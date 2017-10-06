@@ -1,4 +1,4 @@
-﻿<pnp:WebPart Title="Compassion Snapshots Web Part" Zone="TopZone" Order="2" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+﻿<pnp:WebPart Title="News Events Browser Web Part" Zone="TopLeftZone" Order="1" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:Contents>
     <webParts>
       <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -14,7 +14,7 @@
             <property name="Description" type="string" />
             <property name="Content" type="string">&lt;news-events-browser&gt;&lt;/news-events-browse&gt;</property>
             <property name="CatalogIconImageUrl" type="string" />
-            <property name="Title" type="string">Employee Announcement</property>
+            <property name="Title" type="string">News Events Browser</property>
             <property name="AllowHide" type="bool">False</property>
             <property name="AllowMinimize" type="bool">False</property>
             <property name="AllowZoneChange" type="bool">False</property>
