@@ -50,13 +50,6 @@
 		margin-bottom: 5px;
 		margin-top: 25px;
 	}
-	.img-fluid{
-		// height: 100%;
-		// width: 100%;
-		height: auto;
-		width: 425px;
-		max-width: none;
-	}
 	.card.img-card{
 		flex: 2;
 		img{
@@ -67,6 +60,14 @@
 			overflow: hidden;
 		}
 	}
+	.img-fluid{
+		// height: 100%;
+		// width: 100%;
+		height: auto;
+		width: 425px;
+		max-width: none;
+	}
+	
 	.card-img-top, .card {
 	    border-top-left-radius: 0;
 	    border-top-right-radius: 0;
