@@ -2,7 +2,8 @@
   <pnp:ListInstance Title="RSS Feeds" Description="RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/RssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x01003543CE7F6F0281408DC5FCDF5AFEC233" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>    
+    </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">CNN</pnp:DataValue>
@@ -33,6 +34,7 @@
         <pnp:DataValue FieldName="COM_RssFeedUrl">http://feeds.christianitytoday.com/christianitytoday/ctmag.rss</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>    
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="User RSS Feeds" Description="User RSS Feeds List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserRssFeeds" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -42,7 +44,8 @@
   <pnp:ListInstance Title="Toolbar Tools" Description="Toolbar Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/ToolbarTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100176552393A3C4355AE16E44D91877268" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>    
+    </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Gateway to Service</pnp:DataValue>
@@ -50,7 +53,8 @@
         <pnp:DataValue FieldName="COM_ToolbarIconUrl">/_catalogs/masterpage/Compassion/images/compassion.ico</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ListSortOrder">2</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>    
+    </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="User Tools" Description="User Tools List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/UserTools" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -65,7 +69,8 @@
   <pnp:ListInstance Title="Group Info" Description="Group Info List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GroupInfo" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100973A29096FFA4B57A15024A2EAB328ED" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>    
+    </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">General Counsel Office (GCO)</pnp:DataValue>
@@ -102,12 +107,14 @@
         <pnp:DataValue FieldName="COM_GroupSiteUrl">https://compassion.sharepoint.com/sites/hr, Group Url</pnp:DataValue>
         <pnp:DataValue FieldName="COM_GroupDescription">An introduction to this business unit lorem ipsum dolor sit amet.</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>    
+    </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Navigation" Description="Navigation List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/Navigation" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100344B4251E45F447B9DF2E39225D540BA" Default="true"></pnp:ContentTypeBinding>
     </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Who We Are</pnp:DataValue>
@@ -134,12 +141,14 @@
         <pnp:DataValue FieldName="COM_NavNodeUrl">/Pages/employee-life.aspx</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Global Partners" Description="Global Partners List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/GlobalPartners" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
     </pnp:FieldRefs>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Australia</pnp:DataValue>
@@ -211,7 +220,8 @@
         <pnp:DataValue FieldName="COM_LinkUrl">https://compassion.sharepoint.com</pnp:DataValue>
         <pnp:DataValue FieldName="COM_ToolbarIconUrl">/sites/stage/SiteAssets/FlagIcons/48/United States of America(USA).png</pnp:DataValue>
       </pnp:DataRow>
-    </pnp:DataRows>    
+    </pnp:DataRows>
+    -->
   </pnp:ListInstance>
   <pnp:ListInstance Title="Anniversary and Retirement" Description="Anniversary and Retirement List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/AnniversaryAndRetirement" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
@@ -243,7 +253,8 @@
   <pnp:ListInstance Title="Work Resources" Description="Work Resources List" RemoveExistingContentTypes="true" DocumentTemplate="" TemplateType="100" Url="Lists/WorkResources" Hidden="false" OnQuickLaunch="false" EnableAttachments="false" ContentTypesEnabled="true" ForceCheckout="false" EnableVersioning="false" EnableModeration="false" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="2">
     <pnp:ContentTypeBindings>
       <pnp:ContentTypeBinding ContentTypeID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Default="true"></pnp:ContentTypeBinding>
-    </pnp:ContentTypeBindings>    
+    </pnp:ContentTypeBindings>
+    <!--
     <pnp:DataRows>
       <pnp:DataRow>
         <pnp:DataValue FieldName="Title">Policies and Procedures</pnp:DataValue>
@@ -360,5 +371,6 @@
         <pnp:DataValue FieldName="COM_ListSortOrder">5</pnp:DataValue>
       </pnp:DataRow>
     </pnp:DataRows>
+    -->
   </pnp:ListInstance>  
 </pnp:Lists>
