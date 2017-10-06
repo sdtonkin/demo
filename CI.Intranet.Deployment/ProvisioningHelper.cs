@@ -36,8 +36,7 @@ namespace CI.Intranet.Deployment
                 Console.WriteLine("Your site title is:" + ctx.Web.Title);
                 Console.ForegroundColor = defaultForeground;
 
-                ProvisioningTemplateCreationInformation ptci
-                        = new ProvisioningTemplateCreationInformation(ctx.Web);
+                var ptci = new ProvisioningTemplateCreationInformation(ctx.Web);
 
                 // Create FileSystemConnector to store a temporary copy of the template 
                 ptci.FileConnector = new FileSystemConnector(filePath, "");
@@ -73,8 +72,7 @@ namespace CI.Intranet.Deployment
 
                 // We can serialize this template to save and reuse it
                 // Optional step 
-                XMLTemplateProvider provider =
-                        new XMLFileSystemTemplateProvider(filePath, "");
+                var provider = new XMLFileSystemTemplateProvider(filePath, "");
                 provider.SaveAs(template, fileName);
 
                 return template;
