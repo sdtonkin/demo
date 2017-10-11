@@ -28,7 +28,7 @@
         <property name="HelpUrl" type="string" />
         <property name="AdditionalFilterFields" type="string" />
         <property name="DataMappingViewFields" type="string">{7a6d9e62-40d7-4293-a5b7-2c898352bc7a},URL;{3de94b06-4120-41a5-b907-88773e493458},Image;{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Text;{691b9a4b-512e-4341-b3f1-68914130d5b2},Text;{60677f2d-9b5c-4278-9352-87cfee8a28ca},TaxonomyFieldType;{a0107484-a768-4873-9942-e33f818a8701},TaxonomyFieldType;{f1f1f3f0-639f-4240-9e77-9164aa7ebdf4},TaxonomyFieldType;{0b784073-3117-4340-8475-a63c087a464e},DateTime;{e8bb0dba-efca-4a9a-abd7-919bf94629cd},Text;</property>
-        <property name="Title" type="string">Recent News1</property>
+        <property name="Title" type="string">Recent News</property>
         <property name="FeedDescription" type="string" />
         <property name="UseCache" type="bool">True</property>
         <property name="XslLink" type="string" null="true" />
@@ -84,7 +84,7 @@
         <property name="GroupBy" type="string" />
         <property name="FilterIncludeChildren1" type="bool">False</property>
         <property name="BaseType" type="string" />
-        <property name="MainXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
+        <property name="MainXslLink" type="string">/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
         <property name="AsyncRefresh" type="bool">False</property>
         <property name="FilterValue1" type="string">0</property>
         <property name="FilterValue2" type="string">1</property>
@@ -103,10 +103,10 @@
         <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Geq</property>
         <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
         <property name="FilterByAudience" type="bool">True</property>
-        <property name="ItemXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
+        <property name="ItemXslLink" type="string">/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
         <property name="Hidden" type="bool">False</property>
         <property name="WebUrl" type="string" />
-        <property name="HeaderXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_Header.xsl</property>
+        <property name="HeaderXslLink" type="string">/Style Library/XSL Style Sheets/COM_Header.xsl</property>
         <property name="CacheXslStorage" type="bool">True</property>
         <property name="ListsOverride" type="string" />
         <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Asc</property>

@@ -110,11 +110,12 @@ if (document.location.host === "compassion.sharepoint.com") {
                 defaultGroupId: '12856760'
             },            
             termSets: {
-                locationTermId: '88ed9770-2805-4c59-be2e-d8775b5aedb5',
-                globalPartnersTermId: '22689db7-16ba-423e-89fc-ebeab7b74484',
-                newsTypeTermId: 'b1e0d71d-4c58-4860-bacd-5189e63002be',
-                eventTypeTermId: '90087864-74f2-425a-ad5d-2d288990a066',
-                employeeLifeTermId: 'ab34a76b-0cf8-441f-af98-677c3dd2961a',
+                locationTermId: '88af2a94-722d-4ad6-b76c-fe48da0ff12b',
+                globalPartnersTermId: '98d929e9-f2f1-4362-918d-5dc6057db698',
+                newsTypeTermId: '1cdb9059-cf5a-4eb8-8f05-8f1adc569a58',
+                eventTypeTermId: '26b7c488-a617-49b4-b0b4-5a0d55856272',
+                employeeLifeTermId: '5d20985a-9659-4e17-9fa9-35e4a962f24d',
+                globalEmployeeLifeTermId: '508f854b-7244-44cd-8119-7abb2131bb10',
             },
             terms: {
                 anniversaryTermId: '43516337-9f0c-4756-9f0e-702229d5041f',

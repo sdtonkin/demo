@@ -31,3 +31,4 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', 'COM_CONFIG', fun
     controller: controllerName,
     controllerAs: 'ctrl'
 });
+

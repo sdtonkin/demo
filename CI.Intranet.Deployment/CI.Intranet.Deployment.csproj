@@ -508,7 +508,7 @@
     <None Include="Resources\WebParts\Groups.webpart" />
     <None Include="Resources\WebParts\Helpful Links.webpart" />
     <None Include="Resources\WebParts\News.webpart" />
-    <None Include="Resources\WebParts\Recent News1.webpart" />
+    <None Include="Resources\WebParts\Recent News.webpart" />
     <None Include="Resources\WebParts\Recommended Documents.webpart" />
     <None Include="Resources\WebParts\Search Results.webpart" />
     <None Include="Resources\WebParts\Trending News.webpart" />

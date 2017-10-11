@@ -11,7 +11,7 @@
         <property name="Hidden" type="bool">False</property>
         <property name="Description" type="string" />
         <property name="Content" type="string">
-&lt;employee-spotlight view-all-gratitudes-url ="/sites/stage/pages/gratitudes.aspx" submit-gratitude-url ="/sites/stage/Lists/Gratitudes/NewForm.aspx?Source=https%3A%2F%2Fcompassion%2Esharepoint%2Ecom%2Fsites%2Fstage%2FLists%2FGratitudes%2FAllItems%2Easpx&amp;ContentTypeId=0x01006471C7EEC28E4422BA450A0491B5CF5E00E4B4E3F22946414F8141F62558A10752&amp;RootFolder=" view-all-hires-url ="/sites/stage/pages/hires.aspx" view-all-anniversary-url ="/sites/stage/pages/anniversary.aspx" anniversary-limit="4"&gt;&lt;/employee-spotlight&gt; </property>
+&lt;employee-spotlight view-all-gratitudes-url ="/pages/gratitudes.aspx" submit-gratitude-url ="/Lists/Gratitudes/NewForm.aspx?Source=https%3A%2F%2Fcompassion%2Esharepoint%2Ecom%2FLists%2FGratitudes%2FAllItems%2Easpx&amp;ContentTypeId=0x01006471C7EEC28E4422BA450A0491B5CF5E00E4B4E3F22946414F8141F62558A10752&amp;RootFolder=" view-all-hires-url ="/sites/stage/pages/hires.aspx" view-all-anniversary-url ="/sites/stage/pages/anniversary.aspx" anniversary-limit="4"&gt;&lt;/employee-spotlight&gt; </property>
         <property name="CatalogIconImageUrl" type="string" />
         <property name="Title" type="string">Employee Spotlight</property>
         <property name="AllowHide" type="bool">False</property>
