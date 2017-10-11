@@ -7,7 +7,7 @@ myApp.controller(controllerName, ['$scope', 'common', 'spService', 'COM_CONFIG',
 
 
     this.$onInit = function () {
-        ctrl.siteCollectionUrl = (ctrl.siteCollectionUrl == null ? 'https://compassion.sharepoint.com/sites/stage' : ctrl.siteCollectionUrl);
+        ctrl.siteCollectionUrl = (ctrl.siteCollectionUrl == null ? COM_CONFIG.rootWeb : ctrl.siteCollectionUrl);
         spService.getMySites(ctrl.siteCollectionUrl).then(function (data) {
             if (!COM_CONFIG.isProduction) { console.log('sites', data); }
             ctrl.mySites = data;

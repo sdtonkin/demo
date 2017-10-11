@@ -86,7 +86,7 @@
         <property name="GroupBy" type="string" />
         <property name="FilterIncludeChildren1" type="bool">False</property>
         <property name="BaseType" type="string" />
-        <property name="MainXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
+        <property name="MainXslLink" type="string">/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
         <property name="AsyncRefresh" type="bool">False</property>
         <property name="FilterValue1" type="string" />
         <property name="FilterValue2" type="string" />
@@ -105,10 +105,10 @@
         <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Eq</property>
         <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
         <property name="FilterByAudience" type="bool">True</property>
-        <property name="ItemXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
+        <property name="ItemXslLink" type="string">/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
         <property name="Hidden" type="bool">False</property>
         <property name="WebUrl" type="string">~sitecollection/news</property>
-        <property name="HeaderXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_Header.xsl</property>
+        <property name="HeaderXslLink" type="string">/Style Library/XSL Style Sheets/COM_Header.xsl</property>
         <property name="CacheXslStorage" type="bool">True</property>
         <property name="ListsOverride" type="string" />
         <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Desc</property>
