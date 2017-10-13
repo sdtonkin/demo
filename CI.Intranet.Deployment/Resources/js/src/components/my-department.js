@@ -27,7 +27,7 @@ myApp.controller(controllerName, ['$scope', '$q', 'COM_CONFIG', 'userProfileServ
                 for (var i = 0; i < data.length; i++) {
                     var p = data[i];
                     var d = {};
-                    d.picUrl = picUrl + p.UserName;
+                    d.picUrl = COM_CONFIG.pictureUrl + p.UserName;
                     d.title = p.Title;
                     d.jobTitle = p.JobTitle;
                     d.email = p.EMail;

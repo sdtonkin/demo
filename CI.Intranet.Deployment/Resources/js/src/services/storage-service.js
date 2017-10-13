@@ -1,5 +1,5 @@
 ﻿angular.module('compassionIntranet').service('storage', ['common', function (common) {
-    var version = 3;
+    var version = 4;
     function set(key, value, expirationDuration, storageType) {
         var expire;
         if (key != 'v') {
