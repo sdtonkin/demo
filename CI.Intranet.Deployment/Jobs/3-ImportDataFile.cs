@@ -8,8 +8,6 @@ using System.Text.RegularExpressions;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
 using System.Security;
-using System.Diagnostics;
-using System.Text;
 
 namespace CI.Intranet.Deployment.Jobs
 {

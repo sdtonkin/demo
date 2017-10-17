@@ -106,11 +106,13 @@
   <pnp:File Src="WebParts\Groups.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Helpful Links.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\News.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
+  <pnp:File Src="WebParts\News Events Browser.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Recent News.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Recommended Documents.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Search Results.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Trending News.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\Upcoming Events.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
   <pnp:File Src="WebParts\World News.webpart" Folder="{site}/_catalogs/wp" Overwrite="true" Level="Published" />
+  
   
 </pnp:Files>

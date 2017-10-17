@@ -123,8 +123,9 @@ if (document.location.host === "compassion.sharepoint.com") {
                 retirementTermId: 'a4e24f75-5797-4048-affe-da0c6d4e148a'
             },
             useCaching: false,
-            pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
+            pictureUrl: '/_layouts/15/userphoto.aspx?size=L&accountname=',
             rootWeb: 'https://compassion.sharepoint.com',
+            newsWeb: 'https://compassion.sharepoint.com/news',
             searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
             rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
             locationByIPUrl: 'https://ipinfo.io/json',
@@ -212,8 +213,9 @@ else {
             retirementTermId: 'a4e24f75-5797-4048-affe-da0c6d4e148a'
         },
         useCaching: false,
-        pictureUrl: '/_layouts/15/userphoto.aspx?size=S&accountname=',
+        pictureUrl: '/_layouts/15/userphoto.aspx?size=L&accountname=',
         rootWeb: 'https://teganwilson.sharepoint.com/sites/compassion',
+        newsWeb: 'https://teganwilson.sharepoint.com/sites/compassion/news',
         searchWeb: 'https://compassion.sharepoint.com/sites/search/pages/results.aspx',
         rssProxyUrl: "https://api.rss2json.com/v1/api.json?rss_url=",
         locationByIPUrl: 'https://ipinfo.io/json',

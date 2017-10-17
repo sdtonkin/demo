@@ -147,7 +147,7 @@ gulp.task("min:js", function () {
             
             
             plugins: [
-                
+                /*
                 new NormalModuleReplacementPlugin(/\/iconv-loader$/, 'node-noop'),
                 
                 new AggressiveMergingPlugin(),
@@ -177,7 +177,7 @@ gulp.task("min:js", function () {
                     //exclude: [/\.min\.js$/gi] // skip pre-minified libs
                 }),               
                 new IgnorePlugin(/^\.\/locale$/, [/moment$/])
-                
+                */
             ],
             
             babelrc: false,

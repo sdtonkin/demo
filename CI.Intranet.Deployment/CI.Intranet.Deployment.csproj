@@ -504,6 +504,7 @@
     </None>
     <None Include="Resources\WebParts\Employee Spotlight.webpart" />
     <None Include="Resources\WebParts\Events.webpart" />
+    <None Include="Resources\WebParts\News Events Browser.webpart" />
     <None Include="Resources\WebParts\Find People.webpart" />
     <None Include="Resources\WebParts\Groups.webpart" />
     <None Include="Resources\WebParts\Helpful Links.webpart" />
