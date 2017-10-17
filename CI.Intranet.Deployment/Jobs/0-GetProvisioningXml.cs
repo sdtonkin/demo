@@ -1,21 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.SharePoint.Client;
-using OfficeDevPnP.Core.Framework.Provisioning.Connectors;
 using OfficeDevPnP.Core.Framework.Provisioning.Model;
-using OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers;
-using OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml;
-using System.Net;
 using System.Security;
-using System.Threading;
-using System.Configuration;
-using System.IO;
-using System.Collections;
-using System.Text.RegularExpressions;
-using Microsoft.SharePoint.Client.Publishing;
 
 namespace CI.Intranet.Deployment.Jobs
 {
