@@ -686,7 +686,7 @@
                   <xsl:if test="string-length(@NewsType) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
+                        /news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                       </xsl:attribute>
                       <xsl:value-of select="@NewsType"/>
                     </a>
@@ -695,7 +695,7 @@
                   <xsl:if test="string-length(@Location) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
+                        /news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                       </xsl:attribute>
                       <xsl:value-of select="@Location"/>
                     </a>
@@ -705,7 +705,7 @@
                   <xsl:if test="string-length(@Group) != 0">
                     <a class="card-title">
                       <xsl:attribute name="href">
-                        /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
+                        /news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                       </xsl:attribute>
                       <xsl:value-of select="@Group"/>
                     </a>
@@ -765,7 +765,7 @@
             <xsl:if test="string-length(@NewsType) != 0">
               <a class="card-title">
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
+                  /news/pages/default.aspx?activeTab=news&amp;newstype=<xsl:value-of select="@NewsType" />
                 </xsl:attribute>
                 <xsl:value-of select="@NewsType"/>
               </a>
@@ -774,7 +774,7 @@
             <xsl:if test="string-length(@Location) != 0">
               <a class="card-title">
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
+                  /news/pages/default.aspx?activeTab=news&amp;location=<xsl:value-of select="@Location" />
                 </xsl:attribute>
                 <xsl:value-of select="@Location"/>
               </a>
@@ -783,7 +783,7 @@
             <xsl:if test="string-length(@Group) != 0">
               <a class="card-title">
                 <xsl:attribute name="href">
-                  /sites/stage/news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
+                  /news/pages/default.aspx?activeTab=news&amp;group=<xsl:value-of select="@Group" />
                 </xsl:attribute>
                 <xsl:value-of select="@Group"/>
               </a>
@@ -803,7 +803,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta pull-right" href="/sites/stage/news">View All News</a>
+      <a class="btn btn-cta pull-right" href="/news">View All News</a>
     </xsl:if>
   </xsl:template>
   <!-- Trending News -->
@@ -838,7 +838,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta white" href="/sites/stage/news/Pages/default.aspx?activeTab=news">View All News</a>
+      <a class="btn btn-cta white" href="/news/Pages/default.aspx?activeTab=news">View All News</a>
     </xsl:if>
   </xsl:template>
 
@@ -920,7 +920,7 @@
               <xsl:if test="string-length(@EventType) != 0">
                 <a class="card-tags">
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;newstype=<xsl:value-of select="@EventType" />
+                    /news/pages/default.aspx?activeTab=events&amp;newstype=<xsl:value-of select="@EventType" />
                   </xsl:attribute>
                   <xsl:value-of select="@EventType"/>
                 </a>
@@ -929,7 +929,7 @@
               <xsl:if test="string-length(@LocationTag) != 0">
                 <a class="card-tags">
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;location=<xsl:value-of select="@LocationTag" />
+                    /news/pages/default.aspx?activeTab=events&amp;location=<xsl:value-of select="@LocationTag" />
                   </xsl:attribute>
                   <xsl:value-of select="@LocationTag"/>
                 </a>
@@ -938,7 +938,7 @@
               <xsl:if test="string-length(@Group) != 0">
                 <a class="card-tags">
                   <xsl:attribute name="href">
-                    /sites/stage/news/pages/default.aspx?activeTab=events&amp;group=<xsl:value-of select="@Group" />
+                    /news/pages/default.aspx?activeTab=events&amp;group=<xsl:value-of select="@Group" />
                   </xsl:attribute>
                   <xsl:value-of select="@Group"/>
                 </a>
@@ -949,7 +949,7 @@
       </div>
     </div>
     <xsl:if test="count(following-sibling::*)=0">
-      <a class="btn btn-cta white" href="/sites/stage/news/pages/default.aspx?activeTab=events">View All Events</a>
+      <a class="btn btn-cta white" href="/news/pages/default.aspx?activeTab=events">View All Events</a>
     </xsl:if>
   </xsl:template>
   <!-- End of Custom Styles -->
