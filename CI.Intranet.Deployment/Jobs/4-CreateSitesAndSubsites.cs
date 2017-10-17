@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Security;
 using Microsoft.SharePoint.Client;
 using System.Configuration;
-using System.IO;
 
 namespace CI.Intranet.Deployment.Jobs
 {

@@ -27,7 +27,7 @@ namespace CI.Intranet.Deployment
             {
                 switch (args[0])
                 {
-                    case "deploy-all":
+                    case "deploy-all-stage":
                         {
                             var templatePath = (args[1] != null ? args[1].ToString() : "CI.Intranet.Deployment/Templates");
                             var resourcePath = (args[2] != null ? args[2].ToString() : ConfigurationManager.AppSettings["S-ProvisioningResourceFolder"]);
@@ -58,7 +58,8 @@ namespace CI.Intranet.Deployment
                             // run search settings
                             var rJobSearch = new Jobs.RunProvisioningXml(searchUrl, domain, defaultUserName, pwd1);
                             rJobSearch.Start("6-Search.xml", files, "quiet", resourcePath);
-
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
                             return;
                         }
                     case "deploy-stage":
@@ -76,6 +77,8 @@ namespace CI.Intranet.Deployment
                             var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
                             var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
                             rJob.Start("3-Files.xml", files, "quiet", resourceFolder);
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
                             return;
                         }
                     case "deploy-stage-files":
@@ -93,6 +96,8 @@ namespace CI.Intranet.Deployment
                             var fileNames = "3-Files.xml".Split(',');
                             var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
                             rJob.Start("3-Files.xml", files, "quiet", resourceFolder);
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
                             return;
                         }
                     case "deploy-all-prod":
@@ -116,6 +121,7 @@ namespace CI.Intranet.Deployment
 
                             foreach (var url in sites)
                             {
+                                Console.WriteLine(url);
                                 foreach (var file in fileNames)
                                 {
                                     var rJob = new Jobs.RunProvisioningXml(url, domain, defaultUserName, pwd1);
@@ -126,6 +132,9 @@ namespace CI.Intranet.Deployment
                             // run search settings
                             var rJobSearch = new Jobs.RunProvisioningXml(searchUrl, domain, defaultUserName, pwd1);
                             rJobSearch.Start("6-Search.xml", files, "quiet", resourcePath);
+
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
 
                             return;
                         }

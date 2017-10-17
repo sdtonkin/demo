@@ -21,7 +21,7 @@ angular.module('compassionIntranet').service('newHireService', ['$http', '$q', '
                     var firstName = (item.COM_Contact.FirstName == null ? '' : item.COM_Contact.FirstName);
                     var lastName = (item.COM_Contact.LastName == null ? '' : item.COM_Contact.LastName);
                     g.startDate = moment(item.StartDate).format('MMMM DD, YYYY');
-                    g.targetPicUrl = COM_CONFIG.pictureUrl + item.SipAddress;
+                    g.targetPicUrl = COM_CONFIG.pictureUrl + item.COM_Contact.SipAddress;
                     g.targetName = firstName + ' ' + lastName;
 
                     newHires.push(g);

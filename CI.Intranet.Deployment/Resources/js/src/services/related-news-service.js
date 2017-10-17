@@ -140,7 +140,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
         var defer = $q.defer();
 
         $pnp.sp.search({
-            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '*',
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '* AND Path:"' + COM_CONFIG.rootWeb + '"',
             SelectProperties: ['PublishingImage', 'Id','RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             RefinementFilters: ['RefinableString01:equals("Country Office")'],
             RowLimit: (rowLimit == null ? 3 : rowLimit),
