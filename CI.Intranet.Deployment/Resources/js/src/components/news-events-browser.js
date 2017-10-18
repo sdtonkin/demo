@@ -69,10 +69,14 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
         var events = _.sortBy(masterEvents, 'RawEventDate');
         if (sort.direction == 'asc') {
             ctrl.newsArticles = articles;
+            ctrl.newsItems = articles;
             ctrl.events = events;
+            ctrl.eventItems = events;
         } else {
             ctrl.newsArticles = articles.reverse();
+            ctrl.newsItems = articles.reverse();
             ctrl.events = events.reverse();
+            ctrl.eventItems = events.reverse();
         }
 
         var newSortOptions = _.reject(ctrl.sortOptions, function (s) {
@@ -148,6 +152,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     function clearCategory() {
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = masterArticles;
+            ctrl.newsItems = masterArticles;
             ctrl.setNewsPage(1);
         } else {
             ctrl.events = masterEvents
@@ -160,6 +165,7 @@ app.controller(ctrlName, ['$scope', '$q', '$location', 'newsService', 'taxonomyS
     function clearRegion() {
         if (ctrl.activeTab == 'news') {
             ctrl.newsArticles = masterArticles;
+            ctrl.newsItems = masterArticles;
             ctrl.setNewsPage(1);
         } else {
             ctrl.events = masterEvents;
