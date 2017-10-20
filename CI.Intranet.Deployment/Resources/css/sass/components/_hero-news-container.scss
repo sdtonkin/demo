@@ -25,7 +25,7 @@
 		padding: 4px 10px;
 		color: $brand-brown-gray !important;
 		margin-right: 5px;
-		margin-top: 10px;
+		margin-top: 5px;
 		font-size: 15px;
 		a, a:visited, a:hover{
 			color: $brand-brown-gray !important;
@@ -71,6 +71,9 @@
 	.card-img-top, .card {
 	    border-top-left-radius: 0;
 	    border-top-right-radius: 0;
+	}
+	.btn-cta.pull-right {
+	    margin-right: -15px;
 	}
 }
 .hero-main > .list-content:last-child .card-body {
