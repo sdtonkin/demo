@@ -45,6 +45,9 @@
  		font-size: 20px;
  		color: $brand-brown-gray;
  		height: 100%;
+ 		.fa-search{
+ 			float: right;
+ 		}
  	}
  	&.mx-w{
  		max-width: 320px;

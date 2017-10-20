@@ -9,6 +9,11 @@
 		color: $brand-white;
 		@extend .font-lato-med;
 	}
+	.list-content{
+		.btn-cta.white{
+			margin-top: 10px;
+		}
+	}
  }
 
 .trending, .related{
@@ -99,7 +104,8 @@
 		margin-bottom: 0;
 		hr{
 			border-color: $brand-light-blue;
-			display: block;
+			// display: block;
+			display: none;
 			margin-top: 40px;
 		}
 		
@@ -133,6 +139,7 @@
 rss-feed-manager{
 	.btn-cta{
 		margin-top: 0 !important;
+		margin-bottom: 10px;
 	}
 }
 // rss-feed-manager{
@@ -160,7 +167,7 @@ rss-feed-manager{
 		padding: 0;
 	}
 	.card-tags{
-		margin-bottom: 0;
+		margin-bottom: 10px;
 		background-color: $brand-white;
 		display: inline-block;
 		border: 1px solid $brand-brown-dull;
@@ -206,3 +213,4 @@ rss-feed-manager{
 		display: block;
 	}
 }
+

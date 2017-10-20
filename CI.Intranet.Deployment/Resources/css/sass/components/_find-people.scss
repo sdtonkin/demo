@@ -15,9 +15,11 @@
  			color: $brand-dark-blue-alt;
  			height: 60px;
  			border-color: $brand-brown-gray;
+ 			padding-left: 15px;
  			@include placeholder{
  				color: $brand-dark-blue-alt;
  				font-size: 18px;
+ 				font-style: italic;
  			}
  			&:focus, &:hover{
  				border-right: none;
@@ -27,6 +29,9 @@
  			border-radius: 0;
 
  		}
+ 	}
+ 	h3{
+ 		margin-top: 40px;
  	}
  	
  }
