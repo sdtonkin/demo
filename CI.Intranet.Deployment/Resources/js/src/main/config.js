@@ -134,7 +134,7 @@ if (document.location.host === "compassion.sharepoint.com") {
             delveProfileUrl: 'https://compassion-my.sharepoint.com/_layouts/15/me.aspx?v=profile&p=',
             delveSearchUrlPrefix: 'https://nam.delve.office.com/?q=',
             delveSearchUrlSuffix: '&searchpage=1&searchview=people&v=search',
-            missionPhotoUpload: '/_layouts/15/Upload.aspx?List=%7B729a43a8-8f26-43bb-8d73-efa69869c460%7D&RootFolder=%2Fsites%2Fstage%2FmissionPhotos&ContentTypeId=0x0101009148F5A04DDD49CBA7127AADA5FB792B00AADE34325A8B49CDA8BB4DB53328F21401006059AB8EDD2AB649BE422D937A86AE6B',
+            missionPhotoUpload: '/_layouts/15/Upload.aspx?List=%7B729a43a8-8f26-43bb-8d73-efa69869c460%7D&RootFolder=%2FFmissionPhotos&ContentTypeId=0x0101009148F5A04DDD49CBA7127AADA5FB792B00AADE34325A8B49CDA8BB4DB53328F21401003A0E2280F0C17E429BC83C21EA24D44F',
             lists: {
                 rssFeedsListTitle: 'RSS Feeds',
                 userRssFeedsListTitle: 'User RSS Feeds',
