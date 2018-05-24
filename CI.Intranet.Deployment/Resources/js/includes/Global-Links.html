@@ -1,0 +1,17 @@
+﻿<section class="location-places">
+    <div class="row">
+        <div class="col-lg-6" ng-repeat="group in ctrl.globalGroups track by $index">
+            <div class="card"> 
+                <h5>{{group.name}}</h5>
+                <ul>
+                    <li ng-repeat="link in group.Nodes track by $index">
+                        <a ng-href="#">
+                            {{link.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,17 @@
+﻿<section class="key-contacts">
+    <div class="row">
+        <div class="col-12" ng-repeat="contact in ctrl.contacts track by $index">
+            <div class="media employee-card">
+                <image-loader image-css-class="d-flex align-self-start mr-3 emp-photo" image-src="{{contact.picUrl}}" image-alt-text="{{contact.name}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{contact.name}}</h3>
+                    <h5 class="emp-title">{{contact.title}}</h5>
+                    <span class="emp-contact">
+                        <a href="mailto:{{contact.email}}">Email</a> 
+                        <span class="emp-view"><a ng-href="{{contact.profileUrl}}" target="_blank">View Profile</a></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

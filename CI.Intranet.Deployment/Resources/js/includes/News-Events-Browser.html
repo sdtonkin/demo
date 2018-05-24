@@ -1,0 +1,137 @@
+﻿<section class="news-events">
+    <div class="container">
+        <div class="row">
+        <div class="col">
+        <bookmark-page></bookmark-page>
+        </div>
+        </div>
+        <div class="row">
+            <div class="news-events-tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link alt" ng-class="{'active': ctrl.activeTab == 'news'}" data-toggle="tab" role="tab" ng-click="ctrl.activeTab = 'news'">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link alt" ng-class="{'active': ctrl.activeTab == 'events'}" data-toggle="tab" role="tab" ng-click="ctrl.activeTab = 'events'">Events</a>
+                    </li>
+                </ul>                
+                <div class="search-filter">
+                    <div class="dropdown">
+                        <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ selectedCategoryTitle }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a ng-click="ctrl.clearCategory()">Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.filterByCategory(category)" ng-repeat="category in ctrl.categories">{{category.name}}</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-block brown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ selectedRegionTitle }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a ng-click="ctrl.clearRegion()">Clear Selection</a>
+                            <a class="dropdown-item" ng-click="ctrl.filterByRegion(region)" ng-repeat="region in ctrl.regions">{{region.name}}</a>
+                        </div>
+                    </div>
+                    <div class="input-group search">
+                        <input type="text" placeholder="{{searchText}}" class="form-control" placeholder="Search for..." ng-class="{'focus': hasFocus}" ng-focus="hasFocus=true" ng-blur="hasFocus=false" ng-model="searchTerm" ng-keypress="ctrl.checkForGoSearch($event)">
+                        <span class="input-group-btn">
+                            <button class="btn btn-input" ng-click="ctrl.goSearch()" ng-model="searchTerm" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div><!--search-filter-->
+                <div class="row">
+                    <div class="col-md-4 ml-md-auto">
+                        <div class="dropdown pull-right sort-filter">
+                            <button class="btn btn-block dropdown-toggle" ng-repeat="sort in ctrl.sortOptions | limitTo: 1:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sort by: {{sort.title}}
+                            </button>
+                            <div id="ci-filter-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" ng-repeat="sort in ctrl.sortOptions | limitTo: ctrl.sortOptions.length:1" ng-click="ctrl.sortBy(sort)" ng-repeat="sortOption in ctrl.sortOptions">{{sort.title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="active" id="news" role="tabpanel" ng-show="ctrl.activeTab == 'news'">
+                        <div class="hero-news-container">
+                            <div class="card-group" ng-repeat="article in ctrl.newsItems">
+                                <div class="card img-card" ng-if="article.ImageUrl != null">
+                                    <a ng-href="{{article.Path}}">
+                                        <image-loader image-css-class="img-fluid" image-src="{{article.ImageUrl}}" image-alt-text="" class="ng-isolate-scope"></image-loader>
+                                    </a>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-tags" ng-show="article.NewsType != null">{{article.NewsType}}</h4>
+                                        <h4 class="card-tags" ng-show="article.Group != null">{{article.Group}}</h4>
+                                        <h4 class="card-tags" ng-show="article.LocationTag != null">{{article.LocationTag}}</h4>
+                                        <div class="card-date">{{article.ArticleDate}}</div>
+                                        <div class="card-text"><a href="{{article.Path}}" title="" class="title">{{article.Title}}</a></div>
+                                        <news-page-likes ng-cloak page-url="{{article.Path}}"></news-page-likes>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pager -->
+                        <ul ng-if="ctrl.newsPager.pages.length" class="pagination">
+                            <li class="page-item" ng-class="{disabled:ctrl.newsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(1)">First</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li class="page-item"  ng-repeat="page in ctrl.newsPager.pages" ng-class="{active:ctrl.newsPager.currentPage === page}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(page)">{{page}}</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === ctrl.newsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.currentPage + 1)">Next</a>
+                            </li>
+                            <li class="page-item"  ng-class="{disabled:ctrl.newsPager.currentPage === ctrl.newsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setNewsPage(ctrl.newsPager.totalPages)">Last</a>
+                            </li>
+                        </ul>
+                    </div>                        
+                    <div id="events" role="tabpanel" ng-show="ctrl.activeTab == 'events'">
+                        <div class="row news-card-container">
+                            <div class="col-md-6 news-card-wrapper" ng-repeat="event in ctrl.eventItems">
+                                <div class="card upcoming-events">
+                                    <div class="card-body">
+                                        <a onclick="ShowPopupDialog(GetGotoLinkUrl(this));return false;" href="{{event.Path}}"><p class="card-text">{{event.Title}}</p></a>
+                                        <p class="card-date">{{event.EventDate}}</p>
+                                        <p class="card-time">{{event.StartTime}}-{{event.EndTime}}</p>
+                                        <p class="card-location">{{event.Location}}</p>
+                                        <h4 class="card-tags" ng-show="event.EventType != null">{{event.EventType}}</h4>
+                                        <h4 class="card-tags" ng-show="event.Group != null">{{event.Group}}</h4>
+                                        <h4 class="card-tags" ng-show="event.LocationTag != null">{{event.LocationTag}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pager -->
+                        <ul ng-if="ctrl.eventsPager.pages.length" class="pagination">
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(1)">First</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === 1}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li class="page-item" ng-repeat="page in ctrl.eventsPager.pages" ng-class="{active:ctrl.eventsPager.currentPage === page}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(page)">{{page}}</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === ctrl.eventsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage + 1)">Next</a>
+                            </li>
+                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === ctrl.eventsPager.totalPages}">
+                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.totalPages)">Last</a>
+                            </li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

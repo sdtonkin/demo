@@ -36,13 +36,20 @@
 			color: $brand-white;
 		}
 		&.active{
-			border-bottom: 4px solid $brand-white;
+			border-bottom: 4px solid transparent;
 			border-left: none;
 			border-right: none;
 			border-top: none;
 			border-radius: 0;
 			color: $brand-white;
 			background: transparent;
+			&:after{
+				content: "";
+				display: block;
+				position: relative;
+				bottom: -8px;
+				border-bottom: 4px solid $brand-white;
+			}
 		}
 		&.alt{
 			
@@ -60,8 +67,12 @@
 				color: $brand-white;
 				@extend .font-lato-med;
 				text-transform: uppercase;
-				font-size: 10px;
+				font-size: 12px;
 				letter-spacing: 0.4px;
+                img.app-icon{
+                    width: 65px;
+                    height: 65px;
+                }
 				div{
 					padding-top: 5px;
 					display: block;
@@ -74,10 +85,37 @@
 		}
 
 	}
+	#ci-sites, #ci-bookmarks{
+		ul{
+			margin-right: 40px;
+			a{
+				font-size: 14px;
+				letter-spacing: 1.3px;
+			}
+		}
+	}
+	#ci-documents h3{
+		font-size: 24px;
+		letter-spacing: 0.2px;
+	}
 	.manage-toolbar{
 		position: absolute;
 		right: 0;
 		top: 45px;
+		.btn.btn-cta.white{
+				font-size: 14px;
+				margin-bottom: 0;
+				margin-top: 0;
+				&:after{
+					font-size: 12px;
+				}
+				&:before{
+					display: none;
+				}
+			}
+	}
+	.mobile-tool{
+		display: none;
 	}
  }
  .weather{
@@ -87,20 +125,54 @@
  		top: 5px;
  		display: inline-block;
  	}
+ 	.weather-detail{
+ 		margin-left: -2px;
+ 	}
  	.weather-icon{
  		font-size: 40px;
  		margin-right: 15px;
+ 		position: relative;
+ 		top: 8px;
  	}
  	.weather-location{
  		font-size: 12px;
  		@extend .font-lato-bold;
  		text-transform: uppercase;
- 		margin-top: 14px;
+ 		margin-top: 0;
  		display: block;
+ 		letter-spacing: 1.3px;
  	}
  	.weather-info{
- 		font-size: 22px;
+ 		font-size: 21px;
  		@extend .font-lato-light;
  	}
 
+ }
+ .toolbar-toggle-button{
+ 	float: right;
+ }
+ toolbar-manager{
+ 	a{
+ 		text-transform: uppercase;
+ 		font-weight: 400;
+ 		letter-spacing: 1.3px;
+	 	&:before{
+	 		content: "\f013";
+	 		display: inline-block;
+	 		font-family: "FontAwesome";
+	 		margin-right: 10px;
+	 	}
+	 }
+ }
+ my-bookmarks{
+ 	> ul{
+ 		a div:before{
+ 			font-family: FontAwesome;
+ 			content: "\f097";
+ 			display: inline-block;
+ 			position: relative;
+ 			margin-right: 10px;
+ 			color: $brand-white;
+ 		}
+ 	}
  }

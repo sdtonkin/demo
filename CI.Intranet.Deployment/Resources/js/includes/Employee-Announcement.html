@@ -1,12 +1,12 @@
-﻿<section class="employee-announcement">
-<div class="row">
+﻿<section class="employee-announcement" ng-if="ctrl.announcements.length > 0">
+<div class="row" ng-repeat="announcement in ctrl.announcements track by $index">
     <div class="col-md-6">
         <div class="media employee-card announce">
-            <!--  <img class="d-flex align-self-start mr-3 emp-photo" src="../images/homepage/oval-2.jpg" alt="Generic placeholder image"> -->
-            <i class="fa fa-calendar d-flex align-self-start" aria-hidden="true"></i>
+            <i class="fa fa-calendar d-flex align-self-start" aria-hidden="true" ng-if="announcement.iconUrl == null"></i>
+            <image-loader image-src="{{announcement.iconUrl}}" image-width="46" image-height="46" ng-if="announcement.iconUrl != null"></image-loader>
             <div class="media-body">
-                <span class="mt-0 emp-announce">{{ctrl.title}}</span>
-                <span class="emp-info">{{ctrl.message}}</span>
+                <span class="mt-0 emp-announce">{{announcement.title}}</span>
+                <span class="emp-info">{{announcement.message}}</span>
 
             </div>
         </div>

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -202,6 +202,19 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\components.html" />
+    <Content Include="Resources\css\sass\font\weathericons-regular-webfont.svg" />
+    <Content Include="Resources\images\headerBackground.png" />
+    <Content Include="Resources\js\includes\Contacts.html" />
+    <Content Include="Resources\js\includes\Employee-Life.html" />
+    <Content Include="Resources\js\includes\Global-Links.html" />
+    <Content Include="Resources\js\includes\News-Events-Browser.html" />
+    <Content Include="Resources\js\includes\News-Page-Likes.html" />
+    <Content Include="Resources\js\includes\Resource-Links.html" />
+    <Content Include="Resources\js\includes\Submit-News.html" />
+    <Content Include="Resources\js\includes\Us-Links.html" />
+    <Content Include="Resources\js\lib\weather-icons.min.css" />
+    <Content Include="Resources\images\flag.png" />
     <Content Include="Resources\images\compassion-white-logo%402x.png" />
     <Content Include="Resources\images\compassion-white-logo%403x.png" />
     <Content Include="Resources\images\compassion-white-logo.png" />
@@ -222,15 +235,24 @@
     <Content Include="Resources\images\homepage\social-1%403x.jpg" />
     <Content Include="Resources\images\homepage\social-1.jpg" />
     <Content Include="Resources\images\shape.png" />
+    <Content Include="Resources\images\skippy-white.png" />
+    <Content Include="Resources\images\speed-test.jpg" />
     <Content Include="Resources\images\toolbar-icon-1.jpg" />
+    <Content Include="Resources\js\includes\Anniversary-Card.html" />
     <Content Include="Resources\js\includes\Department-News.html" />
+    <Content Include="Resources\js\includes\Gratitudes.html" />
     <Content Include="Resources\js\includes\Location-Places.html" />
+    <Content Include="Resources\js\includes\Global-Partners.html" />
+    <Content Include="Resources\js\includes\My-Sites.html" />
+    <Content Include="Resources\js\includes\My-Department.html" />
+    <Content Include="Resources\js\includes\New-Hires.html" />
     <Content Include="Resources\js\includes\People-Places.html" />
     <Content Include="Resources\js\includes\Employee-Spotlight.html" />
     <Content Include="Resources\js\includes\Find-People.html" />
     <Content Include="Resources\js\includes\Group-Summary.html" />
     <Content Include="Resources\js\includes\Employee-Announcement.html" />
     <Content Include="Resources\js\includes\Bookmark-Page.html" />
+    <Content Include="Resources\js\includes\How-Do-I.html" />
     <Content Include="Resources\js\includes\Navigation.html" />
     <Content Include="Resources\js\includes\My-Documents.html" />
     <Content Include="Resources\js\includes\My-Apps.html" />
@@ -251,36 +273,65 @@
     <Content Include="Resources\js\includes\Trending-News.html" />
     <Content Include="Resources\js\includes\Upcoming-Events.html" />
     <Content Include="Resources\js\includes\Weather.html" />
+    <Content Include="Resources\js\src\components\anniversary.js" />
+    <Content Include="Resources\js\src\components\contacts.js" />
+    <Content Include="Resources\js\src\components\employee-life.js" />
+    <Content Include="Resources\js\src\components\global-links.js" />
+    <Content Include="Resources\js\src\components\news-events-browser.js" />
+    <Content Include="Resources\js\src\components\news-page-likes.js" />
+    <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\department-news.js" />
+    <Content Include="Resources\js\src\components\gratitudes.js" />
+    <Content Include="Resources\js\src\components\image-loader.js" />
+    <Content Include="Resources\js\src\components\global-partners.js" />
+    <Content Include="Resources\js\src\components\like-count.js" />
+    <Content Include="Resources\js\src\components\my-department.js" />
+    <Content Include="Resources\js\src\components\my-sites.js" />
+    <Content Include="Resources\js\src\components\new-hires.js" />
     <Content Include="Resources\js\src\components\people-places.js" />
     <Content Include="Resources\js\src\components\location-places.js" />
     <Content Include="Resources\js\src\components\bookmark-page.js" />
     <Content Include="Resources\js\src\components\employee-spotlight.js" />
     <Content Include="Resources\js\src\components\group-summary.js" />
     <Content Include="Resources\js\src\components\employee-announcement.js" />
+    <Content Include="Resources\js\src\components\how-do-i.js" />
     <Content Include="Resources\js\src\components\my-apps.js" />
     <Content Include="Resources\js\src\components\find-people.js" />
     <Content Include="Resources\js\src\components\navigation.js" />
     <Content Include="Resources\js\src\components\my-documents.js" />
     <Content Include="Resources\js\src\components\news-landing.js" />
+    <Content Include="Resources\js\src\components\photo-share.js" />
     <Content Include="Resources\js\src\components\quick-links.js" />
     <Content Include="Resources\js\src\components\related-documents.js" />
     <Content Include="Resources\js\src\components\related-news.js" />
+    <Content Include="Resources\js\src\components\resource-links.js" />
     <Content Include="Resources\js\src\components\rss-feeds.js" />
     <Content Include="Resources\js\src\components\rss-feed-manager.js" />
+    <Content Include="Resources\js\src\components\submit-news.js" />
     <Content Include="Resources\js\src\components\toolbar-manager.js" />
-    <Content Include="Resources\js\src\components\weather-controller.js" />
+    <Content Include="Resources\js\src\components\us-links.js" />
+    <Content Include="Resources\js\src\components\weather-control.js" />
+    <Content Include="Resources\js\src\components\yammer-login.js" />
     <Content Include="Resources\js\src\main\common.js" />
     <Content Include="Resources\js\src\main\modal.js" />
     <Content Include="Resources\js\src\components\my-bookmarks.js" />
     <Content Include="Resources\js\src\components\my-toolbar.js" />
     <Content Include="Resources\js\src\main\ui-helper.js" />
+    <Content Include="Resources\js\src\services\anniversary-service.js" />
+    <Content Include="Resources\js\src\services\contact-service.js" />
+    <Content Include="Resources\js\src\services\pager-service.js" />
+    <Content Include="Resources\js\src\services\photo-service.js" />
+    <Content Include="Resources\js\src\services\gratitudes-service.js" />
+    <Content Include="Resources\js\src\services\new-hire-service.js" />
+    <Content Include="Resources\js\src\services\resource-links-service.js" />
+    <Content Include="Resources\js\src\services\sp-service.js" />
+    <Content Include="Resources\js\src\services\global-partner-service.js" />
     <Content Include="Resources\js\src\services\app-service.js" />
     <Content Include="Resources\js\src\services\department-news-service.js" />
+    <Content Include="Resources\js\src\services\how-do-i-service.js" />
     <Content Include="Resources\js\src\services\graph-service.js" />
     <Content Include="Resources\js\src\services\navigation-service.js" />
     <Content Include="Resources\js\src\services\employee-announcement-service.js" />
-    <Content Include="Resources\js\src\services\employee-spotlight-service.js" />
     <Content Include="Resources\js\src\services\group-service.js" />
     <Content Include="Resources\js\src\services\modal-service.js" />
     <Content Include="Resources\js\src\services\document-service.js" />
@@ -292,10 +343,15 @@
     <Content Include="Resources\js\src\services\taxonomy-service.js" />
     <Content Include="Resources\js\src\services\user-profile-service.js" />
     <Content Include="Resources\js\src\services\weather-service.js" />
+    <Content Include="Resources\js\src\services\yammer-api-service.js" />
     <Content Include="Resources\js\src\singular\bartel.js" />
     <Content Include="Resources\js\src\main\config.js" />
     <Content Include="Resources\js\src\services\rss-feed-service.js" />
     <Content Include="Resources\js\src\components\my-rss-feeds.js" />
+    <Content Include="Resources\MasterPages\PublishingImageRenditions.xml" />
+    <Content Include="Resources\PageLayouts\COM_LeftRail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Resources\PageLayouts\COM_GroupsLanding.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -309,6 +365,21 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Resources\PageLayouts\COM_ContentPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\who_we_are.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\snapshots.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\anniversary.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\gratitudes.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Resources\Pages\work-resources-search.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Resources\Pages\news.aspx">
@@ -353,6 +424,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\Groups\3-Files.xml" />
+    <Content Include="Templates\Sections\Groups\4-Pages.xml" />
     <Content Include="Templates\Sections\Lists.xml" />
     <Content Include="Templates\Sections\Pages.xml" />
     <Content Include="Templates\Sections\Security.xml" />
@@ -360,6 +432,17 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Templates\Sections\TermSets.xml" />
+    <Content Include="Templates\Sections\WebParts\My-Department.xml" />
+    <Content Include="Templates\Sections\WebParts\Global-Partners.xml" />
+    <Content Include="Templates\Sections\WebParts\People-Places.xml" />
+    <Content Include="Templates\Sections\WebParts\Compassion-Snapshots.xml" />
+    <Content Include="Templates\Sections\WebParts\Work-Resources.xml" />
+    <Content Include="Templates\Sections\WebParts\News-Events-Browser.xml" />
+    <Content Include="Templates\Sections\WebParts\Employee-Life.xml" />
+    <Content Include="Templates\Sections\WebParts\Recommended-Documents.xml" />
+    <Content Include="Templates\Sections\WebParts\Upcoming-Events.xml" />
+    <Content Include="Templates\Sections\WebParts\Recent-News.xml" />
+    <Content Include="Templates\Sections\WebParts\Work-Resource-Search-Results.xml" />
     <Content Include="Templates\Sections\WebParts\Helpful-Links.xml" />
     <Content Include="Templates\Sections\WebParts\Job-Opportunities.xml" />
     <Content Include="Templates\Sections\WebParts\myWellness.xml" />
@@ -399,6 +482,10 @@
     <None Include="Resources\css\sass\components\_search.scss" />
     <None Include="Resources\css\sass\components\_stay-connected.scss" />
     <None Include="Resources\css\sass\components\_work-resources.scss" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.eot" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.ttf" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff" />
+    <None Include="Resources\css\sass\font\weathericons-regular-webfont.woff2" />
     <None Include="Resources\css\sass\main.scss" />
     <Content Include="Resources\js\lib\angular.min.js" />
     <Content Include="Resources\js\lib\fetch.min.js" />
@@ -415,7 +502,19 @@
     <None Include="Resources\MasterPages\com-main.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
-    <None Include="Resources\WebParts\Trending-News.webpart" />
+    <None Include="Resources\WebParts\Employee Spotlight.webpart" />
+    <None Include="Resources\WebParts\Events.webpart" />
+    <None Include="Resources\WebParts\News Events Browser.webpart" />
+    <None Include="Resources\WebParts\Find People.webpart" />
+    <None Include="Resources\WebParts\Groups.webpart" />
+    <None Include="Resources\WebParts\Helpful Links.webpart" />
+    <None Include="Resources\WebParts\News.webpart" />
+    <None Include="Resources\WebParts\Recent News.webpart" />
+    <None Include="Resources\WebParts\Recommended Documents.webpart" />
+    <None Include="Resources\WebParts\Search Results.webpart" />
+    <None Include="Resources\WebParts\Trending News.webpart" />
+    <None Include="Resources\WebParts\Upcoming Events.webpart" />
+    <None Include="Resources\WebParts\World News.webpart" />
     <None Include="Resources\XSL\Webparts\CustomXSL_CQWP.webpart" />
     <None Include="Resources\XSL\Webparts\Events.webpart" />
     <None Include="Resources\XSL\Webparts\News.webpart" />
@@ -450,7 +549,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cmd.exe /c gulp -b "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment" --color --gulpfile "C:\Projects\Compassion\CI.Intranet\CI.Intranet.Deployment\Gulpfile.js" 1-compile</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

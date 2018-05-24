@@ -1,42 +1,998 @@
-﻿<section id="group-summary">
-    <div id="groupSumAccordion" class="group-summary-accordion" role="tablist" aria-multiselectable="true">
-        <div class="card" ng-repeat="group in ctrl.groups track by group.id">
-            <div class="card-header row" role="tab" id="headingOne">
-                <div class="col-sm-8">
-                    <a ng-href="javascript:void(0)" ng-click="ctrl.toggleSummary(group.id)">
-                        <i class="fa fa-plus" ng-show="!ctrl.isGroupActive(group.id)"></i>
-                        <i class="fa fa-minus" ng-show="ctrl.isGroupActive(group.id)"></i>
-                        <h5 class="mb-0">{{group.name}}</h5>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a ng-href="{{group.url}}">GO TO GROUP ></a>
-                </div>
-            </div>
-            <div class="ci-group-summary" ng-show="ctrl.isGroupActive(group.id)">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p>{{group.description}}</p>
-                            <h5>Leadership</h5>
-                        </div>
-                        <div class="col-sm-4">
-                            <a ng-href="{{group.profileUrl}}">VIEW ORG CHART</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6" ng-repeat="leader in group.leaders">
-                        <div class="media employee-card">
-                            <img class="d-flex align-self-start mr-3 emp-photo" ng-src="{{leader.picUrl}}">
-                            <div class="media-body">
-                                <h3 class="mt-0 emp-name">{{leader.name}}</h3>
-                                <h5 class="emp-title">{{leader.title}}</h5>
+        <!-- This is the news cards in grid format on the homepage -->
+        <section class="layout-content"><!-- class homepage-content has no styling relevance or dependency -->
+
+            <div class="container"> <!-- this class must layout-content -->
+                <div class="row"> <!-- this class must container -->
+
+
+                    <!-- This is a generic page headline webpart which can be used
+                         on multiple pages -->
+                    <section class="page-headline-wrapper">
+                        <div class="col-md-12">
+                            <div class="page-headline">
+                                <h1>News &amp; Events</h1>
+                                <p>Thursday, November 9, 2017</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" ng-model="group.id" />
-        </div>
-   </div>
-</section>
-<bookmark-page></bookmark-page>
+                    </section>
+
+                    <!-- This is the tab webpart which is used on the news and events search
+                        results page.
+                        In order to make a tab button active, add 'tabs__item--active' as shown
+                        below  -->
+                    <section class="tabs__bar">
+                        <div class="col-md-12">
+                            <div class="tabs__wrapper">
+                                <ul class="tabs__container">
+                                    <li class="tabs__li">
+                                        <a href="#tab-1" class="tabs__item tabs__item--active"> <!-- active state -->
+                                            News
+                                        </a>
+                                    </li>
+                                    <li class="tabs__li">
+                                        <a href="#tab-2" class="tabs__item " >
+                                            Events
+                                        </a>
+                                    </li>
+                                    <li class="tabs__li">
+                                        <a href="#tab-3" class="tabs__item" >
+                                           Team Member Announcements
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>                       
+                        </div>
+                    </section>
+
+                    <!-- This is a fill width search input webpart used to search on
+                         News and Events page -->
+                    <section class="search-section">
+                        <div class="container">
+                            <div class="input-group">
+                                <img src="images/search-icon.svg" alt="">
+                                <input type="text" name="" placeholder="Search news">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- This layout format is used in the news and events search results
+                        page, where there is a left sidebar and right side content -->
+                    <section class="two-column-layout">
+                        <div class="container">
+                            <div class="row">
+
+                                    <!-- Left sidebar -->
+                                    <div class="col-md-3">
+                                        
+                                        <!-- Filters accordion webpart -->
+                                        <section class="filters-section">
+                                            <div class="accordion" id="Filters">
+                                                <h4 class="filters-label">Filter</h4>
+
+                                                <div class="accordion-group">
+                                                    <div class="accordion-heading">
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#Filters" href="#Trending">
+                                                            Trending
+                                                        </a>
+                                                    </div>
+                                                    <div id="Trending" class="accordion-body collapse">
+                                                        <div class="accordion-inner">                                                        
+                                                                
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox1" class="checkbox__input">
+                                                                        <label for="checkbox1" class="checkbox__label">Enterprise</label>
+                                                                    </div>                                                
+                                                                </li>
+
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox2" class="checkbox__input">
+                                                                        <label for="checkbox2" class="checkbox__label">Leadership</label>
+                                                                    </div>                                                
+                                                                </li>
+
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox3" class="checkbox__input">
+                                                                        <label for="checkbox3" class="checkbox__label">Units &amp; Departments</label>
+                                                                    </div>                                                
+                                                                </li>                                                                                        
+                                                            </ul>                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-heading">
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#Filters" href="#Category">
+                                                            Category
+                                                        </a>
+                                                    </div>
+                                                    <div id="Category" class="accordion-body collapse">
+                                                        <div class="accordion-inner">
+                                                           
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="radio">
+                                                                        <input id="radio1" type="radio" name="radio-group-1" class="radio__input"/>
+                                                                        <label for="radio1" class="radio__label">Most Likes</label>                                        
+                                                                    </div>
+                                                                </li>
+
+                                                                <li>
+                                                                    <div class="radio">
+                                                                        <input id="radio2" type="radio" name="radio-group-1" class="radio__input"/>
+                                                                        <label for="radio2" class="radio__label">Most Comments</label>                                        
+                                                                    </div>
+                                                                </li>                                            
+                                                            </ul>                                                 
+
+                                                       
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion-heading">
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#Filters" href="#Topic">
+                                                            Topic
+                                                        </a>
+                                                    </div>
+                                                    <div id="Topic" class="accordion-body collapse">
+                                                        <div class="accordion-inner">                                                        
+                                                                
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox-topic-1" class="checkbox__input">
+                                                                        <label for="checkbox-topic-1" class="checkbox__label">Topic One</label>
+                                                                    </div>                                                
+                                                                </li>
+
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox-topic-2" class="checkbox__input">
+                                                                        <label for="checkbox-topic-2" class="checkbox__label">Topic Two</label>
+                                                                    </div>                                                
+                                                                </li>
+
+                                                                <li>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" id="checkbox-topic-3" class="checkbox__input">
+                                                                        <label for="checkbox-topic-3" class="checkbox__label">Topic Three</label>
+                                                                    </div>                                                
+                                                                </li>                                                                                        
+                                                            </ul>                                                            
+                                                            
+                                                        </div>
+                                                    </div>                                                    
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                       
+                                    </div>
+
+                                    <!-- Right sidebar -->
+                                    <div class="col-md-9">                                   
+
+                                        <!-- Post Announcement prompt -->                                    
+                                        <section class="submit-announcement">
+                                            <div class="announcement-wrapper">
+                                                <h5>Post Your Announcement</h5>
+                                                <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis amet natoque penatibus.</p>
+                                            </div>
+                                            <div class="submit-cta">
+                                                <a href="" class="btn--primary">submit announcement</a>
+                                            </div>
+                                        </section>
+
+
+                                        <!-- Filters and pagination section -->
+                                        <section class="two-column-layout">
+
+                                            <!-- Applied filters webpart -->
+                                            <section class="search-filters">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="filters-wrapper">
+                                                            <h6 class="filter-label --inline float-l">applied filters:</h6>
+
+                                                            <span class="facet">
+                                                                <img src="images/facetclose.svg" />
+                                                                enterprise
+                                                            </span>
+
+                                                            <span class="facet">
+                                                                <img src="images/facetclose.svg" />
+                                                                enterprise
+                                                            </span>                                                                                                                                                                     
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <!-- Pagination webpart -->
+                                            <section class="search-pagination text-right">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <ul ng-if="ctrl.eventsPager.pages.length" class="pagination">
+                                                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === 1}">                                                            
+                                                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage - 1)">Previous</a>
+                                                            </li>
+                                                            <li class="page-item active" ng-repeat="page in ctrl.eventsPager.pages" ng-class="{active:ctrl.eventsPager.currentPage === page}">
+                                                                <a class="page-link" ng-click="ctrl.setEventsPage(page)">1</a>
+                                                            </li>
+                                                            <li class="page-item" ng-repeat="page in ctrl.eventsPager.pages" ng-class="{active:ctrl.eventsPager.currentPage === page}">
+                                                                <a class="page-link" ng-click="ctrl.setEventsPage(page)">2</a>
+                                                            </li>
+                                                            <li class="page-item" ng-repeat="page in ctrl.eventsPager.pages" ng-class="{active:ctrl.eventsPager.currentPage === page}">
+                                                                <a class="page-link" ng-click="ctrl.setEventsPage(page)">3</a>
+                                                            </li>                                                                                                                
+                                                            <li class="page-item" ng-class="{disabled:ctrl.eventsPager.currentPage === ctrl.eventsPager.totalPages}">
+                                                                <a class="page-link" ng-click="ctrl.setEventsPage(ctrl.eventsPager.currentPage + 1)">Next</a>
+
+                                                            </li>
+                                                        </ul>                                                    
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                        </section>
+
+                                        <!-- Search result list. This will include
+                                             variant types of search result cards. I've included News, Events
+                                             and Team Announcements in the same list to save time -->
+                                        <section class="search-results-section float-l border-bottom m-b-30">
+
+                                            <!-- NEWS LIST. Please structure according to the markup
+                                                 shown here. All news results must be wrapped with this ul->li -->
+                                            <ul class="flex-eqal-heights"> <!-- flex-eqal-heights class needed -->
+
+                                                <!-- FEATURED News search card -->
+                                                <li class="news-search-results featured-result results">
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <img src="http://via.placeholder.com/398x298" class="img-responsive -full"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="featured-ribbon">
+                                                            <h6>featured</h6>
+                                                        </div>
+                                                        <div class="search-category">
+                                                            <h6>Category Tag</h6>
+                                                        </div>
+                                                        <a href=""><h5>Orlando Health's Team Member Giving Campaign Kicks Off Sept. 1</h5></a>
+
+                                                        <div class="meta-container">
+                                                            <div class="claps meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>5</h5>
+                                                            </div>
+                                                            <div class="comments meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>0</h5>
+                                                            </div>    
+                                                            <div class="date meta-inline">                                                            
+                                                                <span>october 5, 2017</span>
+                                                            </div>                                                                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <!-- News search card -->
+                                                <li class="news-search-results results">
+                                                    <div class="col-md-3">
+                                                        <div class="row">
+                                                            <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="search-category">
+                                                            <h6>Category Tag</h6>
+                                                        </div>
+                                                        <a href=""><h5>Sunrise Downtime &amp; Upgrade Scheduled to Start Nov. 10</h5></a>
+
+                                                        <div class="meta-container">
+                                                            <div class="claps meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>5</h5>
+                                                            </div>
+                                                            <div class="comments meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>0</h5>
+                                                            </div>    
+                                                            <div class="date meta-inline">                                                            
+                                                                <span>october 5, 2017</span>
+                                                            </div>                                                                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>       
+
+                                                <!-- News search card -->
+                                                <li class="news-search-results results">
+                                                    <div class="col-md-3">
+                                                        <div class="row">
+                                                            <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="search-category">
+                                                            <h6>Category Tag</h6>
+                                                        </div>
+                                                        <a href=""><h5>Orlando Health Honored with Doing Well While Doing Good Humanitarian Award</h5></a>
+
+                                                        <div class="meta-container">
+                                                            <div class="claps meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>5</h5>
+                                                            </div>
+                                                            <div class="comments meta-inline m-r-15 ">
+                                                                <img src="http://via.placeholder.com/20x20" />
+                                                                <h5>0</h5>
+                                                            </div>    
+                                                            <div class="date meta-inline">                                                            
+                                                                <span>october 5, 2017</span>
+                                                            </div>                                                                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>  
+
+                                            </ul>
+
+
+                                            <!-- EVENTS LIST. I'm only going to list one event with
+                                                 all descriptions. -->                                        
+                                            <ul>
+                                                <!-- Events search card-->
+                                                <li class="events-search-results">
+                                                    <div class="events-date-container">
+                                                        <span class="event-month">nov</span>
+                                                        <span class="event-number">30</span>
+                                                    </div>
+
+                                                    <div class="events-detail-container">
+                                                        <div class="event-meta">
+                                                            <a href=""><h5 class="event-title">Free Book Friday</h5></a>
+                                                            <p class="event-location">Clifford E. Graese Community Health Library</p>
+                                                            <span class="event-hour">5:00pm est</span>
+                                                        </div>
+                                                        <img src="http://via.placeholder.com/456x341" class="img-responsive"/>
+                                                        <p>To celebrate National Medical Librarian’s Month, the Library Services team will be having the annual Free Book Friday on Friday October 27. Come to the Clifford E. Graese Community Health Library behind ORMC for free books, refreshments and treats, and learn more about the great resources and services available to you from our libraries and Library Services team, some which are listed below.</p>
+                                                        <p>Want to donate books to Free Book Friday? Please bring any donations of gently used fiction, non-fiction, textbooks, or children’s books to library before Friday, October 27.</p>
+
+                                                        <div class="event-action">
+                                                            <a href="" class="btn--quicklink --calendar">
+                                                                <span>add to outlook</span>
+                                                            </a>
+                                                            <a href="" class="btn--quicklink">
+                                                                <span>register to event</span>
+                                                            </a>                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <!-- TEAM ANNOUNCEMENT LIST. There are some variations and so i've
+                                                 listed the 4 variant types below. Variation doesn't necessarily mean
+                                                 different markup. It can mean not showing an element...like a <p> tag -->
+                                            <ul>
+                                                <!-- Team announcement card style 1-->
+                                                <li class="team-event-search-results">
+                                                    <div class="events-date-container">
+                                                        <span class="event-month">dec</span>
+                                                        <span class="event-number">13</span>
+                                                    </div>
+
+                                                    <div class="events-detail-container">
+                                                        <div class="event-meta">
+                                                            <h6 class="event-category">showing compassion</h6>
+                                                            <a href=""><h5 class="event-title">Free Book Friday</h5></a>
+                                                            <span class="event-hour">6:30–8:30PM EST</span>
+                                                        </div>
+                                                        <img src="http://via.placeholder.com/456x341" class="img-responsive"/>
+                                                        <p>To celebrate National Medical Librarian’s Month, the Library Services team will be having the annual Free Book Friday on Friday October 27. Come to the Clifford E. Graese Community Health Library behind ORMC for free books, refreshments and treats, and learn more about the great resources and services available to you from our libraries and Library Services team, some which are listed below.</p>
+                                                        <p>Want to donate books to Free Book Friday? Please bring any donations of gently used fiction, non-fiction, textbooks, or children’s books to library before Friday, October 27.</p>
+
+                                                        <div class="event-action">
+                                                            <a href="" class="btn--quicklink --calendar">
+                                                                <span>add to outlook</span>
+                                                            </a>                                                          
+                                                        </div>
+
+                                                        <div class="event-meta-bottom">
+                                                            <span class="event-meta-author">posted by <a href="" class="btn--link-capital">laurel petty</a></span>
+                                                            <i class="bullet"></i>
+                                                            <span class="event-meta-date">november 15, 2017</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+
+                                                <!-- Team announcement card style 2-->
+                                                <li class="team-event-search-results">
+                                                    <div class="events-detail-container">
+                                                        <div class="event-meta">
+                                                            <h6 class="event-category">awesomeness</h6>
+                                                            <a href=""><h5 class="event-title">Random Acts of Kindness Parade for Anamika Lasser</h5></a>
+                                                        </div>
+
+                                                        <div class="event-meta-bottom">
+                                                            <span class="event-meta-author">posted by <a href="" class="btn--link-capital">laurel petty</a></span>
+                                                            <i class="bullet"></i>
+                                                            <span class="event-meta-date">november 15, 2017</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <!-- Team announcement card style 3-->
+                                                <li class="team-event-search-results">
+                                                    <div class="events-detail-container">
+                                                        <div class="event-meta">
+                                                            <h6 class="event-category">showing compassion</h6>
+                                                            <a href=""><h5 class="event-title">PTO Donation Recipient ID# 1024</h5></a>
+                                                        </div>
+                                                        <p>Just a reminder to send <a href="">link</a> donations by Friday, August 23! Thanks for your support!</p>
+                                                      
+                                                        <div class="event-meta-bottom">
+                                                            <span class="event-meta-author">posted by <a href="" class="btn--link-capital">laurel petty</a></span>
+                                                            <i class="bullet"></i>
+                                                            <span class="event-meta-date">november 15, 2017</span>
+                                                        </div>
+                                                    </div>
+                                                </li>                                                
+
+
+                                                <!-- Team announcement card style 4-->
+                                                <li class="team-event-search-results">
+                                                    <div class="events-detail-container">
+                                                        <div class="event-meta">
+                                                            <h6 class="event-category">awesomeness</h6>
+                                                            <a href=""><h5 class="event-title">It’s Fall Y’all</h5></a>
+                                                        </div>
+                                                        <img src="http://via.placeholder.com/456x341" class="img-responsive"/>
+
+                                                        <div class="event-meta-bottom">
+                                                            <span class="event-meta-author">posted by <a href="" class="btn--link-capital">laurel petty</a></span>
+                                                            <i class="bullet"></i>
+                                                            <span class="event-meta-date">november 15, 2017</span>
+                                                        </div>
+                                                    </div>
+                                                </li>  
+                                            </ul>    
+
+                                        </section>                                    
+                                    </div>
+                            </div>
+                        </div>
+                    </section> 
+
+                    <!-- This section contains homepage grid news items, including the full
+                        width news hero -->
+                    <section class="news-grid-homepage"> <!-- class name is not relevant for styling purposes -->
+
+                        <div class="section-label">
+                            <div class="col-md-12">
+                                <h2>System Wide News</h2>
+                            </div>
+                        </div>
+                        <!-- FULL WIDTH News card webpart featured on homepage.
+                             This full width news card/hero is optional. -->
+                        <div class="news-home-featured col-md-12">
+                            <img src="http://via.placeholder.com/1132x515" class="img-responsive -full"/>
+
+                            <div class="card-content">
+                                <div class="search-category">
+                                    <h6>human resources</h6>
+                                </div>
+                                <a href=""><h5>Important Information on 2018 Benefits Open Enrollment</h5></a>
+
+                                <div class="date meta-inline">                                                            
+                                    <span>october 5, 2017</span>
+                                </div>  
+
+                                <div class="meta-container">
+                                    <div class="claps meta-inline m-r-15 ">
+                                        <img src="http://via.placeholder.com/20x20" />
+                                        <h5>5</h5>
+                                    </div>
+                                    <div class="comments meta-inline m-r-15 ">
+                                        <img src="http://via.placeholder.com/20x20" />
+                                        <h5>0</h5>
+                                    </div>                                                                                                              
+                                </div>
+                            </div>                        
+                        </div>
+
+                        <!-- News cards in 4 column grid format. Featured on homepage -->
+                        <div class="news-grid">
+
+                            <ul class="flex-eqal-heights -full"> <!-- Must use given class names -->
+                                
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                        
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Are You Interested in Volunteering at a Guiness World Record Attempt…</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Check out a new Minute for Medicine Video</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Orlando Health Helps Kids Learn How to Cook Healthy Meals</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Orlando Health Honored with Doing Well While Doing Good Award</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>                                                                        
+                             
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                        
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Are You Interested in Volunteering at a Guiness World Record Attempt…</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Check out a new Minute for Medicine Video</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Orlando Health Helps Kids Learn How to Cook Healthy Meals</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- News card - grid format -->
+                                <li class="news-search-results --grid col-md-3">
+                                    
+                                    <div class="card">
+                                        <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+
+                                        <div class="card-content">
+                                            <div class="search-category">
+                                                <h6>human resources</h6>
+                                            </div>
+                                            <a href=""><h5>Orlando Health Honored with Doing Well While Doing Good Award</h5></a>
+
+                                            <div class="grid-date">
+                                                <div class="meta-container">
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>   
+                                                </div>
+                                            </div> 
+
+                                            <div class="meta-container">
+                                                <div class="claps meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div class="comments meta-inline m-r-15 ">
+                                                    <img src="http://via.placeholder.com/20x20" />
+                                                    <h5>0</h5>
+                                                </div>    
+                                                <div class="date meta-inline">                                                            
+                                                    <span>october 5, 2017</span>
+                                                </div>                                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>                                                                        
+                             
+                            </ul>
+                        </div>
+
+                    </section>
+                    <!-- Two column layout -->
+                    <section class="two-col-layout"> <!-- The class name has no relevance at this point. Just a way to designate what's coming -->
+
+                        <!-- Left side content. Comps show Events and My News cards 
+                             displayed in this section -->
+                        <div class="col-md-9">
+                            <div class="grouped-with-title-section">
+                           
+                                <div class="list line-separated">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <h2>Events</h2>
+                                        </div>
+                                    </div>
+
+                                    <!-- Events in a two column grid format -->
+                                    <ul class="flex-eqal-heights -full">
+                                        
+                                        <!-- Event card -->
+                                        <li class="events-grid-card col-md-6">
+                                            <div class="row">
+                                               <div class="card -full">
+                                                    <div class="col-left">
+                                                        <span class="event-number">13</span>
+                                                        <span class="event-month">dec</span>
+                                                    </div>         
+
+                                                    <div class="col-right">
+                                                        <a href=""><h5 class="event-title">Stroke Support Group</h5></a>
+                                                        <p class="event-location">OHHI Classrooms A&amp;B</p>
+                                                        <span class="event-hour">5:00pm est</span>                                                           
+                                                                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Event card -->
+                                        <li class="events-grid-card col-md-6">
+                                            <div class="row">
+                                                <div class="card -full">
+                                                    <div class="col-left">
+                                                        <span class="event-number">28</span>
+                                                        <span class="event-month">dec</span>
+                                                    </div>         
+
+                                                    <div class="col-right">
+                                                        <a href=""><h5 class="event-title">Making Strides Together Against Breast Cancer This November</h5></a>
+                                                        <p class="event-location">Lake Eola, Downtown Orlando</p>
+                                                        <span class="event-hour">5:00pm est</span>                                                           
+                                                                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Event card -->
+                                        <li class="events-grid-card col-md-6">
+                                            <div class="row">
+                                                <div class="card -full">
+                                                    <div class="col-left">
+                                                        <span class="event-number">30</span>
+                                                        <span class="event-month">dec</span>
+                                                    </div>         
+
+                                                    <div class="col-right">
+                                                        <a href=""><h5 class="event-title">Maecenas faucibus mollis interdum porta sem mollis euismod.</h5></a>
+                                                        <p class="event-location">OHHI Classrooms A&amp;B</p>
+                                                        <span class="event-hour">5:00pm est</span>                                                           
+                                                                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Event card -->
+                                        <li class="events-grid-card col-md-6">
+                                            <div class="row">
+                                                <div class="card -full">
+                                                    <div class="col-left">
+                                                        <span class="event-number">04</span>
+                                                        <span class="event-month">dec</span>
+                                                    </div>         
+
+                                                    <div class="col-right">
+                                                        <a href=""><h5 class="event-title">Free Book Friday</h5></a>
+                                                        <p class="event-location">Clifford E. Graese Community Health Library</p>
+                                                        <span class="event-hour">5:00pm est</span>                                                           
+                                                                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>                                                                                                                        
+                                    </ul>
+
+                                    <!-- Right-aligned tertiary cta. 
+                                         Must be included inside the 'list' parent -->
+                                    <div class="grouped-list-cta text-right">
+                                        <a href="" class="btn--tertiary">view all events</a>
+                                    </div>
+                                </div>                                                                                                                                              
+                            
+                            </div>
+
+                            <div class="grouped-with-title-section">                                
+
+                                <div class="list line-separated">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <h2>My News</h2>
+                                            <p>Curated articles based on my department and location</p> <!-- optional -->
+                                        </div>
+                                    </div>
+
+                                    <!-- News cards in a horizontal layout -->
+                                    <ul>
+                                        <!-- News card -->
+                                        <li class="news-search-results results flex-eqal-heights -full ">
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="search-category">
+                                                    <h6>Category Tag</h6>
+                                                </div>
+                                                <a href=""><h5>Sunrise Downtime &amp; Upgrade Scheduled to Start Nov. 10</h5></a>
+
+                                                <div class="meta-container">
+                                                    <div class="claps meta-inline m-r-15 ">
+                                                        <img src="http://via.placeholder.com/20x20" />
+                                                        <h5>5</h5>
+                                                    </div>
+                                                    <div class="comments meta-inline m-r-15 ">
+                                                        <img src="http://via.placeholder.com/20x20" />
+                                                        <h5>0</h5>
+                                                    </div>    
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>                                                                                                            
+                                                </div>
+                                            </div>
+                                        </li>   
+
+                                        <!-- News card -->
+                                        <li class="news-search-results results flex-eqal-heights -full ">
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <img src="http://via.placeholder.com/398x278" class="img-responsive -full"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="search-category">
+                                                    <h6>Category Tag</h6>
+                                                </div>
+                                                <a href=""><h5>Sunrise Downtime &amp; Upgrade Scheduled to Start Nov. 10</h5></a>
+
+                                                <div class="meta-container">
+                                                    <div class="claps meta-inline m-r-15 ">
+                                                        <img src="http://via.placeholder.com/20x20" />
+                                                        <h5>5</h5>
+                                                    </div>
+                                                    <div class="comments meta-inline m-r-15 ">
+                                                        <img src="http://via.placeholder.com/20x20" />
+                                                        <h5>0</h5>
+                                                    </div>    
+                                                    <div class="date meta-inline">                                                            
+                                                        <span>october 5, 2017</span>
+                                                    </div>                                                                                                            
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul> 
+
+                                    <!-- Right-aligned tertiary cta. 
+                                         Must be included inside the 'list' parent -->
+                                    <div class="grouped-list-cta text-right">
+                                        <a href="" class="btn--tertiary">read all news</a>
+                                    </div>  
+                                </div>                               
+                            </div>
+                        </div>  
+
+
+

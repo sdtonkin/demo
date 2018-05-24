@@ -1,15 +1,18 @@
 var myApp = angular.module('compassionIntranet');
 myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
-
+    var ctrl = this;
+    ctrl.getRelatedNews = getRelatedNews;
     const depNews = function(page) {
         let eventQuery = "";
         let contentType = "";
         let category = "";
         let x = page.ContentType
-        if (x.indexOf('Article') > 0) {
+        if (x.indexOf('News Page') > 0) {
             //set news content type
-            contentType = " ContentTypeId:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D0017899C3E9B390F4E9BD82B8F03AFD6E6* ";
-            category = " RefinableString15: '" + page.newsCategory + "'";
+            contentType = " ContentTypeId:" + COM_CONFIG.contentTypeIds.newsPage + "* ";
+            if (page.newsType) {
+                category = " RefinableString01: '" + page.newsType + "'";
+            }
         }
 
         //specify query variables
@@ -19,7 +22,7 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         $pnp.sp.search({
             Querytext: '' + contentType + 'AND' + category + ' ' + rootNews + '',
-            SelectProperties: ['RefinableString1', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            SelectProperties: ['PublishingImage', 'RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
             TrimDuplicates: 'false',
             RowLimit: 3,
             SortList: [{
@@ -35,8 +38,20 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
                 let pageTitle = page.Title;
                 if (pageTitle != item.Title) return item;
             });
-            //create array of objects
-            items = items.map(createObject);
+
+            item.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate01) {
+                    var eventDate = new Date(item.RefinableDate01);
+                    item.rawArticleDate = eventDate
+                    item.articleDate = moment(eventDate).format('MMMM D, YYYY');
+                }                
+                if (item.RefinableString01) {
+                    item.newsType = item.RefinableString01;
+                }                
+            });
 
             defer.resolve(items);
         });
@@ -44,37 +59,38 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
     }
 
     const getPage = function() {
-
         var defer = $q.defer();
 
-        let pageTitle = $(".page-title").text();
-        let rootNews = _spPageContextInfo.siteAbsoluteUrl + "/news";
-        let path = " Path:" + "" + rootNews + "";
-        $pnp.sp.search({
-            Querytext: 'Title= "' + pageTitle + '" ' + path + '',
-            SelectProperties: ['RefinableString10', 'RefinableString09', 'RefinableString100', 'RefinableString13', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
-            TrimDuplicates: 'false',
-            RowLimit: 3,
-            SortList: [{
-                'Property': 'RefinableDate01',
-                'Direction': '0'
-            }]
+        let listItemId = _spPageContextInfo.pageItemId;
+        let web = new $pnp.Web(COM_CONFIG.newsWeb);
 
-        }).then(function(data) {
-
-            var items = data.PrimarySearchResults[0];
-            if (items.RefinableString15) {
-
-                items.newsCategory = items.RefinableString15;
-            }
-
-            defer.resolve(items);
+        web.lists.getByTitle('Pages').items
+            .getById(listItemId)
+            .get()
+            .then(function (data) {
+                data.map(function (item) {
+                    if (item.RefinableString01) {
+                        item.newsType = item.RefinableString01;
+                    }
+                    if (item.RefinableDate00) {
+                        var artDate = new Date(item.RefinableDate00);
+                        item.articleDate = moment(artDate).format('MMMM D, YYYY');
+                        item.rawArticleDate = artDate;
+                    }                
+                });
+                if (!COM_CONFIG.isProduction) { console.log('get page', data); }
+                if (data.length > 0) {
+                    defer.resolve(data.PrimarySearchResults[0]);
+                }
+                else {
+                    defer.resolve(null);
+                }
         });
 
         return defer.promise;
     }
 
-    this.getData = function() {
+    ctrl.getData = function() {
 
         var defer = $q.defer();
         getPage().then(function(page) {
@@ -85,5 +101,82 @@ myApp.service('relatedNewsService', function($q, $http, COM_CONFIG) {
 
         });
         return defer.promise;
+    }
+
+    function getRelatedNewsByType(newsType) {
+        var defer = $q.defer();
+
+        let listItemId = _spPageContextInfo.pageItemId;
+        let web = new $pnp.Web(COM_CONFIG.newsWeb);
+
+        web.lists.getByTitle('Pages').items
+            .filter('COM_NewsType eq ' + newsType)
+            .top(3)
+            .orderBy('COM_PublishDate', false)
+            .get()
+            .then(function (data) {
+                data.map(function (item) {
+                    if (item.RefinableString01) {
+                        item.newsType = item.RefinableString01;
+                    }
+                    if (item.RefinableDate00) {
+                        var artDate = new Date(item.RefinableDate00);
+                        item.articleDate = moment(artDate).format('MMMM D, YYYY');
+                        item.rawArticleDate = artDate;
+                    }
+                });
+                if (!COM_CONFIG.isProduction) { console.log('getRelatedNewsByType', data); }
+                if (data.length > 0) {
+                    defer.resolve(data.PrimarySearchResults[0]);
+                }
+                else {
+                    defer.resolve(null);
+                }
+            });
+
+        return defer.promise;
+    }
+    function getRelatedNews(newsType, pageUrl, rowLimit) {
+        var defer = $q.defer();
+
+        $pnp.sp.search({
+            Querytext: 'ContentTypeId:' + COM_CONFIG.contentTypeIds.newsPage + '* AND Path:"' + COM_CONFIG.rootWeb + '"',
+            SelectProperties: ['PublishingImage', 'Id','RefinableString01', 'RefinableString00', 'RefinableDate00', 'RefinableDate01', 'RefinableDate02', 'Path', 'Title', 'ArticleByLineOWSTEXT', 'ContentType'],
+            RefinementFilters: ['RefinableString01:equals("Country Office")'],
+            RowLimit: (rowLimit == null ? 3 : rowLimit),
+            TrimDuplicates: false,
+            SortList: [{
+                'Property': 'RefinableDate01',
+                'Direction': '1'
+            }]
+        }).then(function (data) {
+            var items = data.PrimarySearchResults
+            items = items.filter(function (item) {
+                //filter out current page
+                if (pageUrl != item.Path) return item;
+            });
+            items.map(function (item) {
+                if (item.PublishingImage) {
+                    item.ImageUrl = getImage(item.PublishingImage) + '?RenditionId=1';
+                }
+                if (item.RefinableDate00) {
+                    var eventDate = new Date(item.RefinableDate00);
+                    item.rawArticleDate = eventDate
+                    item.articleDate = moment(eventDate).format('MMMM D, YYYY');
+                }
+                if (item.RefinableString01) {
+                    item.newsType = item.RefinableString01;
+                }
+            });
+            if (!COM_CONFIG.isProduction) { console.log('getRelatedNews', items); }            
+            defer.resolve(items);
+        });
+        return defer.promise;
+    }
+    function getImage(element) {
+        var src = $(element).attr('src');
+        if (src.indexOf('?') != -1)
+            src = src.substring(0, src.indexOf('?'));
+        return src;
     }
 });

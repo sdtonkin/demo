@@ -48,17 +48,18 @@
   </pnp:ContentType>
   <pnp:ContentType ID="0x0100DCE3A2BC1BD240F197EE919521C55C42" Name="Home Page News Item" Description="News Item for Home Page Display" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa" Name="COM_SortOrder" />
+      <pnp:FieldRef ID="fc07cb8d-9cbc-43f2-a2a5-62630a5c4aaa" Name="COM_SortOrder" Required="true" />
+      <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
       <pnp:FieldRef ID="3de94b06-4120-41a5-b907-88773e493458" Name="PublishingPageImage" />
-      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
+      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" Required="true" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
-      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" />
+      <pnp:FieldRef ID="14C03220-C950-4700-9606-3D621733E69B" Name="COM_Featured" /> 
       <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
-      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" Hidden="true" />  
+      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" />  
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x010200AA13DE23CACF40448F3C9C777ABC2106" Name="Group Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
@@ -70,29 +71,35 @@
     	<pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
     </pnp:FieldRefs>
   </pnp:ContentType>
-  <pnp:ContentType ID="0x0102003E4799AB50024725A6D6E7E1C4AA1A72" Name="Personal Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+  <pnp:ContentType ID="0x01004E05F80379CB7C4E8169D8407B6E9C6C" Name="Home Page Event" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" /> 
-      <pnp:FieldRef ID="D9540795-390B-418A-B7A9-62AAC170E5C4" Name="COM_EventDate" Hidden="true" />  
-      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />     
+      <pnp:FieldRef ID="BD3061C5-522B-4CBF-8685-1917472429DB" Name="COM_EventType" Required="true" /> 
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />
+      <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>
+  <pnp:ContentType ID="0x010079B24C73F76FA940A4E110C36A7BA97B" Name="New Hire" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />
+      <pnp:FieldRef ID="64cd368d-2f95-4bfc-a1f9-8d4324ecb007" Name="StartDate" Required="true" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>  
   <pnp:ContentType ID="0x01006471C7EEC28E4422BA450A0491B5CF5E" Name="Gratitude" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />     
-      <pnp:FieldRef ID="f4fa017b-d8c6-4f5c-9978-a8c3e63c1381" Name="COM_GratitudeDescription" />
-      <pnp:FieldRef ID="0856e24f-d76b-4b19-92fb-7985f9b5f0c0" Name="COM_GratitudeType" />
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />     
+      <pnp:FieldRef ID="f4fa017b-d8c6-4f5c-9978-a8c3e63c1381" Name="COM_GratitudeDescription" Required="true" />
+      <pnp:FieldRef ID="0856e24f-d76b-4b19-92fb-7985f9b5f0c0" Name="COM_GratitudeType" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x010085D9BC346FD84547A9D01C1DD1FED374" Name="Story Submission" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="5a82cfb4-6f1d-47f8-829f-a9c2d4187505" Name="COM_SubmitMessage" />
+      <pnp:FieldRef ID="5a82cfb4-6f1d-47f8-829f-a9c2d4187505" Name="COM_SubmitMessage" Required="true" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <pnp:ContentType ID="0x01005D2C171542AB48A48B6898A8D875E6FB" Name="Employee Announcement" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="f3c81eaa-d29a-4a0c-91b6-765150ee1655" Name="COM_AnnoucementText" />
-      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
+      <pnp:FieldRef ID="f3c81eaa-d29a-4a0c-91b6-765150ee1655" Name="COM_AnnoucementText" Required="true" />
+      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" Required="true"  />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
       <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
     </pnp:FieldRefs>
@@ -104,7 +111,7 @@
   </pnp:ContentType> 
   <pnp:ContentType ID="0x0100762AA6859AFD4075B3DE4B31181745D2" Name="Key Contact" Description="" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
-      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" />    
+      <pnp:FieldRef ID="a14da347-da53-4ca0-9e47-baf6527b1c5d" Name="COM_Contact" Required="true" />    
       <pnp:FieldRef ID="49bf0476-237b-4505-b01a-4acb6ddda3e1" Name="COM_ContactTitle" />
     </pnp:FieldRefs>
   </pnp:ContentType>
@@ -118,6 +125,14 @@
   <pnp:ContentType ID="0x0100344B4251E45F447B9DF2E39225D540BA" Name="Navigation Node Item" Description="Navigation Node Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
     <pnp:FieldRefs>
       <pnp:FieldRef ID="1DDB1115-9830-4976-A86D-8D9591275340" Name="COM_NavNodeUrl" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100959DFDAE9BBF4940A8629E47B5BEBC78" Name="Resource Link" Description="Resource Link Item" Group="1 - Compassion Intranet" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+    <pnp:FieldRefs>
+      <pnp:FieldRef ID="3a1342d7-8d5a-4a29-8eec-f14d1ce5f0cd" Name="COM_ResourceType" />
+      <pnp:FieldRef ID="32EA0664-97B5-4E5E-8F05-4FCEB25228B8" Name="COM_ToolbarIconUrl" />
+      <pnp:FieldRef ID="7A6D9E62-40D7-4293-A5B7-2C898352BC7A" Name="COM_LinkUrl" />
+      <pnp:FieldRef ID="2BEA93A1-7AED-495F-97E0-43AC1CF6B6A5" Name="COM_ListSortOrder" />
     </pnp:FieldRefs>
   </pnp:ContentType>
   <!-- ********      -->
@@ -207,14 +222,15 @@
 			<pnp:FieldRef ID="3de94b06-4120-41a5-b907-88773e493458" Name="PublishingPageImage" />
 			<pnp:FieldRef ID="f55c4d88-1f2e-4ad9-aaa8-819af4ee7ee8" Name="PublishingPageContent" />
       <pnp:FieldRef ID="61cbb965-1e04-4273-b658-eedaa662f48d" Name="Audience" />
-      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" />
+      <pnp:FieldRef ID="0b784073-3117-4340-8475-a63c087a464e" Name="COM_PublishDate" Required="true" />
       <pnp:FieldRef ID="d36fe537-08b7-4550-b51d-3192f8225b99" Name="COM_ExpirationDate" />
       <pnp:FieldRef ID="60677F2D-9B5C-4278-9352-87CFEE8A28CA" Name="COM_NewsType" /> 
       <pnp:FieldRef ID="F1F1F3F0-639F-4240-9E77-9164AA7EBDF4" Name="COM_Group" /> 
       <pnp:FieldRef ID="A0107484-A768-4873-9942-E33F818A8701" Name="COM_Location" /> 
       <pnp:FieldRef ID="8f3b564d-c0ad-44ac-b3a4-567d8cc55617" Name="COM_NewsAbstract" /> 
-      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" /> 
-		</pnp:FieldRefs>
+      <pnp:FieldRef ID="e8bb0dba-efca-4a9a-abd7-919bf94629cd" Name="COM_YammerID" />
+      <pnp:FieldRef ID="12C75227-FE01-49AD-874A-88E76454010D" Name="COM_PublishDateFormat" />
+    </pnp:FieldRefs>
 		<pnp:DocumentTemplate TargetName="/_layouts/15/CreatePage.aspx" />
 	</pnp:ContentType>  
   

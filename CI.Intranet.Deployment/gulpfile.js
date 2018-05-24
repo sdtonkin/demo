@@ -14,7 +14,7 @@ var gulp = require("gulp"),
   DedupePlugin = require("webpack/lib/optimize/DedupePlugin"),
   UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin"),
   IgnorePlugin = require("webpack/lib/IgnorePlugin"),
-  CompressionPlugin = require("compression-webpack-plugin");
+  removeUseStrict = require("gulp-remove-use-strict");
 var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 
 
@@ -54,7 +54,7 @@ gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
 });
 
-gulp.task("clean:css", function (cb) {
+gulp.task("clean:css", ['sass'], function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 gulp.task("clean", ["clean:js", "clean:css"]);
@@ -117,7 +117,7 @@ gulp.task("min:singular", function () {
 });
 */
 gulp.task("min:js", function () {
-    return gulp.src([paths.js], { base: "." })
+    return gulp.src([paths.js], { base: "." })        
         .pipe(webpack({
             //devtool: 'source-map',
             module: {
@@ -183,7 +183,7 @@ gulp.task("min:js", function () {
             babelrc: false,
             exclude: /(node_modules|bower_components)/
 
-        })).on('error', (err) => {
+        })).on('error', function(err) {
             console.log("webpack error");
             console.log(err);
         })
@@ -219,7 +219,7 @@ gulp.task("min:js", function () {
   });
 });
 */
-gulp.task("min:css", function () {
+gulp.task("min:css", ['clean:css'], function () {
     return gulp.src([paths.css, "!" + paths.minCss])
       .pipe(concat(paths.concatCssDest))
       .pipe(cssmin())

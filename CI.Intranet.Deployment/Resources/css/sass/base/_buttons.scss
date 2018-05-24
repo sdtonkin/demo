@@ -4,6 +4,13 @@
  *  @@ File: base/_buttons.scss
  * ----------------------------------------- 
  */
+ a{
+ 	color: $brand-dark-blue;
+ 	cursor: pointer;
+ 	&:visited{
+ 		color: inherit;
+ 	}
+ }
  .btn{
  	color: $brand-dark-blue-alt;
  	text-transform: uppercase;
@@ -15,7 +22,7 @@
  		margin-top: 30px;
  		margin-bottom: 30px;
  		&:after{
- 			font-family: FontAwesome;
+ 			font-family: FontAwesome !important;
  			content: '\f054';
  			display: inline-block;
  			@extend .font-lato-light;
@@ -37,6 +44,10 @@
  		border-left: none;
  		font-size: 20px;
  		color: $brand-brown-gray;
+ 		height: 100%;
+ 		.fa-search{
+ 			float: right;
+ 		}
  	}
  	&.mx-w{
  		max-width: 320px;
@@ -73,6 +84,7 @@
 	    text-align: center;
 	    text-transform: uppercase;
 	    letter-spacing: 0.3px;
+	    height: 60px;
 	    &:hover{
 	    	background-color: $brand-white;
 	    	color: $brand-dark-blue;
@@ -85,7 +97,24 @@
 	}
 }
 
-.helpful-links{
+.nav-button{
+	background-color: $brand-dark-blue;
+    color: $brand-white !important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    height: auto;
+    padding: 10px;
+    border-radius: 0.25rem;
+    display: block;
+    &:hover{
+    	background-color: $brand-white;
+    	color: $brand-dark-blue !important;
+    	text-decoration: none;
+    }
+}
+
+.helpful-links, .groupmarker, .global-partners{
 	ul{
 		list-style: none;
 		padding-left: 0;
@@ -93,10 +122,43 @@
 	li{
 		display: table;
 		&:before{
-			font-family: FontAwesome;
+			font-family: FontAwesome !important;
 			content:"\f0c1";
 			display: table-cell;
 			padding-right: 10px;
+		}
+	}
+}
+
+.groupmarker{
+	li{
+		&:before{
+			color: $brand-white;
+			font-size: 18px;
+		}
+		.link-item a{
+			color: $brand-dark-blue-alt;
+			@extend .font-lato-med;
+			font-size: 18px;
+		}
+	}
+}
+.global-partners{
+	li{
+		&:before{
+			display: none;
+		}
+		a img{
+			margin-right: 5px;
+		}
+		a span{
+			color: $brand-white;
+			margin-bottom: 15px;
+			@extend .font-lato-med;
+			// font-size: 18px;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -105,11 +167,14 @@
  	display: block;
  	position: relative;
  	color: $brand-dark-blue;
+ 	float: right;
  	span{
  		position: relative;
  		top: 50%;
  		i{
- 			margin-left: 10px;
+ 			margin-right: 5px;
+ 			float: left;
+ 			margin-top: 4px;
  		}
  	}
  }

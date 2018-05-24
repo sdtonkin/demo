@@ -35,9 +35,27 @@ namespace CI.Intranet.Deployment.Properties {
   <string>https://compassion.sharepoint.com/sites/stage-hr</string>
   <string>https://compassion.sharepoint.com/sites/stage-innovation</string>
 </ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection Setting {
+        public global::System.Collections.Specialized.StringCollection GroupSitesStage {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["Setting"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["GroupSitesStage"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>https://compassion.sharepoint.com/sites/cfo</string>
+  <string>https://compassion.sharepoint.com/sites/gco</string>
+  <string>https://compassion.sharepoint.com/sites/global-leadership</string>
+  <string>https://compassion.sharepoint.com/sites/gme</string>
+  <string>https://compassion.sharepoint.com/sites/gp</string>
+  <string>https://compassion.sharepoint.com/sites/hr</string>
+  <string>https://compassion.sharepoint.com/sites/innovation</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection GroupSites {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["GroupSites"]));
             }
         }
     }

@@ -12,7 +12,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     if (parameters.location) {
         $scope.selectedLocation = parameters.location;
     } else {
-        if (COM_CONFIG.rootWeb.toLowerCase() + "/news" === bones.web.url.toLowerCase()) { //On main news landing site
+        if (COM_CONFIG.rootWeb.toLowerCase() + "/news" === _spPageContextInfo.webServerRelativeUrl.toLowerCase()) { //On main news landing site
             $scope.selectedLocation = "All";
         } else {
             $scope.selectedLocation = "";
@@ -21,9 +21,8 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     $scope.selectedCategory = parameters.category ? parameters.category : '';
 
 
-    taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function(response) {
-        console.log('location terms');
-        console.dir(response);
+    taxonomyService.getTermFromMasterTermsetByGuid(COM_CONFIG.termSets.locationTermId).then(function (response) {
+        if (!COM_CONFIG.isProduction) { console.log('location terms', response); }
         $scope.allLocations = response.map(function(item) {
             return item.Key;
         });
@@ -67,8 +66,8 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
         $scope.loading = true;
         var start = 0;
         if (loadMore) { start = $scope.startRow; }
-        newsService.getLandingNews($scope.selectedLocation, $scope.selectedCategory, $scope.searchTerm, start).then(function(news) {
-            console.log("News:", news);
+        newsService.getLandingNews($scope.selectedLocation, $scope.selectedCategory, $scope.searchTerm, start).then(function (news) {
+            if (!COM_CONFIG.isProduction) { console.log('news', news); }
             if (loadMore) {
                 $scope.news = $scope.news.concat(news.PrimarySearchResults);
             } else {
@@ -120,7 +119,7 @@ app.controller(ctrlName, ['$scope', '$location', 'newsService', 'taxonomyService
     bindings: {
         default: '@'
     },
-    template: require('../../includes/News-Landing-Results.html'),
+    template: require('../../includes/News-Events-Browser.html'),
     controller: ctrlName,
     controllerAs: 'ctrl'
 }).directive('searchEnter', function() {

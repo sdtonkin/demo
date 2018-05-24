@@ -1,0 +1,24 @@
+﻿<section>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="hire in newHires | limitTo:2:0 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{hire.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{hire.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{hire.targetName}}</h3>                    
+                    <span class="submit-line">Start Date: {{hire.startDate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row employee-card-container">
+        <div class="col-md-6 employee-card-wrapper" ng-repeat="hire in newHires | limitTo:2:2 track by $index">
+            <div class="media employee-card">
+                <image-loader image-src="{{hire.targetPicUrl}}" image-css-class="d-flex align-self-start mr-3 emp-photo" image-alt-text="{{hire.targetName}}"></image-loader>
+                <div class="media-body">
+                    <h3 class="mt-0 emp-name">{{hire.targetName}}</h3>
+                    <span class="submit-line">Start Date: {{hire.startDate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

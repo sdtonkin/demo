@@ -6,6 +6,9 @@
  */
 
  .employee-spotlight{
+ 	.employee-spotlight-tabs{
+ 		width: 100%;
+ 	}
 	.nav-tabs{
 		border-bottom: 2px solid $brand-light-blue;
 	}
@@ -32,12 +35,20 @@
 			color: $brand-dark-blue-alt;
 		}
 		&.active{
-			border-bottom: 4px solid $brand-dark-blue;
+			border-bottom: 1px solid $brand-light-blue;
 			border-left: none;
 			border-right: none;
 			border-top: none;
 			border-radius: 0;
 			color: $brand-dark-blue-alt;
+			@extend .font-lato-med;
+			&:after{
+				content: "";
+				display: block;
+				position: relative;
+				bottom: -5px;
+				border-bottom: 4px solid $brand-dark-blue;
+			}
 		}
 	}
 
@@ -45,6 +56,10 @@
 		.btn-block{
 			margin-top: 30px;
 			max-width: 242px;
+			background-color: $brand-dark-blue-alt;
+		}
+		.pull-right{
+			margin-right: -15px;
 		}
 	}
  }
@@ -58,6 +73,8 @@
 	}
 	.employee-card-container{
 		border-bottom: 1px solid $brand-brown-dull;
+		min-height: 250px;
+		height: auto;
 		&:last-child{
 			border-bottom: 2px solid $brand-light-blue;
 		}
@@ -68,11 +85,14 @@
 		}
 		.emp-photo{
 			border-radius: 50%;
+			width: 100px;
+			height: 100px;
 		}
 		.emp-name{
 			color: $brand-dark-blue;
 			font-size: 25px;
-			@extend .font-lato-reg;
+			@extend .font-lato-med;
+			margin-bottom: 10px;
 		}
 		.emp-rec{
 			color: $brand-dark-blue-alt;

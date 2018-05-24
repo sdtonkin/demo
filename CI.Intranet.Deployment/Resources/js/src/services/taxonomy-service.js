@@ -16,10 +16,6 @@ angular.module('compassionIntranet')
 
         getTermSetAsTree(masterTermSetId, '', function (terms) {
             if (terms != null) {
-                // Kick off the term rendering
-                for (var i = 0; i < terms.Nodes.length; i++) {
-                    //console.log(terms.Nodes[i]);
-                }
                 deferred.resolve(terms.Nodes);
             }
             else {
@@ -40,13 +36,15 @@ angular.module('compassionIntranet')
         var termSet = termStore.getTermSet(id);
         var terms = termSet.getAllTerms();
 
-        ctx.load(terms);
+        ctx.load(terms, 'Include(Id,IsAvailableForTagging,CustomSortOrder,Name,PathOfTerm,LocalCustomProperties)');
         
         ctx.executeQueryAsync(Function.createDelegate(this, function (sender, args) {
             callback(terms);
         }),
 
         Function.createDelegate(this, function (sender, args) {
+            
+            
             console.log(args);
         
         }));
@@ -132,7 +130,7 @@ angular.module('compassionIntranet')
                                 term.Url = null;
                                 term.IsValidLink = false;
                                 term.IsPopular = false;
-                                
+                                term.CustomProperties = currentTerm.get_objectData().get_properties()["LocalCustomProperties"];
 
 
                             }

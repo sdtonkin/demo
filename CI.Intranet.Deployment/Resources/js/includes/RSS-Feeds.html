@@ -1,10 +1,26 @@
-﻿<div ng-repeat="item in ctrl.myFeeds">
-    <h3>{{ item.title }}</h3>
-    <ul ng-repeat="article in item.articles">
-        <li>
-            <a href="{{ article.guid }}">{{ article.title }}</a>
-            <div>{{ article.publishedSpanString }}</div>
-        </li>
-    </ul>
-</div>
+﻿<section>
+    <div class="card world-news">
+        <div class="card-body">
+            <h2 class="section">World News</h2>
+            <ul ng-repeat="item in ctrl.myFeeds" class="rss-feed">
+                <a ng-click="toggleActiveFeed(item.id)">                    
+                    <span class="rss-category">
+                        <i class="fa fa-plus" ng-show="activeFeedId != item.id"></i>
+                        <i class="fa fa-minus" ng-show="activeFeedId == item.id"></i>
+                        {{ item.title }}
+                    </span>
+                </a>                
+                <li ng-repeat="article in item.articles" class="row" ng-show="activeFeedId == item.id">
+                    <div class="col-9 rss-title">                        
+                        <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+                    </div>
+                    <div class="col-3 rss-date">
+                        {{ article.publishedSpanString }}
+                    </div>
+                    <div class="col-12 rss-divider"><hr></div>
+                </li>               
+            </ul>
+        </div>
+    </div>
+</section>
 

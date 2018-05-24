@@ -1,34 +1,107 @@
-﻿<pnp:WebPart Title="Find People Web Part" Zone="TopLeftZone" Order="2" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+﻿<pnp:WebPart Title="Helpful Links Web Part" Zone="RightZone" Order="2" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:Contents>
     <webParts>
       <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
         <metaData>
-          <type name="Microsoft.SharePoint.WebPartPages.ScriptEditorWebPart, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+          <type name="Microsoft.SharePoint.Publishing.WebControls.SummaryLinkWebPart, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
           <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
         </metaData>
         <data>
           <properties>
-            <property name="ExportMode" type="exportmode">All</property>
-            <property name="HelpUrl" type="string" />
-            <property name="Hidden" type="bool">False</property>
-            <property name="Description" type="string" />
-            <property name="Content" type="string">&lt;employee-spotlight&gt;&lt;/employee-spotlight&gt;</property>
+            <property name="InitialAsyncDataFetch" type="bool">False</property>
+            <property name="ChromeType" type="chrometype">TitleOnly</property>
+            <property name="HeaderXslLink" type="string" />
+            <property name="Height" type="string" />
+            <property name="CacheXslStorage" type="bool">True</property>
+            <property name="SummaryLinkStore" type="string">
+              &lt;div title="_schemaversion" id="_3"&gt;
+              &lt;div title="_links"&gt;
+              &lt;div title="_link"&gt;
+              &lt;span title="_title"&gt;Helpful Link 1&lt;/span&gt;
+              &lt;span title="_order"&gt;1&lt;/span&gt;
+              &lt;span title="_begincolumn"&gt;True&lt;/span&gt;
+              &lt;span title="_linkurl"&gt;
+              &lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt;
+              &lt;/span&gt;
+              &lt;span title="_style"&gt;Default&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div title="_link"&gt;
+              &lt;span title="_title"&gt;Helpful Link 2&lt;/span&gt;
+              &lt;span title="_order"&gt;2&lt;/span&gt;
+              &lt;span title="_begincolumn"&gt;False&lt;/span&gt;
+              &lt;span title="_linkurl"&gt;
+              &lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt;
+              &lt;/span&gt;
+              &lt;span title="_style"&gt;Default&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div title="_view"&gt;
+              &lt;span title="_columns"&gt;1&lt;/span&gt;
+              &lt;span title="_linkstyle"&gt;&lt;/span&gt;
+              &lt;span title="_groupstyle"&gt;&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;/div&gt;
+            </property>
+            <property name="ListName" type="string">{0710472F-F441-4A1B-B3B9-4E0BEB9985A6}</property>
+            <property name="AllowZoneChange" type="bool">False</property>
+            <property name="AutoRefresh" type="bool">False</property>
+            <property name="XmlDefinitionLink" type="string" />
+            <property name="DataFields" type="string" />
+            <property name="NoDefaultStyle" type="string" />
+            <property name="XslLink" type="string" null="true" />
+            <property name="ViewFlag" type="string">0</property>
+            <property name="MainXslLink" type="string" />
             <property name="CatalogIconImageUrl" type="string" />
-            <property name="Title" type="string">Find People</property>
-            <property name="AllowHide" type="bool">False</property>
-            <property name="AllowMinimize" type="bool">False</property>
-            <property name="AllowZoneChange" type="bool">True</property>
-            <property name="TitleUrl" type="string" />
-            <property name="ChromeType" type="chrometype">None</property>
+            <property name="AutoRefreshInterval" type="int">60</property>
             <property name="AllowConnect" type="bool">True</property>
-            <property name="Width" type="unit" />
-            <property name="Height" type="unit" />
-            <property name="HelpMode" type="helpmode">Navigate</property>
-            <property name="AllowEdit" type="bool">False</property>
-            <property name="TitleIconImageUrl" type="string" />
-            <property name="Direction" type="direction">NotSet</property>
-            <property name="AllowClose" type="bool">False</property>
+            <property name="DataSourcesString" type="string" />
+            <property name="AllowClose" type="bool">True</property>
+            <property name="ShowWithSampleData" type="bool">False</property>
+            <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/Header.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/ItemStyle.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/SummaryLinkMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
+            <property name="EnableOriginalValue" type="bool">False</property>
+            <property name="Default" type="string" />
+            <property name="Hidden" type="bool">False</property>
+            <property name="ListUrl" type="string" null="true" />
+            <property name="DataSourceID" type="string" />
+            <property name="ParameterBindings" type="string" />
+            <property name="FireInitialRow" type="bool">True</property>
+            <property name="ManualRefresh" type="bool">False</property>
+            <property name="ViewFlags" type="Microsoft.SharePoint.SPViewFlags, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">None</property>
             <property name="ChromeState" type="chromestate">Normal</property>
+            <property name="AllowHide" type="bool">False</property>
+            <property name="ListDisplayName" type="string" null="true" />
+            <property name="SampleData" type="string">
+              &lt;dsQueryResponse&gt;
+              &lt;Rows&gt;
+              &lt;Row Title="Group Header" Order="1" BeginColumn="True" IsGroupHeader="True" /&gt;
+              &lt;Row Title="Item 1" LinkUrl="http://Item1" Group="Group Header" Order="2" BeginColumn="False" IsGroupHeader="False" /&gt;
+              &lt;Row Title="Item 2" LinkUrl="http://Item2" Group="Group Header" Order="3" BeginColumn="False" IsGroupHeader="False" /&gt;
+              &lt;Row Title="Item 3" LinkUrl="http://Item3" Group="Group Header" Order="4" BeginColumn="False" IsGroupHeader="False" /&gt;
+              &lt;/Rows&gt;
+              &lt;/dsQueryResponse&gt;
+            </property>
+            <property name="AsyncRefresh" type="bool">False</property>
+            <property name="Title" type="string">Helpful Links</property>
+            <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0710472f-f441-4a1b-b3b9-4e0beb9985a6</property>
+            <property name="Description" type="string">Allows authors to create links that can be grouped and styled.</property>
+            <property name="AllowMinimize" type="bool">False</property>
+            <property name="TitleUrl" type="string" />
+            <property name="ItemXslLink" type="string" />
+            <property name="CacheXslTimeOut" type="int">86400</property>
+            <property name="DisplayName" type="string" />
+            <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
+            <property name="Width" type="string" />
+            <property name="AllowEdit" type="bool">False</property>
+            <property name="ExportMode" type="exportmode">All</property>
+            <property name="Direction" type="direction">NotSet</property>
+            <property name="PageSize" type="int">-1</property>
+            <property name="ViewContentTypeId" type="string" />
+            <property name="HelpUrl" type="string" />
+            <property name="XmlDefinition" type="string" />
+            <property name="UseSQLDataSourcePaging" type="bool">True</property>
+            <property name="TitleIconImageUrl" type="string" />
+            <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
+            <property name="HelpMode" type="helpmode">Modeless</property>
           </properties>
         </data>
       </webPart>

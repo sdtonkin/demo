@@ -6,41 +6,67 @@
  */
 
 navigation {
+    display: block;
+    margin-left: -15px;
+    margin-right: -15px;
+    background-color: $brand-dark-blue-alt;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.85);
     nav {
-        margin-left: 115px;
-        margin-right: 115px;
+        // margin-left: 115px;
+        // margin-right: 115px;
         background-color: $brand-dark-blue-alt;
             
     }
     div.nav-node, div.nav-search, div.nav-icon {
         height: 93px;
-        padding: 0;
+        //padding: 0;
     }
     div.nav-node a, div.nav-node a:visited, div.nav-node a:hover, div.nav-search a, div.nav-search a:visited, div.nav-search a:hover, div.nav-search span {
         color: $brand-white;
-        font-size: 18px;
+        font-size: 21px;
         font-weight: 500;
         text-decoration: none;
         text-align: center;
         cursor: pointer;
-        padding: 10px;            
+        // padding: 10px;            
+    }
+
+    .nav-node{
+        // float: left;
+        display: inline-block;
+        padding-right: 40px;
+        &.active{
+            a:after{
+                border-bottom: 1px solid #fff;
+                bottom: -10px;
+                content: "";
+                display: block;
+                position: relative;
+            }
+        }
     }
     div.nav-node > a {
         display: block;
         top: 50%;
         position: relative;
         transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
     }
 
     div.search-background {
-        position: absolute;
         background-color: $brand-dark-blue-alt;
-        left: -200px;
-        z-index: 999;
-        height: 93px;      
+        height: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 4;
     }
     div.search-background > input {
-        width: 200px;        
+        width: 200px; 
+        padding: 5px;       
     }
     .nav-icon {
         padding: 20px;
@@ -50,20 +76,162 @@ navigation {
                 top: 50%;
                 position: relative;
                 transform: translateY(-50%);
-                float: right;
+                max-height: 50px;
+                // float: right;
         }
     }
     .nav-search {
-        padding: 20px;        
+        padding: 20px;     
+        position: relative;   
     }
     .nav-search > div.search-button, .nav-search > div.search-background > input {
-        float: left;            
+        // float: left;            
         transform: translateY(-50%);
         position: relative;
-        top: 50%;
+        // top: 50%;
+        // margin-top: 45px;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+     }
+    
+     a.search-close:before {
+        border-left: 1px solid $brand-white;
+        content: " ";
+        margin-left: -10px;
+        padding-right: 20px;
+    }
+     .search-button{
+        z-index: 5;
+        i{
+            color: $brand-white;
+            padding-right: 10px;
+            position: relative;
+            top: -3px;
+        }
+     }
+     .search-glass{
+        display: none !important;
+     }
+     //active searchbar
+     #navbarContent.active{
+        .search-button {
+            i{
+                color: $brand-dark-blue;
+            }
+            a:before{
+                border-color: $brand-dark-blue;
+            }
+            .search-close{
+                &:before{
+                    padding-right: 15px;
+                }
+                .fa-search:before {
+                    content: "\f00d";
+                }
+            }
+        }
+        .search-background{
+            // &:after{
+            //     content: "\f002";
+            //     display: block;
+            //     position: relative;
+            //     color: $brand-dark-blue;
+            //     font-family: FontAwesome;
+            //     font-size: 19px;
+            //     position: absolute;
+            //     right: 60px;
+            //     top: 2px;
+            //     cursor: pointer;
+            // }
+        }
+        .search-glass{
+            display: inline-block !important;
+            margin-right: 10px;
+        }
+
+     }
+
+     //updated
+     .navbar{
+        padding: 0.5rem 0;
+     }
+     .navbar-brand{
+        margin-right: 40px;
+        > img{
+            max-width: 35px;
+        }
+     }
+     .navbar-toggler{
+        min-width: 0;
+        &:hover{
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+     }
+     .navbar-toggler-icon{
+        background-color: transparent;
+        &:hover{
+            background-color: transparent;
+        }
+        i{
+            font-size: 30px;
+            color: $brand-white;
+        }
+     }
+     .nav-item{
+        padding-right: 25px;
+        a, a:visited{
+            color: $brand-white;
+            font-size: 21px;
+            @extend .font-lato-med;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            &:after{
+                content: " ";
+                display: block;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 5px;
+            }
+             
+        }
+        a:hover{
+            &:after{
+                border-color: $brand-white;
+            }
+        }
+        .active{
+            @extend .font-lato-bold;
+            //text-decoration: underline;
+            &:after{
+                content: " ";
+                display: block;
+                border-bottom: 1px solid $brand-white !important;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    #navbarContent{
+        .form-inline{
+            position: relative;
+        }
+    }
+     .search-button > a{
+        display: inline;
+        height: 100%;
+        color: $brand-white;
+        font-size: 21px;
+        @extend .font-lato-med;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        span{
+            color: $brand-white;
+            position: relative;
+            top: -3px;
+        }
      }
 
 }

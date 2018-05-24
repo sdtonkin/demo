@@ -1,27 +1,42 @@
 ﻿'use strict';
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'uiHelper',
-    firstNameId = 'ci-user-first-name';
+    firstNameId = 'ci-user-first-name',
+    greetingId = 'ci-greeting';
 
-myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'storage', 'COM_CONFIG', function ($scope, storage, COM_CONFIG) {
     var userDisplayName = _spPageContextInfo.userDisplayName,
     userId = _spPageContextInfo.userId;
     var userFirstName = getFirstName(userDisplayName);
     var userLastName = getLastName(userDisplayName);
+    var toolBarStatusCacheKey = 'toolbarStatus';
     //Setup Responsive Variables
     var isMobile = "",
     isTablet = "",
     isDesktop = "";
 
     var ctrl = this;
-    ctrl.isToolbarOpen = false;
+    
 
     $scope.init = function () {
+        ctrl.isToolbarOpen = (storage.get(toolBarStatusCacheKey) == null ? false : storage.get(toolBarStatusCacheKey));
         addFirstNameToWelcomeMessage(userFirstName);
         $(window).resize(processWindowSize);
         processWindowSize();
-        //$('.carousel').carousel();
+        if (window.lowBandwidth) {
+            $('body').addClass('low-bandwidth');
+        }        
     };
+    ctrl.setToolbarStatus = setToolbarStatus;
+    function setToolbarStatus() {
+        var isOpen = !ctrl.isToolbarOpen;
+        if (isOpen) {
+            storage.set(toolBarStatusCacheKey, isOpen);
+        } else {
+            storage.set(toolBarStatusCacheKey, isOpen);
+        }
+        ctrl.isToolbarOpen = isOpen;
+    }
     //check window size and setup functions
     function processWindowSize() {
         var ua = window.navigator.userAgent;
@@ -70,10 +85,18 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
                 $rightRail.css('height', 'auto');
             }
             */
+
+            // $leftContent = $('.main-left-content');
+            // $rightBack = $('.container-fluid .back-image');
+            // $leftBackInitial = $leftContent.height();
+
+            //$('.container-fluid .back-image').css('height', $('.main-left-content').height() + 40);
+            
         }, 2000);
     }
     function addFirstNameToWelcomeMessage(firstName) {
         $('#' + firstNameId).text(firstName);
+        $('#' + greetingId).text(getGreeting());
     }
     function getFirstName(fullName) {
         var names = fullName.split(' ');
@@ -81,6 +104,22 @@ myApp.controller(controllerName, ['$scope', 'COM_CONFIG', function ($scope, COM_
             return names[0];
         else
             return '';
+    }
+    function getGreeting() {
+        var currentHour = new Date().getHours();
+        if (!COM_CONFIG.isProduction) { console.log('current hour', currentHour); }
+        switch(true) {
+            case (currentHour >= 0 && currentHour < 12):
+                return "Good Morning";
+                break;
+            case (currentHour >= 12 && currentHour < 17):
+                return "Good Afternoon";
+                break;
+            case (currentHour >= 17 && currentHour <= 24):
+                return "Good Evening";
+                break;
+        }
+
     }
     function getLastName(fullName) {
         var names = fullName.split(' ');

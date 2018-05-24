@@ -1,4 +1,4 @@
-﻿<pnp:WebPart Title="Job Opportunities" Zone="TopRightZone" Order="0" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+﻿<pnp:WebPart Title="Job Opportunities" Zone="RightZone" Order="1" xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
   <pnp:Contents>
     <WebPart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/WebPart/v2">
       <Title>Job Opportunities</Title>
@@ -30,8 +30,7 @@
       <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
       <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">
         <![CDATA[
-          <h3>Job Opportunities</h3>
-          <a href="#">View All Jobs</a>
+          <a class="nav-button" href="https://internal-compassion.icims.com/jobs/dashboard">View All Jobs</a>
           <hr/>
         ]]>
       </Content>

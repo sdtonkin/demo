@@ -6,38 +6,106 @@
  */
 
 
+
+
 /* ----------------------------------------------------
   Header Styles
 ------------------------------------------------------- */
 
-// .sub-nav-container{
-// 	margin-bottom: 30px;
-// 	.card{
-		
-// 	}
-// 	.card-header{
-		
-// 	}
-// 	.card-intro{
-// 		margin-bottom: 15px;
-// 	}
-// 	.card-block{
-		
-// 	}
+.sub-nav-container{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	.card-intro{
+		margin-bottom: 0;
+	}
+	.card-header{
+		padding: 15px 0;	
+	}
+	.toolbar-toggle-button{
+		span{
+			display: inline-block;
+			font-size: 10px;
+			&:after{
+				content: '\f106';
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: 14px;
+				margin-left: 10px;
+    		}
+		}
+		i{
+			display: none;
+		}
+	}
 
-// 	.card-close-mobile{
-// 		position: absolute;
-// 		bottom: -70px;
-// 		background-color: $brand-dark-blue;
-// 		padding: 0;
-// 		a{
-// 			display: block;
-// 			padding: 13px;
-// 			text-decoration: none;
-// 			color: $brand-white;
-// 		}
-// 	}
-// }
+	.toggle-row{
+		bottom: -30px;
+	}
+
+	// .toggle-row{
+	// 	background-color: $brand-dark-blue;
+ //    	bottom: -21px;
+ //    	padding: 0;
+ //    	position: absolute;
+ //    	right: -15px;
+ //    	width: 75px;
+ //    	.toolbar-toggle-button{
+ //    		width: 100%;
+ //    		text-align: center;
+ //    		span{
+ //    			font-size: 10px;
+ //    			margin-bottom: 5px;
+ //    			display: inline-block;
+ //    			&:after{
+ //    				content: '\f107';
+ //    				display: inline-block;
+ //    				font-family: FontAwesome;
+ //    				font-size: 14px;
+ //    				margin-left: 10px;
+ //    			}
+ //    		}
+ //    		i{
+ //    			display: none;
+ //    		}
+ //    	}
+	// }
+	// .toggle-row:after{
+	// 	border-bottom: none;
+	// }
+
+
+	// .card-close-mobile{
+	// 	position: absolute;
+	// 	bottom: -70px;
+	// 	background-color: $brand-dark-blue;
+	// 	padding: 0;
+	// 	a{
+	// 		display: block;
+	// 		padding: 13px;
+	// 		text-decoration: none;
+	// 		color: $brand-white;
+	// 	}
+	// }
+	.nav-toolbar div.manage-toolbar{
+		top: -15px;
+
+		.btn.btn-cta.white{
+			font-size: 14px;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-weight: 400;
+			text-transform: none;
+			padding: 0;
+			&:after{
+				font-size: 12px;
+			}
+			&:before{
+				display: none;
+			}
+		}
+	}
+}
 
 
 /* ----------------------------------------------------
@@ -62,5 +130,70 @@
 			}
 		}
 	}
+	.img-fluid{
+		width: 100%;
+	}
 }
 
+/* ----------------------------------------------------
+  General Styles
+------------------------------------------------------- */
+
+.ms-table{
+	.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .ms-long{
+		width: auto;
+	}
+}
+
+/* ----------------------------------------------------
+  Find People Styles
+------------------------------------------------------- */
+
+.find-people{
+ 	.search{
+ 		display: block;
+ 		.form-control{
+ 			width: 100%;
+ 			border-right: 1px solid $brand-brown-dull !important;
+ 			@include placeholder{
+ 				font-size: 10px;
+ 				text-overflow: ellipsis;
+    			width: 100px;
+ 			}
+
+ 		}
+ 		.input-group-btn {
+ 			button{
+ 				//border-left: 1px solid $brand-brown-dull !important;
+ 				// min-width: 1px;
+ 				//padding-left: 15px;
+ 				//cursor: pointer;
+
+ 				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+			    border: medium none !important;
+			    cursor: pointer;
+			    min-width: 1px;
+			    padding-left: 15px;
+			    padding-top: 15px;
+ 			}
+ 			
+    		position: absolute;
+    		right: 0;
+    		top: 0;
+    		z-index: 5;
+ 		}
+ 	}
+ 	
+ }
+
+/* ----------------------------------------------------
+  News Events Styles
+------------------------------------------------------- */
+
+
+ .news-events .search-filter{
+ 	display: block;
+ }
+ .news-events .search{
+ 	border-top: 1px solid $brand-brown-dull;
+ }

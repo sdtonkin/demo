@@ -1,0 +1,9 @@
+﻿<section>
+    <ul ng-repeat="site in ctrl.mySites track by $index">
+        <li>
+            <a ng-href="{{ site.Path }}">
+                <div>{{ site.Title }}</div>
+            </a>
+        </li>
+    </ul>
+</section>

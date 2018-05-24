@@ -8,7 +8,7 @@
         </metaData>
         <data>
           <properties>
-            <property name="Filter1ChainingOperator" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterChainingOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">And</property>
+            <property name="Filter1ChainingOperator" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterChainingOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Or</property>
             <property name="FilterOperator1" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Leq</property>
             <property name="Direction" type="direction">NotSet</property>
             <property name="FilterOperator3" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Eq</property>
@@ -17,10 +17,10 @@
             <property name="ChromeState" type="chromestate">Normal</property>
             <property name="SystemViewFields" type="string" />
             <property name="ListName" type="string" />
-            <property name="FilterDisplayValue3" type="string">1</property>
-            <property name="FilterDisplayValue2" type="string">[Today]</property>
+            <property name="FilterDisplayValue3" type="string" />
+            <property name="FilterDisplayValue2" type="string" />
             <property name="FilterDisplayValue1" type="string">[Today]</property>
-            <property name="FilterField1" type="string">{6527f95b-2c85-4a16-bfd0-7c660667162f}</property>
+            <property name="FilterField1" type="string">{0b784073-3117-4340-8475-a63c087a464e}</property>
             <property name="Description" type="string">Displays a dynamic view of content from your site.</property>
             <property name="DataColumnRenames" type="string" />
             <property name="MissingAssembly" type="string">Cannot import this Web Part.</property>
@@ -29,7 +29,7 @@
             <property name="ParameterBindings" type="string" null="true" />
             <property name="HelpUrl" type="string" />
             <property name="AdditionalFilterFields" type="string" />
-            <property name="DataMappingViewFields" type="string">{94f89715-e097-4e8b-ba79-ea02aa8b7adb},Lookup;{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},Image;{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Text;{691b9a4b-512e-4341-b3f1-68914130d5b2},Text;{6527f95b-2c85-4a16-bfd0-7c660667162f},DateTime;{6203f181-a20f-4c84-a266-ee2844a3fb73},Choice;{3f472a94-9e2d-4e67-bffc-101de0fdcbb8},Choice;{fb992a97-f75a-4336-b090-a162cce2d6d5},Choice;</property>
+            <property name="DataMappingViewFields" type="string">{94f89715-e097-4e8b-ba79-ea02aa8b7adb},Lookup;{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},Image;{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Text;{691b9a4b-512e-4341-b3f1-68914130d5b2},Text;{60677f2d-9b5c-4278-9352-87cfee8a28ca},TaxonomyFieldType;{a0107484-a768-4873-9942-e33f818a8701},TaxonomyFieldType;{f1f1f3f0-639f-4240-9e77-9164aa7ebdf4},TaxonomyFieldType;{0b784073-3117-4340-8475-a63c087a464e},DateTime;</property>
             <property name="Title" type="string">Trending News</property>
             <property name="FeedDescription" type="string" />
             <property name="UseCache" type="bool">True</property>
@@ -37,12 +37,12 @@
             <property name="AutoRefresh" type="bool">False</property>
             <property name="Filter1IsCustomValue" type="bool">False</property>
             <property name="FireInitialRow" type="bool">True</property>
-            <property name="FilterValue3" type="string">1</property>
+            <property name="FilterValue3" type="string" />
             <property name="SortByFieldType" type="string">DateTime</property>
             <property name="ManualRefresh" type="bool">False</property>
             <property name="HelpMode" type="helpmode">Modeless</property>
             <property name="AllowConnect" type="bool">True</property>
-            <property name="ItemStyle" type="string">FeaturedNews</property>
+            <property name="ItemStyle" type="string">TrendingNews</property>
             <property name="SampleData" type="string">
               &lt;dsQueryResponse&gt;
               &lt;Rows&gt;
@@ -66,64 +66,64 @@
             <property name="GroupByFieldType" type="string" />
             <property name="Default" type="string" />
             <property name="ViewFlags" type="Microsoft.SharePoint.SPViewFlags, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">None</property>
-            <property name="ContentTypeBeginsWithId" type="string">0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D00D64635055BFB1849BF47FD609F04AF27</property>
-            <property name="AllowHide" type="bool">True</property>
+            <property name="ContentTypeBeginsWithId" type="string" />
+            <property name="AllowHide" type="bool">False</property>
             <property name="FeedEnabled" type="bool">False</property>
-            <property name="SortBy" type="string">{6527f95b-2c85-4a16-bfd0-7c660667162f}</property>
+            <property name="SortBy" type="string">{0b784073-3117-4340-8475-a63c087a464e}</property>
             <property name="FilterByContextTerm" type="bool">False</property>
             <property name="TitleIconImageUrl" type="string" />
             <property name="PlayMediaInBrowser" type="bool">True</property>
             <property name="ViewFlag" type="string">0</property>
-            <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_Header.xsl" /&gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_ItemStyle.xsl" /&gt; &lt;xsl:import href="/../Compassion/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
-            <property name="FilterField2" type="string">{199a5f1e-877f-4519-b69f-c42cf02c6c37}</property>
+            <property name="Xsl" type="string">&lt;xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cmswrt="http://schemas.microsoft.com/WebPart/v3/Publishing/runtime" exclude-result-prefixes="xsl cmswrt x" &gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/COM_Header.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/COM_ItemStyle.xsl" /&gt; &lt;xsl:import href="/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl" /&gt; &lt;/xsl:stylesheet&gt;</property>
+            <property name="FilterField2" type="string" />
             <property name="ChromeType" type="chrometype">TitleOnly</property>
             <property name="CacheXslTimeOut" type="int">86400</property>
             <property name="AdditionalGroupAndSortFields" type="string" />
             <property name="UseSQLDataSourcePaging" type="bool">True</property>
             <property name="Height" type="string" />
-            <property name="DataMappings" type="string">NewsType:{6203f181-a20f-4c84-a266-ee2844a3fb73},COM_NewsType,Choice;|LinkUrl:{94f89715-e097-4e8b-ba79-ea02aa8b7adb},FileRef,Lookup;|Description:{691b9a4b-512e-4341-b3f1-68914130d5b2},ShortComment,Text;|AllDayEvent:|EventDate:|ImageUrl:{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},EncodedAbsThumbnailUrl,Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},PublishingRollupImage,Image;|Title:{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Title,Text;|EndTime:|Group:{fb992a97-f75a-4336-b090-a162cce2d6d5},COM_Group,Choice;|PublishDate:{6527f95b-2c85-4a16-bfd0-7c660667162f},COM_PublishDate,DateTime;|Location:{3f472a94-9e2d-4e67-bffc-101de0fdcbb8},COM_Location,Choice;|NewsAbstract:{efb26898-314c-427b-afda-96c0b69b74dd},COM_NewsAbstract,Text;|EventType:|EventDateAllDay:|</property>
+            <property name="DataMappings" type="string">NewsType:{60677f2d-9b5c-4278-9352-87cfee8a28ca},COM_NewsType,TaxonomyFieldType;|LinkUrl:{94f89715-e097-4e8b-ba79-ea02aa8b7adb},FileRef,Lookup;|Description:{691b9a4b-512e-4341-b3f1-68914130d5b2},ShortComment,Text;|YammerIDNumber:|AllDayEvent:|EventDate:|ImageUrl:{b9e6f3ae-5632-4b13-b636-9d1a2bd67120},EncodedAbsThumbnailUrl,Computed;{543bc2cf-1f30-488e-8f25-6fe3b689d9ac},PublishingRollupImage,Image;|Title:{fa564e0f-0c70-4ab9-b863-0177e6ddd247},Title,Text;|EventType:|Group:{f1f1f3f0-639f-4240-9e77-9164aa7ebdf4},COM_Group,TaxonomyFieldType;|PublishDate:{0b784073-3117-4340-8475-a63c087a464e},COM_PublishDate,DateTime;|Location:{a0107484-a768-4873-9942-e33f818a8701},COM_Location,TaxonomyFieldType;|NewsAbstract:{efb26898-314c-427b-afda-96c0b69b74dd},COM_NewsAbstract,Text;|EndTime:|EventDateAllDay:|</property>
             <property name="ListUrl" type="string" null="true" />
             <property name="ShowUntargetedItems" type="bool">True</property>
-            <property name="AllowMinimize" type="bool">True</property>
+            <property name="AllowMinimize" type="bool">False</property>
             <property name="GroupBy" type="string" />
             <property name="FilterIncludeChildren1" type="bool">False</property>
             <property name="BaseType" type="string" />
-            <property name="MainXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
+            <property name="MainXslLink" type="string">/Style Library/XSL Style Sheets/COM_ContentQueryMain.xsl</property>
             <property name="AsyncRefresh" type="bool">False</property>
             <property name="FilterValue1" type="string">[Today]</property>
-            <property name="FilterValue2" type="string">[Today]</property>
+            <property name="FilterValue2" type="string" />
             <property name="InitialAsyncDataFetch" type="bool">False</property>
             <property name="AutoRefreshInterval" type="int">60</property>
             <property name="Filter3IsCustomValue" type="bool">False</property>
             <property name="GroupStyle" type="string">DefaultHeader</property>
-            <property name="AllowZoneChange" type="bool">True</property>
+            <property name="AllowZoneChange" type="bool">False</property>
             <property name="FilterIncludeChildren3" type="bool">False</property>
             <property name="EnableOriginalValue" type="bool">False</property>
-            <property name="ItemLimit" type="int">1</property>
+            <property name="ItemLimit" type="int">3</property>
             <property name="FilterType1" type="string">DateTime</property>
             <property name="UseCopyUtil" type="bool">False</property>
-            <property name="FilterType3" type="string">Boolean</property>
-            <property name="FilterType2" type="string">DateTime</property>
-            <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Gt</property>
+            <property name="FilterType3" type="string" />
+            <property name="FilterType2" type="string" />
+            <property name="FilterOperator2" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterFieldQueryOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Eq</property>
             <property name="PageType" type="Microsoft.SharePoint.PAGETYPE, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">PAGE_NORMALVIEW</property>
             <property name="FilterByAudience" type="bool">True</property>
-            <property name="ItemXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
+            <property name="ItemXslLink" type="string">/Style Library/XSL Style Sheets/COM_ItemStyle.xsl</property>
             <property name="Hidden" type="bool">False</property>
             <property name="WebUrl" type="string" />
-            <property name="HeaderXslLink" type="string">/sites/stage/Style Library/XSL Style Sheets/COM_Header.xsl</property>
+            <property name="HeaderXslLink" type="string">/Style Library/XSL Style Sheets/COM_Header.xsl</property>
             <property name="CacheXslStorage" type="bool">True</property>
             <property name="ListsOverride" type="string" />
-            <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Asc</property>
+            <property name="SortByDirection" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+SortDirection, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Desc</property>
             <property name="Filter2IsCustomValue" type="bool">False</property>
-            <property name="AllowEdit" type="bool">True</property>
+            <property name="AllowEdit" type="bool">False</property>
             <property name="FeedTitle" type="string" />
-            <property name="FilterField3" type="string">{cd10a260-64d0-465d-961e-fc49dee9918a}</property>
+            <property name="FilterField3" type="string" />
             <property name="MediaPlayerStyleSource" type="string" null="true" />
             <property name="DisplayColumns" type="int">1</property>
-            <property name="Filter2ChainingOperator" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterChainingOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">And</property>
+            <property name="Filter2ChainingOperator" type="Microsoft.SharePoint.Publishing.WebControls.ContentByQueryWebPart+FilterChainingOperator, Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">Or</property>
             <property name="XmlDefinition" type="string" />
             <property name="WebsOverride" type="string" />
-            <property name="AllowClose" type="bool">True</property>
+            <property name="AllowClose" type="bool">False</property>
             <property name="ContentTypeName" type="string" />
             <property name="ListId" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">00000000-0000-0000-0000-000000000000</property>
             <property name="ExportMode" type="exportmode">All</property>

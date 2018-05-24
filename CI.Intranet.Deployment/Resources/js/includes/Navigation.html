@@ -1,24 +1,34 @@
-﻿<nav class="row">
-    <div class="col-sm-2 nav-icon">
-        <img src="https://via.placeholder.com/30x35" />
-    </div>
-    <div class="col-sm-8 row">
-        <div ng-repeat="node in ctrl.navNodes" class="col-sm-2 nav-node">
-            <a ng-href="{{ node.url }}">
+﻿<div class="container">
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" ng-href="{{ ctrl.rootSiteUrl }}"><img src="/sites/stage/_catalogs/masterpage/Compassion/images/skippy-white.png" /></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i>
+</span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav mr-auto">
+      <li ng-repeat="node in ctrl.navNodes" class="nav-item">
+            <a ng-href="{{ node.url }}" ng-class="{active: ctrl.activeNavNode(node)}">
                 <div>{{ node.title }}</div>
             </a>
-        </div>
-    </div>
-    <div class="col-sm-2 nav-search">
-        <div class="search-button">
-            <span>|</span>
-            <a ng-click="ctrl.toggleSearchBox()">
+        </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">     
+      <div class="search-button">
+            <a ng-click="ctrl.goSearch()" class="search-glass">
+                <i class="fa fa-search"></i>
+            </a>           
+            <a class="search-close" ng-click="ctrl.toggleSearchBox()">
                 <i class="fa fa-search"></i>
                 <span ng-bind="ctrl.searchTitle"></span>
             </a>            
         </div>
         <div class="search-background" style="display: none;">
-            <input id="searchQueryTerm" type="text" value="Search" />
+            <input id="searchQueryTerm" type="text" value="Search" ng-model="searchTerm" />
         </div>
     </div>
+  </div>
 </nav>
+</div>

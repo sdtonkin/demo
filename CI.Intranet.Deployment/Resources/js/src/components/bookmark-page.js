@@ -2,11 +2,12 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'bookmarkPageController';
 
-myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope, bookmarkService) {
+myApp.controller(controllerName, ['$scope', 'bookmarkService', 'COM_CONFIG', function ($scope, bookmarkService, COM_CONFIG) {
     var ctrl = this;
-    var thisUrl = _spPageContextInfo.siteAbsoluteUrl;
+    var thisUrl = window.location.href;
     var userId = _spPageContextInfo.userId;
-    var webTitle = _spPageContextInfo.webTitle;
+    var pageId = _spPageContextInfo.pageItemId;
+    var webUrl = _spPageContextInfo.webAbsoluteUrl;
     
     this.$onInit = function(){
         bookmarkService.getMyBookmarks(userId).then(function (response) {
@@ -19,8 +20,8 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope,
             return b.url == thisUrl;
         }) != -1;
     }
-    ctrl.addMyBookmark = function () {
-        bookmarkService.addMyBookmark(userId, webTitle, thisUrl).then(function (response) {
+    ctrl.addMyBookmark = function () {        
+        bookmarkService.addMyBookmark(userId, pageId, thisUrl, webUrl).then(function (response) {
             ctrl.myBookmarks.push(response);
         });
     }
@@ -30,3 +31,4 @@ myApp.controller(controllerName, ['$scope', 'bookmarkService', function ($scope,
     controller: controllerName,
     controllerAs: 'ctrl'
 });
+

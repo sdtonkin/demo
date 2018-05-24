@@ -1,82 +1,88 @@
-﻿<div><a ng-click="ctrl.openManageModal()">Manage</a></div>
-<modal id="ci-apps-manage">
-    <div class="ci-modal">
-        <div class="modal-body">
-            <h1>Manage My Tools / Apps</h1>
-            <h3>Available Tools / Apps</h3>
-            <ul>
-                <li ng-repeat="app in ctrl.allApps track by app.id">
-                    <input type="checkbox" ng-click="toggleSelection(app.id)" value="{{app.id}}" ng-checked="existsAppInMyApps(app.id)" />{{app.title}}
-                </li>
-            </ul>
+﻿<section ng-if="ctrl.selectedTabId == 'ci-apps' || ctrl.selectedTabId == 'ci-bookmarks'">
+    <div><a ng-click="ctrl.openManageModal()">Manage</a></div>
+    <modal id="ci-apps-manage">
+        <div class="ci-modal">
+            <div class="modal-body">
+                <h1>Manage My Tools / Apps</h1>
+                <h3>Available Tools / Apps</h3>
+                <ul>
+                    <li ng-repeat="app in ctrl.allApps track by $index">
+                        <input type="checkbox" ng-click="toggleSelection(app.id)" value="{{app.id}}" ng-checked="existsAppInMyApps(app.id)" />{{app.title}}
+                    </li>
+                </ul>
 
-            <button ng-click="ctrl.saveMyApps();" ng-disabled="ctrl.enableSaveButton();">Save</button>
-            <button ng-click="ctrl.closeModal('ci-apps-manage'); ctrl.openModal('ci-apps-manage-sort');">Edit Sort Order</button>
-            <button ng-click="ctrl.closeModal('ci-apps-manage');">Close</button>
-            <span>{{systemMessage}}</span>
-        </div>
-    </div>
-    <div class="modal-background"></div>
-</modal>
-<modal id="ci-apps-manage-sort">
-    <div class="ci-modal">
-        <div class="modal-body">
-            <h1>Manage My Tools / Apps Sort Order</h1>
-            <ul>
-                <li ng-repeat="app in ctrl.myApps track by app.id">
-                    {{app.title}}
-                    <select ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
-                        <option ng-repeat="sort in myAppsSortList" ng-value="{{sort}}">{{sort}}</option>
-                    </select>
-                </li>
-            </ul>
-
-            <button ng-click="ctrl.saveMyAppsSortOrder();" ng-disabled="ctrl.enableSaveButton();">Save</button>
-            <button ng-click="ctrl.closeModal('ci-apps-manage-sort'); ctrl.openModal('ci-apps-manage');">Close</button>
-            <span>{{systemMessage}}</span>
-        </div>
-    </div>
-    <div class="modal-background"></div>
-</modal>
-<modal id="ci-bookmarks-manage">
-    <div class="ci-modal">
-        <div class="modal-body">
-            <h1>Manage My Bookmarks</h1>
-            <ul>
-                <li ng-repeat="bk in ctrl.myBookmarks track by bk.id">
-                    <input type="hidden" ng-model="bk.id" />
-                    <input type="text" ng-model="bk.title" ng-change="ctrl.isToolbarDirty = true" />
-                    <input type="text" ng-model="bk.url" ng-change="ctrl.isToolbarDirty = true" />
-                    <i class="fa fa-trash" aria-hidden="true" ng-click="ctrl.confirmDeletion(bk);"></i>
-                </li>
-            </ul>
-            <div ng-show="ctrl.enableAddNew">
-                <label for="bookmark-title">Title</label>
-                <input type="text" id="bookmark-title" ng-model="ctrl.newBookmark.title" ng-change="ctrl.isToolbarDirty = true" />
-                <label for="bookmark-url">Bookmark Url</label>
-                <input type="text" id="bookmark-url" ng-model="ctrl.newBookmark.url" ng-change="ctrl.isToolbarDirty = true" />
-                <button ng-click="ctrl.saveMyNewBookmark();" ng-disabled="ctrl.enableSaveBookmarkButton()">Save</button>
+                <button ng-click="ctrl.saveMyApps();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+                <button ng-click="ctrl.closeModal('ci-apps-manage'); ctrl.openModal('ci-apps-manage-sort');">Edit Sort Order</button>
+                <button ng-click="ctrl.closeModal('ci-apps-manage');">Close</button>
+                <span>{{systemMessage}}</span>
             </div>
-            
-            <button ng-click="ctrl.addMyBookmark();">Add New</button>
-            <!--
-            <button ng-click="ctrl.saveMyBookmarks()" ng-disabled="ctrl.enableSaveButton()">Save</button>
-                -->
-            <button ng-click="ctrl.closeModal('ci-bookmarks-manage');">Close</button>
-            <span>{{systemMessage}}</span>
         </div>
-    </div>
-    <div class="modal-background"></div>
-</modal>
-<modal id="ci-bookmarks-confirm-delete">
-    <div class="ci-modal">
-        <div class="modal-body">
-            <h1>Bookmark Deletion Confirmation</h1>
-            <p>Please confirm deletion of bookmark.</p>
-            <button ng-click="ctrl.removeMyBookmark()">OK</button>
-            <button ng-click="ctrl.closeModal('ci-bookmarks-confirm-delete');ctrl.openModal('ci-bookmarks-manage');">Close</button>
-            <span>{{systemMessage}}</span>
+        <div class="modal-background"></div>
+    </modal>
+    <modal id="ci-apps-manage-sort">
+        <div class="ci-modal">
+            <div class="modal-body">
+                <h1>Manage My Tools / Apps Sort Order</h1>
+                <ul class="container">
+                    <li ng-repeat="app in ctrl.myApps track by $index" class="row">
+                        <span class="col-8">{{app.title}}</span>
+                        <select class="col-4" ng-model="app.sortOrder" ng-change="ctrl.updateSortOrder(app, {{app.sortOrder}});">
+                            <option ng-repeat="sort in myAppsSortList" ng-value="{{sort}}">{{sort}}</option>
+                        </select>
+                    </li>
+                </ul>
+
+                <button ng-click="ctrl.saveMyAppsSortOrder();" ng-disabled="ctrl.enableSaveButton();">Save</button>
+                <button ng-click="ctrl.closeModal('ci-apps-manage-sort'); ctrl.openModal('ci-apps-manage');">Close</button>
+                <span>{{systemMessage}}</span>
+            </div>
         </div>
+        <div class="modal-background"></div>
+    </modal>
+    <modal id="ci-bookmarks-manage">
+        <div class="ci-modal">
+            <div class="modal-body">
+                <h1>Manage My Bookmarks</h1>
+                <ul>
+                    <li ng-repeat="bk in ctrl.myBookmarks track by $index">
+                        <input type="hidden" ng-model="bk.id" />
+                        <input type="text" ng-model="bk.title" ng-change="ctrl.isToolbarDirty = true" />
+                        <input type="text" ng-model="bk.url" ng-change="ctrl.isToolbarDirty = true" />
+                        <i class="fa fa-trash" aria-hidden="true" ng-click="ctrl.confirmDeletion(bk);"></i>
+                    </li>
+                </ul>
+                <div ng-show="ctrl.enableAddNew">
+                    <label for="bookmark-title">Title</label>
+                    <input type="text" id="bookmark-title" ng-model="ctrl.newBookmark.title" ng-change="ctrl.isAddNewDirty = true" />
+                    <label for="bookmark-url">Bookmark Url</label>
+                    <input type="text" id="bookmark-url" ng-model="ctrl.newBookmark.url" ng-change="ctrl.isAddNewDirty = true" />
+                    <button ng-click="ctrl.saveMyNewBookmark();" ng-disabled="ctrl.enableAddNewSaveButton()">Save</button>
+                </div>
+
+                      
+                <button ng-click="ctrl.saveMyBookmarks()" ng-disabled="ctrl.enableSaveButton()">Save</button>
+                <button ng-click="ctrl.addMyBookmark();" ng-disabled="ctrl.enableAddNewButton()">Add New</button>           
+                <button ng-click="ctrl.closeModal('ci-bookmarks-manage');">Close</button>
+                <span>{{systemMessage}}</span>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
+    <modal id="ci-bookmarks-confirm-delete">
+        <div class="ci-modal">
+            <div class="modal-body">
+                <h1>Bookmark Deletion Confirmation</h1>
+                <p>Please confirm deletion of bookmark.</p>
+                <button ng-click="ctrl.removeMyBookmark()">OK</button>
+                <button ng-click="ctrl.closeModal('ci-bookmarks-confirm-delete');ctrl.openModal('ci-bookmarks-manage');">Close</button>
+                <span>{{systemMessage}}</span>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
+</section>
+<section ng-if="ctrl.selectedTabId == 'ci-documents'">
+    <div>
+        <a class="btn btn-cta white" ng-href="{{ctrl.viewAllDocumentsUrl}}">View All</a>
     </div>
-    <div class="modal-background"></div>
-</modal>
+</section>

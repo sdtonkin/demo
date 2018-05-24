@@ -1,18 +1,28 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_CONFIG', 'storage','common', function ($http, $q, COM_CONFIG, storage, common) {
+var serviceName = 'appService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'storage', 'common', function ($http, $q, COM_CONFIG, storage, common) {
     var ctrl = this;
-    var userAppsKey = 'F6FC1D32-0D5B-4FA3-A283-4F0839B34FF8' + _spPageContextInfo.userId;    
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service == serviceName;
+    });
+    var userAppsKey = store.key;
+    ctrl.expirationDuration = store.expire;
     
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearMyApps', userAppsKey);
+    common.checkForClearStatement(store.clearCommand, userAppsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
-    ES6Promise.polyfill();  
-
-    // set default expiration at 24 hours
-    ctrl.expirationDuration = 24;
+    ES6Promise.polyfill();
+    
     ctrl.getMyApps = function (userId) {
         var defer = $q.defer();
         getUserAppItems(userId).then(function (apps) {
+            defer.resolve(apps);
+        });
+        return defer.promise;
+    };
+    ctrl.getMyAppsByName = function (userName) {
+        var defer = $q.defer();
+        getUserAppItemsByName(userName).then(function (apps) {
             defer.resolve(apps);
         });
         return defer.promise;
@@ -79,6 +89,38 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
 
         return defer.promise;
     }
+    function getUserAppItemsByName(userName) {
+        var defer = $q.defer();
+        var local = storage.get(userAppsKey);
+        if (local == null) {
+            local = {};
+            local.isExpired = true;
+        }
+        if (!local.isExpired)
+            defer.resolve(local);
+        else {
+            let web = new $pnp.Web(COM_CONFIG.rootWeb);
+            web.lists.getByTitle(COM_CONFIG.lists.userApps).items
+                .select('COM_ToolbarUser/SipAddress', 'Title', 'COM_UserToolbarId','COM_ListSortOrder', 'ID')
+                .filter("COM_ToolbarUser/SipAddress eq '" + userName + "'")
+                .expand('COM_ToolbarUser')
+                .get()
+                .then(function (data) {
+                    var promises = new Array();
+                    for (var i = 0; data.length > i; i++) {
+                        var p = getUserApp(data[i]);
+                        promises.push(p)
+                    }
+                    $q.all(promises).then(function (response) {
+                        response = formatAppApps(response);
+                        storage.set(userAppsKey, response, 0);
+                        defer.resolve(response);
+                    });
+                });
+        }
+
+        return defer.promise;
+    }
     function getUserApp(userApp) {
         var defer = $q.defer();
         getApp(userApp.COM_UserToolbarId).then(function(t){
@@ -95,12 +137,13 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
         web.lists.getByTitle(COM_CONFIG.lists.toolbarApps).items
             .getById(appId)
             .get()
-            .then(function(item){ 
+            .then(function (item) {
+                var iconUrl = (item.COM_ToolbarIconUrl == null ? '' : item.COM_ToolbarIconUrl.Url);
                 var f = {};
                 f.id = item.Id;
                 f.title = item.Title;
                 f.url = item.COM_ToolbarUrl.Url;
-                f.iconUrl = item.COM_ToolbarIconUrl.Url;
+                f.iconUrl = iconUrl + (iconUrl.indexOf('?') != -1 ? '&' : '?') + 'RenditionId=6';
                 f.sortOrder = item.COM_ListSortOrder;
                 defer.resolve(f); 
             });
@@ -181,6 +224,7 @@ angular.module('compassionIntranet').service('appService', ['$http', '$q', 'COM_
                 apps[i].sortOrder = i + 1;
         }
         var response = _.sortBy(apps, 'sortOrder');
+        if (response == null || response.length == 0) return response;
         if (response[0].sortOrder != 1) {
             for (var i = 0; i < response.length; i++) {
                 response[i].sortOrder = i + 1;

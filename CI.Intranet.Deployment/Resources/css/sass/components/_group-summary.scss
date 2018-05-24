@@ -5,19 +5,36 @@
  * ----------------------------------------- 
  */
 
- #group-summary{
+ .group-summary{
+ 	margin-top: 30px;
 	.card{
 		border-radius: 0;
 		background-color: $brand-white;
-		border-color: $brand-light-blue;
+		//border-color: $brand-light-blue;
+		border-color: transparent;
 	}
 	.card-header{
 		background-color: $brand-white;
+	}
+	.card-body{
+		padding: 20px;
+        .employee-card {
+            img.emp-photo {
+                width: 100px;
+                height: 100px;
+            }
+        }
 	}
 	h5 {
 		color: $brand-dark-blue;
 		text-transform: uppercase;
         display: inline;
+	}
+	.toolbar-toggle-button{
+		float: none;
+	}
+	.employee-card{
+		margin-top: 25px;
 	}
  }
  

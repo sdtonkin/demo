@@ -1,4 +1,4 @@
-﻿<ul ng-repeat="bk in ctrl.myBookmarks track by bk.id">
+﻿<ul ng-repeat="bk in ctrl.myBookmarks track by $index">
     <li>
         <a ng-href="{{ bk.url }}">
             <div>{{ bk.title }}</div>                        

@@ -2,26 +2,37 @@
 var myApp = angular.module('compassionIntranet'),
     controllerName = 'toolbarCtrl';
 
-myApp.controller(controllerName, ['$scope', 'common', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
+myApp.controller(controllerName, ['$scope', 'common', 'storage', 'modalService', 'appService', 'bookmarkService', 'graphService', 'COM_CONFIG', function ($scope, common, storage, modalService, appService, bookmarkService, graphService, COM_CONFIG) {
     var ctrl = this;
-    var userId = _spPageContextInfo.userId;    
+    var selectedTabCacheKey = 'navSelectedTab';
+    var userId = _spPageContextInfo.userId;
+    var userLoginName = _spPageContextInfo.userLoginName;
     var isToolbarDirty = false;
     ctrl.toolbarSelectorId = 'ci-toolbar-selector',
         ctrl.toolbarContainerId = 'ci-toolbar-container',
         ctrl.toolbarContentClassName = 'toolbar-content';
 
-    ctrl.selectedTabId = 'ci-apps';
+    
     this.$onInit = function () {
-        appService.getMyApps(userId).then(function (response) {
+        var selectedTabId = storage.get(selectedTabCacheKey);
+        ctrl.selectedTabId =  (selectedTabId == null ? 'ci-apps' : selectedTabId);
+        
+        appService.getMyAppsByName(userLoginName).then(function (response) {
             ctrl.myAppsFromDb = response;
             ctrl.myApps = angular.copy(response);
+            if (!COM_CONFIG.isProduction) { console.log('getMyAppsByName', response); }
         });
-        bookmarkService.getMyBookmarks(userId).then(function (response) {
+        bookmarkService.getMyBookmarksByName(userLoginName).then(function (response) {
             ctrl.myBookmarks = angular.copy(response);
             ctrl.myBookmarksFromDb = response;
+            if (!COM_CONFIG.isProduction) { console.log('getMyBookmarksByName', response); }
         });
     };
+    ctrl.isSelected = function (tabId) {
+        return ctrl.selectedTabId == tabId;
+    }
     ctrl.select = function (tabId) {
+        storage.set(selectedTabCacheKey, tabId);
         if (ctrl.selectedTabId === tabId)
             return;
         ctrl.selectedTabId = tabId;

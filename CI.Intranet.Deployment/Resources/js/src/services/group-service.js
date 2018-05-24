@@ -1,16 +1,19 @@
 ﻿'use strict';
-angular.module('compassionIntranet').service('groupService', ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
+var serviceName = 'groupService';
+angular.module('compassionIntranet').service(serviceName, ['$http', '$q', 'COM_CONFIG', 'common', 'storage', function ($http, $q, COM_CONFIG, common, storage) {
     var ctrl = this;
-    var groupsKey = '4FC856F1-CCF7-49C8-9971-22861DE3EB56' + _spPageContextInfo.userId;
+    var store = _.find(COM_CONFIG.storage, function (s) {
+        return s.service == serviceName;
+    });
+    var groupsKey = store.key;
     
-    var delveUrl = '';
     // clear local storage if url param is detected
-    common.checkForClearStatement('clearGroups', groupsKey);
+    common.checkForClearStatement(store.clearCommand, groupsKey);
     // ensure Promise for pnp is loaded prior to using pnp module
     ES6Promise.polyfill();
 
     // set default expiration at 24 hours
-    ctrl.expirationDuration = 24;
+    ctrl.expirationDuration = store.expire;
     ctrl.getGroups = function () {
         var defer = $q.defer();
         var local = storage.get(groupsKey);
@@ -42,7 +45,7 @@ angular.module('compassionIntranet').service('groupService', ['$http', '$q', 'CO
                     g.name = item.Title;
                     g.url = item.COM_GroupSiteUrl.Url;
                     g.description = item.COM_GroupDescription;
-                    g.profileUrl = delveUrl;
+                    g.profileUrl = 'https://nam.delve.office.com/?q=' + item.Title + '&searchpage=1&searchview=people&v=search';
                     groups.push(g);
                     promises.push(getGroupLeadership(g.url, item.Id));
                 }

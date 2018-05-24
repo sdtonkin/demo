@@ -6,6 +6,10 @@
  */
 
  .work-resources, .how-do-i{
+ 	h2.section{
+ 		margin-top: 20px;
+ 		margin-bottom: 20px;
+ 	}
 	.nav.nav-pills{
 		display: block;
 		text-align: left;
@@ -18,12 +22,41 @@
 		}
 		.nav-link{
 			text-align: left;
+			border: 1px solid $brand-dark-blue;
+			background-color: $brand-white;
+			color: $brand-dark-blue;
+			height: 70px;
 			i{ 
 				display: table-cell;
+			}
+			> img{
+			    display: table-cell;
+			    float: left;
+			    width: 30px;
 			}
 			span{
 				display: table-cell;
 				padding-left: 10px;
+			}
+			&:hover{
+				border: 1px solid $brand-dark-blue;
+				background-color: $brand-dark-blue;
+				color: $brand-white;
+				a{
+					color: $brand-white;
+			    	text-decoration: none;
+				}
+			}
+			a{
+			    color: #fff;
+			    text-align: center;
+			    text-transform: uppercase;
+			    letter-spacing: 0.3px;
+			    display: block;
+			    &:hover{
+			    	color: $brand-dark-blue;
+			    	text-decoration: none;
+			    }
 			}
 		}
 	}
@@ -37,17 +70,31 @@
  		margin-bottom: 30px;
  		margin-top: 30px;
  		h3{
-			margin-left: 25px;
+			margin-left: 0;
+			text-align: left;
  		}
  		.nav-link{
  			background-color: transparent;
  			color: $brand-dark-blue;
+ 			border: none;
+ 			height: auto;
+			
  			&:hover{
- 				color: $brand-dark-blue-alt ;
+ 				color: $brand-dark-blue-alt;
+ 				background-color: $brand-white;
+ 				border: none;
+ 				text-decoration: underline;
+ 			}
+ 			span{
+ 				text-transform: none;
+ 				font-size: 16px;
  			}
  		}
  		.nav-item{
  			width: 47%;
  		}
+ 	}
+ 	.nav-fill .nav-item{
+ 		// text-align: left;
  	}
  }

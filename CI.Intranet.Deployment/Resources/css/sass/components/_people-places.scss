@@ -1,20 +1,56 @@
 /* 
  * -----------------------------------------
- *  Departments
+ *  People Places
  *  @@ File: components/_people-places.scss
  * ----------------------------------------- 
  */
 
  section.people-places {
 	ul.tab-picker {
-        h2 {
-            font-size: 40px;
-            text-align: left;
-            color: $brand-brown-gray;
-        }
+        
         li {
             list-style: none;
             cursor: pointer;
         }
 	}
+    h2 {
+            font-size: 40px;
+            text-align: left;
+            color: $brand-brown-gray;
+    }
+ }
+ section.global-partners, section.my-department {
+     h2 {
+            font-size: 40px;
+            text-align: left;
+            color: $brand-white;
+    }
+     img.emp-photo {
+         // height: auto;
+     }
+     ul{
+        padding-left: 0;
+        list-style: none;
+     }
+ }
+
+ .my-department{
+    .employee-card{
+        background-color: transparent;
+        padding:15px;
+        margin-top: 15px;
+    }
+    .employee-card .emp-contact, .employee-card .emp-contact a, .employee-card .emp-contact span a {
+        border: none;
+        color: $brand-white;
+    }
+ }
+ .ci-people .find-people{
+    .col-md-8{
+        width: 100%;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
  }

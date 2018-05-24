@@ -5,20 +5,31 @@
  * ----------------------------------------- 
  */
 .hero-news-container{
+	img{
+		width: 100%;
+	}
+
 	.card-group{
 		margin-bottom: 20px;
 	}
 	.card{
 		background-color: $brand-off-white;
 		border: none;
+		overflow: hidden;
 	}
 	.card-title{
-		margin-bottom: 30px;
+		margin-bottom: 5px;
 		background-color: $brand-white;
 		display: inline-block;
 		border: 1px solid $brand-brown-dull;
 		padding: 4px 10px;
-		color: $brand-brown-gray;
+		color: $brand-brown-gray !important;
+		margin-right: 5px;
+		margin-top: 5px;
+		font-size: 15px;
+		a, a:visited, a:hover{
+			color: $brand-brown-gray !important;
+		}
 	}
 	.card-likes{
 		color: $brand-brown-gray;
@@ -30,16 +41,57 @@
 		line-height: 27px;
 		font-size: 24px;
 		@extend .font-lato-med;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 	}
 	.card-date{
 		font-size: 14px;
 		color: $brand-brown-gray;
 		@extend .font-lato-reg;
 		margin-bottom: 5px;
+		margin-top: 25px;
+	}
+	.card.img-card{
+		flex: 2;
+		img{
+			height: 100%;
+			width: 500px;
+		}
+		a{
+			overflow: hidden;
+		}
 	}
 	.img-fluid{
-		height: 100%;
-		width: auto;
+		// height: 100%;
+		// width: 100%;
+		height: auto;
+		width: 425px;
+		max-width: none;
+	}
+	
+	.card-img-top, .card {
+	    border-top-left-radius: 0;
+	    border-top-right-radius: 0;
+	}
+	.btn-cta.pull-right {
+	    margin-right: -15px;
+	}
+}
+.hero-main > .list-content:last-child .card-body {
+    border: medium none;
+    padding-bottom: 0;
+}
+.recent-news-wrapper{
+	.card > a{
+		overflow: hidden;
+		height: 260px;
+	}
+	.card-title{
+		font-size: 15px;
+	}
+	.card img{
+		width: 425px;
+	}
+	.card-body{
+		height: 280px;
 	}
 }

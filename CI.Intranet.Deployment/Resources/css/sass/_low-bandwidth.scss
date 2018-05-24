@@ -1,1 +1,15 @@
 //low-bandwidth.scss
+
+.card.img-card, image-loader, .employee-card img {
+	display: none !important;
+}
+section.hero-news-container {
+    img {
+        display: none !important;
+     }
+}
+related-news {
+    img {
+        display: none !important;
+    }
+}

@@ -17,10 +17,129 @@ namespace CI.Intranet.Deployment
         private static readonly String GROUPSTEMPLATEDIRECTORYLOCATION = "../../Templates/Sections/Groups";
         static void Main(string[] args)
         {
+            
             string defaultSiteUrl = ConfigurationManager.AppSettings["SharePointSiteUrl"];
             string defaultUserName = ConfigurationManager.AppSettings["UserName"];
             string defaultPassword = ConfigurationManager.AppSettings["Password"];
             //string defaultDomain = ConfigurationManager.AppSettings["Domain"];
+
+            if (args.Length > 0)
+            {
+                switch (args[0])
+                {
+                    case "deploy-all-stage":
+                        {
+                            var templatePath = (args[1] != null ? args[1].ToString() : "CI.Intranet.Deployment/Templates");
+                            var resourcePath = (args[2] != null ? args[2].ToString() : ConfigurationManager.AppSettings["S-ProvisioningResourceFolder"]);
+
+                            defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
+                            defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
+                            defaultPassword = ConfigurationManager.AppSettings["S-Password"];
+                            var searchUrl = ConfigurationManager.AppSettings["S-SearchSiteUrl"];
+                            var exportFolder = ConfigurationManager.AppSettings["S-ExportTemplateFolder"];
+                            SecureString pwd1 = new SecureString();
+                            foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                            var domain = string.Empty;
+                            var files = new DirectoryInfo(templatePath);
+                            var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                            var sites = Properties.Settings.Default.GroupSitesStage;
+                            sites.Insert(0, searchUrl);
+                            sites.Insert(0, defaultSiteUrl);
+
+                            foreach (var url in sites)
+                            {
+                                foreach (var file in fileNames)
+                                {
+                                    var rJob = new Jobs.RunProvisioningXml(url, domain, defaultUserName, pwd1);
+                                    rJob.Start(file, files, "quiet", resourcePath);
+                                }
+                            }
+
+                            // run search settings
+                            var rJobSearch = new Jobs.RunProvisioningXml(searchUrl, domain, defaultUserName, pwd1);
+                            rJobSearch.Start("6-Search.xml", files, "quiet", resourcePath);
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
+                            return;
+                        }
+                    case "deploy-stage":
+                        {
+                            defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
+                            defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
+                            defaultPassword = ConfigurationManager.AppSettings["S-Password"];
+                            var searchUrl = ConfigurationManager.AppSettings["S-SearchSiteUrl"];
+                            var resourceFolder = ConfigurationManager.AppSettings["S-ProvisioningResourceFolder"];
+                            var exportFolder = ConfigurationManager.AppSettings["S-ExportTemplateFolder"];
+                            SecureString pwd1 = new SecureString();
+                            foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                            var domain = string.Empty;
+                            var files = new DirectoryInfo("CI.Intranet.Deployment/Templates");
+                            var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                            var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
+                            rJob.Start("3-Files.xml", files, "quiet", resourceFolder);
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
+                            return;
+                        }
+                    case "deploy-stage-files":
+                        {
+                            defaultSiteUrl = ConfigurationManager.AppSettings["S-SharePointSiteUrl"];
+                            defaultUserName = ConfigurationManager.AppSettings["S-UserName"];
+                            defaultPassword = ConfigurationManager.AppSettings["S-Password"];
+                            var searchUrl = ConfigurationManager.AppSettings["S-SearchSiteUrl"];
+                            var resourceFolder = ConfigurationManager.AppSettings["S-ProvisioningResourceFolder"];
+                            var exportFolder = ConfigurationManager.AppSettings["S-ExportTemplateFolder"];
+                            SecureString pwd1 = new SecureString();
+                            foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                            var domain = string.Empty;
+                            var files = new DirectoryInfo("CI.Intranet.Deployment/Templates");
+                            var fileNames = "3-Files.xml".Split(',');
+                            var rJob = new Jobs.RunProvisioningXml(defaultSiteUrl, domain, defaultUserName, pwd1);
+                            rJob.Start("3-Files.xml", files, "quiet", resourceFolder);
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
+                            return;
+                        }
+                    case "deploy-all-prod":
+                        {
+                            var templatePath = (args[1] != null ? args[1].ToString() : "CI.Intranet.Deployment/Templates");
+                            var resourcePath = (args[2] != null ? args[2].ToString() : ConfigurationManager.AppSettings["P-ProvisioningResourceFolder"]);
+
+                            defaultSiteUrl = ConfigurationManager.AppSettings["P-SharePointSiteUrl"];
+                            defaultUserName = ConfigurationManager.AppSettings["P-UserName"];
+                            defaultPassword = ConfigurationManager.AppSettings["P-Password"];
+                            var searchUrl = ConfigurationManager.AppSettings["P-SearchSiteUrl"];
+                            var exportFolder = ConfigurationManager.AppSettings["P-ExportTemplateFolder"];
+                            SecureString pwd1 = new SecureString();
+                            foreach (char c in defaultPassword.ToCharArray()) pwd1.AppendChar(c);
+                            var domain = string.Empty;
+                            var files = new DirectoryInfo(templatePath);
+                            var fileNames = "1-TermSet.xml,2-InformationArchitecture.xml,3-Files.xml".Split(',');
+                            var sites = Properties.Settings.Default.GroupSites;
+                            sites.Insert(0, searchUrl);
+                            sites.Insert(0, defaultSiteUrl);
+
+                            foreach (var url in sites)
+                            {
+                                Console.WriteLine(url);
+                                foreach (var file in fileNames)
+                                {
+                                    var rJob = new Jobs.RunProvisioningXml(url, domain, defaultUserName, pwd1);
+                                    rJob.Start(file, files, "quiet", resourcePath);
+                                }
+                            }
+
+                            // run search settings
+                            var rJobSearch = new Jobs.RunProvisioningXml(searchUrl, domain, defaultUserName, pwd1);
+                            rJobSearch.Start("6-Search.xml", files, "quiet", resourcePath);
+
+                            Console.WriteLine("We're done. Press Enter to continue.");
+                            Console.ReadLine();
+
+                            return;
+                        }
+                }
+            }
 
             Console.WriteLine("Default Site Url: " + defaultSiteUrl);
             //Console.WriteLine("Default Domain: " + defaultDomain);
@@ -58,6 +177,7 @@ namespace CI.Intranet.Deployment
             ctx.Load(web, w => w.Title);
             ctx.Load(web, w => w.Url);
             ctx.ExecuteQueryRetry();
+
             Console.WriteLine("Site Title: {0}", web.Title);
             Console.WriteLine("Site URL: {0}", web.Url);
 
@@ -67,7 +187,6 @@ namespace CI.Intranet.Deployment
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("We're done. Press Enter to continue.");
             Console.ReadLine();
-
         }
         public static void DisplayJobRunOptions(string siteUrl, string domain, string userName, SecureString pwd, string RunMode = "")
         {

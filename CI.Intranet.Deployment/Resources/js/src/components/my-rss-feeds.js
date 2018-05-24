@@ -5,12 +5,15 @@ var myApp = angular.module('compassionIntranet'),
 myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', function ($scope, rssFeedService, COM_CONFIG) {
     var ctrl = this;
     ctrl.showManager = false;
+    ctrl.myFeeds = [];
+    
     this.$onInit = function () {
+        $scope.lowBandwidth = window.lowBandwidth;
+        if (window.lowBandwidth) return;
         var userId = _spPageContextInfo.userId;
-        var articleLimit = ($scope.ctrl.articlelimit != null ? $scope.ctrl.articlelimit : 5);
+        var articleLimit = ($scope.ctrl.articleLimit != null ? $scope.ctrl.articleLimit : 5);
         rssFeedService.getMyRssFeeds(userId, articleLimit).then(function (response) {
-            ctrl.myFeeds = response;
-            ctrl.showNoFeedsMessage = ctrl.myFeeds.length == 0;
+            ctrl.myFeeds = response;            
         });
     };    
     
@@ -19,6 +22,6 @@ myApp.controller(controllerName, ['$scope', 'rssFeedService', 'COM_CONFIG', func
     controller: controllerName,
     controllerAs: 'ctrl',
     bindings: {
-        articlelimit: '@'
+        articleLimit: '@'
     }
 });

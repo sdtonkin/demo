@@ -15,9 +15,11 @@
  			color: $brand-dark-blue-alt;
  			height: 60px;
  			border-color: $brand-brown-gray;
+ 			padding-left: 15px;
  			@include placeholder{
  				color: $brand-dark-blue-alt;
  				font-size: 18px;
+ 				font-style: italic;
  			}
  			&:focus, &:hover{
  				border-right: none;
@@ -28,6 +30,9 @@
 
  		}
  	}
+ 	h3{
+ 		margin-top: 40px;
+ 	}
  	
  }
  .find-people-carousel{
@@ -35,6 +40,29 @@
  	padding-bottom: 30px;
  	.carousel-indicators{
  		bottom: -30px;
+ 		
+		&:before{
+			content: "\f104";
+			font-family: FontAwesome;
+			bottom: 5px;
+			color: $brand-brown-gray;
+		    display: block;
+		    font-size: 13px;
+		    margin-right: 5px;
+		    position: relative;
+		}
+		&:after{
+			content: "\f105";
+			font-family: FontAwesome;
+			bottom: 5px;
+			color: $brand-brown-gray;
+		    display: block;
+		    font-size: 13px;
+		    margin-left: 5px;
+		    position: relative;
+		}
+ 		
+
  		li{
  			height: 10px;
  			max-width: 10px;
@@ -47,7 +75,12 @@
  			&.active{
  				background-color: $brand-brown-gray;
  			}
+ 			
+ 			
  		}
+ 	}
+ 	.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+ 		display: flex;
  	}
  	.employee-card-wrapper{
 
@@ -95,3 +128,38 @@
 		}
 	}
  }
+ .ci-people{
+ 	.container{
+	 	padding-left: 30px;
+	 	padding-right: 30px;
+ 	}
+}
+.ci-places{
+	location-places{
+		.card{
+			padding: 30px;
+			margin-bottom: 30px;
+			border-radius: 0;
+			border-color: $brand-brown-gray;
+			&:first-child{
+				//border-top: none;
+			}
+		}
+		h5{
+			text-transform: none;
+			margin-bottom: 30px;
+			width: 100%;
+			@extend .font-lato-bold;
+			font-size: 20px;
+		}
+		ul{
+			padding-left: 0;
+			list-style: none;
+			li{
+				width: 50%;
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

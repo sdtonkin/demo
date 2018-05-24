@@ -1,0 +1,14 @@
+﻿<section class="how-do-i">
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-pills nav-fill">
+                <h3>How Do I?</h3>
+                <li class="nav-item" ng-repeat="link in ctrl.howDoI track by $index">
+                    <a class="nav-link" href="{{ link.url }}">
+                        <span>{{ link.title }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

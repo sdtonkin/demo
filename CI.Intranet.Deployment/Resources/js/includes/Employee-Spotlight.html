@@ -1,15 +1,50 @@
-﻿<div class="spotlights">
-    <div class="row">
-        <div class="col-md-4" ng-repeat="spotlight in item.spotlight">
-            <div class="story">
-                <div class="copy">
-                    <span class="date numbers">{{spotlight.eventDate}}</span>
-                    <a href="{{spotlight.link}}" target="_blank">
-                        <span class="title">{{spotlight.title}}</span>
-                    </a>
+﻿<section class="employee-spotlight">
+    <div class="container">
+        <div class="row">
+            <h2 class="section">Our People</h2>
+            <div class="employee-spotlight-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link"  ng-click="activeTab = 'g'" ng-class="{active: activeTab == 'g'}">skippys</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="activeTab = 'h'" ng-class="{active: activeTab == 'h'}">new hires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="activeTab = 'a'" ng-class="{active: activeTab == 'a'}">anniversaries + retirements</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div ng-show="activeTab == 'g'">
+                        <gratitudes></gratitudes>
+                    </div>
+                    <div ng-show="activeTab == 'h'">
+                        <new-hires></new-hires>
+                    </div>
+                    <div ng-show="activeTab == 'a'">
+                        <anniversary-cards></anniversary-cards>
+                    </div>
                 </div>
+                <div class="row employee-spotlight-cta" ng-if="activeTab == 'g'">
+                    <div class="col">
+                        <a class="btn btn-block blue" ng-click="submitGratitude()">Submit a Skippy</a>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-cta pull-right" href="{{viewAllUrl}}">View All Skippys</a>
+                    </div>
+                </div>
+                <div class="row employee-spotlight-cta" ng-if="activeTab == 'h'">
+                    <div class="col">
+                        <a class="btn btn-cta pull-right" href="{{viewAllHiresUrl}}">View All Hires</a>
+                    </div>
+                </div>
+                <div class="row employee-spotlight-cta" ng-if="activeTab == 'a'">
+                    <div class="col">
+                        <a class="btn btn-cta pull-right" href="{{viewAllAnniversaryUrl}}">View All</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <a class="view-all" target="_blank" href="#">See All</a>
-</div>
+</section>
