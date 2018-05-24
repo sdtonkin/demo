@@ -2,7 +2,7 @@
 Wireframes
 http://xsi0nx.axshare.com/#p=homepage 
 
-Visual Comps
+Visual Comp
 https://invis.io/3SC57UN7X
 
 Mobile Screens
